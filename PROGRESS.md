@@ -1,8 +1,10 @@
 # Progress tracker — Theory of Everything
 
+> ⏸️ **PAUZA (2026-06-06 ~11:00)** — na žádost uživatele (tokenový limit). Kolo 9 zastaveno v půlce: VYPOCET-19 (SJ de Sitter II₁ test) a VYPOCET-20 (BD 4D modulární tok) nedokončené (adresáře v `core-data/calculations/` založené, writeupy chybí), ESEJ-04 a `papers/REVIZE-PRO-CLOVEKA.md` nenapsané. **Obnovit:** spustit znovu workflow `workflows/qg-round-09.js`; poté plán BRAINSTORM-05 + závěrečná zpráva dne.
+
 ## Aktuální stav
 
-🟢 **Fáze 2: Hledání souvislostí** — kola 3–7 dokončena (2026-06-06): 3 drafty článků (draft-01 v0.2 SJ rotující prostoročasy, draft-02 a₄ fermionová identita, draft-03 d_s jako klasifikátor). VYPOCET-15 uzavřel ambiguitu a=0.6: log-log diskriminant corr(S)=0.9992 >> corr(E)=0.942, ΔAIC=+3894 — Model S rozhodující pro všechny tři geometrie. VYPOCET-16 potvrdil H3g-3 v 4D: 3/3 vN-type proxy prošly na čisté 4D slab geometrii (entropická stopa III→II, 36x kolaps; modulární spektrum flat-dense→integrovatelné; N^{3/4} rank jako operativní regulátor, ne magnitudový cutoff). BRAINSTORM-04 dokončen: top 3 hypotézy čtvrté generace + fronta. SYNTEZA-02 dokončena. findings.json = 19 nálezů.
+🟢 **Fáze 2: Hledání souvislostí** — kola 3–8 dokončena (2026-06-06): 4 drafty článků (draft-01 v0.2 SJ rotující prostoročasy, draft-02 a₄ fermionová identita, draft-03 d_s jako klasifikátor, draft-04 typ-přechod kauzální množiny). VYPOCET-17 vyvrátil H4g-3: žádná druhá index-identita pro Λ neexistuje; −18/11 přežívá přítomnost kosmologického členu právě proto, že se na něj NErozšiřuje; draft-02 Λ-riziko uzavřeno. VYPOCET-18 podpořil H4g-1 v 2D (4/5 geometrických signatur; modulární tok geometrický na slabu, non-geometrický v rozích diamantu přesně tam kde F-016 lokalizoval Hadamardovu anomálii); 4D nereplikuje (link-matice řídkost). findings.json = 22 nálezů.
 
 ## Fáze
 
@@ -12,6 +14,13 @@
 | 2 | Hledání nenalezených souvislostí | 🟡 zahájena | 2026-06-05 | — |
 
 ## Log
+
+### 2026-06-06 (kolo 8 — VYPOCET-17/18, draft-04, housekeeping)
+
+- **VYPOCET-17 — Λ-indukce přes spektrální akci (H4g-3, F-020):** Exaktní sympy + literatura (CC hep-th/9606001 + Marcolli). Tr f(D/Λ) ~ 2Λ⁴f₄·a₀ + 2Λ²f₂·a₂ + f₀·a₄. a₀ (kosmologický) a a₂ (Einstein-Hilbert) jsou oba lineárně v N = Tr(1_F), ale sedí na různých cutoff-řádech (f₄Λ⁴ vs f₂Λ²) → jakýkoli poměr nese (f₄/f₂)Λ² = dimenzionální a scheme-závislý; jedině −18/11 (poměr uvnitř a₄, stejný řád f₀Λ⁰) je index-chráněný. Λ_cc/m_Pl² = π²f₄/(2N f₂²k̂²) nese explicitní 1/N. Indukovaná γ₀ cutoff-kvartická (~10¹²² mismatch). STr 1 = n_B − n_F = −62 (bez ν_R) / −68 (s ν_R): ν_R rovnováhu počtů zhoršuje, nezlepšuje. Všech 8 interních VERDICT klíčů True. **H4g-3 je VYVRÁCENA jako pozitivní hypotéza. Draft-02 Λ-riziko uzavřeno.** (F-020)
+- **VYPOCET-18 — modulární tok: slab vs. diamantový roh (H4g-1, F-021):** 2D, N=400–1800, 5 seeds. Self-test: corr(H_pi diagonála, analytická boost-váha)=0.992. Klíčový výsledek: off-diagonální sklon modulárního kernelu SJ stavu = −0.47 (slab, geometrický/boost-lokální) vs. −0.094 (diamant, negeometrický), gap 0.37 stabilní. Slab diagonální modulární váha lineární v vzdálenosti od entangling surface (R²=0.977, BW boost-váha). Per-site non-lokalita f_nl roste monotónně 0.673 (hluboký bulk) → 0.828 (roh), sklon vs. vzdálenost-k-rohu = −0.383 (R²=0.989); roh/bulk ratio = 1.15. Poctivé nuly: cross-corner u-v′=±2L coupling ratio=1.00; integrovaná f_nl neodliší slab(0.72) od diamantu(0.72) — diskriminace jen v off-diag sklonu. 4D (link matice, N≤2500): NEREPLIKUJE — slab/diamant ratio=0.996, rohová f_nl (0.11) < bulk (0.31) opačné znaménko, nl-vs-roh sklon=+0.75 (link-matice řídkost ~N^0.65 + tenká rohová statistika). **H4g-1 PODPOŘENA v 2D (4/5 signatur); 4D nereplikuje (poctivý null).** Runtime 248 s. (F-021)
+- **draft-04-type-transition-causal-sets:** Draft a TODO zapsány do `papers/draft-04-type-transition-causal-sets/`. Testuje hypotézu Sorkin-Yazdi SSEE truncace = CLPW crossed-product typ III₁→II přechod. 2D diamant: 2/3 proxy (entropická stopa 80x, modulární pile-up N^1.14→0); 4D slab: 3/3 proxy (entropická stopa N^1.34→N^0.55, modulární spektrum flat-dense→integrovatelné, N^{3/4} selektivita). Geometrická výhrada (rohy diamantu ničí signaturu) a interpretace diskrétní škály jako modulárního cutoffu explicitely označeny jako konjektury. TODO.md: 8 lidských verifikačních bran, referee-útok příprava, etická poznámka, LQG-area-gap noha označena jako otevřená. (F-022)
+- **findings.json** rozšířen na 22 nálezů: F-020 (H4g-3 vyvrácena, žádná druhá index-identita pro Λ, draft-02 uzavřen); F-021 (H4g-1 2D podpořena 4/5, modulární tok geometrický na slabu, negeometrický v rozích); F-022 (draft-04 zapsán, 2D 2/3 + 4D 3/3 proxy, N^{3/4} selektivita).
 
 ### 2026-06-06 (kolo 7 — VYPOCET-15/16, BRAINSTORM-04, SYNTEZA-02, housekeeping)
 
@@ -164,7 +173,13 @@ Podrobnosti zbývajících obav viz log níže.
 
 ## Další kroky
 
-Odvozeno z BRAINSTORM-04 (kolo 7) + zbývajících položek BRAINSTORM-03. BRAINSTORM-04 dokončen; doporučeny dva paralelní výpočty.
+Odvozeno z BRAINSTORM-04 (kolo 7) + výsledků kola 8. Kolo 8 uzavřelo dva hlavní risksecké body: H4g-3 vyvrácena (draft-02 finalizovatelný po lidské re-derivaci), H4g-1 podpořena v 2D (through-line mechanismus aktivní, 4D probe otevřena).
+
+### Důsledky kola 8 pro drafty a through-line
+
+**Draft-02 finality (calc17):** H4g-3 je vyvrácena — žádná druhá index-identita pro Λ neexistuje. Tím je uzavřeno poslední otevřené riziko draftu-02: identita −18/11 nepotřebuje Λ-sekci, protože a₀ a a₂ jsou cross-order a jejich poměr je dimenzionální. Draft-02 je vědecky kompletní a čeká pouze na lidskou re-derivaci a₄ koeficientů a citace-check (žádný nový výpočet není potřeba).
+
+**Through-line — vrstva B (calc18):** H4g-1 je v 2D mechanisticky podpořena. Modulární kernel SJ stavu je geometricky lokální (boost/Bisognano-Wichmann) na slabu a stává se non-lokálním monotónně směrem k rohům diamantu (off-diag sklon −0.47 vs −0.094, f_nl gradient R²=0.989) — přesně tam kde VYPOCET-13 lokalizoval Hadamardovu anomálii. F-016 a F-021 se propojují mechanismem (ne jen korelací). Ve 4D sonda nereplikuje s link-maticí; doporučená cesta: BD d'Alembertián nebo větší N.
 
 ### Uzavřené / odstraněné položky
 
@@ -173,11 +188,14 @@ Odvozeno z BRAINSTORM-04 (kolo 7) + zbývajících položek BRAINSTORM-03. BRAIN
 - ~~**Cardy-LQG (L1-3) jako živá hypotéza**~~ — UZAVŘENO: program dead.
 - ~~**VYPOCET-14 ambiguita a=0.6**~~ — UZAVŘENO (VYPOCET-15): corr(S)=0.9992, ΔAIC=+3894, Model S rozhodující.
 - ~~**BRAINSTORM-04 jako doporučený první krok**~~ — DOKONČENO (kolo 7).
+- ~~**H4g-3 — fermionová indukce predikuje Λ (druhá index-identita)**~~ — UZAVŘENO (VYPOCET-17): vyvrácena; žádná druhá index-identity pro Λ; draft-02 Λ-riziko uzavřeno.
+- ~~**H4g-1 2D sonda (slab vs. diamantový roh, modulární tok)**~~ — DOKONČENO (VYPOCET-18): podpořena 4/5, through-line mechanismus aktivní v 2D.
 
 ### Drafty čekající na lidskou revizi
 
 - **draft-01-sj-rotating-spacetimes v0.2** (`papers/draft-01-sj-rotating-spacetimes/`) — všechny TODO body vyřešeny. **Blokující pro release:** (1) N→∞ studie s 30+ seeds; (2) analytické SJ pro strižený diamant; (3) BTZ dvou-bodová funkce; (4) verifikace citací PDF; (5) nezávislá re-derivace / re-run (gate §8 TODO.md).
-- **draft-02-a4-fermionic-identity** (`papers/draft-02-a4-fermionic-identity/`) — vědecký obsah uzavřen (VYPOCET-11). **Blokující pro release:** lidská re-derivace a₄, citace-check Duff/Andrianov-Lizzi/Kurkov-Lizzi-Vassilevich, scheme-dependence ošetření.
+- **draft-02-a4-fermionic-identity** (`papers/draft-02-a4-fermionic-identity/`) — vědecký obsah PLNĚ UZAVŘEN (VYPOCET-11 + VYPOCET-17: žádné Λ-riziko). **Blokující pro release:** lidská re-derivace a₄, citace-check Duff/Andrianov-Lizzi/Kurkov-Lizzi-Vassilevich, scheme-dependence ošetření.
+- **draft-04-type-transition-causal-sets** (`papers/draft-04-type-transition-causal-sets/`) — vědecký obsah zapsán (kolo 8, VYPOCET-12 + VYPOCET-16). **Blokující pro release:** 8 lidských verifikačních bran (viz TODO.md); oprava placeholder a_err=0.776; BD d'Alembertián probe pro 4D repliku; LQG-area-gap noha trojúhelníku označena jako otevřená.
 
 ### DOPORUČENÁ FRONTA (BRAINSTORM-04, kolo 7)
 

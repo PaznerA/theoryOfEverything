@@ -325,23 +325,34 @@ def _sym_sqrt(A):
 
 
 def modular_kernel_covariance(X, P):
-    """H_phi(x,y) = X^{-1} C arccoth(2C), C=sqrt(XP). Returns (H_phi, nu)."""
+    """Real-space modular (entanglement) Hamiltonian of a Gaussian state from
+    correlators X=<phi phi>, P=<pi pi>.  C=sqrt(XP), nu=eig(C); f(nu)=nu arccoth(2 nu).
+        H_phi = X^{-1} f(C)  =  Xis f(sqrt(Xs P Xs)) Xis    (field-field kernel),
+        H_pi  = P^{-1} f(C)  =  Pis f(sqrt(Ps X Ps)) Pis    (momentum-momentum).
+    The 2D-vacuum boost weight beta(x)=(x-a)(b-x)/(b-a) [Bisognano-Wichmann /
+    Casini-Huerta] is carried by the momentum kernel diagonal H_pi(x,x) (the
+    T_00 ~ pi^2 weight); the field kernel diagonal is dominated by the local UV
+    contact term.  Returns (H_phi, H_pi, nu)."""
     X = 0.5 * (X + X.T); P = 0.5 * (P + P.T)
     Xs, Xis = _sym_sqrt(X)                            # X^{1/2}, X^{-1/2}
     Msym = Xs @ P @ Xs                               # symmetric, spectrum = spec(XP)
     w, V = np.linalg.eigh(0.5 * (Msym + Msym.T))
     nu = np.sqrt(np.clip(w, 1e-14, None))            # symplectic eigenvalues
     nu = np.clip(nu, 0.5 + 1e-9, None)
-    f = nu * np.arccosh_safe(nu) if False else nu * _arccoth(2.0 * nu)
-    # C arccoth(2C) in the symmetric basis: C = Xs^{-1}? Build via:
-    #   C = sqrt(XP) = Xis @ (Xs P Xs)^{1/2} @ Xs  -> in V-basis fn applies to nu
-    # f(C) acts as f(nu) in the V-eigenbasis of Msym, then conjugate by Xs/Xis.
+    f = nu * _arccoth(2.0 * nu)
     Fsym = (V * f) @ V.T                              # f(sqrt(Msym)) sym-basis
-    # H_phi = X^{-1} f(C) ; with C = Xis Msym^{1/2} Xs  one gets
-    #   X^{-1} f(C) = Xis ( f(Msym^{1/2}) ) Xis  (symmetric, clean form)
     H_phi = Xis @ Fsym @ Xis
     H_phi = 0.5 * (H_phi + H_phi.T)
-    return H_phi, np.sort(nu)
+    # momentum kernel: same f(C), conjugated by P^{-1/2}
+    Ps, Pis = _sym_sqrt(P)
+    Msym2 = Ps @ X @ Ps
+    w2, V2 = np.linalg.eigh(0.5 * (Msym2 + Msym2.T))
+    nu2 = np.clip(np.sqrt(np.clip(w2, 1e-14, None)), 0.5 + 1e-9, None)
+    f2 = nu2 * _arccoth(2.0 * nu2)
+    Fsym2 = (V2 * f2) @ V2.T
+    H_pi = Pis @ Fsym2 @ Pis
+    H_pi = 0.5 * (H_pi + H_pi.T)
+    return H_phi, H_pi, np.sort(nu)
 
 
 def _arccoth(x):
@@ -540,35 +551,40 @@ def self_test_continuum_interval():
     a, b = 200, 399
     sub = np.arange(a, b + 1)
     X_O = X[np.ix_(sub, sub)]; P_O = P[np.ix_(sub, sub)]
-    H_phi, nu = modular_kernel_covariance(X_O, P_O)
-    diag = np.abs(np.diag(H_phi))
+    H_phi, H_pi, nu = modular_kernel_covariance(X_O, P_O)
+    diag_pi = np.abs(np.diag(H_pi))     # boost-weight carrier (T_00 ~ pi^2)
+    diag_phi = np.abs(np.diag(H_phi))
     xs = sub.astype(float)
     beta = (xs - (a - 0.5)) * ((b + 0.5) - xs) / ((b + 0.5) - (a - 0.5))
-    # compare shapes (correlation) away from the very edges (lattice cutoff)
+    # The Bisognano-Wichmann boost weight beta(x) is carried by the MOMENTUM
+    # kernel diagonal H_pi(x,x).  Validate that H_pi(x,x) ~ beta(x).
     interior = slice(8, -8)
-    bb = beta[interior]; dd = diag[interior]
-    # H_phi diagonal ~ const / beta near the centre for the field-field kernel;
-    # the robust geometric statement is that the modular weight is a SMOOTH
-    # function peaked in the middle (boost) -- we report the correlation of
-    # diag with beta and with 1/beta, and which wins.
-    cc_beta = float(np.corrcoef(dd, bb)[0, 1])
-    cc_invbeta = float(np.corrcoef(dd, 1.0 / np.clip(bb, 1e-6, None))[0, 1])
-    # locality: off-diagonal decay should be FAST for the local boost kernel
+    bb = beta[interior]; dpi = diag_pi[interior]
+    cc_pi_beta = float(np.corrcoef(dpi, bb)[0, 1])
+    cc_phi_invbeta = float(np.corrcoef(diag_phi[interior],
+                                       1.0 / np.clip(bb, 1e-6, None))[0, 1])
+    # locality: off-diagonal decay should be FAST (power law) for the local
+    # boost kernel (validates the geometricity probe used on the causal set).
     coords_sub = np.column_stack([np.zeros_like(xs), xs])
     lp = locality_profile(H_phi, coords_sub, n_dist_bins=20)
     sl_off, _, r2_off = loglog_slope(lp["dist_centers"], lp["offdiag_mean"])
+    lp_pi = locality_profile(H_pi, coords_sub, n_dist_bins=20)
+    sl_off_pi, _, r2_off_pi = loglog_slope(lp_pi["dist_centers"], lp_pi["offdiag_mean"])
     return {
         "Ntot": Ntot, "mass": m, "interval": [a, b],
-        "corr_diag_vs_beta": cc_beta,
-        "corr_diag_vs_invbeta": cc_invbeta,
-        "offdiag_loglog_slope": sl_off, "offdiag_R2": r2_off,
-        "note": ("Validation: field-field modular kernel H_phi of an interval. "
-                 "Diagonal modular weight should be a smooth boost-like profile "
-                 "(peaked in the interval centre); off-diagonal decays as a "
-                 "power law (LOCAL). corr_diag_vs_invbeta high = H_phi diagonal "
-                 "tracks 1/beta (expected: T00 weight beta enters via momentum "
-                 "kernel; field kernel carries the conjugate weight)."),
-        "beta_profile": beta[::8].tolist(), "diag_profile": diag[::8].tolist(),
+        "corr_Hpi_diag_vs_beta": cc_pi_beta,
+        "corr_Hphi_diag_vs_invbeta": cc_phi_invbeta,
+        "offdiag_loglog_slope_Hphi": sl_off, "offdiag_R2_Hphi": r2_off,
+        "offdiag_loglog_slope_Hpi": sl_off_pi, "offdiag_R2_Hpi": r2_off_pi,
+        "note": ("Validation against Bisognano-Wichmann/Casini-Huerta: the boost "
+                 "weight beta(x)=(x-a)(b-x)/(b-a) of an interval [a,b] is carried "
+                 "by the MOMENTUM kernel diagonal H_pi(x,x) (T_00 ~ pi^2). "
+                 "corr(H_pi diag, beta) ~ 1 validates the boost weight; the "
+                 "off-diagonal decays as a power law (slope ~ -2) = LOCAL kernel, "
+                 "validating the geometricity probe used on the causal set."),
+        "beta_profile": beta[::8].tolist(),
+        "diag_pi_profile": diag_pi[::8].tolist(),
+        "diag_phi_profile": diag_phi[::8].tolist(),
         "xs_profile": xs[::8].tolist(),
     }
 
@@ -1098,6 +1114,37 @@ def build_verdict(res2d, res4d=None):
             np.isfinite(v["d4_slab_nonlocal_tail"]) and
             np.isfinite(v["d4_diamond_nonlocal_tail"]) and
             v["d4_slab_nonlocal_tail"] < v["d4_diamond_nonlocal_tail"])
+        v["d4_slab_vs_diamond_fnl_ratio"] = (
+            float(v["d4_slab_nonlocal_tail"] / v["d4_diamond_nonlocal_tail"])
+            if np.isfinite(v["d4_slab_nonlocal_tail"]) and
+            np.isfinite(v["d4_diamond_nonlocal_tail"]) and
+            v["d4_diamond_nonlocal_tail"] > 0 else np.nan)
+        sl4 = res4d.get("nl_vs_corner_slope", np.nan)
+        v["d4_nl_vs_corner_slope"] = sl4
+        # 4D synthesis: does the 2D corner-concentration REPLICATE in 4D?
+        # In 4D the integrated non-local fraction may not discriminate (link
+        # matrix is sparse, corner statistics thin) -> honest assessment.
+        d4_corner_replicates = bool(v["d4_corner_more_nonlocal"] and
+                                    np.isfinite(sl4) and sl4 < 0)
+        d4_integrated_discriminates = bool(
+            np.isfinite(v["d4_slab_vs_diamond_fnl_ratio"]) and
+            v["d4_slab_vs_diamond_fnl_ratio"] < 0.9)
+        v["d4_corner_concentration_replicates"] = d4_corner_replicates
+        v["d4_integrated_fnl_discriminates_slab_vs_diamond"] = d4_integrated_discriminates
+        if d4_corner_replicates and d4_integrated_discriminates:
+            v["d4_assessment"] = "4D REPLICATES the 2D corner-concentration"
+        elif not d4_corner_replicates and not d4_integrated_discriminates:
+            v["d4_assessment"] = ("4D does NOT replicate: integrated non-local "
+                "fraction does not discriminate slab vs diamond, and corner "
+                "concentration has opposite sign (link-matrix sparsity / thin "
+                "corner statistics; H4g-1 corner sub-claim UNTESTABLE/null in 4D "
+                "at N<=2500)")
+        else:
+            v["d4_assessment"] = ("4D MIXED: partial signature (slab boost-weight "
+                "linear) but corner concentration does not cleanly replicate")
+        # final, scope-qualified overall (2D headline + 4D caveat)
+        v["overall_2d"] = v["overall"]
+        v["overall"] = (v["overall"] + "  ||  4D: " + v["d4_assessment"])
     return v
 
 
@@ -1142,17 +1189,22 @@ def make_plots(res2d, res4d, st, verdict):
 
     # Plot 3: self-test (continuum interval) boost weight + off-diagonal decay
     fig, (axa, axb) = plt.subplots(1, 2, figsize=(13, 5.5))
-    xs = np.array(st["xs_profile"]); be = np.array(st["beta_profile"]); dg = np.array(st["diag_profile"])
-    axa.plot(xs, be / be.max(), 'k--', label="analytic boost weight $\\beta(x)$ (norm)")
-    axa.plot(xs, dg / np.nanmax(dg), 'o', color='tab:blue', ms=4,
-             label="$|H_\\phi(x,x)|$ (norm)")
+    xs = np.array(st["xs_profile"]); be = np.array(st["beta_profile"])
+    dpi = np.array(st["diag_pi_profile"])
+    axa.plot(xs, be / be.max(), 'k--', lw=2, label="analytic boost weight $\\beta(x)$ (norm)")
+    axa.plot(xs, dpi / np.nanmax(dpi), 'o', color='tab:blue', ms=5,
+             label="$|H_\\pi(x,x)|$ momentum kernel (norm)")
     axa.set_xlabel("position in interval"); axa.set_ylabel("normalised weight")
     axa.set_title(f"SELF-TEST: interval modular weight vs Bisognano-Wichmann\n"
-                  f"corr(diag,1/beta)={st['corr_diag_vs_invbeta']:.2f}")
+                  f"corr($H_\\pi$ diag, $\\beta$)={st['corr_Hpi_diag_vs_beta']:.3f}")
     axa.legend(fontsize=8)
-    axb.text(0.1, 0.5, f"off-diagonal log-log slope = {st['offdiag_loglog_slope']}\n"
-             f"R2 = {st['offdiag_R2']}\n\n(fast power-law decay = LOCAL kernel,\n"
-             "validates the geometricity probe)", fontsize=11)
+    axb.text(0.05, 0.5,
+             f"off-diagonal $|H_\\phi|$ slope = {st['offdiag_loglog_slope_Hphi']:.2f}"
+             f"  (R2={st['offdiag_R2_Hphi']:.2f})\n"
+             f"off-diagonal $|H_\\pi|$ slope = {st['offdiag_loglog_slope_Hpi']:.2f}"
+             f"  (R2={st['offdiag_R2_Hpi']:.2f})\n\n"
+             "fast power-law decay (slope ~ -2) = LOCAL kernel,\n"
+             "validates the geometricity probe used on\nthe causal set.", fontsize=11)
     axb.axis('off')
     fig.tight_layout(); fig.savefig(os.path.join(PLOTDIR, "self_test_interval.png"), dpi=140)
     plt.close(fig)
@@ -1211,9 +1263,10 @@ def run(do_4d=True):
 
     print("==== SELF-TEST: continuum interval modular weight ====")
     st = self_test_continuum_interval()
-    print(f"  corr(diag, beta)={st['corr_diag_vs_beta']:.3f}  "
-          f"corr(diag, 1/beta)={st['corr_diag_vs_invbeta']:.3f}  "
-          f"off-diag slope={st['offdiag_loglog_slope']} (R2={st['offdiag_R2']})")
+    print(f"  corr(H_pi diag, beta)={st['corr_Hpi_diag_vs_beta']:.3f}  "
+          f"off-diag |H_phi| slope={st['offdiag_loglog_slope_Hphi']:.2f} "
+          f"(R2={st['offdiag_R2_Hphi']:.2f})  "
+          f"off-diag |H_pi| slope={st['offdiag_loglog_slope_Hpi']:.2f}")
     results["self_test"] = _to_native(st)
 
     diamond, slab, res2d, Ns = run_2d(results)

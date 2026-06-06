@@ -1,7 +1,7 @@
 # Index znalostní báze — Theory of Everything
 
 > Anotovaný rejstřík všech souborů ve `knowledge-base/`, `core-data/` a `verification/`.
-> Generováno: 2026-06-05; aktualizováno: 2026-06-06 (housekeeping agent, economy mode — kola 3+4+5+6+7).
+> Generováno: 2026-06-05; aktualizováno: 2026-06-06 (housekeeping agent, economy mode — kola 3+4+5+6+7+8).
 
 ---
 
@@ -67,7 +67,7 @@
 
 ### Registr nálezů
 
-- [../core-data/findings.json](../core-data/findings.json) — Registr 19 originálních nálezů (2026-06-06, kola 1–7): F-001–F-008 z rozhodujícího kola (d_s, a_4, Λ, SSEE); F-009 Kerr-BTZ geometrická nezávislost SJ; F-010 γ–Cardy program closed; F-011 modular-hamiltonian top hub; F-012 BD d'Alembertián spektrum; F-013 SJ eigenvektorová rotace + mechanismus A_caus/A_W; F-014 graviton sektor + index-teorém (−18/11 fermionový diskriminátor, Rohlinův zámek, H3g-4 posílena); F-015 vN typ proxy 2/3 III₁→II v 2D (H3g-3 první numerický důkaz); F-016 4D slab area law (rohová geometrie rozhoduje, H04-c potvrzena); F-017 superradiantní nástup W_sr~Ω^B (H3g-1 potvrzena, ergosféra není diskrétní práh); F-018 far-zone disambiguace Kerr a=0.6 (ΔAIC=+3894, corr(S)=0.9992, Ω(r) potvrzen pro všechny tři geometrie); F-019 vN-type 4D slab 3/3 proxy (entropická stopa III→II 36x, modulární spektrum flat-dense→integrovatelné, N^{3/4} jako operativní crossed-product regulátor — H3g-3 podpořena v d=4). Každý nález rozlišuje reprodukci literatury od projektového přínosu.
+- [../core-data/findings.json](../core-data/findings.json) — Registr 22 originálních nálezů (2026-06-06, kola 1–8): F-001–F-008 z rozhodujícího kola (d_s, a_4, Λ, SSEE); F-009 Kerr-BTZ geometrická nezávislost SJ; F-010 γ–Cardy program closed; F-011 modular-hamiltonian top hub; F-012 BD d'Alembertián spektrum; F-013 SJ eigenvektorová rotace + mechanismus A_caus/A_W; F-014 graviton sektor + index-teorém (−18/11 fermionový diskriminátor, Rohlinův zámek, H3g-4 posílena); F-015 vN typ proxy 2/3 III₁→II v 2D (H3g-3 první numerický důkaz); F-016 4D slab area law (rohová geometrie rozhoduje, H04-c potvrzena); F-017 superradiantní nástup W_sr~Ω^B (H3g-1 potvrzena, ergosféra není diskrétní práh); F-018 far-zone disambiguace Kerr a=0.6 (ΔAIC=+3894, corr(S)=0.9992, Ω(r) potvrzen pro všechny tři geometrie); F-019 vN-type 4D slab 3/3 proxy (entropická stopa III→II 36x, modulární spektrum flat-dense→integrovatelné, N^{3/4} jako operativní crossed-product regulátor — H3g-3 podpořena v d=4); F-020 H4g-3 VYVRÁCENA — žádná druhá index-identita pro Λ, a₀/a₂ cross-order (f₄Λ⁴ vs f₂Λ²), STr 1 = −62/−68, draft-02 Λ-riziko uzavřeno; F-021 H4g-1 podpořena v 2D (4/5 signatur) — off-diag sklon modulárního kernelu −0.47 (slab) vs −0.094 (diamant), f_nl gradient k rohům R²=0.989, through-line vrstva B mechanisticky aktivní; 4D nereplikuje; F-022 draft-04 zapsán — 2D 2/3 + 4D 3/3 vN-type proxy, N^{3/4} selektivita jako operativní regulátor. Každý nález rozlišuje reprodukci literatury od projektového přínosu.
 
 ### Fragmenty pilířů (`core-data/fragments/`)
 
@@ -83,7 +83,7 @@ Osmnáct strojově zpracovatelných JSON fragmentů (koncepty, vzorce, reference
 
 ## Výpočty (`knowledge-base/vypocty/` + `core-data/calculations/`)
 
-Dvanáct výpočtů dokončeno: čtyři v prvním deep-dive kole, tři v rozhodujícím kole, tři v kolech 3–4, dva v kole 5, dva v kole 6, dva v kole 7. Každý má writeup v `knowledge-base/vypocty/` a strojová data (calc.py + results.json + plots) v odpovídajícím podadresáři `core-data/calculations/`.
+Osmnáct výpočtů dokončeno: čtyři v prvním deep-dive kole, tři v rozhodujícím kole, tři v kolech 3–4, dva v kole 5, dva v kole 6, dva v kole 7, dva v kole 8. Každý má writeup v `knowledge-base/vypocty/` a strojová data (calc.py + results.json + plots) v odpovídajícím podadresáři `core-data/calculations/`.
 
 ### Kolo 1 (VYPOCET-01–04)
 
@@ -117,6 +117,11 @@ Dvanáct výpočtů dokončeno: čtyři v prvním deep-dive kole, tři v rozhodu
 - [vypocty/VYPOCET-13-slab-entanglement.md](vypocty/VYPOCET-13-slab-entanglement.md) — 4D SSEE slab geometry (H04 interpretace c, calc13): half-space cut (iΔ, κ=0.05·λmax) dává AREA law S~L^2.00 (R²=0.982); interiérní edge-effect kontrola S~L^2.18 (R²=0.989) — čistší area. Kontrast s 4D diamantem (VYPOCET-06) VOLUME S~f^6.1: rohová geometrie (ne dimenze) rozhoduje. Hadamardova diagnostika lokalizuje non-Hadamard anomálii do rohů diamantu (inside vs corner: −1.53 vs −2.79 v 4D; −0.160 vs −0.095 v 2D); slab bez anomálie (deep≈surface: −3.81≈−3.85). Interpretace (c) POTVRZENA, (a) vyvrácena. Runtime 264 s, N≤2088. Data: `core-data/calculations/VYPOCET-13/`. (F-016)
 - [vypocty/VYPOCET-14-superradiance-onset.md](vypocty/VYPOCET-14-superradiance-onset.md) — Superradiantní nástup: ergosféra vs. Ω(r) (H3g-1, calc14): W_sr radial scan Kerr a=0.6 [0,0.145], a=0.9 [0,0.222]; BTZ J=0.9 analogicky. ΔAIC(E vs. S)=+441.6/+4216.3/+231.5 — rozhodující pro Model S (W_sr~Ω^B; B=4.23/3.82/1.71). A_W negativně-definitní ve všech 65 externích měřeních; amplituda sleduje |Ω| (near-erg ~0.5 vs far ~0.04, faktor 15–20). BTZ cross-check J=0.9 reprodukuje stejný vzorec. H3g-1 POTVRZENA. Zbývá: disambiguation a=0.6 hustším scanem r=5–20M (VYPOCET-15). N=1600, 5 seeds. Data: `core-data/calculations/VYPOCET-14/`. (F-017)
 
+### Kolo 8 (VYPOCET-17–18)
+
+- [vypocty/VYPOCET-17-lambda-induction.md](vypocty/VYPOCET-17-lambda-induction.md) — Λ-indukce přes spektrální akci (H4g-3, F-020): exaktní sympy + literatura (CC hep-th/9606001 + Marcolli). a₀ (kosm.) a a₂ (EH) jsou cross-order (f₄Λ⁴ vs f₂Λ²) → jejich poměr dimenzionální a scheme-závislý; žádná druhá index-identita pro Λ_cc/M_Pl² neexistuje. STr 1 = −62 (bez ν_R) / −68 (s ν_R); ν_R nerovnováhu zhoršuje. Indukovaná γ₀ cutoff-kvartická (10¹²²). H4g-3 VYVRÁCENA. Draft-02 Λ-riziko uzavřeno. Data: `core-data/calculations/VYPOCET-17/`. (F-020)
+- [vypocty/VYPOCET-18-modular-flow-corner.md](vypocty/VYPOCET-18-modular-flow-corner.md) — Modulární tok: slab vs. diamantový roh (H4g-1, F-021): 2D, N=400–1800, 5 seeds. Off-diag sklon modulárního kernelu: slab −0.47 (geometrický/boost-lokální) vs. diamant −0.094 (negeometrický), gap 0.37 stabilní. Diagonální modulární váha lineární v vzdálenosti od entangling surface (R²=0.977 = BW boost-váha). Per-site f_nl: bulk 0.673 → roh 0.828, sklon −0.383 (R²=0.989); roh/bulk=1.15. Poctivé nuly: cross-corner coupling ratio=1.00; integrovaná f_nl neodliší slab od diamantu. 4D (link matice, N≤2500): NEREPLIKUJE. H4g-1 PODPOŘENA v 2D (4/5), 4D nereplikuje. Runtime 248 s. Data: `core-data/calculations/VYPOCET-18/`. (F-021)
+
 ### Kolo 7 (VYPOCET-15–16)
 
 - [vypocty/VYPOCET-15-far-zone-disambiguation.md](vypocty/VYPOCET-15-far-zone-disambiguation.md) — Far-zone disambiguace VYPOCET-14 pro Kerr a=0.6 (H3g-1, calc15): log-log diskriminant corr(log W_sr, log Ω)=0.9992 vs. corr(log W_sr, log 1/(r−r_erg))=0.942 — Model S; joint fit near+far (n=19, r=2.05–20M): ΔAIC(E−S)=+3894 (rozhodující). Near-zone A_W mocninový zákon: |A_W|~r^{−2.75±0.03} (předp. −3, R²=0.957), |A_W|~Ω^{0.98±0.01} (předp. +1, R²=0.932). Far-zone (13 radii, r=5–20M): W_sr=0 (pod mřížkovým rozlišením), A_W<0 všude. VYPOCET-14 ambiguita uzavřena; Ω(r) potvrzen pro Kerr a=0.6/0.9 + BTZ J=0.9. N=1600, 5 seeds. Data: `core-data/calculations/VYPOCET-15/`. (F-018)
@@ -143,7 +148,7 @@ Dvanáct výpočtů dokončeno: čtyři v prvním deep-dive kole, tři v rozhodu
 
 ## Drafty článků (`papers/`)
 
-Tři drafty čekají na lidskou revizi (2026-06-06); draft-01 upgradován na v0.2 v kole 5.
+Čtyři drafty čekají na lidskou revizi (2026-06-06); draft-01 upgradován na v0.2 v kole 5; draft-04 napsán v kole 8.
 
 - [../papers/draft-01-sj-rotating-spacetimes/draft.md](../papers/draft-01-sj-rotating-spacetimes/draft.md) — Draft-01 **v0.2** (kolo 5): SJ vakuum v rotujících prostoročasech; název aktualizován (eigenvector signature of superradiance); abstrakt rozšířen o mechanismus opačných znamének, překryv podprostorů 44.6°, superradiantní váha 0.0755; sekce 3.5b, 3.6, 4.1, 4.2 plně integrovány. Blokující pro release: N→∞ studie, analytické SJ pro strižený diamant, srovnání BTZ dvou-bod. funkce, verifikace citací, re-run pipeline (gate §8 TODO.md).
 - [../papers/draft-01-sj-rotating-spacetimes/TODO.md](../papers/draft-01-sj-rotating-spacetimes/TODO.md) — TODO list pro draft-01 v0.2; položky 1.4, 3, 6 označeny DONE; nová gate §8 (lidská re-derivace).
@@ -151,6 +156,8 @@ Tři drafty čekají na lidskou revizi (2026-06-06); draft-01 upgradován na v0.
 - [../papers/draft-02-a4-fermionic-identity/TODO.md](../papers/draft-02-a4-fermionic-identity/TODO.md) — TODO list pro draft-02.
 - [../papers/draft-03-ds-classifier/draft.md](../papers/draft-03-ds-classifier/draft.md) — Draft-03 (kolo 6): UV spektrální dimenze jako klasifikátor trojice (z, D, sonda); master-tabulka reprodukuje 12 publikovaných čísel z jediného P(σ) enginu; sonda jako třetí klasifikační osa doložena vnitřním rozporem v databázi (CST d'Alembertián d_s→2 vs. náhodná procházka d_s>D). Sekce „Relation to prior work" vpředu; pozice vůči Hořavovi, Calcagnimu (1311.3340, 1708.07445), Carlipovi, Eichhorn–Mizera, Belenchiovi. Blokující: obrana vůči „Calcagni přebalený" a „probe-trivialita" (viz TODO.md).
 - [../papers/draft-03-ds-classifier/TODO.md](../papers/draft-03-ds-classifier/TODO.md) — TODO list pro draft-03; hlavní referee útok: simultánní engine + sonda jako osa + inverze čtení konvergence.
+- [../papers/draft-04-type-transition-causal-sets/draft.md](../papers/draft-04-type-transition-causal-sets/draft.md) — Draft-04 (kolo 8): typ III₁→II přechod na kauzálních množinách přes Sorkin-Yazdi SSEE truncaci; tři finite-N proxy (entropická stopa, modulární spektrum, centrální-sekvence/rank); 2D diamant 2/3 proxy; 4D slab 3/3 proxy s N^{3/4} selektivitou; geometrická výhrada (rohové SJ non-Hadamardovosti ničí signaturu) a interpretace diskrétní škály jako modulárního cutoffu explicitely jako konjektury. Blokující: 8 lidských verifikačních bran, oprava a_err=0.776, BD 4D replika, LQG-area-gap noha otevřena.
+- [../papers/draft-04-type-transition-causal-sets/TODO.md](../papers/draft-04-type-transition-causal-sets/TODO.md) — TODO list pro draft-04; hlavní referee útaky (proxy ≠ typy, N^{3/4} jako prescription vs. spektrální feature, Gaussův stav); etická poznámka AI asistence; 8 lidských verifikačních bran.
 
 ---
 

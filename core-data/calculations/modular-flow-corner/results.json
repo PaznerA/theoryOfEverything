@@ -1,0 +1,423 @@
+{
+  "task": "VYPOCET-18 modular-flow geometricity at the diamond corner (H4g-1)",
+  "claim": "the diamond-corner non-Hadamard anomaly marks exactly where the SJ modular flow stops being a geometric boost",
+  "conventions": {
+    "G_R_2D": "(1/2) C (Sorkin-Yazdi 1611.10281)",
+    "G_R_4D": "a L, a=sqrt(rho)/(2 pi sqrt6) (Johnston 0909.0944)",
+    "iDelta": "i(G_R-G_R^T); W = positive part (SJ)",
+    "modular_kernel": "one-particle K(x,y) from SSEE generalized eigenproblem W_O v = mu iDelta_O v; eps=ln[mu/(mu-1)]; K = spectral resolution lifted to site basis",
+    "covariance_check": "H_phi = X^{-1} C arccoth(2C), C=sqrt(XP) (Peschel; Casini-Huerta 0905.2562)",
+    "analytic_anchor": "2D interval [a,b] vacuum modular Hamiltonian K = 2 pi int beta T_00, beta=(x-a)(b-x)/(b-a) (Bisognano-Wichmann / Casini-Huerta)",
+    "truncation": "kappa=sqrt(N)/(4pi) (2D), 0.05 lambda_max (4D)"
+  },
+  "self_test": {
+    "Ntot": 600,
+    "mass": 0.02,
+    "interval": [
+      200,
+      399
+    ],
+    "corr_Hpi_diag_vs_beta": 0.9921777346849803,
+    "corr_Hphi_diag_vs_invbeta": -0.9678327865956873,
+    "offdiag_loglog_slope_Hphi": -1.9759680466917622,
+    "offdiag_R2_Hphi": 0.8902240776241304,
+    "offdiag_loglog_slope_Hpi": -1.7564709086023003,
+    "offdiag_R2_Hpi": 0.9620174394821497,
+    "note": "Validation against Bisognano-Wichmann/Casini-Huerta: the boost weight beta(x)=(x-a)(b-x)/(b-a) of an interval [a,b] is carried by the MOMENTUM kernel diagonal H_pi(x,x) (T_00 ~ pi^2). corr(H_pi diag, beta) ~ 1 validates the boost weight; the off-diagonal decays as a power law (slope ~ -2) = LOCAL kernel, validating the geometricity probe used on the causal set.",
+    "beta_profile": [
+      0.49875,
+      8.13875,
+      15.13875,
+      21.49875,
+      27.21875,
+      32.29875,
+      36.73875,
+      40.53875,
+      43.69875,
+      46.21875,
+      48.09875,
+      49.33875,
+      49.93875,
+      49.89875,
+      49.21875,
+      47.89875,
+      45.93875,
+      43.33875,
+      40.09875,
+      36.21875,
+      31.69875,
+      26.53875,
+      20.73875,
+      14.29875,
+      7.21875
+    ],
+    "diag_pi_profile": [
+      1.5706976426786576,
+      10.969540023623372,
+      13.15845314089195,
+      14.438360563707912,
+      15.364284946482202,
+      16.04310941524795,
+      16.576701343937042,
+      17.043515172021205,
+      17.469812052776067,
+      17.846627928736826,
+      18.152254184490385,
+      18.365761476106275,
+      18.472476277401373,
+      18.46529331282231,
+      18.34468409235451,
+      18.118708571672958,
+      17.802945370530942,
+      17.418847725597125,
+      16.98747453111645,
+      16.514745339548828,
+      15.96833550192821,
+      15.263885693827646,
+      14.301334698461135,
+      12.95589433186438,
+      10.56564650341949
+    ],
+    "diag_phi_profile": [
+      3.1391903674854755,
+      13.10655906309915,
+      13.17297499365727,
+      13.18554288917098,
+      13.190622465172202,
+      13.192760370172165,
+      13.193849091247374,
+      13.194618460093544,
+      13.195249631201712,
+      13.195759718996698,
+      13.196140269745323,
+      13.196388577109552,
+      13.196507363931863,
+      13.196499478522291,
+      13.196364699104237,
+      13.196099952842719,
+      13.195702897802429,
+      13.195177204522102,
+      13.194531034048048,
+      13.193737875460394,
+      13.192575634368113,
+      13.190203317263371,
+      13.18454610391929,
+      13.170001484898354,
+      13.083256981834086
+    ],
+    "xs_profile": [
+      200.0,
+      208.0,
+      216.0,
+      224.0,
+      232.0,
+      240.0,
+      248.0,
+      256.0,
+      264.0,
+      272.0,
+      280.0,
+      288.0,
+      296.0,
+      304.0,
+      312.0,
+      320.0,
+      328.0,
+      336.0,
+      344.0,
+      352.0,
+      360.0,
+      368.0,
+      376.0,
+      384.0,
+      392.0
+    ]
+  },
+  "part_2d": {
+    "Ns": [
+      400,
+      700,
+      1000,
+      1300,
+      1600,
+      1800
+    ],
+    "n_seeds": 5,
+    "diamond_f_nl_all": [
+      0.4715072291442022,
+      0.5907580511092151,
+      0.6528057804629717,
+      0.6933322464905495,
+      0.7206030107754848,
+      0.7328741232169493
+    ],
+    "diamond_f_nl_bulk": [
+      0.3968184023112048,
+      0.5373164856315501,
+      0.5936716209880712,
+      0.656496536151838,
+      0.6855258022969164,
+      0.68638573961895
+    ],
+    "diamond_f_nl_corner": [
+      0.6112250129275771,
+      0.6866868598616032,
+      0.7496084913932253,
+      0.7617718449440641,
+      0.7760489701179952,
+      0.8009692580410844
+    ],
+    "diamond_f_nl_all_std": [
+      0.0118216497480885,
+      0.022805683860087855,
+      0.0032252244365365223,
+      0.008267697217185748,
+      0.00544019054483769,
+      0.010104546939130295
+    ],
+    "diamond_f_nl_bulk_std": [
+      0.0311643336439469,
+      0.029484626097956452,
+      0.010889176051169172,
+      0.015243238455672261,
+      0.01906993953193104,
+      0.019567295671004962
+    ],
+    "diamond_f_nl_corner_std": [
+      0.035047041520882,
+      0.027200222356966244,
+      0.012364405030474226,
+      0.009428408739565694,
+      0.015398299109084352,
+      0.0046227795811360495
+    ],
+    "diamond_off_slope_all": [
+      -0.12256338529110766,
+      -0.11520067959228877,
+      -0.09028004148452284,
+      -0.10013154936280891,
+      -0.0898593322747083,
+      -0.09269043910121079
+    ],
+    "diamond_off_R2_all": [
+      0.6047529653547031,
+      0.6624902106084894,
+      0.6096440905114104,
+      0.6729341969606114,
+      0.6250058879882381,
+      0.6492465834856928
+    ],
+    "diamond_off_slope_bulk": [
+      -0.05205133812646541,
+      -0.040899232548562627,
+      -0.02424416444279938,
+      -0.03313602254104272,
+      -0.02425520088204692,
+      -0.029856900965337923
+    ],
+    "diamond_off_slope_corner": [
+      -0.20240273537590187,
+      -0.18897861167904711,
+      -0.15619346026747333,
+      -0.18301848600034512,
+      -0.15969442968861788,
+      -0.16697463370923504
+    ],
+    "diamond_cross_corner_ratio": [
+      0.8974900142960385,
+      0.9381766155753049,
+      1.0233867978786642,
+      0.9952385980005747,
+      0.989206658948552,
+      1.01579940405146
+    ],
+    "slab_f_nl_all": [
+      0.49766211965745394,
+      0.5911062720626113,
+      0.6580333883779536,
+      0.7016908192435194,
+      0.7180764010076455,
+      0.7335722075908079
+    ],
+    "slab_f_nl_all_std": [
+      0.03683754622284378,
+      0.024894954222618518,
+      0.017261329052951184,
+      0.01723100282994026,
+      0.006504590905932885,
+      0.01691093622588358
+    ],
+    "slab_off_slope": [
+      -0.5193271561637716,
+      -0.5081546494589315,
+      -0.4857613825508172,
+      -0.48096187673725366,
+      -0.455851190029664,
+      -0.4655382154898592
+    ],
+    "slab_off_R2": [
+      0.77597363965874,
+      0.7686327505481945,
+      0.7755922324674371,
+      0.7549820775276794,
+      0.7638562691300418,
+      0.7636876572336837
+    ],
+    "slab_diag_slope_lin": [
+      19.041994399066375,
+      19.376563921181695,
+      19.39130017681634,
+      19.31502962060235,
+      18.85875437759775,
+      18.61732806500327
+    ],
+    "slab_diag_R2_lin": [
+      0.9747950061521179,
+      0.9632233399641373,
+      0.9772429902591091,
+      0.9766398462935598,
+      0.9760010919407728,
+      0.9786067197979806
+    ],
+    "nl_vs_corner_repN": 1800,
+    "nl_vs_corner_dist": [
+      0.1619504430813245,
+      0.2983327800170258,
+      0.3877810820544646,
+      0.46185294145654926,
+      0.5214253349874827,
+      0.5736492182128934
+    ],
+    "nl_vs_corner_mean": [
+      0.8277684438890149,
+      0.7657178640488882,
+      0.7442349111764396,
+      0.704735400073256,
+      0.6819289339938818,
+      0.6731664690991648
+    ],
+    "nl_vs_corner_sem": [
+      0.0018563673611622458,
+      0.002878805680647458,
+      0.005384980475480338,
+      0.007544092694524523,
+      0.007642345512399462,
+      0.011639322691573114
+    ],
+    "nl_vs_corner_slope": -0.3828542892628708,
+    "nl_vs_corner_R2": 0.9894815573650138
+  },
+  "part_4d": {
+    "Ns": [
+      800,
+      1200,
+      1800,
+      2500
+    ],
+    "n_seeds": 3,
+    "diamond_f_nl_all": [
+      0.03049846964993419,
+      0.11818214965130219,
+      0.15343356627644764,
+      0.21567301890980817
+    ],
+    "diamond_f_nl_bulk": [
+      0.12102245517800973,
+      0.26283838052494407,
+      0.28299376885274236,
+      0.3369998400411747
+    ],
+    "diamond_f_nl_corner": [
+      0.013333185553334001,
+      0.04908654895169389,
+      0.08187961850123568,
+      0.1378306303750391
+    ],
+    "slab_f_nl_all": [
+      0.18027783508324516,
+      0.1855595455565463,
+      0.1862039570085268,
+      0.18157118090092414
+    ],
+    "slab_diag_slope_lin": [
+      3.3360585682734567,
+      3.329504274858985,
+      3.265155514271134,
+      3.5224903704813557
+    ],
+    "slab_diag_R2_lin": [
+      0.7576637787207962,
+      0.7845344513619645,
+      0.7546417112941194,
+      0.8124387518524311
+    ],
+    "nl_vs_corner_repN": 2500,
+    "nl_vs_corner_dist": [
+      0.36373895573584963,
+      0.518879648145628,
+      0.5909959891978867,
+      0.6503830575808343,
+      0.7063357933937233,
+      0.7736193698034937
+    ],
+    "nl_vs_corner_mean": [
+      0.10619889208595772,
+      0.17438813882646217,
+      0.20768651466804758,
+      0.25452198209503557,
+      0.32220366962092944,
+      0.43118834120352867
+    ],
+    "nl_vs_corner_slope": 0.750041891728874,
+    "nl_vs_corner_R2": 0.9041135903476014
+  },
+  "VERDICT": {
+    "diamond_nonlocal_frac_tail": 0.7156031268276611,
+    "diamond_bulk_nonlocal_frac_tail": 0.6761360260225682,
+    "diamond_corner_nonlocal_frac_tail": 0.7795966910343813,
+    "slab_nonlocal_frac_tail": 0.7177798092806577,
+    "slab_offdiag_slope_tail": -0.4674504274189257,
+    "diamond_offdiag_slope_tail": -0.09422710691290932,
+    "diamond_bulk_offdiag_slope_tail": -0.029082708129475856,
+    "diamond_corner_offdiag_slope_tail": -0.16989584979939934,
+    "slab_more_local_than_diamond": true,
+    "slab_vs_diamond_slope_gap": 0.37322332050601636,
+    "slab_vs_diamond_fnl_ratio": 1.0030417453074107,
+    "corner_offdiag_flatter_than_bulk": false,
+    "corner_more_nonlocal_than_bulk": true,
+    "corner_vs_bulk_ratio": 1.153017530541051,
+    "nonlocality_rises_toward_corner": true,
+    "nl_vs_corner_slope": -0.3828542892628708,
+    "cross_corner_coupling_ratio_tail": 1.0000815536668621,
+    "cross_corner_coupling_enhanced": false,
+    "slab_diag_boost_linear_R2_tail": 0.9770825526774377,
+    "slab_diag_boost_linear": true,
+    "null_discreteness_dominates": false,
+    "null_no_corner_structure": false,
+    "n_signatures_supporting_H4g1": 4,
+    "corner_structure_score": 2,
+    "signatures": {
+      "slab_more_local_offdiag": true,
+      "slab_boost_weight_linear": true,
+      "corner_offdiag_flatter": false,
+      "corner_more_nonlocal": true,
+      "nonlocality_rises_toward_corner": true,
+      "cross_corner_coupling_enhanced": false
+    },
+    "overall": "SUPPORTED: 4/5 geometricity signatures present (slab boost-local, corner non-geometricity concentration)  ||  4D: 4D does NOT replicate: integrated non-local fraction does not discriminate slab vs diamond, and corner concentration has opposite sign (link-matrix sparsity / thin corner statistics; H4g-1 corner sub-claim UNTESTABLE/null in 4D at N<=2500)",
+    "H4g1": "supported",
+    "d4_diamond_nonlocal_tail": 0.18455329259312792,
+    "d4_slab_nonlocal_tail": 0.18388756895472547,
+    "d4_corner_nonlocal_tail": 0.10985512443813739,
+    "d4_bulk_nonlocal_tail": 0.30999680444695854,
+    "d4_corner_more_nonlocal": false,
+    "d4_slab_more_local": true,
+    "d4_slab_vs_diamond_fnl_ratio": 0.9963927837371608,
+    "d4_nl_vs_corner_slope": 0.750041891728874,
+    "d4_corner_concentration_replicates": false,
+    "d4_integrated_fnl_discriminates_slab_vs_diamond": false,
+    "d4_assessment": "4D does NOT replicate: integrated non-local fraction does not discriminate slab vs diamond, and corner concentration has opposite sign (link-matrix sparsity / thin corner statistics; H4g-1 corner sub-claim UNTESTABLE/null in 4D at N<=2500)",
+    "overall_2d": "SUPPORTED: 4/5 geometricity signatures present (slab boost-local, corner non-geometricity concentration)"
+  },
+  "runtime_s": 247.58104610443115
+}
