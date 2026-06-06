@@ -1,0 +1,2 @@
+/Users/pazny/projects/theoryOfEverything/core-data/calculations/modular-flow-corner/calc.py:37: SyntaxWarning: invalid escape sequence '\i'
+  Hamiltonian is K = 2 pi \int beta(x) T_00(x) dx with the boost weight

@@ -56,6 +56,11 @@ Conventions verified against the literature
 import json
 import os
 import time
+# Cap BLAS threads so the run completes predictably even on a loaded host
+# (this calculation competes for CPU; oversubscription stalls eigh).
+for _v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS",
+           "VECLIB_MAXIMUM_THREADS", "NUMEXPR_NUM_THREADS"):
+    os.environ.setdefault(_v, "4")
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
@@ -390,8 +395,9 @@ def part1_slab_4d(results):
     # x_1=0 is a FLAT plane (NO corners) -- the key geometric contrast with the
     # diamond.  T<<L is documented as the (unreachable-at-finite-density) ideal.
     T = 0.50
-    Ls = [0.65, 0.75, 0.85, 0.95]   # N from ~1200 to ~3800 (eigh-feasible)
-    rho_target = 1100.0     # density fixed across L (so N ~ L^3, vol scaling)
+    # N from ~570 to ~2100 (eigh fast even on a saturated shared host).
+    Ls = [0.55, 0.65, 0.75, 0.85]
+    rho_target = 850.0      # density fixed across L (so N ~ L^3, vol scaling)
     n_seeds = 3
     kappa_frac = 0.05       # double-truncation at 5% lambda_max (as VYPOCET-06)
 
@@ -503,7 +509,7 @@ def part1c_diamond_4d_reference(results):
     VYPOCET-06 volume law) with the SAME truncation, for a head-to-head with
     the slab.  Vary sub-diamond fraction f at fixed N."""
     print("\n==== PART 1c: 4D nested DIAMOND reference (volume law check) ====")
-    N = 2500
+    N = 1600
     kappa_frac = 0.05
     rng = np.random.default_rng(909090)
     T = 1.0
@@ -545,8 +551,8 @@ def part2_2d_control(results):
     #     so 'area law' in 1+1 is a LOG/CONST law; volume ~ L).  We instead test
     #     S vs L: 2D area law => S ~ const or log L; volume => S ~ L.
     T = 0.30
-    Ls = [0.8, 1.1, 1.5, 1.9, 2.3]
-    rho_target = 2500.0
+    Ls = [0.8, 1.1, 1.4, 1.7, 2.0]
+    rho_target = 1800.0
     S_slab, Ns_slab = [], []
     for L in Ls:
         vol = 2.0 * T * L
@@ -616,7 +622,9 @@ def part3_hadamard(results):
     print("\n==== PART 3: Hadamard diagnostic (W short-distance) ====")
 
     # ---------- 4D DIAMOND ----------
-    N = 2800
+    # Higher N here (Hadamard probe needs small NN spacing ell to resolve the
+    # short-distance W(x,y); this part is one eigh, not an SSEE scan).
+    N = 4000
     rng = np.random.default_rng(13131)
     T = 1.0
     coords = sprinkle_diamond_4d(N, rng, T)
@@ -628,23 +636,27 @@ def part3_hadamard(results):
     tt = np.abs(coords[:, 0]); rr = np.linalg.norm(coords[:, 1:], axis=1)
     radial = tt + rr               # 0 center .. T corner (null boundary)
     # deep inside: small radial; corner: near the null boundary tip (t~+-T)
-    inside_idx = np.where(radial < 0.35 * T)[0]
+    inside_idx = np.where(radial < 0.40 * T)[0]
     # corner = points near the tips (|t| large, r small) where SJ is non-Hadamard
-    corner_idx = np.where((np.abs(coords[:, 0]) > 0.80 * T) & (rr < 0.25 * T))[0]
-    # distance bins (4D): typical NN spacing ell ~ (1/rho)^{1/4}
+    corner_idx = np.where((np.abs(coords[:, 0]) > 0.75 * T) & (rr < 0.30 * T))[0]
+    # distance bins (4D): typical NN spacing ell ~ (1/rho)^{1/4}; fit window
+    # [3 ell, dmax] with dmax > 3 ell guaranteed.
     ell = rho**(-0.25)
-    dbins = np.linspace(2 * ell, 0.5 * T, 22)
+    dmax = max(0.45 * T, 8 * ell)
+    dbins = np.linspace(1.5 * ell, dmax, 24)
     c_in, w_in, n_in = hadamard_profile_4d(coords, ReW, inside_idx, dbins, rng=rng)
     c_co, w_co, n_co = hadamard_profile_4d(coords, ReW, corner_idx, dbins, rng=rng)
-    fit_in = fit_loglog_slope(c_in, w_in, n_in, 3 * ell, 0.30 * T)
-    fit_co = fit_loglog_slope(c_co, w_co, n_co, 3 * ell, 0.30 * T)
+    fit_in = fit_loglog_slope(c_in, w_in, n_in, 2.5 * ell, dmax, mincount=10)
+    fit_co = fit_loglog_slope(c_co, w_co, n_co, 2.5 * ell, dmax, mincount=10)
     print(f"  4D diamond: inside slope={fit_in[0]} (Mink=-2)  "
-          f"corner slope={fit_co[0]}  (ell={ell:.4f})")
+          f"corner slope={fit_co[0]}  (ell={ell:.4f}, n_in={len(inside_idx)}, n_co={len(corner_idx)})")
 
     # ---------- 4D SLAB ----------
-    Ts = 0.50; Ls = 1.00
+    # Higher density (smaller ell) so the short-distance W is resolved; a wider
+    # slab L>T keeps a flat entangling surface x_1=0 with no corner.
+    Ts = 0.50; Ls = 0.85
     vol_s = Ts * (2 * Ls)**3
-    Ns = int(round(1100.0 * vol_s))
+    Ns = int(round(2700.0 * vol_s))
     rng2 = np.random.default_rng(14141)
     coords_s = sprinkle_slab_4d(Ns, rng2, Ts, Ls)
     rho_s = Ns / vol_s
@@ -654,24 +666,25 @@ def part3_hadamard(results):
     ReW_s = np.real(W_s)
     # inside the slab: deep (away from all faces); 'surface' = near entangling
     # plane x_1=0 (the flat half-space cut, NO corner)
-    deep = ((np.abs(coords_s[:, 1]) < 0.5 * Ls) & (np.abs(coords_s[:, 2]) < 0.5 * Ls)
-            & (np.abs(coords_s[:, 3]) < 0.5 * Ls)
-            & (coords_s[:, 0] > 0.25 * Ts) & (coords_s[:, 0] < 0.75 * Ts))
+    deep = ((np.abs(coords_s[:, 1]) < 0.6 * Ls) & (np.abs(coords_s[:, 2]) < 0.6 * Ls)
+            & (np.abs(coords_s[:, 3]) < 0.6 * Ls)
+            & (coords_s[:, 0] > 0.2 * Ts) & (coords_s[:, 0] < 0.8 * Ts))
     deep_idx = np.where(deep)[0]
-    surf = ((np.abs(coords_s[:, 1]) < 0.15 * Ls)   # near x_1=0 plane
-            & (np.abs(coords_s[:, 2]) < 0.5 * Ls) & (np.abs(coords_s[:, 3]) < 0.5 * Ls))
+    surf = ((np.abs(coords_s[:, 1]) < 0.18 * Ls)   # near x_1=0 plane
+            & (np.abs(coords_s[:, 2]) < 0.6 * Ls) & (np.abs(coords_s[:, 3]) < 0.6 * Ls))
     surf_idx = np.where(surf)[0]
     ell_s = rho_s**(-0.25)
-    dbins_s = np.linspace(2 * ell_s, 0.6 * Ls, 22)
+    dmax_s = max(0.5 * Ls, 8 * ell_s)
+    dbins_s = np.linspace(1.5 * ell_s, dmax_s, 24)
     c_d, w_d, n_d = hadamard_profile_4d(coords_s, ReW_s, deep_idx, dbins_s, rng=rng2)
     c_su, w_su, n_su = hadamard_profile_4d(coords_s, ReW_s, surf_idx, dbins_s, rng=rng2)
-    fit_d = fit_loglog_slope(c_d, w_d, n_d, 3 * ell_s, 0.5 * Ls)
-    fit_su = fit_loglog_slope(c_su, w_su, n_su, 3 * ell_s, 0.5 * Ls)
+    fit_d = fit_loglog_slope(c_d, w_d, n_d, 2.5 * ell_s, dmax_s, mincount=10)
+    fit_su = fit_loglog_slope(c_su, w_su, n_su, 2.5 * ell_s, dmax_s, mincount=10)
     print(f"  4D slab: deep slope={fit_d[0]} (Mink=-2)  "
-          f"flat-surface slope={fit_su[0]}  (ell={ell_s:.4f})")
+          f"flat-surface slope={fit_su[0]}  (ell={ell_s:.4f}, n_deep={len(deep_idx)}, n_surf={len(surf_idx)})")
 
     # ---------- 2D DIAMOND (corner is the analytically known anomaly site) ----
-    N2 = 2500
+    N2 = 3000
     rng3 = np.random.default_rng(15151)
     cc2 = sprinkle_diamond_2d(N2, rng3, 1.0)
     C2 = causal_matrix_2d(cc2)
@@ -799,32 +812,40 @@ def make_plots(results, had):
     plt.close(fig)
 
     # Plot 4: Hadamard diagnostic (4D diamond/slab, 2D diamond)
+    def _sl(fit):
+        return "n/a" if fit is None or fit[0] is None else f"{fit[0]:.2f}"
+    def _ref_line(ax, c, w, power, log=False):
+        fin = np.isfinite(w) & (np.asarray(w) > 0) if not log else np.isfinite(w)
+        if fin.sum() < 2:
+            return
+        cc = np.asarray(c)[fin]; ww = np.asarray(w)[fin]
+        if log:
+            ax.semilogx(cc, -1/(4*np.pi)*np.log(cc) + (ww[0] + 1/(4*np.pi)*np.log(cc[0])),
+                        'k--', label="Minkowski -1/4pi ln")
+        else:
+            ax.loglog(np.array([cc[0], cc[-1]]),
+                      ww[0] * (np.array([cc[0], cc[-1]]) / cc[0])**power,
+                      'k--', label=f"Minkowski slope {power:g}")
     fig, axs = plt.subplots(1, 3, figsize=(16, 5))
     # 4D diamond
     c_in, w_in, fit_in, c_co, w_co, fit_co = had["d4_dia"]
-    axs[0].loglog(c_in, w_in, 'o', color='tab:blue', label=f"inside (slope {fit_in[0]:.2f})")
-    axs[0].loglog(c_co, w_co, 's', color='tab:red', label=f"corner/tip (slope {fit_co[0]:.2f})")
-    xr = np.array([c_in[np.isfinite(w_in)][0], c_in[np.isfinite(w_in)][-1]])
-    w0 = w_in[np.isfinite(w_in)][0]
-    axs[0].loglog(xr, w0 * (xr / xr[0])**(-2), 'k--', label="Minkowski slope -2")
+    axs[0].loglog(c_in, w_in, 'o', color='tab:blue', label=f"inside (slope {_sl(fit_in)})")
+    axs[0].loglog(c_co, w_co, 's', color='tab:red', label=f"corner/tip (slope {_sl(fit_co)})")
+    _ref_line(axs[0], c_in, w_in, -2)
     axs[0].set_title("4D DIAMOND: |ReW| vs spacelike dist")
     axs[0].set_xlabel("spatial distance"); axs[0].set_ylabel("|ReW|"); axs[0].legend(fontsize=7)
     # 4D slab
     c_d, w_d, fit_d, c_su, w_su, fit_su = had["d4_slab"]
-    axs[1].loglog(c_d, w_d, 'o', color='tab:blue', label=f"deep (slope {fit_d[0]:.2f})")
-    axs[1].loglog(c_su, w_su, 's', color='tab:green', label=f"flat surface (slope {fit_su[0]:.2f})")
-    fin = np.isfinite(w_d)
-    xr2 = np.array([c_d[fin][0], c_d[fin][-1]]); w0d = w_d[fin][0]
-    axs[1].loglog(xr2, w0d * (xr2 / xr2[0])**(-2), 'k--', label="Minkowski slope -2")
+    axs[1].loglog(c_d, w_d, 'o', color='tab:blue', label=f"deep (slope {_sl(fit_d)})")
+    axs[1].loglog(c_su, w_su, 's', color='tab:green', label=f"flat surface (slope {_sl(fit_su)})")
+    _ref_line(axs[1], c_d, w_d, -2)
     axs[1].set_title("4D SLAB: |ReW| vs spacelike dist (flat surface, no corner)")
     axs[1].set_xlabel("spatial distance"); axs[1].set_ylabel("|ReW|"); axs[1].legend(fontsize=7)
     # 2D diamond (semilog)
     c2i, w2i, fit2i, c2c, w2c, fit2c = had["d2_dia"]
-    axs[2].semilogx(c2i, w2i, 'o', color='tab:blue', label=f"inside (logslope {fit2i[0]:.3f})")
-    axs[2].semilogx(c2c, w2c, 's', color='tab:red', label=f"corner (logslope {fit2c[0]:.3f})")
-    fin2 = np.isfinite(w2i)
-    axs[2].semilogx(c2i[fin2], -1/(4*np.pi)*np.log(c2i[fin2]) + (w2i[fin2][0] + 1/(4*np.pi)*np.log(c2i[fin2][0])),
-                    'k--', label="Minkowski -1/4pi ln")
+    axs[2].semilogx(c2i, w2i, 'o', color='tab:blue', label=f"inside (logslope {_sl(fit2i)})")
+    axs[2].semilogx(c2c, w2c, 's', color='tab:red', label=f"corner (logslope {_sl(fit2c)})")
+    _ref_line(axs[2], c2i, w2i, None, log=True)
     axs[2].set_title("2D DIAMOND: |ReW| vs spacelike dist (log axis)")
     axs[2].set_xlabel("spatial distance"); axs[2].set_ylabel("|ReW|"); axs[2].legend(fontsize=7)
     fig.tight_layout(); fig.savefig(os.path.join(PLOTDIR, "hadamard_diagnostic.png"), dpi=140)

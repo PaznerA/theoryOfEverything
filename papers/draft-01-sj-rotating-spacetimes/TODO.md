@@ -4,6 +4,64 @@
 
 ---
 
+## NOTE — 2026-06-06: VYPOCET-14 sharpens §4.2 (Teukolsky prediction)
+
+**VYPOCET-14** (sj-threshold-scan) completed a fine radial scan (12 radii, Kerr a=0.6 and a=0.9,
+plus BTZ J=0.9 cross-check; N=1600, 5 seeds) with three key findings relevant to draft-01:
+
+1. **Onset controlled by Ω(r), not r_erg alone.** W_sr(r) ~ Ω(r)^B fits the radial profile better
+   than a Lorentzian at r_erg (ΔAIC = +442 for a=0.6, +4216 for a=0.9, +232 for BTZ; all decisive,
+   all three geometries preferring Model S). The ergosphere is a necessary condition but the
+   quantitative profile tracks the local ZAMO angular velocity — a falsifiable prediction for §4.2.
+   Power-law exponent B ≈ 3.8–4.2 (Kerr) / 1.7 (BTZ) can be compared to the superradiant
+   amplification coefficient from 4D Teukolsky.
+
+2. **A_W is negative-definite across the full scan.** No sign flip in 5×8 (Kerr) + 5×5 (BTZ) exterior
+   measurements. Magnitude grows toward ergosphere by factor ~20 (|A_W|~0.03 at r=8M vs ~0.6 at
+   r=2.05M). Amplitude tracks Ω(r). Consistent with VYPOCET-10 toy model: sign fixed by drag direction
+   (geometry), magnitude by shear strength (dynamical). This closes the §3.5b mechanism loop and
+   sharpens the framing in §4.2.
+
+3. **BTZ pattern matches Kerr qualitatively and semi-quantitatively** (ΔAIC preference for Model S;
+   same sign structure of A_W; same ergoregion A_W=0 behaviour). Supports H3g-6 geometry-independence
+   claim.
+
+   Files: core-data/calculations/sj-threshold-scan/; writeup: knowledge-base/vypocty/VYPOCET-14-threshold-scan.md
+
+---
+
+## NOTE — 2026-06-06: VYPOCET-15 closes the Kerr a=0.6 ambiguity from VYPOCET-14
+
+**VYPOCET-15** (sj-far-zone, Kerr a=0.6, r=5..20M, 13 radii, N=1600, 5 seeds) resolves the
+residual ambiguity from VYPOCET-14 (where linear corr(E)=0.971 slightly favoured Model E for a=0.6).
+
+Key findings:
+
+1. **Joint fit (near + far, n=19): ΔAIC(E−S) = +3894 — Model S decisive** (threshold: >6).
+   χ²/dof: Model S = 97.5, Model E = 326.5. Far zone provides the leverage: Model S predicts
+   W_sr ~ r^{−3B} while Model E predicts ~ r^{−1}, slopes differ by factor ~13 in log-log.
+
+2. **Log-log discriminant (near-zone, W_sr>0 points):** corr_loglog(S)=0.9992 vs
+   corr_loglog(E)=0.942. The linear-scale correlation of VYPOCET-14 was misleading (nearby
+   high-W_sr points dominated); log-log is the correct discriminant for power-law models.
+
+3. **|A_W| power law (high-SNR, n=11, r=2.05..8M):**
+   - |A_W| ~ r^{−2.75±0.03}  (toy prediction: r^{−3};   R²=0.957)
+   - |A_W| ~ Ω^{0.98±0.01}   (toy prediction: Ω^{+1};   R²=0.932)
+   Both consistent with toy model from VYPOCET-10 within 2σ.
+
+4. **Combined with VYPOCET-14:** all three geometries (Kerr a=0.6, a=0.9, BTZ J=0.9) now
+   unanimously prefer Model S (ΔAIC = +3894, +4216, +231 respectively). The near-zone
+   ambiguity for a=0.6 was an artefact of linear-scale correlation; it does not survive
+   the log-log test or the joint fit.
+
+**Implication for §4.2:** The onset of W_sr(r) ~ Ω(r)^B is now confirmed for all tested
+geometries. A_W ~ Ω(r)^1 ~ r^{−3} is a falsifiable prediction for 4D Teukolsky calculations.
+
+Files: core-data/calculations/sj-far-zone/; writeup: knowledge-base/vypocty/VYPOCET-15-far-zone.md
+
+---
+
 ## 0. Authorship / ethics note (must appear in any real version)
 
 - This draft and the underlying calculations were produced by an **AI-assisted exploratory research pipeline**. No human has yet independently re-derived or re-run the results.

@@ -1101,14 +1101,17 @@ def run():
     print(f"  Kerr a=0.9: {h['goal1_fine_scan']['n_radii_kerr_a09']} radii, "
           f"W_sr range {h['goal1_fine_scan']['W_sr_range_a09']}")
     print(f"\nGOAL 2 — Onset model:")
-    for a_key, a_label in [("kerr_a06", "a=0.6"), ("kerr_a09", "a=0.9")]:
+    for a_key, a_label, d_key in [("kerr_a06", "a=0.6", "discriminant_a06"),
+                                   ("kerr_a09", "a=0.9", "discriminant_a09")]:
         g2 = h["goal2_onset_model"]
         print(f"  Kerr {a_label}: AIC->'{g2[a_key]['AIC_preferred']}' "
               f"(decisive={g2[a_key]['AIC_decisive']}), "
               f"BIC->'{g2[a_key]['BIC_preferred']}'")
-        disc_key = f"discriminant_{a_key}"
-        print(f"    discriminant (linear): corr_S={g2[disc_key]['corr_S']:.3f}, "
-              f"corr_E={g2[disc_key]['corr_E']:.3f} => {g2[disc_key]['preferred_linear']}")
+        disc = g2[d_key]
+        cs = disc.get('corr_S')
+        ce = disc.get('corr_E')
+        print(f"    discriminant (linear): corr_S={cs:.3f if cs else 'N/A'}, "
+              f"corr_E={ce:.3f if ce else 'N/A'} => {disc['preferred_linear']}")
     print(f"\nGOAL 3 — A_W sign:")
     g3 = h["goal3_AW_sign"]
     print(f"  a=0.6: consistent={g3['kerr_a06_sign_consistent']}, "

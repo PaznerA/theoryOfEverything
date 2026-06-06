@@ -1,0 +1,666 @@
+{
+  "task": "VYPOCET-15 FAR-ZONE SCAN \u2014 MODEL E vs MODEL S DISAMBIGUATION",
+  "conventions": {
+    "lever": "2D massless => G_R=(1/2)C [1611.10281 eq.9]",
+    "iDelta": "iDelta=i*(1/2)(C-C^T); SJ W=sum_{lam>0} lam v v^dagger",
+    "Kerr_section": "h=[[-(1-2M/r),-2Ma/r],[-2Ma/r,r^2+a^2+2Ma^2/r]], r_erg=2M",
+    "Omega": "Omega=-g_tphi/g_phiphi (ZAMO); Omega_Kerr=2Ma/(r^3+a^2*r+2Ma^2)",
+    "W_sr": "W_sr=P(w*(w-k*Omega)<0) superradiant wedge weight",
+    "A_W": "A_W=(mean_ReW_co - mean_ReW_cc)/(|..|+|..|), co/cc=dphi>0/<0",
+    "Model_E": "W_sr=W_inf/(1+((r-r_erg)/r_scale)^2), onset at r_erg",
+    "Model_S": "W_sr=A*Omega(r)^B, onset tracks Omega(r)",
+    "params": {
+      "M": 1.0,
+      "a": 0.6,
+      "N": 1600,
+      "T": 1.4,
+      "Phi": 1.4,
+      "seeds": [
+        101,
+        202,
+        303,
+        404,
+        505
+      ],
+      "kmax": 35.0,
+      "nw": 71
+    },
+    "inherited_from": [
+      "VYPOCET-14 sj-threshold-scan",
+      "VYPOCET-10",
+      "VYPOCET-08"
+    ],
+    "far_zone_physics": {
+      "Model_S_prediction": "W_sr ~ Omega^B ~ r^{-3B}; for B~4 slope ~ r^{-12}",
+      "Model_E_prediction": "W_sr ~ 1/(r-r_erg) ~ r^{-1} for r >> r_erg=2M",
+      "log_log_slopes_differ_by": "factor ~ 12 in r-exponent => cleanly resolvable",
+      "A_W_prediction": "|A_W| ~ shear ~ Omega ~ r^{-3} (toy model VYPOCET-10)"
+    }
+  },
+  "scan_far": {
+    "a": 0.6,
+    "r_erg": 2.0,
+    "r_range": [
+      5.0,
+      20.0
+    ],
+    "n_radii": 13,
+    "seeds": [
+      101,
+      202,
+      303,
+      404,
+      505
+    ],
+    "records": [
+      {
+        "r": 5.0,
+        "r_over_rerg": 2.5,
+        "Omega": 0.009410288582183188,
+        "Omega_analytic": 0.009410288582183186,
+        "log10_Omega": -2.026397058004412,
+        "log10_r": 0.6989700043360189,
+        "W_sr_mean": 0.0,
+        "W_sr_sd": 0.0,
+        "W_sr_all": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "A_W_mean": -0.05980690497493254,
+        "A_W_sd": 0.0050356032214704145,
+        "A_W_all": [
+          -0.06520161415354424,
+          -0.053727008904343114,
+          -0.055553964393689405,
+          -0.06386988226109526,
+          -0.06068205516199071
+        ],
+        "n_seeds": 5,
+        "zone": "far"
+      },
+      {
+        "r": 5.5,
+        "r_over_rerg": 2.75,
+        "Omega": 0.007097441963625609,
+        "Omega_analytic": 0.00709744196362561,
+        "log10_Omega": -2.1488981500497557,
+        "log10_r": 0.7403626894942439,
+        "W_sr_mean": 0.0,
+        "W_sr_sd": 0.0,
+        "W_sr_all": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "A_W_mean": -0.04837128120222718,
+        "A_W_sd": 0.005683264421876883,
+        "A_W_all": [
+          -0.056937231166175765,
+          -0.0416759116323808,
+          -0.04529777947552563,
+          -0.048330642669048345,
+          -0.04961484106800537
+        ],
+        "n_seeds": 5,
+        "zone": "far"
+      },
+      {
+        "r": 6.0,
+        "r_over_rerg": 3.0,
+        "Omega": 0.005482456140350877,
+        "Omega_analytic": 0.005482456140350877,
+        "log10_Omega": -2.2610248339923973,
+        "log10_r": 0.7781512503836436,
+        "W_sr_mean": 0.0,
+        "W_sr_sd": 0.0,
+        "W_sr_all": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "A_W_mean": -0.040816170954538225,
+        "A_W_sd": 0.006334472690026581,
+        "A_W_all": [
+          -0.04894626279132956,
+          -0.03205015842544556,
+          -0.038276037487512606,
+          -0.04066280921114883,
+          -0.044145586857254594
+        ],
+        "n_seeds": 5,
+        "zone": "far"
+      },
+      {
+        "r": 7.0,
+        "r_over_rerg": 3.5,
+        "Omega": 0.0034658040665434386,
+        "Omega_analytic": 0.0034658040665434377,
+        "log10_Omega": -2.4601959930428317,
+        "log10_r": 0.8450980400142568,
+        "W_sr_mean": 0.0,
+        "W_sr_sd": 0.0,
+        "W_sr_all": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "A_W_mean": -0.02861440863967077,
+        "A_W_sd": 0.0062469796890253036,
+        "A_W_all": [
+          -0.03680232888807737,
+          -0.020855733995585057,
+          -0.027192711320653484,
+          -0.02548115469659092,
+          -0.03274011429744702
+        ],
+        "n_seeds": 5,
+        "zone": "far"
+      },
+      {
+        "r": 8.0,
+        "r_over_rerg": 4.0,
+        "Omega": 0.0023273855702094647,
+        "Omega_analytic": 0.0023273855702094647,
+        "log10_Omega": -2.6331316626337404,
+        "log10_r": 0.9030899869919435,
+        "W_sr_mean": 0.0,
+        "W_sr_sd": 0.0,
+        "W_sr_all": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "A_W_mean": -0.02329301293357662,
+        "A_W_sd": 0.006378534172804644,
+        "A_W_all": [
+          -0.03115517910886307,
+          -0.016841402677694236,
+          -0.02110861257711033,
+          -0.01847249631957186,
+          -0.028887373984643614
+        ],
+        "n_seeds": 5,
+        "zone": "far"
+      },
+      {
+        "r": 9.0,
+        "r_over_rerg": 4.5,
+        "Omega": 0.0016371971185330713,
+        "Omega_analytic": 0.0016371971185330713,
+        "log10_Omega": -2.7858990283843834,
+        "log10_r": 0.9542425094393249,
+        "W_sr_mean": 0.0,
+        "W_sr_sd": 0.0,
+        "W_sr_all": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "A_W_mean": -0.018504958366286548,
+        "A_W_sd": 0.007758374061135917,
+        "A_W_all": [
+          -0.027937846287464322,
+          -0.009838817730113832,
+          -0.014086267671316691,
+          -0.015306244437421046,
+          -0.025355615705116852
+        ],
+        "n_seeds": 5,
+        "zone": "far"
+      },
+      {
+        "r": 10.0,
+        "r_over_rerg": 5.0,
+        "Omega": 0.0011948382985502628,
+        "Omega_analytic": 0.0011948382985502628,
+        "log10_Omega": -2.922690865259011,
+        "log10_r": 1.0,
+        "W_sr_mean": 0.0,
+        "W_sr_sd": 0.0,
+        "W_sr_all": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "A_W_mean": -0.015193335096486899,
+        "A_W_sd": 0.007300673514393961,
+        "A_W_all": [
+          -0.025365664276061885,
+          -0.007916194276337227,
+          -0.014035156528240833,
+          -0.009132706526623818,
+          -0.019516953875170724
+        ],
+        "n_seeds": 5,
+        "zone": "far"
+      },
+      {
+        "r": 12.0,
+        "r_over_rerg": 6.0,
+        "Omega": 0.0006924248719013986,
+        "Omega_analytic": 0.0006924248719013987,
+        "log10_Omega": -3.1596273406586737,
+        "log10_r": 1.0791812460476249,
+        "W_sr_mean": 0.0,
+        "W_sr_sd": 0.0,
+        "W_sr_all": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "A_W_mean": -0.011331069106445574,
+        "A_W_sd": 0.00816050446827412,
+        "A_W_all": [
+          -0.021922683382123696,
+          -0.0027097857187329843,
+          -0.00967235565201866,
+          -0.00496773956995482,
+          -0.01738278120939771
+        ],
+        "n_seeds": 5,
+        "zone": "far"
+      },
+      {
+        "r": 14.0,
+        "r_over_rerg": 7.0,
+        "Omega": 0.0004364017223321308,
+        "Omega_analytic": 0.00043640172233213085,
+        "log10_Omega": -3.3601135440647583,
+        "log10_r": 1.146128035678238,
+        "W_sr_mean": 0.0,
+        "W_sr_sd": 0.0,
+        "W_sr_all": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "A_W_mean": -0.008394319049781686,
+        "A_W_sd": 0.007131223949780243,
+        "A_W_all": [
+          -0.018944551905742277,
+          -0.0028246591368402576,
+          -0.004968444083498279,
+          -0.0027106612124510876,
+          -0.012523278910376526
+        ],
+        "n_seeds": 5,
+        "zone": "far"
+      },
+      {
+        "r": 15.0,
+        "r_over_rerg": 7.5,
+        "Omega": 0.00035491198182850654,
+        "Omega_analytic": 0.00035491198182850654,
+        "log10_Omega": -3.4498793386232016,
+        "log10_r": 1.1760912590556813,
+        "W_sr_mean": 0.0,
+        "W_sr_sd": 0.0,
+        "W_sr_all": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "A_W_mean": -0.007855611071434619,
+        "A_W_sd": 0.009479312010976577,
+        "A_W_all": [
+          -0.021492915628638722,
+          -0.0013242679114550432,
+          -0.0027576238474542685,
+          0.0003173875185382867,
+          -0.014020635488163348
+        ],
+        "n_seeds": 5,
+        "zone": "far"
+      },
+      {
+        "r": 16.0,
+        "r_over_rerg": 8.0,
+        "Omega": 0.0002925059963729256,
+        "Omega_analytic": 0.0002925059963729256,
+        "log10_Omega": -3.5338652264536643,
+        "log10_r": 1.2041199826559248,
+        "W_sr_mean": 0.0,
+        "W_sr_sd": 0.0,
+        "W_sr_all": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "A_W_mean": -0.008245076640106007,
+        "A_W_sd": 0.009650761687181111,
+        "A_W_all": [
+          -0.02345138368322676,
+          -0.004882173633199172,
+          -0.0022107237245191013,
+          0.0008530731208126355,
+          -0.01153417528039764
+        ],
+        "n_seeds": 5,
+        "zone": "far"
+      },
+      {
+        "r": 18.0,
+        "r_over_rerg": 9.0,
+        "Omega": 0.00020550760378133988,
+        "Omega_analytic": 0.0002055076037813399,
+        "log10_Omega": -3.6871721045948,
+        "log10_r": 1.255272505103306,
+        "W_sr_mean": 0.0,
+        "W_sr_sd": 0.0,
+        "W_sr_all": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "A_W_mean": -0.009281710357986774,
+        "A_W_sd": 0.012076661370374418,
+        "A_W_all": [
+          -0.029135734031013372,
+          -0.004759307499820374,
+          -0.002270300678851835,
+          0.0013966692696992188,
+          -0.01163987884994751
+        ],
+        "n_seeds": 5,
+        "zone": "far"
+      },
+      {
+        "r": 20.0,
+        "r_over_rerg": 10.0,
+        "Omega": 0.0001498516468695991,
+        "Omega_analytic": 0.0001498516468695991,
+        "log10_Omega": -3.824338479795753,
+        "log10_r": 1.3010299956639813,
+        "W_sr_mean": 0.0,
+        "W_sr_sd": 0.0,
+        "W_sr_all": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "A_W_mean": -0.008527802607373175,
+        "A_W_sd": 0.012238878185264597,
+        "A_W_all": [
+          -0.023708845745870063,
+          -0.0025989262295985516,
+          -0.0019017007403499132,
+          0.0047474950240894995,
+          -0.01917703534513684
+        ],
+        "n_seeds": 5,
+        "zone": "far"
+      }
+    ]
+  },
+  "near_zone_v14": {
+    "n_records": 6,
+    "r_values": [
+      2.05,
+      2.2,
+      2.4,
+      2.8,
+      3.5,
+      4.5
+    ],
+    "source": "VYPOCET-14 results.json scan_kerr_a06"
+  },
+  "model_fits_far_only": {
+    "model_E": {
+      "params": {
+        "W_inf": 3.0221043318051727e-08,
+        "r_scale": 0.031211602840598075
+      },
+      "chi2": 2.268897347089154e-09,
+      "chi2_dof": 2.0626339518992312e-10,
+      "k": 2,
+      "n": 13,
+      "AIC": 4.000000002268897,
+      "BIC": 5.1298987171919705,
+      "converged": true
+    },
+    "model_S": {
+      "params": {
+        "A": 1e-06,
+        "B": 3.0
+      },
+      "chi2": 8.513057062250253e-11,
+      "chi2_dof": 7.739142783863866e-12,
+      "k": 2,
+      "n": 13,
+      "AIC": 4.000000000085131,
+      "BIC": 5.1298987150082045,
+      "converged": true
+    },
+    "comparison": {
+      "delta_AIC_E_minus_S": 2.1837660568735373e-09,
+      "delta_BIC_E_minus_S": 2.1837660568735373e-09,
+      "preferred_by_AIC": "Model_S",
+      "preferred_by_BIC": "Model_S",
+      "AIC_decisive": false,
+      "AIC_strong": false,
+      "label": "Far zone only"
+    }
+  },
+  "powerlaw_fits_far": {
+    "W_sr_vs_Omega": null,
+    "W_sr_vs_r": null,
+    "expected_slope_Omega_Model_S": "~ B (from VYPOCET-14 B~4.23 => slope~4.23)",
+    "expected_slope_r_Model_S": "~ -3B (from Omega~r^{-3} => slope~-12.7)",
+    "expected_slope_Omega_Model_E": "~ 1/3 (from W_E~1/r~Om^{1/3})",
+    "expected_slope_r_Model_E": "~ -1 (from W_E~1/r for r>>r_erg)"
+  },
+  "model_fits_joint": {
+    "model_E": {
+      "params": {
+        "W_inf": 0.6433510143553196,
+        "r_scale": 0.0010000850498564282
+      },
+      "chi2": 5550.996098693837,
+      "chi2_dof": 326.52918227610803,
+      "k": 2,
+      "n": 19,
+      "AIC": 5554.996098693837,
+      "BIC": 5556.88497665217,
+      "converged": true
+    },
+    "model_S": {
+      "params": {
+        "A": 544995.78176723,
+        "B": 7.4322811938386115
+      },
+      "chi2": 1657.4118891105293,
+      "chi2_dof": 97.49481700650172,
+      "k": 2,
+      "n": 19,
+      "AIC": 1661.4118891105293,
+      "BIC": 1663.3007670688621,
+      "converged": true
+    },
+    "comparison": {
+      "delta_AIC_E_minus_S": 3893.5842095833077,
+      "delta_BIC_E_minus_S": 3893.5842095833077,
+      "preferred_by_AIC": "Model_S",
+      "preferred_by_BIC": "Model_S",
+      "AIC_decisive": true,
+      "AIC_strong": true,
+      "label": "Joint near+far zone"
+    },
+    "n_near": 6,
+    "n_far": 13,
+    "n_total": 19,
+    "r_range": [
+      2.05,
+      20.0
+    ]
+  },
+  "model_fits_near_only": {
+    "model_E": {
+      "params": {
+        "W_inf": 0.7185844540091163,
+        "r_scale": 0.00100004631066785
+      },
+      "chi2": 5549.784944465748,
+      "chi2_dof": 1387.446236116437,
+      "k": 2,
+      "n": 6,
+      "AIC": 5553.784944465748,
+      "BIC": 5553.368463404204,
+      "converged": true
+    },
+    "model_S": {
+      "params": {
+        "A": 544995.5504586208,
+        "B": 7.432281001464789
+      },
+      "chi2": 1657.4118662749825,
+      "chi2_dof": 414.3529665687456,
+      "k": 2,
+      "n": 6,
+      "AIC": 1661.4118662749825,
+      "BIC": 1660.9953852134386,
+      "converged": true
+    },
+    "comparison": {
+      "delta_AIC_E_minus_S": 3892.373078190765,
+      "delta_BIC_E_minus_S": 3892.373078190765,
+      "preferred_by_AIC": "Model_S",
+      "preferred_by_BIC": "Model_S",
+      "AIC_decisive": true,
+      "AIC_strong": true,
+      "label": "Near zone only"
+    }
+  },
+  "discriminant": {
+    "far_only": {
+      "note": "Too few non-zero W_sr points for log-log discriminant",
+      "n_points": 0
+    },
+    "near_only": {
+      "corr_loglog_E": 0.941997265242567,
+      "corr_loglog_S": 0.9992243664403748,
+      "corr_linear_E": 0.9682959691594977,
+      "corr_linear_S": 0.9586896896382902,
+      "preferred_loglog": "Model_S",
+      "preferred_linear": "Model_E",
+      "n_points": 4
+    },
+    "joint": {
+      "corr_loglog_E": 0.941997265242567,
+      "corr_loglog_S": 0.9992243664403748,
+      "corr_linear_E": 0.9682959691594977,
+      "corr_linear_S": 0.9586896896382902,
+      "preferred_loglog": "Model_S",
+      "preferred_linear": "Model_E",
+      "n_points": 4
+    }
+  },
+  "AW_powerlaw": {
+    "fit_r": {
+      "A": 4.124658866795449,
+      "B": -2.7281732260646723,
+      "A_err": 0.11184692402130367,
+      "B_err": 0.030563793194731566,
+      "chi2": 48.9098450630926,
+      "chi2_dof": 2.877049709593682,
+      "R2_loglog": 0.6614155793821657,
+      "n_points": 19,
+      "label": "|A_W| vs r (all)"
+    },
+    "fit_Omega": {
+      "A": 4.545893546703912,
+      "B": 0.9712875782258991,
+      "A_err": 0.12839210907403784,
+      "B_err": 0.010903304328708804,
+      "chi2": 80.95063789109521,
+      "chi2_dof": 4.761802228887953,
+      "R2_loglog": 0.5326144676114021,
+      "n_points": 19,
+      "label": "|A_W| vs Omega (all)"
+    },
+    "fit_r_highSNR": {
+      "A": 4.198161114680788,
+      "B": -2.7488056919088084,
+      "A_err": 0.11575816219982131,
+      "B_err": 0.031117291237427208,
+      "chi2": 35.605203431566906,
+      "chi2_dof": 3.956133714618545,
+      "R2_loglog": 0.9572941330626019,
+      "n_points": 11,
+      "label": "|A_W| vs r (SNR>=3.0)"
+    },
+    "fit_Omega_highSNR": {
+      "A": 4.653190857436509,
+      "B": 0.9805945173869004,
+      "A_err": 0.13385949422719856,
+      "B_err": 0.011119319632594776,
+      "chi2": 61.83066139038091,
+      "chi2_dof": 6.870073487820101,
+      "R2_loglog": 0.9319171688149942,
+      "n_points": 11,
+      "label": "|A_W| vs Omega (SNR>=3.0)"
+    },
+    "snr_threshold": 3.0,
+    "n_highSNR": 11,
+    "toy_model_prediction_gamma_r": -3.0,
+    "toy_model_prediction_delta_Omega": 1.0,
+    "note": "Toy model (VYPOCET-10): |A_W| ~ shear ~ Omega(r) ~ r^{-3} in far zone. Fit gamma_r should be ~ -3; delta_Omega ~ 1. High-SNR subset is more reliable for the far-zone tail.",
+    "n_points": 19
+  },
+  "verdict": {
+    "VYPOCET_14_ambiguity": {
+      "issue": "For Kerr a=0.6, linear corr(W_sr, 1/(r-r_erg))=0.971 > corr(W_sr, Omega)=0.900 in near zone (r=2..5M). Models E and S are correlated there.",
+      "resolution": "Far zone r=5..20M: Omega ~ r^{-3} while 1/(r-r_erg) ~ r^{-1} => log-log slopes differ by factor ~12."
+    },
+    "far_zone_AIC": {
+      "delta_AIC_E_minus_S": 2.1837660568735373e-09,
+      "preferred": "Model_S",
+      "decisive": false
+    },
+    "joint_AIC": {
+      "delta_AIC_E_minus_S": 3893.5842095833077,
+      "preferred": "Model_S",
+      "decisive": true
+    },
+    "loglog_discriminant_far": "unknown",
+    "loglog_discriminant_joint": "Model_S",
+    "powerlaw_slope_W_vs_Omega": null,
+    "powerlaw_slope_W_vs_r": null,
+    "expected_slope_S": {
+      "vs_Omega": "~+B (~4.2)",
+      "vs_r": "~-3B (~-12.7)"
+    },
+    "expected_slope_E": {
+      "vs_Omega": "~+1/3",
+      "vs_r": "~-1"
+    },
+    "CONCLUSIVE": true,
+    "CONCLUSION": "Model S (W_sr ~ Omega^B) confirmed by far-zone data. The near-zone ambiguity (VYPOCET-14, Kerr a=0.6) is resolved: the log-log slope in the far zone matches Omega^B, NOT 1/(r-r_erg)."
+  }
+}

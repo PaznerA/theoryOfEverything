@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "VYPOCET-17: cosmological constant from fermion-induced gravity (H4g-3)",
+    "date": "2026-06-06",
+    "hypothesis": "H4g-3: if spectral action = fermion-induced (Sakharov) gravity (F-014, -18/11 index-protected), what does the SAME logic predict for Lambda?  Is there a SECOND content-independent ratio?",
+    "builds_on": [
+      "F-003",
+      "F-014",
+      "VYPOCET-02",
+      "VYPOCET-11"
+    ],
+    "sources": {
+      "spectral_action": "Chamseddine-Connes hep-th/9606001; CCM hep-th/0610241; Marcolli 'Spectral Action Gravity and Cosmological Models' (NCGCosmoCRP), master expansion + SM coefficients quoted verbatim",
+      "heat_kernel_a0_a2": "Gilkey; Vassilevich hep-th/0306138 eqs.(4.26-4.27)",
+      "anomaly_a4": "Duff arXiv:2003.02688 Table 1",
+      "pauli_supertrace": "Pauli 1951; Visser arXiv:1610.07264; Akhmedov hep-th/0204048"
+    }
+  },
+  "content": {
+    "N_Weyl_noNuR_45": 45,
+    "N_Weyl_withNuR_48": 48,
+    "delta_nuR": 3
+  },
+  "Q1_a0_cosmological_term": {
+    "master_expansion": "Tr f(D/Lambda) ~ 2 Lambda^4 f4 a0 + 2 Lambda^2 f2 a2 + f0 a4",
+    "a0_is_pure_counting": "a0 = (4 pi)^{-2} Tr(1_F) ; the Lambda^4 prefactor is 2 f4 Lambda^4 * a0  -> SCALES LINEARLY in N = Tr(1_F)",
+    "a0_dirac_density_coeff": "1/(4*pi**2)",
+    "gamma0_effective_cosmological_const": "(48*Lambda**4*f4 - Lambda**2*c_yuk*f2 + d_yuk)/(4*pi**2)",
+    "gamma0_massless_free_limit": "12*Lambda**4*f4/pi**2",
+    "Lambda_cc_symbolic": "3*(48*Lambda**4*f4 - Lambda**2*c_yuk*f2 + d_yuk)/(96*Lambda**2*f2 - c_yuk*f0)",
+    "Lambda_cc_massless": "3*Lambda**2*f4/(2*f2)",
+    "content_dependence": "LINEAR in N (overall Tr(1_F) factor). 45 vs 48 changes the OVERALL magnitude by 48/45 = 16/15, NOT the structure.",
+    "ratio_48_over_45": "16/15"
+  },
+  "Q2_a2_einstein_hilbert": {
+    "a2_dirac_coeff_of_R": "-1/(48*pi**2)",
+    "half_inverse_kappa_sq": "(96*Lambda**2*f2 - c_yuk*f0)/(24*pi**2)",
+    "half_inverse_kappa_sq_massless": "4*Lambda**2*f2/pi**2",
+    "G_induced": "1/(16 pi G) = 1/(2 kappa0^2) ~ f2 Lambda^2 * N  => G_induced ~ 1/(f2 Lambda^2 N): LINEAR in N (counting).",
+    "content_dependence": "LINEAR in N, same overall factor as a0."
+  },
+  "Q3_second_index_identity": {
+    "per_mode_a0_density": "1/(4*pi**2)",
+    "per_mode_a2_density_coeff_of_R": "-1/(48*pi**2)",
+    "per_mode_a4_pieces_(a,c)_per_Weyl": [
+      "11/720",
+      "1/40"
+    ],
+    "ratio_a0_over_a2_per_mode": "12",
+    "ratio_a4_c_over_minus_a": "-18/11",
+    "Lambda_cc_over_mPl2_symbolic": "72*pi**2*(48*Lambda**4*f4 - Lambda**2*c_yuk*f2 + d_yuk)/(96*Lambda**2*f2 - c_yuk*f0)**2",
+    "Lambda_cc_over_mPl2_massless": "3*pi**2*f4/(8*f2**2)",
+    "Lambda_cc_(massless,with_N)": "Lambda**2*f4*g_hat/(2*f2*k_hat)",
+    "Lambda_cc_is_N_independent": true,
+    "Lambda_cc_N_independence_is_DEGENERATE": "Lambda_cc = (f4/f2) Lambda^2 g_hat/(2 k_hat): N cancels ONLY because numerator (gamma0) and denominator (m_Pl^2) carry the SAME overall Tr(1_F)=N. This is NOT index protection: the result still carries (f4/f2) and Lambda^2 -- it is DIMENSIONFUL and CUTOFF-SHAPE-DEPENDENT (scheme-dependent), unlike the dimensionless, f-independent -18/11.",
+    "Lcc_over_mPl2_(with_N)": "pi**2*f4*g_hat/(2*N*f2**2*k_hat**2)",
+    "Lcc_over_mPl2_is_N_independent": false,
+    "Lcc_over_mPl2_carries_explicit_1_over_N": true,
+    "VERDICT": "NO second index-like identity. The a0:a2 per-mode ratio is a clean rational (12) but is NOT convention-free: a0 and a2 sit at DIFFERENT cutoff orders (f4 Lambda^4 vs f2 Lambda^2), so their ratio carries (f4/f2) Lambda^2 -- dimensionful and cutoff-shape-dependent. Only -18/11 (a ratio WITHIN a4, same f0 and Lambda^0) is scheme-robust and index-protected. The physical Lambda_cc/m_Pl^2 depends on f4, f2 AND on 1/N (content), so it is neither scheme-free nor content-free. The -18/11 identity does NOT have a cosmological-constant sibling."
+  },
+  "Q4_cosmological_constant_problem": {
+    "induced_Lambda_cutoff_scaling": "gamma0 ~ 12 f4 Lambda^4 / pi^2 : QUARTIC in the cutoff -- the standard cosmological-constant divergence.",
+    "induced_Lambda_sign": "f4 = Int x f(x) dx > 0 for a positive cutoff -> gamma0 > 0 (positive / de Sitter-like), Planckian magnitude.",
+    "naive_mismatch_orders_of_magnitude": 122,
+    "fermion_induction_makes_it": "SAME-as-standard (quartic). Fermion induction does NOT soften it: the Dirac sea contributes the full Lambda^4. It makes it marginally LARGER per fermion, never cancels.",
+    "nuR_effect": {
+      "magnitude_ratio_noNuR_over_withNuR": "15/16",
+      "nuR_makes_induced_Lambda": "LARGER",
+      "nuR_flips_sign": false,
+      "reason": "All fermions enter Tr f(D/Lambda) with the SAME sign (it is a trace over the positive-definite fermionic Hilbert space); nu_R adds, never subtracts. 45->48 multiplies gamma0 by 48/45 = 16/15."
+    },
+    "pauli_supertrace_cancellation": {
+      "STr_1_45_noNuR": -62,
+      "STr_1_48_withNuR": -68,
+      "quartic_cancels_45": false,
+      "quartic_cancels_48": false,
+      "nuR_effect_on_STr1": "STr 1 goes -62 -> -68: nu_R makes the boson/fermion imbalance WORSE (more fermions), driving the quartic divergence FURTHER from the Pauli cancellation, not toward it."
+    },
+    "verdict": "Induced Lambda is cutoff-QUARTIC (standard disaster). Fermion induction does NOT help and nu_R makes the boson/fermion count imbalance WORSE (STr 1 = -62 -> -68). No supertrace condition is met by the NCG SM content. The cosmological-constant fine-tuning problem is UNTOUCHED by the -18/11 fermion-induction logic."
+  },
+  "VERDICT": {
+    "a0_a2_scale_linearly_in_N": true,
+    "no_second_content_independent_ratio": true,
+    "only_minus_18_11_is_index_protected": true,
+    "Lambda_cc_over_mPl2_depends_on_cutoff_and_N": true,
+    "induced_Lambda_is_cutoff_quartic": true,
+    "fermion_induction_does_NOT_solve_CC_problem": true,
+    "nuR_45_to_48_makes_imbalance_worse_not_cancel": true,
+    "H4g-3_clean_negative_closes_draft02_last_risk": true
+  }
+}

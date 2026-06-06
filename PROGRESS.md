@@ -2,7 +2,7 @@
 
 ## Aktuální stav
 
-🟢 **Fáze 2: Hledání souvislostí** — kola 3–5 dokončena (2026-06-06): 2 drafty článků čekají na lidskou revizi (draft-01 v0.2 SJ rotující prostoročasy, draft-02 a₄ fermionová identita). VYPOCET-11 potvrdil H3g-4: graviton identitu −18/11 nezachrání (fyzikální Einstein graviton nekonformní, žádný boson kolineární s Weylovým fermionem, x<0 nefyzikální) a spojil −18/11 s Atiyah-Singerovým index-teorémem (Rohlinův zámek). VYPOCET-12 přinesl první numerický důkaz III₁→II přechodu vN algebry pro SSEE truncaci v 2D (2/3 proxy podporují). Draft-01 upgradován na v0.2 s eigenvektorovým podpisem superradiance a toy-modelem mechanismu. findings.json = 15 nálezů. Výzkum pokračuje dle BRAINSTORM-03 fronty.
+🟢 **Fáze 2: Hledání souvislostí** — kola 3–7 dokončena (2026-06-06): 3 drafty článků (draft-01 v0.2 SJ rotující prostoročasy, draft-02 a₄ fermionová identita, draft-03 d_s jako klasifikátor). VYPOCET-15 uzavřel ambiguitu a=0.6: log-log diskriminant corr(S)=0.9992 >> corr(E)=0.942, ΔAIC=+3894 — Model S rozhodující pro všechny tři geometrie. VYPOCET-16 potvrdil H3g-3 v 4D: 3/3 vN-type proxy prošly na čisté 4D slab geometrii (entropická stopa III→II, 36x kolaps; modulární spektrum flat-dense→integrovatelné; N^{3/4} rank jako operativní regulátor, ne magnitudový cutoff). BRAINSTORM-04 dokončen: top 3 hypotézy čtvrté generace + fronta. SYNTEZA-02 dokončena. findings.json = 19 nálezů.
 
 ## Fáze
 
@@ -12,6 +12,22 @@
 | 2 | Hledání nenalezených souvislostí | 🟡 zahájena | 2026-06-05 | — |
 
 ## Log
+
+### 2026-06-06 (kolo 7 — VYPOCET-15/16, BRAINSTORM-04, SYNTEZA-02, housekeeping)
+
+- **VYPOCET-15 — far-zone disambiguace Kerr a=0.6 (H3g-1, F-018):** Log-log diskriminant: corr(log W_sr, log Ω)=0.9992 vs. corr(log W_sr, log 1/(r−r_erg))=0.942 — favorizuje Model S. Joint fit (near+far, n=19, r=2.05–20M): ΔAIC(E−S)=+3894 (rozhodující). Near-zone A_W mocninový zákon (high-SNR n=11): |A_W|~r^{−2.75±0.03} (předp. −3, R²=0.957); |A_W|~Ω^{0.98±0.01} (předp. +1, R²=0.932). Far-zone (r=5–20M, 13 radii): W_sr=0 ve všech 13 poloměrech (pod (ω,k)-mřížkovým rozlišením); A_W<0 na všech 13. **Verdikt: VYPOCET-14 ambiguita pro a=0.6 uzavřena; Ω(r) jako spojitý řídící parametr superradiantního nástupu potvrzen konzistentně pro všechny tři geometrie (Kerr a=0.6, a=0.9, BTZ J=0.9).** Seeds: 5, N=1600. (F-018)
+- **VYPOCET-16 — vN-type proxy v 4D slab (H3g-3, F-019):** 4D box-slab, iΔ link matrix, interior half-space cut, T=0.5, L=0.85, N=800–3500, 5 semen. Proxy 1 (entropická stopa): S_full~N^{1.34} (volume/super-volume, III divergentní, 27.5→209.1); S_number-trunc[n_max=2N^{3/4}]~N^{0.55}≈sqrt(N) (4D area law, typ II, 2.69→5.84), kolaps 36x; fixní-frakční kontrola S_frac~N^{0.83} area law NESPLNÍ. Proxy 2 (modulární spektrum eps=ln[mu/(mu-1)]): untruncated pile-up~N^{1.27} (III₁ flat-dense) → přesně 0 po truncaci (typ II, ostrá IR hrana eps~2.7, kompaktní nosič). Módový počet: full ~N^{1.11} → truncated ~N^{0.70} (~N^{3/4}). Proxy 3 (p=3/4 otázka): N^{3/4} number-truncace → area law YES; fixní-frakce SELHÁVÁ; slab spektrum nemá vlastní ostré koleno (auto-koleno ~N^{1.06}) → N^{3/4} je předpis (observer/crossed-product cutoff), ne spektrální rys. Pauli-Jordan +/- párování error = 7.1e-14 (strojová přesnost). **Verdikt: 3/3 proxy projdou — H3g-3 podpořena v d=4.** Runtime 158 s. (F-019)
+- **BRAINSTORM-04.md** dokončen: 3 hypotézy čtvrté generace — H4g-1 (rohová non-Hadamardovost = místo kde selhává boost-flow, medium-high), H4g-4 (III→II přechod přežívá na 4D slabu ne na diamantu, medium-high; potvrzena VYPOCET-16), H4g-3 (fermionová indukce predikuje Λ přes f₀/a₀ moment, medium). Doporučená fronta: paralelně H4g-3 (exaktní sympy, dny) + H4g-1 (slab vs. diamantový roh modulární tok, vyšší konceptuální výnos). Soubor: `knowledge-base/BRAINSTORM-04.md`.
+- **SYNTEZA-02.md** dokončena: přehled 7 kol, 19 nálezů, 5 uzavřených front (γ–Cardy, naivní Λ, plná SM, 4D volume-law jako dimenze-efekt, Model E pro superradianci); through-line (vlastnosti prostoročasu jako odpovědi na otázky); výhled 10 kol. Soubor: `knowledge-base/SYNTEZA-02.md`.
+- **findings.json** rozšířen na 19 nálezů: F-018 (far-zone E-vs-S disambiguace, Ω(r) potvrzen pro všechny geometrie), F-019 (vN-type 4D slab 3/3 proxy, N^{3/4} operativní regulátor, H3g-3 d=4).
+
+### 2026-06-06 (kolo 6 — VYPOCET-13/14, draft-03, ESEJ-03, housekeeping)
+
+- **VYPOCET-13 — 4D SSEE slab geometry (H04 interpretace c, F-016):** Half-space cut (slab, iΔ link matrix, κ=0.05·λmax) dává AREA law: S~L^2.00 (R²=0.982), R²_area=0.984 > R²_vol=0.977. Interiérní edge-effect kontrola: S~L^2.18 (R²=0.989) — čistší area. Kontrast: 4D nested diamant (VYPOCET-06) = VOLUME S~f^6.1 (R²=0.998). **Verdikt: geometrie rohů (ne dimenze) určuje area vs. volume — interpretace (c) POTVRZENA, (a) vyvrácena.** Hadamardova diagnostika (log-log sklon |ReW|): 4D diamant inside=−1.53 vs corner=−2.79 (anomálie v rozích), 4D slab deep=−3.81 ≈ surface=−3.85 (žádná anomálie) — přesná signatura mechanismu (c). 2D diamant inside=−0.160 vs corner=−0.095 (anomálie na u−v′=±2L). Runtime 264 s. N≤2088 (slab, 3 seedy). Caveaty: literatura (2008.07697/2412.07832) nepotvrzuje non-Hadamard↔volume jako přímý mechanismus; absolutní Hadamardovy sklony finite-N deformované. Entropy-cluster program v 4D má živou cestu přes Rindler/slab klín (kde SJ ≈ Unruh = Hadamard).
+- **VYPOCET-14 — superradiantní nástup: ergosféra vs. Ω(r) (H3g-1, F-017):** Radial scan W_sr: Kerr a=0.6 [0, 0.145], a=0.9 [0, 0.222] (12 radii each, monotone). Srovnání modelů (AIC): ΔAIC(E vs. S)=+441.6 (a=0.6), +4216.3 (a=0.9), +231.5 (BTZ J=0.9) — všechny tři rozhodující pro Model S (W_sr ~ Ω(r)^B). B=4.23 (a=0.6), 3.82 (a=0.9), 1.71 (BTZ). A_W znaménko: negativně-definitní ve všech 65 externích měřeních (5×8 Kerr + 5×5 BTZ); near-ergosphere |A_W|~0.49–0.60 vs far-zone ~0.03–0.05 (faktor ~15–20). BTZ cross-check J=0.9: stejná kvalitativní struktura (pattern_matches_kerr=True). **Verdikt: H3g-1 POTVRZENA.** Superradiantní váha řízena spojitým Ω(r), ne diskrétní ergosférou. Zbývající nejednoznačnost a=0.6 (lineární korelace mírně favorizuje Model E): Ω(r) a 1/(r−r_erg) korelovány → doporučen hustší scan r=5–20M (VYPOCET-15). N=1600, 5 seeds.
+- **draft-03-ds-classifier:** Třetí draft přerámovává UV spektrální dimenzi jako klasifikátor (z, D, sonda); master-tabulka reprodukuje 12 publikovaných čísel z jediného P(σ) enginu; sonda jako třetí klasifikační osa doložena vnitřním rozporem v databázi (CST d'Alembertián vs. náhodná procházka). Sekce „Relation to prior work" vpředu; TODO.md připravuje obranu vůči hlavním referee útokům (Calcagni, probe-trivialita). Soubory: `papers/draft-03-ds-classifier/draft.md`, `TODO.md`.
+- **ESEJ-03:** Třetí syntetická esej zapsána.
+- **findings.json** rozšířen na 17 nálezů: F-016 (slab area law, rohová geometrie rozhoduje, H04-c potvrzena), F-017 (superradiantní nástup Ω(r) kontinuální, H3g-1 potvrzena).
 
 ### 2026-06-06 (kolo 5 — VYPOCET-11/12, draft-01 v0.2, housekeeping)
 
@@ -148,34 +164,46 @@ Podrobnosti zbývajících obav viz log níže.
 
 ## Další kroky
 
-Odvozeno z BRAINSTORM-03 (kolo 4) + zbývajících položek BRAINSTORM-02.
+Odvozeno z BRAINSTORM-04 (kolo 7) + zbývajících položek BRAINSTORM-03. BRAINSTORM-04 dokončen; doporučeny dva paralelní výpočty.
 
-### Uzavřené / odstraněné položky (po rozhodujícím kole)
+### Uzavřené / odstraněné položky
 
-- ~~**C_KM(γ) konstantní člen** z ENP 1006.0634~~ — UZAVŘENO: Sen blocker potvrzený, H01 mrtvá, γ-fixace z CFT fyzikálně nemotivovaná. Žádný výpočet nutný.
-- ~~**4D SSEE sprinkling p=3/4 predikce**~~ — UZAVŘENO: VYPOCET-06 predikci vyvrátil; 4D volume-law potvrzena dle literatury; exponent p=3/4 není robustní.
-- ~~**Cardy-LQG (L1-3) jako živá hypotéza**~~ — UZAVŘENO: program dead po rozhodujícím čtení.
+- ~~**C_KM(γ) konstantní člen** z ENP 1006.0634~~ — UZAVŘENO: Sen blocker potvrzený, H01 mrtvá, γ-fixace z CFT fyzikálně nemotivovaná.
+- ~~**4D SSEE sprinkling p=3/4 predikce (naivní)**~~ — UZAVŘENO: VYPOCET-06 predikci vyvrátil; exponent p=3/4 jako magnitudový cutoff není robustní (ale N^{3/4} number-truncace jako crossed-product předpis PROŠLA — VYPOCET-16).
+- ~~**Cardy-LQG (L1-3) jako živá hypotéza**~~ — UZAVŘENO: program dead.
+- ~~**VYPOCET-14 ambiguita a=0.6**~~ — UZAVŘENO (VYPOCET-15): corr(S)=0.9992, ΔAIC=+3894, Model S rozhodující.
+- ~~**BRAINSTORM-04 jako doporučený první krok**~~ — DOKONČENO (kolo 7).
 
-### Prioritní výpočetní fronta (BRAINSTORM-03, kolo 4)
+### Drafty čekající na lidskou revizi
 
-**Drafty čekající na lidskou revizi:**
+- **draft-01-sj-rotating-spacetimes v0.2** (`papers/draft-01-sj-rotating-spacetimes/`) — všechny TODO body vyřešeny. **Blokující pro release:** (1) N→∞ studie s 30+ seeds; (2) analytické SJ pro strižený diamant; (3) BTZ dvou-bodová funkce; (4) verifikace citací PDF; (5) nezávislá re-derivace / re-run (gate §8 TODO.md).
+- **draft-02-a4-fermionic-identity** (`papers/draft-02-a4-fermionic-identity/`) — vědecký obsah uzavřen (VYPOCET-11). **Blokující pro release:** lidská re-derivace a₄, citace-check Duff/Andrianov-Lizzi/Kurkov-Lizzi-Vassilevich, scheme-dependence ošetření.
 
-- **draft-01-sj-rotating-spacetimes v0.2** (`papers/draft-01-sj-rotating-spacetimes/`) — upgradován na v0.2 (kolo 5); všechny TODO body vyřešeny; integrován mechanismus opačných znamének, překryv 44.6°, superradiantní váha 0.0755. **Blokující pro release:** (1) N→∞ kontinuální studie s 30+ seeds; (2) analytické SJ pro strižený diamant (srovnání Mathur–Surya); (3) srovnání s BTZ dvou-bodovou funkcí; (4) verifikace citací PDF lidskou rukou; (5) nezávislá re-derivace / re-run pipeline (gate §8 v TODO.md). VYPOCET-12 na draft-01 přímo nereaguje — je vstupem pro budoucí draft-03 (vN algebry).
-- **draft-02-a4-fermionic-identity** (`papers/draft-02-a4-fermionic-identity/`) — VYPOCET-11 potvrdil release readiness: dvě nezávislé blokace gravitonové záchrany jsou vnitřně konzistentní, identita −18/11 je index-chráněná. **Blokující pro release:** lidská re-derivace heat-kernelu a a₄ koeficientů, kontrola citací Duff/Andrianov-Lizzi/Kurkov-Lizzi-Vassilevich proti PDF, ošetření scheme-dependence v textu. VYPOCET-11 de facto uzavírá vědecký obsah draft-02; zbývá editorial.
+### DOPORUČENÁ FRONTA (BRAINSTORM-04, kolo 7)
 
-**Tier 1 — BRAINSTORM-03 top priority:**
+**Dva paralelní výpočty (top priority):**
 
-1. ~~**H3g-4 — graviton sektor + hodiny**~~ — **UZAVŘENO (VYPOCET-11):** graviton identitu −18/11 nezachrání; fyzikální Einstein graviton nekonformní; spectral action = Sacharovova fermionově-indukovaná gravitace potvrzena dvěma nezávislými blokacemi. Draft-02 vědecky uzavřen (čeká editorial).
-2. **H3g-1 — flipuje A_W na superradiantním prahu?** — test: A_W(ω=mΩ_H) nebo na ergosféře; navazuje přímo na VYPOCET-10. Dny.
-3. **H3g-3 — typ vN algebry SJ projektoru** — VYPOCET-12 přinesl 2/3 proxy podporu pro III₁→II v 2D; **nový blokující krok:** 4D rozšíření + 30+ seeds + analytické srovnání se crossed-product konstrukcí před dedikovaným článkem (draft-03).
+1. **H4g-3 — a₀/a₂ moment → Λ (fermionová indukce predikuje kosmologickou konstantu)** — nejlevnější (hodiny, exaktní sympy, navazuje na VYPOCET-02/11); otevírá draft-04 kandidáta a uzavírá draft-02 Λ-sekci. Hledá se druhá index-identita, racionální fermion-počítací forma pro Λ_cc/M_Pl².
+2. **H4g-1 — modulární tok: slab vs. diamantový roh (rohová non-Hadamardovost = selhání boost-flow)** — nejvyšší konceptuální výnos; spojuje F-015/F-016/F-011 do jednoho mechanismu; testuje through-line (vrstva B); falzifikace: slab-modulární-tok geometrický boost musí selhat přesně v rozích.
 
-**Tier 2 — přeneseno z BRAINSTORM-02:**
+**Tier 1 — BRAINSTORM-04 hypotézy:**
 
-4. **4D Teukolský výpočet SJ** (H2g-6) — první genuinně nový výsledek v literatuře pro rotující ČD; týdny.
-5. **Oppenheim π-fázový posun** (H2g-8) — explicitní predikce křížových korelací; dny.
-6. **Ω_Λ sky-patch variance** + stochastický w(z) z Everpresent Λ; DESI DR2 / SKAO srovnání (H2g-5); dny.
-7. **Swerves ↔ l_cs most** — faktor 140 záchrana/pohřeb (H2g-4); dny.
-8. **FRG global-charge koeficient** AS fixed point (L4-2); Basile et al. 2502.12290; týdny.
+- **H4g-1** (rohová non-Hadamardovost = místo selhání boost-flow) — medium-high confidence; nejvyšší konceptuální výnos.
+- **H4g-4** (III→II přechod přežívá na 4D slabu, ne na diamantu) — **POTVRZENA VYPOCET-16 (3/3 proxy)** — nyní: 4D diamant kontrolní výpočet + more seeds.
+- **H4g-3** (Λ z fermionové indukce přes f₀/a₀ moment) — medium confidence; nejlevnější; dny; otevírá draft-04.
+
+**Tier 2 — entropy-cluster program v 4D:**
+
+- **VYPOCET-17 — 4D diamant vN-type kontrola** (navazuje na VYPOCET-16): ověřit predikci H4g-4: modulární spektrum na 4D diamantu zůstane III₁ i po N^{3/4} truncaci (rohová koncentrace jako blokátor přechodu).
+- **VYPOCET-18 — slab area law větší N** (navazuje na VYPOCET-13): S~L^2.00 pro N=3000–5000, 10+ seeds; upřesnit Hadamardovy sklony.
+- **4D Teukolský výpočet SJ** (H2g-6) — B exponent predikce; týdny.
+
+**Tier 3 — přeneseno z BRAINSTORM-02/03:**
+
+- **Oppenheim π-fázový posun** (H2g-8) — dny.
+- **Ω_Λ sky-patch variance + stochastický w(z)** (H2g-5) — DESI DR2 / SKAO; dny.
+- **Swerves ↔ l_cs most** — faktor 140 záchrana/pohřeb (H2g-4); dny.
+- **FRG global-charge koeficient** AS fixed point (L4-2); týdny.
 
 ### Novelty check (arXiv/web) — DOKONČENO (2026-06-06)
 

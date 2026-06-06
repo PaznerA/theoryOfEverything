@@ -1,0 +1,231 @@
+DRAFT v0.1 — generated 2026-06-06, internal research draft, NOT submitted, requires human review.
+
+# Numerical signatures of a type III$_1\to$II crossed-product transition on causal sets: a 2D and 4D study of Sorkin–Yazdi spectral truncation
+
+## Abstract
+
+The crossed-product construction of Chandrasekaran–Longo–Penington–Witten (CLPW, arXiv:2206.10780) turns a type III$_1$ local von Neumann algebra — which has no trace, and on which entanglement entropy is therefore only defined up to a divergent additive constant — into a type II algebra with a finite, renormalized trace, by adjoining a modular ("observer") degree of freedom that supplies a cutoff. Independently, the Sorkin–Yazdi spacetime entanglement entropy (SSEE) on causal sets (arXiv:1611.10281) is finite and area-law only after a *double truncation* of the Pauli–Jordan spectrum that discards modes below a discreteness-set magnitude $\kappa$ (arXiv:1712.04227; Surya–Nomaan X–Yazdi, arXiv:2008.07697). These two operations have the same job description — convert a divergent entanglement trace into a finite one by cutting off a continuum of low-weight modes — but the identification has never, to our knowledge, been made quantitatively, and "type" is an intrinsically infinite-dimensional notion that cannot be read off a finite matrix directly. We test the identification numerically by constructing **three finite-$N$ proxies** for the type-III$_1\to$II transition (entropy-trace divergence vs. saturation; flatness/density of the modular spectrum, i.e. a finite-$N$ surrogate for Connes' invariant $S(\mathcal{M})$; and central-sequence / factor self-averaging), each with an explicit prediction and an $N$-scaling test. In a clean **2D** causal diamond the entropy trace collapses by $80\times$ under truncation ($S\sim N^{1.04}\to N^{0.17}$), the small-$\varepsilon$ modular pile-up scales as $N^{1.14}$ before truncation and is driven *exactly to zero* after it (a sharp IR edge appears, consistent with the $\rho^{-1/2}$ entropy cutoff of arXiv:2008.07697), and self-averaging is confirmed but does not discriminate — 2/3 proxies fire. We then repeat the program in a clean **4D slab half-space** (the geometry where the SSEE is known to obey an area law — flat, corner-free, Rindler-like — from our companion calculation), and all **3/3** proxies fire: the trace collapses $36\times$ with $S\sim N^{1.34}\to N^{0.55}\approx\sqrt N$ (the 4D area law), a sharp IR modular edge opens at $\varepsilon\approx 2.7$, and — the strongest single result — the area-law rank $n_{\max}\sim N^{3/4}$ is the *operative* regulator: it produces the type-II area law while a fixed-fraction magnitude cutoff that keeps $\sim N^{0.9}$ modes does **not** ($S\sim N^{0.83}$, off the area law). The transition therefore lives in the *state* (entropy and modular spectrum), not in the symplectic kinematics, and it is selective in the truncation prescription, not generic to any UV cutoff. We flag a sharp geometry caveat — diamond *corners*, where the SJ state is non-Hadamard, spoil the area law and hence the clean type-II edge — and connect it to the Hadamard-anomaly localization of our companion note. The interpretation we offer, and label as a conjecture, is that **the discreteness scale acts as the observer/modular cutoff of the CLPW crossed product**, with the discreteness rank playing the role of the adjoined modular mode. We are explicit about the honest gap: there is no analytic derivation, the proxies are finite-$N$ surrogates for an infinite-dimensional invariant, and the LQG-area-gap leg of the proposed three-way identification (SSEE truncation $=$ crossed-product cutoff $=$ loop-quantum-gravity area gap) is **untested** here. This is an internal exploratory note; the limits say so plainly.
+
+---
+
+## 1. The claim, and what it is not
+
+### 1.1 The setup in one paragraph
+
+Two regularizations of a divergent entanglement trace exist in the literature, in two communities that share vocabulary ("modular", "Pauli–Jordan", "KMS") but almost no papers:
+
+- **Operator-algebraic (crossed product).** A local QFT algebra in the continuum is type III$_1$: it admits no trace, so the von Neumann entropy of a subregion is defined only up to a state-independent divergent constant. CLPW (2206.10780) and Chandrasekaran–Penington–Witten (2209.10454) show that adjoining the modular Hamiltonian of an observer — formally a crossed product by the modular automorphism group — yields a type II algebra (II$_1$ in de Sitter, II$_\infty$ in the asymptotic AdS setting), which *does* have a (renormalized, semifinite) trace, and on which generalized entropy $S_{\rm gen}$ is finite. The observer's clock/Hamiltonian supplies the cutoff that makes the trace exist.
+- **Causal-set (Sorkin–Yazdi SSEE).** On a sprinkled causal set the SSEE is built from the Pauli–Jordan operator $i\Delta$ and the Sorkin–Johnston (SJ) state $W=\mathrm{Pos}(i\Delta)$. The raw entropy obeys a *volume* law and diverges with $N$; only after a **double truncation** that zeroes Pauli–Jordan modes with $|\lambda|\le\kappa$ — both globally and on the restricted region — does one recover the expected area/log law (1611.10281; 1712.04227; 2008.07697). The discreteness scale fixes $\kappa$.
+
+Both turn a divergent entanglement trace into a finite one by discarding a continuum of low-weight modes. **The structural hypothesis of this note** (project hypotheses L2-3/H3g-3) is that these are the *same* regularization, with the discreteness scale playing the role of the CLPW observer/modular cutoff. This note is the first numerical probe of that identification on causal sets.
+
+### 1.2 Why "type" cannot be measured directly, and what we do instead
+
+On a finite causal set every operator is a finite matrix and every algebra is trivially type I$_n$ ($=B(\mathbb{C}^n)$). The von Neumann *type* — I/II/III, and within III the Connes subtype III$_\lambda$ — is an asymptotic, infinite-dimensional invariant; it is not a function of any finite matrix. We therefore do **not** claim to measure the type. We construct three **finite-$N$ proxies**, each a quantity whose *trend with $N$* is predicted to differ between a III$_1$-like and a II-like situation, and we test those trends with error bars over multiple seeds. Each proxy is stated as: prediction $\to$ measurement $\to$ $N$-scaling verdict. This is the entire epistemic posture of the note, and §6/TODO are blunt about its limits. The proxies are surrogates; they can be jointly consistent with the hypothesis without proving it.
+
+### 1.3 What we explicitly do not claim
+
+- We do **not** claim to have measured a von Neumann type, nor to resolve III$_1$ from III$_\lambda$ ($\lambda<1$): finite $N$ gives only "flat-dense vs. integrable-with-edge", i.e. "III-like vs. II-like", never $\lambda$. The crossed-product target is type II; we do not distinguish II$_1$ from II$_\infty$.
+- We do **not** claim the crossed-product construction itself: that is CLPW (2206.10780) / CPW (2209.10454) / Witten (2112.12828). We do not claim the SSEE formula or the double truncation: those are Sorkin–Yazdi (1611.10281) and 1712.04227. We do not claim the area-law rank $n_{\max}\sim N^{(d-1)/d}$ or the de Sitter slab/Rindler area law: those are 2008.07697. §3 states this overlap *before* the results.
+- We do **not** establish an analytic mechanism. Every result is a finite-$N$ numerical proxy. The identification of the discreteness cutoff with the crossed-product modular cutoff is offered as a **conjecture supported by consistent proxy trends**, not a theorem.
+- We do **not** test the LQG leg. The full hypothesis is a *three*-way identification (SSEE truncation $=$ crossed-product cutoff $=$ LQG area gap $\Delta=4\sqrt3\,\pi\gamma\ell_P^2$). Only the first two legs are touched here; the area-gap leg — and the role of the Barbero–Immirzi $\gamma$ as the trace renormalization — is entirely future work (§6, TODO).
+
+### 1.4 The contributions, narrowly stated
+
+1. **Three proxies for an infinite-dimensional invariant, run on causal sets.** A trace-divergence proxy, a modular-spectrum (Connes-$S(\mathcal{M})$ surrogate) proxy, and a central-sequence/factor proxy — the first numerical realization of a Connes modular-invariant surrogate on a causal set, to our knowledge.
+2. **2D result: 2/3 proxies consistent with III$_1\to$II.** Trace collapse $80\times$; modular pile-up $N^{1.14}\to 0$ with a sharp IR edge; self-averaging confirmed but non-discriminating.
+3. **4D result: 3/3 proxies in the clean slab geometry, with a selectivity argument as the strongest point.** Not only does the area-law rank $N^{3/4}$ regularize the trace to $\sqrt N$ (type-II); a fixed-fraction magnitude cutoff keeping $\sim N^{0.9}$ modes does *not*. The type signature lives specifically in the area-law rank, exactly the object the crossed-product cutoff is supposed to be — not in any generic UV truncation.
+4. **A geometry caveat connected to a Hadamard anomaly.** Diamond corners (non-Hadamard SJ state) spoil the area law and the clean type-II edge; the clean signature requires the flat, Rindler-like region in which SJ $\approx$ Unruh $=$ Hadamard, i.e. precisely the geometry of the CLPW modular observer.
+
+---
+
+## 2. Method
+
+### 2.1 Sorkin–Johnston state and the Pauli–Jordan link matrix
+
+Conventions are identical across all four calculations and validated against the literature (June 2026 search).
+
+- **Sprinkling.** Poisson-sprinkle $N$ points into the region; $C_{xy}=1$ iff $y\prec x$, else $0$.
+- **Retarded Green function.** 2D massless: $G_R=\tfrac12 C$ (Sorkin–Yazdi 1611.10281, eq. 9). 4D massless: $G_R=a\,L$ with $a=\sqrt\rho/(2\pi\sqrt6)$ and $L$ the *link* matrix (Johnston 0909.0944, eq. 17, $m=0$; conventions 1701.07212).
+- **Pauli–Jordan operator.** $i\Delta=i(G_R-G_R^{\sf T})$ is Hermitian with eigenvalues in $\pm|\lambda|$ pairs. Numerically the antisymmetry is exact: the worst pairing residual $\max|\sum_{\rm sorted}\pm\lambda|$ is $7.1\times10^{-14}$ (4D) and $\sim10^{-16}$ (2D) — machine precision.
+- **SJ Wightman function.** $W=\mathrm{Pos}(i\Delta)=\sum_{\lambda_k>0}\lambda_k|v_k\rangle\langle v_k|$ (1611.10281, §3).
+- **SSEE.** On the region $\mathcal{O}$, solve the generalized problem $W_{\mathcal O}v=\mu\,i\Delta_{\mathcal O}v$ (kernel of $i\Delta_{\mathcal O}$ excluded); generalized eigenvalues come in $(\mu,1-\mu)$ pairs, and $S=\sum_\mu \mu\ln|\mu|\ge 0$ (1611.10281, eqs. 6–7; 2008.07697).
+
+### 2.2 The two truncations
+
+- **2D double truncation (magnitude).** Zero $|\lambda|\le\kappa$ with $\kappa=\sqrt N/(4\pi)$, both in $\mathrm{spec}(i\Delta)$ and in $\mathrm{spec}(i\Delta_{\mathcal O})$ (1712.04227, 2D local). The naive global rank truncation breaks the $(\mu,1-\mu)$ pairing and yields *negative* $S$; the double truncation is what preserves positivity and gives the area/log law.
+- **4D number truncation (area-law rank).** Keep the top $n_{\max}=\alpha N^{(d-1)/d}$ modes by $|\lambda|$; for $d=4$, $n_{\max}=2.0\,N^{3/4}$ (2008.07697). This is the **primary** type-II cutoff in 4D.
+- **4D fixed-fraction control.** Keep $|\lambda|>0.05\,\lambda_{\max}$ (the scheme of the diamond calculations). This keeps $\sim N^{0.9}$ modes and is reported as a **control** that, by design, should fail to reach the area law.
+
+### 2.3 Modular spectrum (the Connes-$S(\mathcal M)$ surrogate)
+
+From a Gaussian (quasifree) state the modular Hamiltonian is fixed by the two-point function (standard bosonic correlator method; Casini–Huerta 0905.2562, confirmed against the modular-Hamiltonian-from-correlators construction arXiv:2501.09669, and against the covariance-matrix modular formalism of Jones–Yazdi, "Spectral Spacetime Entropy for Quasifree Theories", arXiv:2602.16782, which independently links SSEE to exactly this formalism). A single bosonic mode with symplectic eigenvalue $\nu\ge\tfrac12$ has modular energy $\varepsilon=\ln[(\nu+\tfrac12)/(\nu-\tfrac12)]$ and the SSEE pair $(\mu,1-\mu)$ with $\mu>1$ carries the same physics via $\nu=\mu-\tfrac12$, i.e.
+
+$$\boxed{\ \varepsilon=\ln\!\Big[\frac{\mu}{\mu-1}\Big],\qquad \varepsilon\in(0,\infty)\ }$$
+
+$\varepsilon\to0$ ($\mu\to\infty$) is a strongly occupied "volume" mode; $\varepsilon\to\infty$ ($\mu\to1^+$) is a UV-faithful, near-continuum mode. **Connes' modular invariant** $S(\mathcal M)=\bigcap_\varphi \mathrm{Sp}(\Delta_\varphi)$ is built from exactly this modular spectrum: type III$_1\iff S(\mathcal M)=[0,\infty)$, i.e. a flat, dense spectrum filling $\mathbb{R}_+$ down to $\varepsilon=0$. A type-II algebra has an integrable modular density with a sharp IR edge. Our finite-$N$ surrogate measures precisely "flat-dense-with-$\varepsilon\to0$-pile-up" (III$_1$-like) vs. "integrable-with-IR-edge" (II-like).
+
+### 2.4 The three proxies, with their predictions
+
+**Proxy 1 — trace divergence.** The entropy trace $S=-\mathrm{Tr}(\rho\ln\rho)$ is the genuine von Neumann trace functional. Type III: no finite trace, $S$ diverges (volume law). Type II: finite trace, $S$ saturates (area/log in 2D, $\sqrt N$ area law in 4D). *Prediction:* $S_{\rm full}\sim N^{a}$ with $a\approx 1$ (or larger) collapses to $a\approx 0$ (2D) / $a\approx \tfrac12$ (4D) under truncation. We also report, as an honest control, the Pauli–Jordan **nuclear norm** $\mathrm{Tr}|i\Delta_{\mathcal O}|=\sum|\mathrm{eig}(i\Delta_{\mathcal O})|$ — a kinematic (symplectic-form) object whose behavior is type-*independent* and must *not* be used as the trace.
+
+**Proxy 2 — modular spectrum.** Density of $\{\varepsilon_k\}$ before vs. after truncation. *Prediction (III$_1\to$II):* the full state has a small-$\varepsilon$ pile-up that grows with $N$ (flat dense density toward $\varepsilon=0$); the truncated state has the pile-up driven to zero and a sharp IR edge (compactly supported, integrable spectrum).
+
+**Proxy 3 — central sequences / factor (2D) and rank (4D).** A type II$_1$/III$_1$ *factor* has trivial centre, so bulk quantities are independent of boundary microstructure (self-averaging). *2D prediction:* the seed-to-seed coefficient of variation $\mathrm{CV}=\mathrm{std}/\mathrm{mean}$ of the truncated SSEE shrinks with $N$ and faster than the untruncated one. *4D prediction (the $p=3/4$ question):* the area-law rank $n_{\max}\sim N^{3/4}$ produces the area law while the fixed-fraction cutoff fails — i.e. the type signature lives specifically in the area-law rank.
+
+### 2.5 Numerics
+
+`numpy.linalg.eigh` on the complex Hermitian $i\Delta$; the generalized problem solved by projecting onto $\mathrm{ran}(i\Delta_{\mathcal O})$. 2D: $N\in[400,1800]$, 8 seeds. 4D slab: $N\in[800,3500]$ raised by **increasing density $\rho$ at fixed physical region** (matching 2008.07697; this is the direction in which the area-law rank $N^{3/4}$ is meaningful — raising $N$ by enlarging the box at fixed $\rho$ would rescale everything as volume and hide the rank law), 5 seeds. Runtimes are $\lesssim 3$ min per scan.
+
+---
+
+## 3. Relation to prior work (stated before the results, because this is the novelty)
+
+The note's contribution is a *three-way synthesis* that the novelty check classifies as **partially-known**: the pairwise connections are published, the three-way identification is not. We state the prior art up front.
+
+- **CLPW, arXiv:2206.10780** (Chandrasekaran–Longo–Penington–Witten). The observer algebra in de Sitter is type II$_1$; the observer's clock drives III$_1\to$II and makes $S_{\rm gen}$ finite. *No causal sets, no LQG area gap.* This is the operator-algebraic source of "modular/observer cutoff makes the trace exist", and the line of work whose cutoff we conjecture the discreteness scale realizes.
+- **CPW, arXiv:2209.10454** (Chandrasekaran–Penington–Witten). Type II$_\infty$ algebra in asymptotically-AdS / large-$N$; entropy $=$ generalized entropy. *No LQG, no causal sets.*
+- **Sorkin–Yazdi, arXiv:1611.10281.** SSEE in causal set theory; area law only after UV truncation of the Pauli–Jordan spectrum. *No crossed products, no type-II algebras.*
+- **Surya–Nomaan X–Yazdi, arXiv:2008.07697.** SSEE for causal-set de Sitter horizons; area law after truncation; the spectral "knee" sets the truncation threshold; the area-law rank $n_{\max}=\alpha N^{(d-1)/d}$; de Sitter slab and Rindler wedge give the area law. *No LQG, no crossed products.* This is the source of the $N^{3/4}$ rank and of the slab/Rindler geometry we use.
+- **Sorkin–Yazdi (Saravani–Aslanbeigi), arXiv:1712.04227.** The double truncation and $\kappa=\sqrt N/(4\pi)$.
+- **Yazdi–Mathur–Surya, arXiv:2212.10592 / Mathur–Surya 1906.07952.** The 2D-diamond SJ state is non-Hadamard *at the corners* ($u-v'=\pm 2L$); Hadamard in the interior. Motivates the slab as the clean geometry.
+- **Jones–Yazdi, arXiv:2602.16782.** SSEE $\leftrightarrow$ covariance-matrix modular formalism — direct literature support for our $\varepsilon=\ln[\mu/(\mu-1)]$ identification.
+- **Connes 1973.** Classification of III$_\lambda$; the modular invariant $S(\mathcal M)$; III$_1\iff S(\mathcal M)=[0,\infty)$.
+
+**The honest novelty statement (from `verification/novelty/entropy-cluster.md`):** *partially-known.* The pairwise edges are published — SSEE truncation is well-mapped; crossed-product $\to$ type-II is established since 2022; the LQG area gap has been floated as an entanglement cutoff. No paper identifies SSEE truncation $+$ crossed-product type-II $+$ LQG area gap as the **same operation**. The causal-set and von-Neumann-in-gravity communities share keywords but have not made this identification. **What is new here is (i) the three-way synthesis as a stated hypothesis, and (ii) its first numerical proxy test on causal sets.** A referee will, correctly, note that we test only two of the three legs (§6).
+
+---
+
+## 4. Results
+
+### 4.1 Clean 2D causal diamond — 2/3 proxies fire
+
+**Proxy 1 (trace).** Over $N\in[400,1800]$ (8 seeds), the entropy trace before and after truncation:
+
+| quantity | $S$ at $N{=}400\to1800$ | exponent $a$ ($S\sim N^a$) | reading |
+|---|---|---|---|
+| $S_{\rm full}$ | $28.7\to135.9$ | $a=1.04$ | volume law $\to$ divergent trace (III) |
+| $S_{\rm trunc}$ | $1.30\to1.70$ | $a=0.17$ (saturates) | area/log law $\to$ finite trace (II) |
+
+At $N=1800$ truncation collapses the trace **$80\times$** ($135.9\to1.70$). The Pauli–Jordan nuclear-norm control grows as $N^{1.20}$ (full) and $N^{1.14}$ (truncated) — $\kappa$ removes only a constant $\sim20\%$, **not** the divergence. This is the methodologically important negative: the type signature is in the *state/entropy*, not in the symplectic kinematics; a naive "trace of $i\Delta$" would falsely reject the hypothesis. **Verdict: III$\to$II ✓.**
+
+**Proxy 2 (modular spectrum).** With threshold $\varepsilon_0=0.5$:
+
+| quantity | full | truncated |
+|---|---|---|
+| #modular modes | $47\to217$ ($\sim N^{1.0}$, dense) | $8\to20$ (slow/log, integrable) |
+| pile-up at $\varepsilon<0.5$ (exponent) | $\sim N^{1.14}$ (grows) | **exactly 0** (no pile-up) |
+| fraction $\varepsilon<0.5$ | $\sim0.09$ (stable, flat density) | $0$ (compact support, $\varepsilon\gtrsim1.6$) |
+
+The untruncated modular density is **flat from $\varepsilon=0$ to $\varepsilon\sim6$ with a pile-up at $\varepsilon=0$** — Connes' flat-density III$_1$ signature $S(\mathcal M)=\mathbb{R}_+$. Truncation drives the $\varepsilon<0.5$ count to exactly zero and opens a **sharp IR edge** ($\varepsilon\gtrsim1.6$): a compactly supported, integrable, type-II spectrum. The UV edge $\varepsilon_{\max}\sim6$ grows only logarithmically (slope vs. $N$ $\sim6\times10^{-4}$), consistent with the $\mathbb{R}_+$ limit. This is the cleanest single result of the 2D run and the **strongest 2D proxy. Verdict: III$_1\to$II ✓.**
+
+**Proxy 3 (central sequence).** $\mathrm{CV}(S_{\rm trunc})$ falls to $\sim3\%$ at $N=1800$ (self-averaging confirmed), but the power-law trend $N^{-0.71\pm0.78}$ is consistent with zero, and $\mathrm{CV}(S_{\rm full})$ falls similarly ($N^{-0.50\pm0.78}$). Self-averaging is real but does **not discriminate** trunc from full at 8 seeds. **Verdict: factor-like self-averaging confirmed, but non-discriminating ✗** (honest: not a usable *distinguishing* signature here).
+
+> **2D overall: MIXED, 2/3.** The two physically decisive proxies (entropy trace, modular spectrum) unambiguously support III$_1\to$II; the third confirms self-averaging but cannot separate the two states at this seed count. The 2D identification is honest but carries the caveat "2D only" (the 2D SJ state is closer to Hadamard in the interior).
+
+A relevant scaling anchor from the companion diamond calculation (`ssee-diamond`): the Sorkin–Yazdi entropy cutoff rank scales as $N^{0.519\pm0.007}$, i.e. $\varepsilon\sim\rho^{-1/2}$ (the $d=2$ area-law rank $N^{(d-1)/d}=N^{1/2}$), excluding the alternative $\rho^{-1/4}$ at $\sim39\sigma$. The 2D modular IR edge is set by this same $\rho^{-1/2}$ cutoff.
+
+### 4.2 Clean 4D slab half-space — 3/3 proxies fire
+
+Geometry (the corner-free, Rindler-like region from the companion slab calculation): box slab $\{0<t<T,\ |x_i|<L\}$ with $T=0.5<L=0.85$ (flat entangling surface), **interior** half-space cut $x_1>0$, $|x_2|,|x_3|<0.7L$ (deep inside the box, no corners) — a Rindler-like wedge where SJ $\approx$ Unruh $\approx$ Hadamard, i.e. exactly the geometry of the crossed-product modular observer. $N\in[800,3500]$ (5 seeds) by raising $\rho$ at fixed region.
+
+**Proxy 1 (trace).** In 4D the type-II target is an *area* law $S\sim\sqrt N$ (the $d=4$ area exponent $\tfrac12$), not a logarithm:
+
+| quantity | $S$ at $N{=}800\to3500$ | exponent $a$ | reading |
+|---|---|---|---|
+| $S_{\rm full}$ | $27.5\to209.1$ | $a=1.34$ ($R^2{=}0.97$) | volume/super-volume $\to$ divergent trace (III) |
+| $S_{\rm number}$ ($n_{\max}{\sim}N^{3/4}$) | $2.69\to5.84$ | $a=0.55$ ($R^2{=}0.98$) | $\approx\sqrt N$ $\to$ finite trace (II) |
+| $S_{\rm frac}$ ($\kappa{=}0.05\lambda_{\max}$, control) | $11.8\to40.8$ | $a=0.83$ | does **not** reach area law |
+
+Number truncation collapses the trace **$36\times$** at $N=3500$, and the exponent $0.55$ is consistent with the 4D area-law target $0.5$. **Crucially, the fixed-fraction control gives $a=0.83$ — it does not regularize to the area law**, because it keeps $\sim N$ modes. Not every magnitude cutoff converts III$\to$II; only the $N^{3/4}$ rank does. **Verdict: III$\to$II ✓.**
+
+**Proxy 2 (modular spectrum).** Full vs. number-truncated, $\varepsilon_0=0.5$:
+
+| quantity | full | number-truncated |
+|---|---|---|
+| #modular modes | $84\to437$ ($\sim N^{1.11}$, dense) | $32\to89$ ($\sim N^{0.70}\approx N^{3/4}$) |
+| pile-up at $\varepsilon<0.5$ | $3.2\to34.6$ ($\sim N^{1.27}$, grows) | **exactly 0** (sharp IR edge) |
+| fraction $\varepsilon<0.5$ | $0.038\to0.079$ (flat density) | $0$ (compact, $\varepsilon\gtrsim2.7$) |
+| UV edge $\varepsilon_{\max}$ | $13.3\to14.0$ (weak) | $\sim10$ (saturates) |
+
+The untruncated density is **flat from $\varepsilon=0$ to $\varepsilon\sim12$ with an $\varepsilon=0$ pile-up scaling as $N^{1.27}$** (III$_1$). Number truncation drives the pile-up to zero and opens a **sharp IR edge at $\varepsilon\approx2.7$** — a compact, integrable type-II spectrum on $\varepsilon\in[2.7,10]$. Notably the truncated mode count scales as $N^{0.70}\approx N^{3/4}$: the modular spectrum *follows the area-law rank* (coupling proxy 2 to proxy 3). **Verdict: III$_1\to$II ✓** (again the cleanest single proxy).
+
+**Proxy 3 (rank — the selectivity argument, our strongest point).** We split the $p=3/4$ question into three honest sub-questions:
+
+- **(3a) Does the imposed $n_{\max}\sim N^{3/4}$ give the area law?** *Yes.* Keeping the top $2N^{3/4}$ modes regularizes $S$ to $N^{0.55}\approx\sqrt N$ — type-II finite trace.
+- **(3b) Does the fixed-fraction cutoff fail?** *Yes.* $\kappa=0.05\lambda_{\max}$ keeps $\sim N^{0.90}$ modes (volume rank), $S\sim N^{0.83}$ — **not** the area law. Therefore the $N^{3/4}$ rank is the *operative* regulator, **not any magnitude cutoff.** This is the decisive evidence that the type signature lives specifically in the area-law rank — the very object the crossed-product cutoff is supposed to be.
+- **(3c) Does the slab spectrum have a self-generated knee at $N^{3/4}$?** *No.* The auto-knee detector finds rank $\sim N^{1.06}$ (the whole spectrum), no sharp knee at $N^{3/4}$. The area-law rank is a **prescription** (number truncation), not an intrinsic spectral feature of the slab.
+
+**Verdict: ROBUST ✓.** And (3c) is not a weakness but a *feature*: in the crossed-product picture the modular/observer cutoff is precisely an **external** structure (the adjoined observer algebra) added to an otherwise traceless III$_1$ algebra. That the slab has no intrinsic knee means the clean III$_1$ kinematics is there, and type II appears only upon *adjoining* the $N^{3/4}$ cutoff — exactly the right behavior.
+
+> **4D overall: ALL THREE, 3/3.** This is what promotes the identification from a 2D curiosity (VYPOCET-12) to a statement in the physical dimension. The selectivity result (3a $\wedge$ 3b) — area-law rank works, fixed-fraction fails — is the strongest single argument in the paper.
+
+### 4.3 The geometry caveat: diamond corners spoil it
+
+The clean 4D signature requires the *right region*. From the companion slab-vs-diamond calculation:
+
+- **4D slab half-space (flat surface) $\to$ AREA law:** $S\sim L^{2.00}$, $S\sim A^{1.00}$ (linear in area), robust over $N\in[566,3772]$; interior cut even cleaner ($S\sim L^{2.18}$).
+- **4D nested diamond $\to$ VOLUME law** ($S\sim f^{6.1}$, $R^2_{\rm vol}=0.998$ at $N=5000$; the companion's reduced-$N$ diamond reference gave only super-area $f^{4.34}$ and is not used for the volume claim).
+
+The discriminator is a **Hadamard anomaly localized at diamond corners.** Log-log slope of $|\mathrm{Re}\,W(x,y)|$ vs. spacelike distance:
+
+| region | "interior/deep" slope | "corner/flat-surface" slope | anomaly? |
+|---|---|---|---|
+| 4D diamond | inside $-1.53$ | corner $-2.79$ | **yes** (corner steeper by $\sim1.3$) |
+| 4D slab | deep $-3.81$ | flat surface $-3.85$ | **no** (surface $\approx$ depth) |
+| 2D diamond | inside $-0.160$ | corner $-0.095$ | **yes** (corner flatter by $\sim0.065$) |
+
+At a diamond corner the SJ short-distance two-point function is anomalous (non-Hadamard, the analytically known $u-v'=\pm2L$ site of 2212.10592); on a flat half-space surface it is **identical to deep interior** (Hadamard-clean). The corner non-Hadamard anomaly drives the volume law, which would spoil the type-II edge; the slab has no corners, so the SSEE respects the area law and the modular spectrum opens its clean IR edge. **The clean type-II signature is therefore not generic to 4D — it requires the flat, Hadamard, Rindler-like region**, which is exactly the geometry the crossed-product observer lives in. (Honest caveat, below: the literature — 2008.07697, 2412.07832 — does *not* establish a *direct causal* link between non-Hadamardness and volume scaling; our corner$\leftrightarrow$volume, flat$\leftrightarrow$area correlation is a three-measurement consistency, not a proven mechanism. The absolute Hadamard slopes are finite-$N$-deformed; the diagnostic rests on the *contrast*, not the absolute value.)
+
+---
+
+## 5. Interpretation: the discreteness scale as the crossed-product modular cutoff
+
+We read the results as follows, and label the reading a **conjecture**.
+
+The untruncated SJ state on a Hadamard (flat, corner-free) region has a **flat, dense, non-integrable modular density piling up at $\varepsilon=0$** — the defining Connes signature of type III$_1$, $S(\mathcal M)=[0,\infty)$ — in both 2D and 4D. The truncation that produces the area law is exactly the operation that **excises the $\varepsilon\to0$ (volume, strongly occupied) modes and leaves a compactly supported, integrable, IR-edged spectrum** — the defining signature of type II. The trace functional (entropy) follows: divergent (volume) before, finite (area/log) after. And the operation that does this is specifically the **area-law rank** $n_{\max}\sim N^{(d-1)/d}$, not any magnitude cutoff (the fixed-fraction control fails). In the CLPW crossed-product construction, the operation that converts a traceless III$_1$ algebra into a semifinite type-II algebra is the adjunction of a modular/observer mode supplying a cutoff. The numerics are consistent with the **discreteness scale playing that role**: the discreteness-set rank $N^{(d-1)/d}$ is the operative cutoff, it is *external* to the (knee-free) slab spectrum (proxy 3c), and it acts exactly where the crossed-product cutoff should — on the $\varepsilon\to0$ end of the modular spectrum.
+
+This is the line of CLPW (2206.10780) / CPW (2209.10454) / Witten (2112.12828), now with a causal-set realization of the cutoff. In the 2D run the cutoff scales as $\varepsilon\sim\rho^{-1/2}$ ($=\rho^{-1/d}$); the general area-law rank is $N^{(d-1)/d}$, giving $\rho^{-1/2}$ in 2D and $N^{3/4}$ in 4D.
+
+**The honest gap.** (i) There is **no analytic derivation** — every result is a finite-$N$ proxy for an infinite-dimensional invariant; we cannot, at finite $N$, prove $S(\mathcal M)=[0,\infty)$ or distinguish III$_1$ from III$_\lambda$. (ii) The proxies are **surrogates**; their joint consistency supports but does not prove the identification, and proxy 3 (2D central sequence) is non-discriminating. (iii) The **LQG-area-gap leg is untested.** The full hypothesis is a *triangle* — SSEE truncation $=$ crossed-product cutoff $=$ LQG area gap $\Delta=4\sqrt3\,\pi\gamma\ell_P^2$, with the Barbero–Immirzi $\gamma$ as the renormalization constant tying the LQG trace to the type-II trace. We have touched only the SSEE–crossed-product edge. The area-gap leg requires a normalization of $\gamma$ and a direct comparison we have not performed. We claim the first two legs are numerically *consistent*; we make **no** claim about the third.
+
+---
+
+## 6. Limits (read this before believing the abstract)
+
+1. **Type is not measured.** Finite $N$ gives type-I$_n$ always; we measure proxy *trends*, never an invariant. "III$_1$-like" means "flat-dense modular density with $\varepsilon\to0$ pile-up"; "II-like" means "integrable with IR edge". No $\lambda$, no II$_1$ vs. II$_\infty$.
+2. **Proxies $\ne$ types.** Each proxy is a finite-dimensional surrogate; a referee can fairly say "consistent trends are not a transition." Our defense is the *joint* firing of independent proxies and the $N$-scaling, not any single number (see TODO §1).
+3. **$N^{3/4}$ is a prescription, not a spectral feature** (proxy 3c). We argue this is correct for a crossed-product *observer* cutoff (external structure), but a referee may read it as "you imposed the answer." The selectivity (3b: fixed-fraction fails) is the rebuttal — the answer is not imposed generically, only the specific area-law rank works.
+4. **Gaussian-state limitation.** The modular-spectrum proxy uses the quasifree/Gaussian structure of the SJ state ($\varepsilon=\ln[\mu/(\mu-1)]$). It does not probe non-Gaussian sectors; the identification is established only at the level of the free SJ state.
+5. **Geometry sensitivity is real and not fully understood.** The clean signature needs the flat Rindler-like region; diamond corners spoil it via a non-Hadamard anomaly whose *causal* link to volume scaling the literature does not confirm (2412.07832). Our evidence is correlational across three measurements.
+6. **The LQG leg is untested**, and is the most speculative part of the program. Nothing here establishes the area-gap identification or the role of $\gamma$.
+7. **AI-assisted, unverified by a human.** See TODO §0. The calculations, citation transcriptions, and this draft are an AI-assisted exploratory pipeline; no human has re-run the code or checked conventions against source PDFs.
+
+---
+
+## 7. Summary
+
+On a clean 2D causal diamond, two of three finite-$N$ proxies (entropy-trace $80\times$ collapse; modular pile-up $N^{1.14}\to0$ with a sharp IR edge, the $\rho^{-1/2}$ cutoff) are consistent with a type III$_1\to$II transition driven by the Sorkin–Yazdi truncation; the third (self-averaging) is confirmed but non-discriminating. In the clean 4D slab half-space — the corner-free, Rindler-like, Hadamard region — all three fire: trace collapse $36\times$ with $S\sim N^{1.34}\to N^{0.55}\approx\sqrt N$; a sharp modular IR edge at $\varepsilon\approx2.7$; and, as the strongest single result, the area-law rank $N^{3/4}$ is the *operative* regulator while a fixed-fraction cutoff that keeps $\sim N^{0.9}$ modes fails to reach the area law. Diamond corners (non-Hadamard SJ state) spoil the signature, connecting the geometry requirement to a localized Hadamard anomaly. We interpret the discreteness scale as a candidate for the observer/modular cutoff of the CLPW crossed-product construction, while stating plainly that there is no analytic derivation, the proxies are finite-$N$ surrogates, and the LQG-area-gap leg of the conjectured triangle is untested.
+
+---
+
+## References (arXiv IDs; to be verified against arXiv by a human before any release)
+
+- **1611.10281** — Sorkin, Yazdi. *Entanglement Entropy in Causal Set Theory.* (SSEE, $G_R=\tfrac12 C$, double truncation, $W_{\mathcal O}v=\mu i\Delta_{\mathcal O}v$.)
+- **1712.04227** — Saravani, Aslanbeigi, Sorkin (causal-set EE). Double truncation, $\kappa=\sqrt N/(4\pi)$ (2D local), 4D volume law before truncation.
+- **2008.07697** — Surya, Nomaan X, Yazdi. *Entanglement Entropy of Causal Set de Sitter Horizons.* Slab $+$ Rindler $\to$ area law; $n_{\max}=\alpha N^{(d-1)/d}$ ($d{=}4\to N^{3/4}$); knee truncation.
+- **0909.0944** — Johnston. 4D retarded Green function $G_R=(\sqrt\rho/2\pi\sqrt6)L$, link matrix.
+- **1701.07212** — Nomaan X, Dowker, Surya. 4D/2D $G_R$ conventions.
+- **0905.2562** — Casini, Huerta. Bosonic correlator method; $\varepsilon=\ln[(\nu+\tfrac12)/(\nu-\tfrac12)]$.
+- **2501.09669** — Modular Hamiltonian from two-point functions (formula confirmation).
+- **2602.16782** — Jones, Yazdi. *Spectral Spacetime Entropy for Quasifree Theories.* SSEE $\leftrightarrow$ covariance-matrix modular formalism.
+- **2206.10780** — Chandrasekaran, Longo, Penington, Witten. Crossed product, III$_1\to$II, $S_{\rm gen}$ (de Sitter observer, II$_1$).
+- **2209.10454** — Chandrasekaran, Penington, Witten. Large-$N$ / asymptotic-AdS type II$_\infty$ algebra; entropy $=$ generalized entropy.
+- **2112.12828** — Witten. *Gravity and the crossed product.*
+- **2212.10592** — Yazdi, Mathur, Surya. SJ state non-Hadamard at 1+1D diamond corners ($u-v'=\pm2L$).
+- **1906.07952** — Mathur, Surya. SJ vacuum of the massive scalar in a 2D diamond; corner mirror-vacuum match.
+- **2412.07832** — *Entropy and the Vacuum State in Causal Set Theory.* Caveat: EE behavior and non-Hadamardness likely **not** directly connected.
+- **Sorkin–Yazdi / Surya et al. (8 seeds, 5 seeds runs)** — companion calculations `sj-vn-type` (2D), `vn-type-slab-4d` (4D), `ssee-diamond`, `ssee-slab-4d`.
+- **Connes 1973.** Classification of type III$_\lambda$; modular invariant $S(\mathcal M)$; III$_1\iff S(\mathcal M)=[0,\infty)$.
+
+*Data: `core-data/calculations/{sj-vn-type, vn-type-slab-4d, ssee-diamond, ssee-slab-4d}/results.json`. Provenance notes: `knowledge-base/vypocty/VYPOCET-{04,12,13,16}*.md`. Novelty: `verification/novelty/entropy-cluster.md`.*

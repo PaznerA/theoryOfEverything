@@ -1,8 +1,8 @@
 # H04 — Entropy-cluster reframe: co 2D potvrdilo, 4D zkomplikovalo, a co dál
 
-> **Status:** Aktivní — přepracování po VYPOCET-06  
+> **Status:** Aktivní — po VYPOCET-13: interpretace (c) podpořena, (a) vyvrácena v silné formě  
 > **Datum:** 2026-06-06  
-> **Navazuje na:** VYPOCET-04 (2D, pozitivní), VYPOCET-06 (4D, komplikace), BRAINSTORM-02 §H2g-3  
+> **Navazuje na:** VYPOCET-04 (2D, pozitivní), VYPOCET-06 (4D, komplikace), VYPOCET-09 (BD), VYPOCET-13 (slab vs diamant), BRAINSTORM-02 §H2g-3  
 > **Rodičovská hypotéza:** H2g-3 — SSEE truncační cutoff = crossed-product modulární cutoff = LQG area gap  
 > **Cluster:** entropy-cluster (L2-3 + L3-4 + L4-4)
 
@@ -178,6 +178,8 @@ Ve vyšších dimenzích (d ≥ 3) je obraz fundamentálně odlišný: spektrum 
 Trojcestná identifikace (SSEE truncace = crossed-product cutoff = LQG area gap Δ = 4√3 π γ l_P² ve 4D) **zatím nemá numerický pilíř ve 4D**. 2D výsledek zůstává platný jako sanity check, ale nestačí pro tvrzení o 4D fyzice.
 
 **Update po VYPOCET-09 (2026-06-06):** Interpretace (b) byla testována. BD nelokální d'Alembertián (G_R = B⁻¹) **opravil tvar spektra** — dává čistý mocninový zákon λ_k ~ k^(−α) (R²≈0.99) tam, kde link matice dávala ploché spektrum (R²=0.92). To je významný dílčí úspěch (b). **Ale ústřední teze (b) — že to oživí robustní p = 3/4 — byla VYVRÁCENA:** exponent α driftuje s N (+1.28 přes dekádu N, nekonvergoval při N≤3000), žádná definice cutoffu nedá robustní 3/4 (frakční→p≈0, absolutní práh→p∈[1.2,1.7] driftující, slope-knee→p≈0.98≈N¹ identicky jako VYPOCET-06), a area/volume zůstává cutoff-závislé/inconclusive. Selhání VYPOCET-06 tedy **není objekt-specifické** (link matice) — je hlubší. Smeared BD (ε≤0.6) léčí podmíněnost (cond 10¹⁰→10³), ale ne nekonvergenci α. **Váha se posouvá k interpretacím (a) [2D-only] a (c) [non-Hadamardovost].** Doporučená další cesta: algebraický Hadamard test (3c) nebo 3D link-matrix test (3a). Detaily: `vypocty/VYPOCET-09-ssee-bd-4d.md`.
+
+**Update po VYPOCET-13 (2026-06-06) — ROZHODNUTÍ (a) vs (c):** Rozhodující test přes změnu geometrie regionu při **fixní dimenzi d=4**. **Interpretace (c) POTVRZENA, (a) VYVRÁCENA v silné formě.** Tři sbíhající se linie: (1) **4D kauzální SLAB s plochou half-space entangling plochou (bez rohů) dává AREA law** — S~L^2.00 (S~plocha^1.00, R²_area>R²_vol, robustní N∈[566,3772]) — tam, kde nested diamant dává VOLUME (VYPOCET-06, S~f^6.1, N=5000). 4D tedy **NENÍ inherentně objemové** (vyvrací silnou formu (a)); je objemové **na diamantu**, plošné **na slabu** — vinou geometrie regionu, ne dimenze. (2) Edge-effect kontrola (interiérní cut mimo stěny boxu) dává area law ještě čistší (S~L^2.18, R²=0.989). (3) **Hadamardova diagnostika lokalizuje anomálii do rohů diamantu:** krátkovzdálenostní SJ Wightman W(x,y) má v rohu diamantu anomální sklon (4D inside −1.53 vs corner −2.79; 2D inside −0.160 vs corner −0.095, sedí na analyticky známém non-Hadamardově místě u−v′=±2L z 2212.10592), zatímco na ploché slab ploše je tvar identický s hloubkou (deep −3.81 ≈ surface −3.85, žádná anomálie). **Důsledek pro H2g-3: hypotéza má cestu zpět do 4D se správnou geometrií regionu (Rindler/slab klín, kde SJ ≈ Unruh = Hadamard) — není 2D-kuriozita.** Poctivé limity: literatura (2008.07697/2412.07832) nepotvrzuje non-Hadamard↔volume jako přímý mechanismus (korelace tří měření, ne důkaz mechanismu); diamantová reference při redukovaném N=1600 nereprodukovala čistý volume law (přebráno z VYPOCET-06 N=5000); absolutní Hadamardovy sklony jsou finite-N deformované (diagnostika stojí na kontrastu, ne absolutní hodnotě). Detaily: `vypocty/VYPOCET-13-ssee-slab-4d.md`.
 
 ---
 

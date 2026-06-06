@@ -182,6 +182,58 @@
     "noveltyStatus": "Systematic comparison of BD vs. link-matrix spectra on 4D sprinkled diamonds, measurement of α-drift with N, and comprehensive cutoff-robustness check (5 definitions) are project-original. α-drift and cutoff-independence failure have not been reported in the literature."
   },
   {
+    "id": "F-016",
+    "statement": "In 4D causal sets, the entanglement entropy scaling law depends critically on the geometry of the entangling region, not on the spacetime dimension alone. A flat half-space cut (slab geometry, iΔ link matrix, validated object, κ=0.05·λmax) gives AREA law: S~L^2.00 (R²=0.982), S~area^1.00, S~volume^0.53; R²_area=0.984 > R²_vol=0.977. Interior-only edge-effect control (cut away from box walls) gives S~L^2.18 (R²=0.989), confirming AREA. By contrast, a 4D nested diamond (VYPOCET-06, N=5000) gives VOLUME law S~f^6.1 (R²_vol=0.998). The determining factor is corner geometry: slab (no corners) → area law; diamond (corners present) → volume law. N≤2088 (3 seeds, slab scan); N=5000 (diamond reference).",
+    "status": "confirmed",
+    "evidence": [
+      "knowledge-base/vypocty/VYPOCET-13-slab-entanglement.md",
+      "core-data/calculations/VYPOCET-13/"
+    ],
+    "date": "2026-06-06",
+    "relatedHypotheses": ["H2g-3", "H04"],
+    "implications": "H04 interpretation (c) — non-Hadamard SJ state concentrated at diamond corners drives volume law — is confirmed; interpretation (a) (4D inherently volume-law) is refuted in strong form. 4D is not inherently volumetric: with a flat entangling surface (Rindler/slab wedge where SJ ≈ Unruh = Hadamard) area law is recovered at dimension 4. Hadamard diagnostics (log-log slope |ReW| vs spacelike distance; 4D Minkowski reference slope −2, 2D reference −1/(4π)≈−0.0796): 4D diamond inside=−1.53 vs corner=−2.79 (anomaly localised at corners); 4D slab deep=−3.81 ≈ surface=−3.85 (no anomaly); 2D diamond inside=−0.160 vs corner=−0.095 (anomaly at analytically known u−v′=±2L). This is the precise Hadamard-diagnostic signature of mechanism (c). The entropy-cluster program in 4D has a viable path forward using Rindler/slab geometry. Caveats: literature (arXiv:2008.07697, 2412.07832) does not confirm non-Hadamard↔volume as a direct mechanism; diamond reference at reduced N did not reproduce clean volume (taken from VYPOCET-06); absolute Hadamard slopes are finite-N deformed (diagnostic rests on surface-vs-corner contrast, not absolute values). Runtime: 264 s.",
+    "noveltyStatus": "Systematic comparison of slab vs. diamond entanglement scaling in 4D causal sets, and the identification of corner geometry (not spacetime dimension) as the determining factor for area vs. volume law, are project-original. The Hadamard diagnostic applied to localise the non-Hadamard anomaly to diamond corners (both 4D and 2D) and the clean slab result establishing area law in 4D have not been reported in the literature. Surya et al. arXiv:2008.07697 study 4D diamonds and find volume law but do not isolate corner geometry as the mechanism."
+  },
+  {
+    "id": "F-017",
+    "statement": "The superradiant-sector weight W_sr of the SJ positive subspace in rotating spacetimes is governed by the local ZAMO angular velocity Ω(r), not by the ergosphere as a discrete geometric boundary. Radial scans: Kerr a=0.6: W_sr in [0, 0.145] (12 radii, monotone); Kerr a=0.9: W_sr in [0, 0.222] (12 radii, monotone). Model comparison (AIC): ΔAIC(exponential vs. power-law S)=+441.6 (a=0.6), +4216.3 (a=0.9), +231.5 (BTZ J=0.9) — all three decisive in favour of Model S (W_sr ~ Ω(r)^B). Fitted power-law exponent B=4.23 (a=0.6), 3.82 (a=0.9), 1.71 (BTZ). Asymmetry A_W sign: negative-definite in all 65 exterior measurements (Kerr 5×8 + BTZ 5×5); no flip; near-ergosphere |A_W|~0.49–0.60 vs far-zone |A_W|~0.03–0.05 (factor ~15–20). BTZ cross-check at J=0.9 reproduces the same qualitative structure (pattern_matches_kerr=True). N=1600, 5 seeds [101,202,303,404,505].",
+    "status": "confirmed",
+    "evidence": [
+      "knowledge-base/vypocty/VYPOCET-14-superradiance-onset.md",
+      "core-data/calculations/VYPOCET-14/"
+    ],
+    "date": "2026-06-06",
+    "relatedHypotheses": ["H3g-1", "H3g-6"],
+    "implications": "H3g-1 confirmed: the superradiant signature in the SJ state is driven by the continuous frame-dragging field Ω(r), not by a discrete threshold at the ergosphere. Model S (W_sr ~ Ω^B) is preferred by decisive ΔAIC 230–4200 across all three configurations. A_W is negative-definite throughout the exterior radial scan (no sign flip in 65 measurements), with amplitude tracking |Ω| — directly confirming the toy model from VYPOCET-10. BTZ cross-check at J=0.9 reproduces the same pattern, supporting H3g-6 (geometric independence of the effect). Remaining ambiguity: for a=0.6, linear correlation marginally favours Model E (0.971 vs 0.900) because 1/(r−r_erg) and Ω(r) are correlated functions — disambiguation requires a denser scan at r=5–20M (recommended for VYPOCET-15).",
+    "noveltyStatus": "The identification of Ω(r) as the continuous control parameter for the superradiant SJ weight (rather than a discrete ergosphere threshold), the AIC-based model comparison between exponential-of-distance and power-law-of-Ω models, and the 65-point sign-stability of A_W are project-original. No prior publication has performed a systematic radial scan of SJ superradiant weight and compared competing onset models. The BTZ cross-check at J=0.9 extending the Ω-control result to 3D rotating spacetimes is also project-original."
+  },
+  {
+    "id": "F-018",
+    "statement": "The far-zone/near-zone ambiguity of VYPOCET-14 (Kerr a=0.6, where linear correlation marginally favoured Model E corr=0.971 vs. Model S corr=0.900) is resolved in log-log space: corr(log W_sr, log Ω) = 0.9992 vs. corr(log W_sr, log 1/(r−r_erg)) = 0.942, decisively favouring Model S. Joint fit (near+far, n=19 radii, r=2.05–20M): ΔAIC(E−S) = +3894 (threshold for 'decisive' is >6). Near-zone power law (high-SNR n=11, SNR≥3): |A_W| ~ r^{−2.75±0.03} (predicted −3, R²=0.957); |A_W| ~ Ω^{0.98±0.01} (predicted +1, R²=0.932). Far-zone (r=5–20M, 13 radii): W_sr = 0 at all 13 radii (below (ω,k)-grid resolution); A_W < 0 at all 13 radii. Together with VYPOCET-14 (ΔAIC=+4216 for a=0.9, +231 for BTZ), the consistent conclusion holds for all three geometries: the superradiant onset in the SJ state is governed by the local ZAMO angular velocity Ω(r), not by geometric distance from the ergosphere (r−r_erg). Seeds: 5, N=1600.",
+    "status": "confirmed",
+    "evidence": [
+      "knowledge-base/vypocty/VYPOCET-15-far-zone-disambiguation.md",
+      "core-data/calculations/VYPOCET-15/"
+    ],
+    "date": "2026-06-06",
+    "relatedHypotheses": ["H3g-1", "H3g-6"],
+    "implications": "The VYPOCET-14 disambiguation for a=0.6 is closed: Model S (W_sr ~ Ω^B) is confirmed in log-log space with corr=0.9992 vs. Model E corr=0.942, and ΔAIC=+3894 on the joint near+far dataset. Far-zone W_sr is zero below grid resolution, so direct slope comparison for W_sr is unavailable in the far zone; the discriminator is the A_W power law (|A_W|~r^{−2.75}, predicted −3) and the joint AIC/BIC near-zone fit. The Ω(r) conclusion is now robust across all three tested geometries (Kerr a=0.6, a=0.9, BTZ J=0.9).",
+    "noveltyStatus": "Resolution of the linear-vs-log correlation ambiguity for Kerr a=0.6 via log-log discriminant analysis and joint AIC fit of near+far-zone data is project-original. The A_W near-zone power law |A_W|~r^{−2.75} (consistent with r^{−3}) as a discriminator between Model E and Model S is a new project result."
+  },
+  {
+    "id": "F-019",
+    "statement": "In 4D (box-slab geometry, iΔ link matrix, interior half-space cut x1>0, |x2|,|x3|<0.7L, T=0.5, L=0.85, N=800–3500, 5 seeds), three independent von Neumann type proxies all pass: (1) Entropy-trace proxy: S_full ~ N^{1.34} (volume/super-volume, divergent type-III trace, 27.5→209.1); S_number-trunc[n_max=2N^{3/4}] ~ N^{0.55} ≈ sqrt(N) (4D area law, finite type-II trace, 2.69→5.84); trace collapse 36x at N=3500. Fixed-fraction control S_frac ~ N^{0.83} does NOT reach area law. (2) Modular spectrum (eps=ln[mu/(mu-1)]): pile-up below eps=0.5 grows ~N^{1.27} untruncated (III₁ flat-dense) → exactly 0 after number truncation (type-II, sharp IR edge at eps~2.7, compactly supported). Modular mode count: full ~N^{1.11} → truncated ~N^{0.70} (~N^{3/4}). (3) p=3/4 question: imposed n_max~N^{3/4} gives area law S~N^{0.55}≈sqrt(N) (YES); fixed-fraction cutoff (keeps ~N^{0.90} modes) FAILS area law (S~N^{0.83}) — N^{3/4} rank is the operative regulator, not any magnitude cutoff; slab spectrum has no intrinsic sharp knee (auto-knee ~N^{1.06}), so N^{3/4} is a prescription (the observer/crossed-product cutoff), not a spectral feature. VERDICT: 3/3 proxies pass. Pauli-Jordan +/- pairing error = 7.1e-14 (machine precision). Runtime 158 s.",
+    "status": "supported",
+    "evidence": [
+      "knowledge-base/vypocty/VYPOCET-16-vn-type-4d.md",
+      "core-data/calculations/VYPOCET-16/"
+    ],
+    "date": "2026-06-06",
+    "relatedHypotheses": ["H3g-3", "H2g-3", "H4g-4"],
+    "implications": "H3g-3 (SSEE truncation = crossed-product modular cutoff, III₁→II transition) is supported in physical dimension d=4: all three vN-type proxies pass on a pure 4D slab geometry — entropy-trace III→II (exponent 1.34→0.55, 36x collapse), modular spectrum III₁→II (flat dense → integrable with sharp IR edge at eps~2.7), and robust N^{3/4} rank as operative type-II/crossed-product regulator. Key selective finding: only N^{3/4} number-truncation regularises the trace to area-law S~sqrt(N), while a fixed-fraction cutoff (keeps ~N modes) fails — the type signature lives precisely in the area-law rank scaling, not in any magnitude cutoff. The 2D result of VYPOCET-12 extends to 4D with correct geometry; the crossed-product identification (SSEE truncation = modular cutoff = LQG area gap) is not a 2D curiosity. Caveats: 'supported' not 'confirmed' because (a) slab spectrum has no intrinsic knee — N^{3/4} is a prescription; (b) fixed-fraction control fails as expected but no analytical crossed-product bound verified yet; (c) larger N and more seeds needed before claiming convergence of exponents.",
+    "noveltyStatus": "Extension of the vN type-III→II numerical proxy analysis to 4D (VYPOCET-12 was 2D) on a clean slab geometry, and the selective demonstration that N^{3/4} number-truncation (not magnitude-based cutoff) is the operative area-law regulator in 4D, are project-original. The 4D modular spectrum result (flat-dense → compactly supported with sharp IR edge after N^{3/4} truncation) has not been reported in any surveyed paper."
+  },
+  {
     "id": "F-013",
     "statement": "On a shared sprinkling, the positive SJ subspaces of rotating vs. static sections are rotated by a mean principal angle of ~44.6° (mean cos²=0.507 for Kerr a=0.9 vs. a=0 at r=2.6; 0.509 for BTZ J=0.6 vs. J=0 at r=1.3), while spectra differ by only 2.0% and link-fractions by 0.6%; static-vs-static cos²=1.000000. The weight of the positive SJ subspace in the superradiant band ω(ω−kΩ)<0 grows monotonically with spin (a=0: 0.0000 exactly, a=0.9: 0.0171 at r=2.6) and toward the ergosphere (a=0.9: 0.0000 at r=4.0 → 0.0755 at r=2.05, r_erg=2.0). A toy null-diamond model reproduces both signs and magnitudes of A_caus and A_W (correlation 0.95–0.97): A_caus>0 from causal-cone clipping geometry, A_W<0 from massless 2D Wightman function on compressed vs. expanded null direction.",
     "status": "confirmed",
