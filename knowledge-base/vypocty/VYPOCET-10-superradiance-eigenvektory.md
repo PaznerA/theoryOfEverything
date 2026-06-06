@@ -61,7 +61,7 @@ závisí **pouze** na nulovém intervalu (konformní invariance). „Časupodobn
 | Vstup | Hodnota / forma | Zdroj |
 |-------|-----------------|-------|
 | `G_R=(1/2)C` (2D bezhmotný, konformně invariantní) | faktor ½ | Sorkin-Yazdi **1611.10281** eq.9; zakřivená AdS₂ **2504.12919** |
-| `iΔ=i(1/2)(C−Cᵀ)`; SJ W = kladná část | spektrální | Sorkin-Yazdi **1611.10281**; Afshordi-Aslanbeigi-Sorkin **1208.2422** |
+| `iΔ=i(1/2)(C−Cᵀ)`; SJ W = kladná část | spektrální | Sorkin-Yazdi **1611.10281**; Afshordi-Aslanbeigi-Sorkin **1205.1296** |
 | Bezhmotná 2D Wightman `W₀=−(1/4π)ln(−Δx²+iε Δx⁰)` | logaritmická, konf. inv. | standardní 2D QFT (ověřeno; viz limity níže) |
 | Superradiantní podmínka `ω−mΩ<0` (`ω(ω−mΩ)<0`) | ko-rotující frekvence záporná | standardní (Kerr superradiance); zde `Ω=−g_tφ/g_φφ` (ZAMO) |
 | Kerr/BTZ metrika, horizonty, ergosféra | viz | VYPOCET-05/08, tamtéž |
@@ -153,7 +153,7 @@ To přímo odpovídá na nejzranitelnější bod draftu (TODO 1.4): opačné zna
 ## Citace (prohledané/použité)
 
 - **1611.10281** — Sorkin, Yazdi (`G_R=½C`, `iΔ`, SJ W = kladná část)
-- **1208.2422** — Afshordi-Aslanbeigi-Sorkin (SJ kontinuum)
+- **1205.1296** — Afshordi-Aslanbeigi-Sorkin (SJ kontinuum)
 - **2504.12919** — konformní plochost ⇒ `½C` v zakřivené 2D (AdS₂)
 - **1701.07212, 1712.04227** — masivní `G_R`, limita m→0
 - Bezhmotná 2D Wightman `W₀=−(1/4π)ln(…)`, logaritmická a konformně invariantní — standardní 2D QFT (ověřeno proti literatuře; faktor `1/4π` a `iε`-předpis)

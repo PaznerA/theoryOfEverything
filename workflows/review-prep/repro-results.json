@@ -1,0 +1,587 @@
+{
+ "results": {
+  "a4-anomaly-matching": {
+   "status": "identical",
+   "runtime_s": 1,
+   "n_diffs": 0,
+   "max_rel_dev": 0.0,
+   "verdict_flips": [],
+   "structural": [],
+   "top_numeric_devs": []
+  },
+  "a4-graviton-index": {
+   "status": "identical",
+   "runtime_s": 1,
+   "n_diffs": 0,
+   "max_rel_dev": 0.0,
+   "verdict_flips": [],
+   "structural": [],
+   "top_numeric_devs": []
+  },
+  "bmv-as-phase": {
+   "status": "identical",
+   "runtime_s": 1,
+   "n_diffs": 0,
+   "max_rel_dev": 0.0,
+   "verdict_flips": [],
+   "structural": [],
+   "top_numeric_devs": []
+  },
+  "ds-classification": {
+   "status": "identical",
+   "runtime_s": 1,
+   "n_diffs": 0,
+   "max_rel_dev": 0.0,
+   "verdict_flips": [],
+   "structural": [],
+   "top_numeric_devs": []
+  },
+  "lambda-induced": {
+   "status": "identical",
+   "runtime_s": 1,
+   "n_diffs": 0,
+   "max_rel_dev": 0.0,
+   "verdict_flips": [],
+   "structural": [],
+   "top_numeric_devs": []
+  },
+  "lambda-prefactors": {
+   "status": "identical",
+   "runtime_s": 1,
+   "n_diffs": 0,
+   "max_rel_dev": 0.0,
+   "verdict_flips": [],
+   "structural": [],
+   "top_numeric_devs": []
+  },
+  "modular-flow-bd-4d": {
+   "status": "structural-diff",
+   "runtime_s": 80,
+   "n_diffs": 19,
+   "max_rel_dev": 0.09449784888964374,
+   "verdict_flips": [],
+   "structural": [
+    [
+     "/link_baseline_VYPOCET18/nl_vs_corner_dist",
+     "value-change",
+     "[0.36373895573584963, 0.518879648145628, 0.5909959891978867, 0.6503830575808343, 0.7063357933937233, 0.7736193698034937]->None"
+    ],
+    [
+     "/link_baseline_VYPOCET18/nl_vs_corner_mean",
+     "value-change",
+     "[0.10619889208595772, 0.17438813882646217, 0.20768651466804758, 0.25452198209503557, 0.32220366962092944, 0.43118834120352867]->None"
+    ],
+    [
+     "/link_baseline_VYPOCET18/corner_nonlocal_tail",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/link_baseline_VYPOCET18/bulk_nonlocal_tail",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/link_baseline_VYPOCET18/slab_vs_diamond_fnl_ratio",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/link_baseline_VYPOCET18/error",
+     "new-key",
+     null
+    ],
+    [
+     "/VERDICT/link_baseline/nl_vs_corner_dist",
+     "value-change",
+     "[0.36373895573584963, 0.518879648145628, 0.5909959891978867, 0.6503830575808343, 0.7063357933937233, 0.7736193698034937]->None"
+    ],
+    [
+     "/VERDICT/link_baseline/nl_vs_corner_mean",
+     "value-change",
+     "[0.10619889208595772, 0.17438813882646217, 0.20768651466804758, 0.25452198209503557, 0.32220366962092944, 0.43118834120352867]->None"
+    ],
+    [
+     "/VERDICT/link_baseline/corner_nonlocal_tail",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/VERDICT/link_baseline/bulk_nonlocal_tail",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/VERDICT/link_baseline/slab_vs_diamond_fnl_ratio",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/VERDICT/link_baseline/error",
+     "new-key",
+     null
+    ],
+    [
+     "/VERDICT_sharp_crosscheck/link_baseline/nl_vs_corner_dist",
+     "value-change",
+     "[0.36373895573584963, 0.518879648145628, 0.5909959891978867, 0.6503830575808343, 0.7063357933937233, 0.7736193698034937]->None"
+    ],
+    [
+     "/VERDICT_sharp_crosscheck/link_baseline/nl_vs_corner_mean",
+     "value-change",
+     "[0.10619889208595772, 0.17438813882646217, 0.20768651466804758, 0.25452198209503557, 0.32220366962092944, 0.43118834120352867]->None"
+    ],
+    [
+     "/VERDICT_sharp_crosscheck/link_baseline/corner_nonlocal_tail",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/VERDICT_sharp_crosscheck/link_baseline/bulk_nonlocal_tail",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/VERDICT_sharp_crosscheck/link_baseline/slab_vs_diamond_fnl_ratio",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/VERDICT_sharp_crosscheck/link_baseline/error",
+     "new-key",
+     null
+    ]
+   ],
+   "top_numeric_devs": [
+    [
+     "/runtime_s",
+     0.094498
+    ]
+   ]
+  },
+  "modular-flow-corner": {
+   "status": "DEVIATES",
+   "runtime_s": 280,
+   "n_diffs": 1,
+   "max_rel_dev": 0.11525705686366934,
+   "verdict_flips": [],
+   "structural": [],
+   "top_numeric_devs": [
+    [
+     "/runtime_s",
+     0.115257
+    ]
+   ]
+  },
+  "sj-desitter-type": {
+   "status": "reproduced-tolerance",
+   "runtime_s": 434,
+   "n_diffs": 1,
+   "max_rel_dev": 0.007608831946879132,
+   "verdict_flips": [],
+   "structural": [],
+   "top_numeric_devs": [
+    [
+     "/runtime_s",
+     0.007609
+    ]
+   ]
+  },
+  "sj-eigenvector-superradiance": {
+   "status": "identical",
+   "runtime_s": 131,
+   "n_diffs": 0,
+   "max_rel_dev": 0.0,
+   "verdict_flips": [],
+   "structural": [],
+   "top_numeric_devs": []
+  },
+  "sj-far-zone": {
+   "status": "VERDICT-FLIP",
+   "runtime_s": 94,
+   "n_diffs": 79,
+   "max_rel_dev": 1.0,
+   "verdict_flips": [
+    [
+     "/model_fits_joint/comparison/AIC_decisive",
+     "verdict-flip",
+     "True->False"
+    ],
+    [
+     "/model_fits_joint/comparison/AIC_strong",
+     "verdict-flip",
+     "True->False"
+    ],
+    [
+     "/verdict/joint_AIC/decisive",
+     "verdict-flip",
+     "True->False"
+    ],
+    [
+     "/verdict/CONCLUSIVE",
+     "verdict-flip",
+     "True->False"
+    ]
+   ],
+   "structural": [
+    [
+     "/near_zone_v14/r_values",
+     "len-change",
+     "6->0"
+    ],
+    [
+     "/model_fits_near_only",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/discriminant/near_only/corr_loglog_E",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/discriminant/near_only/corr_loglog_S",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/discriminant/near_only/corr_linear_E",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/discriminant/near_only/corr_linear_S",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/discriminant/near_only/preferred_loglog",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/discriminant/near_only/preferred_linear",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/discriminant/near_only/note",
+     "new-key",
+     null
+    ],
+    [
+     "/discriminant/joint/corr_loglog_E",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/discriminant/joint/corr_loglog_S",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/discriminant/joint/corr_linear_E",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/discriminant/joint/corr_linear_S",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/discriminant/joint/preferred_loglog",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/discriminant/joint/preferred_linear",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/discriminant/joint/note",
+     "new-key",
+     null
+    ],
+    [
+     "/verdict/loglog_discriminant_joint",
+     "value-change",
+     "'Model_S'->'unknown'"
+    ],
+    [
+     "/verdict/CONCLUSION",
+     "value-change",
+     "'Model S (W_sr ~ Omega^B) confirmed by far-zone data. The near-zone ambiguity (VYPOCET-14, Kerr a=0.6) is resolved: the log-log slope in the far zone matches Omega^B, NOT 1/(r-r_erg).'->'Far-zone data"
+    ]
+   ],
+   "top_numeric_devs": [
+    [
+     "/near_zone_v14/n_records",
+     1.0
+    ],
+    [
+     "/model_fits_joint/n_near",
+     1.0
+    ],
+    [
+     "/discriminant/near_only/n_points",
+     1.0
+    ],
+    [
+     "/discriminant/joint/n_points",
+     1.0
+    ],
+    [
+     "/model_fits_joint/model_S/chi2",
+     1.0
+    ],
+    [
+     "/model_fits_joint/model_S/chi2_dof",
+     1.0
+    ],
+    [
+     "/model_fits_joint/model_E/chi2",
+     1.0
+    ],
+    [
+     "/model_fits_joint/comparison/delta_AIC_E_minus_S",
+     1.0
+    ],
+    [
+     "/model_fits_joint/comparison/delta_BIC_E_minus_S",
+     1.0
+    ],
+    [
+     "/verdict/joint_AIC/delta_AIC_E_minus_S",
+     1.0
+    ]
+   ]
+  },
+  "sj-kerr-equatorial": {
+   "status": "identical",
+   "runtime_s": 349,
+   "n_diffs": 0,
+   "max_rel_dev": 0.0,
+   "verdict_flips": [],
+   "structural": [],
+   "top_numeric_devs": []
+  },
+  "sj-rotating-btz": {
+   "status": "identical",
+   "runtime_s": 51,
+   "n_diffs": 0,
+   "max_rel_dev": 0.0,
+   "verdict_flips": [],
+   "structural": [],
+   "top_numeric_devs": []
+  },
+  "sj-threshold-scan": {
+   "status": "run-error",
+   "runtime_s": 204,
+   "stderr_tail": "Traceback (most recent call last):\n  File \"/private/tmp/qg-repro/sj-threshold-scan/calc.py\", line 1130, in <module>\n    run()\n    ~~~^^\n  File \"/private/tmp/qg-repro/sj-threshold-scan/calc.py\", line 1113, in run\n    print(f\"    discriminant (linear): corr_S={cs:.3f if cs else 'N/A'}, \"\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Invalid format specifier '.3f if cs else 'N/A'' for object of type 'float'\n"
+  },
+  "sj-vn-type": {
+   "status": "structural-diff",
+   "runtime_s": 68,
+   "n_diffs": 14,
+   "max_rel_dev": 0.0,
+   "verdict_flips": [],
+   "structural": [
+    [
+     "/proxy1_trace/entropy_trace_full/a_se_regression",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/proxy1_trace/entropy_trace_full/a_ci68_bootstrap",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/proxy1_trace/entropy_trace_full/a_err_note",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/proxy1_trace/entropy_trace_trunc/a_se_regression",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/proxy1_trace/entropy_trace_trunc/a_ci68_bootstrap",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/proxy1_trace/entropy_trace_trunc/a_err_note",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/proxy2_modular_spectrum/pile_below_eps0_trunc/err_se_regression",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/proxy2_modular_spectrum/pile_below_eps0_trunc/err_ci68_bootstrap",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/proxy2_modular_spectrum/pile_below_eps0_trunc/err_note",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/proxy3_central_sequences/CV_S_trunc_powerlaw_se_regression",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/proxy3_central_sequences/CV_S_trunc_powerlaw_ci68_bootstrap",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/proxy3_central_sequences/CV_S_full_powerlaw_se_regression",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/proxy3_central_sequences/CV_S_full_powerlaw_ci68_bootstrap",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/proxy3_central_sequences/CV_powerlaw_err_note",
+     "missing-in-new",
+     null
+    ]
+   ],
+   "top_numeric_devs": []
+  },
+  "ssee-4d": {
+   "status": "structural-diff",
+   "runtime_s": 1568,
+   "n_diffs": 6,
+   "max_rel_dev": 0.03282689800263055,
+   "verdict_flips": [],
+   "structural": [
+    [
+     "/area_law_conditioning_check",
+     "missing-in-new",
+     null
+    ],
+    [
+     "/VERDICT",
+     "missing-in-new",
+     null
+    ]
+   ],
+   "top_numeric_devs": [
+    [
+     "/runtime_s",
+     0.032827
+    ],
+    [
+     "/demo/timing_s/C",
+     0.024458
+    ],
+    [
+     "/demo/timing_s/eig",
+     0.015755
+    ],
+    [
+     "/demo/timing_s/L_matmul",
+     0.008792
+    ]
+   ]
+  },
+  "ssee-bd-4d": {
+   "status": "DEVIATES",
+   "runtime_s": 425,
+   "n_diffs": 1,
+   "max_rel_dev": 0.07212544305157483,
+   "verdict_flips": [],
+   "structural": [],
+   "top_numeric_devs": [
+    [
+     "/runtime_s",
+     0.072125
+    ]
+   ]
+  },
+  "ssee-diamond": {
+   "status": "identical",
+   "runtime_s": 49,
+   "n_diffs": 0,
+   "max_rel_dev": 0.0,
+   "verdict_flips": [],
+   "structural": [],
+   "top_numeric_devs": []
+  },
+  "ssee-slab-4d": {
+   "status": "reproduced-tolerance",
+   "runtime_s": 275,
+   "n_diffs": 1,
+   "max_rel_dev": 0.037881669456171475,
+   "verdict_flips": [],
+   "structural": [],
+   "top_numeric_devs": [
+    [
+     "/runtime_s",
+     0.037882
+    ]
+   ]
+  },
+  "vn-type-slab-4d": {
+   "status": "reproduced-tolerance",
+   "runtime_s": 161,
+   "n_diffs": 1,
+   "max_rel_dev": 0.02063079719303524,
+   "verdict_flips": [],
+   "structural": [],
+   "top_numeric_devs": [
+    [
+     "/runtime_s",
+     0.020631
+    ]
+   ]
+  }
+ },
+ "summary": {
+  "identical": [
+   "a4-anomaly-matching",
+   "a4-graviton-index",
+   "bmv-as-phase",
+   "ds-classification",
+   "lambda-induced",
+   "lambda-prefactors",
+   "sj-eigenvector-superradiance",
+   "sj-kerr-equatorial",
+   "sj-rotating-btz",
+   "ssee-diamond"
+  ],
+  "structural-diff": [
+   "modular-flow-bd-4d",
+   "sj-vn-type",
+   "ssee-4d"
+  ],
+  "DEVIATES": [
+   "modular-flow-corner",
+   "ssee-bd-4d"
+  ],
+  "reproduced-tolerance": [
+   "sj-desitter-type",
+   "ssee-slab-4d",
+   "vn-type-slab-4d"
+  ],
+  "VERDICT-FLIP": [
+   "sj-far-zone"
+  ],
+  "run-error": [
+   "sj-threshold-scan"
+  ]
+ }
+}

@@ -1,19 +1,53 @@
 # Progress tracker — Theory of Everything
 
-> ⏸️ **PAUZA (2026-06-06 ~11:00)** — na žádost uživatele (tokenový limit). Kolo 9 zastaveno v půlce: VYPOCET-19 (SJ de Sitter II₁ test) a VYPOCET-20 (BD 4D modulární tok) nedokončené (adresáře v `core-data/calculations/` založené, writeupy chybí), ESEJ-04 a `papers/REVIZE-PRO-CLOVEKA.md` nenapsané. **Obnovit:** spustit znovu workflow `workflows/qg-round-09.js`; poté plán BRAINSTORM-05 + závěrečná zpráva dne.
+> ⏸️ **PAUZA (2026-06-06 večer, na žádost uživatele)** — velké review KOMPLETNÍ: report [`reports/2026-06-06-review.md`](reports/2026-06-06-review.md). Část 1: verifikace 150 arXiv ID (7 chyb opraveno), audit 24 nálezů (cesty + caveaty), opravy draftů (a_err rekonstrukce, CST konvence), doplnění grafu (5 nových hran, 2 nové uzly). Část 2: deterministická reprodukce — **20/20 calc.py bitově identických** (+ opraven latentní print-bug v sj-threshold-scan, zdokumentovány 2 skryté závislosti na pořadí spouštění). **Obnovení:** krok 3 roadmapy (kombinovatelné simulační funkce z formulas.json) nebo testy H5g-1/H5g-3 z BRAINSTORM-05 („na jedno odpoledne").
+
+## Roadmapa (zadání uživatele, 2026-06-06)
+
+1. **Dokončit základní research** — kolo 9 (běží) → BRAINSTORM-05 → závěrečná zpráva.
+2. **Velké review** (až doběhne kolo 9): kontrola správnosti všech dat, doplňování (teoretických) vazeb v grafu konceptů, celkový úklid repozitáře.
+3. **Simulace a vizualizace**: založené na jednotlivých vzorcích z `core-data/formulas.json`, sjednocené do **co nejmenších kombinovatelných funkcí** (composable functions) podporujících/vyvracejících naše teze.
+4. **Minimalistický web**: prezentace papers, dat, tezí, nápadů a grafů; minimalistický framework, který **builduje web přímo z existující souborové struktury** repozitáře (markdown + JSON registry jako zdroj pravdy).
 
 ## Aktuální stav
 
-🟢 **Fáze 2: Hledání souvislostí** — kola 3–8 dokončena (2026-06-06): 4 drafty článků (draft-01 v0.2 SJ rotující prostoročasy, draft-02 a₄ fermionová identita, draft-03 d_s jako klasifikátor, draft-04 typ-přechod kauzální množiny). VYPOCET-17 vyvrátil H4g-3: žádná druhá index-identita pro Λ neexistuje; −18/11 přežívá přítomnost kosmologického členu právě proto, že se na něj NErozšiřuje; draft-02 Λ-riziko uzavřeno. VYPOCET-18 podpořil H4g-1 v 2D (4/5 geometrických signatur; modulární tok geometrický na slabu, non-geometrický v rozích diamantu přesně tam kde F-016 lokalizoval Hadamardovu anomálii); 4D nereplikuje (link-matice řídkost). findings.json = 22 nálezů.
+✅ **Fáze 2: Hledání souvislostí — ZÁKLADNÍ RESEARCH DOKONČEN** (kola 3–9, 2026-06-06): 4 drafty článků (draft-01 v0.2 SJ rotující prostoročasy, draft-02 a₄ fermionová identita, draft-03 d_s jako klasifikátor, draft-04 typ-přechod kauzální množiny). VYPOCET-19 diskriminoval II₁ vs II_∞ na dS statické záplatě: obsah-sledující veličiny saturují pro ohraničenou dS záplatu a rostou pro plochou kontrolu; 2/3 proxy baterie prošla. VYPOCET-20 částečně replikoval H4g-1 v 4D s BD d'Alembertiánem: slab/diamant off-diagonální sklon kontrastuje správně (−1.10 vs −0.52), rohová koncentrace nereplikuje (3/5 signatur). findings.json = 24 nálezů. BRAINSTORM-05 zapsán (6 hypotéz H5g-1–H5g-6). Závěrečná denní zpráva: `reports/2026-06-06-day-report.md`. **Další krok: velké review.** Vstupní bod pro lidskou revizi: **`papers/REVIZE-PRO-CLOVEKA.md`** — přehled stavu všech 4 draftů, doporučené pořadí revizí, kompletní checkboxy, příkazy pro spuštění calc.py.
 
 ## Fáze
 
 | # | Fáze | Stav | Zahájeno | Dokončeno |
 |---|---|---|---|---|
 | 1 | Základní rešerše (18 pilířů QG) | ✅ dokončeno | 2026-06-05 | 2026-06-05 |
-| 2 | Hledání nenalezených souvislostí | 🟡 zahájena | 2026-06-05 | — |
+| 2 | Hledání nenalezených souvislostí (základní research) | ✅ dokončeno | 2026-06-05 | 2026-06-06 |
 
 ## Log
+
+### 2026-06-06 (velké review část 1 — verifikace, audit, opravy)
+
+- **Verifikace referencí (150 z 652 arXiv ID, 95,3 % správných):** Nalezeno a opraveno 7 chybných záznamů: 2403.08696 a 2408.00071 označeny `⚠️ neověřeno`; 2404.07834 opraveni autoři (Carrozza, ne Toriumi et al.); 1208.2422 → 1205.1296 (SJ paper Afshordi-Aslanbeigi-Sorkin, 8 výskytů); 1708.07445 přeznačeno z Calcagni na Mielczarek–Trześniewski (2018); gr-qc/0601127 opraven název (Mattingly). Celkem editováno 14 zdrojových souborů.
+- **Audit findings.json (24 nálezů F-001–F-024):** Opraveny cesty k evidenci ve 24 polích (15 nálezů); přidány `caveats` u 14 nálezů. Žádný status nezměněn — projekt měl statusy správně. Klíčový nuance F-019: N^{3/4} je crossed-product předpis, ne spektrální rys; 3/3 u VYPOCET-16 jsou čestné (proxy jsou trace/modulární spektrum/rank, ne centrální sekvence, která je nesignifikantní u VYPOCET-12 a VYPOCET-19).
+- **Opravy draftů:** (1) draft-04: placeholder `a_err=0.775853` nahrazen skutečnými regresními SE a 68% bootstrap CI (2000 resamplů); klíčové SE: S_full 1.04±0.013, S_trunc 0.17±0.012, CV proxy SE 0.08–0.11 (potvrzuje 2/3 verdikt). (2) draft-03: hodnota 8 (CST random walk) označena jako ilustrativní ve 3 místech; přidána konvenční poznámka D vs D_space před tabulku §5.1.
+- **Doplnění grafu konceptů:** 5 nových hran (3× von-neumann-algebras → causal-sets/quantum-cosmology/holography-adscft [partially]; 1× causal-sets→noncommutative-geometry obohacena [barely, H5g-4]; 1× nová conjecture causal-sets→black-holes-information [barely, H5g-2]). 2 nové konceptuální uzly: `type-iii-factor`, `type-ii-factor`.
+- **consolidate.py spuštěn:** Nové statistiky: concept-graph **625 uzlů / 2476 hran**; connections.json **292 hran / 115 barely**; references.json **587 unikátních**; open-problems.json **153** (+9 fuzzy); formulas.json **247 unikátních**. VNA pilíř nyní na 11 hranách (dříve 0 v registru).
+- **Report:** [`reports/2026-06-06-review.md`](reports/2026-06-06-review.md).
+- **Část 2 (reprodukce):** Spuštěna souběžně; probíhá → `workflows/review-prep/repro-results.json`.
+
+### 2026-06-06 (BRAINSTORM-05 + závěrečná zpráva)
+
+- **BRAINSTORM-05.md** zapsán do `knowledge-base/`: 6 hypotéz páté generace (H5g-1–H5g-6) navazujících na výsledky kol 7–9 (dS II₁ diskriminátor, BD 4D modulární tok, causal-set typ-přechod).
+- **Závěrečná denní zpráva** zapsána do `reports/2026-06-06-day-report.md`: přehled celého dne (kola 3–9), statistiky, stav všech 4 draftů, 24 nálezů, doporučení pro velké review.
+- **Základní research Fáze 2 UZAVŘEN.** Další krok: velké review.
+
+### 2026-06-06 (kolo 9 — VYPOCET-19/20, ESEJ-04, REVIZE-PRO-CLOVEKA.md)
+
+- **VYPOCET-20 — BD d'Alembertián modulární tok 4D (H4g-1, F-024):** Replika VYPOCET-18 slab vs. diamantový roh s BD objektem v 4D (N≤2500). Slab off-diag sklon −1.10 vs. diamant −0.52 — kontrast přítomen, správný směr, síla větší než v 2D ale rohová koncentrace f_nl nereplikuje čistě (rohová f_nl 0.445, nl-vs-corner sklon +0.71; 4D rohové statistiky tenké). **Verdikt: PARCIÁLNÍ 3/5 signatur — H4g-1 v 4D s BD objektem: slab boost-geometricity robustní, rohová koncentrace dimensionálně omezena; link-matice 4D null (VYPOCET-18) je z části objekt-závislý artefakt.** Off-diagonal slope kontrast je nový pozitivní signál pro H4g-1 v 4D. (F-024)
+- **ESEJ-04:** Čtvrtá syntetická esej zapsána (kolo 9).
+- **REVIZE-PRO-CLOVEKA.md** zapsána do `papers/`: vstupní bod pro lidského autora; obsahuje přehledovou tabulku (vědecký stav + odhadovaný čas revize pro každý draft), doporučené pořadí revizí (draft-02 → draft-04 → draft-01 → draft-03), ~80 checkboxů pro matematické re-derivace / citace / čísla / konvence, sekce kritických high-risk položek (arXiv ID z 2025–2026 k ověření, placeholder a_err=0.776, ilustrativní hodnota 8 v CST), absolutní pravidla pro release (jmenovaný autor, AI-assistance statement, veřejný calc.py), přesné příkazy pro re-run všech 12 calc.py.
+- **findings.json** rozšířen na 24 nálezů: F-023 (dS II₁ diskriminátor — obsah-saturace, 2/3 proxy, poctivý null tracialní přístup, Část 2 dS záplata); F-024 (BD 4D modulární tok — parciální 3/5, slab robust, rohová cast dimenzionálně omezena).
+
+### 2026-06-06 (kolo 9 — VYPOCET-19 SJ de Sitter II₁ test)
+
+- **VYPOCET-19 — SJ na dS statické záplatě × von-Neumannův typ: test CLPW II₁ vs II_∞ (F-023):** Sjednocuje dvě vlajkové linie (SJ horizonty × typový přechod) na de Sitteru. Konformní trik: 2D bezhmotný skalár konformně invariantní → SJ plochá v želvích souřadnicích $r^*=\ell\,\mathrm{arctanh}(r/\ell)$, horizont vstupuje jen přes $\mathrm{sech}^2(r^*/\ell)$ vlastní míru sprinklingu (ohraničená záplata = konečná stopa = II₁). ±-párování $i\Delta$ = 2.3e-13 (strojová přesnost). **Část 1 (diskriminátor II₁ vs II_∞): DISKRIMINOVÁNO** — obsah-sledující veličiny při růstu oblasti k horizontu: $N_{\rm total}$ 442→480 SATURUJE (strop 480, R²=1.000) vs plochá 768→3360 ROSTE; $S_{\rm full}$ 40.9→0 saturuje-a-překlápí (sat. fit R²=0.990) vs plochá 87.6→159.6 roste (sklon +12.2); net-změna druhé poloviny dS −13.1 vs plochá +21.7, mezera 34.8. Poctivá 2D limita: truncovaná SSEE je log/area zákon téměř box-nezávislý v OBOU (rozdíl žije v obsahu, ne v truncované entropii; ve 4D by truncovaná $S\sim\sqrt N$ sama oddělila). **Část 2 (tří-proxy baterie na dS záplatě): 2/3** — P1 stopa $S_{\rm full}\sim N^{1.11}$ (objem/III) → $S_{\rm trunc}\sim N^{0.12}$ (saturuje/II); P2 modulární pile-up $\sim N^{1.25}$ (III₁ flat-dense) → přesně 0 (II, ostrá IR hrana ε≈5); P3 centrální sekvence nesignifikantní při 5 seedech (jako VYPOCET-12). **Část 3 (max-entropický tracialní přístup): POCTIVÝ NULL** — IR-frakce netruncovaného spektra klesá (dS −0.008, plochá −0.004), tracialní nárůst nezachycen při N≲2500; $\langle\varepsilon\rangle_{\rm trunc}$ null z konstrukce (truncace zabíjí tracialní módy); scaling pro rozlišení: ρ~10³–10⁴. První běh odhalil artefakt (sech²-koncentrace nested oblast pohltí množinu → triviální SSEE), opraveno na bulk-středový řez s garantovaným komplementem. **Verdikt: DISKRIMINOVÁNO — diskrétní SJ sonda VIDÍ CLPW rozdíl II₁ (ohraničená dS, konečná Tr 1) vs II_∞ (neohraničená plochá).** Runtime 431 s, 5–6 seedů, N≤1950. (F-023)
 
 ### 2026-06-06 (kolo 8 — VYPOCET-17/18, draft-04, housekeeping)
 
@@ -118,7 +152,7 @@
 
 ## Statistiky
 
-Stav po deterministické konsolidaci (2026-06-05). Celkem načteno 18 fragmentů.
+Stav po velké review část 1 (2026-06-06). Celkem načteno 19 fragmentů (pilíř 19 přidán v kole 3).
 
 ### Per-pillar počty
 
@@ -155,7 +189,7 @@ Stav po deterministické konsolidaci (2026-06-05). Celkem načteno 18 fragmentů
 | connections.json | 280 hran, 112 barely explored |
 | _review/concept-merge-candidates.json | 80 párů k posouzení |
 
-**Top hubs grafu (po pilíři 19):** modular-hamiltonian (nový TOP HUB po konsolidaci pilíře 19), holographic-principle, bekenstein-hawking-entropy, spectral-dimension, page-curve, generalized-entropy, adscft-correspondence, hawking-radiation, ryu-takayanagi. Graf: 614 uzlů, 2437 hran (stav po konsolidaci kolo 3).
+**Top hubs grafu (po velké review část 1):** holographic-principle, generalized-entropy, bekenstein-hawking-entropy, spectral-dimension, modular-hamiltonian, page-curve, adscft-correspondence, hawking-radiation. Graf: **625 uzlů, 2476 hran** (stav po konsolidaci 2026-06-06, velké review část 1). Connections: **292 hran, 115 barely explored**. References: **587 unikátních**. Open-problems: **153** (+9 fuzzy). Formulas: **247 unikátních**.
 
 **Sloučení konceptů (soudcovský průchod):** sloučeno 7 skupin (9 ID přesměrováno na kanonická): ryu-takayanagi→ryu-takayanagi-formula, holographic-error-correction+quantum-error-correction→holographic-quantum-error-correction, tensor-network-holography+tensor-networks→tensor-network, bousso-bound→covariant-entropy-bound, gravitational-decoherence→gravitationally-induced-decoherence, ads-cft-correspondence→adscft-correspondence, swampland-distance-conjecture→distance-conjecture; v open-problems sloučeny 2 duplicitní páry.
 
@@ -173,7 +207,7 @@ Podrobnosti zbývajících obav viz log níže.
 
 ## Další kroky
 
-Odvozeno z BRAINSTORM-04 (kolo 7) + výsledků kola 8. Kolo 8 uzavřelo dva hlavní risksecké body: H4g-3 vyvrácena (draft-02 finalizovatelný po lidské re-derivaci), H4g-1 podpořena v 2D (through-line mechanismus aktivní, 4D probe otevřena).
+Odvozeno z BRAINSTORM-04 (kolo 7) + výsledků kol 8–9. Kolo 8 uzavřelo: H4g-3 vyvrácena (draft-02 finalizovatelný), H4g-1 v 2D podpořena. Kolo 9 přidalo: dS II₁ diskriminátor (F-023, 2/3 proxy), BD 4D modulární tok (F-024, parciální 3/5). **Hlavní vstupní bod pro lidského autora: `papers/REVIZE-PRO-CLOVEKA.md`** — zde začít před externím sdílením čehokoli z projektu.
 
 ### Důsledky kola 8 pro drafty a through-line
 
@@ -193,9 +227,12 @@ Odvozeno z BRAINSTORM-04 (kolo 7) + výsledků kola 8. Kolo 8 uzavřelo dva hlav
 
 ### Drafty čekající na lidskou revizi
 
-- **draft-01-sj-rotating-spacetimes v0.2** (`papers/draft-01-sj-rotating-spacetimes/`) — všechny TODO body vyřešeny. **Blokující pro release:** (1) N→∞ studie s 30+ seeds; (2) analytické SJ pro strižený diamant; (3) BTZ dvou-bodová funkce; (4) verifikace citací PDF; (5) nezávislá re-derivace / re-run (gate §8 TODO.md).
-- **draft-02-a4-fermionic-identity** (`papers/draft-02-a4-fermionic-identity/`) — vědecký obsah PLNĚ UZAVŘEN (VYPOCET-11 + VYPOCET-17: žádné Λ-riziko). **Blokující pro release:** lidská re-derivace a₄, citace-check Duff/Andrianov-Lizzi/Kurkov-Lizzi-Vassilevich, scheme-dependence ošetření.
-- **draft-04-type-transition-causal-sets** (`papers/draft-04-type-transition-causal-sets/`) — vědecký obsah zapsán (kolo 8, VYPOCET-12 + VYPOCET-16). **Blokující pro release:** 8 lidských verifikačních bran (viz TODO.md); oprava placeholder a_err=0.776; BD d'Alembertián probe pro 4D repliku; LQG-area-gap noha trojúhelníku označena jako otevřená.
+> Kompletní přehled se checkboxy a příkazy pro re-run: **`papers/REVIZE-PRO-CLOVEKA.md`** — vstupní bod pro lidského autora; doporučené pořadí draft-02 → draft-04 → draft-01 → draft-03.
+
+- **draft-01-sj-rotating-spacetimes v0.2** (`papers/draft-01-sj-rotating-spacetimes/`) — silné výsledky (VYPOCET-14+15, ΔAIC>3894), nejvíce otevřených bloků (~15–25 hod). **Blokující pro release:** (1) N→∞ studie s 30+ seeds; (2) analytické SJ pro strižený diamant; (3) BTZ dvou-bodová funkce; (4) verifikace citací PDF; (5) nezávislá re-derivace / re-run (gate §8 TODO.md).
+- **draft-02-a4-fermionic-identity** (`papers/draft-02-a4-fermionic-identity/`) — vědecky uzavřen (VYPOCET-11 + VYPOCET-17), nejmenší draft (~4–8 hod revize). **Blokující pro release:** lidská re-derivace a₄, citace-check PDF Duff/Andrianov-Lizzi/Kurkov-Lizzi-Vassilevich, scheme-dependence ošetření.
+- **draft-03-ds-classifier** (`papers/draft-03-ds-classifier/`) — nejkřehčí novelty argument (Calcagni program); D-konvence ambiguita (~10–18 hod). **Blokující:** obrana vůči „Calcagni přebalený" a „probe-trivialita" (viz TODO.md).
+- **draft-04-type-transition-causal-sets** (`papers/draft-04-type-transition-causal-sets/`) — konkrétní technický audit (~12–20 hod). **Blokující pro release:** 8 lidských verifikačních bran (viz TODO.md); oprava placeholder a_err=0.776 (kritická — přepsán do mnoha polí); BD 4D replika (VYPOCET-20 parciální — 3/5, rohová cast k ověření); LQG-area-gap noha trojúhelníku označena jako otevřená.
 
 ### DOPORUČENÁ FRONTA (BRAINSTORM-04, kolo 7)
 

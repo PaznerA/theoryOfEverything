@@ -18,7 +18,7 @@ This is not merely a calculational inconvenience. The Kay–Wald theorem (Kay & 
 
 ### 1.2 The Sorkin–Johnston prescription needs no timelike Killing vector — the point
 
-The Sorkin–Johnston (SJ) construction (Afshordi, Aslanbeigi & Sorkin, arXiv:1208.2422; Sorkin & Yazdi, arXiv:1611.10281) builds a distinguished pure quasi-free state from spacetime data alone. Given a globally hyperbolic spacetime and a relatively compact subregion $M'$, one forms the Pauli–Jordan (commutator) operator
+The Sorkin–Johnston (SJ) construction (Afshordi, Aslanbeigi & Sorkin, arXiv:1205.1296; Sorkin & Yazdi, arXiv:1611.10281) builds a distinguished pure quasi-free state from spacetime data alone. Given a globally hyperbolic spacetime and a relatively compact subregion $M'$, one forms the Pauli–Jordan (commutator) operator
 $$
 \Delta(x,y) = G_R(x,y) - G_A(x,y),\qquad A \equiv i\Delta,
 $$
@@ -196,7 +196,7 @@ The co-rotating link fraction saturating to $f_{\rm co}=1$ inside the ergoregion
 ## 5. References
 
 1. R. D. Sorkin and Y. K. Yazdi, *Entanglement Entropy in Causal Set Theory*, arXiv:1611.10281. [$G_R=\tfrac12 C$, $i\Delta$, SJ $W$ as positive part]
-2. N. Afshordi, S. Aslanbeigi and R. D. Sorkin, *A distinguished vacuum state for a quantum field in a curved spacetime*, arXiv:1208.2422. [SJ continuum construction]
+2. N. Afshordi, S. Aslanbeigi and R. D. Sorkin, *A distinguished vacuum state for a quantum field in a curved spacetime*, arXiv:1205.1296. [SJ continuum construction]
 3. S. Johnston et al., *Scalar Field Green Functions on Causal Sets*, arXiv:1701.07212. [massive $G_R$, $m\to0$ limit]
 4. *On the Entanglement Entropy of Quantum Fields in Causal Sets*, arXiv:1712.04227. [$G_R=\tfrac12 C$ conventions]
 5. *Retarded Causal Set Propagator in 2D Anti-de-Sitter Spacetime*, arXiv:2504.12919. [conformal flatness $\Rightarrow$ $\tfrac12 C$ in curved 2D / AdS$_2$]

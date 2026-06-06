@@ -184,7 +184,7 @@ Pro `a=0.9` je `r=1.5` uvnitř ergoregionu (`1.436 < 1.5 < 2.0`), takže `A_caus
 - **1611.10281** — Sorkin, Yazdi (`G_R=½C`, `iΔ`, SJ W = kladná část)
 - **1701.07212, 1712.04227** — masivní `G_R`, limita `m→0`
 - **2504.12919** — konformní plochost ⇒ `½C` v zakřivené 2D (AdS₂)
-- **1208.2422** — Afshordi-Aslanbeigi-Sorkin (SJ kontinuum)
+- **1205.1296** — Afshordi-Aslanbeigi-Sorkin (SJ kontinuum)
 - **H02-sj-kerr.md** (tento projekt) — Strategie II
 - **VYPOCET-05** (sj-rotating-btz) — replikované BTZ signatury, zděděné konvence
 - **VYPOCET-04** (ssee-diamond) — zděděný SJ toolchain

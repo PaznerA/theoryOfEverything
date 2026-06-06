@@ -178,7 +178,7 @@ SJ stav je jedinečně určen oblasti M' — nepotřebuje fixovat asymptoticku s
 
 | Odkaz | Relevance |
 |-------|-----------|
-| Afshordi-Aslanbeigi-Sorkin, arXiv:1208.2422 | Původní SJ konstrukce pro kontinuum |
+| Afshordi-Aslanbeigi-Sorkin, arXiv:1205.1296 | Původní SJ konstrukce pro kontinuum |
 | Jubb-Surya, arXiv:2212.10592 | Non-Hadamard SJ v 1+1D; softened SJ |
 | Mathur-Surya, arXiv:1906.07952 | Numerický SJ v 2D kauzálním diamantu |
 | Glaser, arXiv:0811.4235 | Algoritmus sprinkle pro Schwarzschild |

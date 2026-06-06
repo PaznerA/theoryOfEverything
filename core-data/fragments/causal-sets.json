@@ -676,6 +676,13 @@
     },
     {
       "from": "causal-sets",
+      "to": "black-holes-information",
+      "type": "conjecture",
+      "description": "PRIORITY HUNTING TARGET (BRAINSTORM-05 hypothesis H5g-2): does the saturated content-cap of a bounded causal-set / Sorkin-Johnston de Sitter static patch (F-023: N_total saturates to a finite ceiling, S_full saturates -- the type II_1 finite-trace maximal-entropy state) map QUANTITATIVELY onto the horizon-area entropy A/4? Dou-Sorkin horizon-molecule counting already yields S = A/4 kinematically; the conjecture is that the same area law emerges from first principles as the maximal trace of the truncated SSEE, with the entropy cap matching A/4 up to a calibratable O(1) factor (predicted 1/4). This would derive de Sitter / black-hole horizon entropy from causal-set first principles and is the bridge connecting F-023 to A/4. High-payoff, high-risk; needs higher sprinkling density (rho ~ 10^3-10^4) than an afternoon run.",
+      "explored": "barely"
+    },
+    {
+      "from": "causal-sets",
       "to": "emergent-gravity",
       "type": "shared-structure",
       "description": "CST is a prototype emergent-geometry theory (metric, topology, dimension emerge from order+number) and the BD action emerges from counting order intervals, conceptually close to thermodynamic/entropic gravity (Jacobson, Verlinde). Technical links between counting-based emergence and entropic-force derivations are underdeveloped.",
@@ -685,7 +692,7 @@
       "from": "causal-sets",
       "to": "noncommutative-geometry",
       "type": "shared-math",
-      "description": "Both reject a smooth UV manifold and recover geometry spectrally: the spectral triple / Dirac operator of NCG parallels the Pauli-Jordan operator and SJ spectrum that encode geometry on causal sets. A direct correspondence between these spectral reconstructions is unexplored.",
+      "description": "Both reject a smooth UV manifold and recover geometry spectrally: the spectral triple / Dirac operator of NCG parallels the Pauli-Jordan operator and SJ spectrum that encode geometry on causal sets. PRIORITY HUNTING TARGET (BRAINSTORM-05 hypothesis H5g-4): the conjecture is that the NCG spectral data (Dirac operator D / spectral triple, Connes distance formula) reconstructs the same geometric content as the Sorkin-Johnston modular Hamiltonian K = -log Delta built from the Pauli-Jordan operator i*Delta -- i.e. Connes' spectral reconstruction theorem and the SJ/SSEE spectral reconstruction are two routes to the same emergent Lorentzian geometry, with the modular flow playing the role of (the imaginary-time generator dual to) the Dirac operator. A concrete data-edge would compare Connes distance against modular distance on a sprinkled slab. Entirely unexplored as an explicit correspondence.",
       "explored": "barely"
     },
     {

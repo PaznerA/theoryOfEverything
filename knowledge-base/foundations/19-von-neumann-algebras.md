@@ -204,7 +204,7 @@ $$\text{typ I}\ \xrightarrow[\ N\to\infty\ ]{}\ \text{typ III}_1\ \xrightarrow[\
 
 - **QRF = zkřížené součiny (2024).** [De Vuyst–Eccles–Höhn–Kirklin 2412.15502](https://arxiv.org/abs/2412.15502): kvantový referenční rámec *je* zkřížený součin; různé QRF → různé algebry typu II → různé entropie. **Gravitační entropie je závislá na pozorovateli.** Sjednocuje relační pozorovatelné s modulární gravitační entropií.
 
-- **Zobecněné podoblasti a GSL (2023–2024).** [Jensen–Sorce–Speranza 2306.01837](https://arxiv.org/abs/2306.01837) a [Ali Ahmad–Jefferson 2306.07323](https://arxiv.org/abs/2306.07323) rozšiřují zkřížený součin na obecné oblasti; [Kudler-Flam–Leutheusser–Satishchandran 2403.08696](https://arxiv.org/abs/2403.08696) odvozuje generalizovaný druhý zákon z *monotonie relativní entropie* na algebře typu II. GSL z modulární teorie.
+- **Zobecněné podoblasti a GSL (2023–2024).** [Jensen–Sorce–Speranza 2306.01837](https://arxiv.org/abs/2306.01837) a [Ali Ahmad–Jefferson 2306.07323](https://arxiv.org/abs/2306.07323) rozšiřují zkřížený součin na obecné oblasti; Kudler-Flam–Leutheusser–Satishchandran odvozují generalizovaný druhý zákon z *monotonie relativní entropie* na algebře typu II (⚠️ neověřeno — arXiv:2403.08696 patří jinému článku, správné arXiv ID nebylo nalezeno). GSL z modulární teorie.
 
 - **Sorkinova SSEE a truncation (2014–2018).** [Saravani–Sorkin–Yazdi 2014](https://arxiv.org/abs/1311.7146), [Sorkin–Yazdi 2016](https://arxiv.org/abs/1611.10281): prostoročasová entropie z Pauliho–Jordanovy a Wightmanovy funkce; plošný zákon teprve po geometrické truncaci módů blízkých nule. Diskrétní, causal-set a SJ-stavová cesta k regulované entropii — most k živé hypotéze SSEE/SJ.
 
@@ -218,9 +218,9 @@ Obor se soustředí na **rozšíření zkříženého součinu za horizonty a KM
 
 2. **Obecné podoblasti.** Konstrukce typu II a renormalizované $S_{\text{gen}}$ pro *libovolné* oblasti (ne jen horizonty): [Jensen–Sorce–Speranza 2306.01837](https://arxiv.org/abs/2306.01837), [Ali Ahmad–Jefferson 2306.07323](https://arxiv.org/abs/2306.07323). Reprodukují heuristické vzorce pro entropii rozdílů s žádoucími vlastnostmi (unitární invariance, konkavita).
 
-3. **Generalizovaný druhý zákon z modulární teorie.** [Kudler-Flam–Leutheusser–Satishchandran 2403.08696](https://arxiv.org/abs/2403.08696) (JHEP 11 (2024) 099) odvozují GSL z *monotonie relativní entropie* (data processing) na gravitační algebře typu II — algebraický důkaz, ne replica/Euklid.
+3. **Generalizovaný druhý zákon z modulární teorie.** Kudler-Flam–Leutheusser–Satishchandran (JHEP 11 (2024) 099) odvozují GSL z *monotonie relativní entropie* (data processing) na gravitační algebře typu II — algebraický důkaz, ne replica/Euklid. (⚠️ neověřeno — arXiv:2403.08696 patří jinému článku; správné arXiv ID nebylo nalezeno)
 
-4. **Algebraické ER=EPR a informační paradox.** [Engelhardt–Liu 2311.04281](https://arxiv.org/abs/2311.04281) (JHEP 07 (2024) 013) a operátorově-algebraické přístupy k informaci ([Ali Ahmad–Klinger–Lin 2408.00071](https://arxiv.org/abs/2408.00071), JHEP 02 (2025) 207) recastují Page křivku a přenos informace jako *přechod typu algebry* (III$_1$ → II) a přenos vysoce-komplexních podalgeber.
+4. **Algebraické ER=EPR a informační paradox.** [Engelhardt–Liu 2311.04281](https://arxiv.org/abs/2311.04281) (JHEP 07 (2024) 013) a operátorově-algebraické přístupy k informaci (Ali Ahmad–Klinger–Lin, JHEP 02 (2025) 207, ⚠️ neověřeno — arXiv:2408.00071 patří van der Heijden & Verlinde, správné arXiv ID nebylo nalezeno) recastují Page křivku a přenos informace jako *přechod typu algebry* (III$_1$ → II) a přenos vysoce-komplexních podalgeber.
 
 5. **De Sitter, kovariantní pozorovatelé a přechody.** Pokračuje upřesňování dS algebry: kovariantní (ne jen statické) pozorovatele, Janusovy deformace a *přechody v gravitačních algebrách*, coarse-grained algebry s rozlišením omezeným vlastnostmi pozorovatele. Status maximálně-entropického II$_1$ stavu a role více pozorovatelů zůstávají předmětem diskuse.
 
@@ -355,7 +355,7 @@ graph TD
 - K. Jensen, J. Sorce, A. J. Speranza, *Generalized entropy for general subregions in quantum gravity* (2023). [arXiv:2306.01837](https://arxiv.org/abs/2306.01837)
 - N. Engelhardt, H. Liu, *Algebraic ER=EPR and Complexity Transfer* (2023). [arXiv:2311.04281](https://arxiv.org/abs/2311.04281)
 - J. De Vuyst, S. Eccles, P. A. Höhn, J. Kirklin, *Crossed products and quantum reference frames: on the observer-dependence of gravitational entropy* (2024). [arXiv:2412.15502](https://arxiv.org/abs/2412.15502)
-- J. Kudler-Flam, S. Leutheusser, G. Satishchandran, *Generalized Second Law for Subregions and Gravitational Algebras* (2024). [arXiv:2403.08696](https://arxiv.org/abs/2403.08696)
+- J. Kudler-Flam, S. Leutheusser, G. Satishchandran, *Generalized Second Law for Subregions and Gravitational Algebras* (2024). (⚠️ neověřeno — arXiv:2403.08696 patří jinému článku; správné arXiv ID nebylo nalezeno)
 - R. D. Sorkin, Y. K. Yazdi, *Entanglement Entropy in Causal Set Theory* (2016). [arXiv:1611.10281](https://arxiv.org/abs/1611.10281)
 - M. Saravani, R. D. Sorkin, Y. K. Yazdi, *Spacetime entanglement entropy in 1+1 dimensions* (2014). [arXiv:1311.7146](https://arxiv.org/abs/1311.7146)
 - S. Leutheusser, *Lectures on entanglement, von Neumann algebras, and emergence of spacetime* (2025). [arXiv:2510.07017](https://arxiv.org/abs/2510.07017)

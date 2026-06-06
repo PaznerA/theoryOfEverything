@@ -1,0 +1,4760 @@
+{
+ "0704.0777": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "0705.0016": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/holography-adscft.md"
+ ],
+ "0706.2702": [
+  "./core-data/concept-graph.json",
+  "./core-data/connections.json",
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "0708.1595": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "0708.4025": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md"
+ ],
+ "0709.3851": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md"
+ ],
+ "0710.1675": [
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/novelty-checks.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./knowledge-base/approaches/05-causal-sets.md",
+  "./knowledge-base/eseje/ESEJ-02-vesmir-ktery-se-pocita.md",
+  "./verification/causal-sets.md",
+  "./verification/novelty/lambda-cluster.md"
+ ],
+ "0710.3276": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md"
+ ],
+ "0710.4418": [
+  "./verification/novelty/a4-cluster.md"
+ ],
+ "0710.5373": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "0711.0146": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "0712.2485": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "0712.2824": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "0802.0658": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md"
+ ],
+ "0802.1783": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "0803.1663": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "0804.2182": [
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json"
+ ],
+ "0805.2909": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "0805.3993": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md",
+  "./verification/twistors-amplitudes.md"
+ ],
+ "0806.0339": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "0806.1245": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md"
+ ],
+ "0807.3325": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "0808.0746": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md"
+ ],
+ "0808.4112": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "0810.2088": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "0810.4525": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md"
+ ],
+ "0811.4235": [
+  "./knowledge-base/hypotezy/H02-sj-kerr.md",
+  "./papers/draft-01-sj-rotating-spacetimes/draft.md"
+ ],
+ "0901.3775": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/causal-dynamical-triangulations.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "0902.3657": [
+  "./core-data/calculations/ds-classification/calc.py",
+  "./core-data/calculations/ds-classification/results.json",
+  "./core-data/findings.json",
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./knowledge-base/vypocty/VYPOCET-01-ds-klasifikace.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-03-ds-classifier/TODO.md",
+  "./papers/draft-03-ds-classifier/draft.md",
+  "./verification/novelty/ds-cluster.md",
+  "./workflows/qg-deep-dive-01.js",
+  "./workflows/qg-round-06.js"
+ ],
+ "0905.1317": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "0905.2326": [
+  "./verification/twistors-amplitudes.md"
+ ],
+ "0905.2562": [
+  "./core-data/calculations/modular-flow-bd-4d/calc.py",
+  "./core-data/calculations/modular-flow-bd-4d/results.json",
+  "./core-data/calculations/modular-flow-corner/calc.py",
+  "./core-data/calculations/modular-flow-corner/results.json",
+  "./core-data/calculations/sj-desitter-type/calc.py",
+  "./core-data/calculations/sj-desitter-type/results.json",
+  "./core-data/calculations/sj-vn-type/calc.py",
+  "./core-data/calculations/sj-vn-type/results.json",
+  "./core-data/calculations/vn-type-slab-4d/calc.py",
+  "./core-data/calculations/vn-type-slab-4d/results.json",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/vypocty/VYPOCET-12-vn-typ-truncace.md",
+  "./knowledge-base/vypocty/VYPOCET-16-vn-typ-slab-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-18-modularni-tok-roh.md",
+  "./knowledge-base/vypocty/VYPOCET-19-desitter-II1.md",
+  "./knowledge-base/vypocty/VYPOCET-20-modularni-tok-bd-4d.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-04-type-transition-causal-sets/TODO.md",
+  "./papers/draft-04-type-transition-causal-sets/draft.md"
+ ],
+ "0905.3168": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/novelty-checks.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./knowledge-base/hypotezy/H01-gamma-cardy.md",
+  "./verification/loop-quantum-gravity.md",
+  "./verification/novelty/cardy-lqg.md"
+ ],
+ "0906.5315": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "0908.0333": [
+  "./knowledge-base/approaches/01-string-theory.md"
+ ],
+ "0909.0250": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "0909.0944": [
+  "./core-data/calculations/modular-flow-corner/calc.py",
+  "./core-data/calculations/modular-flow-corner/results.json",
+  "./core-data/calculations/ssee-4d/calc.py",
+  "./core-data/calculations/ssee-4d/results.json",
+  "./core-data/calculations/ssee-slab-4d/calc.py",
+  "./core-data/calculations/ssee-slab-4d/results.json",
+  "./core-data/calculations/vn-type-slab-4d/calc.py",
+  "./core-data/calculations/vn-type-slab-4d/results.json",
+  "./knowledge-base/hypotezy/H04-entropy-cluster-reframe.md",
+  "./knowledge-base/vypocty/VYPOCET-06-ssee-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-09-ssee-bd-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-13-ssee-slab-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-16-vn-typ-slab-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-18-modularni-tok-roh.md",
+  "./knowledge-base/vypocty/VYPOCET-20-modularni-tok-bd-4d.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-04-type-transition-causal-sets/TODO.md",
+  "./papers/draft-04-type-transition-causal-sets/draft.md",
+  "./workflows/qg-deep-dive-02.js"
+ ],
+ "0909.1038": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md"
+ ],
+ "0911.2563": [
+  "./knowledge-base/BRAINSTORM-03.md",
+  "./knowledge-base/hypotezy/H04-entropy-cluster-reframe.md",
+  "./knowledge-base/vypocty/VYPOCET-09-ssee-bd-4d.md",
+  "./workflows/qg-round-04.js"
+ ],
+ "0912.0208": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "1001.0785": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md",
+  "./verification/emergent-gravity.md"
+ ],
+ "1001.2036": [
+  "./core-data/findings.json",
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/BRAINSTORM-04.md",
+  "./knowledge-base/vypocty/VYPOCET-02-a4-matching.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-02-a4-fermionic-identity/TODO.md",
+  "./papers/draft-02-a4-fermionic-identity/draft.md",
+  "./verification/novelty/a4-cluster.md",
+  "./workflows/qg-deep-dive-01.js",
+  "./workflows/qg-round-04.js"
+ ],
+ "1001.2725": [
+  "./core-data/calculations/modular-flow-bd-4d/calc.py",
+  "./core-data/calculations/modular-flow-bd-4d/results.json",
+  "./core-data/calculations/ssee-bd-4d/calc.py",
+  "./core-data/calculations/ssee-bd-4d/results.json",
+  "./core-data/findings.json",
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/approaches/05-causal-sets.md",
+  "./knowledge-base/vypocty/VYPOCET-09-ssee-bd-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-20-modularni-tok-bd-4d.md",
+  "./verification/causal-sets.md"
+ ],
+ "1002.3298": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "1003.3942": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./knowledge-base/phenomenology/17-experimental-tests.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "1003.4134": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "1004.0352": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "1004.0476": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "1004.3220": [
+  "./workflows/qg-deep-dive-02.js"
+ ],
+ "1005.3035": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./knowledge-base/eseje/ESEJ-01-dimenze-jako-otazka.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "1006.0634": [
+  "./PROGRESS.md",
+  "./knowledge-base/BRAINSTORM-02.md",
+  "./knowledge-base/hypotezy/H01-gamma-cardy.md",
+  "./verification/novelty/cardy-lqg.md",
+  "./workflows/qg-deep-dive-02.js"
+ ],
+ "1008.0985": [
+  "./knowledge-base/vypocty/VYPOCET-02-a4-matching.md",
+  "./workflows/qg-deep-dive-01.js"
+ ],
+ "1009.1643": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "1009.2157": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md"
+ ],
+ "1009.5414": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md"
+ ],
+ "1010.3420": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "1011.2726": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md",
+  "./verification/group-field-theory.md"
+ ],
+ "1011.4106": [
+  "./knowledge-base/hypotezy/H03-bmv-diskriminator.md"
+ ],
+ "1012.0780": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "1012.3982": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "1101.0931": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "1102.0440": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "1102.2784": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "1102.3660": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md"
+ ],
+ "1102.3929": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "1103.0478": [
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./verification/novelty/a4-cluster.md"
+ ],
+ "1105.3122": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md"
+ ],
+ "1105.3445": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md"
+ ],
+ "1105.5632": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "1105.6098": [
+  "./core-data/calculations/ds-classification/calc.py",
+  "./core-data/calculations/ds-classification/results.json",
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./knowledge-base/vypocty/VYPOCET-01-ds-klasifikace.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-03-ds-classifier/TODO.md",
+  "./papers/draft-03-ds-classifier/draft.md",
+  "./verification/novelty/ds-cluster.md",
+  "./workflows/qg-deep-dive-01.js",
+  "./workflows/qg-round-06.js"
+ ],
+ "1106.3263": [
+  "./core-data/findings.json",
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/BRAINSTORM-04.md",
+  "./knowledge-base/vypocty/VYPOCET-02-a4-matching.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-02-a4-fermionic-identity/TODO.md",
+  "./papers/draft-02-a4-fermionic-identity/draft.md",
+  "./verification/novelty/a4-cluster.md",
+  "./workflows/qg-deep-dive-01.js",
+  "./workflows/qg-round-04.js"
+ ],
+ "1106.4785": [
+  "./knowledge-base/hypotezy/H02-sj-kerr.md",
+  "./papers/draft-01-sj-rotating-spacetimes/draft.md"
+ ],
+ "1108.0893": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md"
+ ],
+ "1108.3842": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./knowledge-base/hypotezy/H01-gamma-cardy.md",
+  "./verification/black-holes-information.md"
+ ],
+ "1108.5240": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md"
+ ],
+ "1109.0740": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md"
+ ],
+ "1109.4812": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md"
+ ],
+ "1110.5224": [
+  "./core-data/calculations/ds-classification/calc.py",
+  "./core-data/calculations/ds-classification/results.json",
+  "./knowledge-base/vypocty/VYPOCET-01-ds-klasifikace.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-03-ds-classifier/TODO.md",
+  "./papers/draft-03-ds-classifier/draft.md",
+  "./workflows/qg-deep-dive-01.js"
+ ],
+ "1110.5249": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "1110.6875": [
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md"
+ ],
+ "1111.4997": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md"
+ ],
+ "1201.2187": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "1201.6102": [
+  "./knowledge-base/hypotezy/H01-gamma-cardy.md"
+ ],
+ "1202.2274": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md"
+ ],
+ "1202.3423": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "1203.3591": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "1204.5122": [
+  "./PROGRESS.md",
+  "./knowledge-base/BRAINSTORM-02.md",
+  "./knowledge-base/hypotezy/H01-gamma-cardy.md"
+ ],
+ "1205.0971": [
+  "./PROGRESS.md",
+  "./core-data/findings.json",
+  "./knowledge-base/00-INDEX.md",
+  "./knowledge-base/BRAINSTORM-02.md",
+  "./knowledge-base/BRAINSTORM-03.md",
+  "./knowledge-base/BRAINSTORM-04.md",
+  "./knowledge-base/hypotezy/H01-gamma-cardy.md",
+  "./reports/2026-06-06-day-report.md",
+  "./workflows/qg-deep-dive-01.js",
+  "./workflows/qg-deep-dive-02.js"
+ ],
+ "1205.1229": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "1205.2019": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "1205.3791": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "1205.3855": [
+  "./core-data/calculations/sj-desitter-type/calc.py",
+  "./knowledge-base/vypocty/VYPOCET-19-desitter-II1.md"
+ ],
+ "1205.5513": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md"
+ ],
+ "1206.3411": [
+  "./knowledge-base/hypotezy/H01-gamma-cardy.md"
+ ],
+ "1206.4916": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md"
+ ],
+ "1207.3123": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./verification/black-holes-information.md"
+ ],
+ "1207.6348": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "1207.6734": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md"
+ ],
+ "1208.1030": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "1208.2422": [
+  "./knowledge-base/hypotezy/H02-sj-kerr.md",
+  "./knowledge-base/vypocty/VYPOCET-05-sj-rotujici-btz.md",
+  "./knowledge-base/vypocty/VYPOCET-08-sj-kerr-ekvatorialni.md",
+  "./knowledge-base/vypocty/VYPOCET-10-superradiance-eigenvektory.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-01-sj-rotating-spacetimes/draft.md"
+ ],
+ "1210.2589": [
+  "./core-data/novelty-checks.json",
+  "./verification/novelty/lambda-cluster.md"
+ ],
+ "1210.2663": [
+  "./core-data/novelty-checks.json",
+  "./verification/novelty/a4-cluster.md"
+ ],
+ "1210.4030": [
+  "./knowledge-base/approaches/05-causal-sets.md"
+ ],
+ "1211.6767": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md"
+ ],
+ "1212.4060": [
+  "./PROGRESS.md",
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/BRAINSTORM-02.md",
+  "./knowledge-base/hypotezy/H01-gamma-cardy.md",
+  "./verification/novelty/cardy-lqg.md"
+ ],
+ "1212.5605": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "1301.4191": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "1301.6210": [
+  "./knowledge-base/hypotezy/H01-gamma-cardy.md"
+ ],
+ "1302.3226": [
+  "./core-data/calculations/lambda-prefactors/calc.py",
+  "./core-data/calculations/lambda-prefactors/results.json",
+  "./core-data/findings.json",
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/novelty-checks.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./knowledge-base/approaches/09-emergent-gravity.md",
+  "./knowledge-base/eseje/ESEJ-02-vesmir-ktery-se-pocita.md",
+  "./knowledge-base/vypocty/VYPOCET-03-lambda-prefaktory.md",
+  "./verification/emergent-gravity.md",
+  "./verification/novelty/lambda-cluster.md",
+  "./workflows/qg-deep-dive-01.js"
+ ],
+ "1302.6359": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "1303.3576": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./knowledge-base/approaches/06-group-field-theory.md",
+  "./verification/group-field-theory.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "1304.2208": [
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md"
+ ],
+ "1304.2709": [
+  "./core-data/calculations/ds-classification/calc.py",
+  "./core-data/calculations/ds-classification/results.json",
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/vypocty/VYPOCET-01-ds-klasifikace.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-03-ds-classifier/TODO.md",
+  "./papers/draft-03-ds-classifier/draft.md",
+  "./verification/novelty/ds-cluster.md"
+ ],
+ "1304.4926": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "1304.6581": [
+  "./verification/noncommutative-geometry.md"
+ ],
+ "1304.7583": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "1305.2588": [
+  "./core-data/calculations/modular-flow-bd-4d/calc.py",
+  "./core-data/calculations/modular-flow-bd-4d/results.json",
+  "./core-data/calculations/ssee-bd-4d/calc.py",
+  "./core-data/calculations/ssee-bd-4d/results.json",
+  "./core-data/findings.json",
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/05-causal-sets.md",
+  "./knowledge-base/vypocty/VYPOCET-09-ssee-bd-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-20-modularni-tok-bd-4d.md",
+  "./verification/causal-sets.md"
+ ],
+ "1305.6557": [
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/05-causal-sets.md"
+ ],
+ "1306.0533": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/black-holes-information.md",
+  "./verification/entanglement-spacetime.md",
+  "./verification/holography-adscft.md"
+ ],
+ "1306.3231": [
+  "./core-data/calculations/sj-desitter-type/calc.py",
+  "./core-data/calculations/sj-desitter-type/results.json",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/vypocty/VYPOCET-19-desitter-II1.md",
+  "./verification/novelty/preprint-checks.md",
+  "./workflows/qg-round-09.js"
+ ],
+ "1307.0765": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "1307.2199": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "1307.2892": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "1307.5242": [
+  "./knowledge-base/hypotezy/H02-sj-kerr.md",
+  "./papers/draft-01-sj-rotating-spacetimes/draft.md"
+ ],
+ "1307.5469": [
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "1308.1697": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "1309.2498": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "1309.3403": [
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/05-causal-sets.md"
+ ],
+ "1310.5713": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "1310.7786": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md"
+ ],
+ "1311.1095": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "1311.2530": [
+  "./PROGRESS.md",
+  "./core-data/calculations/ds-classification/calc.py",
+  "./core-data/calculations/ds-classification/results.json",
+  "./core-data/concept-graph.json",
+  "./core-data/connections.json",
+  "./core-data/findings.json",
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/novelty-checks.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/approaches/05-causal-sets.md",
+  "./knowledge-base/eseje/ESEJ-01-dimenze-jako-otazka.md",
+  "./knowledge-base/vypocty/VYPOCET-01-ds-klasifikace.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-03-ds-classifier/TODO.md",
+  "./papers/draft-03-ds-classifier/draft.md",
+  "./verification/ds-contradiction.md",
+  "./verification/novelty/ds-cluster.md",
+  "./workflows/qg-deep-dive-01.js",
+  "./workflows/qg-novelty-check.js",
+  "./workflows/qg-round-06.js"
+ ],
+ "1311.2564": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "1311.2898": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "1311.3340": [
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/00-INDEX.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-03-ds-classifier/TODO.md",
+  "./papers/draft-03-ds-classifier/draft.md",
+  "./verification/novelty/ds-cluster.md",
+  "./workflows/qg-round-06.js"
+ ],
+ "1311.6979": [
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./verification/novelty/a4-cluster.md"
+ ],
+ "1311.7146": [
+  "./core-data/calculations/sj-vn-type/calc.py",
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md"
+ ],
+ "1312.2007": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md",
+  "./verification/twistors-amplitudes.md"
+ ],
+ "1312.7856": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "1401.2026": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "1402.2287": [
+  "./knowledge-base/cross-cutting/14-swampland.md"
+ ],
+ "1403.1622": [
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/05-causal-sets.md"
+ ],
+ "1403.4226": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "1403.5940": [
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "1404.1265": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "1404.2284": [
+  "./core-data/novelty-checks.json",
+  "./verification/novelty/lambda-cluster.md"
+ ],
+ "1404.7517": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md"
+ ],
+ "1405.4585": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "1405.7056": [
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./knowledge-base/BRAINSTORM-02.md",
+  "./knowledge-base/hypotezy/H01-gamma-cardy.md",
+  "./verification/novelty/cardy-lqg.md"
+ ],
+ "1405.7287": [
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./verification/novelty/entropy-cluster.md"
+ ],
+ "1408.0199": [
+  "./core-data/calculations/ds-classification/calc.py",
+  "./core-data/calculations/ds-classification/results.json",
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/vypocty/VYPOCET-01-ds-klasifikace.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-03-ds-classifier/TODO.md",
+  "./papers/draft-03-ds-classifier/draft.md",
+  "./verification/novelty/ds-cluster.md"
+ ],
+ "1408.3203": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/black-holes-information.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "1409.2471": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "1409.3089": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md",
+  "./verification/twistors-amplitudes.md"
+ ],
+ "1410.4815": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "1410.5763": [
+  "./PROGRESS.md",
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/00-INDEX.md",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./knowledge-base/BRAINSTORM-02.md",
+  "./knowledge-base/hypotezy/H01-gamma-cardy.md",
+  "./verification/novelty/cardy-lqg.md",
+  "./workflows/qg-deep-dive-01.js",
+  "./workflows/qg-deep-dive-02.js"
+ ],
+ "1411.0977": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "1411.3180": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md"
+ ],
+ "1411.5745": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "1411.7041": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./verification/holography-adscft.md"
+ ],
+ "1411.7712": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "1412.7117": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "1412.7435": [
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/hypotezy/H01-gamma-cardy.md",
+  "./verification/novelty/cardy-lqg.md"
+ ],
+ "1412.7546": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "1501.00007": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "1502.01655": [
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/05-causal-sets.md",
+  "./verification/causal-sets.md"
+ ],
+ "1503.01409": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./verification/black-holes-information.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "1503.06237": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md",
+  "./verification/holography-adscft.md"
+ ],
+ "1504.00586": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md"
+ ],
+ "1505.04753": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md",
+  "./verification/emergent-gravity.md"
+ ],
+ "1506.02669": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/entanglement-spacetime.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "1506.08775": [
+  "./workflows/qg-novelty-check.js"
+ ],
+ "1507.00297": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "1507.00330": [
+  "./PROGRESS.md",
+  "./core-data/calculations/ds-classification/calc.py",
+  "./core-data/calculations/ds-classification/results.json",
+  "./core-data/calculations/modular-flow-bd-4d/calc.py",
+  "./core-data/calculations/modular-flow-bd-4d/results.json",
+  "./core-data/calculations/ssee-bd-4d/calc.py",
+  "./core-data/calculations/ssee-bd-4d/results.json",
+  "./core-data/concept-graph.json",
+  "./core-data/connections.json",
+  "./core-data/findings.json",
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./knowledge-base/BRAINSTORM-03.md",
+  "./knowledge-base/eseje/ESEJ-01-dimenze-jako-otazka.md",
+  "./knowledge-base/hypotezy/H04-entropy-cluster-reframe.md",
+  "./knowledge-base/vypocty/VYPOCET-01-ds-klasifikace.md",
+  "./knowledge-base/vypocty/VYPOCET-09-ssee-bd-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-20-modularni-tok-bd-4d.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-03-ds-classifier/TODO.md",
+  "./papers/draft-03-ds-classifier/draft.md",
+  "./verification/ds-contradiction.md",
+  "./workflows/qg-deep-dive-01.js",
+  "./workflows/qg-round-03-paper.js",
+  "./workflows/qg-round-04.js",
+  "./workflows/qg-round-06.js"
+ ],
+ "1507.00851": [
+  "./core-data/novelty-checks.json",
+  "./verification/novelty/entropy-cluster.md"
+ ],
+ "1507.06299": [
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "1507.08161": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "1509.02542": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "1509.07876": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "1509.09182": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json"
+ ],
+ "1510.00621": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md",
+  "./verification/emergent-gravity.md"
+ ],
+ "1510.01377": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "1510.08672": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "1512.02250": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "1512.04993": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md"
+ ],
+ "1512.06431": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "1601.00921": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md"
+ ],
+ "1601.01800": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/asymptotic-safety.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "1601.05416": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "1602.05881": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md",
+  "./verification/group-field-theory.md"
+ ],
+ "1602.08271": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md",
+  "./verification/group-field-theory.md"
+ ],
+ "1604.00354": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "1604.05932": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md"
+ ],
+ "1604.07818": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md"
+ ],
+ "1605.03231": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "1607.04962": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "1608.05687": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "1609.01287": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md"
+ ],
+ "1610.02134": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "1610.05245": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "1610.07264": [
+  "./core-data/calculations/lambda-induced/calc.py",
+  "./core-data/calculations/lambda-induced/results.json",
+  "./knowledge-base/vypocty/VYPOCET-17-lambda-indukce.md"
+ ],
+ "1610.09758": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md",
+  "./verification/group-field-theory.md"
+ ],
+ "1611.02269": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md",
+  "./verification/emergent-gravity.md"
+ ],
+ "1611.03470": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "1611.08265": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md",
+  "./verification/experimental-tests.md"
+ ],
+ "1611.08915": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md",
+  "./verification/group-field-theory.md"
+ ],
+ "1611.09947": [
+  "./core-data/calculations/ssee-4d/calc.py",
+  "./knowledge-base/vypocty/VYPOCET-06-ssee-4d.md"
+ ],
+ "1611.10281": [
+  "./core-data/calculations/modular-flow-bd-4d/calc.py",
+  "./core-data/calculations/modular-flow-corner/calc.py",
+  "./core-data/calculations/modular-flow-corner/results.json",
+  "./core-data/calculations/sj-desitter-type/calc.py",
+  "./core-data/calculations/sj-desitter-type/results.json",
+  "./core-data/calculations/sj-eigenvector-superradiance/calc.py",
+  "./core-data/calculations/sj-eigenvector-superradiance/results.json",
+  "./core-data/calculations/sj-far-zone/calc.py",
+  "./core-data/calculations/sj-far-zone/results.json",
+  "./core-data/calculations/sj-kerr-equatorial/calc.py",
+  "./core-data/calculations/sj-kerr-equatorial/results.json",
+  "./core-data/calculations/sj-rotating-btz/calc.py",
+  "./core-data/calculations/sj-rotating-btz/results.json",
+  "./core-data/calculations/sj-threshold-scan/calc.py",
+  "./core-data/calculations/sj-threshold-scan/results.json",
+  "./core-data/calculations/sj-vn-type/calc.py",
+  "./core-data/calculations/sj-vn-type/results.json",
+  "./core-data/calculations/ssee-4d/calc.py",
+  "./core-data/calculations/ssee-4d/results.json",
+  "./core-data/calculations/ssee-bd-4d/calc.py",
+  "./core-data/calculations/ssee-diamond/calc.py",
+  "./core-data/calculations/ssee-diamond/results.json",
+  "./core-data/calculations/ssee-slab-4d/calc.py",
+  "./core-data/calculations/ssee-slab-4d/results.json",
+  "./core-data/calculations/vn-type-slab-4d/calc.py",
+  "./core-data/findings.json",
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/novelty-checks.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/approaches/05-causal-sets.md",
+  "./knowledge-base/eseje/ESEJ-01-dimenze-jako-otazka.md",
+  "./knowledge-base/eseje/ESEJ-04-vstup-pozorovatele.md",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md",
+  "./knowledge-base/hypotezy/H04-entropy-cluster-reframe.md",
+  "./knowledge-base/vypocty/VYPOCET-04-ssee-diamant.md",
+  "./knowledge-base/vypocty/VYPOCET-05-sj-rotujici-btz.md",
+  "./knowledge-base/vypocty/VYPOCET-06-ssee-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-08-sj-kerr-ekvatorialni.md",
+  "./knowledge-base/vypocty/VYPOCET-09-ssee-bd-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-10-superradiance-eigenvektory.md",
+  "./knowledge-base/vypocty/VYPOCET-12-vn-typ-truncace.md",
+  "./knowledge-base/vypocty/VYPOCET-13-ssee-slab-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-14-threshold-scan.md",
+  "./knowledge-base/vypocty/VYPOCET-15-far-zone.md",
+  "./knowledge-base/vypocty/VYPOCET-16-vn-typ-slab-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-18-modularni-tok-roh.md",
+  "./knowledge-base/vypocty/VYPOCET-19-desitter-II1.md",
+  "./knowledge-base/vypocty/VYPOCET-20-modularni-tok-bd-4d.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-01-sj-rotating-spacetimes/draft.md",
+  "./papers/draft-04-type-transition-causal-sets/TODO.md",
+  "./papers/draft-04-type-transition-causal-sets/draft.md",
+  "./verification/novelty/entropy-cluster.md",
+  "./workflows/qg-deep-dive-01.js",
+  "./workflows/qg-round-05.js",
+  "./workflows/qg-round-08.js"
+ ],
+ "1612.03034": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md"
+ ],
+ "1612.06282": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md",
+  "./verification/emergent-gravity.md"
+ ],
+ "1612.07324": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "1701.07212": [
+  "./core-data/calculations/sj-kerr-equatorial/calc.py",
+  "./core-data/calculations/sj-kerr-equatorial/results.json",
+  "./core-data/calculations/sj-rotating-btz/calc.py",
+  "./core-data/calculations/sj-rotating-btz/results.json",
+  "./core-data/calculations/ssee-4d/calc.py",
+  "./core-data/calculations/ssee-slab-4d/calc.py",
+  "./core-data/calculations/vn-type-slab-4d/calc.py",
+  "./knowledge-base/hypotezy/H04-entropy-cluster-reframe.md",
+  "./knowledge-base/vypocty/VYPOCET-05-sj-rotujici-btz.md",
+  "./knowledge-base/vypocty/VYPOCET-06-ssee-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-08-sj-kerr-ekvatorialni.md",
+  "./knowledge-base/vypocty/VYPOCET-10-superradiance-eigenvektory.md",
+  "./knowledge-base/vypocty/VYPOCET-13-ssee-slab-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-16-vn-typ-slab-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-18-modularni-tok-roh.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-01-sj-rotating-spacetimes/draft.md",
+  "./papers/draft-04-type-transition-causal-sets/TODO.md",
+  "./papers/draft-04-type-transition-causal-sets/draft.md"
+ ],
+ "1702.04355": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md"
+ ],
+ "1703.02076": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "1703.05448": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "1703.06265": [
+  "./core-data/calculations/lambda-prefactors/calc.py",
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/novelty-checks.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/05-causal-sets.md",
+  "./knowledge-base/eseje/ESEJ-02-vesmir-ktery-se-pocita.md",
+  "./verification/causal-sets.md",
+  "./verification/novelty/lambda-cluster.md"
+ ],
+ "1703.08160": [
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "1704.07464": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "1705.00192": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "1705.05417": [
+  "./core-data/calculations/ds-classification/calc.py",
+  "./core-data/calculations/ds-classification/results.json",
+  "./core-data/findings.json",
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/novelty-checks.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./knowledge-base/eseje/ESEJ-03-gravitace-jako-stin.md",
+  "./knowledge-base/vypocty/VYPOCET-01-ds-klasifikace.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-03-ds-classifier/TODO.md",
+  "./papers/draft-03-ds-classifier/draft.md",
+  "./verification/noncommutative-geometry.md",
+  "./verification/novelty/ds-cluster.md",
+  "./workflows/qg-round-06.js"
+ ],
+ "1706.05804": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./verification/conceptual-problems.md"
+ ],
+ "1707.01107": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "1707.06036": [
+  "./core-data/calculations/bmv-as-phase/calc.py",
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./knowledge-base/hypotezy/H03-bmv-diskriminator.md",
+  "./knowledge-base/phenomenology/17-experimental-tests.md",
+  "./knowledge-base/vypocty/VYPOCET-07-bmv-as-faze.md",
+  "./verification/experimental-tests.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "1707.06050": [
+  "./core-data/calculations/bmv-as-phase/calc.py",
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./knowledge-base/hypotezy/H03-bmv-diskriminator.md",
+  "./knowledge-base/phenomenology/17-experimental-tests.md",
+  "./knowledge-base/vypocty/VYPOCET-07-bmv-as-faze.md",
+  "./verification/conceptual-problems.md",
+  "./verification/experimental-tests.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "1707.07702": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "1707.08133": [
+  "./knowledge-base/vypocty/VYPOCET-05-sj-rotujici-btz.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-01-sj-rotating-spacetimes/draft.md"
+ ],
+ "1708.00734": [
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md"
+ ],
+ "1708.05104": [
+  "./verification/quantum-cosmology.md"
+ ],
+ "1708.07445": [
+  "./core-data/findings.json",
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/00-INDEX.md",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-03-ds-classifier/TODO.md",
+  "./papers/draft-03-ds-classifier/draft.md",
+  "./verification/novelty/ds-cluster.md",
+  "./workflows/qg-round-06.js"
+ ],
+ "1709.00064": [
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/05-causal-sets.md",
+  "./verification/causal-sets.md"
+ ],
+ "1709.04891": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "1710.03779": [
+  "./core-data/calculations/a4-graviton-index/calc.py",
+  "./core-data/calculations/a4-graviton-index/results.json",
+  "./knowledge-base/eseje/ESEJ-03-gravitace-jako-stin.md",
+  "./knowledge-base/vypocty/VYPOCET-11-graviton-index.md"
+ ],
+ "1710.03783": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./verification/black-holes-information.md"
+ ],
+ "1710.05815": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./verification/asymptotic-safety.md"
+ ],
+ "1710.05834": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "1711.00864": [
+  "./core-data/fragments/string-theory.json",
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/string-theory.md"
+ ],
+ "1711.02949": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "1712.02196": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "1712.02803": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md"
+ ],
+ "1712.04227": [
+  "./core-data/calculations/sj-desitter-type/calc.py",
+  "./core-data/calculations/sj-desitter-type/results.json",
+  "./core-data/calculations/sj-kerr-equatorial/calc.py",
+  "./core-data/calculations/sj-kerr-equatorial/results.json",
+  "./core-data/calculations/sj-rotating-btz/calc.py",
+  "./core-data/calculations/sj-rotating-btz/results.json",
+  "./core-data/calculations/sj-vn-type/calc.py",
+  "./core-data/calculations/sj-vn-type/results.json",
+  "./core-data/calculations/ssee-4d/calc.py",
+  "./core-data/calculations/ssee-4d/results.json",
+  "./core-data/calculations/ssee-bd-4d/calc.py",
+  "./core-data/calculations/ssee-diamond/calc.py",
+  "./core-data/calculations/ssee-diamond/results.json",
+  "./core-data/calculations/ssee-slab-4d/calc.py",
+  "./core-data/calculations/ssee-slab-4d/results.json",
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-02.md",
+  "./knowledge-base/eseje/ESEJ-01-dimenze-jako-otazka.md",
+  "./knowledge-base/hypotezy/H04-entropy-cluster-reframe.md",
+  "./knowledge-base/vypocty/VYPOCET-04-ssee-diamant.md",
+  "./knowledge-base/vypocty/VYPOCET-05-sj-rotujici-btz.md",
+  "./knowledge-base/vypocty/VYPOCET-06-ssee-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-08-sj-kerr-ekvatorialni.md",
+  "./knowledge-base/vypocty/VYPOCET-09-ssee-bd-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-10-superradiance-eigenvektory.md",
+  "./knowledge-base/vypocty/VYPOCET-12-vn-typ-truncace.md",
+  "./knowledge-base/vypocty/VYPOCET-13-ssee-slab-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-16-vn-typ-slab-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-18-modularni-tok-roh.md",
+  "./knowledge-base/vypocty/VYPOCET-19-desitter-II1.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-01-sj-rotating-spacetimes/draft.md",
+  "./papers/draft-04-type-transition-causal-sets/TODO.md",
+  "./papers/draft-04-type-transition-causal-sets/draft.md"
+ ],
+ "1712.07207": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./verification/conceptual-problems.md"
+ ],
+ "1802.01040": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md"
+ ],
+ "1802.10524": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "1803.04993": [
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/eseje/ESEJ-04-vstup-pozorovatele.md",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md"
+ ],
+ "1804.00491": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "1804.09311": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "1805.00411": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "1806.08362": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/fragments/string-theory.json",
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/holography-adscft.md",
+  "./verification/string-theory.md",
+  "./verification/swampland.md"
+ ],
+ "1806.09718": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "1807.06209": [
+  "./core-data/calculations/lambda-prefactors/calc.py",
+  "./knowledge-base/eseje/ESEJ-02-vesmir-ktery-se-pocita.md",
+  "./knowledge-base/vypocty/VYPOCET-03-lambda-prefaktory.md"
+ ],
+ "1807.06211": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md"
+ ],
+ "1807.07015": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./verification/conceptual-problems.md"
+ ],
+ "1807.08708": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md"
+ ],
+ "1808.09765": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md"
+ ],
+ "1809.00913": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md",
+  "./verification/emergent-gravity.md"
+ ],
+ "1810.03637": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "1810.05337": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "1810.05338": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "1810.05506": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "1810.07615": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/novelty/preprint-checks.md"
+ ],
+ "1811.03116": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./verification/conceptual-problems.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "1811.03859": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md"
+ ],
+ "1812.00482": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md",
+  "./verification/experimental-tests.md"
+ ],
+ "1812.01760": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "1812.04683": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "1812.07078": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "1901.02366": [
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json"
+ ],
+ "1902.08207": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "1903.06239": [
+  "./core-data/fragments/string-theory.json",
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/string-theory.md"
+ ],
+ "1903.06757": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "1903.11115": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./verification/black-holes-information.md"
+ ],
+ "1903.11544": [
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/05-causal-sets.md",
+  "./verification/causal-sets.md"
+ ],
+ "1904.04379": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "1905.08255": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/black-holes-information.md",
+  "./verification/entanglement-spacetime.md",
+  "./verification/holography-adscft.md"
+ ],
+ "1905.08669": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "1905.08762": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/black-holes-information.md",
+  "./verification/entanglement-spacetime.md",
+  "./verification/holography-adscft.md"
+ ],
+ "1906.01707": [
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json"
+ ],
+ "1906.05225": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "1906.07952": [
+  "./core-data/calculations/ssee-slab-4d/calc.py",
+  "./knowledge-base/BRAINSTORM-02.md",
+  "./knowledge-base/hypotezy/H02-sj-kerr.md",
+  "./knowledge-base/vypocty/VYPOCET-05-sj-rotujici-btz.md",
+  "./knowledge-base/vypocty/VYPOCET-13-ssee-slab-4d.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-01-sj-rotating-spacetimes/draft.md",
+  "./papers/draft-04-type-transition-causal-sets/TODO.md",
+  "./papers/draft-04-type-transition-causal-sets/draft.md",
+  "./verification/novelty/preprint-checks.md"
+ ],
+ "1908.10996": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/black-holes-information.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "1909.10355": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "1909.11063": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md",
+  "./verification/swampland.md"
+ ],
+ "1909.11106": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "1910.01135": [
+  "./core-data/fragments/string-theory.json",
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/string-theory.md",
+  "./verification/swampland.md"
+ ],
+ "1910.01648": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "1911.02967": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "1911.11977": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/black-holes-information.md",
+  "./verification/entanglement-spacetime.md",
+  "./verification/holography-adscft.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "1911.12333": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/holography-adscft.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "1912.00033": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./verification/conceptual-problems.md"
+ ],
+ "1912.00607": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "2002.01051": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "2002.02448": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "2002.08950": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./verification/black-holes-information.md"
+ ],
+ "2003.02688": [
+  "./PROGRESS.md",
+  "./core-data/calculations/a4-anomaly-matching/calc.py",
+  "./core-data/calculations/a4-anomaly-matching/results.json",
+  "./core-data/calculations/a4-graviton-index/calc.py",
+  "./core-data/calculations/lambda-induced/calc.py",
+  "./core-data/calculations/lambda-induced/results.json",
+  "./knowledge-base/eseje/ESEJ-03-gravitace-jako-stin.md",
+  "./knowledge-base/vypocty/VYPOCET-02-a4-matching.md",
+  "./knowledge-base/vypocty/VYPOCET-11-graviton-index.md",
+  "./knowledge-base/vypocty/VYPOCET-17-lambda-indukce.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-02-a4-fermionic-identity/TODO.md",
+  "./papers/draft-02-a4-fermionic-identity/draft.md",
+  "./workflows/qg-round-04.js",
+  "./workflows/qg-round-05.js"
+ ],
+ "2004.06810": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./knowledge-base/hypotezy/H01-gamma-cardy.md"
+ ],
+ "2004.07013": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "2006.02438": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./verification/black-holes-information.md"
+ ],
+ "2006.06872": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/black-holes-information.md"
+ ],
+ "2007.01315": [
+  "./verification/novelty/ds-cluster.md"
+ ],
+ "2007.07211": [
+  "./knowledge-base/hypotezy/H02-sj-kerr.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-01-sj-rotating-spacetimes/TODO.md",
+  "./papers/draft-01-sj-rotating-spacetimes/draft.md"
+ ],
+ "2007.14665": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "2008.07697": [
+  "./PROGRESS.md",
+  "./core-data/calculations/sj-desitter-type/calc.py",
+  "./core-data/calculations/sj-desitter-type/results.json",
+  "./core-data/calculations/sj-vn-type/calc.py",
+  "./core-data/calculations/ssee-4d/calc.py",
+  "./core-data/calculations/ssee-4d/results.json",
+  "./core-data/calculations/ssee-bd-4d/calc.py",
+  "./core-data/calculations/ssee-diamond/calc.py",
+  "./core-data/calculations/ssee-diamond/results.json",
+  "./core-data/calculations/ssee-slab-4d/calc.py",
+  "./core-data/calculations/ssee-slab-4d/results.json",
+  "./core-data/calculations/vn-type-slab-4d/calc.py",
+  "./core-data/calculations/vn-type-slab-4d/results.json",
+  "./core-data/findings.json",
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/BRAINSTORM-02.md",
+  "./knowledge-base/BRAINSTORM-04.md",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/eseje/ESEJ-04-vstup-pozorovatele.md",
+  "./knowledge-base/hypotezy/H04-entropy-cluster-reframe.md",
+  "./knowledge-base/vypocty/VYPOCET-04-ssee-diamant.md",
+  "./knowledge-base/vypocty/VYPOCET-06-ssee-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-09-ssee-bd-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-12-vn-typ-truncace.md",
+  "./knowledge-base/vypocty/VYPOCET-13-ssee-slab-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-16-vn-typ-slab-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-18-modularni-tok-roh.md",
+  "./knowledge-base/vypocty/VYPOCET-19-desitter-II1.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-04-type-transition-causal-sets/TODO.md",
+  "./papers/draft-04-type-transition-causal-sets/draft.md",
+  "./verification/novelty/entropy-cluster.md",
+  "./workflows/qg-deep-dive-01.js",
+  "./workflows/qg-round-03-paper.js",
+  "./workflows/qg-round-08.js"
+ ],
+ "2009.03914": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "2009.04504": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md"
+ ],
+ "2012.00170": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "2012.05770": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./verification/black-holes-information.md"
+ ],
+ "2012.07868": [
+  "./core-data/novelty-checks.json",
+  "./verification/novelty/preprint-checks.md"
+ ],
+ "2012.10626": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md",
+  "./verification/emergent-gravity.md"
+ ],
+ "2101.06955": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md"
+ ],
+ "2102.01111": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md"
+ ],
+ "2103.14605": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "2103.16984": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "2104.00485": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "2104.02835": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "2104.07031": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md",
+  "./verification/twistors-amplitudes.md"
+ ],
+ "2104.07036": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md"
+ ],
+ "2104.08449": [
+  "./knowledge-base/vypocty/VYPOCET-04-ssee-diamant.md"
+ ],
+ "2105.10086": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "2105.14346": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md",
+  "./verification/twistors-amplitudes.md"
+ ],
+ "2106.07650": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "2107.03390": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./verification/black-holes-information.md"
+ ],
+ "2107.03839": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "2107.13952": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "2108.04801": [
+  "./verification/holography-adscft.md"
+ ],
+ "2108.12668": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "2109.00034": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "2110.00483": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md"
+ ],
+ "2110.05497": [
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md"
+ ],
+ "2110.06066": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "2110.15336": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md",
+  "./verification/group-field-theory.md"
+ ],
+ "2111.00015": [
+  "./verification/novelty/a4-cluster.md"
+ ],
+ "2111.07816": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "2111.11392": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "2111.13490": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./knowledge-base/phenomenology/17-experimental-tests.md",
+  "./verification/conceptual-problems.md"
+ ],
+ "2112.02444": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "2112.03157": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "2112.06861": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md",
+  "./verification/experimental-tests.md"
+ ],
+ "2112.08383": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md"
+ ],
+ "2112.12156": [
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md"
+ ],
+ "2112.12828": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/eseje/ESEJ-01-dimenze-jako-otazka.md",
+  "./knowledge-base/eseje/ESEJ-04-vstup-pozorovatele.md",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md",
+  "./knowledge-base/vypocty/VYPOCET-12-vn-typ-truncace.md",
+  "./knowledge-base/vypocty/VYPOCET-16-vn-typ-slab-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-19-desitter-II1.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-04-type-transition-causal-sets/TODO.md",
+  "./papers/draft-04-type-transition-causal-sets/draft.md"
+ ],
+ "2201.02595": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "2201.08380": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "2202.07392": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "2203.01982": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md"
+ ],
+ "2203.13011": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "2203.13013": [
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "2203.13017": [
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "2204.08064": [
+  "./core-data/concept-graph.json",
+  "./core-data/connections.json",
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./verification/conceptual-problems.md"
+ ],
+ "2204.11616": [
+  "./knowledge-base/hypotezy/H01-gamma-cardy.md"
+ ],
+ "2204.13113": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./verification/black-holes-information.md",
+  "./verification/string-theory.md"
+ ],
+ "2204.14206": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/novelty-checks.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md",
+  "./verification/novelty/preprint-checks.md"
+ ],
+ "2205.06016": [
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./verification/string-theory.md"
+ ],
+ "2205.09013": [
+  "./knowledge-base/hypotezy/H03-bmv-diskriminator.md"
+ ],
+ "2205.12293": [
+  "./core-data/fragments/string-theory.json",
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/string-theory.md",
+  "./verification/swampland.md"
+ ],
+ "2206.00458": [
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "2206.04063": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./verification/swampland.md"
+ ],
+ "2206.10780": [
+  "./core-data/calculations/sj-desitter-type/calc.py",
+  "./core-data/calculations/sj-desitter-type/results.json",
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/novelty-checks.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./knowledge-base/eseje/ESEJ-01-dimenze-jako-otazka.md",
+  "./knowledge-base/eseje/ESEJ-04-vstup-pozorovatele.md",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md",
+  "./knowledge-base/hypotezy/H04-entropy-cluster-reframe.md",
+  "./knowledge-base/vypocty/VYPOCET-12-vn-typ-truncace.md",
+  "./knowledge-base/vypocty/VYPOCET-16-vn-typ-slab-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-18-modularni-tok-roh.md",
+  "./knowledge-base/vypocty/VYPOCET-19-desitter-II1.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-04-type-transition-causal-sets/TODO.md",
+  "./papers/draft-04-type-transition-causal-sets/draft.md",
+  "./verification/conceptual-problems.md",
+  "./verification/entanglement-spacetime.md",
+  "./verification/novelty/entropy-cluster.md",
+  "./workflows/qg-round-08.js",
+  "./workflows/qg-round-09.js"
+ ],
+ "2206.13287": [
+  "./core-data/calculations/a4-graviton-index/calc.py",
+  "./core-data/calculations/a4-graviton-index/results.json",
+  "./knowledge-base/eseje/ESEJ-03-gravitace-jako-stin.md",
+  "./knowledge-base/vypocty/VYPOCET-11-graviton-index.md",
+  "./papers/draft-02-a4-fermionic-identity/TODO.md"
+ ],
+ "2206.15442": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md"
+ ],
+ "2207.03799": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "2209.00327": [
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/05-causal-sets.md"
+ ],
+ "2209.04297": [
+  "./knowledge-base/approaches/06-group-field-theory.md",
+  "./verification/group-field-theory.md"
+ ],
+ "2209.10454": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/novelty-checks.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./knowledge-base/eseje/ESEJ-04-vstup-pozorovatele.md",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-04-type-transition-causal-sets/TODO.md",
+  "./papers/draft-04-type-transition-causal-sets/draft.md",
+  "./verification/black-holes-information.md",
+  "./verification/entanglement-spacetime.md",
+  "./verification/novelty/entropy-cluster.md",
+  "./workflows/qg-round-08.js"
+ ],
+ "2210.06209": [
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "2211.09902": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "2212.03446": [
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md"
+ ],
+ "2212.07913": [
+  "./knowledge-base/vypocty/VYPOCET-07-bmv-as-faze.md"
+ ],
+ "2212.10592": [
+  "./core-data/calculations/modular-flow-corner/calc.py",
+  "./core-data/calculations/ssee-slab-4d/calc.py",
+  "./core-data/calculations/ssee-slab-4d/results.json",
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/BRAINSTORM-02.md",
+  "./knowledge-base/hypotezy/H02-sj-kerr.md",
+  "./knowledge-base/hypotezy/H04-entropy-cluster-reframe.md",
+  "./knowledge-base/vypocty/VYPOCET-05-sj-rotujici-btz.md",
+  "./knowledge-base/vypocty/VYPOCET-13-ssee-slab-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-16-vn-typ-slab-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-18-modularni-tok-roh.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-01-sj-rotating-spacetimes/TODO.md",
+  "./papers/draft-01-sj-rotating-spacetimes/draft.md",
+  "./papers/draft-04-type-transition-causal-sets/TODO.md",
+  "./papers/draft-04-type-transition-causal-sets/draft.md",
+  "./verification/novelty/preprint-checks.md",
+  "./workflows/qg-round-03-paper.js"
+ ],
+ "2302.04272": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./verification/asymptotic-safety.md"
+ ],
+ "2302.14152": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md"
+ ],
+ "2303.08802": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "2303.13488": [
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/hypotezy/H02-sj-kerr.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-01-sj-rotating-spacetimes/TODO.md",
+  "./papers/draft-01-sj-rotating-spacetimes/draft.md"
+ ],
+ "2304.03819": [
+  "./core-data/calculations/lambda-prefactors/calc.py",
+  "./core-data/calculations/lambda-prefactors/results.json",
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/approaches/05-causal-sets.md",
+  "./knowledge-base/eseje/ESEJ-02-vesmir-ktery-se-pocita.md",
+  "./knowledge-base/vypocty/VYPOCET-03-lambda-prefaktory.md",
+  "./verification/novelty/lambda-cluster.md",
+  "./workflows/qg-deep-dive-01.js"
+ ],
+ "2304.05426": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md"
+ ],
+ "2304.07392": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "2305.04780": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "2305.15440": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "2306.01837": [
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md"
+ ],
+ "2306.06372": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "2306.07323": [
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/novelty-checks.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-04-type-transition-causal-sets/TODO.md",
+  "./verification/novelty/entropy-cluster.md"
+ ],
+ "2306.10408": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./verification/asymptotic-safety.md"
+ ],
+ "2306.12458": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md"
+ ],
+ "2307.04547": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "2307.10383": [
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "2307.12831": [
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "2307.13743": [
+  "./core-data/calculations/lambda-prefactors/calc.py",
+  "./core-data/calculations/lambda-prefactors/results.json",
+  "./core-data/findings.json",
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/eseje/ESEJ-02-vesmir-ktery-se-pocita.md",
+  "./knowledge-base/vypocty/VYPOCET-03-lambda-prefaktory.md",
+  "./verification/novelty/lambda-cluster.md",
+  "./workflows/qg-deep-dive-01.js"
+ ],
+ "2308.03031": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md",
+  "./verification/experimental-tests.md"
+ ],
+ "2308.06727": [
+  "./core-data/calculations/sj-rotating-btz/calc.py"
+ ],
+ "2308.10773": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md"
+ ],
+ "2308.15440": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md",
+  "./verification/experimental-tests.md"
+ ],
+ "2309.01810": [
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "2309.09105": [
+  "./knowledge-base/hypotezy/H03-bmv-diskriminator.md"
+ ],
+ "2309.10024": [
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./verification/string-theory.md"
+ ],
+ "2309.15897": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/eseje/ESEJ-01-dimenze-jako-otazka.md",
+  "./knowledge-base/eseje/ESEJ-04-vstup-pozorovatele.md",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md",
+  "./verification/conceptual-problems.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "2310.07708": [
+  "./verification/string-theory.md"
+ ],
+ "2310.12922": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "2310.17727": [
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "2310.20603": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "2311.01536": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "2311.04281": [
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md"
+ ],
+ "2311.09284": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "2311.09295": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "2312.00120": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "2312.00876": [
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "2312.03811": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md"
+ ],
+ "2312.05170": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./verification/conceptual-problems.md"
+ ],
+ "2312.07646": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "2312.09042": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "2312.09079": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md",
+  "./verification/experimental-tests.md"
+ ],
+ "2312.10530": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/novelty-checks.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md",
+  "./verification/novelty/preprint-checks.md"
+ ],
+ "2312.13267": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md",
+  "./verification/twistors-amplitudes.md"
+ ],
+ "2401.09399": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "2401.13510": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md"
+ ],
+ "2402.00818": [
+  "./verification/black-holes-information.md"
+ ],
+ "2402.06009": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md",
+  "./verification/experimental-tests.md"
+ ],
+ "2403.08696": [
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md"
+ ],
+ "2403.08912": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./verification/conceptual-problems.md"
+ ],
+ "2403.14889": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "2403.18005": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "2404.00763": [
+  "./knowledge-base/cross-cutting/11-holography-adscft.md"
+ ],
+ "2404.03002": [
+  "./verification/quantum-cosmology.md"
+ ],
+ "2404.07834": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md"
+ ],
+ "2404.11670": [
+  "./knowledge-base/approaches/05-causal-sets.md"
+ ],
+ "2405.00845": [
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "2405.05056": [
+  "./verification/novelty/preprint-checks.md"
+ ],
+ "2405.12296": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "2405.13588": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/eseje/ESEJ-02-vesmir-ktery-se-pocita.md",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "2405.14059": [
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/05-causal-sets.md"
+ ],
+ "2405.19421": [
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./verification/string-theory.md"
+ ],
+ "2405.19469": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "2405.21029": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "2406.04411": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "2406.12464": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "2406.13949": [
+  "./knowledge-base/hypotezy/H02-sj-kerr.md"
+ ],
+ "2406.18494": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "2407.03432": [
+  "./core-data/concept-graph.json",
+  "./core-data/connections.json",
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./verification/conceptual-problems.md"
+ ],
+ "2407.09595": [
+  "./core-data/novelty-checks.json",
+  "./verification/novelty/preprint-checks.md"
+ ],
+ "2407.11929": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "2408.00071": [
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md"
+ ],
+ "2408.02652": [
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "2408.07808": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "2408.08963": [
+  "./core-data/calculations/lambda-prefactors/calc.py",
+  "./core-data/calculations/lambda-prefactors/results.json",
+  "./core-data/findings.json",
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/novelty-checks.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./knowledge-base/eseje/ESEJ-02-vesmir-ktery-se-pocita.md",
+  "./knowledge-base/vypocty/VYPOCET-03-lambda-prefaktory.md",
+  "./verification/causal-dynamical-triangulations.md",
+  "./verification/novelty/lambda-cluster.md",
+  "./workflows/qg-deep-dive-01.js"
+ ],
+ "2408.14391": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md",
+  "./verification/emergent-gravity.md"
+ ],
+ "2409.14990": [
+  "./knowledge-base/cross-cutting/14-swampland.md"
+ ],
+ "2410.17316": [
+  "./knowledge-base/cross-cutting/11-holography-adscft.md"
+ ],
+ "2410.19601": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "2410.21599": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./verification/supergravity-uv.md"
+ ],
+ "2411.01105": [
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "2411.02287": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "2412.00852": [
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "2412.05446": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "2412.07832": [
+  "./PROGRESS.md",
+  "./core-data/calculations/ssee-slab-4d/calc.py",
+  "./core-data/calculations/ssee-slab-4d/results.json",
+  "./core-data/findings.json",
+  "./knowledge-base/BRAINSTORM-04.md",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/approaches/05-causal-sets.md",
+  "./knowledge-base/eseje/ESEJ-04-vstup-pozorovatele.md",
+  "./knowledge-base/hypotezy/H04-entropy-cluster-reframe.md",
+  "./knowledge-base/vypocty/VYPOCET-13-ssee-slab-4d.md",
+  "./knowledge-base/vypocty/VYPOCET-18-modularni-tok-roh.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-04-type-transition-causal-sets/TODO.md",
+  "./papers/draft-04-type-transition-causal-sets/draft.md",
+  "./verification/novelty/preprint-checks.md"
+ ],
+ "2412.13800": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "2412.15502": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-02.md",
+  "./knowledge-base/BRAINSTORM-03.md",
+  "./knowledge-base/BRAINSTORM-04.md",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/eseje/ESEJ-01-dimenze-jako-otazka.md",
+  "./knowledge-base/eseje/ESEJ-04-vstup-pozorovatele.md",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md",
+  "./verification/conceptual-problems.md",
+  "./workflows/qg-round-03-paper.js"
+ ],
+ "2412.18532": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./verification/conceptual-problems.md"
+ ],
+ "2412.20257": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "2501.09669": [
+  "./core-data/calculations/sj-vn-type/calc.py",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/vypocty/VYPOCET-12-vn-typ-truncace.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-04-type-transition-causal-sets/TODO.md",
+  "./papers/draft-04-type-transition-causal-sets/draft.md",
+  "./reports/2026-06-06-day-report.md"
+ ],
+ "2502.01734": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "2502.07321": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./verification/conceptual-problems.md"
+ ],
+ "2502.12290": [
+  "./PROGRESS.md",
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/novelty-checks.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./knowledge-base/BRAINSTORM-02.md",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md",
+  "./verification/novelty/preprint-checks.md"
+ ],
+ "2502.12474": [
+  "./core-data/calculations/bmv-as-phase/calc.py",
+  "./core-data/calculations/bmv-as-phase/results.json",
+  "./knowledge-base/hypotezy/H03-bmv-diskriminator.md",
+  "./knowledge-base/vypocty/VYPOCET-07-bmv-as-faze.md"
+ ],
+ "2503.01719": [
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/05-causal-sets.md"
+ ],
+ "2503.03805": [
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "2503.17310": [
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./verification/string-theory.md"
+ ],
+ "2503.18277": [
+  "./verification/noncommutative-geometry.md"
+ ],
+ "2503.19428": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "2503.20855": [
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "2504.12919": [
+  "./core-data/calculations/sj-eigenvector-superradiance/calc.py",
+  "./core-data/calculations/sj-eigenvector-superradiance/results.json",
+  "./core-data/calculations/sj-kerr-equatorial/calc.py",
+  "./core-data/calculations/sj-kerr-equatorial/results.json",
+  "./core-data/calculations/sj-rotating-btz/calc.py",
+  "./core-data/calculations/sj-rotating-btz/results.json",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/vypocty/VYPOCET-05-sj-rotujici-btz.md",
+  "./knowledge-base/vypocty/VYPOCET-08-sj-kerr-ekvatorialni.md",
+  "./knowledge-base/vypocty/VYPOCET-10-superradiance-eigenvektory.md",
+  "./knowledge-base/vypocty/VYPOCET-14-threshold-scan.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-01-sj-rotating-spacetimes/TODO.md",
+  "./papers/draft-01-sj-rotating-spacetimes/draft.md"
+ ],
+ "2505.06598": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "2505.07951": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md"
+ ],
+ "2505.08116": [
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "2505.22217": [
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/05-causal-sets.md",
+  "./verification/causal-sets.md"
+ ],
+ "2506.03334": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "2506.04300": [
+  "./knowledge-base/hypotezy/H03-bmv-diskriminator.md"
+ ],
+ "2506.04311": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./verification/black-holes-information.md"
+ ],
+ "2506.06595": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "2506.19538": [
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/05-causal-sets.md",
+  "./verification/causal-sets.md"
+ ],
+ "2506.19720": [
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "2506.20340": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md",
+  "./verification/group-field-theory.md"
+ ],
+ "2507.00615": [
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./verification/string-theory.md"
+ ],
+ "2507.00772": [
+  "./knowledge-base/approaches/08-twistors-amplitudes.md",
+  "./verification/twistors-amplitudes.md"
+ ],
+ "2507.14296": [
+  "./core-data/_digest.md",
+  "./core-data/concept-graph.json",
+  "./core-data/connections.json",
+  "./core-data/fragments/conceptual-problems.json",
+  "./knowledge-base/SYNTEZA.md",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./verification/conceptual-problems.md"
+ ],
+ "2507.22169": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "2508.08373": [
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "2508.14272": [
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./verification/conceptual-problems.md"
+ ],
+ "2508.21823": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "2509.02051": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "2509.08054": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./verification/experimental-tests.md"
+ ],
+ "2509.26352": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "2510.02159": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "2510.05693": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "2510.05695": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "2510.06689": [
+  "./core-data/calculations/bmv-as-phase/calc.py",
+  "./knowledge-base/vypocty/VYPOCET-07-bmv-as-faze.md"
+ ],
+ "2510.07017": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "2510.19714": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./knowledge-base/hypotezy/H03-bmv-diskriminator.md",
+  "./verification/conceptual-problems.md"
+ ],
+ "2510.20991": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "2510.23050": [
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "2510.25846": [
+  "./knowledge-base/cross-cutting/14-swampland.md"
+ ],
+ "2510.25927": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./verification/conceptual-problems.md"
+ ],
+ "2510.26911": [
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./knowledge-base/BRAINSTORM-02.md",
+  "./verification/novelty/entropy-cluster.md"
+ ],
+ "2510.26922": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md",
+  "./verification/novelty/entropy-cluster.md"
+ ],
+ "2511.00852": [
+  "./verification/conceptual-problems.md"
+ ],
+ "2511.05909": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "2511.07348": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/novelty-checks.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./knowledge-base/hypotezy/H03-bmv-diskriminator.md",
+  "./knowledge-base/phenomenology/17-experimental-tests.md",
+  "./verification/conceptual-problems.md",
+  "./verification/novelty/preprint-checks.md",
+  "./workflows/qg-deep-dive-01.js",
+  "./workflows/qg-novelty-check.js"
+ ],
+ "2511.08159": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "2511.13392": [
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "2511.13518": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "2511.19242": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/novelty-checks.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/hypotezy/H03-bmv-diskriminator.md",
+  "./knowledge-base/phenomenology/17-experimental-tests.md",
+  "./verification/novelty/preprint-checks.md",
+  "./workflows/qg-deep-dive-01.js",
+  "./workflows/qg-novelty-check.js"
+ ],
+ "2511.20717": [
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/hypotezy/H03-bmv-diskriminator.md",
+  "./verification/conceptual-problems.md",
+  "./verification/novelty/preprint-checks.md",
+  "./workflows/qg-deep-dive-01.js"
+ ],
+ "2512.08694": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md",
+  "./verification/novelty/preprint-checks.md"
+ ],
+ "2512.09052": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "2512.10367": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "2512.11712": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md"
+ ],
+ "2512.14389": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "2512.15393": [
+  "./core-data/_digest.md",
+  "./core-data/concept-graph.json",
+  "./core-data/connections.json",
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./verification/conceptual-problems.md"
+ ],
+ "2512.18912": [
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "2512.22694": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "2512.24730": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "2601.07915": [
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./knowledge-base/BRAINSTORM-02.md",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-04-type-transition-causal-sets/TODO.md",
+  "./verification/novelty/entropy-cluster.md"
+ ],
+ "2601.14141": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "2602.04888": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "2602.09796": [
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/hypotezy/H02-sj-kerr.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-01-sj-rotating-spacetimes/TODO.md",
+  "./papers/draft-01-sj-rotating-spacetimes/draft.md"
+ ],
+ "2602.16782": [
+  "./core-data/calculations/vn-type-slab-4d/calc.py",
+  "./knowledge-base/BRAINSTORM-05.md",
+  "./knowledge-base/hypotezy/H02-sj-kerr.md",
+  "./knowledge-base/vypocty/VYPOCET-12-vn-typ-truncace.md",
+  "./knowledge-base/vypocty/VYPOCET-16-vn-typ-slab-4d.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-04-type-transition-causal-sets/TODO.md",
+  "./papers/draft-04-type-transition-causal-sets/draft.md",
+  "./reports/2026-06-06-day-report.md"
+ ],
+ "2602.16905": [
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "2602.21263": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "2603.07150": [
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "2603.16999": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "2604.05641": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "2604.19696": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/hypotezy/H03-bmv-diskriminator.md",
+  "./knowledge-base/phenomenology/17-experimental-tests.md",
+  "./verification/conceptual-problems.md"
+ ],
+ "2605.05375": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./verification/conceptual-problems.md"
+ ],
+ "2606.01343": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "astro-ph/0209274": [
+  "./core-data/calculations/lambda-prefactors/calc.py",
+  "./core-data/calculations/lambda-prefactors/results.json",
+  "./core-data/findings.json",
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/novelty-checks.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-01.md",
+  "./knowledge-base/approaches/05-causal-sets.md",
+  "./knowledge-base/eseje/ESEJ-02-vesmir-ktery-se-pocita.md",
+  "./knowledge-base/vypocty/VYPOCET-03-lambda-prefaktory.md",
+  "./verification/causal-sets.md",
+  "./verification/novelty/lambda-cluster.md",
+  "./workflows/qg-deep-dive-01.js"
+ ],
+ "astro-ph/9712103": [
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/17-experimental-tests.md"
+ ],
+ "gr-qc/0003097": [
+  "./knowledge-base/vypocty/VYPOCET-05-sj-rotujici-btz.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-01-sj-rotating-spacetimes/draft.md"
+ ],
+ "gr-qc/0005017": [
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/hypotezy/H01-gamma-cardy.md",
+  "./verification/novelty/cardy-lqg.md"
+ ],
+ "gr-qc/0102069": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "gr-qc/0109048": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "gr-qc/0203001": [
+  "./core-data/novelty-checks.json",
+  "./verification/novelty/cardy-lqg.md"
+ ],
+ "gr-qc/0204061": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "gr-qc/0204062": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/novelty-checks.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md",
+  "./knowledge-base/eseje/ESEJ-03-gravitace-jako-stin.md"
+ ],
+ "gr-qc/0302009": [
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/05-causal-sets.md",
+  "./knowledge-base/eseje/ESEJ-02-vesmir-ktery-se-pocita.md"
+ ],
+ "gr-qc/0305080": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "gr-qc/0309009": [
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/05-causal-sets.md"
+ ],
+ "gr-qc/0311055": [
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/BRAINSTORM-02.md",
+  "./knowledge-base/approaches/05-causal-sets.md",
+  "./knowledge-base/eseje/ESEJ-02-vesmir-ktery-se-pocita.md"
+ ],
+ "gr-qc/0407051": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md"
+ ],
+ "gr-qc/0407052": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./knowledge-base/hypotezy/H01-gamma-cardy.md"
+ ],
+ "gr-qc/0411013": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md"
+ ],
+ "gr-qc/0411101": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "gr-qc/0504147": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "gr-qc/0512069": [
+  "./knowledge-base/approaches/06-group-field-theory.md"
+ ],
+ "gr-qc/0601008": [
+  "./knowledge-base/foundations/15-semiclassical-gravity.md"
+ ],
+ "gr-qc/0601121": [
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/05-causal-sets.md"
+ ],
+ "gr-qc/0601127": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md"
+ ],
+ "gr-qc/0602001": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md"
+ ],
+ "gr-qc/0602086": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/loop-quantum-gravity.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "gr-qc/0604013": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md"
+ ],
+ "gr-qc/0604044": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "gr-qc/0605006": [
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/05-causal-sets.md"
+ ],
+ "gr-qc/0607032": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md"
+ ],
+ "gr-qc/0607072": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md"
+ ],
+ "gr-qc/0702056": [
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "gr-qc/9210011": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md"
+ ],
+ "gr-qc/9305007": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./verification/black-holes-information.md"
+ ],
+ "gr-qc/9307038": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "gr-qc/9310024": [
+  "./core-data/calculations/bmv-as-phase/calc.py",
+  "./core-data/calculations/bmv-as-phase/results.json",
+  "./knowledge-base/vypocty/VYPOCET-07-bmv-as-faze.md"
+ ],
+ "gr-qc/9310026": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md"
+ ],
+ "gr-qc/9405057": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "gr-qc/9406010": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md"
+ ],
+ "gr-qc/9406019": [
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/eseje/ESEJ-04-vstup-pozorovatele.md",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md"
+ ],
+ "gr-qc/9411005": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "gr-qc/9504004": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./knowledge-base/eseje/ESEJ-03-gravitace-jako-stin.md",
+  "./verification/emergent-gravity.md"
+ ],
+ "gr-qc/9505006": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "gr-qc/9602046": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md"
+ ],
+ "gr-qc/9606089": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md"
+ ],
+ "gr-qc/9607070": [
+  "./core-data/fragments/emergent-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/09-emergent-gravity.md"
+ ],
+ "gr-qc/9710007": [
+  "./core-data/fragments/loop-quantum-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/02-loop-quantum-gravity.md",
+  "./verification/loop-quantum-gravity.md"
+ ],
+ "gr-qc/9812013": [
+  "./workflows/qg-novelty-check.js"
+ ],
+ "gr-qc/9904062": [
+  "./core-data/fragments/causal-sets.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/05-causal-sets.md",
+  "./knowledge-base/eseje/ESEJ-02-vesmir-ktery-se-pocita.md",
+  "./verification/causal-sets.md"
+ ],
+ "hep-th/0002196": [
+  "./core-data/calculations/bmv-as-phase/calc.py",
+  "./core-data/calculations/bmv-as-phase/results.json",
+  "./knowledge-base/vypocty/VYPOCET-07-bmv-as-faze.md",
+  "./workflows/qg-deep-dive-02.js"
+ ],
+ "hep-th/0004134": [
+  "./knowledge-base/cross-cutting/14-swampland.md"
+ ],
+ "hep-th/0005209": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md"
+ ],
+ "hep-th/0103239": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "hep-th/0106112": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/black-holes-information.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "hep-th/0106113": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "hep-th/0108040": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "hep-th/0203101": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md"
+ ],
+ "hep-th/0204048": [
+  "./core-data/calculations/lambda-induced/calc.py",
+  "./core-data/calculations/lambda-induced/results.json",
+  "./knowledge-base/vypocty/VYPOCET-17-lambda-indukce.md"
+ ],
+ "hep-th/0211072": [
+  "./core-data/calculations/bmv-as-phase/calc.py",
+  "./core-data/calculations/bmv-as-phase/results.json",
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./knowledge-base/vypocty/VYPOCET-07-bmv-as-faze.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "hep-th/0301240": [
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./verification/string-theory.md"
+ ],
+ "hep-th/0303037": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "hep-th/0304042": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "hep-th/0306138": [
+  "./core-data/calculations/a4-anomaly-matching/calc.py",
+  "./core-data/calculations/a4-anomaly-matching/results.json",
+  "./core-data/calculations/a4-graviton-index/calc.py",
+  "./core-data/calculations/a4-graviton-index/results.json",
+  "./core-data/calculations/lambda-induced/calc.py",
+  "./core-data/calculations/lambda-induced/results.json",
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/eseje/ESEJ-03-gravitace-jako-stin.md",
+  "./knowledge-base/vypocty/VYPOCET-02-a4-matching.md",
+  "./knowledge-base/vypocty/VYPOCET-11-graviton-index.md",
+  "./knowledge-base/vypocty/VYPOCET-17-lambda-indukce.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-02-a4-fermionic-identity/TODO.md",
+  "./papers/draft-02-a4-fermionic-identity/draft.md",
+  "./verification/novelty/a4-cluster.md",
+  "./workflows/qg-deep-dive-01.js",
+  "./workflows/qg-round-04.js"
+ ],
+ "hep-th/0312114": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "hep-th/0312171": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md",
+  "./verification/twistors-amplitudes.md"
+ ],
+ "hep-th/0403047": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "hep-th/0405152": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "hep-th/0405231": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "hep-th/0406051": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "hep-th/0501052": [
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md",
+  "./verification/twistors-amplitudes.md"
+ ],
+ "hep-th/0502050": [
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./verification/string-theory.md"
+ ],
+ "hep-th/0505016": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md"
+ ],
+ "hep-th/0505076": [
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./verification/string-theory.md"
+ ],
+ "hep-th/0505113": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/fragments/experimental-tests.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./knowledge-base/phenomenology/17-experimental-tests.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "hep-th/0505154": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "hep-th/0506118": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "hep-th/0508202": [
+  "./core-data/calculations/ds-classification/calc.py",
+  "./core-data/calculations/ds-classification/results.json",
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./knowledge-base/vypocty/VYPOCET-01-ds-klasifikace.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-03-ds-classifier/TODO.md",
+  "./papers/draft-03-ds-classifier/draft.md",
+  "./verification/asymptotic-safety.md",
+  "./verification/causal-dynamical-triangulations.md",
+  "./workflows/qg-deep-dive-01.js"
+ ],
+ "hep-th/0509212": [
+  "./core-data/fragments/string-theory.json",
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/string-theory.md",
+  "./verification/swampland.md"
+ ],
+ "hep-th/0601001": [
+  "./core-data/fragments/string-theory.json",
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/string-theory.md",
+  "./verification/swampland.md"
+ ],
+ "hep-th/0603001": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md",
+  "./verification/holography-adscft.md",
+  "./verification/string-theory.md"
+ ],
+ "hep-th/0605264": [
+  "./core-data/fragments/string-theory.json",
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/string-theory.md",
+  "./verification/swampland.md"
+ ],
+ "hep-th/0610241": [
+  "./core-data/calculations/a4-anomaly-matching/calc.py",
+  "./core-data/calculations/a4-anomaly-matching/results.json",
+  "./core-data/calculations/a4-graviton-index/calc.py",
+  "./core-data/calculations/lambda-induced/calc.py",
+  "./core-data/calculations/lambda-induced/results.json",
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./knowledge-base/eseje/ESEJ-03-gravitace-jako-stin.md",
+  "./knowledge-base/vypocty/VYPOCET-02-a4-matching.md",
+  "./knowledge-base/vypocty/VYPOCET-11-graviton-index.md",
+  "./knowledge-base/vypocty/VYPOCET-17-lambda-indukce.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-02-a4-fermionic-identity/TODO.md",
+  "./papers/draft-02-a4-fermionic-identity/draft.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "hep-th/0611086": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md",
+  "./verification/twistors-amplitudes.md"
+ ],
+ "hep-th/0701050": [
+  "./core-data/fragments/swampland.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/14-swampland.md",
+  "./verification/swampland.md"
+ ],
+ "hep-th/0702112": [
+  "./core-data/fragments/supergravity-uv.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/10-supergravity-uv.md",
+  "./verification/supergravity-uv.md"
+ ],
+ "hep-th/9202074": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md",
+  "./verification/group-field-theory.md"
+ ],
+ "hep-th/9205015": [
+  "./verification/novelty/a4-cluster.md"
+ ],
+ "hep-th/9211021": [
+  "./core-data/fragments/quantum-cosmology.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+  "./verification/quantum-cosmology.md"
+ ],
+ "hep-th/9303048": [
+  "./core-data/fragments/entanglement-spacetime.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/13-entanglement-spacetime.md",
+  "./verification/entanglement-spacetime.md"
+ ],
+ "hep-th/9306069": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md"
+ ],
+ "hep-th/9306083": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./verification/black-holes-information.md"
+ ],
+ "hep-th/9308075": [
+  "./PROGRESS.md",
+  "./core-data/calculations/a4-graviton-index/calc.py",
+  "./core-data/calculations/a4-graviton-index/results.json",
+  "./core-data/findings.json",
+  "./knowledge-base/eseje/ESEJ-03-gravitace-jako-stin.md",
+  "./knowledge-base/vypocty/VYPOCET-11-graviton-index.md",
+  "./papers/draft-02-a4-fermionic-identity/TODO.md",
+  "./workflows/qg-deep-dive-01.js"
+ ],
+ "hep-th/9409089": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md"
+ ],
+ "hep-th/9412167": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md"
+ ],
+ "hep-th/9501063": [
+  "./core-data/fragments/von-neumann-algebras.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/eseje/ESEJ-04-vstup-pozorovatele.md",
+  "./knowledge-base/foundations/19-von-neumann-algebras.md"
+ ],
+ "hep-th/9501106": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./verification/black-holes-information.md"
+ ],
+ "hep-th/9503124": [
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./verification/string-theory.md"
+ ],
+ "hep-th/9503187": [
+  "./PROGRESS.md",
+  "./core-data/calculations/a4-graviton-index/calc.py",
+  "./core-data/calculations/a4-graviton-index/results.json",
+  "./core-data/findings.json",
+  "./knowledge-base/eseje/ESEJ-03-gravitace-jako-stin.md",
+  "./knowledge-base/vypocty/VYPOCET-11-graviton-index.md",
+  "./papers/draft-02-a4-fermionic-identity/TODO.md"
+ ],
+ "hep-th/9506115": [
+  "./core-data/novelty-checks.json",
+  "./verification/novelty/a4-cluster.md"
+ ],
+ "hep-th/9510017": [
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./verification/string-theory.md"
+ ],
+ "hep-th/9510209": [
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./verification/string-theory.md"
+ ],
+ "hep-th/9601029": [
+  "./core-data/fragments/black-holes-information.json",
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./knowledge-base/cross-cutting/12-black-holes-information.md",
+  "./verification/black-holes-information.md",
+  "./verification/holography-adscft.md",
+  "./verification/string-theory.md",
+  "./workflows/qg-knowledge-foundation.js"
+ ],
+ "hep-th/9605030": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/asymptotic-safety.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "hep-th/9606001": [
+  "./PROGRESS.md",
+  "./core-data/calculations/a4-anomaly-matching/calc.py",
+  "./core-data/calculations/a4-anomaly-matching/results.json",
+  "./core-data/calculations/a4-graviton-index/calc.py",
+  "./core-data/calculations/lambda-induced/calc.py",
+  "./core-data/calculations/lambda-induced/results.json",
+  "./core-data/findings.json",
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/00-INDEX.md",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./knowledge-base/eseje/ESEJ-03-gravitace-jako-stin.md",
+  "./knowledge-base/vypocty/VYPOCET-02-a4-matching.md",
+  "./knowledge-base/vypocty/VYPOCET-11-graviton-index.md",
+  "./knowledge-base/vypocty/VYPOCET-17-lambda-indukce.md",
+  "./papers/REVIZE-PRO-CLOVEKA.md",
+  "./papers/draft-02-a4-fermionic-identity/TODO.md",
+  "./papers/draft-02-a4-fermionic-identity/draft.md",
+  "./verification/noncommutative-geometry.md",
+  "./verification/novelty/a4-cluster.md",
+  "./workflows/qg-deep-dive-01.js",
+  "./workflows/qg-round-08.js"
+ ],
+ "hep-th/9610043": [
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./verification/string-theory.md"
+ ],
+ "hep-th/9612115": [
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./verification/string-theory.md"
+ ],
+ "hep-th/9711200": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md",
+  "./verification/string-theory.md"
+ ],
+ "hep-th/9712251": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./verification/holography-adscft.md",
+  "./verification/string-theory.md"
+ ],
+ "hep-th/9802109": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md",
+  "./verification/string-theory.md"
+ ],
+ "hep-th/9802150": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md",
+  "./verification/string-theory.md"
+ ],
+ "hep-th/9805108": [
+  "./core-data/fragments/causal-dynamical-triangulations.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/04-causal-dynamical-triangulations.md",
+  "./verification/causal-dynamical-triangulations.md"
+ ],
+ "hep-th/9809039": [
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./verification/string-theory.md"
+ ],
+ "hep-th/9812013": [
+  "./core-data/novelty-checks.json",
+  "./knowledge-base/hypotezy/H01-gamma-cardy.md",
+  "./verification/novelty/cardy-lqg.md"
+ ],
+ "hep-th/9905111": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md"
+ ],
+ "hep-th/9905177": [
+  "./core-data/fragments/holography-adscft.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/cross-cutting/11-holography-adscft.md",
+  "./verification/holography-adscft.md"
+ ],
+ "hep-th/9907027": [
+  "./core-data/fragments/asymptotic-safety.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/03-asymptotic-safety.md",
+  "./verification/asymptotic-safety.md"
+ ],
+ "hep-th/9907154": [
+  "./core-data/fragments/group-field-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/06-group-field-theory.md",
+  "./verification/group-field-theory.md"
+ ],
+ "hep-th/9908142": [
+  "./core-data/fragments/noncommutative-geometry.json",
+  "./core-data/fragments/string-theory.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/approaches/01-string-theory.md",
+  "./knowledge-base/approaches/07-noncommutative-geometry.md",
+  "./verification/noncommutative-geometry.md",
+  "./verification/string-theory.md"
+ ],
+ "math-ph/0008029": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "math-ph/0112041": [
+  "./core-data/fragments/semiclassical-gravity.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/15-semiclassical-gravity.md",
+  "./verification/semiclassical-gravity.md"
+ ],
+ "math-ph/0701012": [
+  "./verification/semiclassical-gravity.md"
+ ],
+ "math/0701893": [
+  "./core-data/concept-graph.json",
+  "./core-data/connections.json",
+  "./core-data/fragments/twistors-amplitudes.json",
+  "./knowledge-base/approaches/08-twistors-amplitudes.md"
+ ],
+ "quant-ph/9609002": [
+  "./core-data/fragments/conceptual-problems.json",
+  "./core-data/references.bib",
+  "./core-data/references.json",
+  "./knowledge-base/foundations/16-conceptual-problems.md"
+ ]
+}

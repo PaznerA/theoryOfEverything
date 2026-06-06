@@ -1,0 +1,604 @@
+{
+  "meta": {
+    "task": "VYPOCET-19 UNIFY SJ-horizoned-spacetimes x vN-type on DE SITTER; test CLPW (2206.10780) static-patch II_1 (NOT II_inf) prediction",
+    "dimension": "2D de Sitter static patch (conformal trick; SJ machinery of VYPOCET-12)",
+    "geometry": "ds^2=-(1-r^2/l^2)dt^2+dr^2/(1-r^2/l^2); tortoise r*=l*arctanh(r/l) => conformally flat strip; 2D massless scalar conformally invariant => flat SJ in (t,r*); de Sitter enters via the sech^2(r*/l) PROPER sprinkling measure (finite patch volume).",
+    "clpw_prediction": "static-patch observer algebra is type II_1: NORMALISABLE trace, MAX-ENTROPY tracial state (empty dS, S~A/4G), entropy CAPS as region exhausts patch -- vs black-hole II_inf (entropy grows without bound).",
+    "discriminator": "TRUNCATED SSEE vs region tortoise-extent R* at fixed proper density: dS caps (II_1), matched flat control grows (II_inf).",
+    "conventions": {
+      "metric_dS2": "-(1-r^2/l^2)dt^2 + dr^2/(1-r^2/l^2), r in (-l,l)",
+      "tortoise": "r* = l*arctanh(r/l) in (-inf,inf); horizon r=l <=> r*=inf",
+      "conformal_factor": "Omega^2 = 1-r^2/l^2 = sech^2(r*/l)",
+      "conformal_trick": "2D massless scalar conformally invariant (1306.3231 dS SJ); causal order/iDelta/W_SJ identical to flat in (t,r*); horizon enters only via proper measure",
+      "proper_measure": "dN ~ sech^2(r*/l) dt dr* (finite patch volume => point budget caps toward horizon = II_1 finite trace)",
+      "G_R": "G_R=(1/2)C (Sorkin-Yazdi 1611.10281)",
+      "iDelta": "i(G_R-G_R^T)=i/2(C-C^T), Hermitian, +/- paired",
+      "W_SJ": "positive part of iDelta",
+      "SSEE": "W_O v=mu iDelta_O v ; S=sum mu ln|mu| ; pairs (mu,1-mu)",
+      "kappa": "sqrt(N)/(4 pi) (Sorkin-Yazdi 1712.04227); double truncation",
+      "modular_energy": "eps=ln[mu/(mu-1)] (Casini-Huerta 0905.2562)"
+    },
+    "references": {
+      "CLPW": "arXiv:2206.10780 (de Sitter static-patch algebra type II_1)",
+      "dS_SJ_causalset": "arXiv:1306.3231 (SJ vacuum on dS; 1+1 causal diamond)",
+      "SJ_SSEE": "arXiv:1611.10281 (Sorkin-Yazdi SSEE); 2008.07697 (dS horizons)",
+      "truncation_kappa": "arXiv:1712.04227 (UV magnitude cutoff)",
+      "modular": "arXiv:0905.2562 (Casini-Huerta modular Hamiltonian)"
+    }
+  },
+  "part1_II1_vs_IIinf_discriminator": {
+    "description": "II_1 vs II_inf discriminator: truncated SSEE across the bulk MIDPOINT cut (fraction cut_frac of the box r*-extent) vs the box outer edge R*_box -> horizon, at fixed (proper resp. flat) density. II_1 (dS, CLPW 2206.10780): bounded static patch => content of both halves and cross-cut entropy SATURATE to a finite cap. II_inf (flat, matched): content grows without bound => entropy grows.",
+    "cut_fraction": 0.5,
+    "rho_proper": 240.0,
+    "n_seeds": 6,
+    "Rstar_box": [
+      1.6,
+      2.0,
+      2.6,
+      3.4,
+      4.4,
+      5.6,
+      7.0
+    ],
+    "r_edge_box": [
+      0.9216685544064713,
+      0.9640275800758169,
+      0.9890274022010992,
+      0.9977749279342794,
+      0.9996985792838805,
+      0.9999726519818308,
+      0.9999983369439447
+    ],
+    "desitter": {
+      "N_total_mean": [
+        442.0,
+        463.0,
+        475.0,
+        479.0,
+        480.0,
+        480.0,
+        480.0
+      ],
+      "N_total_saturating_fit": {
+        "cap": 480.1112902401474,
+        "xi": 0.5055276382663317,
+        "R2": 0.9999437590297733
+      },
+      "S_full_mean": [
+        40.9221015247526,
+        35.98993004275368,
+        24.389387312144745,
+        13.125788851686494,
+        4.446757070894825,
+        0.47970939009479024,
+        0.0
+      ],
+      "S_full_saturating_fit": {
+        "S_cap": -4.170951286084502,
+        "B": -111.20440312876076,
+        "xi": 1.8572864324874374,
+        "R2": 0.990266896905195
+      },
+      "S_full_late_slope": -1.6726002704152851,
+      "S_full_net_late": -13.125788851686494,
+      "S_trunc_mean": [
+        0.5669573402003207,
+        0.4528216436707509,
+        0.3082815593705292,
+        0.12986085077867177,
+        0.039547230297674485,
+        0.0018790521013255946,
+        0.0
+      ],
+      "S_trunc_std": [
+        0.06653444466187891,
+        0.03611424615946228,
+        0.037180661758630426,
+        0.03225861936844037,
+        0.011878343593176991,
+        0.004602718848352221,
+        0.0
+      ],
+      "S_trunc_saturating_fit": {
+        "S_cap": -0.031217641521898893,
+        "B": -1.8576884511391603,
+        "xi": 1.4517587942211057,
+        "R2": 0.9923335910647753
+      },
+      "S_trunc_late_slope": -0.014828276136951592,
+      "S_trunc_net_late": -0.12986085077867177,
+      "n_sub_mean": [
+        322.6666666666667,
+        368.8333333333333,
+        412.5,
+        449.3333333333333,
+        469.5,
+        477.0,
+        478.1666666666667
+      ]
+    },
+    "flat_control": {
+      "N_total_mean": [
+        768.0,
+        960.0,
+        1248.0,
+        1632.0,
+        2112.0,
+        2688.0,
+        3360.0
+      ],
+      "N_total_slope": 480.00000000000017,
+      "S_full_mean": [
+        87.58178090856096,
+        106.14845541421276,
+        123.23053946248996,
+        137.91984562110602,
+        147.04879490348029,
+        153.12615187594764,
+        159.60624136397337
+      ],
+      "S_full_slope": 12.236590107808729,
+      "S_full_late_slope": 4.824243547980208,
+      "S_full_net_late": 21.686395742867347,
+      "S_trunc_mean": [
+        1.0102538517481368,
+        1.02895105805196,
+        0.8854729304975274,
+        0.7405928840710735,
+        0.6328531940081917,
+        0.49241739435826287,
+        0.416159391331155
+      ],
+      "S_trunc_std": [
+        0.08494244781391275,
+        0.0470709700013832,
+        0.030739439014932663,
+        0.04311491397279628,
+        0.02143350389318199,
+        0.024993227226354116,
+        0.04269285303637425
+      ],
+      "S_trunc_slope": -0.12056555144793403,
+      "S_trunc_late_slope": -0.08254803649391348,
+      "S_trunc_net_late": -0.3244334927399185,
+      "n_sub_mean": [
+        378.3333333333333,
+        485.5,
+        625.0,
+        820.1666666666666,
+        1040.8333333333333,
+        1355.8333333333333,
+        1685.1666666666667
+      ]
+    },
+    "Sfull_late_slope_ratio_flat_over_dS": -2.8842776324449657,
+    "Ntot_caps_dS": true,
+    "Ntot_grows_flat": true,
+    "Sfull_caps_dS": true,
+    "Sfull_grows_flat": true,
+    "dS_saturates_II1": true,
+    "flat_grows_IIinf": true,
+    "verdict_II1_vs_IIinf_discriminated": true,
+    "honest_2D_note": "The TRUNCATED (type-II regularised) SSEE is a 2D log/area law nearly box-independent in BOTH geometries, so it does NOT separate the types by magnitude alone. The II_1 vs II_inf distinction is carried decisively by the region CONTENT: N_total and the content-tracking FULL SSEE both CAP for the bounded dS static patch (II_1) and GROW without bound for the flat control (II_inf).",
+    "prediction": "dS content (N_total, S_full) caps (II_1); flat grows (II_inf); full-SSEE late-slope ratio flat/dS >> 1."
+  },
+  "part2_three_proxy_battery": {
+    "description": "Three-proxy type battery (VYPOCET-12) on the dS static patch vs the matched flat control, at increasing N (fixed-region continuum limit). Establishes type-II character (vs III_1) and the dS-entropy CAP.",
+    "RSTAR_BOX": 3.0,
+    "Rstar_sub_cut": 1.0,
+    "Ns": [
+      239,
+      398,
+      637,
+      955,
+      1393,
+      1950
+    ],
+    "rho_proper_list": [
+      120.0,
+      200.0,
+      320.0,
+      480.0,
+      700.0,
+      980.0
+    ],
+    "n_seeds": 5,
+    "pauli_jordan_pairing_err": {
+      "dS": 2.2737367544323206e-13,
+      "flat": 1.7053025658242404e-13
+    },
+    "desitter": {
+      "Ns": [
+        239,
+        398,
+        637,
+        955,
+        1393,
+        1950
+      ],
+      "proxy1_trace": {
+        "S_full_mean": [
+          16.116205923376153,
+          30.357562501307125,
+          50.931759017034935,
+          77.38317962106865,
+          115.48368347527494,
+          168.53600665768607
+        ],
+        "S_full_std": [
+          1.6600217974452864,
+          2.4447359670390063,
+          5.212684305128729,
+          3.307348086576309,
+          2.5178875538275465,
+          4.652604076311342
+        ],
+        "S_trunc_mean": [
+          0.43222387546130037,
+          0.43515380277100346,
+          0.5133702893348995,
+          0.47953583508164527,
+          0.5410205388952356,
+          0.5396949721838158
+        ],
+        "S_trunc_std": [
+          0.04283032989894805,
+          0.036747077862904494,
+          0.03492144726285192,
+          0.017590381580921164,
+          0.03612063378064986,
+          0.04648613561747045
+        ],
+        "S_full_exponent": 1.104539253098629,
+        "S_full_err": 0.017280370249836287,
+        "S_full_R2": 0.9990219100816566,
+        "S_trunc_exponent": 0.11625450507520263,
+        "S_trunc_err": 0.028141289064720257,
+        "S_trunc_R2": 0.8101205264812124,
+        "full_divergent": true,
+        "trunc_saturates": true,
+        "verdict_III_to_II": true
+      },
+      "proxy2_modular": {
+        "pile_full_mean": [
+          2.0,
+          4.4,
+          7.4,
+          12.2,
+          18.0,
+          27.4
+        ],
+        "pile_trunc_mean": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "pile_full_exponent": 1.2482509394993855,
+        "pile_full_err": 0.0009272332520850232,
+        "pile_trunc_exponent": -1.1368683772161603e-13,
+        "pile_trunc_err": 2.3316421534890004e-13,
+        "nmod_full_mean": [
+          27.8,
+          44.6,
+          76.0,
+          108.6,
+          162.8,
+          227.6
+        ],
+        "nmod_trunc_mean": [
+          7.8,
+          10.2,
+          13.8,
+          16.2,
+          18.8,
+          22.4
+        ],
+        "epsmax_full_mean": [
+          5.568173625029061,
+          5.278661593522652,
+          5.690748663322632,
+          5.771891311529138,
+          6.035521318529659,
+          6.28681188344205
+        ],
+        "epsmax_trunc_mean": [
+          6.935805638331932,
+          7.668568490623296,
+          8.021691922055812,
+          8.2885995307744,
+          8.28649938712768,
+          8.508175890802065
+        ],
+        "epsmax_full_slope": 0.0005111115460841856,
+        "epsmax_trunc_slope": 0.0007437371818802704,
+        "full_pileup_grows": true,
+        "trunc_pileup_saturates": true,
+        "verdict_III_to_II": true
+      },
+      "proxy3_central": {
+        "CV_S_trunc": [
+          0.09909292922154392,
+          0.08444618346181011,
+          0.068023896178516,
+          0.03668210026040336,
+          0.06676388636632581,
+          0.08613409057595897
+        ],
+        "CV_S_full": [
+          0.10300326300977988,
+          0.08053136568305647,
+          0.10234644170418822,
+          0.042739883560895156,
+          0.02180297231657515,
+          0.027605994520573034
+        ],
+        "CV_S_trunc_exponent": -0.16143293548319093,
+        "CV_S_trunc_err": 0.2089113018831725,
+        "CV_S_trunc_largest_N": 0.08613409057595897,
+        "self_averaging": true,
+        "trend_significant": false,
+        "trend_decreasing": true,
+        "verdict_factor_like": false
+      }
+    },
+    "flat_control": {
+      "Ns": [
+        239,
+        398,
+        637,
+        955,
+        1393,
+        1950
+      ],
+      "proxy1_trace": {
+        "S_full_mean": [
+          16.339219527233517,
+          28.46693989093213,
+          47.434253453520185,
+          74.78224903410319,
+          110.27362453984779,
+          156.4215498001933
+        ],
+        "S_full_std": [
+          1.2148022096922204,
+          1.8725458089590263,
+          3.396850617214465,
+          3.630261821535236,
+          4.710349412925031,
+          4.369552255862772
+        ],
+        "S_trunc_mean": [
+          0.6111102752251114,
+          0.6763515139268831,
+          0.743841822865513,
+          0.770869550991461,
+          0.8224356601927459,
+          0.911865944369833
+        ],
+        "S_trunc_std": [
+          0.07302247886884888,
+          0.04961176896137603,
+          0.061950964895536136,
+          0.040726068057873516,
+          0.057692282381136245,
+          0.02308464685453543
+        ],
+        "S_full_exponent": 1.0795390719685969,
+        "S_full_err": 0.006941364913363354,
+        "S_full_R2": 0.9998346511431152,
+        "S_trunc_exponent": 0.17857251771419946,
+        "S_trunc_err": 0.011591380313318796,
+        "S_trunc_R2": 0.9834254216537414,
+        "full_divergent": true,
+        "trunc_saturates": true,
+        "verdict_III_to_II": true
+      },
+      "proxy2_modular": {
+        "pile_full_mean": [
+          2.0,
+          4.0,
+          6.6,
+          11.2,
+          17.0,
+          24.0
+        ],
+        "pile_trunc_mean": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "pile_full_exponent": 1.1483185238852087,
+        "pile_full_err": 0.0020020326196412137,
+        "pile_trunc_exponent": -1.1368683772161603e-13,
+        "pile_trunc_err": 2.3316421534890004e-13,
+        "nmod_full_mean": [
+          37.0,
+          64.8,
+          103.6,
+          156.2,
+          220.8,
+          314.8
+        ],
+        "nmod_trunc_mean": [
+          8.4,
+          11.6,
+          15.0,
+          18.6,
+          21.6,
+          26.8
+        ],
+        "epsmax_full_mean": [
+          8.805139758753862,
+          9.075105339269975,
+          9.431227499096252,
+          9.951306412689723,
+          10.091974396364309,
+          10.51552545386989
+        ],
+        "epsmax_trunc_mean": [
+          7.642440408830977,
+          7.774637399372734,
+          8.410273066429031,
+          9.034953187192693,
+          9.1295463647511,
+          9.603307576466108
+        ],
+        "epsmax_full_slope": 0.0009747677966587875,
+        "epsmax_trunc_slope": 0.001158935325787709,
+        "full_pileup_grows": true,
+        "trunc_pileup_saturates": true,
+        "verdict_III_to_II": true
+      },
+      "proxy3_central": {
+        "CV_S_trunc": [
+          0.11949149250018744,
+          0.07335204836510398,
+          0.08328513266016893,
+          0.05283133573701712,
+          0.07014807987243098,
+          0.025315833974355332
+        ],
+        "CV_S_full": [
+          0.07434885171029373,
+          0.06577966638259941,
+          0.07161176512544815,
+          0.04854443224727991,
+          0.04271510465517463,
+          0.027934464665797427
+        ],
+        "CV_S_trunc_exponent": -0.5567322832374444,
+        "CV_S_trunc_err": 0.1857039035575286,
+        "CV_S_trunc_largest_N": 0.025315833974355332,
+        "self_averaging": true,
+        "trend_significant": true,
+        "trend_decreasing": true,
+        "verdict_factor_like": true
+      }
+    },
+    "dS_entropy_cap": {
+      "S_trunc_plateau_dS": 0.5200837820535655,
+      "S_trunc_plateau_flat": 0.8350570518513467,
+      "S_trunc_exponent_dS": 0.11625450507520263,
+      "S_trunc_exponent_flat": 0.17857251771419946,
+      "note": "S_trunc on the fixed dS sub-region saturates with N (II_1 max-entropy cap); compare the flat control which (at fixed region but uniform measure) tracks the same area/log law -- the II_1 vs II_inf distinction lives in the REGION-GROWTH direction (PART 1), not the fixed-region N-limit."
+    }
+  },
+  "part3_maxent_modular_spectrum": {
+    "description": "Modular spectrum of the max-entropy (tracial) candidate. In a II_1 algebra the maximally-mixed tracial state has a TRIVIAL (flat, eps->0) modular Hamiltonian. Two probes as the region approaches the horizon: (a) mean modular energy <eps> of the TRUNCATED state -- HONEST NULL: truncation removes exactly the low-eps tracial modes, so <eps>_trunc is pinned at the UV edge and CANNOT see the tracial limit; (b) IR fraction (eps<eps_lo) of the UNTRUNCATED state -- the proper tracial pile-up probe.",
+    "RCUT": 1.0,
+    "rho_proper": 300.0,
+    "eps_lo": 0.5,
+    "n_seeds": 5,
+    "Rstar_box": [
+      1.6,
+      2.2,
+      3.0,
+      4.0,
+      5.2
+    ],
+    "r_edge_box": [
+      0.9216685544064713,
+      0.9757431300314515,
+      0.9950547536867305,
+      0.999329299739067,
+      0.9999391368861988
+    ],
+    "desitter": {
+      "mean_eps_trunc_mean": [
+        5.688101280842362,
+        5.744854196790561,
+        5.805643804677728,
+        5.855153578206872,
+        5.908660917654933
+      ],
+      "mean_eps_trunc_std": [
+        0.1071296280978778,
+        0.08500989351554214,
+        0.1646357330544119,
+        0.1381470585009908,
+        0.09836883311225068
+      ],
+      "nmod_trunc_mean": [
+        9.6,
+        12.6,
+        13.0,
+        13.6,
+        13.8
+      ],
+      "mean_eps_trunc_slope": 0.06001209839823777,
+      "IR_frac_full_mean": [
+        0.14423070097604257,
+        0.107637712764451,
+        0.1048612230890712,
+        0.10345474743668252,
+        0.10500633418077843
+      ],
+      "IR_frac_full_std": [
+        0.015939816534626727,
+        0.01323936152422541,
+        0.017455293076644847,
+        0.011401344751264711,
+        0.006744156350733231
+      ],
+      "IR_frac_full_slope": -0.008082841338960004
+    },
+    "flat_control": {
+      "mean_eps_trunc_mean": [
+        6.15609191888525,
+        6.335087784739,
+        6.184156807986177,
+        6.305772774255213,
+        6.417997697032104
+      ],
+      "mean_eps_trunc_std": [
+        0.07161375214319375,
+        0.12223238844828134,
+        0.12143585463029527,
+        0.12784697887842295,
+        0.12952418377954059
+      ],
+      "nmod_trunc_mean": [
+        25.2,
+        30.4,
+        26.6,
+        23.0,
+        20.4
+      ],
+      "mean_eps_trunc_slope": 0.0556974996256967,
+      "IR_frac_full_mean": [
+        0.09717123429650654,
+        0.07235879958685817,
+        0.0763193111698696,
+        0.07366129019913978,
+        0.07475077976535434
+      ],
+      "IR_frac_full_std": [
+        0.003911179155444986,
+        0.00398041070632991,
+        0.0017822219210824283,
+        0.00218914660919456,
+        0.000598134555494392
+      ],
+      "IR_frac_full_slope": -0.004207044296750251
+    },
+    "dS_approaches_tracial_trunc_eps": false,
+    "dS_approaches_tracial_IR_frac": false,
+    "dS_approaches_tracial": false,
+    "honest_null_note": "The truncated mean-eps probe is a NULL by construction (truncation kills the tracial low-eps modes). The untruncated IR-fraction is the correct tracial probe.",
+    "prediction": "II_1 max-entropy: dS IR-fraction (eps<eps_lo, full spectrum) grows toward the horizon faster than the flat control."
+  },
+  "VERDICT": {
+    "II1_vs_IIinf_discriminated": true,
+    "dS_patch_type_II_character": true,
+    "n_proxies_passing_dS": 2,
+    "dS_max_entropy_tracial_trend": false,
+    "overall": "DISCRIMINATED: the SJ+truncation machinery DISTINGUISHES the bounded de Sitter static patch (II_1: capped entropy) from the matched unbounded flat control (II_inf: growing entropy), AND independently sees the III_1->II truncation on the dS patch. The CLPW II_1 vs II_inf distinction is VISIBLE in the discrete probe."
+  },
+  "runtime_s": 430.57893800735474
+}

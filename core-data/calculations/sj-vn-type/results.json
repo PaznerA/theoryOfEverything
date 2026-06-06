@@ -54,6 +54,9 @@
       ],
       "exponent_a": 1.0433381703439863,
       "a_err": 0.775853511479044,
+      "a_se_regression": 0.012687944964902706,
+      "a_ci68_bootstrap": [1.0238418384973422, 1.0632126168887104],
+      "a_err_note": "a_err is the legacy seed-spread placeholder (sqrt((A^T A)^{-1}[0,0]) under unit variance, identical for all sig=None fits); use a_se_regression (residual-based OLS SE of the log-log slope, 7 N-points) and a_ci68_bootstrap (16/84 pct over 2000 across-seed resamples, 8 seeds). Computed by calc_uncertainty.py 2026-06-06.",
       "note": "volume law ~ N^1 = divergent trace (III-like)"
     },
     "entropy_trace_trunc": {
@@ -77,6 +80,9 @@
       ],
       "exponent_a": 0.17243056092717168,
       "a_err": 0.775853511479044,
+      "a_se_regression": 0.011585364915205823,
+      "a_ci68_bootstrap": [0.1551120344466372, 0.18988420265998746],
+      "a_err_note": "a_err is the legacy seed-spread placeholder; use a_se_regression (residual-based OLS SE of the log-log slope, 7 N-points) and a_ci68_bootstrap (16/84 pct over 2000 across-seed resamples, 8 seeds). Computed by calc_uncertainty.py 2026-06-06.",
       "note": "area/log law, saturates ~1.3-1.7 = finite trace (II-like)"
     },
     "PJ_nuclear_norm_full": {
@@ -202,7 +208,10 @@
         0.0
       ],
       "exponent": 1.1368683772161603e-13,
-      "err": 0.775853511479044
+      "err": 0.775853511479044,
+      "err_se_regression": 0.0,
+      "err_ci68_bootstrap": [0.0, 0.0],
+      "err_note": "pile_trunc is identically 0 for all N and all 8 seeds, so there is no power law to fit: the exponent is a numerical zero (log(0) regularized to 1e-9) and has no statistical spread. err is the legacy seed-spread placeholder; the meaningful statement is the EXACT zero pile-up. Computed by calc_uncertainty.py 2026-06-06."
     },
     "epsmax_full": {
       "mean": [
@@ -339,8 +348,13 @@
     "CV_S_full_slope_vs_N": -3.68470519822435e-05,
     "CV_S_trunc_powerlaw": -0.7135270246444776,
     "CV_S_trunc_powerlaw_err": 0.775853511479044,
+    "CV_S_trunc_powerlaw_se_regression": 0.08165431268684237,
+    "CV_S_trunc_powerlaw_ci68_bootstrap": [-0.9103053292396334, -0.5106929274760632],
     "CV_S_full_powerlaw": -0.7536145177934088,
     "CV_S_full_powerlaw_err": 0.775853511479044,
+    "CV_S_full_powerlaw_se_regression": 0.11353008507748953,
+    "CV_S_full_powerlaw_ci68_bootstrap": [-0.9166459033304631, -0.3953982847548382],
+    "CV_powerlaw_err_note": "*_err are the legacy seed-spread placeholder; use *_se_regression (residual-based OLS SE of the log-log slope, 7 N-points) and *_ci68_bootstrap (16/84 pct over 2000 across-seed resamples, 8 seeds). The wide bootstrap CIs (both span well past 0 toward 0) are consistent with the existing 'decreasing trend NOT significant at this seed count' verdict. Computed by calc_uncertainty.py 2026-06-06.",
     "CV_S_trunc_largest_N": 0.030323800916079925,
     "prediction": "factor-like (II): CV(S_trunc) small and DECREASING with N (slope<0, power-law exponent significantly <0).",
     "trunc_is_self_averaging": true,

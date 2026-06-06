@@ -1110,8 +1110,10 @@ def run():
         disc = g2[d_key]
         cs = disc.get('corr_S')
         ce = disc.get('corr_E')
-        print(f"    discriminant (linear): corr_S={cs:.3f if cs else 'N/A'}, "
-              f"corr_E={ce:.3f if ce else 'N/A'} => {disc['preferred_linear']}")
+        cs_s = f"{cs:.3f}" if cs is not None else "N/A"
+        ce_s = f"{ce:.3f}" if ce is not None else "N/A"
+        print(f"    discriminant (linear): corr_S={cs_s}, "
+              f"corr_E={ce_s} => {disc['preferred_linear']}")
     print(f"\nGOAL 3 — A_W sign:")
     g3 = h["goal3_AW_sign"]
     print(f"  a=0.6: consistent={g3['kerr_a06_sign_consistent']}, "

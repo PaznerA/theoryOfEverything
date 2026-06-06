@@ -1,0 +1,81 @@
+{
+  "entropy_trace_full": {
+    "exponent": 1.0433381703438869,
+    "se_regression": 0.012687944964902706,
+    "ci68_bootstrap": [
+      1.0238418384973422,
+      1.0632126168887104
+    ],
+    "boot": {
+      "ci68_lo": 1.0238418384973422,
+      "ci68_hi": 1.0632126168887104,
+      "boot_std": 0.01979537053666273,
+      "boot_median": 1.041436181078946,
+      "n_boot_used": 2000
+    }
+  },
+  "entropy_trace_trunc": {
+    "exponent": 0.1724305609271557,
+    "se_regression": 0.011585364915205823,
+    "ci68_bootstrap": [
+      0.1551120344466372,
+      0.18988420265998746
+    ],
+    "boot": {
+      "ci68_lo": 0.1551120344466372,
+      "ci68_hi": 0.18988420265998746,
+      "boot_std": 0.0173663955744057,
+      "boot_median": 0.17177997821092833,
+      "n_boot_used": 2000
+    }
+  },
+  "pile_below_eps0_trunc": {
+    "exponent": 0.0,
+    "se_regression": 0.0,
+    "ci68_bootstrap": [
+      0.0,
+      0.0
+    ],
+    "note": "pile_trunc identically 0 for all N and all 8 seeds; no power law to fit; uncertainty is exactly 0 (not a placeholder)",
+    "boot": {
+      "degenerate_all_zero": true
+    }
+  },
+  "CV_S_trunc_powerlaw": {
+    "exponent": -0.7135270246444065,
+    "se_regression": 0.08165431268684237,
+    "ci68_bootstrap": [
+      -0.9103053292396334,
+      -0.5106929274760632
+    ],
+    "boot": {
+      "ci68_lo": -0.9103053292396334,
+      "ci68_hi": -0.5106929274760632,
+      "boot_std": 0.2247277603979888,
+      "boot_median": -0.7329584405977874,
+      "n_boot_used": 2000
+    }
+  },
+  "CV_S_full_powerlaw": {
+    "exponent": -0.7536145177933378,
+    "se_regression": 0.11353008507748953,
+    "ci68_bootstrap": [
+      -0.9166459033304631,
+      -0.3953982847548382
+    ],
+    "boot": {
+      "ci68_lo": -0.9166459033304631,
+      "ci68_hi": -0.3953982847548382,
+      "boot_std": 0.2620634753282492,
+      "boot_median": -0.7583507028213725,
+      "n_boot_used": 2000
+    }
+  },
+  "_meta": {
+    "what": "Proper uncertainties replacing the 0.775853511479044 placeholder.",
+    "se_regression": "residual-based OLS standard error of the log-log slope (7 N-points); the honest single-fit SE.",
+    "ci68_bootstrap": "[16,84] percentile of the log-log slope over 2000 across-seed resamples (8 seeds, with replacement).",
+    "seeds": "IDENTICAL to calc.py: 7_000_000 + 1000*N + s, Ns=[400, 600, 800, 1000, 1200, 1500, 1800], n_seeds=8, frac=0.5, eps0=0.5.",
+    "central_values_unchanged": true
+  }
+}

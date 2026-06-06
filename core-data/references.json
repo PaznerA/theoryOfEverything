@@ -2148,7 +2148,7 @@
   {
     "id": "mattingly-2006",
     "authors": "J. Mattingly",
-    "title": "Why Eppley and Hannah's thought experiment fails",
+    "title": "Why Eppley and Hannah's Experiment Isn't",
     "year": 2006,
     "arxiv": "gr-qc/0601127",
     "doi": null,
@@ -6683,10 +6683,10 @@
     "authors": "J. Kudler-Flam, S. Leutheusser, G. Satishchandran",
     "title": "Generalized Second Law for Subregions and Gravitational Algebras",
     "year": 2024,
-    "arxiv": "2403.08696",
+    "arxiv": null,
     "doi": "10.1007/JHEP11(2024)099",
-    "url": "https://arxiv.org/abs/2403.08696",
-    "significance": "Derives a generalized second law from the monotonicity of relative entropy on the type II gravitational algebra, tying GSL to modular theory.",
+    "url": null,
+    "significance": "Derives a generalized second law from the monotonicity of relative entropy on the type II gravitational algebra, tying GSL to modular theory. [unverified arXiv ID removed 2026-06-06: ID 2403.08696 belongs to Iliesiu–Levine–Lin–Maxfield–Mezei (JT gravity), not Kudler-Flam–Leutheusser–Satishchandran; correct arXiv ID not found on arXiv]",
     "pillars": [
       "von-neumann-algebras"
     ]
@@ -6888,7 +6888,7 @@
   },
   {
     "id": "carrozza-review-2024",
-    "authors": "S. Carrozza, R. Toriumi, et al.",
+    "authors": "S. Carrozza",
     "title": "Tensor models and group field theories: combinatorics, large N and renormalization",
     "year": 2024,
     "arxiv": "2404.07834",
@@ -7021,10 +7021,10 @@
     "authors": "M. Ali Ahmad, M. S. Klinger, S. Lin",
     "title": "An operator algebraic approach to black hole information",
     "year": 2025,
-    "arxiv": "2408.00071",
+    "arxiv": null,
     "doi": "10.1007/JHEP02(2025)207",
-    "url": "https://arxiv.org/abs/2408.00071",
-    "significance": "Operator-algebraic account of the black-hole information problem in terms of type transitions and crossed products.",
+    "url": null,
+    "significance": "Operator-algebraic account of the black-hole information problem in terms of type transitions and crossed products. [unverified arXiv ID removed 2026-06-06: ID 2408.00071 belongs to van der Heijden & Verlinde, not Ali Ahmad–Klinger–Lin; correct arXiv ID not found]",
     "pillars": [
       "von-neumann-algebras"
     ]

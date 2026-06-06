@@ -1,18 +1,29 @@
 # Index znalostní báze — Theory of Everything
 
 > Anotovaný rejstřík všech souborů ve `knowledge-base/`, `core-data/` a `verification/`.
-> Generováno: 2026-06-05; aktualizováno: 2026-06-06 (housekeeping agent, economy mode — kola 3+4+5+6+7+8).
+> Generováno: 2026-06-05; aktualizováno: 2026-06-06 (velké review část 1 — verifikace, audit, opravy draftů, doplnění grafu).
 
 ---
 
 ## Klíčové dokumenty
+
+> **VSTUPNÍ BOD PRO LIDSKÉHO AUTORA (drafty → revize → release):**
+> [`../papers/REVIZE-PRO-CLOVEKA.md`](../papers/REVIZE-PRO-CLOVEKA.md) — přehledová tabulka stavu všech 4 draftů; doporučené pořadí revizí; ~80 checkboxů (matematika / citace / čísla / konvence); kritické high-risk položky; absolutní pravidla pro release; příkazy pro re-run všech calc.py. **Sem jít jako první před externím sdílením čehokoli z projektu.**
 
 - [SYNTEZA.md](SYNTEZA.md) — Syntetická mapa všech 18 pilířů: kde každý stojí, co sdílí a kde jsou bílá místa; vstupní bod pro hledání skrytých vazeb.
 - [BRAINSTORM-01.md](BRAINSTORM-01.md) — První systematický brainstorming nenalezených souvislostí: 5 analytických čoček nad `core-data/`, 10+ hypotéz s confidence skóre a prioritami pro Fázi 2.
 - [BRAINSTORM-02.md](BRAINSTORM-02.md) — Druhé kolo brainstormingu (2026-06-06): verdikty čtyř dokončených výpočtů, 8 hypotéz druhé generace (H2g-1–H2g-8), výpočetní fronta 10 položek a strategický meta-závěr; kalibrace po falzifikaci silných verzí.
 - [BRAINSTORM-03.md](BRAINSTORM-03.md) — Třetí kolo brainstormingu (2026-06-06, kolo 4): 3 hypotézy třetí generace — H3g-1 (opačná znaménka A_caus/A_W jako superradiantní podpis), H3g-4 (spektrální akce = fermionově-indukovaná gravitace), H3g-3 (SSEE truncace = crossed-product modulární cutoff); doporučení: draft-02 jako nejpevnější aktivum k releasování. H3g-1 uzavřena VYPOCET-15 (kolo 7); H3g-4 uzavřena VYPOCET-11 (kolo 5).
 - [BRAINSTORM-04.md](BRAINSTORM-04.md) — Čtvrté kolo brainstormingu (2026-06-06, kolo 7): 3 hypotézy čtvrté generace — H4g-1 (rohová non-Hadamardovost = selhání boost-flow, medium-high), H4g-4 (III→II na slabu ne na diamantu, medium-high; POTVRZENA VYPOCET-16), H4g-3 (fermionová indukce predikuje Λ přes f₀/a₀, medium). Doporučená fronta: H4g-3 (nejlevnější, sympy, dny) + H4g-1 (nejvyšší konceptuální výnos). Viz PROGRESS.md § Další kroky.
+- [BRAINSTORM-05.md](BRAINSTORM-05.md) — Páté kolo brainstormingu (2026-06-06, závěrečné): 6 hypotéz páté generace (H5g-1–H5g-6) navazujících na výsledky kol 7–9: dS II₁ diskriminátor (F-023), BD 4D modulární tok (F-024), causal-set typ-přechod, rohová non-Hadamardovost. Vstupní fronta pro velké review.
 - [SYNTEZA-02.md](SYNTEZA-02.md) — Druhá syntéza (2026-06-06, kolo 7): přehled 7 kol a 19 nálezů; 5 uzavřených front (γ–Cardy, naivní Λ, plná SM, 4D volume-law jako dimenze-efekt, Model E pro superradianci); vlajková loď NCG a₄ = −18/11 (fermionicky-indukovaná gravitace, draft-02 uzavřen); causal-set triáda (III₁→II 2D/4D, slab area law, SSEE cutoff ρ^{−1/2}); through-line (vlastnosti prostoročasu jako odpovědi na otázky); výhled 10 kol.
+
+---
+
+## Denní zprávy a reviewové reporty (`reports/`)
+
+- [../reports/2026-06-06-review.md](../reports/2026-06-06-review.md) — **Velké review část 1** (2026-06-06): verifikace 150 arXiv ID (7 chyb opraveno, tabulka problémových ID); audit 24 nálezů (cesty k evidenci + caveaty, žádný status nezměněn); opravy draftů (a_err rekonstrukce nejistot, CST konvence d_s=8 + D vs D_space); doplnění grafu (5 nových hran, 2 nové uzly, VNA pilíř na 11 hranách); nové statistiky registrů (625 uzlů, 2476 hran, 292 connections, 115 barely, 587 ref.); část 2 (reprodukce 20 calc.py) probíhá.
+- [../reports/2026-06-06-day-report.md](../reports/2026-06-06-day-report.md) — Závěrečná denní zpráva (2026-06-06): přehled celého dne výzkumu (kola 3–9), souhrnné statistiky (20 výpočtů, 24 nálezů, 4 drafty), stav všech hypotéz, uzavřené fronty, doporučení a plán pro velké review.
 
 ---
 
@@ -56,18 +67,18 @@
 
 ## Datové registry (`core-data/`)
 
-- [../core-data/_digest.md](../core-data/_digest.md) — Strojově generovaný souhrn celé báze: 589 uzlů grafu, 2296 hran, 563 referencí, 235 vzorců, 143 otevřených problémů — levný vstupní bod pro agenty.
-- [../core-data/concept-graph.json](../core-data/concept-graph.json) — Graf konceptů (598 uzlů, 2319 hran): top huby holographic-principle, bekenstein-hawking-entropy, spectral-dimension, page-curve.
-- [../core-data/connections.json](../core-data/connections.json) — Matice meziobjevových vazeb (280 hran, 112 hodnoceno jako „barely explored") — základ pro hledání bílých míst.
-- [../core-data/references.json](../core-data/references.json) — Registr referencí: 563 unikátních z 633 syrových; duplikáty odfiltrovány.
+- [../core-data/_digest.md](../core-data/_digest.md) — Strojově generovaný souhrn celé báze (aktualizováno 2026-06-06, velké review část 1) — levný vstupní bod pro agenty.
+- [../core-data/concept-graph.json](../core-data/concept-graph.json) — Graf konceptů (**625 uzlů, 2476 hran**, po velké review část 1): top huby holographic-principle, generalized-entropy, bekenstein-hawking-entropy, spectral-dimension, modular-hamiltonian, page-curve.
+- [../core-data/connections.json](../core-data/connections.json) — Matice meziobjevových vazeb (**292 hran, 115 hodnoceno jako „barely explored"**) — základ pro hledání bílých míst.
+- [../core-data/references.json](../core-data/references.json) — Registr referencí: **587 unikátních** z 665 syrových; duplikáty odfiltrovány.
 - [../core-data/references.bib](../core-data/references.bib) — BibTeX export téhož registru pro LaTeX/Pandoc workflow.
-- [../core-data/formulas.json](../core-data/formulas.json) — Registr vzorců: 235 unikátních z 236 syrových záznamů napříč 18 pilíři.
-- [../core-data/open-problems.json](../core-data/open-problems.json) — Registr otevřených problémů: 145 problémů (+9 fuzzy duplicit k posouzení).
+- [../core-data/formulas.json](../core-data/formulas.json) — Registr vzorců: **247 unikátních** z 249 syrových záznamů napříč 19 pilíři.
+- [../core-data/open-problems.json](../core-data/open-problems.json) — Registr otevřených problémů: **153 problémů** (+9 fuzzy duplicit k posouzení).
 - [../core-data/connections.json](../core-data/connections.json) — Viz výše.
 
 ### Registr nálezů
 
-- [../core-data/findings.json](../core-data/findings.json) — Registr 22 originálních nálezů (2026-06-06, kola 1–8): F-001–F-008 z rozhodujícího kola (d_s, a_4, Λ, SSEE); F-009 Kerr-BTZ geometrická nezávislost SJ; F-010 γ–Cardy program closed; F-011 modular-hamiltonian top hub; F-012 BD d'Alembertián spektrum; F-013 SJ eigenvektorová rotace + mechanismus A_caus/A_W; F-014 graviton sektor + index-teorém (−18/11 fermionový diskriminátor, Rohlinův zámek, H3g-4 posílena); F-015 vN typ proxy 2/3 III₁→II v 2D (H3g-3 první numerický důkaz); F-016 4D slab area law (rohová geometrie rozhoduje, H04-c potvrzena); F-017 superradiantní nástup W_sr~Ω^B (H3g-1 potvrzena, ergosféra není diskrétní práh); F-018 far-zone disambiguace Kerr a=0.6 (ΔAIC=+3894, corr(S)=0.9992, Ω(r) potvrzen pro všechny tři geometrie); F-019 vN-type 4D slab 3/3 proxy (entropická stopa III→II 36x, modulární spektrum flat-dense→integrovatelné, N^{3/4} jako operativní crossed-product regulátor — H3g-3 podpořena v d=4); F-020 H4g-3 VYVRÁCENA — žádná druhá index-identita pro Λ, a₀/a₂ cross-order (f₄Λ⁴ vs f₂Λ²), STr 1 = −62/−68, draft-02 Λ-riziko uzavřeno; F-021 H4g-1 podpořena v 2D (4/5 signatur) — off-diag sklon modulárního kernelu −0.47 (slab) vs −0.094 (diamant), f_nl gradient k rohům R²=0.989, through-line vrstva B mechanisticky aktivní; 4D nereplikuje; F-022 draft-04 zapsán — 2D 2/3 + 4D 3/3 vN-type proxy, N^{3/4} selektivita jako operativní regulátor. Každý nález rozlišuje reprodukci literatury od projektového přínosu.
+- [../core-data/findings.json](../core-data/findings.json) — Registr 24 originálních nálezů (2026-06-06, kola 1–9): F-001–F-008 z rozhodujícího kola (d_s, a_4, Λ, SSEE); F-009 Kerr-BTZ geometrická nezávislost SJ; F-010 γ–Cardy program closed; F-011 modular-hamiltonian top hub; F-012 BD d'Alembertián spektrum; F-013 SJ eigenvektorová rotace + mechanismus A_caus/A_W; F-014 graviton sektor + index-teorém (−18/11 fermionový diskriminátor, Rohlinův zámek, H3g-4 posílena); F-015 vN typ proxy 2/3 III₁→II v 2D (H3g-3 první numerický důkaz); F-016 4D slab area law (rohová geometrie rozhoduje, H04-c potvrzena); F-017 superradiantní nástup W_sr~Ω^B (H3g-1 potvrzena, ergosféra není diskrétní práh); F-018 far-zone disambiguace Kerr a=0.6 (ΔAIC=+3894, corr(S)=0.9992, Ω(r) potvrzen pro všechny tři geometrie); F-019 vN-type 4D slab 3/3 proxy (entropická stopa III→II 36x, modulární spektrum flat-dense→integrovatelné, N^{3/4} jako operativní crossed-product regulátor — H3g-3 podpořena v d=4); F-020 H4g-3 VYVRÁCENA — žádná druhá index-identita pro Λ, a₀/a₂ cross-order (f₄Λ⁴ vs f₂Λ²), STr 1 = −62/−68, draft-02 Λ-riziko uzavřeno; F-021 H4g-1 podpořena v 2D (4/5 signatur) — off-diag sklon modulárního kernelu −0.47 (slab) vs −0.094 (diamant), f_nl gradient k rohům R²=0.989, through-line vrstva B mechanisticky aktivní; 4D nereplikuje; F-022 draft-04 zapsán — 2D 2/3 + 4D 3/3 vN-type proxy, N^{3/4} selektivita jako operativní regulátor; **F-023 dS II₁ diskriminátor — obsah-sledující veličiny (N_total, S_full) saturují pro ohraničenou dS záplatu (II₁) a rostou pro plochou kontrolu (II_∞); 2/3 proxy dS baterie; poctivá 2D limita: diskriminace v obsahu oblasti, ne truncované entropii; tracialní přístup null při N≲2500; (VYPOCET-19)**; **F-024 BD 4D modulární tok parciální (3/5 signatur) — slab off-diag sklon −1.10 vs diamant −0.52 (kontrast správný), rohová koncentrace nereplikuje; link-matice null z VYPOCET-18 z části objekt-závislý; H4g-1 v 4D parciální; (VYPOCET-20)**. Každý nález rozlišuje reprodukci literatury od projektového přínosu.
 
 ### Fragmenty pilířů (`core-data/fragments/`)
 
@@ -83,7 +94,7 @@ Osmnáct strojově zpracovatelných JSON fragmentů (koncepty, vzorce, reference
 
 ## Výpočty (`knowledge-base/vypocty/` + `core-data/calculations/`)
 
-Osmnáct výpočtů dokončeno: čtyři v prvním deep-dive kole, tři v rozhodujícím kole, tři v kolech 3–4, dva v kole 5, dva v kole 6, dva v kole 7, dva v kole 8. Každý má writeup v `knowledge-base/vypocty/` a strojová data (calc.py + results.json + plots) v odpovídajícím podadresáři `core-data/calculations/`.
+Dvacet výpočtů dokončeno: čtyři v prvním deep-dive kole, tři v rozhodujícím kole, tři v kolech 3–4, dva v kole 5, dva v kole 6, dva v kole 7, dva v kole 8, dva v kole 9. Každý má writeup v `knowledge-base/vypocty/` a strojová data (calc.py + results.json + plots) v odpovídajícím podadresáři `core-data/calculations/`.
 
 ### Kolo 1 (VYPOCET-01–04)
 
@@ -117,6 +128,11 @@ Osmnáct výpočtů dokončeno: čtyři v prvním deep-dive kole, tři v rozhodu
 - [vypocty/VYPOCET-13-slab-entanglement.md](vypocty/VYPOCET-13-slab-entanglement.md) — 4D SSEE slab geometry (H04 interpretace c, calc13): half-space cut (iΔ, κ=0.05·λmax) dává AREA law S~L^2.00 (R²=0.982); interiérní edge-effect kontrola S~L^2.18 (R²=0.989) — čistší area. Kontrast s 4D diamantem (VYPOCET-06) VOLUME S~f^6.1: rohová geometrie (ne dimenze) rozhoduje. Hadamardova diagnostika lokalizuje non-Hadamard anomálii do rohů diamantu (inside vs corner: −1.53 vs −2.79 v 4D; −0.160 vs −0.095 v 2D); slab bez anomálie (deep≈surface: −3.81≈−3.85). Interpretace (c) POTVRZENA, (a) vyvrácena. Runtime 264 s, N≤2088. Data: `core-data/calculations/VYPOCET-13/`. (F-016)
 - [vypocty/VYPOCET-14-superradiance-onset.md](vypocty/VYPOCET-14-superradiance-onset.md) — Superradiantní nástup: ergosféra vs. Ω(r) (H3g-1, calc14): W_sr radial scan Kerr a=0.6 [0,0.145], a=0.9 [0,0.222]; BTZ J=0.9 analogicky. ΔAIC(E vs. S)=+441.6/+4216.3/+231.5 — rozhodující pro Model S (W_sr~Ω^B; B=4.23/3.82/1.71). A_W negativně-definitní ve všech 65 externích měřeních; amplituda sleduje |Ω| (near-erg ~0.5 vs far ~0.04, faktor 15–20). BTZ cross-check J=0.9 reprodukuje stejný vzorec. H3g-1 POTVRZENA. Zbývá: disambiguation a=0.6 hustším scanem r=5–20M (VYPOCET-15). N=1600, 5 seeds. Data: `core-data/calculations/VYPOCET-14/`. (F-017)
 
+### Kolo 9 (VYPOCET-19–20)
+
+- [vypocty/VYPOCET-19-ds-ii1-discriminator.md](vypocty/VYPOCET-19-ds-ii1-discriminator.md) — SJ na dS statické záplatě × vN typ II₁ vs II_∞ (CLPW diskriminátor, F-023): konformní trik (sech² vlastní míra, ohraničená záplata = konečná stopa = II₁); N_total saturuje 442→480 (dS) vs. roste 768→3360 (plochá kontrola); S_full saturuje a překlápí (dS, R²=0.990) vs. roste (plochá, sklon +12.2); mezera late-half dS −13.1 vs plochá +21.7 = DISKRIMINOVÁNO. Tří-proxy baterie na dS záplatě: 2/3 proxy pass (stopa III→II, modulární pile-up N^{1.25}→0); Část 3 tracialní přístup poctivý null (threshold ρ~10³–10⁴). Poctivá 2D limita: rozdíl II₁/II_∞ žije v obsahu oblasti, ne truncované entropii. Runtime 431 s. Data: `core-data/calculations/VYPOCET-19/`. (F-023)
+- [vypocty/VYPOCET-20-bd-modular-flow-4d.md](vypocty/VYPOCET-20-bd-modular-flow-4d.md) — BD d'Alembertián modulární tok v 4D: slab vs. diamantový roh (H4g-1, F-024); slab off-diag sklon −1.10 vs. diamant −0.52 (kontrast přítomen, správný směr, větší než 2D gap); rohová koncentrace f_nl nereplikuje čistě (f_nl 0.445, nl-vs-corner +0.71); 3/5 signatur podpořeno. Link-matice 4D null z VYPOCET-18 je z části objekt-závislý artefakt; slab boost-geometricity s BD robustní; H4g-1 4D parciální (2D výsledek zůstává primárním důkazem). Data: `core-data/calculations/VYPOCET-20/`. (F-024)
+
 ### Kolo 8 (VYPOCET-17–18)
 
 - [vypocty/VYPOCET-17-lambda-induction.md](vypocty/VYPOCET-17-lambda-induction.md) — Λ-indukce přes spektrální akci (H4g-3, F-020): exaktní sympy + literatura (CC hep-th/9606001 + Marcolli). a₀ (kosm.) a a₂ (EH) jsou cross-order (f₄Λ⁴ vs f₂Λ²) → jejich poměr dimenzionální a scheme-závislý; žádná druhá index-identita pro Λ_cc/M_Pl² neexistuje. STr 1 = −62 (bez ν_R) / −68 (s ν_R); ν_R nerovnováhu zhoršuje. Indukovaná γ₀ cutoff-kvartická (10¹²²). H4g-3 VYVRÁCENA. Draft-02 Λ-riziko uzavřeno. Data: `core-data/calculations/VYPOCET-17/`. (F-020)
@@ -148,26 +164,30 @@ Osmnáct výpočtů dokončeno: čtyři v prvním deep-dive kole, tři v rozhodu
 
 ## Drafty článků (`papers/`)
 
+> **VSTUPNÍ BOD PRO LIDSKÉHO AUTORA:** [`../papers/REVIZE-PRO-CLOVEKA.md`](../papers/REVIZE-PRO-CLOVEKA.md) — přehledová tabulka (vědecký stav + odhadovaný čas), doporučené pořadí revizí (draft-02 → draft-04 → draft-01 → draft-03), ~80 checkboxů, high-risk položky, absolutní pravidla pro release, příkazy calc.py. Sem jít jako první.
+
 Čtyři drafty čekají na lidskou revizi (2026-06-06); draft-01 upgradován na v0.2 v kole 5; draft-04 napsán v kole 8.
 
 - [../papers/draft-01-sj-rotating-spacetimes/draft.md](../papers/draft-01-sj-rotating-spacetimes/draft.md) — Draft-01 **v0.2** (kolo 5): SJ vakuum v rotujících prostoročasech; název aktualizován (eigenvector signature of superradiance); abstrakt rozšířen o mechanismus opačných znamének, překryv podprostorů 44.6°, superradiantní váha 0.0755; sekce 3.5b, 3.6, 4.1, 4.2 plně integrovány. Blokující pro release: N→∞ studie, analytické SJ pro strižený diamant, srovnání BTZ dvou-bod. funkce, verifikace citací, re-run pipeline (gate §8 TODO.md).
 - [../papers/draft-01-sj-rotating-spacetimes/TODO.md](../papers/draft-01-sj-rotating-spacetimes/TODO.md) — TODO list pro draft-01 v0.2; položky 1.4, 3, 6 označeny DONE; nová gate §8 (lidská re-derivace).
 - [../papers/draft-02-a4-fermionic-identity/draft.md](../papers/draft-02-a4-fermionic-identity/draft.md) — Draft-02: a₄ fermionová identita (krátká exaktní nota); exaktní identita C²/Euler=−18/11, heat-kernel descent §2, SM falzifikace −0.853 vs −1.636, pozice v trojúhelníku Andrianov-Lizzi/Kurkov-Lizzi-Vassilevich. VYPOCET-11 uzavřel vědecký obsah (graviton identitu nezachrání, Rohlinův zámek). Blokující pro release: lidská re-derivace a₄ koeficientů, citace-check PDF, scheme-dependence ošetření.
 - [../papers/draft-02-a4-fermionic-identity/TODO.md](../papers/draft-02-a4-fermionic-identity/TODO.md) — TODO list pro draft-02.
-- [../papers/draft-03-ds-classifier/draft.md](../papers/draft-03-ds-classifier/draft.md) — Draft-03 (kolo 6): UV spektrální dimenze jako klasifikátor trojice (z, D, sonda); master-tabulka reprodukuje 12 publikovaných čísel z jediného P(σ) enginu; sonda jako třetí klasifikační osa doložena vnitřním rozporem v databázi (CST d'Alembertián d_s→2 vs. náhodná procházka d_s>D). Sekce „Relation to prior work" vpředu; pozice vůči Hořavovi, Calcagnimu (1311.3340, 1708.07445), Carlipovi, Eichhorn–Mizera, Belenchiovi. Blokující: obrana vůči „Calcagni přebalený" a „probe-trivialita" (viz TODO.md).
+- [../papers/draft-03-ds-classifier/draft.md](../papers/draft-03-ds-classifier/draft.md) — Draft-03 (kolo 6): UV spektrální dimenze jako klasifikátor trojice (z, D, sonda); master-tabulka reprodukuje 12 publikovaných čísel z jediného P(σ) enginu; sonda jako třetí klasifikační osa doložena vnitřním rozporem v databázi (CST d'Alembertián d_s→2 vs. náhodná procházka d_s>D). Sekce „Relation to prior work" vpředu; pozice vůči Hořavovi, Calcagnimu (1311.3340), Mielczarek–Trześniewski (1708.07445), Carlipovi, Eichhorn–Mizera, Belenchiovi. Blokující: obrana vůči „Calcagni přebalený" a „probe-trivialita" (viz TODO.md).
 - [../papers/draft-03-ds-classifier/TODO.md](../papers/draft-03-ds-classifier/TODO.md) — TODO list pro draft-03; hlavní referee útok: simultánní engine + sonda jako osa + inverze čtení konvergence.
 - [../papers/draft-04-type-transition-causal-sets/draft.md](../papers/draft-04-type-transition-causal-sets/draft.md) — Draft-04 (kolo 8): typ III₁→II přechod na kauzálních množinách přes Sorkin-Yazdi SSEE truncaci; tři finite-N proxy (entropická stopa, modulární spektrum, centrální-sekvence/rank); 2D diamant 2/3 proxy; 4D slab 3/3 proxy s N^{3/4} selektivitou; geometrická výhrada (rohové SJ non-Hadamardovosti ničí signaturu) a interpretace diskrétní škály jako modulárního cutoffu explicitely jako konjektury. Blokující: 8 lidských verifikačních bran, oprava a_err=0.776, BD 4D replika, LQG-area-gap noha otevřena.
 - [../papers/draft-04-type-transition-causal-sets/TODO.md](../papers/draft-04-type-transition-causal-sets/TODO.md) — TODO list pro draft-04; hlavní referee útaky (proxy ≠ typy, N^{3/4} jako prescription vs. spektrální feature, Gaussův stav); etická poznámka AI asistence; 8 lidských verifikačních bran.
+- [../papers/REVIZE-PRO-CLOVEKA.md](../papers/REVIZE-PRO-CLOVEKA.md) — **LIDSKÝ VSTUPNÍ BOD** (kolo 9): přehledová tabulka stavu všech 4 draftů + odhadovaný čas revize; doporučené pořadí (draft-02 → draft-04 → draft-01 → draft-03); ~80 checkboxů pro (A) matematické re-derivace, (B) kontrolu citací proti PDF, (C) čísla vs results.json, (D) vědecké konvence; kritické high-risk položky (arXiv ID 2025–2026, placeholder a_err=0.776, ilustrativní hodnota 8 v CST); absolutní pravidla pro release (jmenovaný autor, AI-assistance statement, veřejný calc.py); přesné příkazy pro re-run všech 12 calc.py.
 
 ---
 
 ## Eseje (`knowledge-base/eseje/`)
 
-Tři syntetické eseje (2026-06-06) rozvíjející nejhlubší motivy výzkumných kol.
+Čtyři syntetické eseje (2026-06-06) rozvíjející nejhlubší motivy výzkumných kol.
 
 - [eseje/ESEJ-01-dimenze-jako-otazka.md](eseje/ESEJ-01-dimenze-jako-otazka.md) — „Dimenze jako otázka": probe/observer-dependence jako generický klasifikační princip (H2g-1) — geometrická veličina je odpověď na (otázka, sonda), ne atribut oblasti; formalizace falzifikací F1/F5.
 - [eseje/ESEJ-02-vesmir-ktery-se-pocita.md](eseje/ESEJ-02-vesmir-ktery-se-pocita.md) — „Vesmír, který se počítá": faktor 140 (Sorkin/EDT) jako možný směnný kurz mezi definicemi atomu prostoročasu (H2g-4); Everpresent Λ a swampland-kompatibilní de Sitter bez kvintesenčního pole (H2g-5).
 - [eseje/ESEJ-03.md](eseje/ESEJ-03.md) — ESEJ-03 (kolo 6): syntetická esej k výsledkům kola 6.
+- [eseje/ESEJ-04.md](eseje/ESEJ-04.md) — ESEJ-04 (kolo 9): syntetická esej k výsledkům kola 9 — dS II₁ diskriminátor a BD 4D modulární tok.
 
 ---
 

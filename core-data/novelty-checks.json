@@ -64,9 +64,10 @@
       },
       {
         "title": "Towards the map of quantum gravity",
+        "authors": "J. Mielczarek, T. Trześniewski",
         "arxiv": "1708.07445",
-        "year": 2017,
-        "relation": "Calcagni srovnává d_s^UV přes CDT, AS, LQG, Hořavu, NCG, nelokalní gravitaci, Stelle a CST. Nejblíže 'srovnávací tabulce' — ale bez explicitního master-vzorce d_s(z,D) a bez heat-kernel P(s)=Tr e^{-sG^{-1}} jako unifikující framework. Silný kontextuální přesah."
+        "year": 2018,
+        "relation": "Mielczarek a Trześniewski srovnávají přístupy ke kvantové gravitaci (LQG, CDT, Hořava, AS, Quantum Graphity aj.) s důrazem na 'running dimension of spacetime'. Nejblíže 'srovnávací tabulce' — ale bez explicitního master-vzorce d_s(z,D) a bez heat-kernel P(s)=Tr e^{-sG^{-1}} jako unifikující framework. Silný kontextuální přesah."
       }
     ],
     "whatRemainsNovel": "Tři věci nejsou v literatuře explicitně publikovány jako celek: (1) Systematická srovnávací tabulka d_s^UV(z,D) pro přesně čtyři přístupy AS/CDT/LQG/CST, všechny zpracované jednotným formalizmem P(s) = Tr e^{-sG^{-1}} — Hořavův vzorec d_s=1+D/z je znám pro Hořavovu gravitaci, ale ne jako explicitní výpočet z P(s)=Tr e^{-sG^{-1}} pro AS propagátor, LQG modifikovaný Laplacián a CST BD propagátor. (2) Probe-dependence jako explicitní *klasifikační parametr* vedle z a D — tatáž teorie (CST) dává kvalitativně opačné d_s podle volby sondy; toto není v literatuře formulováno jako d_s(z, D, probe). (3) Tvrzení, že d_s není universálně 2 jako *diskriminátor mezi přístupy* (ne jen technický fakt): kdybychom změřili d_s^UV > 2 nebo různé hodnoty pro různé sondy ve stejné teorii, odlišujeme přístupy — tato klasifikační interpretace není v žádném nalezené práci centrálním tvrzením.",

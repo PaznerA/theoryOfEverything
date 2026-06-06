@@ -104,8 +104,8 @@ The note's contribution is a *three-way synthesis* that the novelty check classi
 
 | quantity | $S$ at $N{=}400\to1800$ | exponent $a$ ($S\sim N^a$) | reading |
 |---|---|---|---|
-| $S_{\rm full}$ | $28.7\to135.9$ | $a=1.04$ | volume law $\to$ divergent trace (III) |
-| $S_{\rm trunc}$ | $1.30\to1.70$ | $a=0.17$ (saturates) | area/log law $\to$ finite trace (II) |
+| $S_{\rm full}$ | $28.7\to135.9$ | $a=1.04$ ($\pm0.013$ SE; 68% boot CI $[1.024,1.063]$) | volume law $\to$ divergent trace (III) |
+| $S_{\rm trunc}$ | $1.30\to1.70$ | $a=0.17$ (saturates) ($\pm0.012$ SE; 68% boot CI $[0.155,0.190]$) | area/log law $\to$ finite trace (II) |
 
 At $N=1800$ truncation collapses the trace **$80\times$** ($135.9\to1.70$). The Pauli–Jordan nuclear-norm control grows as $N^{1.20}$ (full) and $N^{1.14}$ (truncated) — $\kappa$ removes only a constant $\sim20\%$, **not** the divergence. This is the methodologically important negative: the type signature is in the *state/entropy*, not in the symplectic kinematics; a naive "trace of $i\Delta$" would falsely reject the hypothesis. **Verdict: III$\to$II ✓.**
 
@@ -119,7 +119,7 @@ At $N=1800$ truncation collapses the trace **$80\times$** ($135.9\to1.70$). The 
 
 The untruncated modular density is **flat from $\varepsilon=0$ to $\varepsilon\sim6$ with a pile-up at $\varepsilon=0$** — Connes' flat-density III$_1$ signature $S(\mathcal M)=\mathbb{R}_+$. Truncation drives the $\varepsilon<0.5$ count to exactly zero and opens a **sharp IR edge** ($\varepsilon\gtrsim1.6$): a compactly supported, integrable, type-II spectrum. The UV edge $\varepsilon_{\max}\sim6$ grows only logarithmically (slope vs. $N$ $\sim6\times10^{-4}$), consistent with the $\mathbb{R}_+$ limit. This is the cleanest single result of the 2D run and the **strongest 2D proxy. Verdict: III$_1\to$II ✓.**
 
-**Proxy 3 (central sequence).** $\mathrm{CV}(S_{\rm trunc})$ falls to $\sim3\%$ at $N=1800$ (self-averaging confirmed), but the power-law trend $N^{-0.71\pm0.78}$ is consistent with zero, and $\mathrm{CV}(S_{\rm full})$ falls similarly ($N^{-0.50\pm0.78}$). Self-averaging is real but does **not discriminate** trunc from full at 8 seeds. **Verdict: factor-like self-averaging confirmed, but non-discriminating ✗** (honest: not a usable *distinguishing* signature here).
+**Proxy 3 (central sequence).** $\mathrm{CV}(S_{\rm trunc})$ falls to $\sim3\%$ at $N=1800$ (self-averaging confirmed), but the power-law trend $N^{-0.71\pm0.08}$ (regression SE; 68% across-seed bootstrap CI $[-0.91,-0.51]$, 2000 resamples over 8 seeds) does not reach significance, and $\mathrm{CV}(S_{\rm full})$ falls similarly ($N^{-0.75\pm0.11}$; 68% boot CI $[-0.92,-0.40]$ — note the wide CI nearly reaches zero). Self-averaging is real but does **not discriminate** trunc from full at 8 seeds. **Verdict: factor-like self-averaging confirmed, but non-discriminating ✗** (honest: not a usable *distinguishing* signature here).
 
 > **2D overall: MIXED, 2/3.** The two physically decisive proxies (entropy trace, modular spectrum) unambiguously support III$_1\to$II; the third confirms self-averaging but cannot separate the two states at this seed count. The 2D identification is honest but carries the caveat "2D only" (the 2D SJ state is closer to Hadamard in the interior).
 

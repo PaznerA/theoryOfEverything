@@ -9,6 +9,19 @@
       "relatedTo": ["type-iii1-local-qft", "tomita-takesaki", "crossed-product", "trace-and-entropy", "connes-classification"]
     },
     {
+      "id": "type-iii-factor",
+      "name": "Type III factor",
+      "definition": "A von Neumann factor with no trace and no minimal projections, so it admits no density matrices and entanglement entropy is intrinsically UV-divergent. Murray-von Neumann/Connes class III (refined into III_lambda, 0<=lambda<=1, by the modular spectrum). Local relativistic QFT subregion algebras are type III_1 (Araki; Buchholz-Fredenhagen-Haag). Adjoining the modular automorphism group (crossed product) converts a type III_1 factor into type II with a trace.",
+      "relatedTo": ["von-neumann-algebra-type", "type-ii-factor", "type-iii1-local-qft", "connes-classification", "crossed-product", "tomita-takesaki"]
+    },
+    {
+      "id": "type-ii-factor",
+      "name": "Type II factor",
+      "definition": "A von Neumann factor with a (up to scale unique) faithful semifinite trace but no minimal projections; it possesses density matrices and a finite, well-defined relative/von Neumann entropy fixed only up to a state-independent additive constant, yet has no pure states or 'bits'. Type II_1 has a finite normalized trace (bounded entropy, e.g. de Sitter static patch); type II_infinity a semifinite trace (e.g. black-hole / Killing-horizon observer algebras). Manufactured from a type III_1 algebra by the crossed product with its modular flow; renormalized von Neumann entropy equals generalized entropy.",
+      "latex": "M\\ \\text{type II}:\\ \\exists!\\,\\mathrm{Tr}\\ (\\text{up to scale});\\quad \\langle\\psi|a|\\psi\\rangle=\\mathrm{Tr}(\\rho_\\psi a),\\ \\ S(\\psi)=-\\mathrm{Tr}(\\rho_\\psi\\log\\rho_\\psi)+\\text{const}",
+      "relatedTo": ["von-neumann-algebra-type", "type-iii-factor", "trace-and-entropy", "crossed-product", "generalized-entropy", "de-sitter-static-patch-algebra"]
+    },
+    {
       "id": "type-iii1-local-qft",
       "name": "Type III_1 of local QFT algebras",
       "definition": "A central structural theorem of algebraic QFT (Araki; Buchholz-Fredenhagen-Haag; Bisognano-Wichmann): the von Neumann algebra of observables localized in any bounded region or wedge of a relativistic quantum field theory is a type III_1 factor (in Connes' classification). Consequences: no states are uncorrelated across the boundary, every vector is cyclic and separating (Reeh-Schlieder), there are no local density matrices, and entanglement entropy of a subregion is UV-divergent and not directly definable. Gravity/an observer must be added to regulate it.",
@@ -551,20 +564,20 @@
       "authors": "M. Ali Ahmad, M. S. Klinger, S. Lin",
       "title": "An operator algebraic approach to black hole information",
       "year": 2025,
-      "arxiv": "2408.00071",
+      "arxiv": null,
       "doi": "10.1007/JHEP02(2025)207",
-      "url": "https://arxiv.org/abs/2408.00071",
-      "significance": "Operator-algebraic account of the black-hole information problem in terms of type transitions and crossed products."
+      "url": null,
+      "significance": "Operator-algebraic account of the black-hole information problem in terms of type transitions and crossed products. [unverified arXiv ID removed 2026-06-06: ID 2408.00071 belongs to van der Heijden & Verlinde, not Ali Ahmad–Klinger–Lin; correct arXiv ID not found]"
     },
     {
       "id": "kudler-flam-gsl-2024",
       "authors": "J. Kudler-Flam, S. Leutheusser, G. Satishchandran",
       "title": "Generalized Second Law for Subregions and Gravitational Algebras",
       "year": 2024,
-      "arxiv": "2403.08696",
+      "arxiv": null,
       "doi": "10.1007/JHEP11(2024)099",
-      "url": "https://arxiv.org/abs/2403.08696",
-      "significance": "Derives a generalized second law from the monotonicity of relative entropy on the type II gravitational algebra, tying GSL to modular theory."
+      "url": null,
+      "significance": "Derives a generalized second law from the monotonicity of relative entropy on the type II gravitational algebra, tying GSL to modular theory. [unverified arXiv ID removed 2026-06-06: ID 2403.08696 belongs to Iliesiu–Levine–Lin–Maxfield–Mezei (JT gravity), not Kudler-Flam–Leutheusser–Satishchandran; correct arXiv ID not found on arXiv]"
     }
   ],
   "openProblems": [
@@ -672,6 +685,27 @@
       "to": "noncommutative-geometry",
       "type": "shared-math",
       "description": "Connes' classification of type III factors, the modular spectrum, the Connes cocycle and the time-thermodynamics (thermal time) relation are foundational results of noncommutative geometry imported wholesale into quantum gravity. The same operator-algebra toolkit (modular automorphisms, crossed products, KMS) underlies both Connes' spectral geometry and the observer-algebra program. A deep, mostly latent shared-mathematics bridge.",
+      "explored": "partially"
+    },
+    {
+      "from": "von-neumann-algebras",
+      "to": "causal-sets",
+      "type": "shared-math",
+      "description": "This project's own numerical findings establish the link by data: a geometric/spectral truncation of the Sorkin-Johnston spacetime entanglement entropy (SSEE) realizes the type III_1 -> type II algebra transition. F-015 (2D causal diamonds): two of three vN-type proxies confirm it -- an 80x collapse of the entropy trace (S_full ~ N^1.04 volume-law -> S_trunc saturating area/log-law) plus a modular spectrum going flat-dense (Connes III_1) to integrable with a sharp IR edge (type II); the type lives in the STATE/entropy, not in the Pauli-Jordan kinematics. F-019 (4D box-slab): all three proxies pass, with the n_max = 2 N^{3/4} rank truncation acting as an operative crossed-product-style observer regulator giving a 4D area law S ~ sqrt(N). F-023 (2D de Sitter static patch): the discrete SJ probe resolves the CLPW type II_1 (bounded patch, finite trace) vs type II_infinity distinction via content saturation. The causal-set SSEE truncation is thus a concrete discrete realization of the modular/crossed-product regularization of type III entropy.",
+      "explored": "partially"
+    },
+    {
+      "from": "von-neumann-algebras",
+      "to": "quantum-cosmology",
+      "type": "shared-math",
+      "description": "The Chandrasekaran-Longo-Penington-Witten observer algebra for the de Sitter static patch (arXiv:2206.10780) is a type II_1 crossed product whose maximal-entropy state is empty de Sitter (cosmological-horizon Gibbons-Hawking entropy A/4G); a single static-patch observer is necessary even to DEFINE gravitational entropy in a closed/cosmological spacetime, making the modular-algebra picture directly a quantum-cosmology statement about horizon entropy and the wave function in a finite causal patch. This project's F-023 confirms by data that a discrete Sorkin-Johnston probe on a 2D de Sitter static patch SEES the bounded-patch finite-trace type II_1 signature (content saturation to a finite cap) versus the unbounded type II_infinity flat control -- a numerical bridge from CLPW de Sitter algebras to causal-set cosmology.",
+      "explored": "partially"
+    },
+    {
+      "from": "von-neumann-algebras",
+      "to": "holography-adscft",
+      "type": "shared-structure",
+      "description": "Chandrasekaran-Penington-Witten (arXiv:2209.10454) build the large-N single-trace algebra of a holographic CFT in the microcanonical ensemble as a type II_infinity crossed-product factor whose central operator is the renormalized area of the bifurcation surface and whose von Neumann entropy is the generalized entropy -- a Lorentzian, replica-free derivation of a special case of the quantum-extremal-surface prescription. The crossed product (adjoining the modular/ADM Hamiltonian to the emergent type III_1 boundary algebra) is the algebraic mechanism turning holographic entanglement into a finite, observer-relative entropy; subregion-subalgebra duality and JLMS make the von Neumann type the carrier of bulk geometric information.",
       "explored": "partially"
     }
   ]

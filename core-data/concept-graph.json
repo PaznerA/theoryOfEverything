@@ -757,6 +757,16 @@
       ]
     },
     {
+      "id": "quantum-error-correction",
+      "name": "Quantum error correction in holography",
+      "type": "concept",
+      "definition": "Almheiri-Dong-Harlow: bulk locality in AdS/CFT is realized as a quantum error-correcting code, where a bulk operator is reconstructible on multiple boundary subsystems; the interior is encoded in early radiation.",
+      "aliases": [],
+      "pillars": [
+        "black-holes-information"
+      ]
+    },
+    {
       "id": "generalized-entropy",
       "name": "Generalized entropy",
       "type": "concept",
@@ -2068,14 +2078,10 @@
       "id": "ryu-takayanagi-formula",
       "name": "Ryu-Takayanagi formula",
       "type": "concept",
-      "definition": "Holographic entanglement entropy: the entanglement entropy of a boundary region equals Area(gamma)/(4G) for the minimal bulk surface gamma homologous to it. Geometrizes entanglement, connects spacetime geometry to quantum information, and underlies the 'spacetime from entanglement' program.",
-      "aliases": [
-        "ryu-takayanagi"
-      ],
+      "definition": "S_A = Area(gamma_A)/4G_N: entanglement entropy of a boundary region equals the area of the bulk minimal codimension-2 surface anchored on the boundary of A and homologous to A. Geometrizes entanglement.",
+      "aliases": [],
       "pillars": [
-        "entanglement-spacetime",
-        "holography-adscft",
-        "string-theory"
+        "entanglement-spacetime"
       ]
     },
     {
@@ -2154,15 +2160,10 @@
       "id": "holographic-quantum-error-correction",
       "name": "Holographic quantum error correction",
       "type": "concept",
-      "definition": "Almheiri-Dong-Harlow insight that AdS/CFT realizes operator-algebra quantum error correction: bulk (logical) information is redundantly encoded on the boundary (physical) qubits and protected against erasure of large boundary regions. Modeled by tensor networks (HaPPY code).",
-      "aliases": [
-        "holographic-error-correction",
-        "quantum-error-correction"
-      ],
+      "definition": "Bulk logical qubits are redundantly encoded into boundary physical qubits; explains subregion duality, radial commutativity and the resilience of bulk reconstruction to boundary erasures.",
+      "aliases": [],
       "pillars": [
-        "black-holes-information",
-        "entanglement-spacetime",
-        "holography-adscft"
+        "entanglement-spacetime"
       ]
     },
     {
@@ -2180,6 +2181,16 @@
       "name": "MERA tensor network",
       "type": "concept",
       "definition": "Multiscale entanglement renormalization ansatz for critical ground states; its emergent radial (RG-scale) direction is interpreted as a discrete slice of AdS (Swingle 2012), realizing holographic geometry from entanglement renormalization.",
+      "aliases": [],
+      "pillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "id": "tensor-network-holography",
+      "name": "Tensor network holography",
+      "type": "concept",
+      "definition": "General program building emergent bulk geometry from tensor networks whose link structure encodes entanglement; includes MERA, HaPPY, hyperinvariant networks, and lifted/random networks reproducing RT.",
       "aliases": [],
       "pillars": [
         "entanglement-spacetime"
@@ -2235,6 +2246,16 @@
       "pillars": [
         "entanglement-spacetime",
         "semiclassical-gravity"
+      ]
+    },
+    {
+      "id": "bousso-bound",
+      "name": "Covariant entropy (Bousso) bound",
+      "type": "concept",
+      "definition": "Entropy on a light-sheet does not exceed A/4G_N; the generalized (quantum) Bousso bound follows from QFC.",
+      "aliases": [],
+      "pillars": [
+        "entanglement-spacetime"
       ]
     },
     {
@@ -2457,6 +2478,16 @@
       "name": "Entanglement Witness",
       "type": "concept",
       "definition": "An observable whose value outside a classical bound certifies the presence of entanglement. In BMV, spin correlations such as <sigma_x^(1) sigma_y^(2)> witness gravity-mediated entanglement without full state tomography.",
+      "aliases": [],
+      "pillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "id": "gravitational-decoherence",
+      "name": "Gravitational Decoherence",
+      "type": "concept",
+      "definition": "Loss of quantum coherence induced by gravity: either fundamental objective collapse (Diosi-Penrose) or universal decoherence from gravitational time dilation (Pikovski et al.). Sets the dominant limit on BMV-type experiments and is itself a testable quantum-gravity-adjacent prediction.",
       "aliases": [],
       "pillars": [
         "experimental-tests"
@@ -2851,11 +2882,8 @@
       "name": "Covariant Entropy Bound (Bousso Bound)",
       "type": "concept",
       "definition": "Generalized holographic bound (Bousso 1999): entropy on a light sheet (congruence of non-expanding null rays orthogonal to a surface B of area A) satisfies S <= A/4G. Valid in general spacetimes including cosmology, where the spacelike entropy bound fails.",
-      "aliases": [
-        "bousso-bound"
-      ],
+      "aliases": [],
       "pillars": [
-        "entanglement-spacetime",
         "holography-adscft"
       ]
     },
@@ -2863,13 +2891,10 @@
       "id": "adscft-correspondence",
       "name": "AdS/CFT Correspondence",
       "type": "concept",
-      "definition": "Maldacena's holographic duality (1997) equating Type IIB string theory on AdS5 x S5 with 4D N=4 super-Yang-Mills, derived from the two descriptions of D3-branes. A strong-weak duality and the sharpest realization of the holographic principle; provides a non-perturbative definition of quantum gravity in asymptotically AdS space.",
-      "aliases": [
-        "ads-cft-correspondence"
-      ],
+      "definition": "Exact duality (Maldacena 1997) between quantum gravity / string theory on (d+1)-dimensional anti-de Sitter space and a conformal field theory without gravity on its d-dimensional conformal boundary. Prototype: type IIB strings on AdS5 x S5 dual to N=4 super-Yang-Mills with gauge group SU(N).",
+      "aliases": [],
       "pillars": [
-        "holography-adscft",
-        "string-theory"
+        "holography-adscft"
       ]
     },
     {
@@ -2913,10 +2938,31 @@
       ]
     },
     {
+      "id": "ryu-takayanagi",
+      "name": "Ryu-Takayanagi Formula",
+      "type": "concept",
+      "definition": "Holographic entanglement entropy: the entanglement entropy of a boundary region equals Area(gamma)/(4G) for the minimal bulk surface gamma homologous to it. Geometrizes entanglement, connects spacetime geometry to quantum information, and underlies the 'spacetime from entanglement' program.",
+      "aliases": [],
+      "pillars": [
+        "holography-adscft",
+        "string-theory"
+      ]
+    },
+    {
       "id": "bulk-reconstruction",
       "name": "Bulk Reconstruction (HKLL)",
       "type": "concept",
       "definition": "Procedure (Hamilton-Kabat-Lifschytz-Lowe) expressing a local bulk operator as an integral of boundary CFT operators against a smearing function supported on boundary points spacelike-separated from the bulk insertion. Reveals the bulk's quantum-error-correcting structure.",
+      "aliases": [],
+      "pillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "id": "holographic-error-correction",
+      "name": "Holographic Quantum Error Correction",
+      "type": "concept",
+      "definition": "Almheiri-Dong-Harlow insight that AdS/CFT realizes operator-algebra quantum error correction: bulk (logical) information is redundantly encoded on the boundary (physical) qubits and protected against erasure of large boundary regions. Modeled by tensor networks (HaPPY code).",
       "aliases": [],
       "pillars": [
         "holography-adscft"
@@ -2937,13 +2983,8 @@
       "name": "Tensor Network (Holographic)",
       "type": "concept",
       "definition": "Discrete networks of tensors (MERA, HaPPY perfect-tensor codes, random tensor networks) that reproduce key holographic features: RT formula, negative tripartite information, error-correcting bulk reconstruction. Toy models of emergent geometry from entanglement.",
-      "aliases": [
-        "tensor-network-holography",
-        "tensor-networks"
-      ],
+      "aliases": [],
       "pillars": [
-        "black-holes-information",
-        "entanglement-spacetime",
         "holography-adscft"
       ]
     },
@@ -4178,11 +4219,8 @@
       "name": "Gravitationally Induced Decoherence",
       "type": "concept",
       "definition": "Loss of quantum coherence of spatial superpositions of matter due to coupling to the gravitational field (quantized or classical/stochastic). Includes Diosi-Penrose decoherence and decoherence by emission of soft gravitons; a key potentially observable discriminator between semiclassical and quantized-gravity scenarios.",
-      "aliases": [
-        "gravitational-decoherence"
-      ],
+      "aliases": [],
       "pillars": [
-        "experimental-tests",
         "semiclassical-gravity"
       ]
     },
@@ -4438,6 +4476,16 @@
       ]
     },
     {
+      "id": "swampland-distance-conjecture",
+      "name": "Swampland Distance Conjecture",
+      "type": "concept",
+      "definition": "Conjecture that traversing a super-Planckian geodesic distance Delta in moduli space triggers an infinite tower of states whose mass falls exponentially, m ~ m_0 exp(-alpha Delta/M_Pl), causing the effective field theory to break down. One of the best-supported swampland constraints.",
+      "aliases": [],
+      "pillars": [
+        "string-theory"
+      ]
+    },
+    {
       "id": "weak-gravity-conjecture",
       "name": "Weak Gravity Conjecture",
       "type": "concept",
@@ -4495,6 +4543,16 @@
       "name": "BPS states",
       "type": "concept",
       "definition": "States saturating a Bogomolnyi-Prasad-Sommerfield bound (mass equal to central charge), preserving a fraction of supersymmetry. Their degeneracies are protected against continuation in the coupling, which is what makes weak-coupling D-brane counting valid at strong coupling where the black hole forms.",
+      "aliases": [],
+      "pillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "id": "ads-cft-correspondence",
+      "name": "AdS/CFT correspondence",
+      "type": "concept",
+      "definition": "Maldacena's holographic duality (1997) equating Type IIB string theory on AdS5 x S5 with 4D N=4 super-Yang-Mills, derived from the two descriptions of D3-branes. A strong-weak duality and the sharpest realization of the holographic principle; provides a non-perturbative definition of quantum gravity in asymptotically AdS space.",
       "aliases": [],
       "pillars": [
         "string-theory"
@@ -4856,11 +4914,8 @@
       "name": "Swampland Distance Conjecture (SDC)",
       "type": "concept",
       "definition": "Traversing an infinite geodesic distance in moduli/scalar-field space triggers an infinite tower of states becoming exponentially light: m ~ m_0 exp(-alpha d / M_Pl) with alpha ~ O(1). The tower (KK modes or string excitations) signals a breakdown of the EFT and an emergent dual description. Proposed by Ooguri-Vafa (2006).",
-      "aliases": [
-        "swampland-distance-conjecture"
-      ],
+      "aliases": [],
       "pillars": [
-        "string-theory",
         "swampland"
       ]
     },
@@ -5265,6 +5320,26 @@
       ]
     },
     {
+      "id": "type-iii-factor",
+      "name": "Type III factor",
+      "type": "concept",
+      "definition": "A von Neumann factor with no trace and no minimal projections, so it admits no density matrices and entanglement entropy is intrinsically UV-divergent. Murray-von Neumann/Connes class III (refined into III_lambda, 0<=lambda<=1, by the modular spectrum). Local relativistic QFT subregion algebras are type III_1 (Araki; Buchholz-Fredenhagen-Haag). Adjoining the modular automorphism group (crossed product) converts a type III_1 factor into type II with a trace.",
+      "aliases": [],
+      "pillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "id": "type-ii-factor",
+      "name": "Type II factor",
+      "type": "concept",
+      "definition": "A von Neumann factor with a (up to scale unique) faithful semifinite trace but no minimal projections; it possesses density matrices and a finite, well-defined relative/von Neumann entropy fixed only up to a state-independent additive constant, yet has no pure states or 'bits'. Type II_1 has a finite normalized trace (bounded entropy, e.g. de Sitter static patch); type II_infinity a semifinite trace (e.g. black-hole / Killing-horizon observer algebras). Manufactured from a type III_1 algebra by the crossed product with its modular flow; renormalized von Neumann entropy equals generalized entropy.",
+      "aliases": [],
+      "pillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
       "id": "type-iii1-local-qft",
       "name": "Type III_1 of local QFT algebras",
       "type": "concept",
@@ -5657,6 +5732,16 @@
     {
       "id": "evaporation-endpoint",
       "name": "evaporation-endpoint",
+      "type": "stub",
+      "definition": "",
+      "aliases": [],
+      "pillars": [
+        "black-holes-information"
+      ]
+    },
+    {
+      "id": "tensor-networks",
+      "name": "tensor-networks",
       "type": "stub",
       "definition": "",
       "aliases": [],
@@ -7541,7 +7626,7 @@
     },
     {
       "from": "bekenstein-hawking-entropy",
-      "to": "covariant-entropy-bound",
+      "to": "bousso-bound",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -7666,7 +7751,7 @@
     },
     {
       "from": "generalized-second-law",
-      "to": "covariant-entropy-bound",
+      "to": "bousso-bound",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -8002,7 +8087,7 @@
     },
     {
       "from": "quantum-extremal-surface",
-      "to": "ryu-takayanagi-formula",
+      "to": "ryu-takayanagi",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -8140,13 +8225,12 @@
     },
     {
       "from": "entanglement-wedge-reconstruction",
-      "to": "holographic-quantum-error-correction",
+      "to": "quantum-error-correction",
       "type": "related-concept",
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "black-holes-information",
-        "entanglement-spacetime"
+        "black-holes-information"
       ]
     },
     {
@@ -8465,29 +8549,27 @@
       ]
     },
     {
-      "from": "holographic-quantum-error-correction",
+      "from": "quantum-error-correction",
       "to": "entanglement-wedge-reconstruction",
       "type": "related-concept",
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "black-holes-information",
-        "entanglement-spacetime"
+        "black-holes-information"
       ]
     },
     {
-      "from": "holographic-quantum-error-correction",
-      "to": "tensor-network",
+      "from": "quantum-error-correction",
+      "to": "tensor-networks",
       "type": "related-concept",
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "black-holes-information",
-        "holography-adscft"
+        "black-holes-information"
       ]
     },
     {
-      "from": "holographic-quantum-error-correction",
+      "from": "quantum-error-correction",
       "to": "pythons-lunch",
       "type": "related-concept",
       "description": "",
@@ -8497,7 +8579,7 @@
       ]
     },
     {
-      "from": "holographic-quantum-error-correction",
+      "from": "quantum-error-correction",
       "to": "hayden-preskill",
       "type": "related-concept",
       "description": "",
@@ -8751,7 +8833,7 @@
     },
     {
       "from": "black-holes-information",
-      "to": "holographic-quantum-error-correction",
+      "to": "quantum-error-correction",
       "type": "shared-math",
       "description": "The interior is a quantum error-correcting code (Almheiri-Dong-Harlow); Hayden-Preskill decoding; tensor networks (HaPPY code, random tensor networks); the SYK model as a solvable holographic system saturating the chaos bound. Deeply connected via entanglement and reconstruction.",
       "explored": "well",
@@ -11257,6 +11339,16 @@
     },
     {
       "from": "causal-sets",
+      "to": "black-holes-information",
+      "type": "conjecture",
+      "description": "PRIORITY HUNTING TARGET (BRAINSTORM-05 hypothesis H5g-2): does the saturated content-cap of a bounded causal-set / Sorkin-Johnston de Sitter static patch (F-023: N_total saturates to a finite ceiling, S_full saturates -- the type II_1 finite-trace maximal-entropy state) map QUANTITATIVELY onto the horizon-area entropy A/4? Dou-Sorkin horizon-molecule counting already yields S = A/4 kinematically; the conjecture is that the same area law emerges from first principles as the maximal trace of the truncated SSEE, with the entropy cap matching A/4 up to a calibratable O(1) factor (predicted 1/4). This would derive de Sitter / black-hole horizon entropy from causal-set first principles and is the bridge connecting F-023 to A/4. High-payoff, high-risk; needs higher sprinkling density (rho ~ 10^3-10^4) than an afternoon run.",
+      "explored": "barely",
+      "sourcePillars": [
+        "causal-sets"
+      ]
+    },
+    {
+      "from": "causal-sets",
       "to": "emergent-gravity",
       "type": "shared-structure",
       "description": "CST is a prototype emergent-geometry theory (metric, topology, dimension emerge from order+number) and the BD action emerges from counting order intervals, conceptually close to thermodynamic/entropic gravity (Jacobson, Verlinde). Technical links between counting-based emergence and entropic-force derivations are underdeveloped.",
@@ -11269,7 +11361,7 @@
       "from": "causal-sets",
       "to": "noncommutative-geometry",
       "type": "shared-math",
-      "description": "Both reject a smooth UV manifold and recover geometry spectrally: the spectral triple / Dirac operator of NCG parallels the Pauli-Jordan operator and SJ spectrum that encode geometry on causal sets. A direct correspondence between these spectral reconstructions is unexplored.",
+      "description": "Both reject a smooth UV manifold and recover geometry spectrally: the spectral triple / Dirac operator of NCG parallels the Pauli-Jordan operator and SJ spectrum that encode geometry on causal sets. PRIORITY HUNTING TARGET (BRAINSTORM-05 hypothesis H5g-4): the conjecture is that the NCG spectral data (Dirac operator D / spectral triple, Connes distance formula) reconstructs the same geometric content as the Sorkin-Johnston modular Hamiltonian K = -log Delta built from the Pauli-Jordan operator i*Delta -- i.e. Connes' spectral reconstruction theorem and the SJ/SSEE spectral reconstruction are two routes to the same emergent Lorentzian geometry, with the modular flow playing the role of (the imaginary-time generator dual to) the Dirac operator. A concrete data-edge would compare Connes distance against modular distance on a sprinkled slab. Entirely unexplored as an explicit correspondence.",
       "explored": "barely",
       "sourcePillars": [
         "causal-sets"
@@ -13629,7 +13721,7 @@
     },
     {
       "from": "modular-hamiltonian",
-      "to": "ryu-takayanagi-formula",
+      "to": "ryu-takayanagi",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -14244,8 +14336,7 @@
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "entanglement-spacetime",
-        "string-theory"
+        "entanglement-spacetime"
       ]
     },
     {
@@ -14255,8 +14346,7 @@
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "entanglement-spacetime",
-        "string-theory"
+        "entanglement-spacetime"
       ]
     },
     {
@@ -14627,6 +14717,16 @@
     },
     {
       "from": "entanglement-wedge-reconstruction",
+      "to": "holographic-quantum-error-correction",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "from": "entanglement-wedge-reconstruction",
       "to": "jlms-relation",
       "type": "related-concept",
       "description": "",
@@ -14677,13 +14777,22 @@
     },
     {
       "from": "holographic-quantum-error-correction",
+      "to": "entanglement-wedge-reconstruction",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "from": "holographic-quantum-error-correction",
       "to": "ryu-takayanagi-formula",
       "type": "related-concept",
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "entanglement-spacetime",
-        "holography-adscft"
+        "entanglement-spacetime"
       ]
     },
     {
@@ -14708,7 +14817,7 @@
     },
     {
       "from": "happy-code",
-      "to": "tensor-network",
+      "to": "tensor-network-holography",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -14718,7 +14827,7 @@
     },
     {
       "from": "mera-tensor-network",
-      "to": "tensor-network",
+      "to": "tensor-network-holography",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -14747,7 +14856,7 @@
       ]
     },
     {
-      "from": "tensor-network",
+      "from": "tensor-network-holography",
       "to": "mera-tensor-network",
       "type": "related-concept",
       "description": "",
@@ -14757,7 +14866,7 @@
       ]
     },
     {
-      "from": "tensor-network",
+      "from": "tensor-network-holography",
       "to": "happy-code",
       "type": "related-concept",
       "description": "",
@@ -14767,14 +14876,13 @@
       ]
     },
     {
-      "from": "tensor-network",
+      "from": "tensor-network-holography",
       "to": "holographic-quantum-error-correction",
       "type": "related-concept",
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "entanglement-spacetime",
-        "holography-adscft"
+        "entanglement-spacetime"
       ]
     },
     {
@@ -14882,13 +14990,12 @@
     },
     {
       "from": "quantum-focusing-conjecture",
-      "to": "covariant-entropy-bound",
+      "to": "bousso-bound",
       "type": "related-concept",
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "entanglement-spacetime",
-        "semiclassical-gravity"
+        "entanglement-spacetime"
       ]
     },
     {
@@ -14913,7 +15020,7 @@
       ]
     },
     {
-      "from": "covariant-entropy-bound",
+      "from": "bousso-bound",
       "to": "quantum-focusing-conjecture",
       "type": "related-concept",
       "description": "",
@@ -14923,14 +15030,13 @@
       ]
     },
     {
-      "from": "covariant-entropy-bound",
+      "from": "bousso-bound",
       "to": "holographic-principle",
       "type": "related-concept",
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "entanglement-spacetime",
-        "holography-adscft"
+        "entanglement-spacetime"
       ]
     },
     {
@@ -15184,8 +15290,7 @@
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "entanglement-spacetime",
-        "holography-adscft"
+        "entanglement-spacetime"
       ]
     },
     {
@@ -15701,13 +15806,12 @@
     },
     {
       "from": "gravitationally-induced-entanglement",
-      "to": "gravitationally-induced-decoherence",
+      "to": "gravitational-decoherence",
       "type": "related-concept",
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "experimental-tests",
-        "semiclassical-gravity"
+        "experimental-tests"
       ]
     },
     {
@@ -15742,7 +15846,7 @@
     },
     {
       "from": "bmv-experiment",
-      "to": "gravitationally-induced-decoherence",
+      "to": "gravitational-decoherence",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -15841,18 +15945,17 @@
       ]
     },
     {
-      "from": "gravitationally-induced-decoherence",
+      "from": "gravitational-decoherence",
       "to": "diosi-penrose-model",
       "type": "related-concept",
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "experimental-tests",
-        "semiclassical-gravity"
+        "experimental-tests"
       ]
     },
     {
-      "from": "gravitationally-induced-decoherence",
+      "from": "gravitational-decoherence",
       "to": "time-dilation-decoherence",
       "type": "related-concept",
       "description": "",
@@ -15862,7 +15965,7 @@
       ]
     },
     {
-      "from": "gravitationally-induced-decoherence",
+      "from": "gravitational-decoherence",
       "to": "bmv-experiment",
       "type": "related-concept",
       "description": "",
@@ -15872,25 +15975,23 @@
       ]
     },
     {
-      "from": "gravitationally-induced-decoherence",
+      "from": "gravitational-decoherence",
       "to": "gravitationally-induced-entanglement",
       "type": "related-concept",
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "experimental-tests",
-        "semiclassical-gravity"
+        "experimental-tests"
       ]
     },
     {
       "from": "diosi-penrose-model",
-      "to": "gravitationally-induced-decoherence",
+      "to": "gravitational-decoherence",
       "type": "related-concept",
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "experimental-tests",
-        "semiclassical-gravity"
+        "experimental-tests"
       ]
     },
     {
@@ -15915,7 +16016,7 @@
     },
     {
       "from": "time-dilation-decoherence",
-      "to": "gravitationally-induced-decoherence",
+      "to": "gravitational-decoherence",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -16337,7 +16438,7 @@
     },
     {
       "from": "atom-interferometry-magis",
-      "to": "gravitationally-induced-decoherence",
+      "to": "gravitational-decoherence",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -16367,7 +16468,7 @@
     },
     {
       "from": "levitated-optomechanics",
-      "to": "gravitationally-induced-decoherence",
+      "to": "gravitational-decoherence",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -17823,8 +17924,7 @@
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "holography-adscft",
-        "string-theory"
+        "holography-adscft"
       ]
     },
     {
@@ -17888,6 +17988,26 @@
       ]
     },
     {
+      "from": "bekenstein-hawking-entropy",
+      "to": "ryu-takayanagi",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "covariant-entropy-bound",
+      "to": "holographic-principle",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
       "from": "covariant-entropy-bound",
       "to": "bekenstein-bound",
       "type": "related-concept",
@@ -17914,8 +18034,7 @@
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "holography-adscft",
-        "string-theory"
+        "holography-adscft"
       ]
     },
     {
@@ -17950,13 +18069,12 @@
     },
     {
       "from": "adscft-correspondence",
-      "to": "ryu-takayanagi-formula",
+      "to": "ryu-takayanagi",
       "type": "related-concept",
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "holography-adscft",
-        "string-theory"
+        "holography-adscft"
       ]
     },
     {
@@ -18070,18 +18188,17 @@
       ]
     },
     {
-      "from": "ryu-takayanagi-formula",
+      "from": "ryu-takayanagi",
       "to": "adscft-correspondence",
       "type": "related-concept",
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "holography-adscft",
-        "string-theory"
+        "holography-adscft"
       ]
     },
     {
-      "from": "ryu-takayanagi-formula",
+      "from": "ryu-takayanagi",
       "to": "quantum-extremal-surface",
       "type": "related-concept",
       "description": "",
@@ -18091,7 +18208,7 @@
       ]
     },
     {
-      "from": "ryu-takayanagi-formula",
+      "from": "ryu-takayanagi",
       "to": "entanglement-spacetime",
       "type": "related-concept",
       "description": "",
@@ -18102,8 +18219,8 @@
       ]
     },
     {
-      "from": "ryu-takayanagi-formula",
-      "to": "holographic-quantum-error-correction",
+      "from": "ryu-takayanagi",
+      "to": "holographic-error-correction",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -18112,7 +18229,7 @@
       ]
     },
     {
-      "from": "ryu-takayanagi-formula",
+      "from": "ryu-takayanagi",
       "to": "er-epr",
       "type": "related-concept",
       "description": "",
@@ -18203,7 +18320,7 @@
     },
     {
       "from": "bulk-reconstruction",
-      "to": "holographic-quantum-error-correction",
+      "to": "holographic-error-correction",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -18222,7 +18339,7 @@
       ]
     },
     {
-      "from": "holographic-quantum-error-correction",
+      "from": "holographic-error-correction",
       "to": "bulk-reconstruction",
       "type": "related-concept",
       "description": "",
@@ -18232,7 +18349,7 @@
       ]
     },
     {
-      "from": "holographic-quantum-error-correction",
+      "from": "holographic-error-correction",
       "to": "subregion-duality",
       "type": "related-concept",
       "description": "",
@@ -18242,6 +18359,26 @@
       ]
     },
     {
+      "from": "holographic-error-correction",
+      "to": "tensor-network",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "holographic-error-correction",
+      "to": "ryu-takayanagi",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
       "from": "subregion-duality",
       "to": "bulk-reconstruction",
       "type": "related-concept",
@@ -18253,7 +18390,7 @@
     },
     {
       "from": "subregion-duality",
-      "to": "holographic-quantum-error-correction",
+      "to": "holographic-error-correction",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -18263,7 +18400,17 @@
     },
     {
       "from": "subregion-duality",
-      "to": "ryu-takayanagi-formula",
+      "to": "ryu-takayanagi",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "tensor-network",
+      "to": "holographic-error-correction",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -18283,7 +18430,7 @@
     },
     {
       "from": "tensor-network",
-      "to": "ryu-takayanagi-formula",
+      "to": "ryu-takayanagi",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -18293,7 +18440,7 @@
     },
     {
       "from": "er-epr",
-      "to": "ryu-takayanagi-formula",
+      "to": "ryu-takayanagi",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -23949,7 +24096,37 @@
     },
     {
       "from": "quantum-focusing-conjecture",
+      "to": "covariant-entropy-bound",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "quantum-focusing-conjecture",
       "to": "averaged-null-energy-condition",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "gravitationally-induced-decoherence",
+      "to": "diosi-penrose-model",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "gravitationally-induced-decoherence",
+      "to": "gravitationally-induced-entanglement",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -23970,6 +24147,16 @@
     {
       "from": "gravitationally-induced-decoherence",
       "to": "spacetime-superposition",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "diosi-penrose-model",
+      "to": "gravitationally-induced-decoherence",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -24000,6 +24187,16 @@
     {
       "from": "diosi-penrose-model",
       "to": "measurement-problem",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "gravitationally-induced-entanglement",
+      "to": "gravitationally-induced-decoherence",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -24689,7 +24886,7 @@
     },
     {
       "from": "d-brane",
-      "to": "adscft-correspondence",
+      "to": "ads-cft-correspondence",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -25300,7 +25497,7 @@
     },
     {
       "from": "swampland",
-      "to": "distance-conjecture",
+      "to": "swampland-distance-conjecture",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -25359,7 +25556,7 @@
       ]
     },
     {
-      "from": "distance-conjecture",
+      "from": "swampland-distance-conjecture",
       "to": "swampland",
       "type": "related-concept",
       "description": "",
@@ -25369,29 +25566,27 @@
       ]
     },
     {
-      "from": "distance-conjecture",
+      "from": "swampland-distance-conjecture",
       "to": "emergent-string-conjecture",
       "type": "related-concept",
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "string-theory",
-        "swampland"
+        "string-theory"
       ]
     },
     {
-      "from": "distance-conjecture",
+      "from": "swampland-distance-conjecture",
       "to": "species-scale",
       "type": "related-concept",
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "string-theory",
-        "swampland"
+        "string-theory"
       ]
     },
     {
-      "from": "distance-conjecture",
+      "from": "swampland-distance-conjecture",
       "to": "weak-gravity-conjecture",
       "type": "related-concept",
       "description": "",
@@ -25412,13 +25607,12 @@
     },
     {
       "from": "weak-gravity-conjecture",
-      "to": "distance-conjecture",
+      "to": "swampland-distance-conjecture",
       "type": "related-concept",
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "string-theory",
-        "swampland"
+        "string-theory"
       ]
     },
     {
@@ -25433,13 +25627,12 @@
     },
     {
       "from": "emergent-string-conjecture",
-      "to": "distance-conjecture",
+      "to": "swampland-distance-conjecture",
       "type": "related-concept",
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "string-theory",
-        "swampland"
+        "string-theory"
       ]
     },
     {
@@ -25485,13 +25678,12 @@
     },
     {
       "from": "species-scale",
-      "to": "distance-conjecture",
+      "to": "swampland-distance-conjecture",
       "type": "related-concept",
       "description": "",
       "explored": null,
       "sourcePillars": [
-        "string-theory",
-        "swampland"
+        "string-theory"
       ]
     },
     {
@@ -25626,7 +25818,7 @@
     },
     {
       "from": "cardy-formula",
-      "to": "adscft-correspondence",
+      "to": "ads-cft-correspondence",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -25715,7 +25907,17 @@
       ]
     },
     {
-      "from": "adscft-correspondence",
+      "from": "ads-cft-correspondence",
+      "to": "holographic-principle",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "ads-cft-correspondence",
       "to": "d-brane",
       "type": "related-concept",
       "description": "",
@@ -25725,7 +25927,17 @@
       ]
     },
     {
-      "from": "adscft-correspondence",
+      "from": "ads-cft-correspondence",
+      "to": "ryu-takayanagi",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "ads-cft-correspondence",
       "to": "black-holes-information",
       "type": "related-concept",
       "description": "",
@@ -25735,7 +25947,7 @@
       ]
     },
     {
-      "from": "adscft-correspondence",
+      "from": "ads-cft-correspondence",
       "to": "cardy-formula",
       "type": "related-concept",
       "description": "",
@@ -25746,7 +25958,17 @@
     },
     {
       "from": "holographic-principle",
-      "to": "ryu-takayanagi-formula",
+      "to": "ads-cft-correspondence",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "holographic-principle",
+      "to": "ryu-takayanagi",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -25765,7 +25987,37 @@
       ]
     },
     {
-      "from": "ryu-takayanagi-formula",
+      "from": "ryu-takayanagi",
+      "to": "ads-cft-correspondence",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "ryu-takayanagi",
+      "to": "holographic-principle",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "ryu-takayanagi",
+      "to": "bekenstein-hawking-entropy",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "ryu-takayanagi",
       "to": "page-curve",
       "type": "related-concept",
       "description": "",
@@ -27236,6 +27488,16 @@
     },
     {
       "from": "weak-gravity-conjecture",
+      "to": "distance-conjecture",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "weak-gravity-conjecture",
       "to": "positivity-bounds",
       "type": "related-concept",
       "description": "",
@@ -27247,6 +27509,26 @@
     {
       "from": "distance-conjecture",
       "to": "swampland-region",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "distance-conjecture",
+      "to": "emergent-string-conjecture",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "distance-conjecture",
+      "to": "species-scale",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -27366,7 +27648,7 @@
     },
     {
       "from": "no-global-symmetries",
-      "to": "holographic-quantum-error-correction",
+      "to": "quantum-error-correction",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -27456,7 +27738,27 @@
     },
     {
       "from": "emergent-string-conjecture",
+      "to": "distance-conjecture",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "emergent-string-conjecture",
       "to": "string-theory",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "species-scale",
+      "to": "distance-conjecture",
       "type": "related-concept",
       "description": "",
       "explored": null,
@@ -29385,6 +29687,126 @@
       ]
     },
     {
+      "from": "type-iii-factor",
+      "to": "von-neumann-algebra-type",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "type-iii-factor",
+      "to": "type-ii-factor",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "type-iii-factor",
+      "to": "type-iii1-local-qft",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "type-iii-factor",
+      "to": "connes-classification",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "type-iii-factor",
+      "to": "crossed-product",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "type-iii-factor",
+      "to": "tomita-takesaki",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "type-ii-factor",
+      "to": "von-neumann-algebra-type",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "type-ii-factor",
+      "to": "type-iii-factor",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "type-ii-factor",
+      "to": "trace-and-entropy",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "type-ii-factor",
+      "to": "crossed-product",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "type-ii-factor",
+      "to": "generalized-entropy",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "type-ii-factor",
+      "to": "de-sitter-static-patch-algebra",
+      "type": "related-concept",
+      "description": "",
+      "explored": null,
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
       "from": "type-iii1-local-qft",
       "to": "von-neumann-algebra-type",
       "type": "related-concept",
@@ -30739,6 +31161,36 @@
       "to": "noncommutative-geometry",
       "type": "shared-math",
       "description": "Connes' classification of type III factors, the modular spectrum, the Connes cocycle and the time-thermodynamics (thermal time) relation are foundational results of noncommutative geometry imported wholesale into quantum gravity. The same operator-algebra toolkit (modular automorphisms, crossed products, KMS) underlies both Connes' spectral geometry and the observer-algebra program. A deep, mostly latent shared-mathematics bridge.",
+      "explored": "partially",
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "von-neumann-algebras",
+      "to": "causal-sets",
+      "type": "shared-math",
+      "description": "This project's own numerical findings establish the link by data: a geometric/spectral truncation of the Sorkin-Johnston spacetime entanglement entropy (SSEE) realizes the type III_1 -> type II algebra transition. F-015 (2D causal diamonds): two of three vN-type proxies confirm it -- an 80x collapse of the entropy trace (S_full ~ N^1.04 volume-law -> S_trunc saturating area/log-law) plus a modular spectrum going flat-dense (Connes III_1) to integrable with a sharp IR edge (type II); the type lives in the STATE/entropy, not in the Pauli-Jordan kinematics. F-019 (4D box-slab): all three proxies pass, with the n_max = 2 N^{3/4} rank truncation acting as an operative crossed-product-style observer regulator giving a 4D area law S ~ sqrt(N). F-023 (2D de Sitter static patch): the discrete SJ probe resolves the CLPW type II_1 (bounded patch, finite trace) vs type II_infinity distinction via content saturation. The causal-set SSEE truncation is thus a concrete discrete realization of the modular/crossed-product regularization of type III entropy.",
+      "explored": "partially",
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "von-neumann-algebras",
+      "to": "quantum-cosmology",
+      "type": "shared-math",
+      "description": "The Chandrasekaran-Longo-Penington-Witten observer algebra for the de Sitter static patch (arXiv:2206.10780) is a type II_1 crossed product whose maximal-entropy state is empty de Sitter (cosmological-horizon Gibbons-Hawking entropy A/4G); a single static-patch observer is necessary even to DEFINE gravitational entropy in a closed/cosmological spacetime, making the modular-algebra picture directly a quantum-cosmology statement about horizon entropy and the wave function in a finite causal patch. This project's F-023 confirms by data that a discrete Sorkin-Johnston probe on a 2D de Sitter static patch SEES the bounded-patch finite-trace type II_1 signature (content saturation to a finite cap) versus the unbounded type II_infinity flat control -- a numerical bridge from CLPW de Sitter algebras to causal-set cosmology.",
+      "explored": "partially",
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "von-neumann-algebras",
+      "to": "holography-adscft",
+      "type": "shared-structure",
+      "description": "Chandrasekaran-Penington-Witten (arXiv:2209.10454) build the large-N single-trace algebra of a holographic CFT in the microcanonical ensemble as a type II_infinity crossed-product factor whose central operator is the renormalized area of the bifurcation surface and whose von Neumann entropy is the generalized entropy -- a Lorentzian, replica-free derivation of a special case of the quantum-extremal-surface prescription. The crossed product (adjoining the modular/ADM Hamiltonian to the emergent type III_1 boundary algebra) is the algebraic mechanism turning holographic entanglement into a finite, observer-relative entropy; subregion-subalgebra duality and JLMS make the von Neumann type the carrier of bulk geometric information.",
       "explored": "partially",
       "sourcePillars": [
         "von-neumann-algebras"

@@ -39,8 +39,8 @@ Přehledový článek: "Dimension and Dimensional Reduction in Quantum Gravity".
 
 ### Střední překrytí — L2-5
 
-**7. Calcagni et al., Towards the map of quantum gravity, arXiv:1708.07445 (2017)**
-Srovnává d_s přes CDT, AS, LQG, Hořava, NCG, nelokalní gravitaci, Stelle. Zahrnuje výsledky pro spin-foam a CST. Nenašel jsem explicitní tvrzení o "jednom AS fixed pointu" unifikujícím spin-foam + CST BD + Reuter.
+**7. Mielczarek & Trześniewski, Towards the map of quantum gravity, arXiv:1708.07445 (2018)**
+Srovnává přístupy ke kvantové gravitaci (LQG, CDT, Hořava, AS, Quantum Graphity aj.) se zaměřením na running dimension of spacetime. Zahrnuje výsledky pro spin-foam a CST. Nenašel jsem explicitní tvrzení o "jednom AS fixed pointu" unifikujícím spin-foam + CST BD + Reuter.
 
 **8. Eichhorn & Mizera, arXiv:1311.2530 (CQG 2014)**
 Probe-dependence v CST: d_s roste pro náhodnou procházku na diskrétním kauzálním grafu, ale klesá pro d'alembertianovou sondu. Přímo relevantní pro L2-5 (znaménko d_s v CST BD závisí na sondě — ne jednoznačné tvrzení o konvergenci k Reuterovu fixed pointu).
@@ -95,4 +95,4 @@ L2-5 vyžaduje opravu: místo "jeden Reuterův fixed point" upřesnit na "d_s v 
 | 1304.2709 | 2013 | Calcagni, Nardelli | d_s(α,D) pro multifrakcionální prostory — medium overlap |
 | 1705.05417 | 2017 | Carlip | Přehled, "almost universal d_s~2" — kontextuální |
 | 1311.2530 | 2014 | Eichhorn, Mizera | Probe-dependence v CST — relevantní pro L2-5 |
-| 1708.07445 | 2017 | Calcagni et al. | Map of QG — srovnání d_s přes přístupy |
+| 1708.07445 | 2018 | Mielczarek, Trześniewski | Map of QG — srovnání přístupů, running dimension |

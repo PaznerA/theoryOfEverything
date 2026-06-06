@@ -313,7 +313,7 @@ graph TD
 4. Kuchař, K. V. (1991/2011). *Time and interpretations of quantum gravity.* Int. J. Mod. Phys. D 20, 3. https://doi.org/10.1142/S0218271811019347 — kritika Page–Wootters a přehled.
 5. Anderson, E. (2012). *The Problem of Time in Quantum Gravity.* arXiv:1009.2157. https://arxiv.org/abs/1009.2157 — komplexní přehled problému času.
 6. Eppley, K. & Hannah, E. (1977). *The necessity of quantizing the gravitational field.* Found. Phys. 7, 51. https://doi.org/10.1007/BF00715241 — argument pro nutnost kvantování.
-7. Mattingly, J. (2006). *Why Eppley and Hannah's thought experiment fails.* arXiv:gr-qc/0601127. https://arxiv.org/abs/gr-qc/0601127 — vyvrácení Eppley–Hannah.
+7. Mattingly, J. (2006). *Why Eppley and Hannah's Experiment Isn't.* arXiv:gr-qc/0601127. https://arxiv.org/abs/gr-qc/0601127 — vyvrácení Eppley–Hannah.
 8. Kent, A. (2018). *Simple Refutation of the Eppley–Hannah argument.* arXiv:1807.08708. https://arxiv.org/abs/1807.08708 — další vyvrácení.
 9. Rovelli, C. (1996). *Relational Quantum Mechanics.* arXiv:quant-ph/9609002. https://arxiv.org/abs/quant-ph/9609002 — relační QM, parciální pozorovatelné.
 10. Dittrich, B. (2007). *Partial and Complete Observables for Hamiltonian Constrained Systems.* Gen. Rel. Grav. 39, 1891. arXiv:gr-qc/0411013. https://arxiv.org/abs/gr-qc/0411013 — robustní konstrukce Diracových pozorovatelných.

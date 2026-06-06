@@ -1314,6 +1314,21 @@
     "nameSimilarity": 0.72
   },
   {
+    "a": "type-iii-factor",
+    "b": "type-ii-factor",
+    "nameA": "Type III factor",
+    "nameB": "Type II factor",
+    "defA": "A von Neumann factor with no trace and no minimal projections, so it admits no density matrices and entanglement entropy is intrinsically UV-divergent. Murray-von Neumann/Connes class III (refined into III_lambda, 0<=lam",
+    "defB": "A von Neumann factor with a (up to scale unique) faithful semifinite trace but no minimal projections; it possesses density matrices and a finite, well-defined relative/von Neumann entropy fixed only up to a state-indepe",
+    "pillarsA": [
+      "von-neumann-algebras"
+    ],
+    "pillarsB": [
+      "von-neumann-algebras"
+    ],
+    "nameSimilarity": 0.97
+  },
+  {
     "a": "crossed-product",
     "b": "crossed-product-observer",
     "nameA": "Crossed product algebra",

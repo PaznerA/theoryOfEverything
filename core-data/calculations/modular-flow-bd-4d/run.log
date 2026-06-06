@@ -1,0 +1,34 @@
+=== VYPOCET-18 link-matrix 4D baseline (for object comparison) ===
+  nl_vs_corner_slope=0.750041891728874  corner/bulk=0.35437502213650707  slab/diamond f_nl=0.9963927837371608
+
+==== 4D BD modular-flow geometricity (PRIMARY smeared eps=0.6) mode=smeared eps=0.6 ====
+  [N= 800] diamond f_nl=0.030 (bulk 0.106, corner 0.016) off=-0.60; slab f_nl=0.062 off=-1.09 diagR2=0.73; cond_dia=4.6e+04
+  [N=1200] diamond f_nl=0.066 (bulk 0.166, corner 0.048) off=-0.61; slab f_nl=0.076 off=-1.17 diagR2=0.77; cond_dia=9.8e+04
+  [N=1700] diamond f_nl=0.110 (bulk 0.217, corner 0.092) off=-0.46; slab f_nl=0.115 off=-1.12 diagR2=0.79; cond_dia=3.5e+05
+  [N=2200] diamond f_nl=0.172 (bulk 0.307, corner 0.141) off=-0.58; slab f_nl=0.156 off=-1.08 diagR2=0.74; cond_dia=9.4e+05
+
+==== 4D BD modular-flow geometricity (CROSS-CHECK sharp BD) mode=sharp eps=1.0 ====
+  [N= 800] diamond f_nl=0.025 (bulk 0.083, corner 0.020) off=-0.62; slab f_nl=0.090 off=-1.03 diagR2=0.72; cond_dia=2.6e+07
+  [N=1200] diamond f_nl=0.045 (bulk 0.142, corner 0.049) off=-0.73; slab f_nl=0.115 off=-1.08 diagR2=0.77; cond_dia=2.2e+08
+  [N=1700] diamond f_nl=0.060 (bulk 0.178, corner 0.092) off=-0.48; slab f_nl=0.165 off=-1.03 diagR2=0.77; cond_dia=7.6e+08
+  [N=2200] diamond f_nl=0.140 (bulk 0.272, corner 0.137) off=-0.60; slab f_nl=0.204 off=-1.02 diagR2=0.75; cond_dia=1.4e+09
+
+=== VERDICT (BD smeared eps=0.6, PRIMARY) ===
+  slab_more_local_than_diamond: True
+  slab_diag_boost_linear: True
+  slab_diag_boost_linear_R2_tail: 0.7668219446901365
+  corner_more_nonlocal_than_bulk: False
+  corner_vs_bulk_ratio: 0.44547197545725403
+  nonlocality_rises_toward_corner: False
+  nl_vs_corner_slope: 0.7100072040799587
+  nl_vs_corner_R2: 0.5570234161583568
+  n_signatures_supporting_H4g1: 3
+  corner_concentration_replicates: False
+  corner_sign_flipped_vs_link: False
+  H4g1_4D: partial
+
+  OVERALL: 4D PARTIAL with BD: slab boost-weight is recovered (linear R2=0.77) but the corner-concentration of non-geometricity does NOT cleanly replicate (corner_more_nonlocal=False, nl_rises_toward_corner=False). Slab geometricity is dimension-robust; the corner sub-claim is not restored by the BD object alone at N<=2200.
+
+  sharp cross-check corner_concentration_replicates=False (slope=0.645); agree=True
+
+Done in 88.3s. results.json + plots in /Users/pazny/projects/theoryOfEverything/core-data/calculations/modular-flow-bd-4d

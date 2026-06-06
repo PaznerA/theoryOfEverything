@@ -592,6 +592,16 @@
     },
     {
       "from": "causal-sets",
+      "to": "black-holes-information",
+      "type": "conjecture",
+      "description": "PRIORITY HUNTING TARGET (BRAINSTORM-05 hypothesis H5g-2): does the saturated content-cap of a bounded causal-set / Sorkin-Johnston de Sitter static patch (F-023: N_total saturates to a finite ceiling, S_full saturates -- the type II_1 finite-trace maximal-entropy state) map QUANTITATIVELY onto the horizon-area entropy A/4? Dou-Sorkin horizon-molecule counting already yields S = A/4 kinematically; the conjecture is that the same area law emerges from first principles as the maximal trace of the truncated SSEE, with the entropy cap matching A/4 up to a calibratable O(1) factor (predicted 1/4). This would derive de Sitter / black-hole horizon entropy from causal-set first principles and is the bridge connecting F-023 to A/4. High-payoff, high-risk; needs higher sprinkling density (rho ~ 10^3-10^4) than an afternoon run.",
+      "explored": "barely",
+      "sourcePillars": [
+        "causal-sets"
+      ]
+    },
+    {
+      "from": "causal-sets",
       "to": "emergent-gravity",
       "type": "shared-structure",
       "description": "CST is a prototype emergent-geometry theory (metric, topology, dimension emerge from order+number) and the BD action emerges from counting order intervals, conceptually close to thermodynamic/entropic gravity (Jacobson, Verlinde). Technical links between counting-based emergence and entropic-force derivations are underdeveloped.",
@@ -604,7 +614,7 @@
       "from": "causal-sets",
       "to": "noncommutative-geometry",
       "type": "shared-math",
-      "description": "Both reject a smooth UV manifold and recover geometry spectrally: the spectral triple / Dirac operator of NCG parallels the Pauli-Jordan operator and SJ spectrum that encode geometry on causal sets. A direct correspondence between these spectral reconstructions is unexplored.",
+      "description": "Both reject a smooth UV manifold and recover geometry spectrally: the spectral triple / Dirac operator of NCG parallels the Pauli-Jordan operator and SJ spectrum that encode geometry on causal sets. PRIORITY HUNTING TARGET (BRAINSTORM-05 hypothesis H5g-4): the conjecture is that the NCG spectral data (Dirac operator D / spectral triple, Connes distance formula) reconstructs the same geometric content as the Sorkin-Johnston modular Hamiltonian K = -log Delta built from the Pauli-Jordan operator i*Delta -- i.e. Connes' spectral reconstruction theorem and the SJ/SSEE spectral reconstruction are two routes to the same emergent Lorentzian geometry, with the modular flow playing the role of (the imaginary-time generator dual to) the Dirac operator. A concrete data-edge would compare Connes distance against modular distance on a sprinkled slab. Entirely unexplored as an explicit correspondence.",
       "explored": "barely",
       "sourcePillars": [
         "causal-sets"
@@ -2879,6 +2889,36 @@
       "sourcePillars": [
         "von-neumann-algebras"
       ]
+    },
+    {
+      "from": "von-neumann-algebras",
+      "to": "causal-sets",
+      "type": "shared-math",
+      "description": "This project's own numerical findings establish the link by data: a geometric/spectral truncation of the Sorkin-Johnston spacetime entanglement entropy (SSEE) realizes the type III_1 -> type II algebra transition. F-015 (2D causal diamonds): two of three vN-type proxies confirm it -- an 80x collapse of the entropy trace (S_full ~ N^1.04 volume-law -> S_trunc saturating area/log-law) plus a modular spectrum going flat-dense (Connes III_1) to integrable with a sharp IR edge (type II); the type lives in the STATE/entropy, not in the Pauli-Jordan kinematics. F-019 (4D box-slab): all three proxies pass, with the n_max = 2 N^{3/4} rank truncation acting as an operative crossed-product-style observer regulator giving a 4D area law S ~ sqrt(N). F-023 (2D de Sitter static patch): the discrete SJ probe resolves the CLPW type II_1 (bounded patch, finite trace) vs type II_infinity distinction via content saturation. The causal-set SSEE truncation is thus a concrete discrete realization of the modular/crossed-product regularization of type III entropy.",
+      "explored": "partially",
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "von-neumann-algebras",
+      "to": "quantum-cosmology",
+      "type": "shared-math",
+      "description": "The Chandrasekaran-Longo-Penington-Witten observer algebra for the de Sitter static patch (arXiv:2206.10780) is a type II_1 crossed product whose maximal-entropy state is empty de Sitter (cosmological-horizon Gibbons-Hawking entropy A/4G); a single static-patch observer is necessary even to DEFINE gravitational entropy in a closed/cosmological spacetime, making the modular-algebra picture directly a quantum-cosmology statement about horizon entropy and the wave function in a finite causal patch. This project's F-023 confirms by data that a discrete Sorkin-Johnston probe on a 2D de Sitter static patch SEES the bounded-patch finite-trace type II_1 signature (content saturation to a finite cap) versus the unbounded type II_infinity flat control -- a numerical bridge from CLPW de Sitter algebras to causal-set cosmology.",
+      "explored": "partially",
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "von-neumann-algebras",
+      "to": "holography-adscft",
+      "type": "shared-structure",
+      "description": "Chandrasekaran-Penington-Witten (arXiv:2209.10454) build the large-N single-trace algebra of a holographic CFT in the microcanonical ensemble as a type II_infinity crossed-product factor whose central operator is the renormalized area of the bifurcation surface and whose von Neumann entropy is the generalized entropy -- a Lorentzian, replica-free derivation of a special case of the quantum-extremal-surface prescription. The crossed product (adjoining the modular/ADM Hamiltonian to the emergent type III_1 boundary algebra) is the algebraic mechanism turning holographic entanglement into a finite, observer-relative entropy; subregion-subalgebra duality and JLMS make the von Neumann type the carrier of bulk geometric information.",
+      "explored": "partially",
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
     }
   ],
   "matrix": {
@@ -3246,7 +3286,7 @@
       "asymptotic-safety": "none",
       "black-holes-information": "well",
       "causal-dynamical-triangulations": "none",
-      "causal-sets": "barely",
+      "causal-sets": "partially",
       "conceptual-problems": "well",
       "emergent-gravity": "none",
       "entanglement-spacetime": "well",
@@ -3255,7 +3295,7 @@
       "holography-adscft": "well",
       "loop-quantum-gravity": "barely",
       "noncommutative-geometry": "partially",
-      "quantum-cosmology": "none",
+      "quantum-cosmology": "partially",
       "semiclassical-gravity": "partially",
       "string-theory": "none",
       "supergravity-uv": "none",

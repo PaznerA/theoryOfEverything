@@ -338,7 +338,7 @@ graph TD
 
 25. **Gurau, R. & Rivasseau, V.** (2024). *Quantum Gravity and Random Tensors.* (Poincaré Seminar, prosinec 2023). arXiv: [2401.13510](https://arxiv.org/abs/2401.13510). — Moderní přehled; tenzorové polní teorie jako velké-$N$ CFT pro AdS/CFT.
 
-26. **Carrozza, S. et al.** (2024). *Tensor models and group field theories: combinatorics, large N and renormalization.* arXiv: [2404.07834](https://arxiv.org/abs/2404.07834). — Kombinovaný přehled kombinatoriky, $1/N$ a renormalizace.
+26. **Carrozza, S.** (2024). *Tensor models and group field theories: combinatorics, large N and renormalization.* arXiv: [2404.07834](https://arxiv.org/abs/2404.07834). — Kombinovaný přehled kombinatoriky, $1/N$ a renormalizace.
 
 27. **Gielen, S. & Mickel, L.** (2025). *Cosmological scalar perturbations for a metric reconstructed from group field theory.* Class. Quantum Grav. (2025). arXiv: [2505.07951](https://arxiv.org/abs/2505.07951). — Rekonstrukce metriky a gauge-invariantní perturbace z GFT.
 

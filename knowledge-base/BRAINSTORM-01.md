@@ -333,7 +333,7 @@ Implikace pro d_s klastr: probe-dependence v CST je přímým empirickým potvrz
 
 | Klastr | Verdikt | Doporučení | Klíčová prior art |
 |---|---|---|---|
-| d_s klastr (L3-1 + L2-5 + L5-5) | partially-known | reframe | Hořava 0902.3657 (d_s=1+D/z); Sotiriou-Visser-Weinfurtner 1105.6098; Calcagni 1708.07445 (srovnávací tabulka bez P(s) frameworku) |
+| d_s klastr (L3-1 + L2-5 + L5-5) | partially-known | reframe | Hořava 0902.3657 (d_s=1+D/z); Sotiriou-Visser-Weinfurtner 1105.6098; Mielczarek–Trześniewski 1708.07445 (mapa QG — srovnání přístupů bez P(s) frameworku) |
 | a_4 klastr (L1-1 + L2-4 + L5-4) | partially-known | **pursue** | Andrianov-Kurkov-Lizzi 1103.0478 (NCG↔anomálie 2-cestně); Kurkov-Lizzi 1311.6979 (Sakharov↔spektrální akce); trojstranná identifikace a anomaly-matching test pro C⊕H⊕M₃(C) chybí |
 | Λ klastr (L1-2 + L3-2 + L2-2) | partially-known | reframe | Sorkin astro-ph/0209274 + 0710.1675 (pilíř 1 kompletní); Padmanabhan 1302.3226 (CosMIn); Dai-Laiho 2408.08963 (EDT); mezipilířové srovnání prefaktorů chybí |
 | Entropie klastr (L2-3 + L3-4 + L4-4) | partially-known | **pursue** | Sorkin-Yazdi 1611.10281 (SSEE); Chandrasekaran-Penington-Witten 2206.10780 (crossed-product); Perez 1405.7287 (LQG entropie); trojcestná syntéza SSEE-truncation = crossed-product cutoff = LQG area gap chybí |

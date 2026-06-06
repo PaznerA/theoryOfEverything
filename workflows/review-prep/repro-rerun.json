@@ -1,0 +1,29 @@
+{
+ "sj-threshold-scan": {
+  "status": "identical",
+  "runtime_s": 209,
+  "n_diffs": 0,
+  "max_rel_dev": 0.0,
+  "verdict_flips": [],
+  "structural": [],
+  "top_numeric_devs": []
+ },
+ "sj-far-zone": {
+  "status": "identical",
+  "runtime_s": 91,
+  "n_diffs": 0,
+  "max_rel_dev": 0.0,
+  "verdict_flips": [],
+  "structural": [],
+  "top_numeric_devs": []
+ },
+ "modular-flow-bd-4d": {
+  "status": "identical",
+  "runtime_s": 80,
+  "n_diffs": 0,
+  "max_rel_dev": 0.0,
+  "verdict_flips": [],
+  "structural": [],
+  "top_numeric_devs": []
+ }
+}

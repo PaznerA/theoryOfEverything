@@ -93,7 +93,7 @@ Dvě fyzikálně odlišná, znaménkově smysluplná měřítka, obě postavená
 | `G_R = (1/2)C` (2D bezhmotný, konformně invariantní) | faktor ½ | Sorkin-Yazdi **1611.10281** eq. 9; footnote 5 (přesné pro všechna ρ) |
 | Masivní `G_R=(1/2)C(I+(m²/2ρ)C)⁻¹` → `(1/2)C` při m=0 | — | Johnston; **1701.07212**, **1712.04227** |
 | Konformní plochost ⇒ `G_R=(1/2)C` i v zakřivené 2D (AdS₂) | — | **2504.12919** (Retarded Causal Set Propagator in 2D AdS) |
-| `iΔ=i(1/2)(C-Cᵀ)` hermitovský; SJ W = kladná část iΔ | spektrální | Sorkin-Yazdi **1611.10281**; Afshordi-Aslanbeigi-Sorkin **1208.2422** |
+| `iΔ=i(1/2)(C-Cᵀ)` hermitovský; SJ W = kladná část iΔ | spektrální | Sorkin-Yazdi **1611.10281**; Afshordi-Aslanbeigi-Sorkin **1205.1296** |
 | Konvence zděděné z VYPOCET-04 (`ssee-diamond`) | — | tento projekt |
 
 ---
@@ -179,7 +179,7 @@ Plot `spectra_J0_vs_J.png` ukazuje, že SJ **eigenvalue spektra** rotujícího a
 - **1701.07212** — Johnston ad., *Scalar Field Green Functions on Causal Sets* (masivní `G_R`, limita m→0)
 - **1712.04227** — *On the Entanglement Entropy of Quantum Fields in Causal Sets* (`G_R=½C`, konvence)
 - **2504.12919** — *Retarded Causal Set Propagator in 2D Anti-de-Sitter Spacetime* (konformní plochost ⇒ `½C` v zakřivené 2D)
-- **1208.2422** — Afshordi, Aslanbeigi, Sorkin, *A distinguished vacuum state...* (SJ kontinuum)
+- **1205.1296** — Afshordi, Aslanbeigi, Sorkin, *A distinguished vacuum state...* (SJ kontinuum)
 - **1906.07952** — Mathur, Surya, *SJ vacuum for massive scalar in 2D causal diamond* (numerický SJ toolchain)
 - **gr-qc/0003097, 1707.08133** — rotující BTZ metrika, horizonty, ergoregion `r_+<r<ℓ√M`
 - **H02-sj-kerr.md** (tento projekt) — Strategie II

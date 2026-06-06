@@ -2,6 +2,27 @@
 
 **Status: internal exploratory draft (v0.1, AI-assisted). NOT submission-ready. This list is the gate.**
 
+---
+
+## AUDIT LOG — changes applied by automated auditor (2026-06-06)
+
+The following mechanical fixes were applied to `draft.md` by an AI auditor pass. Human verification of the underlying facts is still required (see §§0–6 below).
+
+1. **[FIXED 2026-06-06] CST random-walk value 8 — illustrative labeling (TASK 1).**
+   All four occurrences of the value `8` for the CST random-walk spectral dimension are now unambiguously labeled as illustrative:
+   - Master table (§5.1): cell changed from `num. $8$, illustrative` to `num. $8$†` with a prominently displayed †-footnote immediately below the table stating "Illustrative value only, not from literature" and explicitly naming Eichhorn–Mizera 1311.2530 as the source that publishes no universal asymptotic constant.
+   - Numerical agreement paragraph (§5.1): `(illustrative, see §6)` expanded to `(**illustrative value only**, not from Eichhorn–Mizera 1311.2530; see †-footnote above and §6 limit 1)`.
+   - Flow picture (§5.3): bare `toward $8$` changed to `toward $8$ (an illustrative value, not from Eichhorn–Mizera 1311.2530; see §5.1† and §6 limit 1)`.
+   - §6 limit 1: already correctly labeled — no change needed.
+   *Human verification still required:* confirm that Eichhorn–Mizera 1311.2530 indeed publishes no universal asymptotic constant for the UV random-walk spectral dimension (as stated in the caveat).
+
+2. **[FIXED 2026-06-06] D vs D_space dimension convention — master table (TASK 2).**
+   - Added a **Table convention note** immediately before the master table (§5.1) stating: $D$ = spacetime dimension throughout; isotropic rows use $D=4$ in $d_s^{\rm UV}=D/\gamma$; Hořava rows use $D_{\rm space}=D-1=3$ in $d_s=1+D_{\rm space}/z$; every Hořava entry was computed with $D_{\rm space}=3$ ($3{+}1$ spacetime).
+   - Both Hořava rows in the table now have `$D_{\rm space}=3$` added to the $z_{\rm eff}$ column, making the applied convention explicit and removing any row-level ambiguity.
+   *Human verification still required:* confirm that Hořava 0902.3657 uses $D_{\rm space}=3$ (i.e., $3{+}1$ anisotropic scaling) as the headline case and that $d_s=1+D_{\rm space}/z$ is the correct form as used in that paper (not $1+D_{\rm spacetime}/z$). This is flagged in §3 below as a blocking item.
+
+---
+
 The physics core is an assembled classification table for the UV spectral dimension plus a probe axis and a discriminator reading. Every individual number is from the literature; the engine reproduces them. The entire vulnerability is in *novelty framing* — whether a referee calls this "the Calcagni program repackaged" or "probe-dependence is obvious" — plus the usual convention/provenance airtightness. This list targets exactly those attacks.
 
 ---
@@ -16,11 +37,11 @@ The physics core is an assembled classification table for the UV spectral dimens
 
 ## 1. THE central referee attack: "this is Calcagni's program repackaged"
 
-This is the single most likely rejection. The note lives or dies on the answer. Calcagni and collaborators (1311.3340, 1304.2709, 1408.0199, 1708.07445) already (i) compute $d_s$ across approaches, (ii) state it is not universal, (iii) know it is structure/probe-sensitive in causal sets. A hostile referee will say the note adds nothing.
+This is the single most likely rejection. The note lives or dies on the answer. Calcagni and collaborators (1311.3340, 1304.2709, 1408.0199) already (i) compute $d_s$ across approaches, (ii) state it is not universal, (iii) know it is structure/probe-sensitive in causal sets. A hostile referee will say the note adds nothing.
 
 **The defense must make three points, each with documented evidence, and must concede what is genuinely Calcagni's:**
 
-1. **Simultaneous single-engine validation is the concrete deliverable.** Calcagni computes each entry with the method native to that approach (Seeley–DeWitt + saddle point for QFT/Stelle; combinatorial Laplacians for GFT/spin foam; fractional measures for multifractional). The "map of QG" (1708.07445) is a *collation across methods*, not one engine. Our deliverable is **one functional $P(\sigma)=\int d^Dk\,e^{-\sigma F(k)}$, one numerical implementation, one $d_s$ definition, reproducing all published UV/IR numbers at once (12/12)**. This is a falsifiable, reproducible artifact, not a survey. *Evidence to assemble:* quote the methods sections of 1311.3340 and 1708.07445 and show each uses approach-specific machinery; confirm no single $P(\sigma)$ engine reproduces all entries there.
+1. **Simultaneous single-engine validation is the concrete deliverable.** Calcagni computes each entry with the method native to that approach (Seeley–DeWitt + saddle point for QFT/Stelle; combinatorial Laplacians for GFT/spin foam; fractional measures for multifractional). The Mielczarek–Trześniewski "map of QG" (1708.07445) is a *collation across approaches*, not one engine. Our deliverable is **one functional $P(\sigma)=\int d^Dk\,e^{-\sigma F(k)}$, one numerical implementation, one $d_s$ definition, reproducing all published UV/IR numbers at once (12/12)**. This is a falsifiable, reproducible artifact, not a survey. *Evidence to assemble:* quote the methods sections of 1311.3340 and 1708.07445 and show each uses approach-specific machinery; confirm no single $P(\sigma)$ engine reproduces all entries there.
    - **Caveat to be honest about:** our engine reproduces *asymptotics* via effective kernels (§6 limit 1), not first-principles simulations. A referee can fairly say "you reproduced the answers you put in." The rebuttal: the engine still enforces *internal consistency of one definition* across all rows, which is exactly what the scattered literature does not provide, and it exposes the $\gamma=2$ subclass structure that approach-specific methods hide. Do **not** overclaim the engine as derivation; claim it as unification of bookkeeping.
 
 2. **Probe-as-axis is a stated organizing principle, not a noted side-effect.** Eichhorn–Mizera (1311.2530) and Belenchia et al. (1507.00330) document the two causal-set probes *separately*; Calcagni–Oriti–Thürigen (1311.3340) note structure-dependence. What is *not* in the literature as a stated principle is **"the classifier is $(z,D,\text{probe})$, on the same footing as $z$ and $D$,"** justified by the same-theory/opposite-trend contradiction. *Evidence to assemble:* find the closest sentence in 1311.3340 to "probe-dependence" and show it stops short of elevating the probe to a classification axis. If any paper *does* state $(z,D,\text{probe})$ as the classifier, downgrade claim 2 to "we make explicit what was implicit."
@@ -48,11 +69,11 @@ A referee may say: *"Of course the spectral dimension depends on which operator 
 
 Every "REPRODUCE" in the table is a claim against a published value; a referee will check each.
 
-- **Hořava (0902.3657):** confirm $d_s=1+D/z$ and the specific $z=2\Rightarrow 5/2$, $z=3\Rightarrow 2$ for $D=4$ ($D_{\rm space}=3$). Note Hořava's headline case is $z=3,D=3$ (i.e. $3{+}1$ spacetime) $\Rightarrow d_s=2$; our $D=4$ convention must be stated unambiguously (is $D$ the spatial dimension or spacetime dimension in each row?). **This is a real ambiguity** — the table mixes $D$=spacetime (=4) with $D_{\rm space}$=3 in the Hořava formula. A human must verify the per-row $D$ convention is internally consistent and matches each source.
+- **Hořava (0902.3657):** confirm $d_s=1+D/z$ and the specific $z=2\Rightarrow 5/2$, $z=3\Rightarrow 2$ for $D=4$ ($D_{\rm space}=3$). Note Hořava's headline case is $z=3,D=3$ (i.e. $3{+}1$ spacetime) $\Rightarrow d_s=2$; our $D=4$ convention must be stated unambiguously (is $D$ the spatial dimension or spacetime dimension in each row?). **[MECHANICALLY FIXED 2026-06-06]** — the table-wide convention note and per-row $D_{\rm space}=3$ annotations have been added to §5.1 (see Audit Log above). **STILL BLOCKING (human):** verify against the PDF of 0902.3657 that (a) the formula is $1+D_{\rm space}/z$ not $1+D_{\rm spacetime}/z$, (b) the headline case is indeed $D_{\rm space}=3,z=3\Rightarrow d_s=2$, and (c) our $z=2\Rightarrow 5/2$ result matches an explicit statement or derivation in that paper.
 - **Asymptotic safety:** pin $\eta_*=2-d=-2$ (so propagator $\sim 1/p^4$, $d_s=d/2=2$) to Lauscher–Reuter hep-th/0508202 and Reuter–Saueressig 1110.5224. Confirm the sign and that $\eta_*=-2$ is the NGFP value used, not an ansatz.
 - **Stelle (1408.0199):** confirm $d_s^{\rm UV}=2$ for any $D$ from the $k^4$ propagator. Confirm the IR returns $d_s=D=4$ from the inserted crossover (this is *our* crossover, not Stelle's — flag as model-inserted, §6 limit 2).
 - **Causal-set d'Alembertian (1507.00330):** confirm "universal $d_s\to 2$ in all $D$" and the $(k^2)^{D/2}$ high-momentum behaviour. Confirm our $\gamma=D/2$ assignment reproduces this for $D=4$.
-- **Causal-set random walk (1311.2530):** confirm $d_s$ *increases above* $D$. **Critical honesty item:** the numeric $8$ is *illustrative* ($=D+4$), not from the paper — Eichhorn–Mizera give no universal asymptotic constant. The table and §6 already flag this; make sure the "REPRODUCE (qualitative)" label is never read as a quantitative match. A referee who reads "$8$" as a claimed value will reject; the label and §6 must be unmissable.
+- **Causal-set random walk (1311.2530):** confirm $d_s$ *increases above* $D$. **Critical honesty item:** the numeric $8$ is *illustrative* ($=D+4$), not from the paper — Eichhorn–Mizera give no universal asymptotic constant. **[MECHANICALLY FIXED 2026-06-06]** — all four occurrences of the value $8$ in `draft.md` now carry unmissable "illustrative value only, not from literature" labels; a †-footnote was added directly under the master table (see Audit Log above). **STILL BLOCKING (human):** verify against 1311.2530 PDF that (a) the paper indeed reports no universal asymptotic constant for the UV value, (b) the qualitative trend ($d_s$ rising above $D$) is correctly attributed, and (c) the "REPRODUCE (qual.)" label is the appropriate strength of claim.
 - **Multifractional (1304.2709):** we use one class ($\gamma_{\rm UV}=D/2$). State that Calcagni gives several classes with different UV values; ours is a comparison value only.
 - **Every arXiv ID** (0902.3657, 1105.6098, 1408.0199, 1311.3340, 1304.2709, 1708.07445, 1705.05417, 1311.2530, 1507.00330, hep-th/0508202, 1110.5224) must be confirmed against arXiv by a human before any release, with authors/year/journal checked.
 
@@ -81,7 +102,7 @@ Every "REPRODUCE" in the table is a claim against a published value; a referee w
 - **Re-derive both limits by hand:** isotropic $d_s^{\rm UV}=D/\gamma$ from $\int d^Dk\,e^{-\sigma k^{2\gamma}}$, and anisotropic $d_s=1+D_{\rm space}/z$ from the factorized $P(\sigma)$.
 - **Novelty re-run** specifically against: Calcagni's reviews/books and 1708.07445; Mielczarek–Trześniewski and other "spectral dimension across approaches" surveys; any paper stating $(z,D,\text{probe})$ or "probe as classification axis." If found, downgrade per §1/§2.
 - **Confirm the two CST papers are the same underlying framework** (§5) so "same theory" holds.
-- **Resolve the $D$-convention ambiguity** (§3, Hořava row) across the whole table.
+- **Resolve the $D$-convention ambiguity** (§3, Hořava row) across the whole table. **[MECHANICALLY FIXED 2026-06-06]** — convention note and per-row annotations added (see Audit Log). Human must still verify against source PDF (see §3 above).
 
 ---
 

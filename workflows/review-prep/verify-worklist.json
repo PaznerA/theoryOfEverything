@@ -1,0 +1,2111 @@
+{
+ "recent": [
+  {
+   "id": "2401.09399",
+   "claimed": {
+    "title": "Causal Dynamical Triangulations: Gateway to Nonperturbative Quantum Gravity",
+    "authors": "J. Ambjorn, R. Loll",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/causal-dynamical-triangulations.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/04-causal-dynamical-triangulations.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2401.13510",
+   "claimed": {
+    "title": "Quantum Gravity and Random Tensors",
+    "authors": "R. Gurau, V. Rivasseau",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/group-field-theory.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/06-group-field-theory.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2402.00818",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./verification/black-holes-information.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "2402.06009",
+   "claimed": {
+    "title": "Stringent Tests of Lorentz Invariance Violation from LHAASO Observations of GRB 221009A",
+    "authors": "Z. Cao et al. (LHAASO Collaboration)",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/experimental-tests.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/phenomenology/17-experimental-tests.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2403.08696",
+   "claimed": {
+    "title": "Generalized Second Law for Subregions and Gravitational Algebras",
+    "authors": "J. Kudler-Flam, S. Leutheusser, G. Satishchandran",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/von-neumann-algebras.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/foundations/19-von-neumann-algebras.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2403.08912",
+   "claimed": {
+    "title": "Current experimental upper bounds on spacetime diffusion",
+    "authors": "M. Janse, D. G. Uitenbroek, L. van Everdingen, J. Plugge, B. Hensen, T. H. Oosterkamp",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/conceptual-problems.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/foundations/16-conceptual-problems.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2403.14889",
+   "claimed": {
+    "title": "de Sitter connectivity from holographic entanglement",
+    "authors": "V. Franken",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/entanglement-spacetime.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/cross-cutting/13-entanglement-spacetime.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2403.18005",
+   "claimed": {
+    "title": "The Tale of Three Scales: the Planck, the Species, and the Black Hole Scales",
+    "authors": "A. Bedroya, C. Vafa, D. H. Wu",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/swampland.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/cross-cutting/14-swampland.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2404.00763",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/cross-cutting/11-holography-adscft.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "2404.03002",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./verification/quantum-cosmology.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "2404.07834",
+   "claimed": {
+    "title": "Tensor models and group field theories: combinatorics, large N and renormalization",
+    "authors": "S. Carrozza, R. Toriumi, et al.",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/group-field-theory.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/06-group-field-theory.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2404.11670",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/approaches/05-causal-sets.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "2405.00845",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/cross-cutting/11-holography-adscft.md",
+    "./verification/holography-adscft.md"
+   ],
+   "n_files": 2
+  },
+  {
+   "id": "2405.05056",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./verification/novelty/preprint-checks.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "2405.12296",
+   "claimed": {
+    "title": "Constraining regularization ambiguities in Loop Quantum Cosmology via CMB",
+    "authors": "B.-F. Li, P. Singh, M. Motaharfar",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/quantum-cosmology.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/phenomenology/18-quantum-cosmology.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2405.13588",
+   "claimed": {
+    "title": "DESI 2024: Constraints on Physics-Focused Aspects of Dark Energy using DESI DR1 BAO Data",
+    "authors": "DESI Collaboration",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/quantum-cosmology.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/eseje/ESEJ-02-vesmir-ktery-se-pocita.md"
+   ],
+   "n_files": 6
+  },
+  {
+   "id": "2405.14059",
+   "claimed": {
+    "title": "Causal Sets and an Emerging Continuum",
+    "authors": "S. Carlip",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/causal-sets.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/05-causal-sets.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2405.19421",
+   "claimed": {
+    "title": "String Field Theory: A Review",
+    "authors": "A. Sen, B. Zwiebach",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/string-theory.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./verification/string-theory.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2405.19469",
+   "claimed": {
+    "title": "Constraining Inflation with the BICEP/Keck CMB Polarization Experiments",
+    "authors": "BICEP/Keck Collaboration",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/experimental-tests.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/phenomenology/17-experimental-tests.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2405.21029",
+   "claimed": {
+    "title": "Table-top nanodiamond interferometer enabling quantum gravity tests",
+    "authors": "M. Vicentini, E. Bernardi, M. Bordin, E. Moreva, F. Piacentini, C. Napoli, et al.",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/experimental-tests.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/phenomenology/17-experimental-tests.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2406.04411",
+   "claimed": {
+    "title": "Surfaceology for Colored Yukawa Theory",
+    "authors": "S. De, A. Pokraka, M. Skowronek, M. Spradlin, A. Volovich",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/twistors-amplitudes.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/08-twistors-amplitudes.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2406.12464",
+   "claimed": {
+    "title": "Conformal anomalies and renormalized stress tensor correlators for nonconformal theories",
+    "authors": "T. Bertolini, L. Casarin",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/semiclassical-gravity.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/foundations/15-semiclassical-gravity.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2406.13949",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/hypotezy/H02-sj-kerr.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "2406.18494",
+   "claimed": {
+    "title": "On the effectiveness of the collapse in the Diosi-Penrose model",
+    "authors": "Multiple authors",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/experimental-tests.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/phenomenology/17-experimental-tests.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2407.03432",
+   "claimed": {
+    "title": "Relational dynamics and Page-Wootters formalism in group field theory",
+    "authors": "A. Calcinari, S. Gielen",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/concept-graph.json",
+    "./core-data/connections.json",
+    "./core-data/fragments/conceptual-problems.json",
+    "./core-data/references.bib"
+   ],
+   "n_files": 7
+  },
+  {
+   "id": "2407.09595",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./core-data/novelty-checks.json",
+    "./verification/novelty/preprint-checks.md"
+   ],
+   "n_files": 2
+  },
+  {
+   "id": "2407.11929",
+   "claimed": {
+    "title": "Stimulated absorption of single gravitons: First light on quantum gravity",
+    "authors": "V. Shenderov et al.",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/experimental-tests.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/phenomenology/17-experimental-tests.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2408.00071",
+   "claimed": {
+    "title": "An operator algebraic approach to black hole information",
+    "authors": "M. Ali Ahmad, M. S. Klinger, S. Lin",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/von-neumann-algebras.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/foundations/19-von-neumann-algebras.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2408.02652",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/phenomenology/18-quantum-cosmology.md",
+    "./verification/quantum-cosmology.md"
+   ],
+   "n_files": 2
+  },
+  {
+   "id": "2408.07808",
+   "claimed": {
+    "title": "Is Lattice Quantum Gravity Asymptotically Safe? Making contact between CDT and the FRG",
+    "authors": "J. Ambjorn, J. Gizbert-Studnicki, A. Gorlich, D. Nemeth",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/causal-dynamical-triangulations.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/04-causal-dynamical-triangulations.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2408.08963",
+   "claimed": {
+    "title": "Dynamical Dark Energy from Lattice Quantum Gravity",
+    "authors": "M. Dai, W. Freeman, J. Laiho, M. Schiffer, J. Unmuth-Yockey",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/calculations/lambda-prefactors/calc.py",
+    "./core-data/calculations/lambda-prefactors/results.json",
+    "./core-data/findings.json",
+    "./core-data/fragments/causal-dynamical-triangulations.json"
+   ],
+   "n_files": 14
+  },
+  {
+   "id": "2408.14391",
+   "claimed": {
+    "title": "Gravity from entropy",
+    "authors": "G. Bianconi",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/emergent-gravity.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/09-emergent-gravity.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2409.14990",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/cross-cutting/14-swampland.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "2410.17316",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/cross-cutting/11-holography-adscft.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "2410.19601",
+   "claimed": {
+    "title": "The Bose-Marletto-Vedral experiment with nanodiamond interferometers: an insight on entanglement detection",
+    "authors": "G. Di Pietra, F. Piacentini, E. Bernardi, E. Moreva, C. Napoli, I. P. Degiovanni, M. Genovese, V. Vedral, C. Marletto",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/experimental-tests.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/phenomenology/17-experimental-tests.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2410.21599",
+   "claimed": {
+    "title": "Quantum gravity with purely virtual particles from asymptotically local quantum field theory",
+    "authors": "D. Anselmi",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/supergravity-uv.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./verification/supergravity-uv.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2411.01105",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/foundations/15-semiclassical-gravity.md",
+    "./verification/semiclassical-gravity.md"
+   ],
+   "n_files": 2
+  },
+  {
+   "id": "2411.02287",
+   "claimed": {
+    "title": "The Diosi-Penrose model of classical gravity predicts gravitationally induced entanglement",
+    "authors": "D. Trillo, M. Navascues",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/semiclassical-gravity.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/foundations/15-semiclassical-gravity.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2412.00852",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/cross-cutting/11-holography-adscft.md",
+    "./verification/holography-adscft.md"
+   ],
+   "n_files": 2
+  },
+  {
+   "id": "2412.05446",
+   "claimed": {
+    "title": "AdS/CFT Duality and Holographic Renormalization Group: A Review",
+    "authors": "H. Huang",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/holography-adscft.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/cross-cutting/11-holography-adscft.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2412.07832",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./PROGRESS.md",
+    "./core-data/calculations/ssee-slab-4d/calc.py",
+    "./core-data/calculations/ssee-slab-4d/results.json",
+    "./core-data/findings.json"
+   ],
+   "n_files": 15
+  },
+  {
+   "id": "2412.13800",
+   "claimed": {
+    "title": "e+e- -> mu+mu- in the asymptotically safe Standard Model",
+    "authors": "Alvaro Pastor-Gutierrez, Jan Pawlowski, Manuel Reichert, Giacomo Ruisi",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/asymptotic-safety.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/03-asymptotic-safety.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2412.15502",
+   "claimed": {
+    "title": "Crossed products and quantum reference frames: on the observer-dependence of gravitational entropy",
+    "authors": "J. De Vuyst, S. Eccles, P. A. Hoehn, J. Kirklin",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/conceptual-problems.json",
+    "./core-data/fragments/von-neumann-algebras.json",
+    "./core-data/references.bib",
+    "./core-data/references.json"
+   ],
+   "n_files": 14
+  },
+  {
+   "id": "2412.18532",
+   "claimed": {
+    "title": "The exact Wheeler-DeWitt equation for the scale-factor minisuperspace model",
+    "authors": "E. Kaimakkamis, H. Partouche, K. Sil, N. Toumbas",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/conceptual-problems.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/foundations/16-conceptual-problems.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2412.20257",
+   "claimed": {
+    "title": "Computing the graph-changing dynamics of loop quantum gravity",
+    "authors": "T. L. M. Guedes, G. A. Mena Marugan, F. Vidotto, M. Muller",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/loop-quantum-gravity.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/02-loop-quantum-gravity.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2501.09669",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./core-data/calculations/sj-vn-type/calc.py",
+    "./knowledge-base/BRAINSTORM-05.md",
+    "./knowledge-base/vypocty/VYPOCET-12-vn-typ-truncace.md",
+    "./papers/REVIZE-PRO-CLOVEKA.md"
+   ],
+   "n_files": 7
+  },
+  {
+   "id": "2502.01734",
+   "claimed": {
+    "title": "Symmetric product orbifold universality and the mirage of an emergent spacetime",
+    "authors": "A. Belin, S. Bintanja, A. Castro, W. Knop",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/entanglement-spacetime.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/cross-cutting/13-entanglement-spacetime.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2502.07321",
+   "claimed": {
+    "title": "The Weinberg no-go theorem for cosmological constant and nonlocal gravity",
+    "authors": "S. Capozziello, A. Mazumdar, G. Meluccio",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/conceptual-problems.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/foundations/16-conceptual-problems.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2502.12290",
+   "claimed": {
+    "title": "Asymptotic safety, quantum gravity, and the swampland: a conceptual assessment",
+    "authors": "Ivano Basile, Benjamin Knorr, Alessia Platania, Marc Schiffer",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./PROGRESS.md",
+    "./core-data/fragments/asymptotic-safety.json",
+    "./core-data/novelty-checks.json",
+    "./core-data/references.bib"
+   ],
+   "n_files": 10
+  },
+  {
+   "id": "2502.12474",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./core-data/calculations/bmv-as-phase/calc.py",
+    "./core-data/calculations/bmv-as-phase/results.json",
+    "./knowledge-base/hypotezy/H03-bmv-diskriminator.md",
+    "./knowledge-base/vypocty/VYPOCET-07-bmv-as-faze.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2503.01719",
+   "claimed": {
+    "title": "On the Hauptvermutung of Causal Set Theory",
+    "authors": "O. M\u00fcller",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/causal-sets.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/05-causal-sets.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2503.03805",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/approaches/08-twistors-amplitudes.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "2503.17310",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/approaches/01-string-theory.md",
+    "./verification/string-theory.md"
+   ],
+   "n_files": 2
+  },
+  {
+   "id": "2503.18277",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./verification/noncommutative-geometry.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "2503.19428",
+   "claimed": {
+    "title": "S-dual Quintessence, the Swampland, and the DESI DR2 Results",
+    "authors": "L. A. Anchordoqui, I. Antoniadis, D. Lust",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/swampland.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/cross-cutting/14-swampland.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2503.20855",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/phenomenology/17-experimental-tests.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "2504.12919",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./core-data/calculations/sj-eigenvector-superradiance/calc.py",
+    "./core-data/calculations/sj-eigenvector-superradiance/results.json",
+    "./core-data/calculations/sj-kerr-equatorial/calc.py",
+    "./core-data/calculations/sj-kerr-equatorial/results.json"
+   ],
+   "n_files": 14
+  },
+  {
+   "id": "2505.06598",
+   "claimed": {
+    "title": "The Generalized Uncertainty Principle. New Bounds and Trends",
+    "authors": "E. Valero, H. Gisbert, V. Ilisie",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/noncommutative-geometry.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/07-noncommutative-geometry.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2505.07951",
+   "claimed": {
+    "title": "Cosmological scalar perturbations for a metric reconstructed from group field theory",
+    "authors": "S. Gielen, L. Mickel",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/group-field-theory.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/06-group-field-theory.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2505.08116",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/cross-cutting/11-holography-adscft.md",
+    "./verification/holography-adscft.md"
+   ],
+   "n_files": 2
+  },
+  {
+   "id": "2505.22217",
+   "claimed": {
+    "title": "Benincasa-Dowker-Glaser causal set actions by quantum counting",
+    "authors": "S. A. Adamson, P. Wallden",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/causal-sets.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/05-causal-sets.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2506.03334",
+   "claimed": {
+    "title": "Could Planck Star Remnants be Dark Matter?",
+    "authors": "(2025)",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/loop-quantum-gravity.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/02-loop-quantum-gravity.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2506.04300",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/hypotezy/H03-bmv-diskriminator.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "2506.04311",
+   "claimed": {
+    "title": "An Apologia for Islands",
+    "authors": "S. Antonini, C.-H. Chen, H. Maxfield, G. Penington",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/black-holes-information.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/cross-cutting/12-black-holes-information.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2506.06595",
+   "claimed": {
+    "title": "Essay: Emergent holographic spacetime from quantum information",
+    "authors": "T. Takayanagi",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/entanglement-spacetime.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/cross-cutting/13-entanglement-spacetime.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2506.19538",
+   "claimed": {
+    "title": "Dynamics of discrete spacetimes with Quantum-enhanced Markov Chain Monte Carlo",
+    "authors": "S. Ferguson, A. Nasiri, P. Wallden",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/causal-sets.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/05-causal-sets.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2506.19720",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/cross-cutting/11-holography-adscft.md",
+    "./verification/holography-adscft.md"
+   ],
+   "n_files": 2
+  },
+  {
+   "id": "2506.20340",
+   "claimed": {
+    "title": "Emergent Lorentzian Geometries from Spin-Foams and Group Field Theories",
+    "authors": "A.F. Jercher",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/group-field-theory.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/06-group-field-theory.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2507.00615",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/approaches/01-string-theory.md",
+    "./verification/string-theory.md"
+   ],
+   "n_files": 2
+  },
+  {
+   "id": "2507.00772",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/approaches/08-twistors-amplitudes.md",
+    "./verification/twistors-amplitudes.md"
+   ],
+   "n_files": 2
+  },
+  {
+   "id": "2507.14296",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./core-data/_digest.md",
+    "./core-data/concept-graph.json",
+    "./core-data/connections.json",
+    "./core-data/fragments/conceptual-problems.json"
+   ],
+   "n_files": 7
+  },
+  {
+   "id": "2507.22169",
+   "claimed": {
+    "title": "Self-consistent graviton spectral function in Lorentzian quantum gravity",
+    "authors": "Jan Pawlowski, Manuel Reichert, Jonas Wessely",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/asymptotic-safety.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/03-asymptotic-safety.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2508.08373",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/cross-cutting/11-holography-adscft.md",
+    "./verification/holography-adscft.md"
+   ],
+   "n_files": 2
+  },
+  {
+   "id": "2508.14272",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/foundations/16-conceptual-problems.md",
+    "./verification/conceptual-problems.md"
+   ],
+   "n_files": 2
+  },
+  {
+   "id": "2508.21823",
+   "claimed": {
+    "title": "A new characterization of the holographic entropy cone",
+    "authors": "G. Grimaldi, M. Headrick, V. E. Hubeny",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/entanglement-spacetime.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/cross-cutting/13-entanglement-spacetime.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2509.02051",
+   "claimed": {
+    "title": "Recent developments in semiclassical gravity",
+    "authors": "B. A. Juarez-Aubry",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/semiclassical-gravity.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/foundations/15-semiclassical-gravity.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2509.08054",
+   "claimed": {
+    "title": "GW250114: Testing Hawking's Area Law and the Kerr Nature of Black Holes",
+    "authors": "A. G. Abac et al. (LIGO-Virgo-KAGRA)",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/experimental-tests.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./verification/experimental-tests.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2509.26352",
+   "claimed": {
+    "title": "Asymptotically safe quantum gravity: functional and lattice perspectives",
+    "authors": "Marc Schiffer",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/asymptotic-safety.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/03-asymptotic-safety.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2510.02159",
+   "claimed": {
+    "title": "Machine learning in phase transition analysis of lattice quantum gravity",
+    "authors": "J. Ambjorn, Z. Drogosz, J. Gizbert-Studnicki, A. Gorlich, D. Nemeth, M. Reitz",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/causal-dynamical-triangulations.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/04-causal-dynamical-triangulations.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2510.05693",
+   "claimed": {
+    "title": "Exploring Quantum Spacetime with Topological Data Analysis",
+    "authors": "J. van der Duin, R. Loll, M. Schiffer, A. Silva",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/causal-dynamical-triangulations.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/04-causal-dynamical-triangulations.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2510.05695",
+   "claimed": {
+    "title": "Quantum Gravity and Effective Topology",
+    "authors": "J. van der Duin, R. Loll, M. Schiffer, A. Silva",
+    "year": 2026
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/causal-dynamical-triangulations.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/04-causal-dynamical-triangulations.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2510.06689",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./core-data/calculations/bmv-as-phase/calc.py",
+    "./knowledge-base/vypocty/VYPOCET-07-bmv-as-faze.md"
+   ],
+   "n_files": 2
+  },
+  {
+   "id": "2510.07017",
+   "claimed": {
+    "title": "Lectures on entanglement, von Neumann algebras, and emergence of spacetime",
+    "authors": "H. Liu",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/entanglement-spacetime.json",
+    "./core-data/fragments/von-neumann-algebras.json",
+    "./core-data/references.bib",
+    "./core-data/references.json"
+   ],
+   "n_files": 7
+  },
+  {
+   "id": "2510.19714",
+   "claimed": {
+    "title": "Classical theories of gravity produce entanglement",
+    "authors": "J. Aziz, R. Howl",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/conceptual-problems.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/foundations/16-conceptual-problems.md"
+   ],
+   "n_files": 6
+  },
+  {
+   "id": "2510.20991",
+   "claimed": {
+    "title": "Absence of gravitationally induced entanglement in certain semi-classical theories of gravity",
+    "authors": "Multiple authors",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/experimental-tests.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/phenomenology/17-experimental-tests.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2510.23050",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/foundations/15-semiclassical-gravity.md",
+    "./verification/semiclassical-gravity.md"
+   ],
+   "n_files": 2
+  },
+  {
+   "id": "2510.25846",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/cross-cutting/14-swampland.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "2510.25927",
+   "claimed": {
+    "title": "Constraints on the resolution of spacetime singularities",
+    "authors": "A. Shahbazi-Moghaddam",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/conceptual-problems.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/foundations/16-conceptual-problems.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2510.26911",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./core-data/novelty-checks.json",
+    "./knowledge-base/BRAINSTORM-01.md",
+    "./knowledge-base/BRAINSTORM-02.md",
+    "./verification/novelty/entropy-cluster.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2510.26922",
+   "claimed": {
+    "title": "Entanglement entropy in Loop Quantum Gravity and geometrical area law",
+    "authors": "(2025)",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/loop-quantum-gravity.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/02-loop-quantum-gravity.md"
+   ],
+   "n_files": 6
+  },
+  {
+   "id": "2511.00852",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./verification/conceptual-problems.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "2511.05909",
+   "claimed": {
+    "title": "Hearing the Shape of the Universe: A Personal Journey in Noncommutative Geometry",
+    "authors": "A. H. Chamseddine",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/noncommutative-geometry.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/07-noncommutative-geometry.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2511.07348",
+   "claimed": {
+    "title": "Classical gravity cannot mediate entanglement",
+    "authors": "C. Marletto, J. Oppenheim, V. Vedral, E. Wilson",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/conceptual-problems.json",
+    "./core-data/fragments/experimental-tests.json",
+    "./core-data/novelty-checks.json",
+    "./core-data/references.bib"
+   ],
+   "n_files": 12
+  },
+  {
+   "id": "2511.08159",
+   "claimed": {
+    "title": "Spectral torsion of the internal noncommutative geometry of the Standard Model",
+    "authors": "L. Dabrowski et al.",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/noncommutative-geometry.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/07-noncommutative-geometry.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2511.13392",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/foundations/15-semiclassical-gravity.md",
+    "./verification/semiclassical-gravity.md"
+   ],
+   "n_files": 2
+  },
+  {
+   "id": "2511.13518",
+   "claimed": {
+    "title": "The Birth of Gravitational Particle Creation: the Enduring Legacy of Leonard Parker's 1966 Thesis",
+    "authors": "A. Ferreiro, J. Navarro-Salas, S. Pla",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/semiclassical-gravity.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/foundations/15-semiclassical-gravity.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2511.19242",
+   "claimed": {
+    "title": "A demonstration that classical gravity does not produce entanglement",
+    "authors": "Multiple authors",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/experimental-tests.json",
+    "./core-data/novelty-checks.json",
+    "./core-data/references.bib",
+    "./core-data/references.json"
+   ],
+   "n_files": 9
+  },
+  {
+   "id": "2511.20717",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./core-data/novelty-checks.json",
+    "./knowledge-base/hypotezy/H03-bmv-diskriminator.md",
+    "./verification/conceptual-problems.md",
+    "./verification/novelty/preprint-checks.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2512.08694",
+   "claimed": {
+    "title": "Bootstrapping Noncommutative Geometry with Dirac Ensembles",
+    "authors": "M. Khalkhali, N. Pagliaroli",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/noncommutative-geometry.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/07-noncommutative-geometry.md"
+   ],
+   "n_files": 6
+  },
+  {
+   "id": "2512.09052",
+   "claimed": {
+    "title": "Neutrinos, B-L Symmetry and the Dark Dimension",
+    "authors": "M. Montero, C. Vafa, I. Valenzuela",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/swampland.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/cross-cutting/14-swampland.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2512.10367",
+   "claimed": {
+    "title": "Bridging dS/CFT and Celestial Holography via Ward-Takahashi Identities",
+    "authors": "H. Furugori, N. Ogawa, S. Sugishita, T. Waki",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/holography-adscft.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/cross-cutting/11-holography-adscft.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2512.11712",
+   "claimed": {
+    "title": "Cosmic Acceleration from Quantum Gravity: Emergent Inflation and Dynamical Dark Energy",
+    "authors": "L. Marchetti, T. Ladstatter, D. Oriti",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/group-field-theory.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/06-group-field-theory.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2512.14389",
+   "claimed": {
+    "title": "Holography and the Swampland: Constraints on Quantum Gravity from Holographic Principles",
+    "authors": "S. Upadhyay, A. Reshetnyak, P. Moshin, R. Castro",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/holography-adscft.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/cross-cutting/11-holography-adscft.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2512.15393",
+   "claimed": {
+    "title": "Spontaneous wave function collapse from non-local gravitational self-energy",
+    "authors": "K. Jusufi, D. Singleton, F. S. N. Lobo",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/_digest.md",
+    "./core-data/concept-graph.json",
+    "./core-data/connections.json",
+    "./core-data/fragments/conceptual-problems.json"
+   ],
+   "n_files": 8
+  },
+  {
+   "id": "2512.18912",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/cross-cutting/11-holography-adscft.md",
+    "./verification/holography-adscft.md"
+   ],
+   "n_files": 2
+  },
+  {
+   "id": "2512.22694",
+   "claimed": {
+    "title": "The species scale and the refined TCC bound in time-dependent backgrounds of string theory",
+    "authors": "A. Moradpouri",
+    "year": 2025
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/swampland.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/cross-cutting/14-swampland.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2512.24730",
+   "claimed": {
+    "title": "Model-independent search of gravitational wave echoes in LVK data",
+    "authors": "D. Wu, X.-L. Zhang, Q.-G. Huang, J. Ren",
+    "year": 2026
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/experimental-tests.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/phenomenology/17-experimental-tests.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2601.07915",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./core-data/novelty-checks.json",
+    "./knowledge-base/BRAINSTORM-01.md",
+    "./knowledge-base/BRAINSTORM-02.md",
+    "./knowledge-base/BRAINSTORM-05.md"
+   ],
+   "n_files": 7
+  },
+  {
+   "id": "2601.14141",
+   "claimed": {
+    "title": "Symmetry Breaking and Phase Transitions in Random Non-Commutative Geometries and Related Random-Matrix Ensembles",
+    "authors": "M. D'Arcangelo, S. Gnutzmann",
+    "year": 2026
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/noncommutative-geometry.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/07-noncommutative-geometry.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2602.04888",
+   "claimed": {
+    "title": "Graph models for covariant holographic entropy I",
+    "authors": "B. Zhao",
+    "year": 2026
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/entanglement-spacetime.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/cross-cutting/13-entanglement-spacetime.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2602.09796",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/BRAINSTORM-05.md",
+    "./knowledge-base/hypotezy/H02-sj-kerr.md",
+    "./papers/REVIZE-PRO-CLOVEKA.md",
+    "./papers/draft-01-sj-rotating-spacetimes/TODO.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2602.16782",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./core-data/calculations/vn-type-slab-4d/calc.py",
+    "./knowledge-base/BRAINSTORM-05.md",
+    "./knowledge-base/hypotezy/H02-sj-kerr.md",
+    "./knowledge-base/vypocty/VYPOCET-12-vn-typ-truncace.md"
+   ],
+   "n_files": 9
+  },
+  {
+   "id": "2602.16905",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/approaches/08-twistors-amplitudes.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "2602.21263",
+   "claimed": {
+    "title": "The Cosmological Arrow of Time from Inflationary Branch Decoherence",
+    "authors": "A. Nayeri",
+    "year": 2026
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/quantum-cosmology.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/phenomenology/18-quantum-cosmology.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2603.07150",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/approaches/10-supergravity-uv.md",
+    "./verification/supergravity-uv.md"
+   ],
+   "n_files": 2
+  },
+  {
+   "id": "2603.16999",
+   "claimed": {
+    "title": "The Structure of the Continuum Limit of Spin Foams",
+    "authors": "M. Bruno, E. Colafranceschi, F. M. Mele, C. Rovelli",
+    "year": 2026
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/loop-quantum-gravity.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/02-loop-quantum-gravity.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2604.05641",
+   "claimed": {
+    "title": "Causal Dynamical Triangulations: New Lattice Theory of Quantum Gravity",
+    "authors": "J. Ambjorn, R. Loll",
+    "year": 2026
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/causal-dynamical-triangulations.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/04-causal-dynamical-triangulations.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2604.19696",
+   "claimed": {
+    "title": "Can classical theories of gravity produce entanglement?",
+    "authors": "A. Gundhi, G. Infantino, A. Bassi",
+    "year": 2026
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/experimental-tests.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/hypotezy/H03-bmv-diskriminator.md"
+   ],
+   "n_files": 6
+  },
+  {
+   "id": "2605.05375",
+   "claimed": {
+    "title": "Stochastic modes in postquantum classical gravity",
+    "authors": "J. Oppenheim, M. Sajjad",
+    "year": 2026
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/conceptual-problems.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/foundations/16-conceptual-problems.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2606.01343",
+   "claimed": {
+    "title": "The Schwinger-Dyson equations for random fuzzy geometries coupled to matter",
+    "authors": "J. Gamble, M. Khalkhali, N. Pagliaroli",
+    "year": 2026
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/noncommutative-geometry.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/07-noncommutative-geometry.md"
+   ],
+   "n_files": 5
+  }
+ ],
+ "sample_old": [
+  {
+   "id": "0710.1675",
+   "claimed": {
+    "title": "Is the cosmological 'constant' a nonlocal quantum residue of discreteness of the causal set type?",
+    "authors": "R. D. Sorkin",
+    "year": 2007
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/causal-sets.json",
+    "./core-data/novelty-checks.json",
+    "./core-data/references.bib",
+    "./core-data/references.json"
+   ],
+   "n_files": 9
+  },
+  {
+   "id": "0810.4525",
+   "claimed": {
+    "title": "Fuzzballs and the Information Paradox: A Summary and Conjectures",
+    "authors": "S. D. Mathur",
+    "year": 2008
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/black-holes-information.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/cross-cutting/12-black-holes-information.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "0901.3775",
+   "claimed": {
+    "title": "Quantum Gravity at a Lifshitz Point",
+    "authors": "P. Horava",
+    "year": 2009
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/causal-dynamical-triangulations.json",
+    "./core-data/fragments/supergravity-uv.json",
+    "./core-data/references.bib",
+    "./core-data/references.json"
+   ],
+   "n_files": 8
+  },
+  {
+   "id": "0905.2326",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./verification/twistors-amplitudes.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "0905.3168",
+   "claimed": {
+    "title": "Black hole entropy and SU(2) Chern-Simons theory",
+    "authors": "J. Engle, K. Noui, A. Perez",
+    "year": 2010
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/loop-quantum-gravity.json",
+    "./core-data/novelty-checks.json",
+    "./core-data/references.bib",
+    "./core-data/references.json"
+   ],
+   "n_files": 9
+  },
+  {
+   "id": "1205.2019",
+   "claimed": {
+    "title": "The Spin Foam Approach to Quantum Gravity",
+    "authors": "A. Perez",
+    "year": 2013
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/loop-quantum-gravity.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/02-loop-quantum-gravity.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "1206.4916",
+   "claimed": {
+    "title": "Emergence and Expansion of Cosmic Space as due to the Quest for Holographic Equipartition",
+    "authors": "T. Padmanabhan",
+    "year": 2012
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/emergent-gravity.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/09-emergent-gravity.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "1207.3123",
+   "claimed": {
+    "title": "Black Holes: Complementarity or Firewalls?",
+    "authors": "A. Almheiri, D. Marolf, J. Polchinski, J. Sully",
+    "year": 2013
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/black-holes-information.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/cross-cutting/12-black-holes-information.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "1208.2422",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/hypotezy/H02-sj-kerr.md",
+    "./knowledge-base/vypocty/VYPOCET-05-sj-rotujici-btz.md",
+    "./knowledge-base/vypocty/VYPOCET-08-sj-kerr-ekvatorialni.md",
+    "./knowledge-base/vypocty/VYPOCET-10-superradiance-eigenvektory.md"
+   ],
+   "n_files": 6
+  },
+  {
+   "id": "1212.4060",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./PROGRESS.md",
+    "./core-data/novelty-checks.json",
+    "./knowledge-base/BRAINSTORM-02.md",
+    "./knowledge-base/hypotezy/H01-gamma-cardy.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "1304.6581",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./verification/noncommutative-geometry.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "1403.4226",
+   "claimed": {
+    "title": "Agravity",
+    "authors": "A. Salvio, A. Strumia",
+    "year": 2014
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/supergravity-uv.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/10-supergravity-uv.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "1411.7041",
+   "claimed": {
+    "title": "Bulk Locality and Quantum Error Correction in AdS/CFT",
+    "authors": "A. Almheiri, X. Dong, D. Harlow",
+    "year": 2015
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/black-holes-information.json",
+    "./core-data/fragments/holography-adscft.json",
+    "./core-data/references.bib",
+    "./core-data/references.json"
+   ],
+   "n_files": 7
+  },
+  {
+   "id": "1412.7546",
+   "claimed": {
+    "title": "SL(2,C) Chern-Simons theory, a non-planar graph operator, and 4D quantum gravity with a cosmological constant",
+    "authors": "H. Haggard, M. Han, W. Kaminski, A. Riello",
+    "year": 2015
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/loop-quantum-gravity.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/02-loop-quantum-gravity.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "1611.03470",
+   "claimed": {
+    "title": "Moving the CFT into the bulk with T-Tbar",
+    "authors": "L. McGough, M. Mezei, H. Verlinde",
+    "year": 2016
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/holography-adscft.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/cross-cutting/11-holography-adscft.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "1706.05804",
+   "claimed": {
+    "title": "Weinberg's No Go Theorem in Quantum Gravity",
+    "authors": "I. Oda",
+    "year": 2017
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/conceptual-problems.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/foundations/16-conceptual-problems.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "1707.06050",
+   "claimed": {
+    "title": "A Spin Entanglement Witness for Quantum Gravity",
+    "authors": "S. Bose, A. Mazumdar, G. W. Morley et al.",
+    "year": 2017
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/calculations/bmv-as-phase/calc.py",
+    "./core-data/fragments/conceptual-problems.json",
+    "./core-data/fragments/experimental-tests.json",
+    "./core-data/fragments/semiclassical-gravity.json"
+   ],
+   "n_files": 14
+  },
+  {
+   "id": "1707.08133",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/vypocty/VYPOCET-05-sj-rotujici-btz.md",
+    "./papers/REVIZE-PRO-CLOVEKA.md",
+    "./papers/draft-01-sj-rotating-spacetimes/draft.md"
+   ],
+   "n_files": 3
+  },
+  {
+   "id": "1708.07445",
+   "claimed": {
+    "title": "Towards the map of quantum gravity",
+    "authors": "J. Mielczarek, T. Trześniewski",
+    "year": 2018
+   },
+   "in_references_json": false,
+   "files": [
+    "./core-data/findings.json",
+    "./core-data/novelty-checks.json",
+    "./knowledge-base/00-INDEX.md",
+    "./knowledge-base/BRAINSTORM-01.md"
+   ],
+   "n_files": 9
+  },
+  {
+   "id": "1712.02803",
+   "claimed": {
+    "title": "Bulk Entanglement Gravity without a Boundary: Towards Finding Einstein's Equation in Hilbert Space",
+    "authors": "C. Cao, S. M. Carroll",
+    "year": 2018
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/emergent-gravity.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/09-emergent-gravity.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "1807.06211",
+   "claimed": {
+    "title": "Planck 2018 results. X. Constraints on inflation",
+    "authors": "Planck Collaboration",
+    "year": 2020
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/quantum-cosmology.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/phenomenology/18-quantum-cosmology.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "1909.11063",
+   "claimed": {
+    "title": "Trans-Planckian Censorship and the Swampland",
+    "authors": "A. Bedroya, C. Vafa",
+    "year": 2020
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/quantum-cosmology.json",
+    "./core-data/fragments/swampland.json",
+    "./core-data/references.bib",
+    "./core-data/references.json"
+   ],
+   "n_files": 8
+  },
+  {
+   "id": "1910.01648",
+   "claimed": {
+    "title": "Festina Lente: EFT Constraints from Charged Black Hole Evaporation in de Sitter",
+    "authors": "M. Montero, T. Van Riet, V. Venken",
+    "year": 2020
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/swampland.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/cross-cutting/14-swampland.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "2203.13011",
+   "claimed": {
+    "title": "The SAGEX Review on Scattering Amplitudes",
+    "authors": "G. Travaglini et al. (eds.)",
+    "year": 2022
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/twistors-amplitudes.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/approaches/08-twistors-amplitudes.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "2204.11616",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/hypotezy/H01-gamma-cardy.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "2308.15440",
+   "claimed": {
+    "title": "Detecting single gravitons with quantum sensing",
+    "authors": "G. Tobar, S. K. Manikandan, T. Beitel, I. Pikovski",
+    "year": 2024
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/experimental-tests.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/phenomenology/17-experimental-tests.md"
+   ],
+   "n_files": 5
+  },
+  {
+   "id": "gr-qc/0512069",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/approaches/06-group-field-theory.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "gr-qc/0601127",
+   "claimed": {
+    "title": "Why Eppley and Hannah's Experiment Isn't",
+    "authors": "J. Mattingly",
+    "year": 2006
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/conceptual-problems.json",
+    "./core-data/references.bib",
+    "./core-data/references.json",
+    "./knowledge-base/foundations/16-conceptual-problems.md"
+   ],
+   "n_files": 4
+  },
+  {
+   "id": "hep-th/0004134",
+   "claimed": null,
+   "in_references_json": false,
+   "files": [
+    "./knowledge-base/cross-cutting/14-swampland.md"
+   ],
+   "n_files": 1
+  },
+  {
+   "id": "hep-th/9802109",
+   "claimed": {
+    "title": "Gauge Theory Correlators from Non-Critical String Theory",
+    "authors": "S. S. Gubser, I. R. Klebanov, A. M. Polyakov",
+    "year": 1998
+   },
+   "in_references_json": true,
+   "files": [
+    "./core-data/fragments/holography-adscft.json",
+    "./core-data/fragments/string-theory.json",
+    "./core-data/references.bib",
+    "./core-data/references.json"
+   ],
+   "n_files": 8
+  }
+ ]
+}
