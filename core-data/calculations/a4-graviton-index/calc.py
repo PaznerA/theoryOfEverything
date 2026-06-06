@@ -63,11 +63,11 @@ Conventions (all verified against the cited PDFs/HTML during this calc):
 
 import sympy as sp
 import json
+import os
 
 R = sp.Rational
 pi = sp.pi
-OUT = ("/Users/pazny/projects/theoryOfEverything/core-data/calculations/"
-       "a4-graviton-index/")
+OUT = os.path.dirname(os.path.abspath(__file__)) + "/"
 
 results = {"meta": {
     "title": "VYPOCET-11: graviton sector + index-theorem cross-check for -18/11",

@@ -1,0 +1,13 @@
+# Pinned to the exact versions used for the 2026-06-06 deterministic
+# reproduction run (20/20 calc.py bit-identical) — see reports/2026-06-06-review.md §(f).
+numpy==2.4.4
+scipy==1.17.1
+sympy==1.14.0
+matplotlib==3.10.9
+
+# interactive research
+jupyterlab>=4.4,<5
+ipykernel>=6.29
+
+# testing
+pytest>=8,<9

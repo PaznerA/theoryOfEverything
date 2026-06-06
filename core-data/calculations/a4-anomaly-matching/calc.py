@@ -49,6 +49,9 @@ Conventions (verified against literature):
 
 import sympy as sp
 import json
+import os
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
 
 # ----------------------------------------------------------------------------
 # 0. exact rational helpers
@@ -352,8 +355,7 @@ print("\n[VERDICT]")
 for k, v in verdict.items():
     print(f"  {k}: {v}")
 
-with open("/Users/pazny/projects/theoryOfEverything/core-data/calculations/"
-          "a4-anomaly-matching/results.json", "w") as fh:
+with open(os.path.join(_HERE, "results.json"), "w") as fh:
     json.dump(results, fh, indent=2, ensure_ascii=False)
 print("\nWrote results.json")
 
@@ -383,6 +385,5 @@ ax.set_title("a4 matching: spectral-action $C^2/$Euler ratio vs trace-anomaly "
 ax.legend(loc="lower right", fontsize=9)
 ax.grid(axis="y", alpha=0.3)
 fig.tight_layout()
-fig.savefig("/Users/pazny/projects/theoryOfEverything/core-data/calculations/"
-            "a4-anomaly-matching/ratio_match.png", dpi=140)
+fig.savefig(os.path.join(_HERE, "ratio_match.png"), dpi=140)
 print("Wrote ratio_match.png")

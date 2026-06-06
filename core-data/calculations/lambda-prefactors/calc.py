@@ -28,9 +28,12 @@ import numpy as np
 from fractions import Fraction
 import sympy as sp
 import json
+import os
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
 
 # ============================================================
 # 1. FUNDAMENTAL CONSTANTS (CODATA 2018 / Planck 2018)
@@ -430,7 +433,7 @@ ax2.set_xlim(0, 2)
 ax2.set_ylim(0.95, 1.10)
 
 plt.tight_layout()
-plt.savefig('/Users/pazny/projects/theoryOfEverything/core-data/calculations/lambda-prefactors/lambda_prefactor_comparison.png',
+plt.savefig(os.path.join(_HERE, 'lambda_prefactor_comparison.png'),
             dpi=150, bbox_inches='tight')
 plt.close()
 print("\nPlot saved: lambda_prefactor_comparison.png")
@@ -554,7 +557,7 @@ results = {
 }
 
 import json
-with open('/Users/pazny/projects/theoryOfEverything/core-data/calculations/lambda-prefactors/results.json', 'w') as f:
+with open(os.path.join(_HERE, 'results.json'), 'w') as f:
     json.dump(results, f, indent=2, ensure_ascii=False)
 
 print("Results saved: results.json")

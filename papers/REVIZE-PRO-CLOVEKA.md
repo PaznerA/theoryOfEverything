@@ -235,6 +235,13 @@ spustit i `sj-vn-type/calc_uncertainty.py` (regeneruje pole `*_se_regression`/`*
 wall-clock pole). Viz `reports/2026-06-06-review.md` §(f). Lidská nezávislá reprodukce
 tím NENÍ nahrazena — běžela na stejném stroji a prostředí.
 
+**Aktualizace (2026-06-06 večer):** 5 skriptů mělo natvrdo absolutní cesty hosta (opraveno
+na `__file__`-relativní; detail v review §f) — příkazy výše teď fungují z libovolného
+umístění. Nejjednodušší cesta k reprodukci je nyní dockerizované prostředí:
+`cd app && docker compose run --rm test` (rychlá sada) nebo
+`docker compose run --rm -e FULL_REPRO=1 test` (všech 20, ~50 min) — pinované verze
+knihoven odpovídají ověřenému prostředí (viz `app/README.md`).
+
 ---
 
 ## 5. Co v draftech není — a proč je to dobře

@@ -1,0 +1,57 @@
+name: theory-of-everything
+
+x-base: &base
+  build: .
+  image: toe-research:latest
+  volumes:
+    - ..:/workspace
+  working_dir: /workspace
+  environment:
+    - MPLBACKEND=Agg
+    - OMP_NUM_THREADS=4
+    - PYTHONHASHSEED=0
+
+services:
+  # Interactive research environment (Jupyter Lab over the whole repo).
+  # http://localhost:8888 (token: toe)
+  research:
+    <<: *base
+    ports:
+      - "8888:8888"
+    environment:
+      - MPLBACKEND=Agg
+      - OMP_NUM_THREADS=4
+      - PYTHONHASHSEED=0
+      - JUPYTER_TOKEN=toe
+    command: >
+      jupyter lab --ip 0.0.0.0 --port 8888 --no-browser --allow-root
+      --ServerApp.root_dir=/workspace
+
+  # Smoke + reproduction tests (fast subset by default; FULL_REPRO=1 for all 20).
+  # docker compose run --rm test
+  test:
+    <<: *base
+    profiles: ["test"]
+    command: pytest app/tests -v
+
+  # Full deterministic reproduction of all calculations (writes
+  # workflows/review-prep/repro-results.json + repro.log).
+  # docker compose run --rm repro
+  repro:
+    <<: *base
+    profiles: ["repro"]
+    command: python workflows/review-prep/repro-runner.py
+
+  # Presentation placeholder: static file server over the repo (read-only).
+  # Will be replaced by the minimalist site-builder framework (roadmap step 4).
+  # docker compose --profile web up web  ->  http://localhost:8080
+  web:
+    build: .
+    image: toe-research:latest
+    profiles: ["web"]
+    ports:
+      - "8080:8080"
+    volumes:
+      - ..:/workspace:ro
+    working_dir: /workspace
+    command: python -m http.server 8080 --directory /workspace

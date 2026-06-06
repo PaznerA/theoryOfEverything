@@ -1,6 +1,6 @@
 # Progress tracker — Theory of Everything
 
-> ⏸️ **PAUZA (2026-06-06 večer, na žádost uživatele)** — velké review KOMPLETNÍ: report [`reports/2026-06-06-review.md`](reports/2026-06-06-review.md). Část 1: verifikace 150 arXiv ID (7 chyb opraveno), audit 24 nálezů (cesty + caveaty), opravy draftů (a_err rekonstrukce, CST konvence), doplnění grafu (5 nových hran, 2 nové uzly). Část 2: deterministická reprodukce — **20/20 calc.py bitově identických** (+ opraven latentní print-bug v sj-threshold-scan, zdokumentovány 2 skryté závislosti na pořadí spouštění). **Obnovení:** krok 3 roadmapy (kombinovatelné simulační funkce z formulas.json) nebo testy H5g-1/H5g-3 z BRAINSTORM-05 („na jedno odpoledne").
+> ⏸️ **PAUZA (2026-06-06 večer, na žádost uživatele)** — velké review KOMPLETNÍ: report [`reports/2026-06-06-review.md`](reports/2026-06-06-review.md). Část 1: verifikace 150 arXiv ID (7 chyb opraveno), audit 24 nálezů (cesty + caveaty), opravy draftů (a_err rekonstrukce, CST konvence), doplnění grafu (5 nových hran, 2 nové uzly). Část 2: deterministická reprodukce — **20/20 calc.py bitově identických** (+ opraven latentní print-bug v sj-threshold-scan, zdokumentovány 2 skryté závislosti na pořadí spouštění). **Obnovení:** krok 3 roadmapy (kombinovatelné simulační funkce z formulas.json) nebo testy H5g-1/H5g-3 z BRAINSTORM-05 („na jedno odpoledne"). **Doplněk (večer):** založena `app/` — dockerizované prostředí (Jupyter research, pytest reprodukční sada, repro-runner, web placeholder); detaily `app/README.md`.
 
 ## Roadmapa (zadání uživatele, 2026-06-06)
 

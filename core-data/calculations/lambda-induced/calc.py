@@ -87,11 +87,11 @@ does NOT help) is a full result.
 
 import sympy as sp
 import json
+import os
 
 R = sp.Rational
 pi = sp.pi
-OUT = ("/Users/pazny/projects/theoryOfEverything/core-data/calculations/"
-       "lambda-induced/")
+OUT = os.path.dirname(os.path.abspath(__file__)) + "/"
 
 results = {"meta": {
     "title": "VYPOCET-17: cosmological constant from fermion-induced gravity (H4g-3)",

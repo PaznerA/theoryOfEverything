@@ -22,8 +22,14 @@
 
 ## Denní zprávy a reviewové reporty (`reports/`)
 
-- [../reports/2026-06-06-review.md](../reports/2026-06-06-review.md) — **Velké review část 1** (2026-06-06): verifikace 150 arXiv ID (7 chyb opraveno, tabulka problémových ID); audit 24 nálezů (cesty k evidenci + caveaty, žádný status nezměněn); opravy draftů (a_err rekonstrukce nejistot, CST konvence d_s=8 + D vs D_space); doplnění grafu (5 nových hran, 2 nové uzly, VNA pilíř na 11 hranách); nové statistiky registrů (625 uzlů, 2476 hran, 292 connections, 115 barely, 587 ref.); část 2 (reprodukce 20 calc.py) probíhá.
+- [../reports/2026-06-06-review.md](../reports/2026-06-06-review.md) — **Velké review část 1** (2026-06-06): verifikace 150 arXiv ID (7 chyb opraveno, tabulka problémových ID); audit 24 nálezů (cesty k evidenci + caveaty, žádný status nezměněn); opravy draftů (a_err rekonstrukce nejistot, CST konvence d_s=8 + D vs D_space); doplnění grafu (5 nových hran, 2 nové uzly, VNA pilíř na 11 hranách); nové statistiky registrů (625 uzlů, 2476 hran, 292 connections, 115 barely, 587 ref.); část 2 (reprodukce): **20/20 calc.py bitově identických** (§f — vč. 2 skrytých závislostí pořadí a opravy latentního print-bugu).
 - [../reports/2026-06-06-day-report.md](../reports/2026-06-06-day-report.md) — Závěrečná denní zpráva (2026-06-06): přehled celého dne výzkumu (kola 3–9), souhrnné statistiky (20 výpočtů, 24 nálezů, 4 drafty), stav všech hypotéz, uzavřené fronty, doporučení a plán pro velké review.
+
+---
+
+## Infrastruktura (`app/`)
+
+- [../app/README.md](../app/README.md) — Dockerizované prostředí (research/testing/prezentace): Jupyter Lab nad repem, pytest reprodukční sada (rychlá 6 výpočtů + plná 20 za `FULL_REPRO=1`), plný repro-runner, statický web placeholder pro budoucí site-builder. Verze knihoven pinované na stav bitové reprodukce 2026-06-06.
 
 ---
 

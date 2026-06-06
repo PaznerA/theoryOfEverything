@@ -58,6 +58,7 @@ All numbers below are computed; literature values are used ONLY to validate.
 """
 
 import json
+import os
 import numpy as np
 import sympy as sp
 from scipy import integrate
@@ -65,7 +66,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-OUTDIR = "/Users/pazny/projects/theoryOfEverything/core-data/calculations/ds-classification"
+OUTDIR = os.path.dirname(os.path.abspath(__file__))
 
 # ----------------------------------------------------------------------------
 # PART A.  EXACT SYMBOLIC MASTER FORMULA  d_s^UV = D / gamma
