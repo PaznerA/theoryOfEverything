@@ -1,0 +1,328 @@
+{
+  "meta": {
+    "task": "VYPOCET-21 TEST H5g-1 (BRAINSTORM-05): does the 4D truncated area-law SSEE S~sqrt(N) ITSELF separate type II_1 from II_inf?",
+    "dimension": "4D de Sitter static patch (conformal sech^2 radial slab (t, r*, x1, x2); 4D link-matrix Green on the flat order)",
+    "geometry": "static patch in tortoise r*=l arctanh(r/l) + transverse box; dS PROPER measure dN ~ sech^2(r*/l) dt dr* dx1 dx2 (radial sech^2, transverse flat) vs matched flat radial-box control.",
+    "library_extension": "toe.causet.sprinkle_ds_static_patch4d (added this round; validated app/tests/test_toe_causet_ds4d.py).",
+    "conformal_weight_caveat": "4D massless scalar is NOT conformally invariant: the conformal factor does NOT drop out of the exact propagator. This is the SAME controlled approximation as VYPOCET-19's 2D conformal trick lifted to 4D -- it PRESERVES the flat causal structure in (t,r*,x1,x2) and the dS proper MEASURE (sech^2 => bounded point budget = II_1 signal), but NOT the exact curved 4D Wightman function. Tests the geometric II_1 vs II_inf boundedness in the truncated area-law SSEE, not the exact dS propagator.",
+    "n_max_F019": "n_max = 2 N^(3/4) (Surya-Nomaan-X-Yazdi 2008.07697; 4D area-law rank; validated VYPOCET-06 / vn-type-slab-4d).",
+    "conventions": {
+      "metric_dS": "static patch -(1-r^2/l^2)dt^2 + ... ; r*=l arctanh(r/l)",
+      "conformal_factor": "Omega^2 = sech^2(r*/l)",
+      "proper_measure": "dN ~ sech^2(r*/l) dt dr* dx1 dx2 (radial sech^2)",
+      "G_R_4D": "K_R = a L, a = sqrt(rho)/(2 pi sqrt6) (Johnston 0909.0944)",
+      "iDelta": "i(G_R - G_R^T), Hermitian, +/- paired (asserted <1e-12)",
+      "SSEE": "W_O v = mu iDelta_O v ; S = sum mu ln|mu| ; pairs (mu,1-mu)",
+      "n_max": "2 N^(3/4) rank truncation (keep top n_max +/- modes)",
+      "modular_energy": "eps = ln[mu/(mu-1)] (Casini-Huerta 0905.2562)"
+    },
+    "references": {
+      "CLPW": "arXiv:2206.10780 (dS static-patch algebra type II_1)",
+      "area_law_rank": "arXiv:2008.07697 (n_max = alpha N^((d-1)/d))",
+      "G_4D": "arXiv:0909.0944 (Johnston 4D causal-set Green)",
+      "SJ_SSEE": "arXiv:1611.10281 (Sorkin-Yazdi SSEE double truncation)",
+      "dS_2D": "VYPOCET-19 / F-023 (2D dS: only content discriminates)",
+      "area_law_4D": "VYPOCET-06 / F-019 (4D type-II area law S~sqrt(N))"
+    }
+  },
+  "part1_H5g1_truncated_area_law_discriminator": {
+    "description": "H5g-1 discriminator: 4D TRUNCATED area-law SSEE (n_max=2 N^(3/4), F-019) across a GROWING bulk r* cut (radial extent = cut_frac * R*_box, x1=0 half-space face) vs the radial box edge R*_box -> horizon, at fixed proper density. STRONG H5g-1: the truncated SSEE ALONE separates II_1 (dS: S saturates as the bounded patch is exhausted) from II_inf (flat control: S grows) -- unlike 2D (F-023) where only region content discriminated.",
+    "rho_proper": 120.0,
+    "n_seeds": 4,
+    "cut_fraction": 0.5,
+    "n_max_prescription": "2 * N^(3/4) (F-019 / 2008.07697 4D area-law rank)",
+    "Rstar_box": [
+      1.6,
+      2.2,
+      2.8,
+      3.5,
+      4.3,
+      5.2
+    ],
+    "r_edge_box": [
+      0.9216685544064713,
+      0.9757431300314515,
+      0.992631520201128,
+      0.9981778976111987,
+      0.9996318561900731,
+      0.9999391368861988
+    ],
+    "desitter": {
+      "N_total_mean": [
+        442.0,
+        468.0,
+        476.0,
+        479.0,
+        480.0,
+        480.0
+      ],
+      "N_total_saturating_fit": {
+        "cap": 479.99883015095406,
+        "xi": 0.5190635452675585,
+        "R2": 0.9999079436285269
+      },
+      "S_trunc_mean": [
+        30.58865118029719,
+        36.96318911004241,
+        37.71920545178658,
+        37.12048885866163,
+        40.81151380199019,
+        44.961487123934376
+      ],
+      "S_trunc_std": [
+        2.9249453317822294,
+        2.7400237662222446,
+        4.240451309499838,
+        2.228651550976435,
+        3.2184833309837013,
+        7.281152130050083
+      ],
+      "S_trunc_late_slope": 4.612325574971493,
+      "S_trunc_full_slope": 3.3077950933998896,
+      "S_trunc_net_late": 7.840998265272745,
+      "S_trunc_powerlaw_exp": 0.27370305661888644,
+      "S_trunc_saturating_fit": {
+        "S_cap": 71.36257969635565,
+        "B": 45.99068565630443,
+        "xi": 9.91806020341137,
+        "R2": 0.8706334366201216
+      },
+      "S_trunc_AIC": {
+        "aic": {
+          "saturating": 11.354694485921861,
+          "linear": 9.424184260130366
+        },
+        "best": "linear",
+        "delta_aic": {
+          "saturating": 1.9305102257914957,
+          "linear": 0.0
+        }
+      },
+      "S_full_mean": [
+        30.706391583682464,
+        36.866628759282804,
+        39.319138488320576,
+        38.12997331035164,
+        38.57013290860306,
+        39.007981425861374
+      ],
+      "n_sub_mean": [
+        108.75,
+        133.0,
+        153.75,
+        155.5,
+        159.0,
+        163.75
+      ]
+    },
+    "flat_control": {
+      "N_total_mean": [
+        768.0,
+        1056.0,
+        1344.0,
+        1680.0,
+        2064.0,
+        2496.0
+      ],
+      "N_total_slope": 479.9999999999998,
+      "S_trunc_mean": [
+        43.03097270251554,
+        48.16100743273569,
+        58.28218926127747,
+        64.45619968323825,
+        72.83624674701144,
+        76.60877649644222
+      ],
+      "S_trunc_std": [
+        4.984409122403421,
+        1.6189509375472284,
+        2.8444521931822386,
+        2.373823790763985,
+        2.4679095602834202,
+        2.446271807604946
+      ],
+      "S_trunc_late_slope": 7.08725691427488,
+      "S_trunc_full_slope": 9.799016164204836,
+      "S_trunc_net_late": 12.152576813203964,
+      "S_trunc_powerlaw_exp": 0.5203013750737517,
+      "S_trunc_AIC": {
+        "aic": {
+          "saturating": 8.67581483933131,
+          "linear": 12.819608503727043
+        },
+        "best": "saturating",
+        "delta_aic": {
+          "saturating": 0.0,
+          "linear": 4.143793664395734
+        }
+      },
+      "S_full_mean": [
+        45.09289645150346,
+        55.63986254717389,
+        73.02296625047143,
+        86.16809002697102,
+        99.17952480355636,
+        117.46419208741244
+      ],
+      "n_sub_mean": [
+        130.0,
+        182.0,
+        249.5,
+        310.0,
+        354.5,
+        426.0
+      ]
+    },
+    "S_trunc_late_slope_ratio_flat_over_dS": 1.536590771634477,
+    "S_trunc_full_slope_ratio_flat_over_dS": 2.9624012030724067,
+    "slope_separation_ok": true,
+    "dS_truncS_saturates_II1": false,
+    "flat_truncS_grows_IIinf": true,
+    "H5g1_truncated_SSEE_partial_separation": true,
+    "H5g1_truncated_SSEE_discriminates": false,
+    "content_tracking_crosscheck": {
+      "desitter": {
+        "N_total_mean": [
+          442.0,
+          468.0,
+          476.0,
+          479.0,
+          480.0,
+          480.0
+        ],
+        "S_full_mean": [
+          37.76434995028305,
+          23.23281889931955,
+          12.165212657366972,
+          6.523300944414453,
+          2.2827464472992816,
+          0.0
+        ],
+        "cap": 480.2939038639767,
+        "B": 700.1767165262171,
+        "xi": 0.5497487438442211,
+        "R2": 0.999681501239951,
+        "net_late": -6.523300944414453,
+        "dS_saturates_II1": true
+      },
+      "flat": {
+        "N_total_mean": [
+          768.0,
+          1056.0,
+          1344.0,
+          1680.0,
+          2064.0,
+          2496.0
+        ],
+        "S_full_mean": [
+          65.33562828833308,
+          68.99288953877713,
+          70.43265097972377,
+          76.40400216677486,
+          73.99245708650702,
+          76.28420051215531
+        ],
+        "slope": 479.9999999999998,
+        "net_late": -0.11980165461955039,
+        "flat_grows_IIinf": true
+      },
+      "II1_vs_IIinf_discriminated": true
+    }
+  },
+  "part2_area_law_scaling": {
+    "description": "4D area-law scaling cross-check at FIXED dS sub-region (increasing N): truncated SSEE (n_max=2 N^(3/4)) follows the 4D type-II area law S ~ N^a, a ~ 1/2 (F-019); full SSEE is volume/divergent (III). Confirms the truncation is the operative area-law regulator on the dS patch.",
+    "RSTAR_BOX": 2.5,
+    "entangling_cut": "x1>0 & |x2|<0.7*XPERP & r*<1.5",
+    "Ns": [
+      434,
+      671,
+      1026,
+      1539,
+      2131,
+      2407
+    ],
+    "rho_proper_list": [
+      110.0,
+      170.0,
+      260.0,
+      390.0,
+      540.0,
+      610.0
+    ],
+    "n_seeds": 4,
+    "pairing_residual_rel_max": 6.840903998030375e-15,
+    "S_trunc_mean": [
+      36.74224255212731,
+      47.317012335882126,
+      71.40556758699645,
+      92.83391294035033,
+      110.40771664297723,
+      124.07107831392602
+    ],
+    "S_trunc_std": [
+      2.1129572951223925,
+      2.752078954587209,
+      5.476971193840478,
+      0.822667664067155,
+      5.340610745900224,
+      2.8783527007605243
+    ],
+    "S_full_mean": [
+      35.43547861862822,
+      53.414446646869486,
+      87.69098420911217,
+      131.20978514151093,
+      175.65158990830918,
+      199.88066696663924
+    ],
+    "pile_full_mean": [
+      6.0,
+      9.0,
+      14.5,
+      21.5,
+      29.25,
+      32.25
+    ],
+    "pile_trunc_mean": [
+      0.25,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "S_trunc_area_law_fit": {
+      "exponent_a": 0.7165025834052896,
+      "se": 0.02901445956146511,
+      "ci68": [
+        0.6972544309897949,
+        0.7390519443582788
+      ],
+      "r2": 0.9934835044676429,
+      "target_F019": 0.5,
+      "area_law_ok": false,
+      "validated": false
+    },
+    "S_full_fit": {
+      "exponent_a": 1.0172704377531032,
+      "se": 0.0180625040180486,
+      "ci68": [
+        1.0088199028889522,
+        1.0264059344249175
+      ],
+      "r2": 0.9987405071067084
+    },
+    "verdict_4D_area_law_on_dS": false
+  },
+  "VERDICT": {
+    "H5g1_truncated_SSEE_discriminates_STRONG": false,
+    "H5g1_truncated_SSEE_PARTIAL_separation": true,
+    "content_tracking_discriminates": true,
+    "fixed_region_4D_area_law_ok": false,
+    "fixed_region_4D_area_law_exponent": 0.7165025834052896,
+    "outcome": "PARTIAL",
+    "overall": "PARTIAL H5g-1: the 4D truncated area-law SSEE DOES show a real, 4D-specific separation that did NOT exist in 2D -- the dS truncated S rises ~3.0x more SHALLOWLY than the flat control (dS exponent a=0.27 vs flat a=0.52 in R*_box), reflecting the sech^2 proper-area cap -- but it does NOT fully SATURATE at the accessible N (the growing entangling cut at fixed density still adds dS sub-region points), so the clean saturation-vs-growth of STRONG H5g-1 is not reached. The region content (N_total cap R2=1.0, S_full) discriminates II_1 from II_inf decisively, exactly as 2D F-023."
+  },
+  "h5g6_input": "F-023 (2D: only content discriminates) + F-019 (4D area law S~sqrt(N)) + THIS RESULT together support a dS SECTION in draft-04, NOT yet a standalone draft-05. The 4D truncated area-law SSEE shows a GENUINE new separation absent in 2D (dS rises ~3.0x more shallowly than flat; dS R*-exponent 0.27 vs flat 0.52), and the content discriminator (N_total cap R2=1.0 vs linear flat growth) cleanly lifts F-023 to 4D. But the truncated entropy does not fully SATURATE at the dense-eigh-accessible N<=2500: the F-019 fixed-region area-law exponent comes out a=0.72 (above the clean 0.5; dS radial geometry steepens it), and the horizon-approach dS S still creeps up because the growing-cut-at-fixed-density adds dS points faster than the sech^2 cap removes them. Decision: present as a dS SECTION in draft-04 (crossed-product/vN-type), pairing the 2D+4D content discriminator with the PARTIAL 4D truncated-entropy signal, and flag the clean-saturation test as needing larger N (sparse/iterative eigensolvers, rho>~10^3, larger l, or a fixed-area entangling cut with a denser radial horizon sweep) before it can carry a standalone draft-05. The conformal-weight caveat (4D scalar not conformally invariant; causal structure + measure preserved, exact propagator not) must be stated honestly either way.",
+  "runtime_s": 292.47253799438477
+}

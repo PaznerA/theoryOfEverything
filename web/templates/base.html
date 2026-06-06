@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} — Theory of Everything</title>
+  <link rel="stylesheet" href="{{ rel('static/style.css') }}">
+  {%- if math %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  {%- endif %}
+</head>
+<body>
+<a class="skip-link" href="#main">Přeskočit na obsah</a>
+<header class="topbar">
+  <button class="nav-toggle" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="{{ rel('index.html') }}">Theory of Everything</a>
+  <span class="brand-sub">prezentační view nad repozitářem</span>
+</header>
+
+<div class="layout">
+  <nav class="sidebar" aria-label="Hlavní navigace">
+    {{ sidebar|safe }}
+  </nav>
+
+  <main id="main" class="content">
+    {%- if breadcrumbs %}
+    <nav class="breadcrumbs" aria-label="Drobečková navigace">
+      {%- for crumb in breadcrumbs %}
+        {%- if crumb.href %}<a href="{{ crumb.href }}">{{ crumb.label }}</a>{% else %}<span>{{ crumb.label }}</span>{% endif %}
+        {%- if not loop.last %} <span class="sep">/</span> {% endif %}
+      {%- endfor %}
+    </nav>
+    {%- endif %}
+
+    {%- if is_paper %}
+    <div class="paper-banner" role="alert">
+      ⚠️ INTERNÍ AI-ASISTOVANÝ DRAFT — nepodáno, vyžaduje lidskou revizi (viz REVIZE-PRO-CLOVEKA)
+    </div>
+    {%- endif %}
+
+    {%- if source_path %}
+    <p class="source-note">Zdroj: <code>{{ source_path }}</code></p>
+    {%- endif %}
+
+    {% block content %}{{ body|safe }}{% endblock %}
+  </main>
+</div>
+
+<footer class="sitefoot">
+  <p>Statický build z živých dat repozitáře · sestaveno {{ build_date }} · {{ page_count }} stránek</p>
+</footer>
+
+{%- if math %}
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+        onload="renderMathInElement(document.getElementById('main'), {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+          ],
+          throwOnError: false
+        });"></script>
+{%- endif %}
+</body>
+</html>

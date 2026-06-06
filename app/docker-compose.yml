@@ -42,9 +42,14 @@ services:
     profiles: ["repro"]
     command: python workflows/review-prep/repro-runner.py
 
-  # Presentation placeholder: static file server over the repo (read-only).
-  # Will be replaced by the minimalist site-builder framework (roadmap step 4).
+  # Presentation site: the minimalist static-site builder (roadmap step 4).
+  # Builds web/dist/ from the repo's live markdown + JSON registries, then
+  # serves it. The site is a VIEW of the repo, rebuilt on every container start.
   # docker compose --profile web up web  ->  http://localhost:8080
+  #
+  # NOTE: the volume is now WRITABLE (no :ro) because build.py writes web/dist/.
+  # The image must be rebuilt so markdown+jinja2 from requirements.txt are
+  # present: `docker compose build web` (or `--profile web build`).
   web:
     build: .
     image: toe-research:latest
@@ -52,6 +57,6 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ..:/workspace:ro
+      - ..:/workspace
     working_dir: /workspace
-    command: python -m http.server 8080 --directory /workspace
+    command: sh -c "python web/build.py && python -m http.server 8080 --directory web/dist"

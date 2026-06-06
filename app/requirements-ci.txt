@@ -1,0 +1,9 @@
+# CI subset of app/requirements.txt — same pinned compute stack, no jupyterlab.
+# Pins must stay in lockstep with app/requirements.txt (the verified environment).
+numpy==2.4.4
+scipy==1.17.1
+sympy==1.14.0
+matplotlib==3.10.9
+markdown>=3.8
+jinja2>=3.1
+pytest>=8,<9

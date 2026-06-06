@@ -1,0 +1,390 @@
+{
+  "task": "VYPOCET-22: TEST H5g-3 -- codim-2 joint as the right 4D locus of modular-flow non-geometricity (the 4D analogue of the 2D corner)",
+  "hypothesis": "H5g-3 (BRAINSTORM-05, medium-high)",
+  "claim": "the VYPOCET-20 (F-024) 4D diamond null-tip fails the 2D corner mechanism because the tip is a degenerating 2-sphere; the right 4D locus is a CODIM-2 JOINT (wedge edge = flat 2-plane). Test whether modular non-geometricity concentrates toward the edge (codim-2-generic) or not (2D-only).",
+  "conventions": {
+    "object": "smeared Benincasa-Dowker eps=0.6, G_R=B_eps^{-1} (VYPOCET-20 PRIMARY)",
+    "BD_smeared_4D": "alpha4=-4/sqrt6, beta4=4/sqrt6, f4(n,eps); arXiv:1305.2588/1507.00330",
+    "iDelta": "i(G_R-G_R^T); W=SJ positive part (rel-floor 1e-10, VYPOCET-09/20)",
+    "geometry_wedge": "4D Minkowski box {|t|,|x|,|y|,|z|<=0.5}, right Rindler wedge W={x>|t|}, cut O={x>0}; entangling surface = codim-2 EDGE E={t=0,x=0} (flat 2-plane); distance-to-edge d_E=sqrt(t^2+x^2)",
+    "geometry_slab_control": "volume/density-matched box, cut O={x>0}; flat codim-1 hyperplane x=0, NO codim-2 joint; control locus distance |x|",
+    "modular_kernel": "one-particle K(x,y) from SSEE generalized eigenproblem W_O v=mu iDelta_O v; eps=ln[mu/(mu-1)]; site basis (Casini-Huerta 0905.2562; Sorkin-Yazdi 1611.10281)",
+    "probe": "UNTRUNCATED SJ modular kernel (kappa=None), same as VYPOCET-18/20",
+    "machine_precision_invariant": "iDelta +/- pairing residual_rel < 1e-12 asserted on EVERY region/seed (toe.causet.causal_diagnostics)",
+    "vs_VYPOCET20": "SAME dynamical object (smeared BD eps=0.6); the ONLY change is the GEOMETRY/LOCUS: codim-2 wedge edge instead of the diamond null-tip"
+  },
+  "lib_usage": {
+    "toe.causet": [
+      "causal_matrix (4D Minkowski order)",
+      "pauli_jordan",
+      "causal_diagnostics (pairing invariant)"
+    ],
+    "toe.fits": [
+      "regression_se",
+      "powerlaw_fit",
+      "validate_against",
+      "Measurement"
+    ],
+    "toe.viz": [
+      "powerlaw_panel (wedge nl power-law panel)"
+    ],
+    "missing_from_toe": [
+      "smeared BD d'Alembertian (toe.causet ships only the SHARP bd_dalembertian_inverse; smeared eps object reproduced in helpers)",
+      "modular kernel K_site export (toe.entropy.ssee returns only S)",
+      "rel-floor option on toe.sj.sj_state (BD-inverse needs relative cut)",
+      "codim-2 / wedge region builders + nl-vs-locus diagnostic"
+    ]
+  },
+  "lib_proposals": {
+    "toe.causet.sprinkle_wedge_box4d": "sprinkle_wedge_box4d(N, rng, *, t_half=0.5, x_half=0.5, yz_half=0.5) -> (N,4)  # t-symmetric Minkowski box whose x>0 cut has its entangling surface on the codim-2 Rindler edge {t=0,x=0}",
+    "toe.causet.bd_smeared_dalembertian_inverse": "bd_smeared_dalembertian_inverse(C, rho, eps) -> (N,N)  # smeared BD G_R=B_eps^{-1}; the eps-sibling of the existing SHARP bd_dalembertian_inverse(...,dim=4); alpha4=-4/sqrt6, beta4=4/sqrt6, f4(n,eps) (Aslanbeigi-Saravani-Sorkin 1305.2588)",
+    "toe.sj.sj_state_relfloor": "sj_state(iDelta, *, tol=1e-12, rel_floor=None)  # add a RELATIVE positive-eigenvalue floor (rel_floor*lmax); needed for BD-inverse objects (cond ~1e5-1e6) to avoid amplifying inversion noise (VYPOCET-09/20 convention)",
+    "toe.entropy.modular_kernel": "modular_kernel(W, iDelta, sub_idx, *, kappa=None, tol=1e-9) -> {K, eps, S, nu}  # expose the site-basis one-particle kernel K (toe.entropy.ssee currently returns only the scalar S); the locality diagnostics in VYPOCET-18/20/22 all need K",
+    "toe.viz.nl_vs_locus_panel": "nl_vs_locus(Kabs, Dij, d_locus, near_r, n_zones=6) -> (cen, mean) # per-site non-local fraction binned by distance-to-LOCUS (generalises VYPOCET-20 _nl_vs_corner_generic: locus = tip OR codim-2 edge OR hyperplane)"
+  },
+  "tip_baseline_F024": {
+    "nl_vs_tip_slope": 0.7100072040799587,
+    "corner_over_bulk": 0.44547197545725403,
+    "nl_vs_tip_dist": [
+      0.37424394806206607,
+      0.5148683719789885,
+      0.5895644921723986,
+      0.6508622838655423,
+      0.7068069207236923,
+      0.7777929885497871
+    ],
+    "nl_vs_tip_mean": [
+      0.14477454110207533,
+      0.13584705950450282,
+      0.13286827265562906,
+      0.17596913824441704,
+      0.2551450027913215,
+      0.4855852771920059
+    ],
+    "H4g1_4D": "partial"
+  },
+  "codim2": {
+    "Ns": [
+      800,
+      1200,
+      1700,
+      2200
+    ],
+    "n_seeds": 3,
+    "eps": 0.6,
+    "box": {
+      "t_half": 0.5,
+      "x_half": 0.5,
+      "yz_half": 0.5,
+      "volume": 1.0
+    },
+    "wedge_f_nl_all": [
+      0.09281100590681901,
+      0.16461734274566373,
+      0.23808991612460748,
+      0.2967292250558952
+    ],
+    "wedge_f_nl_all_std": [
+      0.010748908911090874,
+      0.00873822238032446,
+      0.009274369889516137,
+      0.003446547732041655
+    ],
+    "wedge_f_nl_edge": [
+      0.10952777500107298,
+      0.1670722797260458,
+      0.2433634669985771,
+      0.2863226747393214
+    ],
+    "wedge_f_nl_edge_std": [
+      0.012039025938617618,
+      0.008782207210772358,
+      0.006430155188633083,
+      0.0010849259817114372
+    ],
+    "wedge_f_nl_bulk": [
+      0.0971285307743208,
+      0.18140495637112805,
+      0.2566916090530042,
+      0.3226999965079187
+    ],
+    "wedge_f_nl_bulk_std": [
+      0.010133446906779562,
+      0.010001625121331587,
+      0.01195732313094563,
+      0.003529415625753509
+    ],
+    "wedge_off_slope_all": [
+      -0.28172378028508355,
+      -0.29907903551526327,
+      -0.27696050748522855,
+      -0.2805332072585574
+    ],
+    "wedge_off_R2_all": [
+      0.8339614133110951,
+      0.8485749927864976,
+      0.8418229758861558,
+      0.8643710772780667
+    ],
+    "wedge_off_slope_edge": [
+      -0.19768508988624958,
+      -0.3011505950930157,
+      -0.28811204484975633,
+      -0.2809080474819697
+    ],
+    "wedge_off_slope_bulk": [
+      -0.2849450036076141,
+      -0.3180139467945095,
+      -0.28387764030290014,
+      -0.28976027490796835
+    ],
+    "wedge_diag_slope_lin": [
+      4.281407016692699,
+      3.524794256752212,
+      4.075176945376571,
+      4.251844136261178
+    ],
+    "wedge_diag_R2_lin": [
+      0.9443330960903666,
+      0.9481094589914595,
+      0.9252031173115168,
+      0.9156897043375699
+    ],
+    "wedge_cond_B": [
+      15577.092005018936,
+      44074.84351103454,
+      116704.70717588859,
+      169902.89679621477
+    ],
+    "wedge_pairing_rel": [
+      5.2799877874862675e-15,
+      3.2814191429039265e-15,
+      5.428195837897882e-15,
+      5.506527990826421e-15
+    ],
+    "wedge_S": [
+      92.99036838182337,
+      137.49999128555487,
+      190.8114863331211,
+      245.32245432642557
+    ],
+    "slab_f_nl_all": [
+      0.11073824130972898,
+      0.17383695233696347,
+      0.24301870859715954,
+      0.29090561346067295
+    ],
+    "slab_f_nl_all_std": [
+      0.009501956346801517,
+      0.004553238420126211,
+      0.012867425231689513,
+      0.004396343814388613
+    ],
+    "slab_off_slope": [
+      -0.2435247306192371,
+      -0.2672300570279702,
+      -0.2560220452963176,
+      -0.2614151077198777
+    ],
+    "slab_off_R2": [
+      0.7039055471950165,
+      0.7645285278894866,
+      0.7636989890432226,
+      0.813589901017138
+    ],
+    "slab_diag_slope_lin": [
+      3.865693963161123,
+      4.767388719858058,
+      4.959378046197788,
+      5.219737480644835
+    ],
+    "slab_diag_R2_lin": [
+      0.9530515075867853,
+      0.9510575648088415,
+      0.9512204302410433,
+      0.9326817240298088
+    ],
+    "slab_cond_B": [
+      14439.357401864921,
+      38780.4533156575,
+      104248.40435450063,
+      162894.6405325123
+    ],
+    "slab_pairing_rel": [
+      5.383363569196699e-15,
+      4.390747039009981e-15,
+      6.171009159315189e-15,
+      6.209257007658148e-15
+    ],
+    "slab_S": [
+      89.76786131714827,
+      142.03978649903863,
+      194.45701783145932,
+      255.3986813797263
+    ],
+    "max_pairing_residual_rel": 7.092173084388456e-15,
+    "nl_vs_edge_repN": 2200,
+    "nl_vs_edge_dist": [
+      0.1615377610709059,
+      0.28521033656054134,
+      0.36419617582221747,
+      0.4322324375156161,
+      0.49169924963375955,
+      0.5763065924276746
+    ],
+    "nl_vs_edge_mean": [
+      0.29524993182848674,
+      0.27951976020778696,
+      0.28253143345297255,
+      0.3048708202336189,
+      0.3365506329160551,
+      0.3269058738792762
+    ],
+    "nl_vs_edge_sem": [
+      0.0013545498302415468,
+      0.003331004411080278,
+      0.0025799911671105544,
+      0.0038137827022707883,
+      0.005676622736360733,
+      0.0038636012834073457
+    ],
+    "nl_vs_edge_slope": 0.1152598461497133,
+    "nl_vs_edge_slope_se": 0.053229026092626426,
+    "nl_vs_edge_R2": 0.5396357024775065,
+    "nl_vs_edge_slope_ci68": [
+      0.10618921931971309,
+      0.12433047297971388
+    ],
+    "nl_vs_edge_inner_repN": 2200,
+    "nl_vs_edge_inner_dist": [
+      0.10545990807139251,
+      0.17915774145567961,
+      0.2282685463842209,
+      0.27059816746425647,
+      0.30234722568638533,
+      0.33443809952734016
+    ],
+    "nl_vs_edge_inner_mean": [
+      0.2182561467663161,
+      0.21201852962396964,
+      0.20262252875520684,
+      0.240638141432164,
+      0.25896804497139053,
+      0.2695668742222214
+    ],
+    "nl_vs_edge_inner_sem": [
+      0.0036291577653302792,
+      0.0073982400100295834,
+      0.006276646485859397,
+      0.008947550284635144,
+      0.004671183187015928,
+      0.015534781052235243
+    ],
+    "nl_vs_edge_inner_slope": 0.2508879114524904,
+    "nl_vs_edge_inner_slope_se": 0.09932427785112695,
+    "nl_vs_edge_inner_R2": 0.614658794809388,
+    "nl_vs_edge_inner_slope_ci68": [
+      0.2094482106426975,
+      0.29232761226228293
+    ],
+    "nl_vs_hyper_repN": 2200,
+    "nl_vs_hyper_dist": [
+      0.0415751653603762,
+      0.1168848215664516,
+      0.20042310877828573,
+      0.2825785344057687,
+      0.36907735780779244,
+      0.4543721425218097
+    ],
+    "nl_vs_hyper_mean": [
+      0.30617549246557857,
+      0.31276952952262116,
+      0.29858313663735186,
+      0.30403397121970993,
+      0.29863199032728754,
+      0.2890671110785306
+    ],
+    "nl_vs_hyper_sem": [
+      0.0009903156213420168,
+      0.009311527208157207,
+      0.006488727680872311,
+      0.007158642719131248,
+      0.0034350695225646394,
+      0.002534718200263873
+    ],
+    "nl_vs_hyper_slope": -0.04258687396014573,
+    "nl_vs_hyper_slope_se": 0.014986177441209565,
+    "nl_vs_hyper_R2": 0.66875096116401
+  },
+  "VERDICT": {
+    "wedge_nonlocal_frac_tail": 0.26740957059025133,
+    "wedge_edge_nonlocal_frac_tail": 0.26484307086894926,
+    "wedge_bulk_nonlocal_frac_tail": 0.2896958027804615,
+    "slab_nonlocal_frac_tail": 0.26696216102891623,
+    "slab_offdiag_slope_tail": -0.25871857650809765,
+    "wedge_offdiag_slope_tail": -0.278746857371893,
+    "wedge_bulk_offdiag_slope_tail": -0.28681895760543424,
+    "wedge_edge_offdiag_slope_tail": -0.284510046165863,
+    "slab_more_local_than_wedge": false,
+    "slab_vs_wedge_slope_gap": -0.020028280863795322,
+    "edge_more_nonlocal_than_bulk": false,
+    "edge_vs_bulk_ratio": 0.9142109354951676,
+    "nonlocality_rises_toward_edge": false,
+    "nl_vs_edge_slope": 0.1152598461497133,
+    "nl_vs_edge_slope_se": 0.053229026092626426,
+    "nl_vs_edge_slope_ci68": [
+      0.10618921931971309,
+      0.12433047297971388
+    ],
+    "nl_vs_edge_R2": 0.5396357024775065,
+    "nl_vs_edge_inner_slope": 0.2508879114524904,
+    "nl_vs_edge_inner_slope_se": 0.09932427785112695,
+    "nl_vs_edge_inner_slope_ci68": [
+      0.2094482106426975,
+      0.29232761226228293
+    ],
+    "nl_vs_edge_inner_R2": 0.614658794809388,
+    "edge_slope_consistent_with_zero": false,
+    "nl_vs_hyper_slope": -0.04258687396014573,
+    "nl_vs_hyper_slope_se": 0.014986177441209565,
+    "nl_vs_hyper_R2": 0.66875096116401,
+    "slab_hyper_rises_toward_surface": true,
+    "wedge_diag_boost_linear_R2_tail": 0.9204464108245434,
+    "wedge_diag_boost_linear": true,
+    "slab_diag_boost_linear_R2_tail": 0.941951077135426,
+    "codim2_corner_mechanism_generic": false,
+    "tip_slope_F024": 0.7100072040799587,
+    "corner_2d_slope_VYP18": -0.383,
+    "sign_matches_2d_corner": false,
+    "sign_flipped_vs_tip": false,
+    "n_signatures_supporting_H5g3": 1,
+    "signatures": {
+      "slab_more_local_offdiag": false,
+      "wedge_boost_weight_linear": true,
+      "edge_more_nonlocal_than_bulk": false,
+      "nonlocality_rises_toward_edge": false
+    },
+    "overall": "2D-ONLY: even at a clean codim-2 joint the non-locality does NOT concentrate toward the edge -- it FALLS toward it (nl-vs-edge slope=0.115>=0; wall-controlled inner slope=0.251, CI68=[0.2094482106426975, 0.29232761226228293], both POSITIVE like the 4D tip 0.71, opposite the 2D corner -0.383). The positive slope is NOT a box-wall artefact (it is steeper in the wall-controlled inner region). The corner sub-part of H4g-1 layer B is genuinely 2D-only; reframing the 4D locus from the null-TIP to a codim-2 JOINT does NOT restore the 2D corner-concentration mechanism. (The slab-boost side survives: wedge diagonal boost-weight linear R2=0.92.)",
+    "H5g3": "2d_only"
+  },
+  "edge_slope_measurement": {
+    "value": 0.1152598461497133,
+    "se": 0.053229026092626426,
+    "ci68": [
+      0.10618921931971309,
+      0.12433047297971388
+    ],
+    "n": 3,
+    "validated": true
+  },
+  "machine_precision_invariant": {
+    "max_pairing_residual_rel": 7.092173084388456e-15,
+    "bound": 1e-12,
+    "passes": true
+  },
+  "wedge_nl_powerlaw_panel": {
+    "slope": 0.103466130212342,
+    "se": 0.06491244188098523
+  },
+  "runtime_s": 50.99227809906006
+}

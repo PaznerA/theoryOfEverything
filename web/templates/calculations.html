@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Galerie výpočtů ({{ calcs|length }})</h1>
+<p class="lead">Jeden card na adresář v <code>core-data/calculations/</code>: hlavní čísla
+z <code>results.json</code>, grafy a odkaz na příslušný výklad (VYPOCET).</p>
+
+<div class="calc-grid">
+{%- for c in calcs %}
+  <article class="calc-card" id="{{ c.name }}">
+    <h2>{{ c.title }}</h2>
+    <code class="calc-dir">core-data/calculations/{{ c.name }}/</code>
+
+    {%- if c.headline %}
+    <dl class="headline">
+      {%- for k, v in c.headline %}
+      <div><dt>{{ k }}</dt><dd>{{ v }}</dd></div>
+      {%- endfor %}
+    </dl>
+    {%- endif %}
+
+    {%- if c.plots %}
+    <div class="calc-plots">
+      {%- for p in c.plots %}
+      <a href="{{ asset_href(p) }}" target="_blank" rel="noopener">
+        <img src="{{ asset_href(p) }}" alt="{{ p }}" loading="lazy">
+      </a>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+
+    <footer class="calc-links">
+      {%- if c.vypocet_route %}
+      <a href="{{ rel(c.vypocet_route) }}">→ Výklad (VYPOCET)</a>
+      {%- else %}
+      <span class="muted">výklad nenalezen</span>
+      {%- endif %}
+    </footer>
+  </article>
+{%- endfor %}
+</div>
+{% endblock %}

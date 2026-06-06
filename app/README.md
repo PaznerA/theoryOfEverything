@@ -15,7 +15,7 @@ reprodukce 2026-06-06** (20/20 `calc.py` bitově identických — viz
 | `research` | Jupyter Lab nad celým repem (interaktivní výzkum, notebooky) | `docker compose up research` → <http://localhost:8888> (token `toe`) |
 | `test` | pytest: smoke test prostředí + rychlá reprodukční sada (6 sub-sekundových výpočtů) | `docker compose run --rm test` |
 | `repro` | Plná deterministická reprodukce všech 20 výpočtů (~50 min) | `docker compose run --rm repro` |
-| `web` | Prezentační placeholder — statický server nad repem (read-only); nahradí ho minimalistický site-builder (krok 4 roadmapy) | `docker compose --profile web up web` → <http://localhost:8080> |
+| `web` | Minimalistický statický site-builder (krok 4 roadmapy): builduje `web/dist/` (103 stránek) z markdown + JSON zdrojů repozitáře, pak servuje výsledek. Po změně requirements nutný rebuild image: `docker compose build`. | `docker compose --profile web up web` → <http://localhost:8080> |
 
 Plnou reprodukci lze pustit i přes pytest s detailním reportem po výpočtech:
 

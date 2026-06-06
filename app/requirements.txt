@@ -9,5 +9,10 @@ matplotlib==3.10.9
 jupyterlab>=4.4,<5
 ipykernel>=6.29
 
+# static-site builder (roadmap step 4: web/build.py renders the presentation
+# view from the repo's markdown + JSON registries — pure python, no node)
+markdown>=3.8
+jinja2>=3.1
+
 # testing
 pytest>=8,<9

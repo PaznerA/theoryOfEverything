@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Matice souvislostí ({{ total }})</h1>
+<p class="lead">Mezipřístupové vztahy seskupené podle ratingu prozkoumanosti
+(<code>core-data/connections.json</code>). <strong>barely</strong> je primární lovná zóna.</p>
+
+{%- for rating in rating_order %}
+{%- set group = groups.get(rating, []) %}
+<section class="conn-group conn-{{ rating }}">
+  <h2 id="{{ rating }}">{{ rating_label[rating] }} <span class="count">({{ group|length }})</span></h2>
+  <p class="group-desc">{{ rating_desc[rating] }}</p>
+  <table class="reg-table conn-table">
+    <thead><tr><th>Od (from)</th><th>K (to)</th><th>Typ</th><th>Popis</th></tr></thead>
+    <tbody>
+    {%- for c in group %}
+      <tr>
+        <td class="nowrap"><code>{{ c.get('from', '') }}</code></td>
+        <td class="nowrap"><code>{{ c.get('to', '') }}</code></td>
+        <td class="nowrap">{{ c.get('type', '—') }}</td>
+        <td>{{ c.get('description', '') }}</td>
+      </tr>
+    {%- endfor %}
+    </tbody>
+  </table>
+</section>
+{%- endfor %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Vzorce ({{ formulas|length }})</h1>
+<p class="lead">Registr vzorců renderovaný přes KaTeX (<code>core-data/formulas.json</code>).</p>
+
+<div class="formula-list">
+{%- for f in formulas %}
+  <article class="formula-card" id="{{ f.get('id', '') }}">
+    <header>
+      <h2>{{ f.get('name', f.get('id', '')) }}</h2>
+      <code class="fid">{{ f.get('id', '') }}</code>
+    </header>
+    <div class="formula-math">$$ {{ f.get('latex', '') | mathraw }} $$</div>
+    {%- if f.get('meaning') %}<p class="formula-meaning">{{ f.meaning }}</p>{% endif %}
+    <footer class="formula-meta">
+      {%- for p in f.get('pillars', []) %}<span class="tag">{{ p }}</span>{% endfor %}
+      {%- if f.get('source') %}<span class="src">zdroj: <code>{{ f.source }}</code></span>{% endif %}
+    </footer>
+  </article>
+{%- endfor %}
+</div>
+{% endblock %}

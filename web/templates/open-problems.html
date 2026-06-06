@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Otevřené problémy ({{ total }})</h1>
+<p class="lead">Seskupeno podle pilíře (<code>core-data/open-problems.json</code>).</p>
+
+<nav class="pillar-jump">
+  {%- for pillar in pillar_order %}
+  <a href="#pillar-{{ loop.index }}">{{ pillar }} ({{ groups[pillar]|length }})</a>
+  {%- endfor %}
+</nav>
+
+{%- for pillar in pillar_order %}
+<section class="prob-group">
+  <h2 id="pillar-{{ loop.index }}">{{ pillar }} <span class="count">({{ groups[pillar]|length }})</span></h2>
+  {%- for p in groups[pillar] %}
+  <article class="prob-card" id="{{ p.get('id', '') }}">
+    <h3>{{ p.get('id', '') }}</h3>
+    <p class="prob-statement">{{ p.get('statement', '') }}</p>
+    {%- if p.get('whyHard') %}<p><strong>Proč těžké:</strong> {{ p.whyHard }}</p>{% endif %}
+    {%- if p.get('attempts') %}<p><strong>Pokusy:</strong> {{ p.attempts }}</p>{% endif %}
+    {%- if p.get('pillars') %}
+    <p class="prob-pillars">{% for pl in p.pillars %}<span class="tag">{{ pl }}</span>{% endfor %}</p>
+    {%- endif %}
+  </article>
+  {%- endfor %}
+</section>
+{%- endfor %}
+{% endblock %}

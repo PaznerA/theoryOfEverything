@@ -96,6 +96,7 @@ tracialní probe; draft-05 kandidát). Každá: tvrzení (falzifikovatelné), op
 objekt/observable/diskriminátor/N-proveditelnost — maticové ops strop ~N 2500), priorita, riziko.
 
 ### H5g-1 — 4D dS statická záplata: truncovaná area-law entropie sama oddělí II₁ od II_∞
+> **[Kolo 10, VYPOCET-21, F-025] PARCIÁLNÍ:** reálný 4D-specifický separační signál potvrzen (flat/dS slope ratio 2.96, exponent 0.27 vs 0.52, N_total strop R²=1.000), ale plná saturace truncované S nedosažena při N≤2500 (dense eigh). Výsledek jde do draft-04 jako dS sekce. Plná saturace vyžaduje sparse solver + rho>~10³.
 
 **(jádro: přímý spektrální diskriminátor typu místo obsah-saturace; nejostřejší pokračování F-023)**
 **Priorita: high.**
@@ -171,6 +172,7 @@ objekt/observable/diskriminátor/N-proveditelnost — maticové ops strop ~N 250
   Pokud se kalibrace tuninguje k 1/4, hypotéza je iluzorní (stejný filtr jako −18/11 scheme-robustnost).
 
 ### H5g-3 — Co nahrazuje rohy ve 4D: kaustiky / vyšší-kodimenzní hrany jako locus selhání boost-flow
+> **[Kolo 10, VYPOCET-22, F-026] VYVRÁCENA:** codim-2 klínová hrana dává nl-vs-hrana sklon +0.115 (CI68 [0.106,0.124]) — kladné znaménko shodné s 4D null-tip, opačné než 2D roh; rohová podčást vrstva B čistě 2D (potvrzeno napříč 3 lokusy a 3 objekty). Slab/boost podčást BW přežívá (R²=0.92).
 
 **(jádro: reformulace rohového mechanismu pro fyzikální dimenzi po VYPOCET-20 nulu)**
 **Priorita: medium-high.**

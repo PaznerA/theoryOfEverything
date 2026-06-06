@@ -1,0 +1,19 @@
+[anti-circularity] F-006 p_rank = 0.5189 +/- 0.0067 => epsilon = rho^(-1/2) FIXED (eps_exponent=-0.5189)
+
+[rho=240 l=1] rho=240.0 l=1.0 n_seeds=4 ...
+   R*=1.6 N=  442 kap=1.673 N_tot=442.0 S_trunc=0.5761 S_full=40.88 hlinks=343.2 pair_rel=2.5e-15
+   R*=2.0 N=  463 kap=1.712 N_tot=463.0 S_trunc=0.6313 S_full=43.81 hlinks=324.5 pair_rel=2.5e-15
+   R*=2.6 N=  475 kap=1.734 N_tot=475.0 S_trunc=0.5950 S_full=46.35 hlinks=358.8 pair_rel=3.1e-15
+   R*=3.4 N=  479 kap=1.742 N_tot=479.0 S_trunc=0.6291 S_full=45.98 hlinks=357.8 pair_rel=2.1e-15
+   R*=4.4 N=  480 kap=1.743 N_tot=480.0 S_trunc=0.6886 S_full=48.18 hlinks=356.2 pair_rel=3.6e-15
+   R*=5.6 N=  480 kap=1.743 N_tot=480.0 S_trunc=0.6552 S_full=47.24 hlinks=333.8 pair_rel=2.4e-15
+   R*=7.0 N=  480 kap=1.743 N_tot=480.0 S_trunc=0.5977 S_full=42.94 hlinks=344.5 pair_rel=3.0e-15
+/Users/pazny/projects/theoryOfEverything/core-data/calculations/ds-entropy-cap/calc.py:109: OptimizeWarning: Covariance of the parameters could not be estimated
+  popt, _ = curve_fit(lambda t, cap, B, xi: cap - B * np.exp(-t / xi),
+   => S_full_cap=46.186 S_trunc_cap=0.6412 A_mol=344.8 eps=0.0645 R_full=0.1339 (PRIMARY) R_trunc_cont=0.4463
+
+[rho=1000 l=1] rho=1000.0 l=1.0 n_seeds=4 ...
+   R*=1.6 N= 1843 kap=3.416 N_tot=1843.0 S_trunc=0.6973 S_full=193.40 hlinks=1519.2 pair_rel=2.3e-15
+   R*=2.0 N= 1928 kap=3.494 N_tot=1928.0 S_trunc=0.7476 S_full=203.58 hlinks=1564.8 pair_rel=5.1e-15
+   R*=2.6 N= 1978 kap=3.539 N_tot=1978.0 S_trunc=0.7356 S_full=206.78 hlinks=1554.8 pair_rel=3.7e-15
+   R*=3.4 N= 1996 kap=3.555 N_tot=1996.0 S_trunc=0.7580 S_full=207.12 hlinks=1588.5 pair_rel=2.0e-15

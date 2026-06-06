@@ -1,0 +1,25 @@
+
+========================================================================
+PART A: dense UNTRUNCATED tracial IR-fraction vs growing density
+========================================================================
+box r*<=5.0; FIXED bulk cut r*<=1.0; rho=[300.0, 600.0, 1000.0, 1500.0] -> N=[600, 1200, 2000, 3000]; 3 seeds; eps_lo=0.5
+  [dS   rho=   300 N=  600] nsub=454 f_IR=0.1066+-0.0127  n_mod=72  <eps>=2.339
+  [dS   rho=   600 N= 1200] nsub=900 f_IR=0.1093+-0.0107  n_mod=150  <eps>=2.391
+  [dS   rho=  1000 N= 2000] nsub=1518 f_IR=0.1173+-0.0085  n_mod=242  <eps>=2.368
+  [dS   rho=  1500 N= 3000] nsub=2273 f_IR=0.1179+-0.0016  n_mod=362  <eps>=2.367
+  [flat rho=   300 N=  600] nsub=119 f_IR=0.0525+-0.0148  n_mod=57  <eps>=3.695
+  [flat rho=   600 N= 1200] nsub=242 f_IR=0.0707+-0.0067  n_mod=118  <eps>=3.453
+  [flat rho=  1000 N= 2000] nsub=413 f_IR=0.0691+-0.0093  n_mod=202  <eps>=3.503
+  [flat rho=  1500 N= 3000] nsub=583 f_IR=0.0751+-0.0019  n_mod=288  <eps>=3.553
+[dS  ] f_IR slope d/d lnN = +0.49478 +- 0.11197 CI68=[+0.35026,+0.66043]
+[flat] f_IR slope d/d lnN = +1.49255 +- 0.48252 CI68=[+0.83794,+2.20483]
+  gap dS-flat = -0.99777 +- 0.49534  => tracial_emerges=False
+[dS  ] n_mod ~ N^0.996 (CI (0.9733874392273731, 1.0204855521650054))
+[flat] n_mod ~ N^1.019 (CI (0.9997586361898542, 1.0383738090810528))
+
+========================================================================
+PART B: SPARSE truncated type-II content vs density up to rho=1e4
+========================================================================
+box r*<=5.0; FIXED bulk cut r*<=1.0; rho=[1000.0, 3000.0, 10000.0] -> N=[2000, 5999, 19998]; seeds/rho=[3, 3, 2]
+  [validate] sparse vs dense truncated SSEE at rho=1e3 (N~2000)
+    DENSE S_trunc=0.538211  SPARSE S_trunc=0.538211  rel_diff=4.13e-14  (target <1e-6)

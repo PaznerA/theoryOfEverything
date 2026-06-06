@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="dashboard" aria-label="Přehled">
+  <a class="stat" href="{{ rel('data/findings.html') }}">
+    <span class="stat-num">{{ stats.findings }}</span>
+    <span class="stat-label">findings</span>
+  </a>
+  <a class="stat" href="{{ rel('data/connections.html') }}">
+    <span class="stat-num">{{ stats.connections }}</span>
+    <span class="stat-label">souvislostí
+      <em class="stat-sub">{{ stats.connections_barely }}× barely</em></span>
+  </a>
+  <a class="stat" href="{{ rel('data/formulas.html') }}">
+    <span class="stat-num">{{ stats.formulas }}</span>
+    <span class="stat-label">vzorců</span>
+  </a>
+  <a class="stat" href="{{ rel('data/open-problems.html') }}">
+    <span class="stat-num">{{ stats.open_problems }}</span>
+    <span class="stat-label">otevřených problémů</span>
+  </a>
+  <a class="stat" href="{{ rel('calculations.html') }}">
+    <span class="stat-num">{{ stats.calculations }}</span>
+    <span class="stat-label">výpočtů</span>
+  </a>
+  <span class="stat stat-static">
+    <span class="stat-num">{{ stats.references }}</span>
+    <span class="stat-label">referencí</span>
+  </span>
+  <span class="stat stat-static">
+    <span class="stat-num">{{ stats.papers }}</span>
+    <span class="stat-label">draftů</span>
+  </span>
+</section>
+
+<nav class="quicklinks" aria-label="Klíčové stránky">
+  <a href="{{ rel('progress.html') }}">PROGRESS</a>
+  <a href="{{ rel('knowledge-base/00-INDEX.html') }}">Index knowledge base</a>
+  <a href="{{ rel('knowledge-base/SYNTEZA.html') }}">Syntéza</a>
+  <a href="{{ rel('data/connections.html') }}">Matice souvislostí</a>
+  <a href="{{ rel('papers/REVIZE-PRO-CLOVEKA.html') }}">Revize pro člověka</a>
+</nav>
+
+<article class="prose">
+{{ body|safe }}
+</article>
+{% endblock %}

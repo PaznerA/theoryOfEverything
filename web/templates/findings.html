@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Findings ({{ findings|length }})</h1>
+<p class="lead">Registr ověřených i otevřených zjištění (<code>core-data/findings.json</code>).</p>
+
+<table class="reg-table findings-table">
+  <thead>
+    <tr><th>ID</th><th>Status</th><th>Tvrzení (statement)</th><th>Evidence</th></tr>
+  </thead>
+  <tbody>
+  {%- for f in findings %}
+    <tr id="{{ f.id }}">
+      <td class="nowrap"><a href="#{{ f.id }}">{{ f.id }}</a></td>
+      <td><span class="badge badge-{{ status_class(f.get('status')) }}">{{ f.get('status', '—') }}</span></td>
+      <td>
+        <div class="statement">{{ f.get('statement', '') }}</div>
+        {%- if f.get('caveats') %}
+        <details class="caveats"><summary>Výhrady (caveats)</summary><p>{{ f.caveats }}</p></details>
+        {%- endif %}
+        {%- if f.get('implications') %}
+        <details class="caveats"><summary>Důsledky</summary><p>{{ f.implications }}</p></details>
+        {%- endif %}
+      </td>
+      <td class="evidence">
+        {%- for e in f.get('evidence', []) %}
+          {%- set href = evidence_href(e) %}
+          {%- if href %}<a href="{{ href }}"><code>{{ e }}</code></a>{% else %}<code>{{ e }}</code>{% endif %}<br>
+        {%- endfor %}
+      </td>
+    </tr>
+  {%- endfor %}
+  </tbody>
+</table>
+{% endblock %}
