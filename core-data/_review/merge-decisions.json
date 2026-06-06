@@ -1,0 +1,30 @@
+[
+  {
+    "keep": "ryu-takayanagi-formula",
+    "merge": ["ryu-takayanagi"]
+  },
+  {
+    "keep": "holographic-quantum-error-correction",
+    "merge": ["holographic-error-correction", "quantum-error-correction"]
+  },
+  {
+    "keep": "tensor-network",
+    "merge": ["tensor-network-holography", "tensor-networks"]
+  },
+  {
+    "keep": "covariant-entropy-bound",
+    "merge": ["bousso-bound"]
+  },
+  {
+    "keep": "gravitationally-induced-decoherence",
+    "merge": ["gravitational-decoherence"]
+  },
+  {
+    "keep": "adscft-correspondence",
+    "merge": ["ads-cft-correspondence"]
+  },
+  {
+    "keep": "distance-conjecture",
+    "merge": ["swampland-distance-conjecture"]
+  }
+]

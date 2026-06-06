@@ -1,0 +1,1361 @@
+[
+  {
+    "a": "einstein-hilbert-truncation",
+    "b": "einstein-hilbert-action",
+    "nameA": "Einstein-Hilbert Truncation",
+    "nameB": "einstein-hilbert-action",
+    "defA": "Simplest non-perturbative approximation of the gravitational effective average action, retaining only the running Newton coupling and cosmological constant: Gamma_k ~ (1/16 pi G_k) int sqrt(g)(2 Lambda_k - R); yields the",
+    "defB": "",
+    "pillarsA": [
+      "asymptotic-safety"
+    ],
+    "pillarsB": [
+      "causal-sets"
+    ],
+    "nameSimilarity": 0.84
+  },
+  {
+    "a": "graviton-anomalous-dimension",
+    "b": "gravity-induced-anomalous-dimension",
+    "nameA": "Graviton Anomalous Dimension",
+    "nameB": "Gravity-Induced Anomalous Dimension",
+    "defA": "At the fixed point eta_N = 2-d (eta_N = -2 in d=4), changing the effective graviton propagator from 1/p^2 to 1/p^4; this UV softening underlies dimensional reduction of spacetime.",
+    "defB": "Contribution of gravitational fluctuations to the running of matter couplings; a positive value renders otherwise non-asymptotically-free couplings (Abelian gauge, quartic scalar) irrelevant and thus predictable, the mec",
+    "pillarsA": [
+      "asymptotic-safety"
+    ],
+    "pillarsB": [
+      "asymptotic-safety"
+    ],
+    "nameSimilarity": 0.86
+  },
+  {
+    "a": "graviton-anomalous-dimension",
+    "b": "graviton",
+    "nameA": "Graviton Anomalous Dimension",
+    "nameB": "graviton",
+    "defA": "At the fixed point eta_N = 2-d (eta_N = -2 in d=4), changing the effective graviton propagator from 1/p^2 to 1/p^4; this UV softening underlies dimensional reduction of spacetime.",
+    "defB": "",
+    "pillarsA": [
+      "asymptotic-safety"
+    ],
+    "pillarsB": [
+      "string-theory"
+    ],
+    "nameSimilarity": 0.44
+  },
+  {
+    "a": "graviton-spectral-function",
+    "b": "graviton",
+    "nameA": "Graviton Spectral Function",
+    "nameB": "graviton",
+    "defA": "Real-time (Lorentzian) spectral representation of the graviton propagator; recent self-consistent computations find a positive spectral function with a massless graviton peak, a multi-graviton continuum, near-quadratic U",
+    "defB": "",
+    "pillarsA": [
+      "asymptotic-safety"
+    ],
+    "pillarsB": [
+      "string-theory"
+    ],
+    "nameSimilarity": 0.47
+  },
+  {
+    "a": "unitarity",
+    "b": "locality-vs-unitarity",
+    "nameA": "Unitarity",
+    "nameB": "Locality vs unitarity tension",
+    "defA": "Conservation of probability in the quantum theory; a central open question for AS because higher-derivative operators classically carry Ostrogradski ghosts. Recent evidence (UV-decreasing e+e- -> mu+mu- cross section, po",
+    "defB": "For an old black hole, unitarity of Hawking evaporation demands strong correlations of late radiation with early radiation, while horizon smoothness demands maximal entanglement with interior partners, violating entangle",
+    "pillarsA": [
+      "asymptotic-safety"
+    ],
+    "pillarsB": [
+      "conceptual-problems"
+    ],
+    "nameSimilarity": 0.47
+  },
+  {
+    "a": "unitarity",
+    "b": "generalized-unitarity",
+    "nameA": "Unitarity",
+    "nameB": "Generalized unitarity method",
+    "defA": "Conservation of probability in the quantum theory; a central open question for AS because higher-derivative operators classically carry Ostrogradski ghosts. Recent evidence (UV-decreasing e+e- -> mu+mu- cross section, po",
+    "defB": "On-shell amplitude technique that reconstructs loop integrands by sewing tree amplitudes on multiple cuts; together with color-kinematics duality and the double copy it powers state-of-the-art supergravity UV computation",
+    "pillarsA": [
+      "asymptotic-safety"
+    ],
+    "pillarsB": [
+      "supergravity-uv"
+    ],
+    "nameSimilarity": 0.49
+  },
+  {
+    "a": "hawking-radiation",
+    "b": "analogue-hawking-radiation",
+    "nameA": "Hawking radiation",
+    "nameB": "analogue-hawking-radiation",
+    "defA": "Quantum emission of (nearly) thermal radiation by a black hole at the Hawking temperature T_H = hbar kappa / (2 pi c k_B), with kappa the surface gravity. Derived via Bogoliubov mixing of in/out modes across the collapse",
+    "defB": "",
+    "pillarsA": [
+      "black-holes-information",
+      "emergent-gravity",
+      "semiclassical-gravity"
+    ],
+    "pillarsB": [
+      "semiclassical-gravity"
+    ],
+    "nameSimilarity": 0.74
+  },
+  {
+    "a": "quantum-error-correction",
+    "b": "holographic-quantum-error-correction",
+    "nameA": "Quantum error correction in holography",
+    "nameB": "Holographic quantum error correction",
+    "defA": "Almheiri-Dong-Harlow: bulk locality in AdS/CFT is realized as a quantum error-correcting code, where a bulk operator is reconstructible on multiple boundary subsystems; the interior is encoded in early radiation.",
+    "defB": "Bulk logical qubits are redundantly encoded into boundary physical qubits; explains subregion duality, radial commutativity and the resilience of bulk reconstruction to boundary erasures.",
+    "pillarsA": [
+      "black-holes-information"
+    ],
+    "pillarsB": [
+      "entanglement-spacetime"
+    ],
+    "nameSimilarity": 0.65
+  },
+  {
+    "a": "dynamical-triangulations",
+    "b": "euclidean-dynamical-triangulations",
+    "nameA": "Dynamical triangulations",
+    "nameB": "Euclidean Dynamical Triangulations (EDT)",
+    "defA": "Lattice quantum gravity in which all edge lengths are fixed and the dynamics resides entirely in the connectivity (which simplices are glued to which); the path integral becomes a sum over distinct triangulations. CDT is",
+    "defB": "Historical precursor summing over Euclidean (positive-definite) triangulations without causality. In 4D it is dominated by a crumpled phase (near-infinite Hausdorff dimension) and a branched-polymer phase (Hausdorff dime",
+    "pillarsA": [
+      "causal-dynamical-triangulations"
+    ],
+    "pillarsB": [
+      "causal-dynamical-triangulations"
+    ],
+    "nameSimilarity": 0.75
+  },
+  {
+    "a": "wick-rotation",
+    "b": "wick-rotation-problem",
+    "nameA": "Wick rotation (CDT)",
+    "nameB": "wick-rotation-problem",
+    "defA": "Analytic continuation alpha -> -alpha turning complex Lorentzian weights e^{iS} into real positive Euclidean Boltzmann weights e^{-S_eu}. Well-defined in CDT because of the global foliation, enabling sign-problem-free Mo",
+    "defB": "",
+    "pillarsA": [
+      "causal-dynamical-triangulations"
+    ],
+    "pillarsB": [
+      "noncommutative-geometry"
+    ],
+    "nameSimilarity": 0.6
+  },
+  {
+    "a": "minisuperspace-action",
+    "b": "minisuperspace",
+    "nameA": "Minisuperspace effective action",
+    "nameB": "Minisuperspace",
+    "defA": "Effective action for the global scale factor / 3-volume, S_eff = (1/Gamma) sum [ (N_3(t+1)-N_3(t))^2/N_3(t) + delta N_3^{1/3}(t) ], measured directly in CDT and matching the Hartle-Hawking minisuperspace model, with sqrt",
+    "defB": "A finite-dimensional truncation of superspace (e.g. homogeneous FLRW with scale factor a and scalar phi) where the Wheeler-DeWitt equation becomes a single solvable equation. The laboratory for deparametrization, the pro",
+    "pillarsA": [
+      "causal-dynamical-triangulations"
+    ],
+    "pillarsB": [
+      "conceptual-problems",
+      "quantum-cosmology"
+    ],
+    "nameSimilarity": 0.62
+  },
+  {
+    "a": "causal-set",
+    "b": "nonlocality-causal-set",
+    "nameA": "Causal Set (causet)",
+    "nameB": "Inherent Nonlocality",
+    "defA": "A locally finite partially ordered set (poset) (C, <=) whose order relation is reflexive, acyclic (antisymmetric), and transitive, with every order interval I[x,y] = Fut(x) ∩ Past(y) finite. Elements model fundamental sp",
+    "defB": "Because Lorentz invariance forbids a finite set of nearest neighbours (the proper-time hyperbola crosses infinitely many sprinkled points), any covariant operator must be nonlocal, summing over many layers. Nonlocality i",
+    "pillarsA": [
+      "causal-sets"
+    ],
+    "pillarsB": [
+      "causal-sets"
+    ],
+    "nameSimilarity": 0.21
+  },
+  {
+    "a": "causal-set",
+    "b": "qft-on-causal-set",
+    "nameA": "Causal Set (causet)",
+    "nameB": "Quantum Field Theory on a Causal Set",
+    "defA": "A locally finite partially ordered set (poset) (C, <=) whose order relation is reflexive, acyclic (antisymmetric), and transitive, with every order interval I[x,y] = Fut(x) ∩ Past(y) finite. Elements model fundamental sp",
+    "defB": "Scalar field theory defined directly on a causal set via the retarded propagator / Pauli-Jordan matrix, the SJ vacuum, and Peierls bracket — bypassing canonical quantization. Recent work extends to in-in/in-out correlato",
+    "pillarsA": [
+      "causal-sets"
+    ],
+    "pillarsB": [
+      "causal-sets"
+    ],
+    "nameSimilarity": 0.36
+  },
+  {
+    "a": "causal-set",
+    "b": "causal-set-path-integral",
+    "nameA": "Causal Set (causet)",
+    "nameB": "Causal Set Path Integral / Path-Sum",
+    "defA": "A locally finite partially ordered set (poset) (C, <=) whose order relation is reflexive, acyclic (antisymmetric), and transitive, with every order interval I[x,y] = Fut(x) ∩ Past(y) finite. Elements model fundamental sp",
+    "defB": "Quantum dynamics as a sum over causal sets weighted by exp(i S_BD / hbar). Lorentzian (oscillatory) and lacking Wick rotation; studied via complex/Monte Carlo methods. Central arena for the entropy problem and continuum ",
+    "pillarsA": [
+      "causal-sets"
+    ],
+    "pillarsB": [
+      "causal-sets"
+    ],
+    "nameSimilarity": 0.48
+  },
+  {
+    "a": "causal-set",
+    "b": "causal-set-cosmology",
+    "nameA": "Causal Set (causet)",
+    "nameB": "Causal Set Cosmology",
+    "defA": "A locally finite partially ordered set (poset) (C, <=) whose order relation is reflexive, acyclic (antisymmetric), and transitive, with every order interval I[x,y] = Fut(x) ∩ Past(y) finite. Elements model fundamental sp",
+    "defB": "Cosmological models from CSG: cyclic bounce universes with 'cosmological renormalization' of dynamical parameters at each Big Crunch-Big Bang bounce, plus the everpresent-Lambda scenario with a fluctuating cosmological t",
+    "pillarsA": [
+      "causal-sets"
+    ],
+    "pillarsB": [
+      "causal-sets"
+    ],
+    "nameSimilarity": 0.67
+  },
+  {
+    "a": "causal-set",
+    "b": "causal-set-link",
+    "nameA": "Causal Set (causet)",
+    "nameB": "causal-set-link",
+    "defA": "A locally finite partially ordered set (poset) (C, <=) whose order relation is reflexive, acyclic (antisymmetric), and transitive, with every order interval I[x,y] = Fut(x) ∩ Past(y) finite. Elements model fundamental sp",
+    "defB": "",
+    "pillarsA": [
+      "causal-sets"
+    ],
+    "pillarsB": [
+      "von-neumann-algebras"
+    ],
+    "nameSimilarity": 0.53
+  },
+  {
+    "a": "bell-causality",
+    "b": "causality",
+    "nameA": "Bell Causality",
+    "nameB": "causality",
+    "defA": "Condition in CSG that the birth probability of a new element depends only on its causal past, not on causally disconnected elements; a discrete causality requirement preventing superluminal influence. With discrete gener",
+    "defB": "",
+    "pillarsA": [
+      "causal-sets"
+    ],
+    "pillarsB": [
+      "causal-dynamical-triangulations"
+    ],
+    "nameSimilarity": 0.78
+  },
+  {
+    "a": "spacetime-entanglement-entropy",
+    "b": "entanglement-entropy",
+    "nameA": "Spacetime Entanglement Entropy (SSEE)",
+    "nameB": "Entanglement entropy",
+    "defA": "Sorkin's covariant spacetime formulation of entanglement entropy from a generalized eigenproblem W v = mu (i Delta) v, giving S = sum mu ln|mu|. On causal sets it obeys a volume law; an area law is recovered only after a",
+    "defB": "Von Neumann entropy S_A = -Tr(rho_A ln rho_A) of the reduced density matrix of a subregion A; measures quantum correlations between A and its complement. In QFT it obeys an area law with a UV cutoff and is the central qu",
+    "pillarsA": [
+      "causal-sets"
+    ],
+    "pillarsB": [
+      "entanglement-spacetime"
+    ],
+    "nameSimilarity": 0.7
+  },
+  {
+    "a": "off-shell-dark-matter",
+    "b": "dark-matter",
+    "nameA": "Off-shell Dark Matter from Nonlocality",
+    "nameB": "dark-matter",
+    "defA": "Saravani-Aslanbeigi-Afshordi proposal that the causal-set-inspired nonlocal d'Alembertian, in its continuum limit, yields a continuum of massive off-shell modes in addition to the usual massless field — a candidate cold ",
+    "defB": "",
+    "pillarsA": [
+      "causal-sets"
+    ],
+    "pillarsB": [
+      "causal-sets"
+    ],
+    "nameSimilarity": 0.41
+  },
+  {
+    "a": "black-hole-entropy-causal-links",
+    "b": "black-hole-entropy",
+    "nameA": "Black Hole Entropy as Causal Links (horizon molecules)",
+    "nameB": "Black hole entropy from microstate counting",
+    "defA": "Dou-Sorkin (2003) kinematic estimate: counting causal links crossing a black hole horizon near a hypersurface gives a number proportional to the horizon area, so each 'horizon molecule' carries ~1 bit per Planck area, re",
+    "defB": "LQG computes black hole entropy by counting horizon quantum-geometry microstates; matching the leading area term to S = A/4 fixes gamma, with a universal logarithmic correction -1/2 ln(A).",
+    "pillarsA": [
+      "causal-sets"
+    ],
+    "pillarsB": [
+      "loop-quantum-gravity"
+    ],
+    "nameSimilarity": 0.52
+  },
+  {
+    "a": "relational-observables",
+    "b": "relational-observables-link",
+    "nameA": "Relational / dressed observables",
+    "nameB": "relational-observables-link",
+    "defA": "Gauge-invariant (Dirac) quantities encoding 'the value of field f when clock field T equals tau', constructed as a power series of nested Poisson brackets with the constraint. Equivalently fields 'dressed' by a gravitati",
+    "defB": "",
+    "pillarsA": [
+      "conceptual-problems"
+    ],
+    "pillarsB": [
+      "von-neumann-algebras"
+    ],
+    "nameSimilarity": 0.71
+  },
+  {
+    "a": "crossed-product-algebra",
+    "b": "crossed-product",
+    "nameA": "Crossed-product observer algebra",
+    "nameB": "Crossed product algebra",
+    "defA": "Adjoining an observer's clock (with bounded-below Hamiltonian) to the type III_1 von Neumann algebra of QFT observables in a gravitational subregion yields a type II crossed-product algebra A_QFT x R, whose density matri",
+    "defB": "The von Neumann algebra M x_sigma R obtained by adjoining to M the unitaries that implement an automorphism group (e.g. the modular flow), realized on H tensor L^2(R). Taking the crossed product of a type III_1 factor by",
+    "pillarsA": [
+      "conceptual-problems"
+    ],
+    "pillarsB": [
+      "von-neumann-algebras"
+    ],
+    "nameSimilarity": 0.8
+  },
+  {
+    "a": "measurement-problem-qg",
+    "b": "measurement-problem",
+    "nameA": "Measurement problem in quantum gravity",
+    "nameB": "measurement-problem",
+    "defA": "If the entire universe including observers is quantum and evolves unitarily, who or what performs measurements and selects definite outcomes? Decoherence relocates rather than solves the problem (it needs a pre-defined p",
+    "defB": "",
+    "pillarsA": [
+      "conceptual-problems"
+    ],
+    "pillarsB": [
+      "semiclassical-gravity"
+    ],
+    "nameSimilarity": 0.63
+  },
+  {
+    "a": "decoherence",
+    "b": "decoherence-diffusion-tradeoff",
+    "nameA": "Decoherence",
+    "nameB": "Decoherence-diffusion trade-off",
+    "defA": "Environment-induced suppression of interference that explains the appearance of classicality without solving the measurement problem (still requires a pointer basis and a partial trace). In quantum gravity the environmen",
+    "defB": "Any consistent (Markovian, CPTP) classical-quantum dynamics obeys a trade-off in which the metric diffusion coefficient D_2 is bounded below by the back-reaction coupling D_1 and the inverse decoherence (Lindblad) coeffi",
+    "pillarsA": [
+      "conceptual-problems"
+    ],
+    "pillarsB": [
+      "conceptual-problems"
+    ],
+    "nameSimilarity": 0.52
+  },
+  {
+    "a": "decoherence",
+    "b": "gravitational-decoherence",
+    "nameA": "Decoherence",
+    "nameB": "Gravitational Decoherence",
+    "defA": "Environment-induced suppression of interference that explains the appearance of classicality without solving the measurement problem (still requires a pointer basis and a partial trace). In quantum gravity the environmen",
+    "defB": "Loss of quantum coherence induced by gravity: either fundamental objective collapse (Diosi-Penrose) or universal decoherence from gravitational time dilation (Pikovski et al.). Sets the dominant limit on BMV-type experim",
+    "pillarsA": [
+      "conceptual-problems"
+    ],
+    "pillarsB": [
+      "experimental-tests"
+    ],
+    "nameSimilarity": 0.61
+  },
+  {
+    "a": "decoherence",
+    "b": "time-dilation-decoherence",
+    "nameA": "Decoherence",
+    "nameB": "Universal Decoherence from Time Dilation",
+    "defA": "Environment-induced suppression of interference that explains the appearance of classicality without solving the measurement problem (still requires a pointer basis and a partial trace). In quantum gravity the environmen",
+    "defB": "Pikovski-Zych-Costa-Brukner mechanism: gravitational time dilation couples a composite particle's internal energy to its center of mass, decohering its position without any external environment. Earth's g already suffice",
+    "pillarsA": [
+      "conceptual-problems"
+    ],
+    "pillarsB": [
+      "experimental-tests"
+    ],
+    "nameSimilarity": 0.43
+  },
+  {
+    "a": "decoherence",
+    "b": "cosmic-decoherence",
+    "nameA": "Decoherence",
+    "nameB": "Cosmic decoherence / quantum-to-classical transition",
+    "defA": "Environment-induced suppression of interference that explains the appearance of classicality without solving the measurement problem (still requires a pointer basis and a partial trace). In quantum gravity the environmen",
+    "defB": "Mechanism by which highly squeezed superhorizon perturbation modes become effectively classical: tracing out environmental/short-wavelength degrees of freedom diagonalizes the reduced density matrix in the field-amplitud",
+    "pillarsA": [
+      "conceptual-problems"
+    ],
+    "pillarsB": [
+      "quantum-cosmology"
+    ],
+    "nameSimilarity": 0.35
+  },
+  {
+    "a": "decoherence",
+    "b": "gravitationally-induced-decoherence",
+    "nameA": "Decoherence",
+    "nameB": "Gravitationally Induced Decoherence",
+    "defA": "Environment-induced suppression of interference that explains the appearance of classicality without solving the measurement problem (still requires a pointer basis and a partial trace). In quantum gravity the environmen",
+    "defB": "Loss of quantum coherence of spatial superpositions of matter due to coupling to the gravitational field (quantized or classical/stochastic). Includes Diosi-Penrose decoherence and decoherence by emission of soft gravito",
+    "pillarsA": [
+      "conceptual-problems"
+    ],
+    "pillarsB": [
+      "semiclassical-gravity"
+    ],
+    "nameSimilarity": 0.48
+  },
+  {
+    "a": "bmv-entanglement-witness",
+    "b": "entanglement-witness",
+    "nameA": "BMV gravity-induced entanglement witness",
+    "nameB": "Entanglement Witness",
+    "defA": "Bose et al. and Marletto-Vedral (2017): two ~10^-14 kg masses each in spatial superposition, coupled only via gravity, become entangled only if gravity is non-classical, because local operations and classical communicati",
+    "defB": "An observable whose value outside a classical bound certifies the presence of entanglement. In BMV, spin correlations such as <sigma_x^(1) sigma_y^(2)> witness gravity-mediated entanglement without full state tomography.",
+    "pillarsA": [
+      "conceptual-problems"
+    ],
+    "pillarsB": [
+      "experimental-tests"
+    ],
+    "nameSimilarity": 0.67
+  },
+  {
+    "a": "apparent-dark-matter",
+    "b": "dark-matter",
+    "nameA": "Apparent dark matter (Verlinde 2016)",
+    "nameB": "dark-matter",
+    "defA": "Not a particle but an elastic, memory-like response of the dark-energy entropy to baryonic matter; produces extra gravity reproducing flat rotation curves and MOND-like behaviour with a_0 = c H_0.",
+    "defB": "",
+    "pillarsA": [
+      "emergent-gravity"
+    ],
+    "pillarsB": [
+      "causal-sets"
+    ],
+    "nameSimilarity": 0.43
+  },
+  {
+    "a": "gravity-from-quantum-relative-entropy",
+    "b": "relative-entropy",
+    "nameA": "Gravity from quantum relative entropy (Bianconi)",
+    "nameB": "Relative Entropy in QFT",
+    "defA": "Bianconi's 2024/2025 action given by the quantum relative entropy between the spacetime metric and the metric induced by matter; an auxiliary G-field (Lagrange multipliers) yields a dressed Einstein-Hilbert action with a",
+    "defB": "Araki's relative entropy S(omega||vacuum) between a state and the vacuum, well-defined in QFT via modular theory. Equals modular energy minus vacuum-subtracted entanglement entropy; its positivity and monotonicity yield ",
+    "pillarsA": [
+      "emergent-gravity"
+    ],
+    "pillarsB": [
+      "semiclassical-gravity"
+    ],
+    "nameSimilarity": 0.54
+  },
+  {
+    "a": "ryu-takayanagi-formula",
+    "b": "ryu-takayanagi",
+    "nameA": "Ryu-Takayanagi formula",
+    "nameB": "Ryu-Takayanagi Formula",
+    "defA": "S_A = Area(gamma_A)/4G_N: entanglement entropy of a boundary region equals the area of the bulk minimal codimension-2 surface anchored on the boundary of A and homologous to A. Geometrizes entanglement.",
+    "defB": "Holographic entanglement entropy: the entanglement entropy of a boundary region equals Area(gamma)/(4G) for the minimal bulk surface gamma homologous to it. Geometrizes entanglement, connects spacetime geometry to quantu",
+    "pillarsA": [
+      "entanglement-spacetime"
+    ],
+    "pillarsB": [
+      "holography-adscft",
+      "string-theory"
+    ],
+    "nameSimilarity": 1.0
+  },
+  {
+    "a": "holographic-quantum-error-correction",
+    "b": "holographic-error-correction",
+    "nameA": "Holographic quantum error correction",
+    "nameB": "Holographic Quantum Error Correction",
+    "defA": "Bulk logical qubits are redundantly encoded into boundary physical qubits; explains subregion duality, radial commutativity and the resilience of bulk reconstruction to boundary erasures.",
+    "defB": "Almheiri-Dong-Harlow insight that AdS/CFT realizes operator-algebra quantum error correction: bulk (logical) information is redundantly encoded on the boundary (physical) qubits and protected against erasure of large bou",
+    "pillarsA": [
+      "entanglement-spacetime"
+    ],
+    "pillarsB": [
+      "holography-adscft"
+    ],
+    "nameSimilarity": 1.0
+  },
+  {
+    "a": "mera-tensor-network",
+    "b": "tensor-network",
+    "nameA": "MERA tensor network",
+    "nameB": "Tensor Network (Holographic)",
+    "defA": "Multiscale entanglement renormalization ansatz for critical ground states; its emergent radial (RG-scale) direction is interpreted as a discrete slice of AdS (Swingle 2012), realizing holographic geometry from entangleme",
+    "defB": "Discrete networks of tensors (MERA, HaPPY perfect-tensor codes, random tensor networks) that reproduce key holographic features: RT formula, negative tripartite information, error-correcting bulk reconstruction. Toy mode",
+    "pillarsA": [
+      "entanglement-spacetime"
+    ],
+    "pillarsB": [
+      "holography-adscft"
+    ],
+    "nameSimilarity": 0.6
+  },
+  {
+    "a": "tensor-network-holography",
+    "b": "tensor-network",
+    "nameA": "Tensor network holography",
+    "nameB": "Tensor Network (Holographic)",
+    "defA": "General program building emergent bulk geometry from tensor networks whose link structure encodes entanglement; includes MERA, HaPPY, hyperinvariant networks, and lifted/random networks reproducing RT.",
+    "defB": "Discrete networks of tensors (MERA, HaPPY perfect-tensor codes, random tensor networks) that reproduce key holographic features: RT formula, negative tripartite information, error-correcting bulk reconstruction. Toy mode",
+    "pillarsA": [
+      "entanglement-spacetime"
+    ],
+    "pillarsB": [
+      "holography-adscft"
+    ],
+    "nameSimilarity": 0.91
+  },
+  {
+    "a": "bousso-bound",
+    "b": "covariant-entropy-bound",
+    "nameA": "Covariant entropy (Bousso) bound",
+    "nameB": "Covariant Entropy Bound (Bousso Bound)",
+    "defA": "Entropy on a light-sheet does not exceed A/4G_N; the generalized (quantum) Bousso bound follows from QFC.",
+    "defB": "Generalized holographic bound (Bousso 1999): entropy on a light sheet (congruence of non-expanding null rays orthogonal to a surface B of area A) satisfies S <= A/4G. Valid in general spacetimes including cosmology, wher",
+    "pillarsA": [
+      "entanglement-spacetime"
+    ],
+    "pillarsB": [
+      "holography-adscft"
+    ],
+    "nameSimilarity": 0.89
+  },
+  {
+    "a": "von-neumann-algebra-crossed-product",
+    "b": "crossed-product",
+    "nameA": "von Neumann algebra crossed product / type II",
+    "nameB": "Crossed product algebra",
+    "defA": "Including the gravitational constraint changes the algebra of observables in a subregion from type III_1 to type II, permitting a well-defined (renormalized) entropy; gives an algebraic origin of A/4G and a framework for",
+    "defB": "The von Neumann algebra M x_sigma R obtained by adjoining to M the unitaries that implement an automorphism group (e.g. the modular flow), realized on H tensor L^2(R). Taking the crossed product of a type III_1 factor by",
+    "pillarsA": [
+      "entanglement-spacetime"
+    ],
+    "pillarsB": [
+      "von-neumann-algebras"
+    ],
+    "nameSimilarity": 0.5
+  },
+  {
+    "a": "emergent-time",
+    "b": "modular-inclusion-emergent-time",
+    "nameA": "Emergent time",
+    "nameB": "Emergent time from modular inclusions (Leutheusser-Liu)",
+    "defA": "Open problem of deriving the time coordinate (not just spatial directions) from quantum information; approached via half-sided modular flow, Connes cocycle, and pseudo-entropy / timelike entanglement in cosmological and ",
+    "defB": "In the large-N limit of a holographic CFT in the thermofield-double state, the boundary type I algebra degenerates into an emergent type III_1 factor equipped with a half-sided modular translation. Leutheusser and Liu sh",
+    "pillarsA": [
+      "entanglement-spacetime"
+    ],
+    "pillarsB": [
+      "von-neumann-algebras"
+    ],
+    "nameSimilarity": 0.38
+  },
+  {
+    "a": "lorentz-invariance-violation",
+    "b": "lorentz-violation",
+    "nameA": "Lorentz Invariance Violation (LIV)",
+    "nameB": "UV Lorentz-invariance violation",
+    "defA": "Explicit breaking of Lorentz symmetry by a preferred frame/scale, systematically parametrized by Standard-Model Extension (SME) coefficients organized by operator mass dimension (4,5,6,...). Dimension-5 and -6 operators ",
+    "defB": "Breaking of Lorentz symmetry at high momenta (as in Horava-Lifshitz), allowing improved UV behavior; radiative corrections threaten to leak the violation to low energies (tightly experimentally bounded), requiring fine-t",
+    "pillarsA": [
+      "experimental-tests"
+    ],
+    "pillarsB": [
+      "supergravity-uv"
+    ],
+    "nameSimilarity": 0.83
+  },
+  {
+    "a": "gravitational-decoherence",
+    "b": "gravitationally-induced-decoherence",
+    "nameA": "Gravitational Decoherence",
+    "nameB": "Gravitationally Induced Decoherence",
+    "defA": "Loss of quantum coherence induced by gravity: either fundamental objective collapse (Diosi-Penrose) or universal decoherence from gravitational time dilation (Pikovski et al.). Sets the dominant limit on BMV-type experim",
+    "defB": "Loss of quantum coherence of spatial superpositions of matter due to coupling to the gravitational field (quantized or classical/stochastic). Includes Diosi-Penrose decoherence and decoherence by emission of soft gravito",
+    "pillarsA": [
+      "experimental-tests"
+    ],
+    "pillarsB": [
+      "semiclassical-gravity"
+    ],
+    "nameSimilarity": 0.83
+  },
+  {
+    "a": "gravitational-wave-echoes",
+    "b": "gravitational-wave-memory",
+    "nameA": "Gravitational Wave Echoes",
+    "nameB": "Gravitational Wave Memory",
+    "defA": "Repeated pulses following ringdown, predicted if the classical horizon is replaced by quantum structure (firewall, fuzzball, exotic compact object) reflecting waves at ~ell_Pl from the horizon. Searched for in LIGO/Virgo",
+    "defB": "Permanent shift in the relative position of test masses after a GW passes; mathematically the Fourier transform of Weinberg's soft graviton theorem (Strominger-Zhiboedov). Its detection would test the soft-graviton/BMS-s",
+    "pillarsA": [
+      "experimental-tests"
+    ],
+    "pillarsB": [
+      "experimental-tests"
+    ],
+    "nameSimilarity": 0.84
+  },
+  {
+    "a": "graviton-mass",
+    "b": "graviton",
+    "nameA": "Graviton Mass Bound",
+    "nameB": "graviton",
+    "defA": "A nonzero graviton mass m_g modifies GW dispersion E^2 = p^2 c^2 + m_g^2 c^4, causing frequency-dependent delay in the waveform. LIGO/Virgo (GWTC-3) bounds m_g <~ 1.3e-23 eV/c^2; GW170817-GRB170817A coincidence gives |v_",
+    "defB": "",
+    "pillarsA": [
+      "experimental-tests"
+    ],
+    "pillarsB": [
+      "string-theory"
+    ],
+    "nameSimilarity": 0.59
+  },
+  {
+    "a": "single-graviton-detection",
+    "b": "graviton",
+    "nameA": "Single-Graviton Detection",
+    "nameB": "graviton",
+    "defA": "Gravito-phononic analog of the photoelectric effect: stimulated absorption of a single graviton in a macroscopic quantum resonator, resolvable with quantum sensing (Tobar et al. 2024). A possible first experimental clue ",
+    "defB": "",
+    "pillarsA": [
+      "experimental-tests"
+    ],
+    "pillarsB": [
+      "string-theory"
+    ],
+    "nameSimilarity": 0.48
+  },
+  {
+    "a": "standard-model-extension",
+    "b": "standard-model",
+    "nameA": "Standard-Model Extension (SME)",
+    "nameB": "standard-model",
+    "defA": "An effective field theory framework cataloging all Lorentz- and CPT-violating operators by mass dimension, providing the standard parametrization (coefficients) against which GRB, UHECR, neutrino, and laboratory LIV boun",
+    "defB": "",
+    "pillarsA": [
+      "experimental-tests"
+    ],
+    "pillarsB": [
+      "asymptotic-safety"
+    ],
+    "nameSimilarity": 0.64
+  },
+  {
+    "a": "tensor-model",
+    "b": "colored-tensor-model",
+    "nameA": "Tensor Model",
+    "nameB": "Colored Tensor Model",
+    "defA": "A 0-dimensional probabilistic/combinatorial model for a rank-d tensor T_{a_1...a_d} with indices a_i in {1,...,N}, generalizing random matrix models (d=2) to higher rank. Generates random triangulations of d-dimensional ",
+    "defB": "Gurau's variant with d+1 distinct fields ('colors'), each vertex containing exactly one field of each color. Coloring guarantees that dual complexes are simplicial pseudomanifolds in any dimension and enables a well-defi",
+    "pillarsA": [
+      "group-field-theory"
+    ],
+    "pillarsB": [
+      "group-field-theory"
+    ],
+    "nameSimilarity": 0.75
+  },
+  {
+    "a": "matrix-model",
+    "b": "matrix-models",
+    "nameA": "Matrix Model of 2D Gravity",
+    "nameB": "Matrix models (IKKT/BFSS, multimatrix)",
+    "defA": "Integral over N x N Hermitian matrices whose Feynman graphs are dual to random triangulated 2D surfaces, organized by a genus (topological) expansion F ~ sum_g N^{2-2g} F_g. In the double-scaling limit it provides a non-",
+    "defB": "Models whose dynamical variables are large matrices; fuzzy spaces and noncommutative gauge theories emerge from them, and effective Riemannian geometry/gravity emerges from matrix fluctuations. Multimatrix integrals aris",
+    "pillarsA": [
+      "group-field-theory"
+    ],
+    "pillarsB": [
+      "noncommutative-geometry"
+    ],
+    "nameSimilarity": 0.53
+  },
+  {
+    "a": "matrix-model",
+    "b": "bfss-matrix-model",
+    "nameA": "Matrix Model of 2D Gravity",
+    "nameB": "BFSS matrix model",
+    "defA": "Integral over N x N Hermitian matrices whose Feynman graphs are dual to random triangulated 2D surfaces, organized by a genus (topological) expansion F ~ sum_g N^{2-2g} F_g. In the double-scaling limit it provides a non-",
+    "defB": "Maximally supersymmetric U(N) matrix quantum mechanics (Banks-Fischler-Shenker-Susskind 1996) describing N D0-branes, conjectured to give a non-perturbative definition of M-theory in the infinite-momentum/DLCQ frame. Spa",
+    "pillarsA": [
+      "group-field-theory"
+    ],
+    "pillarsB": [
+      "string-theory"
+    ],
+    "nameSimilarity": 0.56
+  },
+  {
+    "a": "matrix-model",
+    "b": "ikkt-matrix-model",
+    "nameA": "Matrix Model of 2D Gravity",
+    "nameB": "IKKT matrix model",
+    "defA": "Integral over N x N Hermitian matrices whose Feynman graphs are dual to random triangulated 2D surfaces, organized by a genus (topological) expansion F ~ sum_g N^{2-2g} F_g. In the double-scaling limit it provides a non-",
+    "defB": "Type IIB (0+0)-dimensional matrix model (Ishibashi-Kawai-Kitazawa-Tsuchiya 1997), the dimensional reduction of 10D super-Yang-Mills to a point. Proposed as a non-perturbative, manifestly Lorentz-covariant definition of T",
+    "pillarsA": [
+      "group-field-theory"
+    ],
+    "pillarsB": [
+      "string-theory"
+    ],
+    "nameSimilarity": 0.56
+  },
+  {
+    "a": "spin-foam",
+    "b": "spin-foam-partition-function",
+    "nameA": "Spin Foam",
+    "nameB": "Spin foam partition function / transition amplitude",
+    "defA": "A 2-complex with faces carrying group irreducible representations and edges carrying intertwiners; the 'history' of a spin network. GFT Feynman amplitudes equal spin-foam amplitudes, so GFT is the generating functional t",
+    "defB": "Z = sum over labelings of products of face, edge and vertex amplitudes on a 2-complex, providing the covariant dynamics (a sum over geometries) and ideally a projector onto the physical Hilbert space of canonical LQG.",
+    "pillarsA": [
+      "group-field-theory",
+      "loop-quantum-gravity"
+    ],
+    "pillarsB": [
+      "loop-quantum-gravity"
+    ],
+    "nameSimilarity": 0.3
+  },
+  {
+    "a": "spin-foam",
+    "b": "effective-spin-foam",
+    "nameA": "Spin Foam",
+    "nameB": "Effective spin foam models",
+    "defA": "A 2-complex with faces carrying group irreducible representations and edges carrying intertwiners; the 'history' of a spin network. GFT Feynman amplitudes equal spin-foam amplitudes, so GFT is the generating functional t",
+    "defB": "Computationally efficient spin-foam models (Asante-Dittrich-Haggard) using the quantum area spectrum, strongly imposed gluing constraints and the discrete GR action; they avoid the flatness problem in a restricted parame",
+    "pillarsA": [
+      "group-field-theory",
+      "loop-quantum-gravity"
+    ],
+    "pillarsB": [
+      "loop-quantum-gravity"
+    ],
+    "nameSimilarity": 0.51
+  },
+  {
+    "a": "spin-foam",
+    "b": "numerical-spin-foam",
+    "nameA": "Spin Foam",
+    "nameB": "Numerical spin foams (sl2cfoam-next)",
+    "defA": "A 2-complex with faces carrying group irreducible representations and edges carrying intertwiners; the 'history' of a spin network. GFT Feynman amplitudes equal spin-foam amplitudes, so GFT is the generating functional t",
+    "defB": "High-performance computation of Lorentzian EPRL amplitudes (sl2cfoam-next code) plus Monte Carlo sampling, enabling tests of single-vertex asymptotics, the flatness problem and the first explicit spin-foam dynamics with ",
+    "pillarsA": [
+      "group-field-theory",
+      "loop-quantum-gravity"
+    ],
+    "pillarsB": [
+      "loop-quantum-gravity"
+    ],
+    "nameSimilarity": 0.4
+  },
+  {
+    "a": "spin-foam",
+    "b": "spin-foam-renormalization",
+    "nameA": "Spin Foam",
+    "nameB": "Spin foam coarse-graining and renormalization",
+    "defA": "A 2-complex with faces carrying group irreducible representations and edges carrying intertwiners; the 'history' of a spin network. GFT Feynman amplitudes equal spin-foam amplitudes, so GFT is the generating functional t",
+    "defB": "Tensor-network and renormalization-group methods applied to spin foams to study refinement/continuum limits and phase structure, since Monte Carlo is obstructed by complex oscillating amplitudes.",
+    "pillarsA": [
+      "group-field-theory",
+      "loop-quantum-gravity"
+    ],
+    "pillarsB": [
+      "loop-quantum-gravity"
+    ],
+    "nameSimilarity": 0.33
+  },
+  {
+    "a": "adscft-correspondence",
+    "b": "ads-cft-correspondence",
+    "nameA": "AdS/CFT Correspondence",
+    "nameB": "AdS/CFT correspondence",
+    "defA": "Exact duality (Maldacena 1997) between quantum gravity / string theory on (d+1)-dimensional anti-de Sitter space and a conformal field theory without gravity on its d-dimensional conformal boundary. Prototype: type IIB s",
+    "defB": "Maldacena's holographic duality (1997) equating Type IIB string theory on AdS5 x S5 with 4D N=4 super-Yang-Mills, derived from the two descriptions of D3-branes. A strong-weak duality and the sharpest realization of the ",
+    "pillarsA": [
+      "holography-adscft"
+    ],
+    "pillarsB": [
+      "string-theory"
+    ],
+    "nameSimilarity": 1.0
+  },
+  {
+    "a": "adscft-correspondence",
+    "b": "ward-correspondence",
+    "nameA": "AdS/CFT Correspondence",
+    "nameB": "Ward correspondence",
+    "defA": "Exact duality (Maldacena 1997) between quantum gravity / string theory on (d+1)-dimensional anti-de Sitter space and a conformal field theory without gravity on its d-dimensional conformal boundary. Prototype: type IIB s",
+    "defB": "Ward's 1977 theorem: a one-to-one correspondence between self-dual Yang-Mills fields on spacetime and holomorphic vector bundles over twistor space PT that are trivial on every line CP1. The twistor origin of the integra",
+    "pillarsA": [
+      "holography-adscft"
+    ],
+    "pillarsB": [
+      "twistors-amplitudes"
+    ],
+    "nameSimilarity": 0.83
+  },
+  {
+    "a": "tensor-network",
+    "b": "tensor-networks",
+    "nameA": "Tensor Network (Holographic)",
+    "nameB": "tensor-networks",
+    "defA": "Discrete networks of tensors (MERA, HaPPY perfect-tensor codes, random tensor networks) that reproduce key holographic features: RT formula, negative tripartite information, error-correcting bulk reconstruction. Toy mode",
+    "defB": "",
+    "pillarsA": [
+      "holography-adscft"
+    ],
+    "pillarsB": [
+      "black-holes-information"
+    ],
+    "nameSimilarity": 0.6
+  },
+  {
+    "a": "integrability-n4-sym",
+    "b": "integrability",
+    "nameA": "Integrability of Planar N=4 SYM",
+    "nameB": "integrability",
+    "defA": "Planar N=4 super-Yang-Mills is integrable: its one-loop dilatation operator is the Hamiltonian of an integrable spin chain, and the Quantum Spectral Curve gives exact anomalous dimensions at any 't Hooft coupling, provid",
+    "defB": "",
+    "pillarsA": [
+      "holography-adscft"
+    ],
+    "pillarsB": [
+      "twistors-amplitudes"
+    ],
+    "nameSimilarity": 0.59
+  },
+  {
+    "a": "syk-jt-gravity",
+    "b": "jt-gravity",
+    "nameA": "SYK Model / JT Gravity / Nearly-AdS2",
+    "nameB": "jt-gravity",
+    "defA": "The Sachdev-Ye-Kitaev model (N Majorana fermions, all-to-all random couplings) is maximally chaotic and holographically dual to Jackiw-Teitelboim gravity in nearly-AdS2; the Schwarzian action captures the soft modes. A s",
+    "defB": "",
+    "pillarsA": [
+      "holography-adscft"
+    ],
+    "pillarsB": [
+      "black-holes-information"
+    ],
+    "nameSimilarity": 0.39
+  },
+  {
+    "a": "black-hole-microstates",
+    "b": "black-hole-entropy",
+    "nameA": "Black Hole Microstate Counting",
+    "nameB": "Black hole entropy from microstate counting",
+    "defA": "Statistical-mechanical origin of S = A/4: Strominger-Vafa counted BPS D-brane bound states reproducing the Bekenstein-Hawking entropy of extremal 5D black holes; Cardy formula reproduces BTZ entropy. Microstates of gener",
+    "defB": "LQG computes black hole entropy by counting horizon quantum-geometry microstates; matching the leading area term to S = A/4 fixes gamma, with a universal logarithmic correction -1/2 ln(A).",
+    "pillarsA": [
+      "holography-adscft"
+    ],
+    "pillarsB": [
+      "loop-quantum-gravity"
+    ],
+    "nameSimilarity": 0.82
+  },
+  {
+    "a": "discrete-area-spectrum",
+    "b": "discrete-volume-spectrum",
+    "nameA": "Discrete area spectrum",
+    "nameB": "Discrete volume spectrum",
+    "defA": "The LQG area operator has a discrete spectrum A = 8 pi gamma l_P^2 sum sqrt(j(j+1)), so surfaces have a minimum nonzero quantum of area (area gap). A signature prediction of quantized geometry.",
+    "defB": "The LQG volume operator has a discrete spectrum with contributions from spin-network vertices of valence >= 4 with non-coplanar geometry, giving space a minimum meaningful volume. No closed-form general spectrum exists.",
+    "pillarsA": [
+      "loop-quantum-gravity"
+    ],
+    "pillarsB": [
+      "loop-quantum-gravity"
+    ],
+    "nameSimilarity": 0.83
+  },
+  {
+    "a": "graviton-propagator",
+    "b": "graviton",
+    "nameA": "Graviton propagator from spin foams",
+    "nameB": "graviton",
+    "defA": "Two-point (and higher n-point) correlation functions computed from spin foam amplitudes; the low-energy limit of the improved-model two-point function matches the graviton propagator of linearized gravity in a transverse",
+    "defB": "",
+    "pillarsA": [
+      "loop-quantum-gravity"
+    ],
+    "pillarsB": [
+      "string-theory"
+    ],
+    "nameSimilarity": 0.37
+  },
+  {
+    "a": "standard-model-from-geometry",
+    "b": "standard-model",
+    "nameA": "Standard Model from spectral geometry",
+    "nameB": "standard-model",
+    "defA": "Derivation of the full Standard Model (gauge group, fermion representations, hypercharges, Higgs, neutrino mixing) minimally coupled to gravity from the spectral action on an almost-commutative geometry with finite algeb",
+    "defB": "",
+    "pillarsA": [
+      "noncommutative-geometry"
+    ],
+    "pillarsB": [
+      "asymptotic-safety"
+    ],
+    "nameSimilarity": 0.51
+  },
+  {
+    "a": "euclidean-path-integral",
+    "b": "lorentzian-path-integral",
+    "nameA": "Euclidean gravitational path integral",
+    "nameB": "Lorentzian gravitational path integral",
+    "defA": "Path integral over Euclidean-signature 4-geometries weighted by exp(-I_E/hbar); used to define the no-boundary wave function and, more generally, the partition function and entropy in gravity. Conditionally convergent an",
+    "defB": "Path integral over Lorentzian-signature geometries weighted by exp(iS/hbar); for minisuperspace it is rendered absolutely convergent by Picard-Lefschetz theory. Central to the Feldbrugge-Lehners-Turok reformulation of th",
+    "pillarsA": [
+      "quantum-cosmology"
+    ],
+    "pillarsB": [
+      "quantum-cosmology"
+    ],
+    "nameSimilarity": 0.85
+  },
+  {
+    "a": "eternal-inflation",
+    "b": "inflation",
+    "nameA": "Eternal inflation",
+    "nameB": "inflation",
+    "defA": "Regime in which quantum fluctuations of the inflaton keep inflation going forever in an ever-growing comoving volume, with reheating completing only in disconnected pocket universes, generically producing a multiverse.",
+    "defB": "",
+    "pillarsA": [
+      "quantum-cosmology"
+    ],
+    "pillarsB": [
+      "quantum-cosmology"
+    ],
+    "nameSimilarity": 0.69
+  },
+  {
+    "a": "measure-problem",
+    "b": "measurement-problem",
+    "nameA": "Measure problem",
+    "nameB": "measurement-problem",
+    "defA": "The problem of assigning well-defined probabilities in an eternally inflating multiverse where volumes and observer counts diverge; no canonical normalization exists, and proposed measures (causal patch, scale-factor cut",
+    "defB": "",
+    "pillarsA": [
+      "quantum-cosmology"
+    ],
+    "pillarsB": [
+      "semiclassical-gravity"
+    ],
+    "nameSimilarity": 0.82
+  },
+  {
+    "a": "string-gas-cosmology",
+    "b": "string-cosmology",
+    "nameA": "String gas cosmology",
+    "nameB": "String cosmology",
+    "defA": "Early-universe model with a quasi-static Hagedorn phase of a gas of highly excited strings; T-duality and winding modes resolve the initial singularity and generate a nearly scale-invariant spectrum with a characteristic",
+    "defB": "Application of string theory to the early universe, encompassing string gas, pre-big-bang, ekpyrotic/cyclic, double field theory and matrix cosmology; uses dualities, the dilaton, branes and the Hagedorn temperature.",
+    "pillarsA": [
+      "quantum-cosmology"
+    ],
+    "pillarsB": [
+      "quantum-cosmology"
+    ],
+    "nameSimilarity": 0.89
+  },
+  {
+    "a": "dark-energy-quantum-gravity",
+    "b": "dark-energy",
+    "nameA": "Dark energy from quantum gravity",
+    "nameB": "dark-energy",
+    "defA": "Attempts to derive or constrain dark energy from quantum-gravity principles: swampland de Sitter / TCC conjectures favoring dynamical quintessence over a constant Lambda, causal-set prediction of Lambda ~ 1/sqrt(V) fluct",
+    "defB": "",
+    "pillarsA": [
+      "quantum-cosmology"
+    ],
+    "pillarsB": [
+      "swampland"
+    ],
+    "nameSimilarity": 0.47
+  },
+  {
+    "a": "modular-theory",
+    "b": "tomita-takesaki",
+    "nameA": "Tomita-Takesaki Modular Theory",
+    "nameB": "Tomita-Takesaki modular theory",
+    "defA": "Operator-algebraic framework associating a modular Hamiltonian and modular flow to a state on a von Neumann algebra of a spacetime region. In QFTCS it underlies the geometric action of boosts on the Rindler wedge (Bisogn",
+    "defB": "Given a von Neumann algebra M with a cyclic and separating vector |Omega>, the closure of the antilinear map S a|Omega> = a^dagger|Omega> has polar decomposition S = J Delta^{1/2}. The modular operator Delta and modular ",
+    "pillarsA": [
+      "semiclassical-gravity"
+    ],
+    "pillarsB": [
+      "von-neumann-algebras"
+    ],
+    "nameSimilarity": 1.0
+  },
+  {
+    "a": "relative-entropy",
+    "b": "relative-entropy-algebraic",
+    "nameA": "Relative Entropy in QFT",
+    "nameB": "Araki relative entropy",
+    "defA": "Araki's relative entropy S(omega||vacuum) between a state and the vacuum, well-defined in QFT via modular theory. Equals modular energy minus vacuum-subtracted entanglement entropy; its positivity and monotonicity yield ",
+    "defB": "S(psi||phi) = -<psi| log Delta_{psi|phi} |psi>, the relative entropy of two states on a von Neumann algebra defined via the relative modular operator without needing density matrices. Always non-negative, monotonic under",
+    "pillarsA": [
+      "semiclassical-gravity"
+    ],
+    "pillarsB": [
+      "von-neumann-algebras"
+    ],
+    "nameSimilarity": 0.71
+  },
+  {
+    "a": "critical-dimension",
+    "b": "n8-critical-dimension",
+    "nameA": "Critical dimension",
+    "nameB": "Critical dimension D_c(L) for N=8 UV finiteness",
+    "defA": "The number of spacetime dimensions for which the conformal (Weyl) anomaly on the worldsheet cancels: D=26 for the bosonic string and D=10 for the superstring. The anomaly is proportional to (D-26) for the bosonic case (e",
+    "defB": "Spacetime dimension below which the L-loop four-point amplitude of N=8 supergravity is finite: D_c=6 (3 loops), 11/2 (4 loops), 24/5 (5 loops). The relation D_c=4+6/L (the N=4 SYM bound) holds only through four loops; at",
+    "pillarsA": [
+      "string-theory"
+    ],
+    "pillarsB": [
+      "supergravity-uv"
+    ],
+    "nameSimilarity": 0.55
+  },
+  {
+    "a": "superstring",
+    "b": "five-superstring-theories",
+    "nameA": "Superstring theory",
+    "nameB": "Five superstring theories",
+    "defA": "String theory with worldsheet supersymmetry (added fermionic fields). Lives in D=10, is tachyon-free after the GSO projection, and contains spacetime fermions and supersymmetry. Comes in five consistent versions: Type I,",
+    "defB": "The five consistent 10D superstring theories: Type I (open+closed, gauge group SO(32), N=1), Type IIA (closed, non-chiral, N=2), Type IIB (closed, chiral, N=2), heterotic SO(32) and heterotic E8xE8 (hybrid of bosonic lef",
+    "pillarsA": [
+      "string-theory"
+    ],
+    "pillarsB": [
+      "string-theory"
+    ],
+    "nameSimilarity": 0.79
+  },
+  {
+    "a": "t-duality",
+    "b": "s-duality",
+    "nameA": "T-duality",
+    "nameB": "S-duality",
+    "defA": "Target-space duality identifying string compactified on a circle of radius R with one on radius alpha'/R, exchanging Kaluza-Klein momentum number n with winding number m. The self-dual radius is R = sqrt(alpha'). A genui",
+    "defB": "Strong-weak coupling duality g_s <-> 1/g_s that exchanges fundamental strings with solitonic (D- or NS5-brane) objects. Relates Type I to heterotic SO(32), maps IIB to itself, and is non-perturbative evidence for the uni",
+    "pillarsA": [
+      "string-theory"
+    ],
+    "pillarsB": [
+      "string-theory"
+    ],
+    "nameSimilarity": 0.89
+  },
+  {
+    "a": "t-duality",
+    "b": "u-duality",
+    "nameA": "T-duality",
+    "nameB": "U-duality",
+    "defA": "Target-space duality identifying string compactified on a circle of radius R with one on radius alpha'/R, exchanging Kaluza-Klein momentum number n with winding number m. The self-dual radius is R = sqrt(alpha'). A genui",
+    "defB": "Unification of T- and S-dualities in toroidally compactified string/M-theory, realized by the exceptional groups E_n(n)(Z). It acts on the full BPS spectrum and the moduli space, and is a central organizing principle of ",
+    "pillarsA": [
+      "string-theory"
+    ],
+    "pillarsB": [
+      "string-theory"
+    ],
+    "nameSimilarity": 0.89
+  },
+  {
+    "a": "s-duality",
+    "b": "u-duality",
+    "nameA": "S-duality",
+    "nameB": "U-duality",
+    "defA": "Strong-weak coupling duality g_s <-> 1/g_s that exchanges fundamental strings with solitonic (D- or NS5-brane) objects. Relates Type I to heterotic SO(32), maps IIB to itself, and is non-perturbative evidence for the uni",
+    "defB": "Unification of T- and S-dualities in toroidally compactified string/M-theory, realized by the exceptional groups E_n(n)(Z). It acts on the full BPS spectrum and the moduli space, and is a central organizing principle of ",
+    "pillarsA": [
+      "string-theory"
+    ],
+    "pillarsB": [
+      "string-theory"
+    ],
+    "nameSimilarity": 0.89
+  },
+  {
+    "a": "eleven-d-supergravity",
+    "b": "supergravity",
+    "nameA": "11D supergravity",
+    "nameB": "Supergravity (N=1..8)",
+    "defA": "Unique maximal supergravity in 11 dimensions (Cremmer-Julia-Scherk 1978), with metric, gravitino and a 3-form potential C_3 (sourcing M2-branes) whose 7-form dual sources M5-branes. It is the low-energy effective field t",
+    "defB": "Locally supersymmetric extension of general relativity with N supercharges and a gravitino (spin 3/2). Higher N gives stronger UV cancellations; N=8 is maximal in 4D since more supersymmetry would force spins greater tha",
+    "pillarsA": [
+      "string-theory"
+    ],
+    "pillarsB": [
+      "supergravity-uv"
+    ],
+    "nameSimilarity": 0.65
+  },
+  {
+    "a": "compactification",
+    "b": "calabi-yau-compactification",
+    "nameA": "Compactification",
+    "nameB": "Calabi-Yau compactification",
+    "defA": "Reduction of the 10D/11D theory to 4D by curling up extra dimensions on a compact internal manifold. Preserving N=1 supersymmetry in 4D requires the internal space to be a Calabi-Yau threefold (SU(3) holonomy). The geome",
+    "defB": "Compactification on a Calabi-Yau threefold (Ricci-flat, SU(3) holonomy Kahler manifold) preserving minimal N=1 supersymmetry in 4D. The topology (Hodge numbers, intersection numbers) fixes the number of generations and m",
+    "pillarsA": [
+      "string-theory"
+    ],
+    "pillarsB": [
+      "string-theory"
+    ],
+    "nameSimilarity": 0.74
+  },
+  {
+    "a": "compactification",
+    "b": "flux-compactification",
+    "nameA": "Compactification",
+    "nameB": "Flux compactification",
+    "defA": "Reduction of the 10D/11D theory to 4D by curling up extra dimensions on a compact internal manifold. Preserving N=1 supersymmetry in 4D requires the internal space to be a Calabi-Yau threefold (SU(3) holonomy). The geome",
+    "defB": "Compactification with nonzero background values (fluxes) of p-form field strengths threading internal cycles. Fluxes generate a superpotential that lifts and stabilizes moduli, and their quantized choices produce an enor",
+    "pillarsA": [
+      "string-theory"
+    ],
+    "pillarsB": [
+      "string-theory"
+    ],
+    "nameSimilarity": 0.86
+  },
+  {
+    "a": "swampland-distance-conjecture",
+    "b": "distance-conjecture",
+    "nameA": "Swampland Distance Conjecture",
+    "nameB": "Swampland Distance Conjecture (SDC)",
+    "defA": "Conjecture that traversing a super-Planckian geodesic distance Delta in moduli space triggers an infinite tower of states whose mass falls exponentially, m ~ m_0 exp(-alpha Delta/M_Pl), causing the effective field theory",
+    "defB": "Traversing an infinite geodesic distance in moduli/scalar-field space triggers an infinite tower of states becoming exponentially light: m ~ m_0 exp(-alpha d / M_Pl) with alpha ~ O(1). The tower (KK modes or string excit",
+    "pillarsA": [
+      "string-theory"
+    ],
+    "pillarsB": [
+      "swampland"
+    ],
+    "nameSimilarity": 0.91
+  },
+  {
+    "a": "ads-cft-correspondence",
+    "b": "ward-correspondence",
+    "nameA": "AdS/CFT correspondence",
+    "nameB": "Ward correspondence",
+    "defA": "Maldacena's holographic duality (1997) equating Type IIB string theory on AdS5 x S5 with 4D N=4 super-Yang-Mills, derived from the two descriptions of D3-branes. A strong-weak duality and the sharpest realization of the ",
+    "defB": "Ward's 1977 theorem: a one-to-one correspondence between self-dual Yang-Mills fields on spacetime and holomorphic vector bundles over twistor space PT that are trivial on every line CP1. The twistor origin of the integra",
+    "pillarsA": [
+      "string-theory"
+    ],
+    "pillarsB": [
+      "twistors-amplitudes"
+    ],
+    "nameSimilarity": 0.83
+  },
+  {
+    "a": "supergravity",
+    "b": "n8-supergravity",
+    "nameA": "Supergravity (N=1..8)",
+    "nameB": "N=8 supergravity",
+    "defA": "Locally supersymmetric extension of general relativity with N supercharges and a gravitino (spin 3/2). Higher N gives stronger UV cancellations; N=8 is maximal in 4D since more supersymmetry would force spins greater tha",
+    "defB": "Maximal 4D supergravity (toroidal reduction of 11D supergravity) with 1 graviton, 8 gravitinos, 28 vectors, 56 fermions, 70 scalars; hidden global E7(7) and local SU(8) symmetry. Candidate for a perturbatively UV-finite ",
+    "pillarsA": [
+      "supergravity-uv"
+    ],
+    "pillarsB": [
+      "supergravity-uv"
+    ],
+    "nameSimilarity": 0.65
+  },
+  {
+    "a": "supergravity",
+    "b": "n5-supergravity-finiteness",
+    "nameA": "Supergravity (N=1..8)",
+    "nameB": "N=5 supergravity four-loop finiteness",
+    "defA": "Locally supersymmetric extension of general relativity with N supercharges and a gravitino (spin 3/2). Higher N gives stronger UV cancellations; N=8 is maximal in 4D since more supersymmetry would force spins greater tha",
+    "defB": "N=5 supergravity is UV finite at four loops despite supersymmetry and duality arguments predicting a divergence; the cancellation is an enhanced cancellation, contrasting with N=4 which diverges at four loops via a U(1) ",
+    "pillarsA": [
+      "supergravity-uv"
+    ],
+    "pillarsB": [
+      "supergravity-uv"
+    ],
+    "nameSimilarity": 0.48
+  },
+  {
+    "a": "supergravity",
+    "b": "eleven-dimensional-supergravity",
+    "nameA": "Supergravity (N=1..8)",
+    "nameB": "Eleven-dimensional supergravity",
+    "defA": "Locally supersymmetric extension of general relativity with N supercharges and a gravitino (spin 3/2). Higher N gives stronger UV cancellations; N=8 is maximal in 4D since more supersymmetry would force spins greater tha",
+    "defB": "Unique maximal supergravity (Cremmer-Julia-Scherk 1978); the highest dimension supporting a consistent supergravity with spin <=2. Its dimensional reduction yields 4D N=8 supergravity, and it is the low-energy limit of M",
+    "pillarsA": [
+      "supergravity-uv"
+    ],
+    "pillarsB": [
+      "supergravity-uv"
+    ],
+    "nameSimilarity": 0.46
+  },
+  {
+    "a": "supergravity",
+    "b": "conformal-supergravity",
+    "nameA": "Supergravity (N=1..8)",
+    "nameB": "Conformal supergravity (twistor-string sector)",
+    "defA": "Locally supersymmetric extension of general relativity with N supercharges and a gravitino (spin 3/2). Higher N gives stronger UV cancellations; N=8 is maximal in 4D since more supersymmetry would force spins greater tha",
+    "defB": "The closed-string / gauge-singlet open-string sector of twistor string theory contains conformal supergravity states that couple with the same coupling as Yang-Mills and therefore contribute to gluon loop amplitudes, pre",
+    "pillarsA": [
+      "supergravity-uv"
+    ],
+    "pillarsB": [
+      "twistors-amplitudes"
+    ],
+    "nameSimilarity": 0.48
+  },
+  {
+    "a": "double-copy",
+    "b": "classical-double-copy",
+    "nameA": "Double copy / KLT / BCJ color-kinematics duality",
+    "nameB": "Classical double copy (Kerr-Schild / Weyl)",
+    "defA": "The statement gravity = (gauge theory)^2. When color factors satisfy Jacobi identities, kinematic numerators can be chosen to satisfy the same identities (BCJ duality); replacing a color factor by a second copy of the ki",
+    "defB": "Map between exact classical gauge-theory solutions and gravity solutions, e.g. Kerr-Schild metrics double-copied from gauge fields (Kerr = sqrt(Kerr)). Used to compute black-hole binary inspiral waveforms (PM/PN expansio",
+    "pillarsA": [
+      "supergravity-uv",
+      "twistors-amplitudes"
+    ],
+    "pillarsB": [
+      "twistors-amplitudes"
+    ],
+    "nameSimilarity": 0.4
+  },
+  {
+    "a": "distance-conjecture",
+    "b": "ads-distance-conjecture",
+    "nameA": "Swampland Distance Conjecture (SDC)",
+    "nameB": "AdS Distance Conjecture",
+    "defA": "Traversing an infinite geodesic distance in moduli/scalar-field space triggers an infinite tower of states becoming exponentially light: m ~ m_0 exp(-alpha d / M_Pl) with alpha ~ O(1). The tower (KK modes or string excit",
+    "defB": "The flat-space limit Lambda -> 0^- of AdS lies in the swampland, accompanied by an infinite tower of light states with m ~ M_Pl |Lambda/M_Pl^2|^alpha, alpha = 1/2 in the supersymmetric case. Strong version forbids parame",
+    "pillarsA": [
+      "swampland"
+    ],
+    "pillarsB": [
+      "swampland"
+    ],
+    "nameSimilarity": 0.72
+  },
+  {
+    "a": "nonlinear-graviton",
+    "b": "graviton",
+    "nameA": "Nonlinear graviton",
+    "nameB": "graviton",
+    "defA": "Penrose's 1976 construction encoding anti-self-dual (ASD) vacuum Einstein metrics as deformations of the complex structure of (the upper half of) twistor space. A three-parameter family of alpha-surfaces exists iff the W",
+    "defB": "",
+    "pillarsA": [
+      "twistors-amplitudes"
+    ],
+    "pillarsB": [
+      "string-theory"
+    ],
+    "nameSimilarity": 0.62
+  },
+  {
+    "a": "spinor-helicity",
+    "b": "massive-spinor-helicity",
+    "nameA": "Spinor-helicity formalism",
+    "nameB": "massive-spinor-helicity",
+    "defA": "Parametrization of massless momenta as p_{A A'} = lambda_A tilde-lambda_{A'}, splitting a null momentum into holomorphic and anti-holomorphic 2-spinors. Lorentz invariants are the angle bracket <ij> = eps_AB lambda_i^A l",
+    "defB": "",
+    "pillarsA": [
+      "twistors-amplitudes"
+    ],
+    "pillarsB": [
+      "twistors-amplitudes"
+    ],
+    "nameSimilarity": 0.62
+  },
+  {
+    "a": "twistor-string",
+    "b": "ambitwistor-string",
+    "nameA": "Twistor string theory",
+    "nameB": "Ambitwistor string",
+    "defA": "Witten's 2003 equivalence between perturbative N=4 super-Yang-Mills and the topological B-model string on the super-Calabi-Yau CP^{3|4}; amplitudes localize on holomorphic curves in twistor space. The perturbative SYM ex",
+    "defB": "A chiral, infinite-tension string theory of holomorphic maps to ambitwistor space (the space of complex null geodesics). Its quantization reproduces the CHY scattering equations and amplitudes, extends them to loop level",
+    "pillarsA": [
+      "twistors-amplitudes"
+    ],
+    "pillarsB": [
+      "twistors-amplitudes"
+    ],
+    "nameSimilarity": 0.72
+  },
+  {
+    "a": "crossed-product",
+    "b": "crossed-product-observer",
+    "nameA": "Crossed product algebra",
+    "nameB": "Observer (CLPW) crossed-product algebra",
+    "defA": "The von Neumann algebra M x_sigma R obtained by adjoining to M the unitaries that implement an automorphism group (e.g. the modular flow), realized on H tensor L^2(R). Taking the crossed product of a type III_1 factor by",
+    "defB": "Chandrasekaran-Longo-Penington-Witten: dressing QFT observables to the worldline of an observer carrying a clock (a bounded-below Hamiltonian) in a gravitational background produces a type II crossed-product algebra A_QF",
+    "pillarsA": [
+      "von-neumann-algebras"
+    ],
+    "pillarsB": [
+      "von-neumann-algebras"
+    ],
+    "nameSimilarity": 0.71
+  },
+  {
+    "a": "crossed-product",
+    "b": "qrf-crossed-product",
+    "nameA": "Crossed product algebra",
+    "nameB": "Quantum reference frames as crossed products",
+    "defA": "The von Neumann algebra M x_sigma R obtained by adjoining to M the unitaries that implement an automorphism group (e.g. the modular flow), realized on H tensor L^2(R). Taking the crossed product of a type III_1 factor by",
+    "defB": "De Vuyst-Eccles-Hoehn-Kirklin: a quantum reference frame (observer that may be in superposition) implementing gauge invariance is mathematically a crossed product. Different QRFs (different clocks, possibly with degenera",
+    "pillarsA": [
+      "von-neumann-algebras"
+    ],
+    "pillarsB": [
+      "von-neumann-algebras"
+    ],
+    "nameSimilarity": 0.45
+  },
+  {
+    "a": "emergent-geometry-modular",
+    "b": "emergent-geometry",
+    "nameA": "Emergent geometry from modular data",
+    "nameB": "emergent-geometry",
+    "defA": "The program of reconstructing spacetime structure -- causal order, horizons, a radial/holographic direction, even a slice of the Poincare or conformal group -- from purely algebraic modular data (modular flows, inclusion",
+    "defB": "",
+    "pillarsA": [
+      "von-neumann-algebras"
+    ],
+    "pillarsB": [
+      "noncommutative-geometry"
+    ],
+    "nameSimilarity": 0.62
+  }
+]

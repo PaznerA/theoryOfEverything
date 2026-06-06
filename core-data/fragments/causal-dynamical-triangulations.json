@@ -1,0 +1,775 @@
+{
+  "slug": "causal-dynamical-triangulations",
+  "name": "Causal Dynamical Triangulations",
+  "concepts": [
+    {
+      "id": "causal-triangulation",
+      "name": "Causal triangulation",
+      "definition": "A simplicial spacetime glued from flat Minkowskian 4-simplices that admits a global foliation into spatial slices of fixed topology, with gluing rules preserving the foliation and causal (time) orientation. Forms the configurations summed in the CDT path integral.",
+      "relatedTo": ["regge-calculus", "global-time-foliation", "simplex-types-41-32", "dynamical-triangulations"]
+    },
+    {
+      "id": "global-time-foliation",
+      "name": "Global time foliation (causality condition)",
+      "definition": "The defining ingredient of CDT: spacetime is sliced by a discrete proper-time label t into spatial hypersurfaces of constant topology, restricting the sum-over-histories to globally hyperbolic, causal geometries. Enables a well-defined Wick rotation.",
+      "relatedTo": ["causal-triangulation", "wick-rotation", "horava-lifshitz-gravity", "causality"]
+    },
+    {
+      "id": "regge-calculus",
+      "name": "Regge calculus",
+      "definition": "Discretization of general relativity (Regge 1961) in which curvature is concentrated in deficit angles around (d-2)-dimensional bones of a simplicial complex; the Einstein-Hilbert action becomes a function of simplex volumes and subsimplex counts. CDT is dynamical-triangulations Regge calculus with fixed edge lengths.",
+      "relatedTo": ["causal-triangulation", "regge-action", "deficit-angle"]
+    },
+    {
+      "id": "dynamical-triangulations",
+      "name": "Dynamical triangulations",
+      "definition": "Lattice quantum gravity in which all edge lengths are fixed and the dynamics resides entirely in the connectivity (which simplices are glued to which); the path integral becomes a sum over distinct triangulations. CDT is the causal (Lorentzian) variant.",
+      "relatedTo": ["euclidean-dynamical-triangulations", "causal-triangulation", "regge-calculus"]
+    },
+    {
+      "id": "euclidean-dynamical-triangulations",
+      "name": "Euclidean Dynamical Triangulations (EDT)",
+      "definition": "Historical precursor summing over Euclidean (positive-definite) triangulations without causality. In 4D it is dominated by a crumpled phase (near-infinite Hausdorff dimension) and a branched-polymer phase (Hausdorff dimension ~2), neither with a good classical limit; the transition between them is first order.",
+      "relatedTo": ["dynamical-triangulations", "crumpled-phase", "branched-polymer-phase", "causal-dynamical-triangulations"]
+    },
+    {
+      "id": "simplex-types-41-32",
+      "name": "(4,1) and (3,2) four-simplex types",
+      "definition": "In 4D CDT two causal building blocks exist depending on how their five vertices split between adjacent time slices: (4,1)-simplices (and time-reflected (1,4)) and (3,2)-simplices (and (2,3)). Spacelike edges satisfy l_s^2=a^2, timelike edges l_t^2=-alpha a^2.",
+      "relatedTo": ["causal-triangulation", "regge-action", "asymmetry-parameter-delta"]
+    },
+    {
+      "id": "asymmetry-parameter-delta",
+      "name": "Asymmetry parameter Delta",
+      "definition": "Bare coupling relating the squared lengths of timelike and spacelike edges (alpha = l_t^2/l_s^2). A purely Lorentzian/causal parameter absent in EDT; tuning Delta together with kappa_0 generates the CDT phase diagram and the physical de Sitter phase.",
+      "relatedTo": ["regge-action", "phase-diagram-cdt", "simplex-types-41-32"]
+    },
+    {
+      "id": "regge-action",
+      "name": "CDT Regge action",
+      "definition": "The discretized (Wick-rotated) Einstein-Hilbert action S_eu = -(kappa_0+6 Delta) N_0 + kappa_4 (N_41+N_32) + Delta(2 N_41+N_32), with bare inverse Newton coupling kappa_0, cosmological coupling kappa_4, asymmetry Delta and simplex/vertex counts N_0,N_41,N_32.",
+      "relatedTo": ["regge-calculus", "partition-function-path-integral", "asymmetry-parameter-delta"]
+    },
+    {
+      "id": "wick-rotation",
+      "name": "Wick rotation (CDT)",
+      "definition": "Analytic continuation alpha -> -alpha turning complex Lorentzian weights e^{iS} into real positive Euclidean Boltzmann weights e^{-S_eu}. Well-defined in CDT because of the global foliation, enabling sign-problem-free Monte Carlo simulation.",
+      "relatedTo": ["global-time-foliation", "partition-function-path-integral", "monte-carlo-quantum-gravity"]
+    },
+    {
+      "id": "partition-function-path-integral",
+      "name": "Gravitational path integral / partition function",
+      "definition": "Regularized nonperturbative sum-over-histories Z = sum_T (1/C(T)) e^{iS[T]}, Wick-rotated to Z = sum_T (1/C(T)) e^{-S_eu[T]}, where C(T) is the automorphism (symmetry) factor. The continuum theory is sought as a scaling limit a->0.",
+      "relatedTo": ["regge-action", "wick-rotation", "monte-carlo-quantum-gravity"]
+    },
+    {
+      "id": "monte-carlo-quantum-gravity",
+      "name": "Monte Carlo simulation of quantum geometry",
+      "definition": "Metropolis-algorithm sampling of Wick-rotated causal triangulations using local geometry-changing moves, allowing direct measurement of invariant quantum observables (volumes, dimensions, curvature) at a Planckian regime.",
+      "relatedTo": ["partition-function-path-integral", "spectral-dimension", "transfer-matrix"]
+    },
+    {
+      "id": "spectral-dimension",
+      "name": "Spectral dimension",
+      "definition": "Effective dimension felt by a diffusion process on the quantum geometry, D_S(sigma) = -2 d ln P(sigma)/d ln sigma with P the average return probability and sigma the diffusion time. In CDT it runs from ~4.02 (IR) to ~1.80 (UV).",
+      "relatedTo": ["dimensional-reduction", "hausdorff-dimension", "asymptotic-safety", "horava-lifshitz-gravity"]
+    },
+    {
+      "id": "dimensional-reduction",
+      "name": "Dynamical dimensional reduction",
+      "definition": "Scale-dependent lowering of the effective dimension of quantum spacetime from 4 at large scales to ~2 near the Planck scale, observed in CDT via the spectral dimension. Suggested as a mechanism for self-renormalizing UV gravity, shared with asymptotic safety and Horava-Lifshitz.",
+      "relatedTo": ["spectral-dimension", "asymptotic-safety", "horava-lifshitz-gravity", "uv-fixed-point"]
+    },
+    {
+      "id": "hausdorff-dimension",
+      "name": "Hausdorff dimension",
+      "definition": "Dimension defined by the scaling of volume with geodesic distance, V(r) ~ r^{d_H}. In the CDT de Sitter phase d_H ~ 4, confirming genuine four-dimensionality at large scales, in contrast to EDT phases (d_H = infinity or ~2).",
+      "relatedTo": ["spectral-dimension", "de-sitter-phase", "crumpled-phase", "branched-polymer-phase"]
+    },
+    {
+      "id": "phase-diagram-cdt",
+      "name": "CDT phase diagram (A, B, C_dS, C_b)",
+      "definition": "The space of bare couplings (kappa_0, Delta) splits into four phases: A (branched polymer), B (crumpled), C_dS (de Sitter), and C_b (bifurcation). The A-C transition is first order; the B-C / C_dS-C_b transitions are second/higher order and candidate UV-continuum points.",
+      "relatedTo": ["de-sitter-phase", "bifurcation-phase", "crumpled-phase", "branched-polymer-phase", "uv-fixed-point"]
+    },
+    {
+      "id": "de-sitter-phase",
+      "name": "De Sitter phase (C_dS)",
+      "definition": "Physically interesting CDT phase whose average spatial-volume profile V_3(t) ~ cos^3(t/B) matches a round Euclidean four-sphere (de Sitter space), with semiclassical quantum fluctuations described by a minisuperspace effective action.",
+      "relatedTo": ["de-sitter-universe-emergence", "minisuperspace-action", "phase-diagram-cdt", "hausdorff-dimension"]
+    },
+    {
+      "id": "bifurcation-phase",
+      "name": "Bifurcation phase (C_b)",
+      "definition": "Fourth CDT phase (discovered ~2016-2017) characterized by singular vertices of very high order; in the transfer-matrix description the kinetic term bifurcates into two Gaussians. The B-C_b transition is higher/second order.",
+      "relatedTo": ["phase-diagram-cdt", "transfer-matrix", "uv-fixed-point"]
+    },
+    {
+      "id": "crumpled-phase",
+      "name": "Crumpled phase",
+      "definition": "EDT (and CDT phase B) configuration with near-infinite Hausdorff dimension and maximal connectivity; lacks a sensible classical continuum geometry.",
+      "relatedTo": ["euclidean-dynamical-triangulations", "phase-diagram-cdt", "branched-polymer-phase"]
+    },
+    {
+      "id": "branched-polymer-phase",
+      "name": "Branched-polymer phase",
+      "definition": "EDT (and CDT phase A) configuration resembling a tree of thin tubes with Hausdorff dimension ~2; conformal-mode/baby-universe dominated, with no extended 4D geometry.",
+      "relatedTo": ["euclidean-dynamical-triangulations", "phase-diagram-cdt", "crumpled-phase"]
+    },
+    {
+      "id": "de-sitter-universe-emergence",
+      "name": "Emergence of de Sitter universe",
+      "definition": "Central CDT result: a macroscopic 4D universe with de Sitter (cos^3) volume profile emerges dynamically from purely Planckian quantum fluctuations of the path integral, the only QG approach to demonstrate this. Measured universes span ~17-28 Planck lengths.",
+      "relatedTo": ["de-sitter-phase", "minisuperspace-action", "emergent-spacetime", "quantum-cosmology"]
+    },
+    {
+      "id": "minisuperspace-action",
+      "name": "Minisuperspace effective action",
+      "definition": "Effective action for the global scale factor / 3-volume, S_eff = (1/Gamma) sum [ (N_3(t+1)-N_3(t))^2/N_3(t) + delta N_3^{1/3}(t) ], measured directly in CDT and matching the Hartle-Hawking minisuperspace model, with sqrt(V_4)/Gamma = sqrt(V_4)/(24 pi G).",
+      "relatedTo": ["de-sitter-universe-emergence", "transfer-matrix", "quantum-cosmology", "hartle-hawking"]
+    },
+    {
+      "id": "transfer-matrix",
+      "name": "Transfer matrix",
+      "definition": "Operator <n_{t+1}|M|n_t> ~ exp(-L_eff[n_t,n_{t+1}]) evolving spatial geometries between adjacent time slices, in 4D CDT parametrized solely by the 3-volume N_3(t). Reconstructs the effective minisuperspace action at all scales and the ground-state wave function.",
+      "relatedTo": ["minisuperspace-action", "de-sitter-phase", "bifurcation-phase"]
+    },
+    {
+      "id": "lines-of-constant-physics",
+      "name": "Lines of constant physics / RG flow",
+      "definition": "Trajectories in bare coupling space defined by semiclassical properties of the emergent universe, providing a notion of renormalization-group flow in a background-independent theory; the second-order transition line can be read as a UV line under anisotropic space-time scaling.",
+      "relatedTo": ["uv-fixed-point", "asymptotic-safety", "phase-diagram-cdt"]
+    },
+    {
+      "id": "uv-fixed-point",
+      "name": "UV fixed point (continuum limit)",
+      "definition": "A second- or higher-order critical point at which a nontrivial continuum limit (UV completion) of CDT might exist, identified with the Reuter fixed point of the asymptotic-safety scenario. Current Monte Carlo data allow but do not prove its existence.",
+      "relatedTo": ["asymptotic-safety", "phase-diagram-cdt", "lines-of-constant-physics", "dimensional-reduction"]
+    },
+    {
+      "id": "quantum-ricci-curvature",
+      "name": "Quantum Ricci curvature (QRC)",
+      "definition": "Curvature observable (Klitgaard & Loll 2018) built from local distance and volume measurements only, needing no tensor calculus or smooth structure; reproduces ordinary Ricci curvature in the smooth limit. In CDT it is compatible with a four-sphere at large scales.",
+      "relatedTo": ["de-sitter-phase", "hausdorff-dimension", "effective-topology"]
+    },
+    {
+      "id": "effective-topology",
+      "name": "Effective topology / topological fingerprint",
+      "definition": "Characterization of strongly fluctuating quantum geometry via Betti numbers of coarse-grained geometry as a function of coarse-graining scale (topological data analysis), yielding a 'topological fingerprint'; thin necks/pinchings recall minimal-neck baby universes (minbus).",
+      "relatedTo": ["quantum-ricci-curvature", "branched-polymer-phase", "monte-carlo-quantum-gravity"]
+    },
+    {
+      "id": "diffeomorphism-invariance",
+      "name": "Diffeomorphism invariance",
+      "definition": "CDT works directly on the quotient space of metrics modulo diffeomorphisms, so the lattice does not break diffeomorphism invariance; whether the preferred foliation is physical or a technical device is debated.",
+      "relatedTo": ["global-time-foliation", "background-independence", "horava-lifshitz-gravity"]
+    },
+    {
+      "id": "background-independence",
+      "name": "Background independence",
+      "definition": "No fixed background metric is assumed; geometry, its dimension and curvature emerge dynamically from the sum over triangulations encoded purely in neighbourhood relations and edge lengths.",
+      "relatedTo": ["diffeomorphism-invariance", "emergent-spacetime", "partition-function-path-integral"]
+    },
+    {
+      "id": "matter-coupling-cdt",
+      "name": "Matter coupling in CDT",
+      "definition": "Adding fields to dynamical geometry: scalar fields on the triangulation (whose large amplitudes drive geometry transitions), and gauge fields coupled via the discretized Laplace-Beltrami / Hodge operator and spectral observables (Clemente & D'Elia 2023; Yang-Mills with U(1), SU(2) in 2D). Fermions remain obstructed by a sign problem.",
+      "relatedTo": ["monte-carlo-quantum-gravity", "de-sitter-phase", "spectral-dimension"]
+    },
+    {
+      "id": "pachner-moves",
+      "name": "Pachner moves (Monte Carlo updates)",
+      "definition": "The local geometry-changing updates (in 4D the 1<->5, 2<->4, 3<->3 moves) that, modified to preserve the foliation and causal orientation, generate the Markov chain over causal triangulations; they must be ergodic and satisfy detailed balance.",
+      "relatedTo": ["monte-carlo-quantum-gravity", "causal-triangulation", "partition-function-path-integral"]
+    },
+    {
+      "id": "conformal-mode-problem",
+      "name": "Conformal-mode problem",
+      "definition": "The Euclidean Einstein-Hilbert action is unbounded below along conformal rescalings (Gibbons-Hawking-Perry), making the naive Euclidean path integral divergent; in EDT this drives the pathological crumpled/branched-polymer phases. CDT's causal foliation effectively suppresses this mode, yielding a stable extended phase.",
+      "relatedTo": ["euclidean-dynamical-triangulations", "global-time-foliation", "branched-polymer-phase", "partition-function-path-integral"]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "cdt-euclidean-action",
+      "name": "Wick-rotated 4D CDT Regge action",
+      "latex": "S^{CDT}_{eu}[T] = -(\\kappa_0 + 6\\Delta)\\,N_0 + \\kappa_4\\,(N_{41}+N_{32}) + \\Delta\\,(2N_{41}+N_{32})",
+      "meaning": "Discretized Einstein-Hilbert action of a 4D causal triangulation: kappa_0 ~ inverse bare Newton coupling, kappa_4 bare cosmological coupling, Delta the timelike/spacelike asymmetry, with vertex count N_0 and (4,1)/(3,2)-simplex counts N_41, N_32.",
+      "source": "scholarpedia-cdt"
+    },
+    {
+      "id": "cdt-partition-function",
+      "name": "CDT partition function",
+      "latex": "Z = \\sum_{T\\in\\mathcal{T}} \\frac{1}{C(T)} e^{\\,iS[T]} \\;\\xrightarrow{\\text{Wick}}\\; \\sum_{T\\in\\mathcal{T}} \\frac{1}{C(T)} e^{-S^{CDT}_{eu}[T]}",
+      "meaning": "Regularized nonperturbative gravitational path integral over causal triangulations divided by their symmetry factor C(T); after Wick rotation the summand is real and positive, enabling Monte Carlo without a sign problem.",
+      "source": "scholarpedia-cdt"
+    },
+    {
+      "id": "spectral-dimension-def",
+      "name": "Spectral dimension definition",
+      "latex": "D_S(\\sigma) = -2\\,\\frac{d\\,\\ln P(\\sigma)}{d\\,\\ln \\sigma}",
+      "meaning": "Effective dimension probed by diffusion: P(sigma) is the average return probability of a random walk after diffusion time sigma; measures the dimension on length scale ~ sqrt(sigma).",
+      "source": "ajl-spectral-dimension-2005"
+    },
+    {
+      "id": "spectral-dimension-fit",
+      "name": "Measured running spectral dimension",
+      "latex": "D_S(\\sigma) = 4.02 - \\frac{119}{54 + \\sigma}",
+      "meaning": "Best-fit running of the CDT spectral dimension: D_S -> 4.02 +/- 0.1 in the IR (sigma -> infinity) and D_S -> 1.80 +/- 0.25 in the UV (sigma -> 0); quantitative evidence for dynamical dimensional reduction 4 -> 2.",
+      "source": "ajl-spectral-dimension-2005"
+    },
+    {
+      "id": "de-sitter-volume-profile",
+      "name": "De Sitter volume profile",
+      "latex": "\\langle V_3(t)\\rangle = \\frac{3}{4}\\,\\frac{V_4}{\\omega_0 V_4^{1/4}}\\,\\cos^3\\!\\Big(\\frac{t}{\\omega_0 V_4^{1/4}}\\Big), \\qquad \\omega_0^4 = \\frac{3}{8\\pi^3}",
+      "meaning": "Average spatial 3-volume as a function of proper time matches a round Euclidean four-sphere (de Sitter space); the width B = omega_0 V_4^{1/4} scales as V_4^{1/4}, showing the universe is a self-similar object.",
+      "source": "ambjorn-gateway-2024"
+    },
+    {
+      "id": "minisuperspace-effective-action",
+      "name": "Discrete minisuperspace effective action",
+      "latex": "S_{eff}[N_3] = \\frac{1}{\\Gamma}\\sum_t\\left[\\frac{(N_3(t+1)-N_3(t))^2}{N_3(t)} + \\delta\\,N_3^{1/3}(t)\\right],\\quad \\delta_0=\\frac{3}{8\\pi^2}",
+      "meaning": "Effective action for the 3-volume measured directly from CDT data; kinetic term governs volume changes, potential ~ N_3^{1/3} is the curvature term. Gamma and delta are effective couplings; this is the discrete Hartle-Hawking minisuperspace action.",
+      "source": "ajl-semiclassical-2011"
+    },
+    {
+      "id": "continuum-minisuperspace-G",
+      "name": "Continuum minisuperspace action and G",
+      "latex": "S_{eff} = \\frac{\\sqrt{\\bar N_4}}{\\Gamma}\\int ds\\left[\\frac{\\dot n_3^2(s)}{n_3(s)} + \\delta\\, n_3^{1/3}(s)\\right],\\qquad \\frac{\\sqrt{V_4}}{\\Gamma} = \\frac{\\sqrt{V_4}}{24\\pi G}",
+      "meaning": "Continuum limit of the effective action, matching the classical minisuperspace action; the identification fixes Newton's constant G from the measured fluctuation coupling Gamma.",
+      "source": "ambjorn-gateway-2024"
+    },
+    {
+      "id": "transfer-matrix-element",
+      "name": "Effective transfer matrix element",
+      "latex": "\\langle n_{t+1}|M|n_t\\rangle \\propto e^{-L_{eff}[n_t,n_{t+1}]},\\quad L_{eff}[n,m]=\\frac{1}{\\Gamma}\\frac{(n-m)^2}{n+m}+\\mu\\Big(\\frac{n+m}{2}\\Big)^{1/3}-\\lambda\\frac{n+m}{2}",
+      "meaning": "One-step volume evolution operator parametrized only by 3-volumes n,m = N_3; Gamma sets fluctuation amplitude, mu the curvature coupling, lambda the cosmological coupling. Encodes the full quantum dynamics of the scale factor.",
+      "source": "scholarpedia-cdt"
+    },
+    {
+      "id": "measured-effective-couplings",
+      "name": "Measured effective couplings",
+      "latex": "\\Gamma = 23\\pm 1,\\quad \\mu = 13.9\\pm 0.7,\\quad \\lambda_{eff} = 0.027\\pm 0.003 \\quad (\\kappa_0=2.2,\\ \\Delta=0.6)",
+      "meaning": "Numerically extracted values of the effective minisuperspace/transfer-matrix couplings in the de Sitter phase at a representative coupling point; demonstrate the semiclassical match.",
+      "source": "ajl-semiclassical-2011"
+    },
+    {
+      "id": "edge-length-assignment",
+      "name": "Lightcone edge-length assignment",
+      "latex": "\\ell_s^2 = a^2,\\qquad \\ell_t^2 = -\\alpha\\,a^2,\\quad \\alpha>0",
+      "meaning": "Spacelike edges have positive squared length a^2; timelike edges have negative squared length -alpha a^2, encoding the Lorentzian signature. alpha (related to Delta) is continued to negative values in the Wick rotation.",
+      "source": "ambjorn-gateway-2024"
+    },
+    {
+      "id": "return-probability-uv-ir",
+      "name": "Return probability asymptotics",
+      "latex": "P(\\sigma)\\sim \\sigma^{-D_S/2},\\quad D_S^{IR}\\approx 4.02,\\quad D_S^{UV}\\approx 1.80",
+      "meaning": "Power-law decay of the diffusion return probability whose exponent gives the spectral dimension; the change of exponent between large and small sigma is the dimensional reduction signal.",
+      "source": "ajl-spectral-dimension-2005"
+    },
+    {
+      "id": "dark-energy-running-lambda",
+      "name": "Quadratic running cosmological constant (EDT)",
+      "latex": "\\Lambda(\\mu) \\sim \\Lambda_0 + c\\,H^2,\\qquad \\mu \\sim H",
+      "meaning": "In related EDT simulations the vacuum energy runs dominantly quadratically with a scale identified with the Hubble rate H, predicting deviations from LambdaCDM at the O(10^-3) level (dynamical dark energy).",
+      "source": "laiho-dark-energy-2024"
+    },
+    {
+      "id": "two-d-cdt-hamiltonian",
+      "name": "2D CDT continuum Hamiltonian",
+      "latex": "\\hat H = -L\\,\\frac{\\partial^2}{\\partial L^2} + \\lambda\\,L,\\qquad G_\\lambda(L_1,L_2;T)=\\langle L_2|e^{-T\\hat H}|L_1\\rangle",
+      "meaning": "Exact continuum Hamiltonian of 2D CDT obtained from the transfer matrix; L is the spatial slice length, lambda the cosmological constant, T proper time. Its self-adjointness follows from forbidding spatial topology change and defines projectable 2D Horava-Lifshitz gravity.",
+      "source": "ambjorn-loll-1998"
+    }
+  ],
+  "references": [
+    {
+      "id": "ambjorn-loll-1998",
+      "authors": "J. Ambjorn, R. Loll",
+      "title": "Non-perturbative Lorentzian Quantum Gravity, Causality and Topology Change",
+      "year": 1998,
+      "arxiv": "hep-th/9805108",
+      "doi": "10.1016/S0550-3213(98)00692-0",
+      "url": "https://arxiv.org/abs/hep-th/9805108",
+      "significance": "Foundational paper introducing causality into the gravitational path integral; exactly solvable 2D CDT and baby-universe topology change."
+    },
+    {
+      "id": "ajl-reconstructing-2005",
+      "authors": "J. Ambjorn, J. Jurkiewicz, R. Loll",
+      "title": "Reconstructing the Universe",
+      "year": 2005,
+      "arxiv": "hep-th/0505154",
+      "doi": "10.1103/PhysRevD.72.064014",
+      "url": "https://arxiv.org/abs/hep-th/0505154",
+      "significance": "First demonstration that a macroscopic 4D semiclassical universe emerges dynamically from 4D CDT."
+    },
+    {
+      "id": "ajl-spectral-dimension-2005",
+      "authors": "J. Ambjorn, J. Jurkiewicz, R. Loll",
+      "title": "Spectral Dimension of the Universe",
+      "year": 2005,
+      "arxiv": "hep-th/0505113",
+      "doi": "10.1103/PhysRevLett.95.171301",
+      "url": "https://arxiv.org/abs/hep-th/0505113",
+      "significance": "Discovery of the running spectral dimension 4.02 -> 1.80; dynamical dimensional reduction and a self-renormalizing UV proposal."
+    },
+    {
+      "id": "agjl-planckian-2008",
+      "authors": "J. Ambjorn, A. Gorlich, J. Jurkiewicz, R. Loll",
+      "title": "Planckian Birth of the Quantum de Sitter Universe",
+      "year": 2008,
+      "arxiv": "0712.2485",
+      "doi": "10.1103/PhysRevLett.100.091304",
+      "url": "https://arxiv.org/abs/0712.2485",
+      "significance": "Quantum universes 17-28 Planck lengths in size; semiclassical fluctuations around emergent de Sitter geometry."
+    },
+    {
+      "id": "ajl-semiclassical-2011",
+      "authors": "J. Ambjorn, A. Gorlich, J. Jurkiewicz, R. Loll, J. Gizbert-Studnicki, T. Trzesniewski",
+      "title": "The Semiclassical Limit of Causal Dynamical Triangulations",
+      "year": 2011,
+      "arxiv": "1102.3929",
+      "doi": "10.1016/j.nuclphysb.2011.03.012",
+      "url": "https://arxiv.org/abs/1102.3929",
+      "significance": "Measured effective minisuperspace action and parameters Gamma=23, mu=13.9, lambda; quantitative de Sitter match."
+    },
+    {
+      "id": "ajjl-phase-transitions-2012",
+      "authors": "J. Ambjorn, S. Jordan, J. Jurkiewicz, R. Loll",
+      "title": "Second- and First-Order Phase Transitions in CDT",
+      "year": 2012,
+      "arxiv": "1205.1229",
+      "doi": "10.1103/PhysRevD.85.124044",
+      "url": "https://arxiv.org/abs/1205.1229",
+      "significance": "Identified the second-order B-C transition as a candidate for a UV fixed point alongside the first-order A-C transition."
+    },
+    {
+      "id": "transfer-matrix-2012",
+      "authors": "J. Ambjorn, J. Gizbert-Studnicki, A. Gorlich, J. Jurkiewicz",
+      "title": "The transfer matrix in four-dimensional CDT",
+      "year": 2012,
+      "arxiv": "1205.3791",
+      "doi": "10.1007/JHEP09(2012)017",
+      "url": "https://arxiv.org/abs/1205.3791",
+      "significance": "Introduced the 3-volume-parametrized effective transfer matrix reconstructing the minisuperspace action at all scales."
+    },
+    {
+      "id": "new-phase-2016",
+      "authors": "D. Coumbe, J. Gizbert-Studnicki, J. Jurkiewicz",
+      "title": "Exploring the new phase transition of CDT",
+      "year": 2016,
+      "arxiv": "1510.08672",
+      "doi": "10.1007/JHEP02(2016)144",
+      "url": "https://arxiv.org/abs/1510.08672",
+      "significance": "Discovery of the bifurcation phase C_b and its transition."
+    },
+    {
+      "id": "characteristics-cb-2017",
+      "authors": "J. Ambjorn, J. Gizbert-Studnicki, A. Gorlich, J. Jurkiewicz, N. Klitgaard, R. Loll",
+      "title": "Characteristics of the new phase in CDT",
+      "year": 2017,
+      "arxiv": "1610.05245",
+      "doi": "10.1140/epjc/s10052-017-4710-3",
+      "url": "https://arxiv.org/abs/1610.05245",
+      "significance": "Characterized phase C_b via singular vertices of very high order; higher-order B-C_b transition."
+    },
+    {
+      "id": "rg-flow-2014",
+      "authors": "J. Ambjorn, A. Gorlich, J. Jurkiewicz, A. Kreienbuehl, R. Loll",
+      "title": "Renormalization Group Flow in CDT",
+      "year": 2014,
+      "arxiv": "1405.4585",
+      "doi": "10.1088/0264-9381/31/16/165003",
+      "url": "https://arxiv.org/abs/1405.4585",
+      "significance": "Defined 'lines of constant physics' and RG flow in a background-independent theory; UV interpretation via anisotropic scaling."
+    },
+    {
+      "id": "agjl-physrep-2012",
+      "authors": "J. Ambjorn, A. Gorlich, J. Jurkiewicz, R. Loll",
+      "title": "Nonperturbative Quantum Gravity",
+      "year": 2012,
+      "arxiv": "1203.3591",
+      "doi": "10.1016/j.physrep.2012.03.007",
+      "url": "https://arxiv.org/abs/1203.3591",
+      "significance": "Comprehensive Physics Reports review of CDT: formalism, phase diagram, fixed points, emergent geometries."
+    },
+    {
+      "id": "loll-review-2019",
+      "authors": "R. Loll",
+      "title": "Quantum Gravity from Causal Dynamical Triangulations: A Review",
+      "year": 2019,
+      "arxiv": "1905.08669",
+      "doi": "10.1088/1361-6382/ab57c7",
+      "url": "https://arxiv.org/abs/1905.08669",
+      "significance": "Modern topical review covering time, causality, diffeomorphisms, RG and new observables."
+    },
+    {
+      "id": "ambjorn-gateway-2024",
+      "authors": "J. Ambjorn, R. Loll",
+      "title": "Causal Dynamical Triangulations: Gateway to Nonperturbative Quantum Gravity",
+      "year": 2024,
+      "arxiv": "2401.09399",
+      "url": "https://arxiv.org/abs/2401.09399",
+      "significance": "Up-to-date comprehensive review with explicit formulas (de Sitter profile, spectral-dimension fit, effective action)."
+    },
+    {
+      "id": "ambjorn-loll-new-2026",
+      "authors": "J. Ambjorn, R. Loll",
+      "title": "Causal Dynamical Triangulations: New Lattice Theory of Quantum Gravity",
+      "year": 2026,
+      "arxiv": "2604.05641",
+      "url": "https://arxiv.org/abs/2604.05641",
+      "significance": "Most recent overview; frames CDT's solution of background independence, UV pathologies and Wick-rotation validity."
+    },
+    {
+      "id": "cdt-horava-2010",
+      "authors": "J. Ambjorn, A. Gorlich, S. Jordan, J. Jurkiewicz, R. Loll",
+      "title": "CDT meets Horava-Lifshitz gravity",
+      "year": 2010,
+      "arxiv": "1002.3298",
+      "doi": "10.1016/j.physletb.2010.05.054",
+      "url": "https://arxiv.org/abs/1002.3298",
+      "significance": "Pointed out the striking resemblance of the CDT and generic Lifshitz phase diagrams; both rely on a global time foliation."
+    },
+    {
+      "id": "2d-cdt-horava-2013",
+      "authors": "J. Ambjorn, L. Glaser, Y. Sato, Y. Watabiki",
+      "title": "2d CDT is 2d Horava-Lifshitz quantum gravity",
+      "year": 2013,
+      "arxiv": "1302.6359",
+      "doi": "10.1016/j.physletb.2013.04.006",
+      "url": "https://arxiv.org/abs/1302.6359",
+      "significance": "Proved that 2D CDT equals quantized 2D projectable Horava-Lifshitz gravity."
+    },
+    {
+      "id": "klitgaard-loll-qrc-2018",
+      "authors": "N. Klitgaard, R. Loll",
+      "title": "Quantizing Quantum Ricci Curvature",
+      "year": 2018,
+      "arxiv": "1802.10524",
+      "doi": "10.1103/PhysRevD.97.106017",
+      "url": "https://arxiv.org/abs/1802.10524",
+      "significance": "Introduced quantum Ricci curvature as a tensor-free observable; compatible with a four-sphere in CDT."
+    },
+    {
+      "id": "toroidal-higher-order-2020",
+      "authors": "J. Ambjorn, G. Czelusta, J. Gizbert-Studnicki, A. Gorlich, J. Jurkiewicz, D. Nemeth",
+      "title": "The higher-order phase transition in toroidal CDT",
+      "year": 2020,
+      "arxiv": "2002.01051",
+      "doi": "10.1007/JHEP05(2020)030",
+      "url": "https://arxiv.org/abs/2002.01051",
+      "significance": "Confirmed higher-order B-C_b transition with toroidal spatial topology, relevant to the continuum limit."
+    },
+    {
+      "id": "topology-first-order-2022",
+      "authors": "J. Ambjorn et al.",
+      "title": "Topology induced first-order phase transitions in lattice quantum gravity",
+      "year": 2022,
+      "arxiv": "2202.07392",
+      "doi": "10.1007/JHEP04(2022)103",
+      "url": "https://arxiv.org/abs/2202.07392",
+      "significance": "Showed the order of a phase transition can depend on the spatial topology."
+    },
+    {
+      "id": "scalar-fields-cdt-2021",
+      "authors": "J. Ambjorn, Z. Drogosz, J. Gizbert-Studnicki, A. Gorlich, J. Jurkiewicz, D. Nemeth",
+      "title": "Scalar fields in Causal Dynamical Triangulations",
+      "year": 2021,
+      "arxiv": "2105.10086",
+      "doi": "10.1088/1361-6382/ac2135",
+      "url": "https://arxiv.org/abs/2105.10086",
+      "significance": "Matter coupling: large scalar amplitudes drive toroidal->spherical geometry transitions (baby-universe pinch-off)."
+    },
+    {
+      "id": "cdt-frg-2024",
+      "authors": "J. Ambjorn, J. Gizbert-Studnicki, A. Gorlich, D. Nemeth",
+      "title": "Is Lattice Quantum Gravity Asymptotically Safe? Making contact between CDT and the FRG",
+      "year": 2024,
+      "arxiv": "2408.07808",
+      "doi": "10.1103/PhysRevD.110.126006",
+      "url": "https://arxiv.org/abs/2408.07808",
+      "significance": "Direct bridge between CDT and FRG; identifies Gaussian/IR fixed point and a putative (unproven) UV lattice fixed point."
+    },
+    {
+      "id": "laiho-dark-energy-2024",
+      "authors": "M. Dai, W. Freeman, J. Laiho, M. Schiffer, J. Unmuth-Yockey",
+      "title": "Dynamical Dark Energy from Lattice Quantum Gravity",
+      "year": 2024,
+      "arxiv": "2408.08963",
+      "url": "https://arxiv.org/abs/2408.08963",
+      "significance": "EDT simulations show a quadratically running cosmological constant tied to the Hubble rate; O(10^-3) deviations from LambdaCDM."
+    },
+    {
+      "id": "vdduin-effective-topology-2025",
+      "authors": "J. van der Duin, R. Loll, M. Schiffer, A. Silva",
+      "title": "Quantum Gravity and Effective Topology",
+      "year": 2026,
+      "arxiv": "2510.05695",
+      "doi": "10.1140/epjc/s10052-026-15322-x",
+      "url": "https://arxiv.org/abs/2510.05695",
+      "significance": "Defines an effective topology of quantum spacetime via Betti numbers of coarse-grained geometry (topological fingerprint)."
+    },
+    {
+      "id": "vdduin-tda-2025",
+      "authors": "J. van der Duin, R. Loll, M. Schiffer, A. Silva",
+      "title": "Exploring Quantum Spacetime with Topological Data Analysis",
+      "year": 2025,
+      "arxiv": "2510.05693",
+      "url": "https://arxiv.org/abs/2510.05693",
+      "significance": "Applies topological data analysis to 2D CDT/EDT; relates pinchings to minimal-neck baby universes (minbus)."
+    },
+    {
+      "id": "scholarpedia-cdt",
+      "authors": "R. Loll, J. Ambjorn, J. Jurkiewicz",
+      "title": "Causal Dynamical Triangulation (Scholarpedia)",
+      "year": 2018,
+      "url": "http://www.scholarpedia.org/article/Causal_Dynamical_Triangulation",
+      "significance": "Encyclopedic reference for the CDT action, partition function, transfer matrix and phase structure."
+    },
+    {
+      "id": "reuter-frg-1998",
+      "authors": "M. Reuter",
+      "title": "Nonperturbative Evolution Equation for Quantum Gravity",
+      "year": 1998,
+      "arxiv": "hep-th/9605030",
+      "doi": "10.1103/PhysRevD.57.971",
+      "url": "https://arxiv.org/abs/hep-th/9605030",
+      "significance": "Reuter fixed point / functional RG that CDT contacts through the asymptotic-safety scenario."
+    },
+    {
+      "id": "ml-lattice-gravity-2025",
+      "authors": "J. Ambjorn, Z. Drogosz, J. Gizbert-Studnicki, A. Gorlich, D. Nemeth, M. Reitz",
+      "title": "Machine learning in phase transition analysis of lattice quantum gravity",
+      "year": 2025,
+      "arxiv": "2510.02159",
+      "url": "https://arxiv.org/abs/2510.02159",
+      "significance": "Applies machine learning to phase classification and acceleration of CDT Monte Carlo."
+    },
+    {
+      "id": "clemente-delia-spectral-gauge-2023",
+      "authors": "G. Clemente, M. D'Elia",
+      "title": "Spectral Observables and Gauge Field Couplings in Causal Dynamical Triangulations",
+      "year": 2023,
+      "arxiv": "2307.04547",
+      "url": "https://arxiv.org/abs/2307.04547",
+      "significance": "Spectral observables from the discretized Laplace-Beltrami operator and a scheme to couple gauge fields to CDT for generic groups and dimensions."
+    },
+    {
+      "id": "candido-yang-mills-cdt-2021",
+      "authors": "A. Candido, G. Clemente, M. D'Elia, F. Rottoli",
+      "title": "Coupling Yang-Mills with Causal Dynamical Triangulations",
+      "year": 2021,
+      "arxiv": "2112.03157",
+      "url": "https://arxiv.org/abs/2112.03157",
+      "significance": "First simulations of 2D CDT coupled to U(1) and SU(2) gauge fields, probing back-reaction of gauge matter on quantum geometry."
+    },
+    {
+      "id": "lauscher-reuter-2005",
+      "authors": "O. Lauscher, M. Reuter",
+      "title": "Fractal Spacetime Structure in Asymptotically Safe Gravity",
+      "year": 2005,
+      "arxiv": "hep-th/0508202",
+      "doi": "10.1088/1126-6708/2005/10/050",
+      "url": "https://arxiv.org/abs/hep-th/0508202",
+      "significance": "Functional RG prediction of a UV spectral dimension D_S -> 2, matching the CDT result and providing an independent cross-approach convergence."
+    },
+    {
+      "id": "horava-lifshitz-2009",
+      "authors": "P. Horava",
+      "title": "Quantum Gravity at a Lifshitz Point",
+      "year": 2009,
+      "arxiv": "0901.3775",
+      "doi": "10.1103/PhysRevD.79.084008",
+      "url": "https://arxiv.org/abs/0901.3775",
+      "significance": "Original Horava-Lifshitz gravity with anisotropic space-time scaling and UV spectral dimension 2; the continuum theory CDT is conjectured to realize."
+    },
+    {
+      "id": "ambjorn-quest-2010",
+      "authors": "J. Ambjorn, J. Jurkiewicz, R. Loll",
+      "title": "Causal Dynamical Triangulations and the Quest for Quantum Gravity",
+      "year": 2010,
+      "arxiv": "1004.0352",
+      "url": "https://arxiv.org/abs/1004.0352",
+      "significance": "Conceptual overview situating CDT among sum-over-histories approaches and discussing Planck-scale discreteness and the emergence of a classical universe (the black-hole entropy connection is not supported by the abstract; unverified)."
+    }
+  ],
+  "openProblems": [
+    {
+      "id": "uv-continuum-limit",
+      "statement": "Does CDT possess a genuine nontrivial continuum (UV) limit, i.e. a second/higher-order critical point realizing the asymptotic-safety (Reuter) fixed point?",
+      "whyHard": "Requires controlled extrapolation to infinite volume and zero lattice spacing with strong finite-size effects; correlation-length notions differ fundamentally from fixed-background field theory in a background-independent setting.",
+      "attempts": "Lines of constant physics (2014); identification of the B-C / C_dS-C_b second-order line; direct CDT-FRG comparison (2024) which allows but does not prove a UV fixed point."
+    },
+    {
+      "id": "bifurcation-phase-meaning",
+      "statement": "What is the physical meaning of the bifurcation phase C_b and its singular vertices of very high order, and where exactly are the C_dS-C_b and B-C_b transitions?",
+      "whyHard": "C_b contains vertices of near-infinite local connectivity whose continuum interpretation is unclear; the apparent transition order and location depend on the volume-fixing scheme used in simulations.",
+      "attempts": "Discovery and characterization (2016-2017); transfer-matrix bifurcation analysis; toroidal-topology confirmation of higher-order B-C_b (2020)."
+    },
+    {
+      "id": "foliation-vs-diffeomorphism",
+      "statement": "Is the preferred global time foliation a physical feature of quantum gravity or merely a technical regulator, and is full 4D diffeomorphism invariance recovered in the continuum?",
+      "whyHard": "Introducing a foliation seemingly breaks 4D diffeomorphism invariance; disentangling physical anisotropy from gauge artefact requires comparison with foliation-free formulations.",
+      "attempts": "Argument that CDT works on metrics modulo diffeomorphisms (Loll); 'CDT without preferred foliation' studies; the 2D CDT = Horava-Lifshitz equivalence suggests genuine anisotropy."
+    },
+    {
+      "id": "local-tensor-observables",
+      "statement": "How can local/tensorial observables (graviton propagator, Ricci tensor, curvature correlators) be defined and measured on singular triangulated geometries?",
+      "whyHard": "Tensor calculus is ill-defined on simplicial, conically singular configurations; CDT naturally yields only global volume/diffusion observables.",
+      "attempts": "Quantum Ricci curvature (2018); quantum-Ricci and effective-topology observables; topological data analysis (2025) as scalar curvature/topology proxies."
+    },
+    {
+      "id": "matter-backreaction",
+      "statement": "How does CDT behave with fully dynamical, interacting matter (gauge fields, fermions) and matter backreaction in 4D?",
+      "whyHard": "Enlarged configuration space and correlated geometry-matter sampling are computationally expensive; fermions face sign problems; gauge fields need gauge-invariant lattice observables.",
+      "attempts": "Free/weakly interacting massless scalars (2021); preliminary Hodge-Laplacian-based gauge-field observables; no full backreacting interacting matter yet."
+    },
+    {
+      "id": "background-independent-renormalization",
+      "statement": "How should renormalization and the running of couplings be defined consistently in a background-independent lattice theory of gravity?",
+      "whyHard": "Standard correlation-length and scale notions presuppose a fixed background; in CDT the 'scale' must be defined via the dynamically generated universe, which is conceptually and operationally subtle.",
+      "attempts": "Lines of constant physics; CDT-FRG matching of the scale-factor effective action (2024); running cosmological constant tied to the Hubble scale in EDT (2024)."
+    },
+    {
+      "id": "physical-constants-prediction",
+      "statement": "Can CDT predict the physical values (or at least dimensionless ratios) of Newton's and the cosmological constant from the bare lattice couplings?",
+      "whyHard": "Translating (kappa_0, Delta, Gamma) into G and Lambda depends on the scaling behaviour near the as-yet-uncontrolled continuum transition; absolute normalization is not fixed.",
+      "attempts": "Extraction of G from the measured fluctuation coupling Gamma via sqrt(V_4)/Gamma = sqrt(V_4)/(24 pi G); running-Lambda studies in EDT."
+    },
+    {
+      "id": "cdt-horava-4d",
+      "statement": "Is 4D CDT a (projectable) Horava-Lifshitz quantum gravity, as is rigorously the case in 2D?",
+      "whyHard": "The 4D equivalence is only qualitative (matching phase diagrams) and lacks an analytic derivation; the continuum effective field theory of 4D CDT is not known in closed form.",
+      "attempts": "Phase-diagram resemblance argument (2010); rigorous 2D equivalence (2013); ongoing search for the 4D continuum effective action."
+    }
+  ],
+  "connections": [
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "asymptotic-safety",
+      "type": "shared-structure",
+      "description": "CDT's second/higher-order phase-transition line is the natural lattice candidate for the asymptotic-safety (Reuter) UV fixed point, and both predict a spectral-dimension reduction 4 -> 2. The 2024 CDT-FRG paper directly matches the scale-factor effective action, identifying the Gaussian/IR fixed point and a putative (unproven) UV lattice fixed point.",
+      "explored": "partially"
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "horava-lifshitz-gravity",
+      "type": "duality",
+      "description": "Both rely on a global time foliation / anisotropic scaling and have strikingly similar phase diagrams. In 2D it is proven that CDT equals quantized projectable Horava-Lifshitz gravity; in 4D the relationship is so far only a phase-diagram resemblance with no analytic derivation.",
+      "explored": "partially"
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "causal-sets",
+      "type": "shared-structure",
+      "description": "Both model spacetime with discrete causal structure and a Lorentzian sum-over-histories. Causal sets are more general (partial order + counting) while CDT fixes a simplex-geometry relation; in CDT discreteness is a removable regulator, in causal sets it is fundamental. Quantitative cross-checks (dimension estimators, spectral dimension) are barely explored.",
+      "explored": "partially"
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "loop-quantum-gravity",
+      "type": "shared-structure",
+      "description": "Spin foams (the covariant face of LQG) are a path integral of Lorentzian first-order Regge calculus and sit at the crossroads of LQG, dynamical triangulations and causal sets, sharing CDT's Lorentzian sum-over-discrete-geometries idea. But CDT computes exact distances and treats discreteness as a regulator, whereas LQG discreteness is fundamental; direct quantitative comparison (e.g. spectral dimension) is barely done.",
+      "explored": "barely"
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "group-field-theory",
+      "type": "shared-math",
+      "description": "GFT generates spin-foam/simplicial amplitudes as Feynman diagrams and shares the simplicial, sum-over-triangulations structure with (C)DT; colored/causal GFT models aim to reproduce CDT-like causal amplitudes. Concrete matching of CDT phases to GFT condensate/continuum phases is largely unexplored.",
+      "explored": "barely"
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "quantum-cosmology",
+      "type": "shared-math",
+      "description": "The emergent de Sitter universe is described by a minisuperspace effective action of Hartle-Hawking type measured directly from the simulations, giving a nonperturbative (beyond saddle-point) realization of no-boundary-like scale-factor dynamics including quantum fluctuations.",
+      "explored": "well"
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "CDT is a concrete example of classical spacetime, its dimension and curvature emerging dynamically from nonperturbative quantum fluctuations rather than being assumed; supports the thesis of geometry as a collective/emergent phenomenon.",
+      "explored": "partially"
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "spectral-dimension",
+      "type": "shared-structure",
+      "description": "CDT provided the first nonperturbative QG measurement of a running spectral dimension (4.02 -> 1.80), establishing spectral dimension as a universal cross-approach observable also computed in asymptotic safety, Horava-Lifshitz, LQG, causal sets and noncommutative geometry; cross-approach quantitative comparison of the UV value is only partially explored.",
+      "explored": "partially"
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "experimental-tests",
+      "type": "conjecture",
+      "description": "Dimensional reduction to D_S~2 in the UV has been argued to yield a near-scale-invariant primordial spectrum, and related EDT work predicts a quadratically running cosmological constant (dynamical dark energy) with O(10^-3) deviations from LambdaCDM, a potential observational handle. The link from CDT microphysics to CMB/cosmological data is barely developed.",
+      "explored": "barely"
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "holography-adscft",
+      "type": "conjecture",
+      "description": "No direct bridge exists (CDT has no negative cosmological constant or AdS boundary), but CDT could supply first-principles bulk dynamics complementary to a holographic boundary description; whether topological fingerprints (Betti numbers) of quantum spacetime have a holographic counterpart is purely speculative.",
+      "explored": "barely"
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "regge-calculus",
+      "type": "shared-math",
+      "description": "CDT is dynamical-triangulations Regge calculus with fixed edge lengths: it uses the same deficit-angle curvature and Regge action, putting the dynamics into connectivity rather than edge lengths. This relationship is definitional and fully understood.",
+      "explored": "well"
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "euclidean-dynamical-triangulations",
+      "type": "limit",
+      "description": "EDT is the foliation-free Euclidean precursor; without causality 4D EDT collapses to crumpled and branched-polymer phases. Modern EDT with a nontrivial measure term recovers emergent de Sitter geometry, reopening the question of whether causality or a fine-tuned measure is the essential ingredient.",
+      "explored": "well"
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "noncommutative-geometry",
+      "type": "shared-structure",
+      "description": "Both yield scale-dependent / reduced effective dimensions in the UV (kappa-Minkowski and other NCG models also give D_S ~ 2-3), suggesting a common spectral-dimension-reduction mechanism, but no direct construction links CDT geometries to a noncommutative algebra.",
+      "explored": "barely"
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "black-holes-information",
+      "type": "conjecture",
+      "description": "CDT realizes Planck-scale discreteness nonperturbatively, which is the ingredient usually invoked to render a microscopic counting of black-hole (Bekenstein-Hawking) entropy finite; however, no extended black-hole geometry has been constructed or its horizon entropy measured in CDT (the de Sitter phase is closed and horizon-free). The bridge is conceptual only.",
+      "explored": "barely"
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "entanglement-spacetime",
+      "type": "conjecture",
+      "description": "CDT supplies a concrete ensemble of fluctuating microscopic geometries on which entanglement entropy of spatial subregions could in principle be measured and compared to 'entanglement builds geometry' proposals, but defining region entanglement on dynamically triangulated states and relating it to emergent volume/area is essentially untouched.",
+      "explored": "barely"
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "swampland",
+      "type": "conjecture",
+      "description": "CDT produces an emergent (Euclidean) de Sitter universe and, in related EDT work, a running cosmological constant, putting it on a potential collision course with the swampland de Sitter conjecture; whether CDT's nonperturbative de Sitter phase respects or violates swampland criteria has not been analyzed, making this a clean unexplored consistency test.",
+      "explored": "barely"
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "string-theory",
+      "type": "conflict",
+      "description": "CDT is an explicit nonperturbative, background-independent quantum gravity without supersymmetry, extra dimensions or fundamental strings, and is methodologically opposed to perturbative string theory; yet both target a UV-complete theory of gravity, and 2D CDT/EDT connects to the matrix-model / Liouville (worldsheet) lineage shared with string theory, a structural link that is only superficially explored.",
+      "explored": "barely"
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "semiclassical-gravity",
+      "type": "limit",
+      "description": "The measured de Sitter volume profile and its semiclassical fluctuations show that CDT recovers a semiclassical (minisuperspace) gravity regime as a controlled limit of the full nonperturbative path integral, validating the IR continuum limit; this match is quantitatively established for the global scale factor.",
+      "explored": "well"
+    }
+  ]
+}

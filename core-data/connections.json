@@ -1,0 +1,3266 @@
+{
+  "connections": [
+    {
+      "from": "asymptotic-safety",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-structure",
+      "description": "CDT is a non-perturbative lattice regularization of the gravitational path integral whose conjectured second-order phase transition (B-C line) could define the continuum limit at the Reuter fixed point. Both independently find dimensional reduction of the spectral dimension (AS: 4->2; CDT: 4->3/2 - a still-unresolved quantitative discrepancy). Quantitative matching of critical exponents is ongoing (Schiffer 2025).",
+      "explored": "partially",
+      "sourcePillars": [
+        "asymptotic-safety"
+      ]
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "quadratic-gravity",
+      "type": "shared-math",
+      "description": "Stelle's quadratic/higher-derivative gravity is perturbatively renormalizable and asymptotically free but carries a massive spin-2 ghost; AS can be seen as its non-perturbative generalization where the ghost may become unphysical. The two share the mathematics of higher-derivative beta functions and the unitarity debate.",
+      "explored": "well",
+      "sourcePillars": [
+        "asymptotic-safety"
+      ]
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "holography-adscft",
+      "type": "conjecture",
+      "description": "The UV value d_s=2 of the spectral dimension was proposed to ease tension between AS and the holographic counting of degrees of freedom, and it has been speculated that the UV fixed point might admit a CFT-dual description. No concrete AS/CFT dictionary exists, making this one of the least-explored and potentially most valuable bridges.",
+      "explored": "barely",
+      "sourcePillars": [
+        "asymptotic-safety"
+      ]
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "swampland",
+      "type": "conflict",
+      "description": "Basile-Knorr-Platania-Schiffer (2025) argue strict field-theoretic AS is in tension with several kinematic swampland principles (no global symmetries, spacetime-topology fluctuations) because the FRG generates no symmetry-breaking terms unless the regulator breaks the symmetry. The open question whether swampland criteria are absolute or string-specific would, if absolute, render one framework inconsistent.",
+      "explored": "partially",
+      "sourcePillars": [
+        "asymptotic-safety"
+      ]
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "string-theory",
+      "type": "conflict",
+      "description": "AS is a bottom-up field-theoretic UV completion competing with string theory's top-down completion. Tests via swampland conjectures (weak gravity, distance, no global symmetries) probe whether AS lies in the string landscape or swampland; the weak-gravity conjecture has been examined in AS gauge-gravity systems. The deeper relation is only partially mapped.",
+      "explored": "partially",
+      "sourcePillars": [
+        "asymptotic-safety"
+      ]
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "loop-quantum-gravity",
+      "type": "shared-structure",
+      "description": "Both are non-perturbative, background-independent programs aiming to predict quantum geometry, but technically almost disjoint (continuum FRG vs. canonical/covariant discrete spectra). The one explicit common feature is short-distance dimensional reduction (LQG/spin foams also show d_s->2). Whether the Reuter fixed point is the continuum limit of spin foams is essentially unexplored.",
+      "explored": "barely",
+      "sourcePillars": [
+        "asymptotic-safety"
+      ]
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "group-field-theory",
+      "type": "shared-math",
+      "description": "GFT uses functional RG techniques to look for its own fixed points (asymptotic safety/freedom of GFT couplings), sharing the mathematics of the Wetterich equation but applied to combinatorial rather than metric structures. The bridge is methodological, not yet physical.",
+      "explored": "barely",
+      "sourcePillars": [
+        "asymptotic-safety"
+      ]
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "emergent-gravity",
+      "type": "limit",
+      "description": "If gravity is emergent (Sakharov induced gravity, entropic gravity), the Reuter fixed point could be effective rather than fundamental ('effective asymptotic safety'), explicitly invoked by Basile et al. (2025) as a loophole to swampland tensions. Conceptually appealing but formally undeveloped.",
+      "explored": "barely",
+      "sourcePillars": [
+        "asymptotic-safety"
+      ]
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "standard-model",
+      "type": "shared-structure",
+      "description": "AS gravity can make Standard Model couplings predictable via gravity-induced anomalous dimensions: the Higgs mass retrodiction ~126 GeV (Shaposhnikov-Wetterich), the top pole mass ~171 GeV (Eichhorn-Held), and a calculable fine-structure constant. The weak-gravity bound constrains the matter content; full SM compatibility is still being checked.",
+      "explored": "well",
+      "sourcePillars": [
+        "asymptotic-safety"
+      ]
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "quantum-cosmology",
+      "type": "shared-structure",
+      "description": "RG-improved cosmology and black holes (G->G_k, Lambda->Lambda_k) give AS-based scenarios for singularity resolution and inflation. The scale identification k <-> physical scale is ambiguous (an open problem), but the phenomenology is active.",
+      "explored": "partially",
+      "sourcePillars": [
+        "asymptotic-safety"
+      ]
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "semiclassical-gravity",
+      "type": "limit",
+      "description": "In the IR the asymptotically safe flow must reproduce classical general relativity plus semiclassical effective-field-theory corrections; matching the predicted running of G and Lambda to known low-energy quantum-gravity calculations is precisely where Donoghue (2019) raises his critique.",
+      "explored": "partially",
+      "sourcePillars": [
+        "asymptotic-safety"
+      ]
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "Potential empirical handles include UV-modified scattering cross sections, the retrodicted Higgs mass, the fine-structure constant, and cosmological/black-hole imprints of RG-improved dynamics. Direct Planck-scale tests are inaccessible, so all current contact is indirect.",
+      "explored": "barely",
+      "sourcePillars": [
+        "asymptotic-safety"
+      ]
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "twistors-amplitudes",
+      "type": "shared-math",
+      "description": "AS supplies non-perturbative momentum-dependent vertices from the effective action, enabling computation of graviton-mediated scattering amplitudes whose UV-decreasing cross sections respect the Froissart bound (Pastor-Gutierrez et al. 2024). A formal link to modern on-shell amplitude / positivity / twistor methods is only hinted at, not established.",
+      "explored": "barely",
+      "sourcePillars": [
+        "asymptotic-safety"
+      ]
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "spectral-dimension",
+      "type": "shared-structure",
+      "description": "Spectral-dimension dimensional reduction (d_s: 4->2 from eta_N=-2) is a quantitative fingerprint shared by AS, CDT (4->3/2), Horava-Lifshitz gravity and several other approaches, making the spectral dimension a candidate universal observable for cross-approach comparison.",
+      "explored": "partially",
+      "sourcePillars": [
+        "asymptotic-safety"
+      ]
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "RG-improved black holes (Bonanno-Reuter; Platania) replace G and Lambda by their scale-dependent fixed-point values, producing regular sub-Planckian cores, a minimal-mass remnant that halts evaporation, and possible singularity resolution. This bears directly on the information problem (remnant vs. complete evaporation) but the scale identification k<->r is ambiguous, and a genuine quantum (non-RG-improved) computation of the Page curve in AS does not yet exist.",
+      "explored": "partially",
+      "sourcePillars": [
+        "asymptotic-safety"
+      ]
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "noncommutative-geometry",
+      "type": "shared-structure",
+      "description": "The 1/p^4 UV graviton propagator and d_s->2 dimensional reduction suggest an effective minimal length / smearing of spacetime points at the Planck scale, qualitatively echoing noncommutative-geometry and generalized-uncertainty scenarios. The link is so far phenomenological (matching of dimensional-reduction and minimal-length signatures); no derivation of a noncommutative structure from the Reuter fixed point exists.",
+      "explored": "barely",
+      "sourcePillars": [
+        "asymptotic-safety"
+      ]
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "causal-sets",
+      "type": "shared-structure",
+      "description": "Both seek a non-perturbative continuum limit of a discrete/coarse-grained gravitational path integral; causal sets provide an alternative regularization whose continuum approximation could in principle realize the same UV scaling. Direct comparison of critical behaviour or spectral dimension between AS and causal sets is essentially absent.",
+      "explored": "barely",
+      "sourcePillars": [
+        "asymptotic-safety"
+      ]
+    },
+    {
+      "from": "black-holes-information",
+      "to": "holography-adscft",
+      "type": "shared-structure",
+      "description": "Tightest bridge: the Page curve, islands, and replica wormholes are derived inside AdS/CFT (RT/HRT, QES, entanglement wedge). The central dogma equates the exterior with a unitary boundary CFT; doubly-holographic / brane-world setups map QES to higher-dimensional RT surfaces. Strominger-Vafa entropy is near-horizon AdS3/CFT2. Open: the factorization puzzle (single theory vs ensemble).",
+      "explored": "well",
+      "sourcePillars": [
+        "black-holes-information"
+      ]
+    },
+    {
+      "from": "black-holes-information",
+      "to": "entanglement-spacetime",
+      "type": "shared-structure",
+      "description": "Entanglement builds geometry (Van Raamsdonk, Ryu-Takayanagi); ER=EPR directly identifies entanglement with wormholes; islands and entanglement wedges are the language of entanglement; generalized entropy = von Neumann entropy (algebraic approach). The mechanism by which entanglement sews the interior remains conceptually open.",
+      "explored": "well",
+      "sourcePillars": [
+        "black-holes-information"
+      ]
+    },
+    {
+      "from": "black-holes-information",
+      "to": "string-theory",
+      "type": "shared-structure",
+      "description": "Strominger-Vafa microstate counting gives A/4G (robust success); fuzzballs / microstate geometries (Mathur, Bena, Warner) propose a concrete string-theory resolution via horizonless microstates. The relation between fuzzballs and islands/replica wormholes (horizon-scale structure vs nonlocal entanglement) is only partially clarified.",
+      "explored": "partially",
+      "sourcePillars": [
+        "black-holes-information"
+      ]
+    },
+    {
+      "from": "black-holes-information",
+      "to": "semiclassical-gravity",
+      "type": "limit",
+      "description": "The paradox arises precisely in the semiclassical regime (QFT in curved spacetime); the island formula is itself a semiclassical computation (gravitational path integral + QFT entropy). Mathur's theorem delimits that small semiclassical corrections are insufficient. Key question: how far semiclassics reaches and where it breaks (trans-Planckian problem).",
+      "explored": "well",
+      "sourcePillars": [
+        "black-holes-information"
+      ]
+    },
+    {
+      "from": "black-holes-information",
+      "to": "loop-quantum-gravity",
+      "type": "shared-math",
+      "description": "LQG counts black-hole entropy from spin-network horizon microstates with the Barbero-Immirzi parameter tuned to A/4G. But links to the Page curve, islands, and unitary evaporation in LQG are essentially absent: LQG lacks a finished semiclassical evaporation picture and a holographic dictionary. Big opportunity: compare LQG horizon entropy with generalized / von Neumann-algebra entropy.",
+      "explored": "barely",
+      "sourcePillars": [
+        "black-holes-information"
+      ]
+    },
+    {
+      "from": "black-holes-information",
+      "to": "asymptotic-safety",
+      "type": "shared-structure",
+      "description": "Asymptotic safety gives a running G(k) and possible regular 'quantum-improved' black holes without singularities, possibly remnants. Connection to the information paradox and the Page curve is almost unexplored; open whether an RG-improved horizon changes the entanglement structure. Evidence is only qualitative (regular cores, possible remnants).",
+      "explored": "barely",
+      "sourcePillars": [
+        "black-holes-information"
+      ]
+    },
+    {
+      "from": "black-holes-information",
+      "to": "causal-sets",
+      "type": "shared-structure",
+      "description": "Causal set theory predicts horizon-entropy fluctuations and order-by-disorder counting of causal links across the horizon (Sorkin spacetime entropy). Links to the information paradox, Hawking radiation, and the Page curve are minimal. Shared theme: entropy from discrete horizon structure.",
+      "explored": "barely",
+      "sourcePillars": [
+        "black-holes-information"
+      ]
+    },
+    {
+      "from": "black-holes-information",
+      "to": "noncommutative-geometry",
+      "type": "shared-structure",
+      "description": "Noncommutative deformations of the horizon/spacetime modify the Hawking spectrum and can produce remnants (NC-inspired regular black holes). No connection to islands or replica wormholes. Evidence: modified evaporation in NC models.",
+      "explored": "barely",
+      "sourcePillars": [
+        "black-holes-information"
+      ]
+    },
+    {
+      "from": "black-holes-information",
+      "to": "twistors-amplitudes",
+      "type": "shared-math",
+      "description": "Soft hair (HPS) uses BMS asymptotic symmetries and soft theorems, connecting to celestial holography and scattering amplitudes; the holography of information (Raju) is closely tied to asymptotic symmetries in flat space. Active but not closed; soft hair alone shown insufficient to resolve the paradox.",
+      "explored": "partially",
+      "sourcePillars": [
+        "black-holes-information"
+      ]
+    },
+    {
+      "from": "black-holes-information",
+      "to": "swampland",
+      "type": "shared-structure",
+      "description": "Swampland criteria (weak gravity, distance conjecture) constrain the spectrum and may exclude certain remnants / infinite degeneracies, echoing Susskind's arguments against remnants. Direct connection to the Page curve is sparse. Evidence: anti-remnant arguments are swampland-like.",
+      "explored": "barely",
+      "sourcePillars": [
+        "black-holes-information"
+      ]
+    },
+    {
+      "from": "black-holes-information",
+      "to": "quantum-cosmology",
+      "type": "shared-structure",
+      "description": "The island construction extends to cosmological / de Sitter horizons; baby universes (Marolf-Maxfield) link to quantum cosmology. Open: whether a Page-curve analogue exists for de Sitter and what it means for information in cosmology.",
+      "explored": "partially",
+      "sourcePillars": [
+        "black-holes-information"
+      ]
+    },
+    {
+      "from": "black-holes-information",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "Jacobson (1995) derives the Einstein equations from delta Q = T dS on Rindler horizons; Verlinde's entropic gravity. The information paradox tests whether gravity is genuinely emergent from entanglement; the mechanism of interior emergence from radiation is open.",
+      "explored": "partially",
+      "sourcePillars": [
+        "black-holes-information"
+      ]
+    },
+    {
+      "from": "black-holes-information",
+      "to": "supergravity-uv",
+      "type": "shared-structure",
+      "description": "Fuzzballs and microstate geometries are smooth horizonless supergravity solutions (BPS and non-BPS superstrata/microstrata); their count and existence are constrained by 10/11D SUGRA field content and SUSY. Sen's logarithmic corrections test one-loop SUGRA. Link to islands is indirect.",
+      "explored": "partially",
+      "sourcePillars": [
+        "black-holes-information"
+      ]
+    },
+    {
+      "from": "black-holes-information",
+      "to": "conceptual-problems",
+      "type": "shared-structure",
+      "description": "Wallace distinguishes weak (global non-hyperbolicity) and strong (statistical-mechanical) versions of the paradox, the latter genuinely paradoxical and arising well before full evaporation. Questions about the meaning of 'information', the status of unitarity, and the role of observers/measurement in the interior; the island program largely sidesteps rather than resolves these.",
+      "explored": "partially",
+      "sourcePillars": [
+        "black-holes-information"
+      ]
+    },
+    {
+      "from": "black-holes-information",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "Astrophysical Hawking radiation is unobservably weak (~10^-8 K for a solar mass). Analogue 'dumb holes' in BECs/water/optics (Unruh, Steinhauer) measure analogue Hawking temperature and correlations but not the information paradox or Page curve. Final bursts of primordial black holes are searched for in gamma rays without detection. Direct tests are out of reach; the link is minimal but conceptually important.",
+      "explored": "barely",
+      "sourcePillars": [
+        "black-holes-information"
+      ]
+    },
+    {
+      "from": "black-holes-information",
+      "to": "holographic-complexity",
+      "type": "shared-structure",
+      "description": "Complexity=volume/action describes interior growth after entropy saturates; the second law of complexity (Brown-Susskind) parallels entropy; decoding the interior is computationally hard (Python's lunch, QEC, Bouland-Fefferman-Vazirani). Well explored inside holography, weak elsewhere.",
+      "explored": "partially",
+      "sourcePillars": [
+        "black-holes-information"
+      ]
+    },
+    {
+      "from": "black-holes-information",
+      "to": "quantum-error-correction",
+      "type": "shared-math",
+      "description": "The interior is a quantum error-correcting code (Almheiri-Dong-Harlow); Hayden-Preskill decoding; tensor networks (HaPPY code, random tensor networks); the SYK model as a solvable holographic system saturating the chaos bound. Deeply connected via entanglement and reconstruction.",
+      "explored": "well",
+      "sourcePillars": [
+        "black-holes-information"
+      ]
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "asymptotic-safety",
+      "type": "shared-structure",
+      "description": "CDT's second/higher-order phase-transition line is the natural lattice candidate for the asymptotic-safety (Reuter) UV fixed point, and both predict a spectral-dimension reduction 4 -> 2. The 2024 CDT-FRG paper directly matches the scale-factor effective action, identifying the Gaussian/IR fixed point and a putative (unproven) UV lattice fixed point.",
+      "explored": "partially",
+      "sourcePillars": [
+        "causal-dynamical-triangulations"
+      ]
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "horava-lifshitz-gravity",
+      "type": "duality",
+      "description": "Both rely on a global time foliation / anisotropic scaling and have strikingly similar phase diagrams. In 2D it is proven that CDT equals quantized projectable Horava-Lifshitz gravity; in 4D the relationship is so far only a phase-diagram resemblance with no analytic derivation.",
+      "explored": "partially",
+      "sourcePillars": [
+        "causal-dynamical-triangulations"
+      ]
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "causal-sets",
+      "type": "shared-structure",
+      "description": "Both model spacetime with discrete causal structure and a Lorentzian sum-over-histories. Causal sets are more general (partial order + counting) while CDT fixes a simplex-geometry relation; in CDT discreteness is a removable regulator, in causal sets it is fundamental. Quantitative cross-checks (dimension estimators, spectral dimension) are barely explored.",
+      "explored": "partially",
+      "sourcePillars": [
+        "causal-dynamical-triangulations"
+      ]
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "loop-quantum-gravity",
+      "type": "shared-structure",
+      "description": "Spin foams (the covariant face of LQG) are a path integral of Lorentzian first-order Regge calculus and sit at the crossroads of LQG, dynamical triangulations and causal sets, sharing CDT's Lorentzian sum-over-discrete-geometries idea. But CDT computes exact distances and treats discreteness as a regulator, whereas LQG discreteness is fundamental; direct quantitative comparison (e.g. spectral dimension) is barely done.",
+      "explored": "barely",
+      "sourcePillars": [
+        "causal-dynamical-triangulations"
+      ]
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "group-field-theory",
+      "type": "shared-math",
+      "description": "GFT generates spin-foam/simplicial amplitudes as Feynman diagrams and shares the simplicial, sum-over-triangulations structure with (C)DT; colored/causal GFT models aim to reproduce CDT-like causal amplitudes. Concrete matching of CDT phases to GFT condensate/continuum phases is largely unexplored.",
+      "explored": "barely",
+      "sourcePillars": [
+        "causal-dynamical-triangulations"
+      ]
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "quantum-cosmology",
+      "type": "shared-math",
+      "description": "The emergent de Sitter universe is described by a minisuperspace effective action of Hartle-Hawking type measured directly from the simulations, giving a nonperturbative (beyond saddle-point) realization of no-boundary-like scale-factor dynamics including quantum fluctuations.",
+      "explored": "well",
+      "sourcePillars": [
+        "causal-dynamical-triangulations"
+      ]
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "CDT is a concrete example of classical spacetime, its dimension and curvature emerging dynamically from nonperturbative quantum fluctuations rather than being assumed; supports the thesis of geometry as a collective/emergent phenomenon.",
+      "explored": "partially",
+      "sourcePillars": [
+        "causal-dynamical-triangulations"
+      ]
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "spectral-dimension",
+      "type": "shared-structure",
+      "description": "CDT provided the first nonperturbative QG measurement of a running spectral dimension (4.02 -> 1.80), establishing spectral dimension as a universal cross-approach observable also computed in asymptotic safety, Horava-Lifshitz, LQG, causal sets and noncommutative geometry; cross-approach quantitative comparison of the UV value is only partially explored.",
+      "explored": "partially",
+      "sourcePillars": [
+        "causal-dynamical-triangulations"
+      ]
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "experimental-tests",
+      "type": "conjecture",
+      "description": "Dimensional reduction to D_S~2 in the UV has been argued to yield a near-scale-invariant primordial spectrum, and related EDT work predicts a quadratically running cosmological constant (dynamical dark energy) with O(10^-3) deviations from LambdaCDM, a potential observational handle. The link from CDT microphysics to CMB/cosmological data is barely developed.",
+      "explored": "barely",
+      "sourcePillars": [
+        "causal-dynamical-triangulations"
+      ]
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "holography-adscft",
+      "type": "conjecture",
+      "description": "No direct bridge exists (CDT has no negative cosmological constant or AdS boundary), but CDT could supply first-principles bulk dynamics complementary to a holographic boundary description; whether topological fingerprints (Betti numbers) of quantum spacetime have a holographic counterpart is purely speculative.",
+      "explored": "barely",
+      "sourcePillars": [
+        "causal-dynamical-triangulations"
+      ]
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "regge-calculus",
+      "type": "shared-math",
+      "description": "CDT is dynamical-triangulations Regge calculus with fixed edge lengths: it uses the same deficit-angle curvature and Regge action, putting the dynamics into connectivity rather than edge lengths. This relationship is definitional and fully understood.",
+      "explored": "well",
+      "sourcePillars": [
+        "causal-dynamical-triangulations"
+      ]
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "euclidean-dynamical-triangulations",
+      "type": "limit",
+      "description": "EDT is the foliation-free Euclidean precursor; without causality 4D EDT collapses to crumpled and branched-polymer phases. Modern EDT with a nontrivial measure term recovers emergent de Sitter geometry, reopening the question of whether causality or a fine-tuned measure is the essential ingredient.",
+      "explored": "well",
+      "sourcePillars": [
+        "causal-dynamical-triangulations"
+      ]
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "noncommutative-geometry",
+      "type": "shared-structure",
+      "description": "Both yield scale-dependent / reduced effective dimensions in the UV (kappa-Minkowski and other NCG models also give D_S ~ 2-3), suggesting a common spectral-dimension-reduction mechanism, but no direct construction links CDT geometries to a noncommutative algebra.",
+      "explored": "barely",
+      "sourcePillars": [
+        "causal-dynamical-triangulations"
+      ]
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "black-holes-information",
+      "type": "conjecture",
+      "description": "CDT realizes Planck-scale discreteness nonperturbatively, which is the ingredient usually invoked to render a microscopic counting of black-hole (Bekenstein-Hawking) entropy finite; however, no extended black-hole geometry has been constructed or its horizon entropy measured in CDT (the de Sitter phase is closed and horizon-free). The bridge is conceptual only.",
+      "explored": "barely",
+      "sourcePillars": [
+        "causal-dynamical-triangulations"
+      ]
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "entanglement-spacetime",
+      "type": "conjecture",
+      "description": "CDT supplies a concrete ensemble of fluctuating microscopic geometries on which entanglement entropy of spatial subregions could in principle be measured and compared to 'entanglement builds geometry' proposals, but defining region entanglement on dynamically triangulated states and relating it to emergent volume/area is essentially untouched.",
+      "explored": "barely",
+      "sourcePillars": [
+        "causal-dynamical-triangulations"
+      ]
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "swampland",
+      "type": "conjecture",
+      "description": "CDT produces an emergent (Euclidean) de Sitter universe and, in related EDT work, a running cosmological constant, putting it on a potential collision course with the swampland de Sitter conjecture; whether CDT's nonperturbative de Sitter phase respects or violates swampland criteria has not been analyzed, making this a clean unexplored consistency test.",
+      "explored": "barely",
+      "sourcePillars": [
+        "causal-dynamical-triangulations"
+      ]
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "string-theory",
+      "type": "conflict",
+      "description": "CDT is an explicit nonperturbative, background-independent quantum gravity without supersymmetry, extra dimensions or fundamental strings, and is methodologically opposed to perturbative string theory; yet both target a UV-complete theory of gravity, and 2D CDT/EDT connects to the matrix-model / Liouville (worldsheet) lineage shared with string theory, a structural link that is only superficially explored.",
+      "explored": "barely",
+      "sourcePillars": [
+        "causal-dynamical-triangulations"
+      ]
+    },
+    {
+      "from": "causal-dynamical-triangulations",
+      "to": "semiclassical-gravity",
+      "type": "limit",
+      "description": "The measured de Sitter volume profile and its semiclassical fluctuations show that CDT recovers a semiclassical (minisuperspace) gravity regime as a controlled limit of the full nonperturbative path integral, validating the IR continuum limit; this match is quantitatively established for the global scale factor.",
+      "explored": "well",
+      "sourcePillars": [
+        "causal-dynamical-triangulations"
+      ]
+    },
+    {
+      "from": "causal-sets",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-structure",
+      "description": "Both are Lorentzian, background-independent, causal, non-perturbative path-integral approaches recovering GR classically and exhibiting spectral-dimension reduction to ~2 in the UV. Key difference: in CDT discreteness is a removable regulator with a fixed foliation and simplex topology, whereas in CST it is fundamental/physical and only pure order is retained (more freedom in the action). Direct comparison of the two path integrals and their phase structure is largely open.",
+      "explored": "partially",
+      "sourcePillars": [
+        "causal-sets"
+      ]
+    },
+    {
+      "from": "causal-sets",
+      "to": "asymptotic-safety",
+      "type": "shared-structure",
+      "description": "Connected via the spectral-dimension: both independently predict dimensional reduction to d_s ~ 2 in the UV. Whether the BD action / causal-set path integral realizes an asymptotically-safe-like RG fixed point is essentially unexplored — a potentially rich, unexploited bridge.",
+      "explored": "barely",
+      "sourcePillars": [
+        "causal-sets"
+      ]
+    },
+    {
+      "from": "causal-sets",
+      "to": "loop-quantum-gravity",
+      "type": "shared-structure",
+      "description": "Both predict fundamental spacetime discreteness, but oppositely: in LQG discreteness is derived (discrete area/volume spectra on spin networks) while in CST it is postulated; LQG discretizes space, CST discretizes spacetime as a poset. Spin-foam causal evolution and CSG share a 'causal growth' idea but are formally unconnected.",
+      "explored": "barely",
+      "sourcePillars": [
+        "causal-sets"
+      ]
+    },
+    {
+      "from": "causal-sets",
+      "to": "group-field-theory",
+      "type": "shared-math",
+      "description": "Both are combinatorial/discrete background-independent theories summing over discrete structures (posets vs. simplicial complexes/graphs) with emergent geometry from combinatorics. No direct formal map exists between causal-set path-sums and GFT amplitudes; a translation dictionary is unexplored.",
+      "explored": "barely",
+      "sourcePillars": [
+        "causal-sets"
+      ]
+    },
+    {
+      "from": "causal-sets",
+      "to": "holography-adscft",
+      "type": "conflict",
+      "description": "The SSEE on causal sets obeys a volume law, in tension with holographic/Bekenstein area scaling, yet Dou-Sorkin horizon-molecule counting reproduces the area law S=A/4 for black holes. Whether the holographic principle is compatible with fundamental discreteness, and how an area law emerges from a volume law via UV truncation, is open and potentially decisive.",
+      "explored": "barely",
+      "sourcePillars": [
+        "causal-sets"
+      ]
+    },
+    {
+      "from": "causal-sets",
+      "to": "entanglement-spacetime",
+      "type": "shared-structure",
+      "description": "CST provides its own covariant spacetime entanglement entropy (SSEE) and SJ vacuum, an alternative to the 'entanglement builds geometry' / ER=EPR program: here geometry comes from order+number, not primarily from entanglement. Relating SSEE to Ryu-Takayanagi / holographic entanglement entropy is only partially explored.",
+      "explored": "partially",
+      "sourcePillars": [
+        "causal-sets"
+      ]
+    },
+    {
+      "from": "causal-sets",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "Dou-Sorkin derive Bekenstein-Hawking entropy kinematically by counting causal links ('horizon molecules') crossing a horizon, recently extended via Boltzmannian state counting (2023-2024). The information paradox and Page curve have not been systematically treated within CST.",
+      "explored": "partially",
+      "sourcePillars": [
+        "causal-sets"
+      ]
+    },
+    {
+      "from": "causal-sets",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "CST is a prototype emergent-geometry theory (metric, topology, dimension emerge from order+number) and the BD action emerges from counting order intervals, conceptually close to thermodynamic/entropic gravity (Jacobson, Verlinde). Technical links between counting-based emergence and entropic-force derivations are underdeveloped.",
+      "explored": "partially",
+      "sourcePillars": [
+        "causal-sets"
+      ]
+    },
+    {
+      "from": "causal-sets",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "Both reject a smooth UV manifold and recover geometry spectrally: the spectral triple / Dirac operator of NCG parallels the Pauli-Jordan operator and SJ spectrum that encode geometry on causal sets. A direct correspondence between these spectral reconstructions is unexplored.",
+      "explored": "barely",
+      "sourcePillars": [
+        "causal-sets"
+      ]
+    },
+    {
+      "from": "causal-sets",
+      "to": "quantum-cosmology",
+      "type": "shared-structure",
+      "description": "CSG yields cosmological dynamics (cyclic bounce universes, 'cosmological renormalization' of parameters at each bounce) and the everpresent-Lambda scenario is a direct cosmological prediction. Connections to Hartle-Hawking / no-boundary and to LQC bounces are largely untreated.",
+      "explored": "partially",
+      "sourcePillars": [
+        "causal-sets"
+      ]
+    },
+    {
+      "from": "causal-sets",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "Swerves (Lorentz-invariant momentum diffusion) bound the discreteness scale from cosmic-ray and nebular observations, and everpresent Lambda is testable via SNe/CMB (Zwane-Afshordi-Sorkin 2018). CST's exact Lorentz invariance makes it robust against Lorentz-violation tests, unlike many QG models.",
+      "explored": "partially",
+      "sourcePillars": [
+        "causal-sets"
+      ]
+    },
+    {
+      "from": "causal-sets",
+      "to": "string-theory",
+      "type": "conflict",
+      "description": "Philosophically opposed: string theory assumes a smooth (super)manifold and continuous UV spacetime, CST assumes fundamental background-free discreteness. No formal bridge exists; the relationship is an unexplored conceptual conflict about the UV nature of spacetime.",
+      "explored": "barely",
+      "sourcePillars": [
+        "causal-sets"
+      ]
+    },
+    {
+      "from": "causal-sets",
+      "to": "cosmological-constant-fluctuation",
+      "type": "conjecture",
+      "description": "Sorkin's everpresent-Lambda is CST's flagship prediction: Lambda ~ 1/sqrt(V) ~ 10^-120 in Planck units, made in 1987 a decade before the observed accelerating expansion — the only prediction-in-advance from any quantum gravity program. Dynamical realizations remain phenomenological, not derived from a full quantum theory.",
+      "explored": "partially",
+      "sourcePillars": [
+        "causal-sets"
+      ]
+    },
+    {
+      "from": "causal-sets",
+      "to": "spectral-dimension",
+      "type": "shared-math",
+      "description": "The spectral dimension in causal set theory is strongly probe-dependent. (1) Random walks directly on the discrete causal order (Eichhorn-Mizera, arXiv:1311.2530, CQG 2014) find that d_s INCREASES at short scales — opposite to CDT/asymptotic-safety — because of the nonlocal, fundamentally Lorentzian structure of the causet graph; the causal spectral dimension (meeting probability of two walkers) shows a similar trend. (2) Propagators / heat kernels derived from the nonlocal continuum d'Alembertian inherited from causal sets (Belenchia-Benincasa-Marciano-Modesto, arXiv:1507.00330, PRD 2016) give a UNIVERSAL REDUCTION to d_s ~ 2 in the UV in all spacetime dimensions, arising from the improved UV behaviour of the regularised propagator ~ (k^2)^(d/2). The two results are not contradictory: they probe genuinely different aspects of the discrete structure. The probe-dependence is a distinctive signature of causal set nonlocality.",
+      "explored": "partially",
+      "sourcePillars": [
+        "causal-sets"
+      ]
+    },
+    {
+      "from": "causal-sets",
+      "to": "twistors-amplitudes",
+      "type": "conjecture",
+      "description": "Recent CST QFT work defines scattering amplitudes / an S-matrix analogue on a discrete causal background and quantum-counting algorithms for the action; whether any structural link exists to amplitude methods or twistor positivity (both built on causal/positive structure) is entirely speculative and unexamined.",
+      "explored": "barely",
+      "sourcePillars": [
+        "causal-sets"
+      ]
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "loop-quantum-gravity",
+      "type": "shared-structure",
+      "description": "The problem of time, diffeomorphism invariance and relational Dirac observables are native to the canonical (LQG) tradition; LQG provides concrete realizations (spin networks, master/quantum Hamiltonian constraint, Brown-Kuchar dust and Rovelli-Smolin matter clocks) and LQC supplies an explicit big bounce. Dense, bidirectional bridge.",
+      "explored": "well",
+      "sourcePillars": [
+        "conceptual-problems"
+      ]
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "quantum-cosmology",
+      "type": "shared-structure",
+      "description": "Minisuperspace is the principal laboratory for the problem of time: Wheeler-DeWitt in FLRW, deparametrization by scalar/volume, no-boundary and tunneling wave functions, the measure problem, and tests of Page-Wootters and decoherent histories.",
+      "explored": "well",
+      "sourcePillars": [
+        "conceptual-problems"
+      ]
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "group-field-theory",
+      "type": "shared-structure",
+      "description": "The Page-Wootters formalism and the trinity of relational dynamics were applied directly to GFT (Calcinari & Gielen 2024, arXiv:2407.03432): deparametrized GFT equals the clock-neutral Dirac GFT in a Page-Wootters reading, with an expanding universe emerging from discrete geometry relative to a scalar-matter clock. The first application of Page-Wootters to non-perturbative quantum gravity; related effective relational cosmology was developed by Marchetti & Oriti. Conceptually central but technically recent.",
+      "explored": "partially",
+      "sourcePillars": [
+        "conceptual-problems"
+      ]
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "holography-adscft",
+      "type": "shared-math",
+      "description": "Crossed-product von Neumann algebras (CLPW 2022, Witten 2021) tie the observer and quantum reference frames - core conceptual issues - to generalized entropy and type II/III algebra structure, converting a type III QFT algebra to type II with finite, observer-dependent entropy. The fastest-growing crossroads of the pillar.",
+      "explored": "partially",
+      "sourcePillars": [
+        "conceptual-problems"
+      ]
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "black-holes-information",
+      "type": "conflict",
+      "description": "Locality vs unitarity, the firewall, the Page curve and entanglement monogamy are the conceptual problems instantiated for black holes; the generalized second law is shared with singularity theorems and the observer near the horizon embodies complementarity.",
+      "explored": "well",
+      "sourcePillars": [
+        "conceptual-problems"
+      ]
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "entanglement-spacetime",
+      "type": "shared-math",
+      "description": "Quantum reference frames and dressed observables make subregion entanglement entropy observer-dependent and require gravitational dressing; ER=EPR addresses locality-vs-unitarity. Linking relational time to spacetime emergence from entanglement is promising but immature.",
+      "explored": "partially",
+      "sourcePillars": [
+        "conceptual-problems"
+      ]
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "semiclassical-gravity",
+      "type": "shared-structure",
+      "description": "Moller-Rosenfeld, Schroedinger-Newton and stochastic gravity are candidate non-quantized theories and the arena for the measurement/backreaction problem; Eppley-Hannah, BWGCBA and Oppenheim's theory all probe their consistency.",
+      "explored": "well",
+      "sourcePillars": [
+        "conceptual-problems"
+      ]
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "BMV entanglement, Gran Sasso spontaneous emission (Diosi-Penrose), and spacetime-diffusion bounds (LISA Pathfinder, atom interferometry) convert conceptual disputes into numbers; the decoherence-diffusion trade-off is a falsifiable prediction. The most dynamic frontier.",
+      "explored": "partially",
+      "sourcePillars": [
+        "conceptual-problems"
+      ]
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "string-theory",
+      "type": "conflict",
+      "description": "Tension over background independence (LQG critique), Lambda addressed by landscape+anthropics, some singularities resolved by T-duality/branes, and holography as a bridge to the observer. The link to the fundamental problem of time is weaker since strings usually work on a fixed background.",
+      "explored": "partially",
+      "sourcePillars": [
+        "conceptual-problems"
+      ]
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "asymptotic-safety",
+      "type": "conflict",
+      "description": "Asymptotic safety is background-dependent (an RG fixed point), so background independence and the problem of time are latent there; a canonical reformulation was only recently opened (arXiv:2507.14296). A thin, new bridge and a candidate for fresh connections.",
+      "explored": "barely",
+      "sourcePillars": [
+        "conceptual-problems"
+      ]
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "causal-sets",
+      "type": "conjecture",
+      "description": "Causal sets address the problem of time via causal order and predict Lambda ~ +/- 1/sqrt(V) (right order of magnitude) from discreteness fluctuations, a rare quantitative handle on the cosmological constant problem. Links to relational observables and Page-Wootters are almost unexplored - promising and underrated.",
+      "explored": "barely",
+      "sourcePillars": [
+        "conceptual-problems"
+      ]
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "twistors-amplitudes",
+      "type": "shared-structure",
+      "description": "The amplitude/S-matrix program is radically timeless (no evolution, only scattering data), structurally resonant with timeless solutions to the problem of time and the lack of local diffeomorphism-invariant observables, but the relation is essentially unarticulated. A near-empty bridge worth mining.",
+      "explored": "barely",
+      "sourcePillars": [
+        "conceptual-problems"
+      ]
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "Minimal length / generalized uncertainty and noncommutative spacetime modify locality and diffeomorphism structure; their operator-algebra framing is kin to the crossed-product observer algebras, but the explicit connection is unexplored - a candidate for shared mathematics.",
+      "explored": "barely",
+      "sourcePillars": [
+        "conceptual-problems"
+      ]
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "page-curve",
+      "type": "shared-structure",
+      "description": "The Page curve is the quantitative expression of the locality-vs-unitarity tension; its derivation via islands/replica wormholes uses generalized entropy, the same object that appears in the observer crossed-product algebra of this pillar.",
+      "explored": "well",
+      "sourcePillars": [
+        "conceptual-problems"
+      ]
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "swampland",
+      "type": "conjecture",
+      "description": "Swampland constraints (e.g. de Sitter and species-scale conjectures) bear on the cosmological constant problem and on whether singularity resolution must occur at the species scale cG, intersecting Weinberg's no-go and the GSL-based singularity constraints. The overlap is suggestive but only partly worked out.",
+      "explored": "barely",
+      "sourcePillars": [
+        "conceptual-problems"
+      ]
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "string-theory",
+      "type": "shared-math",
+      "description": "Jusufi-Singleton-Lobo (2025, arXiv:2512.15393) derive gravitationally induced wave-function collapse by inserting a string-inspired T-duality non-local gravitational self-energy into the Schroedinger-Newton equation: T-duality's intrinsic minimal-length non-locality makes linear superposition only approximate and forces collapse. A concrete but brand-new and essentially unexplored bridge between the measurement problem / Penrose collapse and string-theoretic T-duality.",
+      "explored": "barely",
+      "sourcePillars": [
+        "conceptual-problems"
+      ]
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "semiclassical-gravity",
+      "type": "conflict",
+      "description": "Adlam (2022, arXiv:2204.08064) shows BMV-type tests are simultaneously tests of the interpretation of quantum mechanics: psi-incomplete quantum-gravity models (gravity coupled to non-quantum beables, i.e. effectively semiclassical) predict no entanglement, so a positive BMV result would falsify them. This ties the measurement problem, the is-gravity-quantum question and semiclassical gravity into a single experimentally addressable knot; the interpretation-dependence is only partially mapped.",
+      "explored": "partially",
+      "sourcePillars": [
+        "conceptual-problems"
+      ]
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "holography-adscft",
+      "type": "shared-structure",
+      "description": "Both rest on area-law entanglement entropy and the holographic principle. The first law of entanglement in AdS/CFT (Faulkner et al. 2014) reproduces linearized Einstein equations in the bulk, the holographic version of Jacobson's theorem; Verlinde 2016 explicitly builds on AdS area law and its breakdown in de Sitter. AdS/CFT supplies the concrete microtheory the generic emergent program lacks.",
+      "explored": "well",
+      "sourcePillars": [
+        "emergent-gravity"
+      ]
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "entanglement-spacetime",
+      "type": "shared-math",
+      "description": "Jacobson's entanglement equilibrium (2015) and Cao-Carroll (2018) derive geometry and Einstein's equation directly from entanglement entropy and the modular Hamiltonian, sharing the whole 'spacetime from entanglement' / it-from-qubit apparatus (RT formula, modular flow). Less explored beyond linear order and without an AdS boundary.",
+      "explored": "well",
+      "sourcePillars": [
+        "emergent-gravity"
+      ]
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "The program takes Bekenstein-Hawking entropy and Hawking temperature as inputs and suggests the information paradox is a semiclassical artifact resolved by spacetime atoms; analogue black holes test Hawking kinematics and partner-mode entanglement, touching but not resolving the paradox (no Page curve from emergent gravity itself).",
+      "explored": "partially",
+      "sourcePillars": [
+        "emergent-gravity"
+      ]
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "semiclassical-gravity",
+      "type": "limit",
+      "description": "Entanglement equilibrium yields the semiclassical equation G_ab = 8 pi G <T_ab>; the whole thermodynamic program lives in the QFT-on-curved-background regime (Unruh, Hawking). Emergent gravity essentially claims semiclassical gravity IS the thermodynamic limit, so this is its home regime.",
+      "explored": "well",
+      "sourcePillars": [
+        "emergent-gravity"
+      ]
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "Uniquely test-rich: Verlinde 2016 is probed by galaxy-galaxy lensing (Brouwer, pass), rotation curves and RAR (Lelli, fail), dwarf spheroidals (Hodson-Zhao); entropic gravity by neutron interferometry/qBounce (Kobakhidze); and analogue gravity is the only laboratory-accessible part (Steinhauer, Weinfurtner).",
+      "explored": "partially",
+      "sourcePillars": [
+        "emergent-gravity"
+      ]
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "asymptotic-safety",
+      "type": "conjecture",
+      "description": "Induced gravity and asymptotic safety both treat G and Lambda as effective/running quantities fixed by UV physics. Conjectured bridge: an AS UV fixed point could be the microtheory whose effective description is the induced EH action. Essentially nobody has systematically developed this link - prime 'barely explored' territory.",
+      "explored": "barely",
+      "sourcePillars": [
+        "emergent-gravity"
+      ]
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "causal-sets",
+      "type": "shared-structure",
+      "description": "Both share the thermodynamic-statistical ethos: causal-set horizon entropy from counting causal links (Dou-Sorkin) gives S proportional to A, and Jacobson's local causal horizons have a natural discrete counterpart. Conceptual bridge exists; whether causal-set counting quantitatively reproduces Jacobson's derivation is open.",
+      "explored": "barely",
+      "sourcePillars": [
+        "emergent-gravity"
+      ]
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "loop-quantum-gravity",
+      "type": "conflict",
+      "description": "Philosophically opposed (LQG quantizes geometry; emergent gravity says geometry is not fundamental), yet potentially complementary: LQG reproduces S = A/4 from spin-network counting and could supply the 'atoms of spacetime' for the thermodynamic limit. Cross-development is almost nonexistent.",
+      "explored": "barely",
+      "sourcePillars": [
+        "emergent-gravity"
+      ]
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "group-field-theory",
+      "type": "shared-structure",
+      "description": "GFT condensate cosmology treats the universe as a quantum fluid of atoms of space, a literal realization of 'gravity as hydrodynamics' (Hu, Volovik); its emergent Friedmann equation parallels Padmanabhan's dV/dt = N_sur - N_bulk. Conceptually close, quantitatively unconnected.",
+      "explored": "barely",
+      "sourcePillars": [
+        "emergent-gravity"
+      ]
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "swampland",
+      "type": "conjecture",
+      "description": "Verlinde 2016 and CosMIn tie Lambda to other scales; swampland de Sitter/distance conjectures likewise place small positive Lambda at the edge of consistency. If Lambda is emergent (Bianconi G-field), it might illuminate the de Sitter swampland problem. Speculative and unworked.",
+      "explored": "barely",
+      "sourcePillars": [
+        "emergent-gravity"
+      ]
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "quantum-cosmology",
+      "type": "shared-math",
+      "description": "Padmanabhan's emergence of cosmic space reformulates the Friedmann equation as a holographic-equipartition flow and is being generalized (FRW, Lanczos-Lovelock, deformed entropy). Connection to deeper quantum cosmology (Wheeler-DeWitt) is weak.",
+      "explored": "partially",
+      "sourcePillars": [
+        "emergent-gravity"
+      ]
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "cosmological-constant-problem",
+      "type": "shared-structure",
+      "description": "The same one-loop integration that induces G generates a huge vacuum energy; CosMIn (N = 4 pi) and Bianconi's G-field both yield the observed small Lambda but as postulates. The emergent framework reframes, and occasionally numerically hits, the CC problem rather than solving it from first principles.",
+      "explored": "partially",
+      "sourcePillars": [
+        "emergent-gravity"
+      ]
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "noncommutative-geometry",
+      "type": "conjecture",
+      "description": "Minimal-length/UV-cutoff structures central to induced gravity (Lambda_UV setting G) resonate with noncommutative spacetime's built-in length scale; both regularize horizon entropy counting. Almost no direct work links Jacobson/Sakharov thermodynamics to NCG spectral-action gravity.",
+      "explored": "barely",
+      "sourcePillars": [
+        "emergent-gravity"
+      ]
+    },
+    {
+      "from": "entanglement-spacetime",
+      "to": "holography-adscft",
+      "type": "shared-structure",
+      "description": "RT, FLM, QES, JLMS and islands are all formulated within AdS/CFT; entanglement gives holography its quantum-information reading (geometry = entanglement) while holography supplies the concrete bulk dual. Bidirectional and deeply mapped.",
+      "explored": "well",
+      "sourcePillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "from": "entanglement-spacetime",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "QES + islands + replica wormholes reproduce the Page curve, resolving the information paradox; ER=EPR addresses the firewall; Bekenstein-Hawking entropy is the horizon special case of RT. Remaining gap: microscopic interpretation of replica saddles.",
+      "explored": "well",
+      "sourcePillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "from": "entanglement-spacetime",
+      "to": "string-theory",
+      "type": "shared-structure",
+      "description": "AdS/CFT and entanglement geometry descend from D-branes and string microstate counting (Strominger-Vafa); the entanglement picture is the information-theoretic face of the same structure. Open: whether emergence holds beyond string constructions.",
+      "explored": "well",
+      "sourcePillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "from": "entanglement-spacetime",
+      "to": "semiclassical-gravity",
+      "type": "shared-math",
+      "description": "QFC, QNEC, generalized second law and generalized entropy live at the semiclassical gravity / entanglement interface; QNEC is a pure-QFT statement derived from gravitational QFC. Open: QFC in fully dynamical backgrounds.",
+      "explored": "well",
+      "sourcePillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "from": "entanglement-spacetime",
+      "to": "emergent-gravity",
+      "type": "shared-math",
+      "description": "Direct conceptual ancestor: Jacobson (1995) derived Einstein equations from delta Q = T delta S on Rindler horizons; Faulkner et al. (2014) is the holographic, entanglement-exact version. Verlinde entropic gravity shares the slogan but is controversial and weakly linked to RT.",
+      "explored": "partially",
+      "sourcePillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "from": "entanglement-spacetime",
+      "to": "loop-quantum-gravity",
+      "type": "shared-structure",
+      "description": "Explicit bridges: LQG spin-network states as an exact holographic mapping / tensor network (Han-Hung 2017; spin-network HEE reviews 2022; SU(2) holonomies to holographic duality via tensor networks 2024); both give area-law entanglement from discrete geometry. Gap: LQG is background independent with no preferred AdS dual; matching RT area law to the LQG area spectrum A ~ 8 pi gamma lP^2 sum sqrt(j(j+1)) is illustrative, not derived.",
+      "explored": "partially",
+      "sourcePillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "from": "entanglement-spacetime",
+      "to": "causal-sets",
+      "type": "shared-structure",
+      "description": "Sorkin-Yazdi 'spacetime entanglement entropy' on a causal set yields an area law; causal sets carry fundamental Lorentzian causality and could illuminate the emergence of time that RT handles poorly. But links to RT/QES are almost unmapped - a candidate gold connection.",
+      "explored": "barely",
+      "sourcePillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "from": "entanglement-spacetime",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "Shared operator-algebraic language: von Neumann algebras, Tomita-Takesaki modular theory, factor types. The crossed-product / type II program brings entanglement into the same algebraic world as NCG; explicit bridges (spectral triples <-> entanglement entropy) are missing despite the striking shared mathematics.",
+      "explored": "barely",
+      "sourcePillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "from": "entanglement-spacetime",
+      "to": "asymptotic-safety",
+      "type": "conjecture",
+      "description": "Hypothetical contact via holographic RG flow (radial direction = energy scale) versus the asymptotic-safety UV fixed point, with entanglement entropy as a fixed-point probe. Essentially no literature linking entanglement emergence to functional RG - an unexplored field.",
+      "explored": "barely",
+      "sourcePillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "from": "entanglement-spacetime",
+      "to": "twistors-amplitudes",
+      "type": "conjecture",
+      "description": "Indirect contact through celestial holography and through complexity / geometry of the state space; whether an entanglement structure of scattering states maps to emergent spacetime is essentially unmapped - speculative but suggestive.",
+      "explored": "barely",
+      "sourcePillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "from": "entanglement-spacetime",
+      "to": "quantum-cosmology",
+      "type": "conjecture",
+      "description": "Emergent time, pseudo-entropy and de Sitter holography point toward cosmological applications (entanglement across the cosmological horizon, cosmological constant from quantum corrections). No controlled holographic dual of cosmology yet; relation to initial conditions and the arrow of time is open.",
+      "explored": "barely",
+      "sourcePillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "from": "entanglement-spacetime",
+      "to": "holographic-principle",
+      "type": "shared-structure",
+      "description": "RT and the covariant Bousso bound are quantum-information sharpenings of the holographic principle: degrees of freedom scale with boundary area; QFC yields the generalized (quantum) Bousso bound. Well explored within holography.",
+      "explored": "well",
+      "sourcePillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "from": "entanglement-spacetime",
+      "to": "supergravity-uv",
+      "type": "limit",
+      "description": "The classical RT/HRT regime is the supergravity (large-N, strong-coupling) limit of the bulk; FLM/QES add the one-loop and all-orders quantum corrections on top of the supergravity saddle. The supergravity action is what complexity=action evaluates on the WDW patch.",
+      "explored": "partially",
+      "sourcePillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "from": "entanglement-spacetime",
+      "to": "conceptual-problems",
+      "type": "conflict",
+      "description": "Holographic-looking entanglement features (e.g. symmetric product orbifold CFTs reproducing RT-like behavior) can be a 'mirage' without a genuine classical bulk, and maximally entangled states have no reconstructable spacetime - so RT behavior is not sufficient for emergent geometry. Also bears on the problem of time and background independence.",
+      "explored": "partially",
+      "sourcePillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "from": "entanglement-spacetime",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "Sparsified SYK on the Google Sycamore processor (2022) and optical-cavity SYK simulations reproduce traversable-wormhole teleportation signatures (size winding, Shapiro delay), a 'QG in the lab' program; contested as to whether it probes gravity or generic scrambling.",
+      "explored": "partially",
+      "sourcePillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "from": "entanglement-spacetime",
+      "to": "group-field-theory",
+      "type": "shared-structure",
+      "description": "GFT and spin-network condensates build emergent geometry from many quanta; entanglement of GFT/tensor-network states and area-law scaling parallel the holographic entanglement program, but explicit GFT-RT dictionaries are essentially absent.",
+      "explored": "barely",
+      "sourcePillars": [
+        "entanglement-spacetime"
+      ]
+    },
+    {
+      "from": "experimental-tests",
+      "to": "semiclassical-gravity",
+      "type": "conflict",
+      "description": "BMV/QGEM is designed as a direct discriminator: if gravity is fundamentally semiclassical (Moller-Rosenfeld, G_uv = 8 pi G <T_uv>) it should not entangle two masses. The 2025 Aziz-Howl Nature claim that classical gravity DOES entangle, and its multiple rebuttals (Marletto-Oppenheim-Vedral-Wilson, Newton-Cartan analyses), make this the sharpest, most active experimental decision point between quantum and semiclassical gravity.",
+      "explored": "well",
+      "sourcePillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "from": "experimental-tests",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "kappa-Poincare (the Hopf-algebra deformation underlying DSR) is the mathematical core that generates modified dispersion relations, relative locality, and deformed time-of-flight predictions. Vacuum birefringence and UHECR bounds directly test NCG-inspired MDR. The best-developed bridge between a fundamental approach and phenomenology, though whether it yields an observable delay (vs relative-locality nullification) is unsettled.",
+      "explored": "well",
+      "sourcePillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "from": "experimental-tests",
+      "to": "conceptual-problems",
+      "type": "shared-structure",
+      "description": "BMV/QGEM, Diosi-Penrose collapse, and Pikovski time-dilation decoherence make the laboratory a testbed for the measurement problem and the quantum-to-classical transition, and for whether gravity MUST be quantized (Penrose, Brukner). Intensely discussed conceptually and operationally.",
+      "explored": "well",
+      "sourcePillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "from": "experimental-tests",
+      "to": "twistors-amplitudes",
+      "type": "shared-math",
+      "description": "Gravitational-wave memory is the Fourier transform of Weinberg's soft graviton theorem (Strominger-Zhiboedov), forming the memory-soft-BMS triangle. Detecting GW memory in LIGO would test the soft structure and asymptotic (BMS) symmetries underlying gravitational scattering amplitudes. Theoretically deep; awaits experimental memory detection.",
+      "explored": "partially",
+      "sourcePillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "from": "experimental-tests",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "GW echoes, ringdown spectroscopy, and no-hair tests directly probe whether the horizon hides quantum structure (firewall, fuzzball, ECO). An echo detection would be the most direct experimental input to the information paradox. Conceptually clear but echoes remain undetected and templates are model-dependent.",
+      "explored": "partially",
+      "sourcePillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "from": "experimental-tests",
+      "to": "causal-sets",
+      "type": "shared-structure",
+      "description": "Causal sets predict Lorentz-invariant discreteness (Poisson sprinkling), so they do NOT predict LIV/birefringence (unlike lattice models); birefringence bounds therefore favor CST. CST instead predicts momentum-diffusion 'swerves' and a fluctuating Lambda of the observed order. Swerve phenomenology is studied but never systematically linked to BMV/decoherence tests.",
+      "explored": "partially",
+      "sourcePillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "from": "experimental-tests",
+      "to": "loop-quantum-gravity",
+      "type": "shared-structure",
+      "description": "LQG motivated polymer-quantization minimal length/area and early LIV proposals (Gambini-Pullin), strongly constrained by birefringence; loop quantum cosmology predicts modified primordial tensor spectra (CMB). The link to QGEM/gravitational-phase predictions in the nonrelativistic limit is essentially unexplored.",
+      "explored": "partially",
+      "sourcePillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "from": "experimental-tests",
+      "to": "asymptotic-safety",
+      "type": "shared-structure",
+      "description": "Asymptotic safety predicts running couplings and dimensional reduction to d_s~2 (shared with CDT/CST), with possible GW, black-hole-shadow, and inflationary signatures. Its connection to time-of-flight LIV is weak since some formulations preserve Lorentz invariance; d_s -> 2 is a shared but hard-to-measure bridge.",
+      "explored": "partially",
+      "sourcePillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "from": "experimental-tests",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-structure",
+      "description": "CDT shares the d_s: 4 -> 2 dimensional reduction and partition-function phase transitions with ASG/CST, but offers essentially no direct phenomenology (no LIV/BMV/GW prediction). The shared spectral-dimension scaling is the only identified bridge and has never been carried into observables.",
+      "explored": "barely",
+      "sourcePillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "from": "experimental-tests",
+      "to": "quantum-cosmology",
+      "type": "shared-structure",
+      "description": "CMB carries candidate QG imprints: modified primordial tensor spectra (NCG phase space, blue-tilt from non-local QG / string-gas / multifractals), large-scale power suppression (>3 sigma preference in some analyses), non-Gaussianity. BICEP/Keck (r_0.05<0.036, target sigma(r)<~0.003 by 2027) and future SGWB (DECIGO) are the channels; predictions are model-fragmented.",
+      "explored": "partially",
+      "sourcePillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "from": "experimental-tests",
+      "to": "holography-adscft",
+      "type": "conjecture",
+      "description": "Hogan's holographic noise was inspired by the holographic principle (information ~ area/ell_Pl^2) but was excluded by the Holometer. The newer, more concrete bridge is the Verlinde-Zurek geontropic noise: correlated arm-length fluctuations derived from modular-energy fluctuations of holographic dof on a causal-diamond boundary, directly targeted by the GQuEST single-photon interferometer. This is a quantitative holography-to-lab link (vs Hogan's heuristic), pushing the bridge from 'barely' toward 'partially'. GW echoes additionally test near-horizon structure that holography/fuzzballs predict.",
+      "explored": "partially",
+      "sourcePillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "from": "experimental-tests",
+      "to": "emergent-gravity",
+      "type": "conjecture",
+      "description": "If gravity is emergent/thermodynamic (Verlinde, Jacobson) it may have no quantized mediator, so a NEGATIVE BMV result could be read as evidence for emergence rather than for semiclassical gravity. Discussed as an interpretation but lacks quantitative phenomenology - a gold-grade unexplored link.",
+      "explored": "barely",
+      "sourcePillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "from": "experimental-tests",
+      "to": "string-theory",
+      "type": "shared-structure",
+      "description": "String length gives minimal length and GUP; spontaneous Lorentz breaking (Kostelecky-Samuel) historically motivated LIV; swampland bounds constrain inflationary r (CMB). The memory-soft-BMS triangle connects to string amplitudes. Direct string predictions for QGEM/BMV gravitational phase are essentially absent.",
+      "explored": "partially",
+      "sourcePillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "from": "experimental-tests",
+      "to": "swampland",
+      "type": "shared-structure",
+      "description": "Swampland conjectures (de Sitter, distance, tensor-to-scalar bounds) translate into constraints on inflationary observables measured by CMB experiments (BICEP/Keck r limits) and on light-field/axion phenomenology. The phenomenological link runs through cosmology rather than direct lab tests and is only partially mapped.",
+      "explored": "barely",
+      "sourcePillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "from": "experimental-tests",
+      "to": "spectral-dimension",
+      "type": "shared-structure",
+      "description": "Running of the spectral dimension to d_s~2 at the Planck scale is a signature shared by CDT, asymptotic safety, LQG, noncommutative geometry, and Horava-Lifshitz, and could in principle feed modified dispersion relations. No known observable amplifies it into measurability, making it a shared-but-inaccessible target.",
+      "explored": "barely",
+      "sourcePillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "from": "experimental-tests",
+      "to": "entanglement-spacetime",
+      "type": "conjecture",
+      "description": "Two distinct bridges. (1) Verlinde-Zurek geontropic noise turns the 'spacetime from entanglement' idea (modular/entanglement energy of holographic dof) into a measurable interferometer signal (GQuEST) - the only concrete experimental window onto entanglement=geometry. (2) BMV/GIE tests the converse: whether gravity itself entangles matter. Both are deep but phenomenologically nascent; speculative-but-grounded, gold-grade.",
+      "explored": "barely",
+      "sourcePillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "from": "experimental-tests",
+      "to": "group-field-theory",
+      "type": "shared-structure",
+      "description": "GFT condensate cosmology yields an effective Friedmann dynamics with a bounce and possible large-scale CMB modifications (shared with loop quantum cosmology). There is essentially no direct GFT prediction for LIV, BMV, or GW; the only tangible phenomenological channel is cosmological. A gold-grade unexplored bridge to lab tests.",
+      "explored": "barely",
+      "sourcePillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "from": "experimental-tests",
+      "to": "supergravity-uv",
+      "type": "shared-structure",
+      "description": "Supergravity / M-theory UV completions predict light fields (moduli, axions, gravitino) whose phenomenology is mostly collider/cosmological (dark matter, N_eff). The nearest lab contact is ultralight-axion searches via atom interferometry (MAGIS-100) and inflationary r; the link to propagation LIV or BMV is indirect and barely mapped.",
+      "explored": "barely",
+      "sourcePillars": [
+        "experimental-tests"
+      ]
+    },
+    {
+      "from": "group-field-theory",
+      "to": "loop-quantum-gravity",
+      "type": "shared-structure",
+      "description": "GFT is the second quantization of LQG: GFT fields are creation/annihilation operators for open spin-network nodes, the Fock space of many quanta reproduces the LQG kinematical Hilbert space, and the GFT action encodes the canonical dynamics. Geometric operators (area, volume) coincide. The 3D dynamical correspondence is explicit; 4D is partial.",
+      "explored": "well",
+      "sourcePillars": [
+        "group-field-theory"
+      ]
+    },
+    {
+      "from": "group-field-theory",
+      "to": "string-theory",
+      "type": "limit",
+      "description": "GFT/tensor models are the direct higher-dimensional generalization of the matrix models of 2D gravity/2D string theory: matrices->tensors, genus->Gurau degree, and the double-scaling limit carries over (and is more stable for D<6). The shared math is orthogonal polynomials and loop/Schwinger-Dyson equations.",
+      "explored": "well",
+      "sourcePillars": [
+        "group-field-theory"
+      ]
+    },
+    {
+      "from": "group-field-theory",
+      "to": "quantum-cosmology",
+      "type": "limit",
+      "description": "GFT condensate cosmology yields an effective Friedmann equation with a Planckian quantum bounce qualitatively matching loop quantum cosmology; LQC can be read as the effective hydrodynamics of (second-quantized) LQG = GFT. Recent work derives emergent inflation and dynamical dark energy. Deriving LQC 'improved dynamics' from first principles is only partial.",
+      "explored": "partially",
+      "sourcePillars": [
+        "group-field-theory"
+      ]
+    },
+    {
+      "from": "group-field-theory",
+      "to": "holography-adscft",
+      "type": "shared-math",
+      "description": "Melonic tensor models (Gurau-Witten, Klebanov-Tarnopolsky) reproduce the SYK large-N limit without disorder: same melonic dominance, gap equation, IR dimension Delta=1/q, Schwarzian soft mode and near-AdS2 holography. The bridge is at the level of large-N combinatorics; linking the melonic structure of geometric quantum-gravity GFTs to holography is largely unexplored - a prime gold vein.",
+      "explored": "partially",
+      "sourcePillars": [
+        "group-field-theory"
+      ]
+    },
+    {
+      "from": "group-field-theory",
+      "to": "black-holes-information",
+      "type": "shared-math",
+      "description": "Via the SYK connection, tensor models inherit SYK's maximal chaos (lambda_L=2pi/beta) and near-extremal/near-AdS2 black hole physics; the Schwarzian appears in both near-extremal black hole throats and tensor-model IR. The direct relevance of geometric GFT to black hole microstates/Page curve is barely explored.",
+      "explored": "barely",
+      "sourcePillars": [
+        "group-field-theory"
+      ]
+    },
+    {
+      "from": "group-field-theory",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-structure",
+      "description": "Both treat random simplicial triangulations as the microstructure of spacetime and sum over geometries; CDT is a fixed-group Lorentzian lattice version while GFT/tensors provide the generating field theory with control over topology. Whether a GFT continuum limit reproduces CDT's de Sitter phase and spectral-dimension flow is barely studied.",
+      "explored": "partially",
+      "sourcePillars": [
+        "group-field-theory"
+      ]
+    },
+    {
+      "from": "group-field-theory",
+      "to": "asymptotic-safety",
+      "type": "shared-math",
+      "description": "Both use the functional renormalization group: TGFTs show asymptotic freedom and Wilson-Fisher-type IR fixed points; the open question is whether a non-trivial UV fixed point (a GFT analogue of asymptotic safety) controls the continuum limit. The shared element is the FRG technique, not (yet) a shared result.",
+      "explored": "partially",
+      "sourcePillars": [
+        "group-field-theory"
+      ]
+    },
+    {
+      "from": "group-field-theory",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "GFT has a natural non-commutative 'flux'/Lie-algebra (non-commutative Fourier) representation, and effective matter coupled to 3D GFT is described by non-commutative field theory (e.g. on kappa-Minkowski). The technical link exists but whether emergent GFT geometry is generically non-commutative is barely investigated.",
+      "explored": "barely",
+      "sourcePillars": [
+        "group-field-theory"
+      ]
+    },
+    {
+      "from": "group-field-theory",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "Geometrogenesis: continuum spacetime and gravity emerge as a collective/condensed phase of pre-geometric GFT quanta (a 'spacetime fluid'), an explicit realization of emergent-gravity ideas with a concrete microscopic many-body model and order parameter.",
+      "explored": "partially",
+      "sourcePillars": [
+        "group-field-theory"
+      ]
+    },
+    {
+      "from": "group-field-theory",
+      "to": "entanglement-spacetime",
+      "type": "conjecture",
+      "description": "Recent proposals suggest quantum-gravitational entanglement between GFT quanta can seed cosmological inhomogeneities and modify trans-Planckian dynamics, hinting at an 'entanglement-builds-geometry' (ER=EPR / it-from-qubit) link. Speculative and almost entirely unexplored.",
+      "explored": "barely",
+      "sourcePillars": [
+        "group-field-theory"
+      ]
+    },
+    {
+      "from": "group-field-theory",
+      "to": "spectral-dimension",
+      "type": "shared-structure",
+      "description": "Like CDT, asymptotic safety and causal sets, GFT-derived geometries are expected to display a scale-dependent (and possibly dimension-reducing) spectral dimension; emergent-Lorentzian-geometry work (2025) studies dynamical spacetime dimension. Quantitative GFT spectral-dimension results are scarce.",
+      "explored": "barely",
+      "sourcePillars": [
+        "group-field-theory"
+      ]
+    },
+    {
+      "from": "holography-adscft",
+      "to": "string-theory",
+      "type": "duality",
+      "description": "AdS/CFT is a statement of string theory: type IIB on AdS5xS5 dual to N=4 SYM, M-theory on AdS4xS7 (ABJM) and AdS7xS4; holography provides a nonperturbative definition of string theory on AdS backgrounds. Strominger-Vafa links D-branes to entropy.",
+      "explored": "well",
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "holography-adscft",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "Holography is the leading framework for the information paradox: AdS/CFT guarantees unitary evaporation, and islands/Page curve, replica wormholes, ER=EPR and error correction were largely derived in or transferred from AdS.",
+      "explored": "well",
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "holography-adscft",
+      "to": "entanglement-spacetime",
+      "type": "shared-structure",
+      "description": "Spacetime-from-entanglement: Ryu-Takayanagi, ER=EPR, It-from-Qubit, tensor networks, Van Raamsdonk's argument, and the entanglement first law implying linearized Einstein equations all use holography as a constructive laboratory.",
+      "explored": "well",
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "holography-adscft",
+      "to": "supergravity-uv",
+      "type": "limit",
+      "description": "The low-energy gravity side of AdS/CFT is gauged supergravity (e.g. N=8 on AdS4); holographic renormalization, domain walls, the c-theorem, and localization-matched on-shell actions are formulated in supergravity.",
+      "explored": "well",
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "holography-adscft",
+      "to": "semiclassical-gravity",
+      "type": "shared-structure",
+      "description": "The island formula and Page curve are derived within semiclassical gravity (saddle-point gravitational path integral); holography pinpoints when semiclassics fails (after the Page time) and how replica wormholes repair it.",
+      "explored": "well",
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "holography-adscft",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "Holography is the prime example of emergent gravity: bulk gravity emerges from a non-gravitational CFT. Resonates with Jacobson's thermodynamic Einstein equations and Verlinde entropic gravity via RT / first-law arguments.",
+      "explored": "well",
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "holography-adscft",
+      "to": "swampland",
+      "type": "shared-structure",
+      "description": "Swampland criteria (distance, de Sitter, weak gravity) are motivated and tested holographically: CFT consistency (unitarity, spectrum convexity, ANEC) maps to bulk EFT constraints. The dS swampland conjecture is tied to the absence of dS holography; 2025 work strengthens the dictionary but a systematic swampland<->CFT map is missing.",
+      "explored": "partially",
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "holography-adscft",
+      "to": "twistors-amplitudes",
+      "type": "shared-structure",
+      "description": "Celestial holography shares soft theorems, BMS symmetries, and collinear structure with the amplitudes program; celestial amplitudes are Mellin transforms of momentum-space amplitudes, and twistor strings appear in top-down celestial duals, but a full dictionary is incomplete.",
+      "explored": "partially",
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "holography-adscft",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "The strongest empirical fingerprint is the near-KSS eta/s of quark-gluon plasma at RHIC/LHC (eta/s ~ 0.1-0.3); AdS/CMT qualitatively predicts strange-metal transport. These test applications, not the holographic principle itself.",
+      "explored": "partially",
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "holography-adscft",
+      "to": "quantum-cosmology",
+      "type": "conjecture",
+      "description": "Hartle-Hawking-Maldacena dS/CFT computes the wavefunction of the universe as a CFT partition function, and holography of information applies to cosmological correlators, but absence of controlled dS holography throttles quantitative cosmology.",
+      "explored": "barely",
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "holography-adscft",
+      "to": "conceptual-problems",
+      "type": "shared-structure",
+      "description": "Holography sharply poses locality breakdown, the individuality of spacetime points, factorization, emergence of time, and the status of observers in dS; philosophically rich but the conceptual analysis (e.g. de Haro) is young.",
+      "explored": "partially",
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "holography-adscft",
+      "to": "asymptotic-safety",
+      "type": "shared-math",
+      "description": "Both involve RG flow and fixed points, but holographic RG is geometric (radial) while asymptotic safety seeks a UV fixed point in gravitational coupling space. A speculative bridge links the holographic c-theorem to a monotone in ASG; concrete connection essentially absent - a prime target for hidden links.",
+      "explored": "barely",
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "holography-adscft",
+      "to": "loop-quantum-gravity",
+      "type": "shared-structure",
+      "description": "Spin networks and tensor networks share quantum-geometry-from-graphs and both give S ~ A, but LQG is background-independent/canonical while AdS/CFT fixes AdS asymptotics. Isolated attempts connect spin foams to holographic codes; highly speculative.",
+      "explored": "barely",
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "holography-adscft",
+      "to": "causal-sets",
+      "type": "shared-structure",
+      "description": "Shared holographic entropy scaling (S~A) and emphasis on causal structure (the Bousso bound is causal). Causal sets could numerically test holographic bounds, but no direct AdS/CFT dictionary exists; the covariant entropy bound is the nearest conceptual bridge.",
+      "explored": "barely",
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "holography-adscft",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-structure",
+      "description": "CDT and holography both probe emergent spacetime and entropy area-laws; CDT could in principle test holographic entropy bounds numerically, but there is no quantitative AdS/CFT-CDT correspondence yet.",
+      "explored": "barely",
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "holography-adscft",
+      "to": "group-field-theory",
+      "type": "shared-structure",
+      "description": "GFT generates spacetime as a condensate while holography generates it from entanglement; both share the emergence theme but no explicit dictionary - speculatively a GFT condensate could correspond to a holographic state with geometric bulk.",
+      "explored": "barely",
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "holography-adscft",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "Holographic codes and fuzzy spheres in brane constructions introduce noncommutativity; matrix models (BFSS, IKKT) are holographically related and TTbar deformation introduces nonlocality, but the dictionary is fragmentary.",
+      "explored": "barely",
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "holography-adscft",
+      "to": "page-curve",
+      "type": "shared-structure",
+      "description": "The Page curve is computed within holography via quantum extremal surfaces / islands and replica wormholes, making it a central shared deliverable between holography and black-hole information physics.",
+      "explored": "well",
+      "sourcePillars": [
+        "holography-adscft"
+      ]
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "group-field-theory",
+      "type": "shared-structure",
+      "description": "GFT is the second-quantized reformulation of the LQG state space and a completion of spin foams: GFT Feynman amplitudes ARE spin foam amplitudes, and GFT condensates reproduce Friedmann dynamics with LQC-type bounce. The tightest, best-mapped bridge from LQG.",
+      "explored": "well",
+      "sourcePillars": [
+        "loop-quantum-gravity"
+      ]
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "quantum-cosmology",
+      "type": "limit",
+      "description": "Loop quantum cosmology is the symmetry-reduced (homogeneous) sector of LQG; it yields the big bounce (rho_c ~ 0.41 rho_Pl), singularity resolution and CMB predictions. The most developed phenomenological application of LQG.",
+      "explored": "well",
+      "sourcePillars": [
+        "loop-quantum-gravity"
+      ]
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-structure",
+      "description": "Both build spacetime from discrete simplicial/combinatorial data and use a sum-over-geometries. Key difference: LQG/spin foam discreteness is fundamental while CDT discreteness is a regularization removed by a continuum limit; effective spin foams as simplicial path integrals offer a bridge, but no shared phase-diagram dictionary exists.",
+      "explored": "partially",
+      "sourcePillars": [
+        "loop-quantum-gravity"
+      ]
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "asymptotic-safety",
+      "type": "conjecture",
+      "description": "Both seek a non-perturbative UV-complete gravity. Spin-foam coarse-graining/RG could in principle reach a non-trivial fixed point analogous to the asymptotic-safety scenario, identifying the continuum limit with a UV fixed point. No direct demonstration yet - a prime 'gold' bridge.",
+      "explored": "barely",
+      "sourcePillars": [
+        "loop-quantum-gravity"
+      ]
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "holography-adscft",
+      "type": "shared-math",
+      "description": "Spin networks are PEPS-type tensor networks with an entanglement area law; Han-Hung built an exact holographic mapping whose boundary entanglement satisfies the Ryu-Takayanagi formula in the semiclassical regime. A genuine LQG-CFT duality and full AdS/CFT dictionary are still missing.",
+      "explored": "partially",
+      "sourcePillars": [
+        "loop-quantum-gravity"
+      ]
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "entanglement-spacetime",
+      "type": "shared-structure",
+      "description": "LQG spin-network states realize a geometric entanglement area law (entropy = sum over boundary punctures), connecting quantized area to entanglement and to the 'geometry from entanglement' program; recent 2025 work derives the area law directly in LQG via von Neumann algebras.",
+      "explored": "partially",
+      "sourcePillars": [
+        "loop-quantum-gravity"
+      ]
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "twistors-amplitudes",
+      "type": "shared-math",
+      "description": "The LQG phase space on a fixed graph decomposes into twistors (two per edge), with holonomies/fluxes as spinor bilinears and EPRL amplitudes derivable from a twistor-space path integral. The link to particle-physics spinor-helicity scattering amplitudes is suggested but computationally unexploited.",
+      "explored": "partially",
+      "sourcePillars": [
+        "loop-quantum-gravity"
+      ]
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "noncommutative-geometry",
+      "type": "shared-structure",
+      "description": "Linearizing the LQG deformed hypersurface-deformation algebra yields kappa-Poincare symmetry and a kappa-Minkowski noncommutative spacetime (DSR), suggesting deformed rather than broken Lorentz invariance and a route to QG phenomenology. Uniqueness of the implied deformation is unproven.",
+      "explored": "partially",
+      "sourcePillars": [
+        "loop-quantum-gravity"
+      ]
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "LQG reproduces Bekenstein-Hawking entropy via horizon microstate counting and offers bounce/Planck-star scenarios with information escaping the singularity; connections to the Page curve and unitary evaporation remain qualitative.",
+      "explored": "partially",
+      "sourcePillars": [
+        "loop-quantum-gravity"
+      ]
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "semiclassical-gravity",
+      "type": "limit",
+      "description": "Recovering linearized gravity and the graviton propagator from spin foams, and the Regge action from large-spin vertex asymptotics, is the route by which LQG should reduce to semiclassical/effective gravity; the limit is partially demonstrated but not proven in general.",
+      "explored": "partially",
+      "sourcePillars": [
+        "loop-quantum-gravity"
+      ]
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "string-theory",
+      "type": "conflict",
+      "description": "Historically rival programs: LQG is background-independent and predicts fundamental discreteness; string theory is background-dependent and perturbative. They share black-hole area-law entropy, discrete spectra and (recently) tensor-network/holographic structures. Possible but largely unexplored bridges via BF/topological structure or spin foams as worldsheet lattices.",
+      "explored": "barely",
+      "sourcePillars": [
+        "loop-quantum-gravity"
+      ]
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "causal-sets",
+      "type": "shared-structure",
+      "description": "Both posit fundamental spacetime discreteness with a discrete causal/combinatorial structure. Spin foams encode causal structure in the 2-complex while causal sets use partial orders; a precise translation between spin-foam histories and causal-set growth dynamics is essentially unexplored.",
+      "explored": "barely",
+      "sourcePillars": [
+        "loop-quantum-gravity"
+      ]
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "LQG predicts Planck-scale discreteness with potential modified dispersion relations (DSR), CMB imprints from the LQC bounce, and Planck-star/remnant dark-matter signatures - the main observational handles, all tightly constrained and not yet confirmed.",
+      "explored": "partially",
+      "sourcePillars": [
+        "loop-quantum-gravity"
+      ]
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "holographic-principle",
+      "type": "shared-structure",
+      "description": "Black hole entropy proportional to horizon area emerges in LQG from counting punctures, an independent realization of the area-law / holographic-principle that strings realize via D-brane counting - a shared result reached by different microscopics.",
+      "explored": "partially",
+      "sourcePillars": [
+        "loop-quantum-gravity"
+      ]
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "string-theory",
+      "type": "shared-structure",
+      "description": "Effective theory of D-branes in a constant NS-NS B-field lives on a Moyal noncommutative space with theta ~ B^{-1}; the Seiberg-Witten map gives an explicit equivalence of commutative and noncommutative gauge descriptions. IKKT/BFSS matrix models produce fuzzy spaces and noncommutative gauge theories. Strongest and best-documented bridge.",
+      "explored": "well",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "loop-quantum-gravity",
+      "type": "shared-math",
+      "description": "Aastrup-Grimstrup-Nest construct a semifinite spectral triple over the space of connections whose holonomy-loop algebra and Dirac operator reproduce (up to a symmetry group) the diffeomorphism-invariant Hilbert space of LQG, with [D,.] encoding the Poisson bracket of GR (Quantum Holonomy Theory). Technically demanding; adopted only at the margins of the LQG community.",
+      "explored": "partially",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "asymptotic-safety",
+      "type": "shared-structure",
+      "description": "UV dimensional reduction (spectral dimension running to ~2) appears in deformed/Moyal NCG just as in the asymptotic-safety fixed-point regime; whether noncommutativity is a manifestation of a UV fixed point is open and explicitly little studied.",
+      "explored": "barely",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "causal-sets",
+      "type": "shared-structure",
+      "description": "Both encode fundamental spacetime discreteness/minimal length and non-pointlike structure. Their spectral-dimension behaviours are probe-dependent and partially complementary: (a) In NCG/deformed Laplacians the spectral dimension decreases toward ~2 in the UV (heat-kernel / diffusion probe on the deformed space). (b) In causal sets, the random-walk probe on the discrete causal order gives an INCREASING d_s at short scales (Eichhorn-Mizera, arXiv:1311.2530), while the nonlocal d'Alembertian probe gives a DECREASING d_s to ~2 universally (Belenchia et al., arXiv:1507.00330). The claim that the dimension runs 'oppositely' — NCG down, CST up — is therefore only half correct: it applies to the random-walk probe in CST versus NCG heat-kernel; the d'Alembertian probe in CST and NCG heat-kernel agree on reduction to ~2. Direct technical bridges remain essentially absent.",
+      "explored": "barely",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "holography-adscft",
+      "type": "shared-math",
+      "description": "Connes' classification of von Neumann factors (local QFT = type III_1) is central to the recent crossed-product algebra approach to holographic observables, where generalized black-hole entropy equals von Neumann entropy of a type-II algebra. NCG supplies the operator-algebraic language; explicit use of Connes' spectral formalism is still limited but rapidly growing.",
+      "explored": "partially",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "Spacetime noncommutativity regularizes singularities and quantizes horizon area in units of a minimal area, resonating with Bekenstein-Hawking entropy; noncommutative-inspired black holes have regular cores. Link to the information paradox is indirect.",
+      "explored": "partially",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "In IKKT-type matrix models and fuzzy spaces, effective Riemannian geometry and gravity emerge from the noncommutative algebra and Dirac-operator fluctuations; random NCG (Dirac ensembles) likewise lets geometry emerge from matrix degrees of freedom. Bridge to entropic/Verlinde emergence is weaker.",
+      "explored": "partially",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "group-field-theory",
+      "type": "shared-math",
+      "description": "Both random NCG (Dirac ensembles) and GFT/tensor models use matrix/tensor degrees of freedom from which geometry should emerge; the shared combinatorial-map and multimatrix-integral structure is striking, but an explicit identification (are Dirac ensembles a special GFT?) is missing - a prime candidate for an undiscovered bridge.",
+      "explored": "barely",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "twistors-amplitudes",
+      "type": "shared-math",
+      "description": "Common algebraic-geometric description of spacetime and use of deformations (quantum groups, Hopf algebras). Direct bridges between Connes' NCG and the twistor/amplitude program are almost nonexistent - an open, speculative frontier.",
+      "explored": "barely",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "Noncommutative spacetimes and DSR predict energy-dependent photon speed, GRB time delays and modified dispersion relations; current Lorentz-violation bounds give M > 10^15-10^17 GeV and GUP gives laboratory bounds on beta. Concrete phenomenological program but no positive signal yet.",
+      "explored": "well",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "supergravity-uv",
+      "type": "conjecture",
+      "description": "A spectral/supersymmetric version of the spectral action ('toward a supergravity spectral action') has been attempted, seeking to encode supergravity in spectral data; the construction is incomplete and the bridge largely conjectural.",
+      "explored": "barely",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "quantum-cosmology",
+      "type": "shared-math",
+      "description": "The nonperturbative spectral action yields cosmological models: slow-roll inflation potentials sensitive to cosmic topology, variable cosmological constant, and constraints on early-universe geometry (Marcolli-Pierpaoli). A developed but niche bridge.",
+      "explored": "partially",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "entanglement-spacetime",
+      "type": "shared-math",
+      "description": "Connes' Tomita-Takesaki modular theory and the type-III_1 classification of von Neumann factors for local QFT (a core NCG result) underlie the modular/crossed-product algebra reformulations of the generalized entropy and the gravitational entanglement-of-spacetime program (2023+). The crossed product by the modular flow turns a type-III_1 algebra into type II, making a trace and hence a von Neumann entropy well defined, which equals the generalized entropy as G->0. NCG supplies the operator-algebraic backbone but its specific spectral-triple machinery is not yet explicitly used here.",
+      "explored": "barely",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "swampland",
+      "type": "conjecture",
+      "description": "Both programs make sharp statements about which low-energy effective field theories are admissible: the spectral action 'almost uniquely' selects the SM finite algebra C+H+M3(C) and its representation content, an algebraic analogue of swampland selection criteria from string theory. No explicit dictionary exists between NCG geometric constraints (KO-dimension, order-one condition, Poincare duality) and swampland conjectures (distance, weak gravity); a barely-touched but conceptually parallel selection-principle bridge.",
+      "explored": "barely",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-structure",
+      "description": "Random NCG / Dirac ensembles realize a path integral over finite (fuzzy) geometries that is conceptually parallel to CDT's sum over triangulations, and both exhibit phase transitions and a dynamically reduced spectral dimension near 2 in the UV (Carlip's dimensional-reduction survey). Double-scaling limits of Dirac ensembles connect to Liouville quantum gravity / 2D gravity, the same minimal-model universality classes that appear in dynamical triangulations; an explicit map between the two discrete path integrals is missing.",
+      "explored": "barely",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "loop-quantum-gravity",
+      "type": "limit",
+      "description": "Loop quantum cosmology is the symmetry-reduced cosmological sector of LQG, importing Ashtekar variables, holonomies, the area gap Delta = 4 sqrt(3) pi gamma l_Pl^2 and the Barbero-Immirzi parameter; it predicts a big bounce at rho_c ~ 0.41 rho_Pl. Whether LQC is a genuine limit of full LQG (reduce-then-quantize vs quantize-then-reduce) remains open but is heavily studied via spin-foam and GFT cosmology.",
+      "explored": "well",
+      "sourcePillars": [
+        "quantum-cosmology"
+      ]
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "string-theory",
+      "type": "shared-structure",
+      "description": "String cosmology (string gas, pre-big-bang, ekpyrotic/cyclic) embeds quantum-cosmological scenarios using T-duality, the Hagedorn temperature, winding modes, the dilaton and branes; the no-boundary wave function has a holographic AdS/CFT representation. Missing: a fully stringy computation of the wave function of the universe and controlled de Sitter vacua.",
+      "explored": "partially",
+      "sourcePillars": [
+        "quantum-cosmology"
+      ]
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "holography-adscft",
+      "type": "duality",
+      "description": "Holographic cosmology (Hartle-Hawking-Hertog, Hawking-Hertog smooth exit) represents the no-boundary measure as deformed Euclidean CFT partition functions on a final boundary, and dual-describes eternal inflation as a CFT at the eternal-inflation threshold; dS/CFT is the related but more speculative arm. The dual CFTs for realistic cosmology are not under computational control.",
+      "explored": "partially",
+      "sourcePillars": [
+        "quantum-cosmology"
+      ]
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "swampland",
+      "type": "shared-structure",
+      "description": "The de Sitter conjecture (|grad V|/V >~ O(1)) and Trans-Planckian Censorship Conjecture (|V'|/V >~ 2/sqrt(d-2)) directly constrain inflation and dark energy, favoring dynamical quintessence over a constant Lambda and bounding r <~ 1e-30 for simple models; resonates with the DESI 2024-2025 evolving-dark-energy hint. Active and conceptually clear; quantitative force depends on swampland constants.",
+      "explored": "partially",
+      "sourcePillars": [
+        "quantum-cosmology"
+      ]
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "asymptotic-safety",
+      "type": "conjecture",
+      "description": "An asymptotically safe UV fixed point could define trans-Planckian physics and the gravitational path integral above the Planck scale, potentially resolving the trans-Planckian problem and giving RG-improved Friedmann equations and inflation. Linking the fixed-point action to the WDW wave function and the no-boundary path integral is almost unexplored - a potential gold mine.",
+      "explored": "barely",
+      "sourcePillars": [
+        "quantum-cosmology"
+      ]
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-math",
+      "description": "CDT numerically evaluates the Lorentzian gravitational path integral and dynamically recovers a semiclassical de Sitter cosmological 'blob' with an effective minisuperspace action - precisely what quantum cosmology postulates. Comparing the CDT-measured effective action with the no-boundary / FLT Lorentzian minisuperspace integral is conceptually very close but barely done.",
+      "explored": "barely",
+      "sourcePillars": [
+        "quantum-cosmology"
+      ]
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "causal-sets",
+      "type": "conjecture",
+      "description": "Causal-set cosmology (sequential growth, cosmic renormalization) offers an alternative quantum-gravity origin of initial conditions and famously predicts everpresent Lambda fluctuations ~ +/- 1/sqrt(V) of the observed magnitude (Sorkin). The bridge to the WDW wave function and the no-boundary measure is essentially nonexistent - a promising unexplored link, especially for dark energy.",
+      "explored": "barely",
+      "sourcePillars": [
+        "quantum-cosmology"
+      ]
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "group-field-theory",
+      "type": "limit",
+      "description": "Group field theory condensate cosmology aims to derive an effective Friedmann dynamics and a bounce from the hydrodynamics of GFT quanta of geometry, providing a possible first-principles origin of the LQC effective equations. Active but young; the precise matching to the LQC rho_c and to the WDW/no-boundary framework is only partially established.",
+      "explored": "partially",
+      "sourcePillars": [
+        "quantum-cosmology"
+      ]
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "Spacetime noncommutativity introduces a minimal length and modified dispersion / generalized uncertainty in the minisuperspace WDW equation, directly bearing on the trans-Planckian problem. Isolated 'noncommutative quantum cosmology' studies exist (deformed minisuperspace), but a systematic connection to no-boundary/LQC is largely missing.",
+      "explored": "barely",
+      "sourcePillars": [
+        "quantum-cosmology"
+      ]
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "Both rest on the Euclidean gravitational path integral and saddle methods (the Hartle-Hawking state names both the no-boundary cosmology and the black-hole thermal vacuum). Replica wormholes / baby universes, alpha-parameters and Marolf-Maxfield 'bra-ket' cosmological wormholes tie the cosmological wave function to the information problem. Young but active.",
+      "explored": "partially",
+      "sourcePillars": [
+        "quantum-cosmology"
+      ]
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "semiclassical-gravity",
+      "type": "limit",
+      "description": "In the WKB limit Psi ~ exp(iS_0/hbar) the wave function of the universe yields classical background trajectories plus quantum fields on them, from which the functional Schroedinger equation for perturbations (Banks, Halliwell-Hawking) is derived. This is the standard, well-understood bridge from WDW to inflationary perturbation theory.",
+      "explored": "well",
+      "sourcePillars": [
+        "quantum-cosmology"
+      ]
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "Observational interface via the CMB (Planck n_s = 0.9649, BK18 r < 0.036, low-multipole suppression as a possible LQC signature), primordial gravitational waves (LiteBIRD, CMB-S4 targeting r ~ 1e-3), non-Gaussianity (ekpyrotic f_NL ~ 5), spectral distortions, and DESI/Euclid dark-energy evolution. Concrete model predictions exist but a decisive discriminating test is still lacking.",
+      "explored": "partially",
+      "sourcePillars": [
+        "quantum-cosmology"
+      ]
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "entanglement-spacetime",
+      "type": "conjecture",
+      "description": "Cosmic decoherence and the quantum-to-classical transition of primordial perturbations rely on entanglement between observed superhorizon modes and an unobserved environment; emergent-arrow-of-time and ER=EPR-style ideas suggest spacetime/structure emerges from entanglement. The link between the cosmological wave function and entanglement-built spacetime is suggestive but barely formalized.",
+      "explored": "barely",
+      "sourcePillars": [
+        "quantum-cosmology"
+      ]
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "conceptual-problems",
+      "type": "shared-structure",
+      "description": "Quantum cosmology is the arena where the deepest conceptual problems of quantum gravity are sharpest: the problem of time, the meaning of |Psi|^2 for a unique universe, the measure problem, and the interpretation of the quantum state of a closed system with no external observer. Heavily discussed in the philosophy-of-physics and foundations literature.",
+      "explored": "well",
+      "sourcePillars": [
+        "quantum-cosmology"
+      ]
+    },
+    {
+      "from": "semiclassical-gravity",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "Hawking radiation, Bekenstein-Hawking/Wald entropy, the generalized second law and generalized entropy are direct outputs of QFTCS; the information paradox is formulated exactly at the semiclassical/unitarity interface, and the Page curve via islands uses the semiclassical gravitational path integral.",
+      "explored": "well",
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "semiclassical-gravity",
+      "to": "holography-adscft",
+      "type": "limit",
+      "description": "The semiclassical bulk is the 1/N (large-N) limit of a holographic CFT; quantum extremal surfaces minimize generalized entropy in the bulk, and QNEC, the Bekenstein bound and ANEC have been proven both holographically and rigorously within QFTCS via relative entropy/modular theory. CFT trace-anomaly coefficients have a holographic dual (Henningson-Skenderis).",
+      "explored": "well",
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "semiclassical-gravity",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "Jacobson's derivation of the Einstein equations from delta Q = T delta S on local Rindler horizons uses the Unruh temperature and Clausius relation; analogue Hawking radiation in BECs/optics is an experimental platform for QFTCS. Open question: whether <T_ab> is thermodynamically emergent or fundamental.",
+      "explored": "well",
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "semiclassical-gravity",
+      "to": "entanglement-spacetime",
+      "type": "shared-structure",
+      "description": "Entanglement entropy of quantum fields (area-law with UV divergence ~A/epsilon^2) sources generalized entropy; entanglement equilibrium and the first law of entanglement link the QFTCS modular Hamiltonian to the linearized Einstein equation. How modular flow of curved-space QFTCS fixes geometry beyond linear order is open.",
+      "explored": "partially",
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "semiclassical-gravity",
+      "to": "quantum-cosmology",
+      "type": "shared-structure",
+      "description": "Cosmological particle production, the adiabatic vacuum and the trace anomaly are central to inflation, reheating and GPP dark-matter scenarios; the semiclassical Einstein equation is the standard backreaction framework in de Sitter. Open: de Sitter stability under <T_ab> and IR secular growth.",
+      "explored": "partially",
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "semiclassical-gravity",
+      "to": "asymptotic-safety",
+      "type": "shared-math",
+      "description": "The semiclassical action with R^2 and C^2 counterterms is the IR wing of an RG flow; an asymptotically safe UV fixed point could fix the alpha,beta counterterm ambiguities and the trace-anomaly coefficients. RG-improved <T_ab> with running G(k) is used in cosmology and black holes, but rigorously connecting Hadamard renormalization to the functional-RG fixed point is largely unexplored.",
+      "explored": "barely",
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "semiclassical-gravity",
+      "to": "string-theory",
+      "type": "limit",
+      "description": "Strings on curved backgrounds form a worldsheet 2D CFT whose beta-function vanishing yields the Einstein equations with alpha' (higher-derivative) corrections analogous to semiclassical counterterms; Strominger-Vafa microstates reproduce the A/4G entropy that QFTCS gives macroscopically. How strings modify the trans-Planckian regime of Hawking radiation and Hadamard structure is only partially understood.",
+      "explored": "partially",
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "semiclassical-gravity",
+      "to": "loop-quantum-gravity",
+      "type": "conjecture",
+      "description": "LQG is a candidate UV completion in which discrete geometry should regularize the trans-Planckian frequencies of Hawking radiation; polymer/loop QFTCS computations of Unruh and Hawking effects exist, and Wald entropy is compared with LQG horizon microstate counting (Barbero-Immirzi parameter). The interface is thin and could be a productive bridge.",
+      "explored": "barely",
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "semiclassical-gravity",
+      "to": "causal-sets",
+      "type": "shared-structure",
+      "description": "Causal sets provide a Lorentz-invariant discretization that naturally bounds trans-Planckian frequencies; the Sorkin-Johnston state is a causal-set analogue of the Hadamard vacuum and has been compared with Hadamard states, while the Benincasa-Dowker d'Alembertian and causal-set entanglement entropy dialogue directly with QFTCS. A promising, largely unexplored link.",
+      "explored": "barely",
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "semiclassical-gravity",
+      "to": "noncommutative-geometry",
+      "type": "conjecture",
+      "description": "Noncommutative spacetime and kappa-Minkowski modify dispersion relations, directly affecting the trans-Planckian problem and the Unruh effect; computations of Unruh/Hawking effects on NC backgrounds exist but lack systematic embedding in the Hadamard/algebraic QFTCS framework.",
+      "explored": "barely",
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "semiclassical-gravity",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "QFTCS is the most testable pillar: analogue Hawking/Unruh radiation (BEC, optics, Josephson junctions, trapped ions), GIE protocols, and Diosi-Penrose decoherence with microgram cat states and levitated nanoparticles. No direct detection of Unruh/Hawking radiation yet, and discriminating semiclassical from quantized gravity remains the goal.",
+      "explored": "partially",
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "semiclassical-gravity",
+      "to": "conceptual-problems",
+      "type": "shared-structure",
+      "description": "Observer-dependence of the particle concept, the vacuum-ambiguity problem, the role of measurement in gravity, and whether gravity is fundamentally classical (Moller-Rosenfeld, Oppenheim) or quantized are core conceptual issues; Eppley-Hannah and Grossardt analyses probe the consistency of semiclassical coupling with quantum linearity.",
+      "explored": "partially",
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "semiclassical-gravity",
+      "to": "supergravity-uv",
+      "type": "shared-math",
+      "description": "Trace-anomaly coefficients (a,c) and higher-derivative counterterms organize the one-loop divergences of matter in curved space; in supergravity these enter the on-shell counterterm structure and UV (non-)renormalizability analyses, sharing the heat-kernel/Seeley-DeWitt machinery with QFTCS renormalization.",
+      "explored": "barely",
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "semiclassical-gravity",
+      "to": "page-curve",
+      "type": "shared-structure",
+      "description": "The Page curve is computed within semiclassical gravity once quantum extremal surfaces / islands and replica wormholes are included, showing that the semiclassical gravitational path integral itself encodes unitary information return; the relation to the alternative semiclassical 'final singularity' resolution is open.",
+      "explored": "well",
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "string-theory",
+      "to": "holography-adscft",
+      "type": "limit",
+      "description": "AdS/CFT is a direct product of string theory (the two descriptions of D3-branes give IIB on AdS5xS5 = N=4 SYM). The boundary between 'string theory' and 'holography' is organizational rather than physical; AdS/CFT is the string result par excellence and the sharpest realization of holography.",
+      "explored": "well",
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "string-theory",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "String theory gave the first microscopic black-hole entropy count (Strominger-Vafa, S=2 pi sqrt(Q1 Q5 n)=A/4G), the fuzzball/microstate-geometry program, and (via AdS/CFT) the route to the Page curve and replica wormholes. Strongest quantitative bridge to black-hole physics.",
+      "explored": "well",
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "string-theory",
+      "to": "supergravity-uv",
+      "type": "limit",
+      "description": "10D supergravity is the low-energy limit of superstrings and 11D supergravity that of M-theory; string theory provides the UV completion. Whether N=8 supergravity is UV-finite by itself is a closely related but distinct question.",
+      "explored": "well",
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "string-theory",
+      "to": "swampland",
+      "type": "shared-structure",
+      "description": "The swampland program is an internal branch of string theory delimiting which EFTs admit a stringy/quantum-gravity UV completion (Distance, Weak Gravity, Emergent String conjectures, species scale). The most active bridge to cosmology and phenomenology.",
+      "explored": "well",
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "string-theory",
+      "to": "entanglement-spacetime",
+      "type": "shared-structure",
+      "description": "Via AdS/CFT, the Ryu-Takayanagi formula (S = Area/4G for entanglement entropy) and the ER=EPR / 'spacetime from entanglement' program connect geometry to quantum information. Active but incompletely understood, especially away from AdS.",
+      "explored": "partially",
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "string-theory",
+      "to": "noncommutative-geometry",
+      "type": "limit",
+      "description": "In a strong B-field, the D-brane worldvolume becomes a non-commutative space with a Moyal product; the Seiberg-Witten map relates commutative and non-commutative descriptions. Matrix models (IKKT/BFSS) also realize non-commuting coordinates. The B-field limit is well understood, but the broader link to Connes-style noncommutative geometry and the Standard Model is barely explored.",
+      "explored": "partially",
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "string-theory",
+      "to": "twistors-amplitudes",
+      "type": "shared-math",
+      "description": "Witten's twistor string (2003) supports perturbative N=4 SYM amplitudes on holomorphic curves in twistor space; ambitwistor strings reproduce field-theory amplitudes and connect to celestial holography and soft theorems. Shared mathematical structure, growing but partial.",
+      "explored": "partially",
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "string-theory",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "In AdS/CFT gravity emerges from a non-gravitational boundary gauge theory; in matrix models spacetime and gravity emerge from matrix dynamics. Conceptually allied to Verlinde entropic gravity and Jacobson's thermodynamic derivation, but those remain formally separate.",
+      "explored": "partially",
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "string-theory",
+      "to": "semiclassical-gravity",
+      "type": "limit",
+      "description": "Einstein's equations arise in string theory as the worldsheet conformal-invariance (beta-function vanishing) condition; semiclassical gravity is the leading low-energy approximation with computable alpha' and g_s corrections.",
+      "explored": "well",
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "string-theory",
+      "to": "quantum-cosmology",
+      "type": "shared-structure",
+      "description": "String-gas cosmology (Brandenberger-Vafa) uses Hagedorn thermodynamics and T-duality to select three large dimensions; pre-Big-Bang and ekpyrotic scenarios, the landscape and quintessence feed cosmology. No controlled holographic cosmology yet; partial.",
+      "explored": "partially",
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "string-theory",
+      "to": "loop-quantum-gravity",
+      "type": "shared-math",
+      "description": "Both seek quantum gravity and both reproduce S=A/4G for black holes, but by entirely different mechanisms (D-brane state counting vs spin-network area quanta) with radically different kinematics (continuous strings on a background vs background-independent discrete geometry). Essentially no direct mathematical bridge - one of the project's prime unexplored opportunities.",
+      "explored": "barely",
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "string-theory",
+      "to": "asymptotic-safety",
+      "type": "conjecture",
+      "description": "Asymptotic safety posits a non-trivial UV fixed point of gravity with no new degrees of freedom, whereas string theory adds an infinite tower of states and alpha' corrections. A possible bridge is the species scale relating the tower of states to UV running of couplings, but this is almost unexplored.",
+      "explored": "barely",
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "string-theory",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-structure",
+      "description": "Both involve emergence of smooth geometry, and matrix models (IKKT/BFSS) are 'pre-geometric' formulations conceptually akin to discrete/combinatorial gravity. An explicit map from matrix dynamics to CDT-style discretized geometry has essentially not been pursued.",
+      "explored": "barely",
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "string-theory",
+      "to": "group-field-theory",
+      "type": "shared-structure",
+      "description": "GFT generates spacetime from a field over a group manifold via Feynman diagrams summing discrete geometries; matrix/tensor models (an ancestor of GFT) overlap technically with the IKKT/BFSS matrix-model approach to emergent space. The shared 'matrix/tensor -> spacetime' structure is recognized but the explicit correspondence is barely explored.",
+      "explored": "barely",
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "string-theory",
+      "to": "causal-sets",
+      "type": "conjecture",
+      "description": "Causal sets build spacetime from a discrete partial order; string theory has no fundamental discreteness of causal structure, but both confront Lorentz invariance and emergent continuum geometry. Any technical bridge (e.g. via matrix models or holographic causal structure) is speculative and essentially untouched.",
+      "explored": "barely",
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "string-theory",
+      "to": "experimental-tests",
+      "type": "conjecture",
+      "description": "Candidate signatures: cosmic superstrings in the stochastic gravitational-wave background (LISA, pulsar timing arrays); the dark dimension scenario predicting micron-scale deviations from Newtonian gravity and Kaluza-Klein dark matter; SUSY (not yet observed). No confirmed prediction; the weakest link of the program.",
+      "explored": "barely",
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "string-theory",
+      "to": "conceptual-problems",
+      "type": "shared-structure",
+      "description": "String theory frames foundational debates on background independence (the duality web vs a manifestly background-independent formulation), the meaning of the landscape and anthropic reasoning, and the criteria of scientific testability (the 'string wars').",
+      "explored": "partially",
+      "sourcePillars": [
+        "string-theory"
+      ]
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "string-theory",
+      "type": "limit",
+      "description": "N=8 supergravity is the low-energy limit of type II superstrings on T^6 and 11D supergravity is the low-energy limit of M-theory. Green-Ooguri-Schwarz (2007) proved N=8 SUGRA cannot be decoupled from strings for d>3, so string theory is its UV completion. The double copy/KLT explicitly relates closed strings (gravity) to open strings (gauge).",
+      "explored": "well",
+      "sourcePillars": [
+        "supergravity-uv"
+      ]
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "twistors-amplitudes",
+      "type": "shared-math",
+      "description": "All multiloop progress on N=8 UV behavior relies on amplitude technology: generalized unitarity, BCJ color-kinematics duality, the double copy and the no-triangle hypothesis. The KLT kernel and kinematic numerators are the shared mathematical substrate.",
+      "explored": "well",
+      "sourcePillars": [
+        "supergravity-uv"
+      ]
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "asymptotic-safety",
+      "type": "shared-structure",
+      "description": "Both target the non-renormalizability of gravity but differently: asymptotic safety seeks a nonperturbative UV fixed point while supergravity relies on perturbative cancellations. Gies-Knorr-Lippoldt-Saueressig (2016) showed the Goroff-Sagnotti two-loop counterterm sits at a fixed point, and Stelle's higher-derivative gravity feeds asymptotic-safety truncations.",
+      "explored": "partially",
+      "sourcePillars": [
+        "supergravity-uv"
+      ]
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "semiclassical-gravity",
+      "type": "limit",
+      "description": "Donoghue's EFT of gravity is the universal low-energy/semiclassical baseline: the quantum correction to the Newtonian potential (coefficient 41/(10 pi)) and other nonanalytic terms must be reproduced by any quantum-gravity theory, providing a mandatory IR consistency check.",
+      "explored": "well",
+      "sourcePillars": [
+        "supergravity-uv"
+      ]
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "conceptual-problems",
+      "type": "shared-structure",
+      "description": "The distinction between UV finiteness and UV completeness, the meaning of non-renormalizability, and the ghost/unitarity tension in higher-derivative gravity are central conceptual issues that the EFT viewpoint reframes (predictivity without renormalizability).",
+      "explored": "well",
+      "sourcePillars": [
+        "supergravity-uv"
+      ]
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "holography-adscft",
+      "type": "shared-structure",
+      "description": "Conformal (Weyl) gravity and critical gravity arise in renormalized AdS actions and boundary holographic descriptions; Maldacena's removal of the conformal-gravity ghost uses boundary conditions, and color-kinematics/double copy is being studied in curved (AdS) backgrounds.",
+      "explored": "partially",
+      "sourcePillars": [
+        "supergravity-uv"
+      ]
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-structure",
+      "description": "Horava-Lifshitz gravity shares with CDT a preferred foliation (causal/preferred time) and UV spectral-dimension reduction d_s -> 2, suggesting a common UV structure. The formal link between the CDT continuum limit and a Horava fixed point is essentially unexplored.",
+      "explored": "barely",
+      "sourcePillars": [
+        "supergravity-uv"
+      ]
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "swampland",
+      "type": "conjecture",
+      "description": "Green-Ooguri-Schwarz conjecture that perturbatively finite N=8 supergravity is in the swampland because it cannot decouple from strings (infinite towers of KK/winding/brane states). A formal proof via modern swampland criteria (distance, weak-gravity) is missing.",
+      "explored": "barely",
+      "sourcePillars": [
+        "supergravity-uv"
+      ]
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "cosmological-constant-problem",
+      "type": "shared-structure",
+      "description": "Unimodular gravity recasts the cosmological constant as an integration constant rather than a Lagrangian coupling, potentially shielding it from radiative corrections; whether this genuinely addresses the cosmological-constant problem at the quantum level is contested.",
+      "explored": "partially",
+      "sourcePillars": [
+        "supergravity-uv"
+      ]
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "Nonlocal/infinite-derivative ghost-free gravity regularizes the UV via a fundamental nonlocality scale M_s with form factor e^{-Box/M_s^2}, analogous to noncommutative 'smearing' of spacetime points. The relationship is analogical and almost unexplored.",
+      "explored": "barely",
+      "sourcePillars": [
+        "supergravity-uv"
+      ]
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "quantum-cosmology",
+      "type": "shared-structure",
+      "description": "Horava-Lifshitz z=3 scaling yields scale-invariant primordial perturbations without inflation; agravity predicts inflation (n_s ~ 0.967, r ~ 0.13) from beta-functions; unimodular gravity changes the status of Lambda in cosmology. Explicit per-theory, not unified.",
+      "explored": "partially",
+      "sourcePillars": [
+        "supergravity-uv"
+      ]
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "loop-quantum-gravity",
+      "type": "shared-structure",
+      "description": "Almost no direct bridge: LQG is nonperturbative and background-independent, supergravity/EFT perturbative and background-dependent. Shape dynamics (conformal reformulation of GR) has a distant kinship with relational/problem-of-time aspects of LQG, but no concrete link to UV behavior exists.",
+      "explored": "barely",
+      "sourcePillars": [
+        "supergravity-uv"
+      ]
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "spectral-dimension",
+      "type": "shared-structure",
+      "description": "Horava-Lifshitz gravity exhibits a UV spectral dimension d_s -> 2 (from d_s=4 in the IR), the same dimensional-reduction signature found in CDT, asymptotic safety and other approaches; this shared UV indicator is a candidate deep cross-approach structure but is not quantitatively connected to the supergravity cancellation mechanism.",
+      "explored": "barely",
+      "sourcePillars": [
+        "supergravity-uv"
+      ]
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "Some Lifshitz/Horava models were proposed as a 'Fermi-point scenario of emergent gravity' (emergent Lorentz symmetry from a Fermi point); agravity and Stelle gravity present Einstein gravity as IR-emergent from a dimensionless UV theory, with Newton's constant generated by dimensional transmutation from beta-functions. Conceptual bridge only, not formalized.",
+      "explored": "barely",
+      "sourcePillars": [
+        "supergravity-uv"
+      ]
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "A UV-finite or UV-complete quantum gravity must consistently describe black holes and the information paradox; the Green-Ooguri-Schwarz nondecoupling of N=8 from strings relies on black-hole/brane states. Whether perturbative finiteness says anything about black-hole microstates is open. The classical double copy (Kerr-Schild, gravitational waves) may link perturbative amplitudes to black-hole physics.",
+      "explored": "barely",
+      "sourcePillars": [
+        "supergravity-uv"
+      ]
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "EFT amplitudes in the classical limit yield post-Newtonian/post-Minkowskian coefficients for binary inspirals (gravitational-wave 'amplitudes for LIGO/LISA' program). Universal quantum corrections (light bending, Shapiro delay, 41/(10 pi) potential) are computed but far below experimental sensitivity; the bridge to measuring quantum gravity via EFT is conceptually clear but practically out of reach.",
+      "explored": "partially",
+      "sourcePillars": [
+        "supergravity-uv"
+      ]
+    },
+    {
+      "from": "swampland",
+      "to": "string-theory",
+      "type": "shared-structure",
+      "description": "The landscape IS the set of string compactifications, and every conjecture (WGC, SDC, emergent string, finiteness) is distilled and tested in explicit string vacua (CY, F-theory, heterotic). Open question whether conjectures hold beyond string theory.",
+      "explored": "well",
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "swampland",
+      "to": "holography-adscft",
+      "type": "shared-structure",
+      "description": "The only proofs of swampland statements (no global symmetries, compact gauge groups, completeness) are holographic, via quantum error correction (Harlow-Ooguri). AdS Distance Conjecture directly constrains AdS/CFT vacua; Bousso bound enters the refined de Sitter derivation.",
+      "explored": "well",
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "swampland",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "WGC derives from extremal black hole decay and absence of remnants; Festina Lente from charged Nariai evaporation in de Sitter; species scale equals the inverse minimal-black-hole size with S_BH ~ N; no-global-symmetries from black-hole charge non-conservation. Deeply quantitative.",
+      "explored": "well",
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "swampland",
+      "to": "supergravity-uv",
+      "type": "limit",
+      "description": "Conjectures are tested in 4D N=1 supergravities from compactification; de Sitter and AdS conjectures constrain F-term potentials; KKLT/LVS are SUGRA constructions; Maldacena-Nunez no-go theorems feed the de Sitter debate.",
+      "explored": "well",
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "swampland",
+      "to": "quantum-cosmology",
+      "type": "conjecture",
+      "description": "de Sitter conjecture, TCC and Festina Lente bound inflation, dark energy and quintessence (V^{1/4}<10^9 GeV); DESI dynamical dark energy data is interpreted through these. But eternal inflation, creation-from-nothing and the de Sitter 'missing corner' are only heuristically connected (Banks: eternal inflation itself is swampy).",
+      "explored": "partially",
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "swampland",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "Emergence proposal: gauge/gravitational kinetic terms and finite moduli-space diameter emerge from integrating out towers of states; the species scale is an emergent gravitational cutoff. Concrete but limited to one-loop computations in specific limits.",
+      "explored": "partially",
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "swampland",
+      "to": "entanglement-spacetime",
+      "type": "shared-math",
+      "description": "No-global-symmetries is proven via quantum error correction, the same machinery underlying 'entanglement builds geometry' (RT, ER=EPR). Species scale ties species count to holographic entanglement entropy. Quantitative linking of swampland bounds to entanglement entropy remains open.",
+      "explored": "partially",
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "swampland",
+      "to": "twistors-amplitudes",
+      "type": "shared-math",
+      "description": "The WGC follows from positivity/causality bounds on EFT amplitudes (gravitational positivity, EFT-hedron, Regge boundedness). Swampland constraints act as boundaries of the allowed S-matrix space. Connection to twistor methods and amplitude positive geometry is largely unexplored.",
+      "explored": "partially",
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "swampland",
+      "to": "asymptotic-safety",
+      "type": "conflict",
+      "description": "Both target UV consistency of gravity from opposite ends: AS posits a UV fixed point within pure QFT, while the swampland claims pure-QFT gravity is in the swampland (must produce strings/towers). Possible tension or complementarity; almost no direct literature comparing WGC bounds with AS scaling predictions. Prime hunting zone.",
+      "explored": "barely",
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "swampland",
+      "to": "loop-quantum-gravity",
+      "type": "conjecture",
+      "description": "LQG lacks a natural moduli landscape and string towers, so SDC/WGC are hard to state. Whether LQG/spin foams satisfy no-global-symmetries and completeness is essentially untouched. Speculative bridges: area-spectrum discreteness vs. charge-spectrum completeness; cobordism vs. spin-foam amplitudes.",
+      "explored": "barely",
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "swampland",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "Connes spectral action and spectrum finiteness could resonate with the finiteness/tameness conjecture and spectrum completeness, and o-minimal/tame structures might mirror spectral-triple constraints. Virtually no literature linking the two formalisms. Hunting zone.",
+      "explored": "barely",
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "swampland",
+      "to": "causal-dynamical-triangulations",
+      "type": "conjecture",
+      "description": "CDT generates its own 'landscape' of phases (phase diagram with C, B, A, bifurcation phases); whether continuum limits respect swampland criteria (no global symmetries, WGC, finiteness) is unexplored. Possible analogy between CDT phase structure and landscape/swampland separation.",
+      "explored": "barely",
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "swampland",
+      "to": "causal-sets",
+      "type": "conjecture",
+      "description": "Causal sets predict a fluctuating small cosmological constant ~ +/- 1/sqrt(V) (Sorkin), intriguingly resonant with the swampland preference for dynamical rather than constant dark energy and with TCC. No direct comparison of the two dark-energy mechanisms exists.",
+      "explored": "barely",
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "swampland",
+      "to": "group-field-theory",
+      "type": "conjecture",
+      "description": "GFT condensate cosmology produces effective cosmological dynamics and its own parameter space; whether its continuum EFTs satisfy swampland constraints (de Sitter, distance) is unexamined. Potential analogy between GFT phase landscape and the string landscape.",
+      "explored": "barely",
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "swampland",
+      "to": "dark-energy",
+      "type": "conjecture",
+      "description": "de Sitter conjecture and TCC reinterpret dark energy as evolving quintessence rather than a true cosmological constant, with explicit potentials (S-dual, hilltop) fitting DESI DR1/DR2 dynamical dark energy. Active observational interface 2024-2026.",
+      "explored": "partially",
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "swampland",
+      "to": "neutrino-mass",
+      "type": "conjecture",
+      "description": "Dark dimension scenario ties the active neutrino mass scale and a sterile-neutrino tower to the dark energy scale via m_nu ~ y^2 <H>^2 / M_hat and a ~micron extra dimension; gauged B-L extension predicts neutrino-mass / dark-energy coincidence. Testable but speculative.",
+      "explored": "partially",
+      "sourcePillars": [
+        "swampland"
+      ]
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "string-theory",
+      "type": "shared-structure",
+      "description": "Twistor and ambitwistor strings are chiral / infinite-tension string theories; KLT relations arise from closed strings as squares of open strings, and the double copy is the field-theory shadow of string factorization. N=4 SYM amplitudes and AdS/CFT are common ground. The conformal-supergravity non-decoupling in the twistor string is itself a string phenomenon.",
+      "explored": "well",
+      "sourcePillars": [
+        "twistors-amplitudes"
+      ]
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "supergravity-uv",
+      "type": "shared-math",
+      "description": "Double copy and on-shell unitarity methods are the primary tools for computing supergravity UV divergences: N=8 supergravity is finite through four loops, with an expected partial(8)R^4 divergence at seven loops. The two pillars share a computational core.",
+      "explored": "well",
+      "sourcePillars": [
+        "twistors-amplitudes"
+      ]
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "holography-adscft",
+      "type": "shared-structure",
+      "description": "Planar N=4 SYM (boundary of AdS5/CFT4) is the main laboratory of the amplitudes program (dual conformal symmetry, amplitude/Wilson-loop duality, integrability). Celestial holography attempts a distinct flat-space holography on the codim-2 celestial sphere; its relation to standard AdS/CFT via a flat-space limit is only partially understood.",
+      "explored": "partially",
+      "sourcePillars": [
+        "twistors-amplitudes"
+      ]
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "Both hold that spacetime locality/causality is derived, not fundamental: the amplituhedron and surfaceology make locality and unitarity emerge from positive geometry / hidden zeros, paralleling thermodynamic/entropic emergence. Conceptual overlap is strong but the technical bridge is weak.",
+      "explored": "partially",
+      "sourcePillars": [
+        "twistors-amplitudes"
+      ]
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "entanglement-spacetime",
+      "type": "conjecture",
+      "description": "Two independent emergence stories: 'locality from positivity' (amplituhedron) vs 'spacetime from entanglement' (ER=EPR, tensor networks). A conjectural bridge links positive-geometry positivity to positivity of the modular Hamiltonian / entanglement entropy, but the two communities barely interact. A prime target for undiscovered connections.",
+      "explored": "barely",
+      "sourcePillars": [
+        "twistors-amplitudes"
+      ]
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "loop-quantum-gravity",
+      "type": "shared-math",
+      "description": "Shared mathematics: 2-spinors, self-duality and Ashtekar variables (self-dual connection). Penrose's alpha-surfaces and the self-dual sector parallel the LQG self-dual formulation, and nonlinear gravitons have been derived from initial-value constraints in Ashtekar variables (arXiv:0706.2702). Linking twistor cohomology to spin networks / spin foams is almost unexplored.",
+      "explored": "barely",
+      "sourcePillars": [
+        "twistors-amplitudes"
+      ]
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "asymptotic-safety",
+      "type": "shared-structure",
+      "description": "Both concern the UV behavior of gravity but by opposite routes: asymptotic safety seeks an interacting UV fixed point in an off-shell Euclidean effective action, while amplitudes probe on-shell finiteness of specific theories. No systematic bridge; it is open whether the N=8 'enhanced cancellations' have a fixed-point interpretation.",
+      "explored": "barely",
+      "sourcePillars": [
+        "twistors-amplitudes"
+      ]
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "Penrose's palatial twistor theory introduces a noncommutative quantized twistor (Heisenberg) algebra, and twistor space can be quantized by cocycle twist (arXiv:math/0701893). Shares the 'fuzzy spacetime' idea with noncommutative geometry, but Connes spectral triples and twistor deformations have not yet been matched.",
+      "explored": "partially",
+      "sourcePillars": [
+        "twistors-amplitudes"
+      ]
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "black-holes-information",
+      "type": "shared-math",
+      "description": "Amplitudes and the classical double copy compute black-hole binary inspiral waveforms and Kerr solutions (Kerr = sqrt(Kerr)); celestial holography targets the flat-space S-matrix including black-hole scattering. Links to the information paradox and the Page curve remain indirect.",
+      "explored": "partially",
+      "sourcePillars": [
+        "twistors-amplitudes"
+      ]
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "semiclassical-gravity",
+      "type": "shared-structure",
+      "description": "Self-dual/ASD curvature splitting and soft theorems have a semiclassical (gravitational memory) counterpart; Strominger's soft-theorem = memory = asymptotic-symmetry triangle is a bridge whose twistor side is newly being developed.",
+      "explored": "barely",
+      "sourcePillars": [
+        "twistors-amplitudes"
+      ]
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "quantum-cosmology",
+      "type": "shared-math",
+      "description": "Positive geometry extends from the flat-space S-matrix to cosmological correlators (cosmological polytopes, kinematic flow, Bunch-Davies wavefunction), a new bridge to early-universe physics. Still at an early stage.",
+      "explored": "barely",
+      "sourcePillars": [
+        "twistors-amplitudes"
+      ]
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "swampland",
+      "type": "shared-structure",
+      "description": "Positivity and locality of amplitudes (analyticity, hidden zeros) connect to swampland positivity bounds on EFT Wilson coefficients (constraints on consistent low-energy gravity). The precise link between amplituhedron positivity and swampland bounds is only partially developed.",
+      "explored": "barely",
+      "sourcePillars": [
+        "twistors-amplitudes"
+      ]
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "conceptual-problems",
+      "type": "shared-structure",
+      "description": "The claim that spacetime, locality and unitarity are emergent rather than fundamental directly engages the conceptual foundations of quantum gravity (background independence, the problem of time, the ontology of spacetime).",
+      "explored": "partially",
+      "sourcePillars": [
+        "twistors-amplitudes"
+      ]
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "experimental-tests",
+      "type": "shared-math",
+      "description": "Amplitude and double-copy techniques feed gravitational-wave waveform modeling (post-Minkowskian/post-Newtonian binary dynamics) for LIGO/Virgo/LISA, and underpin precision QCD predictions at colliders. A concrete, active application channel.",
+      "explored": "well",
+      "sourcePillars": [
+        "twistors-amplitudes"
+      ]
+    },
+    {
+      "from": "von-neumann-algebras",
+      "to": "entanglement-spacetime",
+      "type": "shared-math",
+      "description": "Modular theory is the mathematical backbone of entanglement-from-geometry: the modular Hamiltonian, JLMS relation, first law of entanglement and the crossed-product / type II_infinity area operator all live here. The 2022+ observer-algebra revolution made generalized entropy the von Neumann entropy of a type II algebra, sharpening Van Raamsdonk-style 'entanglement builds spacetime'. The densest and most active bridge.",
+      "explored": "well",
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "von-neumann-algebras",
+      "to": "black-holes-information",
+      "type": "shared-math",
+      "description": "Witten's crossed product turns the emergent type III_1 black-hole algebra into type II_infinity with a state-independent entropy; Kudler-Flam-Leutheusser-Satishchandran prove generalized black-hole entropy is von Neumann entropy on any Killing horizon. Algebraic ER=EPR recasts the Page-time information transition as the transfer of an emergent type III_1 subalgebra. Resolves firewall/interior puzzles via half-sided modular translations.",
+      "explored": "well",
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "von-neumann-algebras",
+      "to": "holography-adscft",
+      "type": "shared-math",
+      "description": "Leutheusser-Liu derive the emergent type III_1 algebra and infalling time of the eternal AdS black hole from boundary CFT modular data; Chandrasekaran-Penington-Witten obtain a type II_infinity large-N algebra whose entropy is the generalized entropy, a replica-free QES derivation. Subregion-subalgebra duality and JLMS make the von Neumann type the carrier of bulk geometric information. The fastest-growing crossroads.",
+      "explored": "well",
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "von-neumann-algebras",
+      "to": "semiclassical-gravity",
+      "type": "shared-structure",
+      "description": "The crossed-product / type II entropy is computed in the G->0 limit of Lorentzian effective field theory on a fixed semiclassical background; Bisognano-Wichmann modular flow reproduces the Unruh effect and the thermal time hypothesis recovers Hawking/Unruh temperatures from state-intrinsic modular flow. Modular theory thus organizes QFT-in-curved-spacetime entanglement and energy conditions.",
+      "explored": "partially",
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "von-neumann-algebras",
+      "to": "conceptual-problems",
+      "type": "shared-math",
+      "description": "Quantum reference frames are crossed products (De Vuyst-Eccles-Hoehn-Kirklin), so the observer/relational-observables and problem-of-time issues are the same algebraic structure that renders gravitational entropy finite and observer-dependent. The thermal time hypothesis gives a modular answer to the problem of time, and the type III_1 obstruction to factorization sharpens background-independence and the role of the observer.",
+      "explored": "well",
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "von-neumann-algebras",
+      "to": "causal-sets",
+      "type": "conjecture",
+      "description": "Sorkin's spacetime entanglement entropy (SSEE), built from the Pauli-Jordan and Wightman functions of the covariant Sorkin-Johnston state, yields an area law only after a geometric truncation of near-zero modes -- structurally parallel to how the crossed product regulates the type III entropy of a region. A discrete causal-set route to the regulated, region-based (type II-like) entropy of modular constructions; almost unexplored as an explicit correspondence.",
+      "explored": "barely",
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "von-neumann-algebras",
+      "to": "loop-quantum-gravity",
+      "type": "conjecture",
+      "description": "Type III_1 makes subregion entanglement entropy UV-divergent, demanding a physical cutoff; LQG's discrete area spectrum and nonzero area gap (Delta-A ~ l_Pl^2) is a candidate microscopic regulator that could play the role the crossed-product trace plays algebraically, fixing the additive constant in generalized entropy. The link between the area gap and the type II trace/area operator is suggestive but essentially unworked.",
+      "explored": "barely",
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    },
+    {
+      "from": "von-neumann-algebras",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "Connes' classification of type III factors, the modular spectrum, the Connes cocycle and the time-thermodynamics (thermal time) relation are foundational results of noncommutative geometry imported wholesale into quantum gravity. The same operator-algebra toolkit (modular automorphisms, crossed products, KMS) underlies both Connes' spectral geometry and the observer-algebra program. A deep, mostly latent shared-mathematics bridge.",
+      "explored": "partially",
+      "sourcePillars": [
+        "von-neumann-algebras"
+      ]
+    }
+  ],
+  "matrix": {
+    "asymptotic-safety": {
+      "black-holes-information": "partially",
+      "causal-dynamical-triangulations": "partially",
+      "causal-sets": "barely",
+      "conceptual-problems": "none",
+      "emergent-gravity": "barely",
+      "entanglement-spacetime": "none",
+      "experimental-tests": "barely",
+      "group-field-theory": "barely",
+      "holography-adscft": "barely",
+      "loop-quantum-gravity": "barely",
+      "noncommutative-geometry": "barely",
+      "quantum-cosmology": "partially",
+      "semiclassical-gravity": "partially",
+      "string-theory": "partially",
+      "supergravity-uv": "none",
+      "swampland": "partially",
+      "twistors-amplitudes": "barely",
+      "von-neumann-algebras": "none"
+    },
+    "black-holes-information": {
+      "asymptotic-safety": "barely",
+      "causal-dynamical-triangulations": "none",
+      "causal-sets": "barely",
+      "conceptual-problems": "partially",
+      "emergent-gravity": "partially",
+      "entanglement-spacetime": "well",
+      "experimental-tests": "barely",
+      "group-field-theory": "none",
+      "holography-adscft": "well",
+      "loop-quantum-gravity": "barely",
+      "noncommutative-geometry": "barely",
+      "quantum-cosmology": "partially",
+      "semiclassical-gravity": "well",
+      "string-theory": "partially",
+      "supergravity-uv": "partially",
+      "swampland": "barely",
+      "twistors-amplitudes": "partially",
+      "von-neumann-algebras": "none"
+    },
+    "causal-dynamical-triangulations": {
+      "asymptotic-safety": "partially",
+      "black-holes-information": "barely",
+      "causal-sets": "partially",
+      "conceptual-problems": "none",
+      "emergent-gravity": "partially",
+      "entanglement-spacetime": "barely",
+      "experimental-tests": "barely",
+      "group-field-theory": "barely",
+      "holography-adscft": "barely",
+      "loop-quantum-gravity": "barely",
+      "noncommutative-geometry": "barely",
+      "quantum-cosmology": "well",
+      "semiclassical-gravity": "well",
+      "string-theory": "barely",
+      "supergravity-uv": "none",
+      "swampland": "barely",
+      "twistors-amplitudes": "none",
+      "von-neumann-algebras": "none"
+    },
+    "causal-sets": {
+      "asymptotic-safety": "barely",
+      "black-holes-information": "partially",
+      "causal-dynamical-triangulations": "partially",
+      "conceptual-problems": "none",
+      "emergent-gravity": "partially",
+      "entanglement-spacetime": "partially",
+      "experimental-tests": "partially",
+      "group-field-theory": "barely",
+      "holography-adscft": "barely",
+      "loop-quantum-gravity": "barely",
+      "noncommutative-geometry": "barely",
+      "quantum-cosmology": "partially",
+      "semiclassical-gravity": "none",
+      "string-theory": "barely",
+      "supergravity-uv": "none",
+      "swampland": "none",
+      "twistors-amplitudes": "barely",
+      "von-neumann-algebras": "none"
+    },
+    "conceptual-problems": {
+      "asymptotic-safety": "barely",
+      "black-holes-information": "well",
+      "causal-dynamical-triangulations": "none",
+      "causal-sets": "barely",
+      "emergent-gravity": "none",
+      "entanglement-spacetime": "partially",
+      "experimental-tests": "partially",
+      "group-field-theory": "partially",
+      "holography-adscft": "partially",
+      "loop-quantum-gravity": "well",
+      "noncommutative-geometry": "barely",
+      "quantum-cosmology": "well",
+      "semiclassical-gravity": "well",
+      "string-theory": "partially",
+      "supergravity-uv": "none",
+      "swampland": "barely",
+      "twistors-amplitudes": "barely",
+      "von-neumann-algebras": "none"
+    },
+    "emergent-gravity": {
+      "asymptotic-safety": "barely",
+      "black-holes-information": "partially",
+      "causal-dynamical-triangulations": "none",
+      "causal-sets": "barely",
+      "conceptual-problems": "none",
+      "entanglement-spacetime": "well",
+      "experimental-tests": "partially",
+      "group-field-theory": "barely",
+      "holography-adscft": "well",
+      "loop-quantum-gravity": "barely",
+      "noncommutative-geometry": "barely",
+      "quantum-cosmology": "partially",
+      "semiclassical-gravity": "well",
+      "string-theory": "none",
+      "supergravity-uv": "none",
+      "swampland": "barely",
+      "twistors-amplitudes": "none",
+      "von-neumann-algebras": "none"
+    },
+    "entanglement-spacetime": {
+      "asymptotic-safety": "barely",
+      "black-holes-information": "well",
+      "causal-dynamical-triangulations": "none",
+      "causal-sets": "barely",
+      "conceptual-problems": "partially",
+      "emergent-gravity": "partially",
+      "experimental-tests": "partially",
+      "group-field-theory": "barely",
+      "holography-adscft": "well",
+      "loop-quantum-gravity": "partially",
+      "noncommutative-geometry": "barely",
+      "quantum-cosmology": "barely",
+      "semiclassical-gravity": "well",
+      "string-theory": "well",
+      "supergravity-uv": "partially",
+      "swampland": "none",
+      "twistors-amplitudes": "barely",
+      "von-neumann-algebras": "none"
+    },
+    "experimental-tests": {
+      "asymptotic-safety": "partially",
+      "black-holes-information": "partially",
+      "causal-dynamical-triangulations": "barely",
+      "causal-sets": "partially",
+      "conceptual-problems": "well",
+      "emergent-gravity": "barely",
+      "entanglement-spacetime": "barely",
+      "group-field-theory": "barely",
+      "holography-adscft": "partially",
+      "loop-quantum-gravity": "partially",
+      "noncommutative-geometry": "well",
+      "quantum-cosmology": "partially",
+      "semiclassical-gravity": "well",
+      "string-theory": "partially",
+      "supergravity-uv": "barely",
+      "swampland": "barely",
+      "twistors-amplitudes": "partially",
+      "von-neumann-algebras": "none"
+    },
+    "group-field-theory": {
+      "asymptotic-safety": "partially",
+      "black-holes-information": "barely",
+      "causal-dynamical-triangulations": "partially",
+      "causal-sets": "none",
+      "conceptual-problems": "none",
+      "emergent-gravity": "partially",
+      "entanglement-spacetime": "barely",
+      "experimental-tests": "none",
+      "holography-adscft": "partially",
+      "loop-quantum-gravity": "well",
+      "noncommutative-geometry": "barely",
+      "quantum-cosmology": "partially",
+      "semiclassical-gravity": "none",
+      "string-theory": "well",
+      "supergravity-uv": "none",
+      "swampland": "none",
+      "twistors-amplitudes": "none",
+      "von-neumann-algebras": "none"
+    },
+    "holography-adscft": {
+      "asymptotic-safety": "barely",
+      "black-holes-information": "well",
+      "causal-dynamical-triangulations": "barely",
+      "causal-sets": "barely",
+      "conceptual-problems": "partially",
+      "emergent-gravity": "well",
+      "entanglement-spacetime": "well",
+      "experimental-tests": "partially",
+      "group-field-theory": "barely",
+      "loop-quantum-gravity": "barely",
+      "noncommutative-geometry": "barely",
+      "quantum-cosmology": "barely",
+      "semiclassical-gravity": "well",
+      "string-theory": "well",
+      "supergravity-uv": "well",
+      "swampland": "partially",
+      "twistors-amplitudes": "partially",
+      "von-neumann-algebras": "none"
+    },
+    "loop-quantum-gravity": {
+      "asymptotic-safety": "barely",
+      "black-holes-information": "partially",
+      "causal-dynamical-triangulations": "partially",
+      "causal-sets": "barely",
+      "conceptual-problems": "none",
+      "emergent-gravity": "none",
+      "entanglement-spacetime": "partially",
+      "experimental-tests": "partially",
+      "group-field-theory": "well",
+      "holography-adscft": "partially",
+      "noncommutative-geometry": "partially",
+      "quantum-cosmology": "well",
+      "semiclassical-gravity": "partially",
+      "string-theory": "barely",
+      "supergravity-uv": "none",
+      "swampland": "none",
+      "twistors-amplitudes": "partially",
+      "von-neumann-algebras": "none"
+    },
+    "noncommutative-geometry": {
+      "asymptotic-safety": "barely",
+      "black-holes-information": "partially",
+      "causal-dynamical-triangulations": "barely",
+      "causal-sets": "barely",
+      "conceptual-problems": "none",
+      "emergent-gravity": "partially",
+      "entanglement-spacetime": "barely",
+      "experimental-tests": "well",
+      "group-field-theory": "barely",
+      "holography-adscft": "partially",
+      "loop-quantum-gravity": "partially",
+      "quantum-cosmology": "partially",
+      "semiclassical-gravity": "none",
+      "string-theory": "well",
+      "supergravity-uv": "barely",
+      "swampland": "barely",
+      "twistors-amplitudes": "barely",
+      "von-neumann-algebras": "none"
+    },
+    "quantum-cosmology": {
+      "asymptotic-safety": "barely",
+      "black-holes-information": "partially",
+      "causal-dynamical-triangulations": "barely",
+      "causal-sets": "barely",
+      "conceptual-problems": "well",
+      "emergent-gravity": "none",
+      "entanglement-spacetime": "barely",
+      "experimental-tests": "partially",
+      "group-field-theory": "partially",
+      "holography-adscft": "partially",
+      "loop-quantum-gravity": "well",
+      "noncommutative-geometry": "barely",
+      "semiclassical-gravity": "well",
+      "string-theory": "partially",
+      "supergravity-uv": "none",
+      "swampland": "partially",
+      "twistors-amplitudes": "none",
+      "von-neumann-algebras": "none"
+    },
+    "semiclassical-gravity": {
+      "asymptotic-safety": "barely",
+      "black-holes-information": "well",
+      "causal-dynamical-triangulations": "none",
+      "causal-sets": "barely",
+      "conceptual-problems": "partially",
+      "emergent-gravity": "well",
+      "entanglement-spacetime": "partially",
+      "experimental-tests": "partially",
+      "group-field-theory": "none",
+      "holography-adscft": "well",
+      "loop-quantum-gravity": "barely",
+      "noncommutative-geometry": "barely",
+      "quantum-cosmology": "partially",
+      "string-theory": "partially",
+      "supergravity-uv": "barely",
+      "swampland": "none",
+      "twistors-amplitudes": "none",
+      "von-neumann-algebras": "none"
+    },
+    "string-theory": {
+      "asymptotic-safety": "barely",
+      "black-holes-information": "well",
+      "causal-dynamical-triangulations": "barely",
+      "causal-sets": "barely",
+      "conceptual-problems": "partially",
+      "emergent-gravity": "partially",
+      "entanglement-spacetime": "partially",
+      "experimental-tests": "barely",
+      "group-field-theory": "barely",
+      "holography-adscft": "well",
+      "loop-quantum-gravity": "barely",
+      "noncommutative-geometry": "partially",
+      "quantum-cosmology": "partially",
+      "semiclassical-gravity": "well",
+      "supergravity-uv": "well",
+      "swampland": "well",
+      "twistors-amplitudes": "partially",
+      "von-neumann-algebras": "none"
+    },
+    "supergravity-uv": {
+      "asymptotic-safety": "partially",
+      "black-holes-information": "barely",
+      "causal-dynamical-triangulations": "barely",
+      "causal-sets": "none",
+      "conceptual-problems": "well",
+      "emergent-gravity": "barely",
+      "entanglement-spacetime": "none",
+      "experimental-tests": "partially",
+      "group-field-theory": "none",
+      "holography-adscft": "partially",
+      "loop-quantum-gravity": "barely",
+      "noncommutative-geometry": "barely",
+      "quantum-cosmology": "partially",
+      "semiclassical-gravity": "well",
+      "string-theory": "well",
+      "swampland": "barely",
+      "twistors-amplitudes": "well",
+      "von-neumann-algebras": "none"
+    },
+    "swampland": {
+      "asymptotic-safety": "barely",
+      "black-holes-information": "well",
+      "causal-dynamical-triangulations": "barely",
+      "causal-sets": "barely",
+      "conceptual-problems": "none",
+      "emergent-gravity": "partially",
+      "entanglement-spacetime": "partially",
+      "experimental-tests": "none",
+      "group-field-theory": "barely",
+      "holography-adscft": "well",
+      "loop-quantum-gravity": "barely",
+      "noncommutative-geometry": "barely",
+      "quantum-cosmology": "partially",
+      "semiclassical-gravity": "none",
+      "string-theory": "well",
+      "supergravity-uv": "well",
+      "twistors-amplitudes": "partially",
+      "von-neumann-algebras": "none"
+    },
+    "twistors-amplitudes": {
+      "asymptotic-safety": "barely",
+      "black-holes-information": "partially",
+      "causal-dynamical-triangulations": "none",
+      "causal-sets": "none",
+      "conceptual-problems": "partially",
+      "emergent-gravity": "partially",
+      "entanglement-spacetime": "barely",
+      "experimental-tests": "well",
+      "group-field-theory": "none",
+      "holography-adscft": "partially",
+      "loop-quantum-gravity": "barely",
+      "noncommutative-geometry": "partially",
+      "quantum-cosmology": "barely",
+      "semiclassical-gravity": "barely",
+      "string-theory": "well",
+      "supergravity-uv": "well",
+      "swampland": "barely",
+      "von-neumann-algebras": "none"
+    },
+    "von-neumann-algebras": {
+      "asymptotic-safety": "none",
+      "black-holes-information": "well",
+      "causal-dynamical-triangulations": "none",
+      "causal-sets": "barely",
+      "conceptual-problems": "well",
+      "emergent-gravity": "none",
+      "entanglement-spacetime": "well",
+      "experimental-tests": "none",
+      "group-field-theory": "none",
+      "holography-adscft": "well",
+      "loop-quantum-gravity": "barely",
+      "noncommutative-geometry": "partially",
+      "quantum-cosmology": "none",
+      "semiclassical-gravity": "partially",
+      "string-theory": "none",
+      "supergravity-uv": "none",
+      "swampland": "none",
+      "twistors-amplitudes": "none"
+    }
+  }
+}

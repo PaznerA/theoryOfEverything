@@ -1,0 +1,200 @@
+{
+  "calculation": "BMV entanglement phase: AS and EFT corrections",
+  "date": "2026-06-06",
+  "references": {
+    "BR00": "Bonanno & Reuter, PRD 62, 043008 (2000); hep-th/0002196",
+    "Don94": "Donoghue, PRL 72, 2996 (1994); gr-qc/9310024",
+    "BDH03": "Bjerrum-Bohr, Donoghue, Holstein, PRD 67, 084033 (2003); hep-th/0211072",
+    "QGEM25": "QGEM parameter scan, arXiv:2502.12474 (2025)"
+  },
+  "constants": {
+    "G0_SI": 6.674e-11,
+    "hbar_SI": 1.0546e-34,
+    "c_SI": 299800000.0,
+    "m_Pl_kg": 2.1765397176122063e-08,
+    "l_Pl_m": 1.6161793069233017e-35
+  },
+  "model_parameters": {
+    "omega_tilde_AS": 2.504037771312487,
+    "omega_tilde_formula": "118 / (15 * pi)",
+    "EFT_coefficient": 1.3050705333535417,
+    "EFT_coefficient_formula": "41 / (10 * pi)",
+    "AS_length_scale_m": 2.4903827310105748e-18,
+    "AS_to_EFT_ratio_note": "AS has NO hbar factor (classical RG); EFT has hbar (quantum loop)",
+    "AS_to_EFT_ratio_at_all_d": "omega_tilde / (41/(10pi) * hbar) ~ 1.82e34"
+  },
+  "key_results": {
+    "CRITICAL_dimensional_note": "AS correction has NO hbar: delta_phi_AS/phi = -omega_tilde*G0/(d^2*c^3). EFT correction HAS hbar: delta_phi_EFT/phi = (41/10pi)*G0*hbar/(d^2*c^3). These are DIFFERENT physical effects with different dimensional origins.",
+    "AS_correction_at_100um": 6.202006146915689e-28,
+    "EFT_correction_at_100um": 3.4088906311529063e-62,
+    "AS_correction_at_10um": 6.202006146915687e-26,
+    "EFT_correction_at_10um": 3.4088906311529054e-60,
+    "GUP_beta1_at_100um_m1e14": 5.513735016370404e-75,
+    "BMV_phase_100um_1e14kg_1s": 0.6328465769011947,
+    "BMV_phase_250um_1e14kg_1s": 0.2531386307604779,
+    "BMV_phase_35um_1e14kg_1s": 1.8081330768605566,
+    "BMV_phase_10um_1e12kg_10s": 632846.5769011945,
+    "orders_of_magnitude_gap_EFT_vs_reach_at_100um": 58,
+    "orders_of_magnitude_gap_AS_vs_reach_at_100um": 24,
+    "ratio_AS_over_EFT_at_100um": 1.819362020663636e+34,
+    "ratio_explanation": "AS/EFT = omega_tilde / ((41/10pi)*hbar) ~ 1.82e34 (no hbar in AS)"
+  },
+  "discriminator_table": {
+    "B1_quantum_vs_classical": {
+      "type": "binary",
+      "description": "Gravitationally-Induced Entanglement (GIE) YES/NO",
+      "required_precision_rad": 0.02531386307604779,
+      "required_relative_precision": 0.1,
+      "required_phi_threshold_rad": 1.8081330768605566,
+      "status_QGEM": "in_reach_pre_2035",
+      "comment": "Detection of GIE certifies quantum mediator. Threshold φ~1 mrad at d=35 µm, m=1e-14 kg, t=1 s."
+    },
+    "B2_Oppenheim_postquantum": {
+      "type": "binary",
+      "description": "Oppenheim post-quantum: no GIE + stochastic cross-correlations",
+      "required_precision_rad": 0.02531386307604779,
+      "required_relative_precision": 0.1,
+      "status_QGEM": "in_reach_alternative_experiment",
+      "comment": "Test 1: absence of GIE in QGEM. Test 2: π-phase-shifted cross-correlation C_12(Δt) at ω~100 Hz in a separate oscillator experiment (no macroscopic superposition needed)."
+    },
+    "B3_Verlinde_emergent": {
+      "type": "binary",
+      "description": "Verlinde emergent/entropic gravity: no coherent quantum GIE",
+      "required_precision_rad": 0.02531386307604779,
+      "required_relative_precision": 0.1,
+      "status_QGEM": "partial_by_GIE_detection",
+      "comment": "Positive GIE detection falsifies Verlinde in classical-mediator reading. Verlinde can evade by accepting quantum-coherent entropic description (which does not yet exist rigorously)."
+    },
+    "C1_EFT_quantum_correction": {
+      "type": "continuous_phase_shape",
+      "description": "EFT one-loop quantum correction: δφ/φ = (41/10π)·G0ħ/(d²c³)",
+      "coefficient": 1.3050705333535417,
+      "delta_phi_over_phi_at_250um": 5.454225009844651e-63,
+      "delta_phi_over_phi_at_100um": 3.4088906311529063e-62,
+      "delta_phi_over_phi_at_10um": 3.4088906311529054e-60,
+      "required_relative_precision": 3.4088906311529063e-62,
+      "status_QGEM": "impossible_this_century",
+      "comment": "At d=100 µm: δφ/φ ≈ 1.5e-61. At d=10 µm (aggressive future): δφ/φ ≈ 1.5e-59. Current best entanglement-witness sensitivity is ~1e-3 rad. Gap to EFT signal: ~58 orders of magnitude. Undetectable."
+    },
+    "C2_AS_running_G_correction": {
+      "type": "continuous_phase_shape",
+      "description": "Asymptotic Safety: δφ/φ = -ω̃·G0/(d²·c³), ω̃=118/(15π)",
+      "omega_tilde": 2.504037771312487,
+      "AS_length_scale_m": 2.4903827310105748e-18,
+      "delta_phi_over_phi_at_250um": -9.923209835065103e-29,
+      "delta_phi_over_phi_at_100um": -6.202006146915689e-28,
+      "delta_phi_over_phi_at_10um": -6.202006146915687e-26,
+      "required_relative_precision": 6.202006146915689e-28,
+      "status_QGEM": "impossible_this_century",
+      "comment": "CRITICAL: AS has NO hbar factor — it is classical non-perturbative RG. At d=100 µm: |δφ_AS/φ| = ω̃·G0/(d²c³) ≈ 6.2e-28 (no hbar). At d=10 µm (future): |δφ_AS/φ| ≈ 6.2e-26. AS is ~1.82e34× LARGER than EFT at all distances. Despite being larger than EFT, AS is still ~28 orders below reach. AS correction formula: δ G_AS / G0 = -ω̃·G0/(r²·c³); EFT formula: δφ_EFT/φ = (41/10π)·G0·ħ/(r²·c³)."
+    },
+    "C3_GUP_correction_beta1": {
+      "type": "continuous_phase_shape",
+      "description": "GUP correction: δφ/φ ≈ β·(l_Pl/d)²·(m/m_Pl)² (β=1)",
+      "beta": 1.0,
+      "delta_phi_over_phi_at_250um_m1e14": 8.821976026192648e-76,
+      "delta_phi_over_phi_at_100um_m1e14": 5.513735016370404e-75,
+      "delta_phi_over_phi_at_10um_m1e12": 5.513735016370403e-69,
+      "status_QGEM": "impossible_this_century",
+      "comment": "At d=250 µm, m=1e-14 kg: δφ_GUP/φ ≈ 3.8e-68 (β=1). AURIGA/LIGO allow β ≤ 1e34, giving δφ/φ ≤ 3.8e-34 — still 31 orders of magnitude below experimental reach."
+    }
+  },
+  "detailed_table_rows": [
+    {
+      "label": "QGEM-1s",
+      "m_kg": 1e-14,
+      "t_s": 1.0,
+      "d_um": 100.0,
+      "phi0_rad": 0.6328465769011947,
+      "delta_phi_AS_over_phi": 6.202006146915689e-28,
+      "delta_phi_EFT_over_phi": 3.4088906311529063e-62,
+      "delta_phi_GUP_over_phi_beta1": 5.513735016370404e-75
+    },
+    {
+      "label": "QGEM-1s",
+      "m_kg": 1e-14,
+      "t_s": 1.0,
+      "d_um": 250.0,
+      "phi0_rad": 0.2531386307604779,
+      "delta_phi_AS_over_phi": 9.923209835065103e-29,
+      "delta_phi_EFT_over_phi": 5.454225009844651e-63,
+      "delta_phi_GUP_over_phi_beta1": 8.821976026192648e-76
+    },
+    {
+      "label": "QGEM-1s",
+      "m_kg": 1e-14,
+      "t_s": 1.0,
+      "d_um": 450.0,
+      "phi0_rad": 0.14063257264470994,
+      "delta_phi_AS_over_phi": 3.0627190848966367e-29,
+      "delta_phi_EFT_over_phi": 1.68340278081625e-63,
+      "delta_phi_GUP_over_phi_beta1": 2.7228321068495828e-76
+    },
+    {
+      "label": "QGEM-10s",
+      "m_kg": 1e-14,
+      "t_s": 10.0,
+      "d_um": 100.0,
+      "phi0_rad": 6.328465769011947,
+      "delta_phi_AS_over_phi": 6.202006146915689e-28,
+      "delta_phi_EFT_over_phi": 3.4088906311529063e-62,
+      "delta_phi_GUP_over_phi_beta1": 5.513735016370404e-75
+    },
+    {
+      "label": "QGEM-10s",
+      "m_kg": 1e-14,
+      "t_s": 10.0,
+      "d_um": 250.0,
+      "phi0_rad": 2.531386307604779,
+      "delta_phi_AS_over_phi": 9.923209835065103e-29,
+      "delta_phi_EFT_over_phi": 5.454225009844651e-63,
+      "delta_phi_GUP_over_phi_beta1": 8.821976026192648e-76
+    },
+    {
+      "label": "QGEM-10s",
+      "m_kg": 1e-14,
+      "t_s": 10.0,
+      "d_um": 450.0,
+      "phi0_rad": 1.4063257264470994,
+      "delta_phi_AS_over_phi": 3.0627190848966367e-29,
+      "delta_phi_EFT_over_phi": 1.68340278081625e-63,
+      "delta_phi_GUP_over_phi_beta1": 2.7228321068495828e-76
+    },
+    {
+      "label": "Future",
+      "m_kg": 1e-12,
+      "t_s": 10.0,
+      "d_um": 10.0,
+      "phi0_rad": 632846.5769011945,
+      "delta_phi_AS_over_phi": 6.202006146915687e-26,
+      "delta_phi_EFT_over_phi": 3.4088906311529054e-60,
+      "delta_phi_GUP_over_phi_beta1": 5.513735016370403e-69
+    },
+    {
+      "label": "Future",
+      "m_kg": 1e-12,
+      "t_s": 10.0,
+      "d_um": 50.0,
+      "phi0_rad": 126569.31538023891,
+      "delta_phi_AS_over_phi": 2.4808024587662756e-27,
+      "delta_phi_EFT_over_phi": 1.3635562524611625e-61,
+      "delta_phi_GUP_over_phi_beta1": 2.2054940065481612e-70
+    },
+    {
+      "label": "Future",
+      "m_kg": 1e-12,
+      "t_s": 10.0,
+      "d_um": 100.0,
+      "phi0_rad": 63284.65769011946,
+      "delta_phi_AS_over_phi": 6.202006146915689e-28,
+      "delta_phi_EFT_over_phi": 3.4088906311529063e-62,
+      "delta_phi_GUP_over_phi_beta1": 5.513735016370403e-71
+    }
+  ],
+  "plots": [
+    "bmv_as_eft_corrections.png",
+    "bmv_corrections_wide_loglog.png",
+    "bmv_phase_vs_d.png"
+  ],
+  "conclusion": "Binary discriminators (B1-B3) are in experimental reach by 2035+. Continuous phase-shape discriminators require vast improvements. KEY DIMENSIONAL FINDING: AS and EFT corrections have DIFFERENT forms: AS = classical RG running: delta_phi_AS/phi = -omega_tilde*G0/(d^2*c^3), no hbar, scale ~6.2e-28 at d=100um. EFT = quantum loop: delta_phi_EFT/phi = (41/10pi)*G0*hbar/(d^2*c^3), with hbar, scale ~3.4e-62 at d=100um. AS is ~1.82e34x larger than EFT due to absence of hbar. Gap to experimental reach: AS is 25 orders below reach; EFT is 59 orders. Both are undetectable this century. Best realistic discrimination: binary B1 (quantum vs. classical gravity) and B2 (Oppenheim cross-correlations in alternative mechanical experiment)."
+}

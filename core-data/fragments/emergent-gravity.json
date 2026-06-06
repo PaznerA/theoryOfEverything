@@ -1,0 +1,680 @@
+{
+  "slug": "emergent-gravity",
+  "name": "Emergent & Entropic Gravity",
+  "concepts": [
+    {
+      "id": "emergent-gravity",
+      "name": "Emergent gravity",
+      "definition": "The thesis that the spacetime metric and its Einstein dynamics are not fundamental variables but a collective/effective, low-energy description of a deeper microscopic theory, analogous to how hydrodynamics or elasticity emerges from molecular physics.",
+      "relatedTo": ["induced-gravity", "einstein-equation-of-state", "gravity-as-hydrodynamics", "entanglement-equilibrium", "holographic-principle"]
+    },
+    {
+      "id": "induced-gravity",
+      "name": "Induced gravity (Sakharov)",
+      "definition": "Sakharov's 1967 idea that the Einstein-Hilbert term arises as a one-loop effective action of quantum matter fields on a curved background; Newton's constant and the cosmological constant are determined by the UV cutoff and field spectrum (metric elasticity of the vacuum).",
+      "relatedTo": ["emergent-gravity", "cosmological-constant-problem", "metric-elasticity", "asymptotic-safety"]
+    },
+    {
+      "id": "metric-elasticity",
+      "name": "Metric elasticity",
+      "definition": "Sakharov's analogy in which curvature shifts the zero-point energy of the vacuum, producing a stiffness of space proportional to the Ricci scalar R, just like stress in an elastic continuum.",
+      "relatedTo": ["induced-gravity", "gravity-as-hydrodynamics"]
+    },
+    {
+      "id": "einstein-equation-of-state",
+      "name": "Einstein equation as equation of state",
+      "definition": "Jacobson's 1995 result that G_{munu}+Lambda g_{munu}=8 pi G T_{munu} is a macroscopic thermodynamic consistency condition (an equation of state) for horizon thermodynamics rather than a fundamental equation of motion.",
+      "relatedTo": ["clausius-relation", "local-rindler-horizon", "bekenstein-hawking-entropy", "unruh-temperature", "emergent-gravity"]
+    },
+    {
+      "id": "clausius-relation",
+      "name": "Clausius relation delta Q = T dS",
+      "definition": "Thermodynamic relation between heat flux across a horizon and entropy change; the engine of Jacobson's derivation when imposed for all local causal horizons.",
+      "relatedTo": ["einstein-equation-of-state", "local-rindler-horizon", "nonequilibrium-spacetime-thermodynamics"]
+    },
+    {
+      "id": "local-rindler-horizon",
+      "name": "Local Rindler / causal horizon",
+      "definition": "For every point and null direction there exists a locally accelerating observer with a horizon, to which one assigns Unruh temperature T = hbar a / 2 pi c k_B and entropy S = eta A.",
+      "relatedTo": ["unruh-temperature", "clausius-relation", "einstein-equation-of-state", "bekenstein-hawking-entropy"]
+    },
+    {
+      "id": "unruh-temperature",
+      "name": "Unruh temperature",
+      "definition": "T = hbar a / (2 pi c k_B): the effective thermal temperature of the vacuum seen by an observer with proper acceleration a; supplies the temperature in delta Q = T dS and underlies analogue Hawking radiation.",
+      "relatedTo": ["local-rindler-horizon", "hawking-radiation", "equipartition-law", "analogue-gravity"]
+    },
+    {
+      "id": "bekenstein-hawking-entropy",
+      "name": "Bekenstein-Hawking entropy",
+      "definition": "S = k_B c^3 A / (4 G hbar) = A / (4 l_P^2): horizon entropy proportional to area; the universal input assumption S proportional to A for the entire emergent/entropic program.",
+      "relatedTo": ["holographic-principle", "einstein-equation-of-state", "entanglement-equilibrium", "black-hole-thermodynamics"]
+    },
+    {
+      "id": "holographic-principle",
+      "name": "Holographic principle / screen",
+      "definition": "Information about a bulk region is encoded on its boundary surface with N = A c^3 / (G hbar) bits; backbone of Verlinde's holographic screens and Padmanabhan's holographic equipartition.",
+      "relatedTo": ["bekenstein-hawking-entropy", "entropic-force", "holographic-equipartition", "holography-adscft"]
+    },
+    {
+      "id": "entropic-force",
+      "name": "Entropic force",
+      "definition": "A macroscopic force F = T dS/dx driving a system toward higher-entropy configurations (like polymer elasticity); Verlinde's 2010 mechanism by which Newtonian gravity and Einstein equations are recovered.",
+      "relatedTo": ["holographic-principle", "equipartition-law", "emergent-gravity", "apparent-dark-matter"]
+    },
+    {
+      "id": "equipartition-law",
+      "name": "Equipartition law",
+      "definition": "E = (1/2) N k_B T: each surface (horizon) degree of freedom carries (1/2) k_B T of energy; used by Verlinde and Padmanabhan to define horizon temperature and recover Newton's law.",
+      "relatedTo": ["entropic-force", "holographic-equipartition", "unruh-temperature", "holographic-principle"]
+    },
+    {
+      "id": "holographic-equipartition",
+      "name": "Holographic equipartition (Padmanabhan)",
+      "definition": "In any static spacetime N_sur = N_bulk; the departure from this equality, dV/dt = L_P^2 (N_sur - N_bulk), drives cosmic expansion and reproduces the Friedmann equation.",
+      "relatedTo": ["equipartition-law", "emergence-of-cosmic-space", "holographic-principle", "quantum-cosmology"]
+    },
+    {
+      "id": "emergence-of-cosmic-space",
+      "name": "Emergence of cosmic space",
+      "definition": "Padmanabhan's proposal that the expansion of the universe is the quest of spacetime to reach holographic equipartition; the Hubble volume evolves so that surface and bulk degrees of freedom equalize.",
+      "relatedTo": ["holographic-equipartition", "cosmin", "quantum-cosmology"]
+    },
+    {
+      "id": "cosmin",
+      "name": "CosMIn (cosmic information)",
+      "definition": "A dimensionless conserved count of modes crossing the Hubble radius across the three cosmic epochs; the single postulate N = 4 pi reproduces the observed cosmological constant Lambda l_P^2 approx 3.4e-122.",
+      "relatedTo": ["emergence-of-cosmic-space", "cosmological-constant-problem", "holographic-principle"]
+    },
+    {
+      "id": "entanglement-equilibrium",
+      "name": "Entanglement equilibrium (Jacobson 2015)",
+      "definition": "Hypothesis that vacuum entanglement entropy of a small geodesic ball is maximal at fixed volume in a locally maximally symmetric state; stationarity of total entropy is equivalent to the semiclassical Einstein equation.",
+      "relatedTo": ["bekenstein-hawking-entropy", "modular-hamiltonian", "entanglement-spacetime", "einstein-equation-of-state"]
+    },
+    {
+      "id": "modular-hamiltonian",
+      "name": "Modular Hamiltonian",
+      "definition": "The generator K = H_zeta whose expectation equals the matter (IR) contribution to entanglement entropy; for CFTs delta<K> = (2 pi/hbar) delta<T_00>, central to entanglement equilibrium and first-law-of-entanglement derivations of gravity.",
+      "relatedTo": ["entanglement-equilibrium", "entanglement-spacetime", "ryu-takayanagi", "holography-adscft"]
+    },
+    {
+      "id": "volume-law-entropy-de-sitter",
+      "name": "Volume-law entropy of de Sitter",
+      "definition": "In de Sitter space the thermal entropy of the cosmological horizon, spread through the volume, gives a term proportional to V that overtakes the area law beyond the Hubble scale; source of Verlinde's extra dark gravity.",
+      "relatedTo": ["apparent-dark-matter", "holographic-principle", "cosmological-constant-problem"]
+    },
+    {
+      "id": "apparent-dark-matter",
+      "name": "Apparent dark matter (Verlinde 2016)",
+      "definition": "Not a particle but an elastic, memory-like response of the dark-energy entropy to baryonic matter; produces extra gravity reproducing flat rotation curves and MOND-like behaviour with a_0 = c H_0.",
+      "relatedTo": ["volume-law-entropy-de-sitter", "mond", "entropic-force", "experimental-tests"]
+    },
+    {
+      "id": "mond",
+      "name": "MOND (Modified Newtonian Dynamics)",
+      "definition": "Empirical modification of gravity below an acceleration scale a_0 yielding flat rotation curves; Verlinde's emergent gravity reproduces the MOND formula for point masses but differs (factor ~2) for extended bodies.",
+      "relatedTo": ["apparent-dark-matter", "experimental-tests", "radial-acceleration-relation"]
+    },
+    {
+      "id": "radial-acceleration-relation",
+      "name": "Radial acceleration relation (RAR)",
+      "definition": "Tight empirical correlation between observed and baryonic acceleration in galaxies with negligible intrinsic scatter; used by Lelli et al. to challenge Verlinde's emergent gravity, which predicts intrinsic thickness.",
+      "relatedTo": ["mond", "apparent-dark-matter", "experimental-tests"]
+    },
+    {
+      "id": "analogue-gravity",
+      "name": "Analogue gravity",
+      "definition": "Framework in which perturbations (sound, light, quasiparticles) in a moving fluid or BEC propagate on an emergent effective curved metric; lets laboratory systems mimic horizons and Hawking radiation.",
+      "relatedTo": ["acoustic-metric", "hawking-radiation", "gravity-as-hydrodynamics", "experimental-tests"]
+    },
+    {
+      "id": "acoustic-metric",
+      "name": "Acoustic metric / dumb hole",
+      "definition": "Unruh's effective metric for sound in a flowing fluid; a sonic (dumb-hole) horizon forms where flow speed equals sound speed |v| = c_s, with an associated analogue Hawking temperature from the surface gravity (velocity gradient).",
+      "relatedTo": ["analogue-gravity", "hawking-radiation", "unruh-temperature"]
+    },
+    {
+      "id": "hawking-radiation",
+      "name": "Hawking radiation",
+      "definition": "Thermal particle emission from a horizon at temperature set by surface gravity; observed in analogue (BEC) black holes by Steinhauer, confirming the kinematics (mode mixing, partner entanglement) but not the astrophysical effect itself.",
+      "relatedTo": ["acoustic-metric", "analogue-gravity", "bekenstein-hawking-entropy", "black-hole-thermodynamics"]
+    },
+    {
+      "id": "fermi-point",
+      "name": "Fermi point (Volovik)",
+      "definition": "A topologically stable defect in momentum space (as in superfluid 3He-A) near which relativistic fields, gauge symmetry and effective gravity emerge from the quantum vacuum.",
+      "relatedTo": ["analogue-gravity", "gravity-as-hydrodynamics", "emergent-gravity"]
+    },
+    {
+      "id": "gravity-as-hydrodynamics",
+      "name": "Gravity as hydrodynamics / geometro-hydrodynamics",
+      "definition": "View (Hu, Volovik) that general relativity is the long-wavelength, low-energy hydrodynamic/kinetic limit of an underlying many-body quantum system, with semiclassical gravity one rung above.",
+      "relatedTo": ["emergent-gravity", "analogue-gravity", "fermi-point", "semiclassical-gravity"]
+    },
+    {
+      "id": "nonequilibrium-spacetime-thermodynamics",
+      "name": "Non-equilibrium spacetime thermodynamics",
+      "definition": "Eling-Guedens-Jacobson 2006 extension where dS = delta Q/T + d_i S with an internal entropy production term (bulk/shear viscosity of the horizon), required to obtain f(R) gravity and interpreted as tidal heating.",
+      "relatedTo": ["einstein-equation-of-state", "clausius-relation", "gravity-as-hydrodynamics"]
+    },
+    {
+      "id": "cosmological-constant-problem",
+      "name": "Cosmological constant problem",
+      "definition": "The ~120 order-of-magnitude mismatch between the vacuum energy predicted by QFT and the observed Lambda; reappears in induced gravity and is addressed (as a postulate) by CosMIn and Bianconi's G-field.",
+      "relatedTo": ["induced-gravity", "cosmin", "volume-law-entropy-de-sitter", "swampland"]
+    },
+    {
+      "id": "gravity-from-quantum-relative-entropy",
+      "name": "Gravity from quantum relative entropy (Bianconi)",
+      "definition": "Bianconi's 2024/2025 action given by the quantum relative entropy between the spacetime metric and the metric induced by matter; an auxiliary G-field (Lagrange multipliers) yields a dressed Einstein-Hilbert action with an emergent small positive Lambda.",
+      "relatedTo": ["emergent-gravity", "cosmological-constant-problem", "entanglement-equilibrium"]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "jacobson-clausius",
+      "name": "Jacobson Clausius relation for spacetime",
+      "latex": "\\delta Q = T\\,dS,\\qquad T=\\frac{\\hbar a}{2\\pi c k_B},\\qquad dS=\\eta\\,\\delta A,\\qquad \\eta=\\frac{k_B c^3}{4G\\hbar}",
+      "meaning": "Imposing the Clausius relation with Unruh temperature and entropy proportional to horizon area for all local Rindler horizons is the starting point of the thermodynamic derivation of the Einstein equation.",
+      "source": "jacobson-1995"
+    },
+    {
+      "id": "einstein-from-thermodynamics",
+      "name": "Einstein equation from delta Q = T dS",
+      "latex": "T_{\\mu\\nu}k^\\mu k^\\nu = \\frac{\\hbar\\eta}{2\\pi}R_{\\mu\\nu}k^\\mu k^\\nu \\;\\Rightarrow\\; G_{\\mu\\nu}+\\Lambda g_{\\mu\\nu}=8\\pi G\\,T_{\\mu\\nu}",
+      "meaning": "Requiring the Clausius relation to hold for every null direction at every point forces the full Einstein equation with a cosmological constant arising as an integration constant; G = 1/(4 hbar eta).",
+      "source": "jacobson-1995"
+    },
+    {
+      "id": "nonequilibrium-entropy-balance",
+      "name": "Non-equilibrium spacetime entropy balance",
+      "latex": "dS = \\frac{\\delta Q}{T} + d_i S,\\qquad d_i S \\;\\propto\\; \\int (\\zeta\\,\\theta^2 + 2\\eta_s\\,\\sigma^2)\\,d\\lambda\\,dA",
+      "meaning": "Equilibrium thermodynamics yields only Einstein gravity; obtaining f(R) and accounting for horizon shear requires an internal entropy-production term interpreted as bulk/shear viscosity of spacetime.",
+      "source": "eling-guedens-jacobson-2006"
+    },
+    {
+      "id": "sakharov-induced-action",
+      "name": "Sakharov induced gravitational action",
+      "latex": "\\Gamma_{\\text{eff}}[g]=\\Lambda_0\\!\\int\\!\\sqrt{-g}\\,d^4x+\\frac{1}{16\\pi G_{\\text{ind}}}\\!\\int\\!\\sqrt{-g}\\,R\\,d^4x+\\cdots,\\qquad \\frac{1}{G_{\\text{ind}}}\\sim\\Lambda_{\\text{UV}}^2",
+      "meaning": "Integrating out matter fields induces the Einstein-Hilbert term; the induced Newton constant is quadratically sensitive to the UV cutoff, implying a Planck-scale cutoff, but the sign and the induced Lambda are problematic.",
+      "source": "sakharov-1967"
+    },
+    {
+      "id": "verlinde-entropic-force",
+      "name": "Verlinde entropic-force derivation of Newton's law",
+      "latex": "\\Delta S = 2\\pi k_B\\frac{mc}{\\hbar}\\Delta x,\\quad N=\\frac{Ac^3}{G\\hbar},\\quad E=\\tfrac12 N k_B T = Mc^2 \\;\\Rightarrow\\; F=T\\frac{\\Delta S}{\\Delta x}=\\frac{GMm}{r^2}",
+      "meaning": "Combining a holographic screen of N bits, equipartition of the enclosed energy Mc^2, and a Bekenstein-type entropy change recovers Newton's inverse-square law as an entropic force.",
+      "source": "verlinde-2010"
+    },
+    {
+      "id": "padmanabhan-emergence-cosmic-space",
+      "name": "Padmanabhan emergence of cosmic space",
+      "latex": "\\frac{dV}{dt}=L_P^2\\,(N_{sur}-N_{bulk}),\\quad N_{sur}=\\frac{4\\pi}{L_P^2 H^2},\\quad N_{bulk}=\\frac{2|\\rho+3p|V}{k_B T},\\quad T=\\frac{H}{2\\pi}",
+      "meaning": "Cosmic expansion is the drive toward holographic equipartition N_sur = N_bulk; this single equation reproduces the standard Friedmann equation.",
+      "source": "padmanabhan-2012"
+    },
+    {
+      "id": "cosmin-lambda",
+      "name": "CosMIn value of the cosmological constant",
+      "latex": "N_{\\text{CosMIn}} = 4\\pi \\;\\Longrightarrow\\; \\Lambda\\, L_P^2 \\approx 3.4\\times 10^{-122}",
+      "meaning": "Postulating that the conserved cosmic information equals 4 pi (bits on a unit sphere) yields the observed numerical value of the cosmological constant.",
+      "source": "padmanabhan-cosmin-2013"
+    },
+    {
+      "id": "entanglement-equilibrium-condition",
+      "name": "Entanglement equilibrium stationarity",
+      "latex": "\\delta S_{tot}=\\eta\\,\\delta A\\big|_V+\\delta\\langle K\\rangle=0,\\quad \\delta A\\big|_V=-\\frac{\\Omega_{d-2}\\ell^d}{d^2-1}G_{00},\\quad \\eta=\\frac{1}{4\\hbar G}",
+      "meaning": "Stationarity of total (UV area + IR modular) entanglement entropy of a small causal diamond at fixed volume is equivalent to the semiclassical Einstein equation G_ab + Lambda g_ab = 8 pi G delta<T_ab>.",
+      "source": "jacobson-2015"
+    },
+    {
+      "id": "verlinde-apparent-dark-matter",
+      "name": "Verlinde apparent dark matter relation",
+      "latex": "\\int_0^r \\frac{G\\,M_D^2(r')}{r'^2}\\,dr' = \\frac{a_0}{6}M_B(r)\\,r,\\qquad a_0=cH_0,\\qquad M_D(r)=\\sqrt{\\frac{cH_0}{6G}M_B r}",
+      "meaning": "Relates the apparent (emergent) dark mass M_D to the enclosed baryonic mass M_B and the Hubble acceleration a_0 = c H_0; for point masses it reduces to the MOND-like sqrt(a_0 a_N) law, with no free parameters.",
+      "source": "verlinde-2016"
+    },
+    {
+      "id": "acoustic-metric",
+      "name": "Unruh acoustic metric",
+      "latex": "ds^2=\\frac{\\rho}{c_s}\\Big[-(c_s^2-v^2)dt^2-2\\,\\vec v\\cdot d\\vec x\\,dt+d\\vec x\\cdot d\\vec x\\Big]",
+      "meaning": "Sound waves in a flowing fluid of density rho, sound speed c_s and velocity v propagate on this effective Lorentzian metric; a horizon forms where |v| = c_s, with analogue Hawking temperature T_H = hbar kappa / (2 pi k_B).",
+      "source": "unruh-1981"
+    },
+    {
+      "id": "analogue-hawking-temperature",
+      "name": "Analogue Hawking temperature",
+      "latex": "T_H = \\frac{\\hbar}{2\\pi k_B}\\,\\frac{\\partial (c_s-v)}{\\partial x}\\Big|_{\\text{horizon}} = \\frac{\\hbar\\,\\kappa}{2\\pi k_B}",
+      "meaning": "Thermal temperature of analogue Hawking radiation set by the analogue surface gravity kappa (velocity gradient at the sonic horizon); measured to match the spectrum's thermality by Steinhauer's group.",
+      "source": "munoz-de-nova-2019"
+    }
+  ],
+  "references": [
+    {
+      "id": "sakharov-1967",
+      "authors": "A. D. Sakharov",
+      "title": "Vacuum quantum fluctuations in curved space and the theory of gravitation",
+      "year": 1967,
+      "doi": "10.1070/PU1991v034n05ABEH002498",
+      "url": "https://doi.org/10.1070/PU1991v034n05ABEH002498",
+      "significance": "Founding paper of induced gravity: gravity as metric elasticity of the vacuum."
+    },
+    {
+      "id": "unruh-1981",
+      "authors": "W. G. Unruh",
+      "title": "Experimental Black-Hole Evaporation?",
+      "year": 1981,
+      "doi": "10.1103/PhysRevLett.46.1351",
+      "url": "https://doi.org/10.1103/PhysRevLett.46.1351",
+      "significance": "Introduced the dumb hole and the acoustic analogue of Hawking radiation, founding analogue gravity."
+    },
+    {
+      "id": "jacobson-1995",
+      "authors": "T. Jacobson",
+      "title": "Thermodynamics of Spacetime: The Einstein Equation of State",
+      "year": 1995,
+      "arxiv": "gr-qc/9504004",
+      "doi": "10.1103/PhysRevLett.75.1260",
+      "url": "https://arxiv.org/abs/gr-qc/9504004",
+      "significance": "Cornerstone result: derives the Einstein equation from delta Q = T dS on local Rindler horizons."
+    },
+    {
+      "id": "visser-2002",
+      "authors": "M. Visser",
+      "title": "Sakharov's induced gravity: a modern perspective",
+      "year": 2002,
+      "arxiv": "gr-qc/0204062",
+      "doi": "10.1142/S0217732302006886",
+      "url": "https://arxiv.org/abs/gr-qc/0204062",
+      "significance": "Authoritative modern review of induced gravity and its sign/cosmological-constant problems."
+    },
+    {
+      "id": "volovik-2003",
+      "authors": "G. E. Volovik",
+      "title": "The Universe in a Helium Droplet",
+      "year": 2003,
+      "doi": "10.1093/acprof:oso/9780199564842.001.0001",
+      "url": "https://global.oup.com/academic/product/the-universe-in-a-helium-droplet-9780199564842",
+      "significance": "Develops the Fermi-point scenario: emergence of relativistic fields, gauge fields and gravity from the quantum vacuum of superfluid 3He."
+    },
+    {
+      "id": "eling-guedens-jacobson-2006",
+      "authors": "C. Eling, R. Guedens, T. Jacobson",
+      "title": "Non-equilibrium Thermodynamics of Spacetime",
+      "year": 2006,
+      "arxiv": "gr-qc/0602001",
+      "doi": "10.1103/PhysRevLett.96.121301",
+      "url": "https://arxiv.org/abs/gr-qc/0602001",
+      "significance": "Shows f(R) gravity and horizon shear require internal entropy production (spacetime viscosity)."
+    },
+    {
+      "id": "verlinde-2010",
+      "authors": "E. P. Verlinde",
+      "title": "On the Origin of Gravity and the Laws of Newton",
+      "year": 2011,
+      "arxiv": "1001.0785",
+      "doi": "10.1007/JHEP04(2011)029",
+      "url": "https://arxiv.org/abs/1001.0785",
+      "significance": "Most-cited entropic-gravity paper: derives Newton's law and Einstein equations as an entropic force."
+    },
+    {
+      "id": "kobakhidze-2010",
+      "authors": "A. Kobakhidze",
+      "title": "Gravity is not an entropic force",
+      "year": 2011,
+      "arxiv": "1009.5414",
+      "doi": "10.1103/PhysRevD.83.021502",
+      "url": "https://arxiv.org/abs/1009.5414",
+      "significance": "Key experimental objection: neutron bound-state (qBounce) data argued to disprove entropic origin of gravity."
+    },
+    {
+      "id": "barcelo-liberati-visser-2011",
+      "authors": "C. Barcelo, S. Liberati, M. Visser",
+      "title": "Analogue Gravity",
+      "year": 2011,
+      "doi": "10.12942/lrr-2011-3",
+      "url": "https://doi.org/10.12942/lrr-2011-3",
+      "significance": "Standard Living Reviews survey of analogue gravity, acoustic metrics, and what analogues can and cannot show."
+    },
+    {
+      "id": "padmanabhan-2010-book",
+      "authors": "T. Padmanabhan",
+      "title": "Gravitation: Foundations and Frontiers",
+      "year": 2010,
+      "doi": "10.1017/CBO9780511807787",
+      "url": "https://www.cambridge.org/core/books/gravitation/AE442EE4214091F5DB46499ECAD69E32",
+      "significance": "Textbook articulation of the thermodynamic/emergent gravity program and holographic action structure."
+    },
+    {
+      "id": "padmanabhan-2012",
+      "authors": "T. Padmanabhan",
+      "title": "Emergence and Expansion of Cosmic Space as due to the Quest for Holographic Equipartition",
+      "year": 2012,
+      "arxiv": "1206.4916",
+      "url": "https://arxiv.org/abs/1206.4916",
+      "significance": "Derives cosmic expansion (Friedmann equation) from dV/dt = N_sur - N_bulk."
+    },
+    {
+      "id": "padmanabhan-cosmin-2013",
+      "authors": "H. Padmanabhan, T. Padmanabhan",
+      "title": "CosMIn: The Solution to the Cosmological Constant Problem",
+      "year": 2013,
+      "arxiv": "1302.3226",
+      "doi": "10.1142/S0218271813420017",
+      "url": "https://arxiv.org/abs/1302.3226",
+      "significance": "Postulate N = 4 pi yields the observed Lambda l_P^2 approx 3.4e-122, a rare quantitative output."
+    },
+    {
+      "id": "faulkner-2013",
+      "authors": "T. Faulkner, M. Guica, T. Hartman, R. C. Myers, M. Van Raamsdonk",
+      "title": "Gravitation from Entanglement in Holographic CFTs",
+      "year": 2014,
+      "arxiv": "1312.7856",
+      "doi": "10.1007/JHEP03(2014)051",
+      "url": "https://arxiv.org/abs/1312.7856",
+      "significance": "Linearized Einstein equations from the first law of entanglement entropy; the AdS/CFT analogue of Jacobson's theorem."
+    },
+    {
+      "id": "jacobson-2015",
+      "authors": "T. Jacobson",
+      "title": "Entanglement Equilibrium and the Einstein Equation",
+      "year": 2016,
+      "arxiv": "1505.04753",
+      "doi": "10.1103/PhysRevLett.116.201101",
+      "url": "https://arxiv.org/abs/1505.04753",
+      "significance": "Derives semiclassical Einstein equation from maximal/stationary vacuum entanglement entropy of small causal diamonds."
+    },
+    {
+      "id": "steinhauer-2016",
+      "authors": "J. Steinhauer",
+      "title": "Observation of quantum Hawking radiation and its entanglement in an analogue black hole",
+      "year": 2016,
+      "arxiv": "1510.00621",
+      "doi": "10.1038/nphys3863",
+      "url": "https://arxiv.org/abs/1510.00621",
+      "significance": "First reported observation of spontaneous, entangled Hawking radiation in a BEC analogue black hole."
+    },
+    {
+      "id": "verlinde-2016",
+      "authors": "E. P. Verlinde",
+      "title": "Emergent Gravity and the Dark Universe",
+      "year": 2017,
+      "arxiv": "1611.02269",
+      "doi": "10.21468/SciPostPhys.2.3.016",
+      "url": "https://arxiv.org/abs/1611.02269",
+      "significance": "Derives apparent dark matter from de Sitter volume-law entropy with a_0 = c H_0; MOND-like with no free parameters."
+    },
+    {
+      "id": "brouwer-2017",
+      "authors": "M. M. Brouwer et al.",
+      "title": "First test of Verlinde's theory of Emergent Gravity using Weak Gravitational Lensing measurements",
+      "year": 2017,
+      "arxiv": "1612.03034",
+      "doi": "10.1093/mnras/stw3192",
+      "url": "https://arxiv.org/abs/1612.03034",
+      "significance": "Galaxy-galaxy lensing of 33,613 galaxies (KiDS+GAMA) consistent with Verlinde's parameter-free prediction."
+    },
+    {
+      "id": "lelli-2017",
+      "authors": "F. Lelli, S. S. McGaugh, J. M. Schombert, M. S. Pawlowski",
+      "title": "Testing Verlinde's Emergent Gravity with the Radial Acceleration Relation",
+      "year": 2017,
+      "arxiv": "1702.04355",
+      "doi": "10.1093/mnrasl/slx049",
+      "url": "https://arxiv.org/abs/1702.04355",
+      "significance": "Finds emergent gravity inconsistent with the tight, scatter-free radial acceleration relation."
+    },
+    {
+      "id": "dardashti-2019",
+      "authors": "R. Dardashti, S. Hartmann, K. P. Y. Thebault, E. Winsberg",
+      "title": "Hawking radiation and analogue experiments: A Bayesian analysis",
+      "year": 2019,
+      "arxiv": "1604.05932",
+      "doi": "10.1016/j.shpsb.2018.04.004",
+      "url": "https://arxiv.org/abs/1604.05932",
+      "significance": "Argues via universality that analogue experiments can confirm Hawking radiation in real black holes."
+    },
+    {
+      "id": "crowther-2019",
+      "authors": "K. Crowther, N. S. Linnemann, C. Wuthrich",
+      "title": "What we cannot learn from analogue experiments",
+      "year": 2021,
+      "arxiv": "1811.03859",
+      "doi": "10.1007/s11229-019-02190-0",
+      "url": "https://arxiv.org/abs/1811.03859",
+      "significance": "Counterargument that analogue confirmation of inaccessible targets begs the question (epistemic limits)."
+    },
+    {
+      "id": "cao-carroll-2018",
+      "authors": "C. Cao, S. M. Carroll",
+      "title": "Bulk Entanglement Gravity without a Boundary: Towards Finding Einstein's Equation in Hilbert Space",
+      "year": 2018,
+      "arxiv": "1712.02803",
+      "doi": "10.1103/PhysRevD.97.086003",
+      "url": "https://arxiv.org/abs/1712.02803",
+      "significance": "Recovers space and weak-field Einstein equation from bulk entanglement (space from Hilbert space)."
+    },
+    {
+      "id": "munoz-de-nova-2019",
+      "authors": "J. R. Munoz de Nova, K. Golubkov, V. I. Kolobov, J. Steinhauer",
+      "title": "Observation of thermal Hawking radiation at the Hawking temperature in an analogue black hole",
+      "year": 2019,
+      "arxiv": "1809.00913",
+      "doi": "10.1038/s41586-019-1241-0",
+      "url": "https://arxiv.org/abs/1809.00913",
+      "significance": "Measured spectrum is thermal at the analogue Hawking temperature set by surface gravity."
+    },
+    {
+      "id": "hodson-zhao-2018",
+      "authors": "A. O. Hodson, H. Zhao",
+      "title": "Verlinde's emergent gravity versus MOND and the case of dwarf spheroidals",
+      "year": 2018,
+      "arxiv": "1612.06282",
+      "doi": "10.1093/mnras/sty685",
+      "url": "https://arxiv.org/abs/1612.06282",
+      "significance": "Shows emergent gravity equals MOND for point masses but differs by a factor 2 in galaxy cores; tension with dwarfs."
+    },
+    {
+      "id": "huggett-wuthrich-2025",
+      "authors": "N. Huggett, C. Wuthrich",
+      "title": "Out of Nowhere: The Emergence of Spacetime in Quantum Theories of Gravity",
+      "year": 2025,
+      "arxiv": "2101.06955",
+      "url": "https://arxiv.org/abs/2101.06955",
+      "significance": "Philosophical analysis of spacetime emergence and the empirical-coherence problem across QG approaches."
+    },
+    {
+      "id": "svancara-2024",
+      "authors": "P. Svancara, S. Patrick, R. Gregory, C. F. Barenghi, S. Weinfurtner et al.",
+      "title": "Rotating curved spacetime signatures from a giant quantum vortex",
+      "year": 2024,
+      "arxiv": "2308.10773",
+      "doi": "10.1038/s41586-024-07176-8",
+      "url": "https://arxiv.org/abs/2308.10773",
+      "significance": "Stationary giant quantum vortex in superfluid 4He simulates rotating black-hole ringdown and bound states."
+    },
+    {
+      "id": "bianconi-2025",
+      "authors": "G. Bianconi",
+      "title": "Gravity from entropy",
+      "year": 2025,
+      "arxiv": "2408.14391",
+      "doi": "10.1103/PhysRevD.111.066001",
+      "url": "https://arxiv.org/abs/2408.14391",
+      "significance": "Derives a dressed Einstein-Hilbert action with emergent small positive Lambda from quantum relative entropy of metrics; G-field."
+    },
+    {
+      "id": "visser-2011-comments",
+      "authors": "M. Visser",
+      "title": "Conservative entropic forces (Comments on Verlinde)",
+      "year": 2011,
+      "arxiv": "1108.5240",
+      "doi": "10.1007/JHEP10(2011)140",
+      "url": "https://arxiv.org/abs/1108.5240",
+      "significance": "Shows reproducing conservative Newtonian forces entropically demands unphysical entropy and many temperature baths."
+    },
+    {
+      "id": "schmole-2021",
+      "authors": "A. J. Schimmoller, G. McCaul, H. Abele, D. I. Bondar",
+      "title": "Decoherence-Free Entropic Gravity: Model and Experimental Tests",
+      "year": 2021,
+      "arxiv": "2012.10626",
+      "doi": "10.1103/PhysRevResearch.3.033065",
+      "url": "https://arxiv.org/abs/2012.10626",
+      "significance": "Open-quantum-system model of entropic gravity compatible with qBounce ultracold-neutron data."
+    },
+    {
+      "id": "hu-1996",
+      "authors": "B. L. Hu",
+      "title": "General Relativity as Geometro-Hydrodynamics",
+      "year": 1996,
+      "arxiv": "gr-qc/9607070",
+      "url": "https://arxiv.org/abs/gr-qc/9607070",
+      "significance": "Articulates the kinetic-theory/hydrodynamic hierarchy in which GR and semiclassical gravity emerge."
+    }
+  ],
+  "openProblems": [
+    {
+      "id": "atoms-of-spacetime",
+      "statement": "Identify the microscopic degrees of freedom ('atoms of spacetime') whose statistical mechanics reproduces S = A/4 l_P^2 and the Einstein equation.",
+      "whyHard": "The thermodynamic derivations give only an equation of state, which is by construction insensitive to microscopic details; horizon entropy is universal and observer-dependent (Rindler), making the inverse problem ill-posed.",
+      "attempts": "LQG spin-network counting, causal-set link counting (Dou-Sorkin), induced-gravity field content, and entanglement-based 'it from qubit' programs each supply candidate microstates but none is established as THE microtheory."
+    },
+    {
+      "id": "induced-G-sign-and-cc",
+      "statement": "Show that Sakharov-style integrating-out of matter gives the correct sign and magnitude of Newton's constant while not generating a huge cosmological constant.",
+      "whyHard": "1/G_ind ~ Lambda_UV^2 and Lambda_0 ~ Lambda_UV^4 depend on a delicate boson/fermion balance at the UV cutoff where the effective theory breaks down; the sign can come out wrong.",
+      "attempts": "Supersymmetric cancellations, specific field-content tuning, and reformulations on AdS backgrounds; CosMIn and Bianconi's G-field address Lambda but by postulate."
+    },
+    {
+      "id": "equilibrium-vs-entropy-production",
+      "statement": "Determine when spacetime is 'in equilibrium' (reversible delta Q = T dS giving Einstein) versus when internal entropy production (giving f(R)/viscosity) is required.",
+      "whyHard": "The boundary between equilibrium and non-equilibrium thermodynamics of horizons is imposed by hand and lacks a microscopic justification.",
+      "attempts": "Eling-Guedens-Jacobson bulk/shear viscosity terms; Chirco-Liberati origin-of-entropy-production analyses; still no first-principles criterion."
+    },
+    {
+      "id": "verlinde-covariant-and-clusters",
+      "statement": "Provide a fully covariant, Lagrangian formulation of Verlinde's 2016 emergent gravity that also fits galaxy clusters and respects solar-system constraints.",
+      "whyHard": "The de Sitter volume-law entropy and 'elastic' response are heuristic, mix relativistic (Mc^2) and non-relativistic notions, lack a variational principle, and underpredict cluster cores by a factor of 2-3.",
+      "attempts": "Numerous phenomenological fits (Brouwer pass, Lelli/Hodson-Zhao fail); Hossenfelder's covariant version of a Verlinde-like force; no complete theory yet."
+    },
+    {
+      "id": "entropic-decoherence",
+      "statement": "Reconcile an entropic/statistical origin of gravity with the observed quantum coherence of gravitationally bound states (qBounce, neutron interferometry).",
+      "whyHard": "Genuinely entropic forces should be noisy and induce decoherence that ultracold-neutron experiments do not see.",
+      "attempts": "Kobakhidze's no-go; rebuttals by Chaichian-Oksanen-Tureanu; decoherence-free open-system models (TU Wien) that evade it with extra assumptions."
+    },
+    {
+      "id": "what-analogues-prove",
+      "statement": "Determine what, if anything, analogue Hawking radiation establishes about astrophysical black holes and trans-Planckian robustness.",
+      "whyHard": "The astrophysical target is experimentally inaccessible; inferring it from analogues requires assuming the modelling framework's adequacy, which critics call question-begging.",
+      "attempts": "Dardashti et al. Bayesian universality arguments for confirmation; Crowther-Linnemann-Wuthrich circularity counterargument; unresolved."
+    },
+    {
+      "id": "beyond-semiclassical",
+      "statement": "Establish whether the emergent/thermodynamic picture survives beyond the semiclassical regime and how it meshes with theories that quantize the metric.",
+      "whyHard": "Horizon thermodynamics is intrinsically semiclassical; the emergent program and the quantization program make opposite assumptions about what is fundamental.",
+      "attempts": "Entanglement-equilibrium and bulk-entanglement-gravity push toward Hilbert-space formulations; connections to AdS/CFT exist but a full quantum completion does not."
+    },
+    {
+      "id": "second-law-and-arrow",
+      "statement": "Explain the origin and validity of a generalized second law and the thermodynamic arrow of time within emergent gravity.",
+      "whyHard": "If gravity is thermodynamic, the second law should be derivable, but horizon entropy is observer-dependent and lacks an agreed microscopic ensemble.",
+      "attempts": "Generalized second law proofs (Wall), Jacobson-Parentani analyses; remains conceptually open in the emergent framework."
+    }
+  ],
+  "connections": [
+    {
+      "from": "emergent-gravity",
+      "to": "holography-adscft",
+      "type": "shared-structure",
+      "description": "Both rest on area-law entanglement entropy and the holographic principle. The first law of entanglement in AdS/CFT (Faulkner et al. 2014) reproduces linearized Einstein equations in the bulk, the holographic version of Jacobson's theorem; Verlinde 2016 explicitly builds on AdS area law and its breakdown in de Sitter. AdS/CFT supplies the concrete microtheory the generic emergent program lacks.",
+      "explored": "well"
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "entanglement-spacetime",
+      "type": "shared-math",
+      "description": "Jacobson's entanglement equilibrium (2015) and Cao-Carroll (2018) derive geometry and Einstein's equation directly from entanglement entropy and the modular Hamiltonian, sharing the whole 'spacetime from entanglement' / it-from-qubit apparatus (RT formula, modular flow). Less explored beyond linear order and without an AdS boundary.",
+      "explored": "well"
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "The program takes Bekenstein-Hawking entropy and Hawking temperature as inputs and suggests the information paradox is a semiclassical artifact resolved by spacetime atoms; analogue black holes test Hawking kinematics and partner-mode entanglement, touching but not resolving the paradox (no Page curve from emergent gravity itself).",
+      "explored": "partially"
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "semiclassical-gravity",
+      "type": "limit",
+      "description": "Entanglement equilibrium yields the semiclassical equation G_ab = 8 pi G <T_ab>; the whole thermodynamic program lives in the QFT-on-curved-background regime (Unruh, Hawking). Emergent gravity essentially claims semiclassical gravity IS the thermodynamic limit, so this is its home regime.",
+      "explored": "well"
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "Uniquely test-rich: Verlinde 2016 is probed by galaxy-galaxy lensing (Brouwer, pass), rotation curves and RAR (Lelli, fail), dwarf spheroidals (Hodson-Zhao); entropic gravity by neutron interferometry/qBounce (Kobakhidze); and analogue gravity is the only laboratory-accessible part (Steinhauer, Weinfurtner).",
+      "explored": "partially"
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "asymptotic-safety",
+      "type": "conjecture",
+      "description": "Induced gravity and asymptotic safety both treat G and Lambda as effective/running quantities fixed by UV physics. Conjectured bridge: an AS UV fixed point could be the microtheory whose effective description is the induced EH action. Essentially nobody has systematically developed this link - prime 'barely explored' territory.",
+      "explored": "barely"
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "causal-sets",
+      "type": "shared-structure",
+      "description": "Both share the thermodynamic-statistical ethos: causal-set horizon entropy from counting causal links (Dou-Sorkin) gives S proportional to A, and Jacobson's local causal horizons have a natural discrete counterpart. Conceptual bridge exists; whether causal-set counting quantitatively reproduces Jacobson's derivation is open.",
+      "explored": "barely"
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "loop-quantum-gravity",
+      "type": "conflict",
+      "description": "Philosophically opposed (LQG quantizes geometry; emergent gravity says geometry is not fundamental), yet potentially complementary: LQG reproduces S = A/4 from spin-network counting and could supply the 'atoms of spacetime' for the thermodynamic limit. Cross-development is almost nonexistent.",
+      "explored": "barely"
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "group-field-theory",
+      "type": "shared-structure",
+      "description": "GFT condensate cosmology treats the universe as a quantum fluid of atoms of space, a literal realization of 'gravity as hydrodynamics' (Hu, Volovik); its emergent Friedmann equation parallels Padmanabhan's dV/dt = N_sur - N_bulk. Conceptually close, quantitatively unconnected.",
+      "explored": "barely"
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "swampland",
+      "type": "conjecture",
+      "description": "Verlinde 2016 and CosMIn tie Lambda to other scales; swampland de Sitter/distance conjectures likewise place small positive Lambda at the edge of consistency. If Lambda is emergent (Bianconi G-field), it might illuminate the de Sitter swampland problem. Speculative and unworked.",
+      "explored": "barely"
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "quantum-cosmology",
+      "type": "shared-math",
+      "description": "Padmanabhan's emergence of cosmic space reformulates the Friedmann equation as a holographic-equipartition flow and is being generalized (FRW, Lanczos-Lovelock, deformed entropy). Connection to deeper quantum cosmology (Wheeler-DeWitt) is weak.",
+      "explored": "partially"
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "cosmological-constant-problem",
+      "type": "shared-structure",
+      "description": "The same one-loop integration that induces G generates a huge vacuum energy; CosMIn (N = 4 pi) and Bianconi's G-field both yield the observed small Lambda but as postulates. The emergent framework reframes, and occasionally numerically hits, the CC problem rather than solving it from first principles.",
+      "explored": "partially"
+    },
+    {
+      "from": "emergent-gravity",
+      "to": "noncommutative-geometry",
+      "type": "conjecture",
+      "description": "Minimal-length/UV-cutoff structures central to induced gravity (Lambda_UV setting G) resonate with noncommutative spacetime's built-in length scale; both regularize horizon entropy counting. Almost no direct work links Jacobson/Sakharov thermodynamics to NCG spectral-action gravity.",
+      "explored": "barely"
+    }
+  ]
+}

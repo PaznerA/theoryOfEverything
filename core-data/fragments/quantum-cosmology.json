@@ -1,0 +1,766 @@
+{
+  "slug": "quantum-cosmology",
+  "name": "Quantum Cosmology",
+  "concepts": [
+    {
+      "id": "wheeler-dewitt-equation",
+      "name": "Wheeler-DeWitt equation",
+      "definition": "The quantum version of the Hamiltonian constraint of general relativity, H-hat Psi[h_ij, phi] = 0. A second-order functional differential equation on superspace whose solution is the wave functional of the universe. Contains no external time parameter, giving rise to the problem of time.",
+      "relatedTo": ["minisuperspace", "wave-function-of-the-universe", "problem-of-time", "dewitt-supermetric"]
+    },
+    {
+      "id": "minisuperspace",
+      "name": "Minisuperspace",
+      "definition": "A finite-dimensional truncation of the infinite-dimensional superspace (the space of all 3-geometries modulo diffeomorphisms) obtained by imposing symmetries such as homogeneity and isotropy; typically parametrized by scale factor a and a homogeneous scalar field phi for FLRW models.",
+      "relatedTo": ["wheeler-dewitt-equation", "wave-function-of-the-universe", "dewitt-supermetric"]
+    },
+    {
+      "id": "wave-function-of-the-universe",
+      "name": "Wave function of the universe",
+      "definition": "A quantum state Psi encoding the entire cosmology, defined either as a solution of the Wheeler-DeWitt equation or via a gravitational path integral with specified boundary conditions. Its modulus squared is interpreted (problematically) as a probability for a given 3-geometry.",
+      "relatedTo": ["wheeler-dewitt-equation", "no-boundary-proposal", "tunneling-proposal"]
+    },
+    {
+      "id": "no-boundary-proposal",
+      "name": "Hartle-Hawking no-boundary proposal",
+      "definition": "Proposal that the wave function of the universe is given by a Euclidean path integral over compact 4-geometries whose only boundary is the prescribed 3-geometry, so spacetime closes off smoothly with no initial boundary (the shuttlecock picture). Weights small cosmological constant more heavily.",
+      "relatedTo": ["wave-function-of-the-universe", "euclidean-path-integral", "tunneling-proposal", "picard-lefschetz-theory"]
+    },
+    {
+      "id": "tunneling-proposal",
+      "name": "Vilenkin tunneling proposal",
+      "definition": "Proposal that the universe is created by quantum tunneling from nothing (no classical spacetime, matter or energy) into a de Sitter phase; the wave function contains only outgoing (expanding) waves asymptotically. Weights large cosmological constant, favoring inflation.",
+      "relatedTo": ["wave-function-of-the-universe", "no-boundary-proposal", "creation-from-nothing"]
+    },
+    {
+      "id": "euclidean-path-integral",
+      "name": "Euclidean gravitational path integral",
+      "definition": "Path integral over Euclidean-signature 4-geometries weighted by exp(-I_E/hbar); used to define the no-boundary wave function and, more generally, the partition function and entropy in gravity. Conditionally convergent and requires contour prescription.",
+      "relatedTo": ["no-boundary-proposal", "picard-lefschetz-theory", "lorentzian-path-integral"]
+    },
+    {
+      "id": "lorentzian-path-integral",
+      "name": "Lorentzian gravitational path integral",
+      "definition": "Path integral over Lorentzian-signature geometries weighted by exp(iS/hbar); for minisuperspace it is rendered absolutely convergent by Picard-Lefschetz theory. Central to the Feldbrugge-Lehners-Turok reformulation of the no-boundary and tunneling proposals.",
+      "relatedTo": ["picard-lefschetz-theory", "euclidean-path-integral", "no-boundary-proposal"]
+    },
+    {
+      "id": "picard-lefschetz-theory",
+      "name": "Picard-Lefschetz theory",
+      "definition": "Mathematical framework that deforms an oscillatory integration contour onto steepest-descent paths (Lefschetz thimbles), turning a conditionally convergent path integral into an absolutely convergent one and identifying the relevant complex saddle points.",
+      "relatedTo": ["lorentzian-path-integral", "no-boundary-proposal", "kontsevich-segal-criterion"]
+    },
+    {
+      "id": "kontsevich-segal-criterion",
+      "name": "Kontsevich-Segal allowability criterion",
+      "definition": "Criterion specifying which complex metrics are physically admissible, by requiring that quantum field theories can be consistently defined on them (sum of degrees of rotation of the metric eigenvalues bounded by pi). Used to constrain saddles in quantum cosmology and inflation.",
+      "relatedTo": ["picard-lefschetz-theory", "no-boundary-proposal", "complex-saddle-points"]
+    },
+    {
+      "id": "problem-of-time",
+      "name": "Problem of time",
+      "definition": "The conceptual difficulty that the Wheeler-DeWitt equation has no external time parameter and no canonically positive inner product, since time means different things in GR (dynamical) and QM (background). Strategies: internal clocks, Page-Wootters conditional probabilities, Rovelli evolving constants.",
+      "relatedTo": ["wheeler-dewitt-equation", "page-wootters-mechanism"]
+    },
+    {
+      "id": "big-bounce",
+      "name": "Big bounce",
+      "definition": "Replacement of the big bang singularity by a non-singular quantum bounce, occurring in loop quantum cosmology when the energy density reaches the critical density rho_c approximately 0.41 rho_Planck, where quantum-geometric repulsion makes the universe rebound from contraction to expansion.",
+      "relatedTo": ["loop-quantum-cosmology", "effective-friedmann-equation", "singularity-resolution"]
+    },
+    {
+      "id": "loop-quantum-cosmology",
+      "name": "Loop quantum cosmology",
+      "definition": "Symmetry-reduced cosmological application of loop quantum gravity using Ashtekar variables, holonomies and the area gap. Replaces the Wheeler-DeWitt differential equation with a difference equation, yielding deterministic evolution across the Planck regime and a big bounce.",
+      "relatedTo": ["big-bounce", "effective-friedmann-equation", "holonomy-corrections", "area-gap"]
+    },
+    {
+      "id": "effective-friedmann-equation",
+      "name": "Effective (modified) Friedmann equation",
+      "definition": "Semiclassical LQC equation H^2 = (8 pi G/3) rho (1 - rho/rho_c) incorporating leading quantum-geometry corrections; the (1 - rho/rho_c) factor causes the bounce at rho = rho_c and reduces to the classical Friedmann equation for rho << rho_c.",
+      "relatedTo": ["loop-quantum-cosmology", "big-bounce", "critical-density"]
+    },
+    {
+      "id": "holonomy-corrections",
+      "name": "Holonomy and inverse-volume corrections",
+      "definition": "Two classes of quantum corrections in LQC. Holonomy corrections (from representing the connection by holonomies around small loops, mu-bar / improved-dynamics scheme) dominate the bounce; inverse-volume corrections dominate at small volumes.",
+      "relatedTo": ["loop-quantum-cosmology", "effective-friedmann-equation", "area-gap"]
+    },
+    {
+      "id": "area-gap",
+      "name": "Area gap",
+      "definition": "Smallest nonzero eigenvalue of the area operator in loop quantum gravity, Delta = 4 sqrt(3) pi gamma l_Planck^2, with gamma the Barbero-Immirzi parameter (~0.2375). Sets the discreteness scale that regularizes the bounce and fixes the critical density.",
+      "relatedTo": ["loop-quantum-cosmology", "critical-density", "holonomy-corrections"]
+    },
+    {
+      "id": "critical-density",
+      "name": "Critical (bounce) density",
+      "definition": "Maximum energy density rho_c = sqrt(3)/(32 pi^2 gamma^3 G^2 hbar) approximately 0.41 rho_Planck at which the LQC big bounce occurs; a sharp quantitative prediction of loop quantum cosmology.",
+      "relatedTo": ["big-bounce", "effective-friedmann-equation", "area-gap"]
+    },
+    {
+      "id": "trans-planckian-problem",
+      "name": "Trans-Planckian problem",
+      "definition": "The issue that observed CMB modes had physical wavelengths smaller than the Planck length at the start of inflation, so predictions extrapolate physics into a regime where it may not hold; modified dispersion relations (Corley-Jacobson) can alter the spectrum while Unruh-type ones do not.",
+      "relatedTo": ["inflation", "trans-planckian-censorship", "modified-dispersion-relation"]
+    },
+    {
+      "id": "trans-planckian-censorship",
+      "name": "Trans-Planckian Censorship Conjecture (TCC)",
+      "definition": "Swampland conjecture (Bedroya-Vafa 2019): sub-Planckian quantum fluctuations must never be stretched beyond the Hubble horizon and freeze. Implies |V'|/V >= 2/sqrt(d-2) asymptotically, bounding inflation energy scale and forbidding long-lived de Sitter.",
+      "relatedTo": ["trans-planckian-problem", "swampland", "de-sitter-conjecture", "inflation"]
+    },
+    {
+      "id": "eternal-inflation",
+      "name": "Eternal inflation",
+      "definition": "Regime in which quantum fluctuations of the inflaton keep inflation going forever in an ever-growing comoving volume, with reheating completing only in disconnected pocket universes, generically producing a multiverse.",
+      "relatedTo": ["inflation", "multiverse", "measure-problem"]
+    },
+    {
+      "id": "measure-problem",
+      "name": "Measure problem",
+      "definition": "The problem of assigning well-defined probabilities in an eternally inflating multiverse where volumes and observer counts diverge; no canonical normalization exists, and proposed measures (causal patch, scale-factor cutoff, stationary) suffer paradoxes (Boltzmann brains, youngness).",
+      "relatedTo": ["eternal-inflation", "multiverse", "anthropic-reasoning"]
+    },
+    {
+      "id": "multiverse",
+      "name": "Multiverse",
+      "definition": "Ensemble of causally disconnected pocket universes with potentially different effective constants and vacua, produced by eternal inflation populating the string landscape; the framework in which the measure problem and anthropic reasoning arise.",
+      "relatedTo": ["eternal-inflation", "measure-problem", "string-landscape"]
+    },
+    {
+      "id": "ekpyrotic-cosmology",
+      "name": "Ekpyrotic / cyclic cosmology",
+      "definition": "Alternative to inflation in which a slowly contracting phase with ultra-stiff equation of state w >> 1 generates a nearly scale-invariant spectrum via the entropic (two-field) mechanism, predicting negligible tensor modes (r ~ 0) and local non-Gaussianity f_NL ~ 5; cyclic versions iterate cosmic epochs.",
+      "relatedTo": ["string-cosmology", "bouncing-cosmology", "mukhanov-sasaki-spectrum"]
+    },
+    {
+      "id": "string-gas-cosmology",
+      "name": "String gas cosmology",
+      "definition": "Early-universe model with a quasi-static Hagedorn phase of a gas of highly excited strings; T-duality and winding modes resolve the initial singularity and generate a nearly scale-invariant spectrum with a characteristic slightly blue tensor tilt.",
+      "relatedTo": ["string-cosmology", "t-duality", "bouncing-cosmology"]
+    },
+    {
+      "id": "pre-big-bang",
+      "name": "Pre-big-bang scenario",
+      "definition": "String-cosmology scenario (Gasperini-Veneziano) with a dilaton-driven super-inflationary phase preceding the big bang, motivated by scale-factor (T/S) duality of string theory.",
+      "relatedTo": ["string-cosmology", "t-duality", "bouncing-cosmology"]
+    },
+    {
+      "id": "string-cosmology",
+      "name": "String cosmology",
+      "definition": "Application of string theory to the early universe, encompassing string gas, pre-big-bang, ekpyrotic/cyclic, double field theory and matrix cosmology; uses dualities, the dilaton, branes and the Hagedorn temperature.",
+      "relatedTo": ["string-gas-cosmology", "pre-big-bang", "ekpyrotic-cosmology"]
+    },
+    {
+      "id": "quantum-origin-of-structure",
+      "name": "Quantum origin of structure",
+      "definition": "The hypothesis that all cosmic structure originated from primordial quantum fluctuations of the inflaton/metric, amplified by expansion and converted (via squeezing and decoherence) into classical density perturbations imprinted on the CMB.",
+      "relatedTo": ["cosmic-decoherence", "mukhanov-sasaki-spectrum", "inflation"]
+    },
+    {
+      "id": "cosmic-decoherence",
+      "name": "Cosmic decoherence / quantum-to-classical transition",
+      "definition": "Mechanism by which highly squeezed superhorizon perturbation modes become effectively classical: tracing out environmental/short-wavelength degrees of freedom diagonalizes the reduced density matrix in the field-amplitude (pointer) basis, yielding stochastic classical inhomogeneities and an emergent arrow of time.",
+      "relatedTo": ["quantum-origin-of-structure", "emergence-classical-spacetime", "decoherence"]
+    },
+    {
+      "id": "mukhanov-sasaki-spectrum",
+      "name": "Mukhanov-Sasaki perturbation spectrum",
+      "definition": "Common framework for primordial perturbations: v_k'' + (k^2 - z''/z) v_k = 0 with curvature power spectrum P_R = (k^3/2pi^2)|v_k/z|^2; inflation, LQC, ekpyrotic and string gas scenarios differ in the background pump z''/z and vacuum choice.",
+      "relatedTo": ["inflation", "quantum-origin-of-structure", "ekpyrotic-cosmology"]
+    },
+    {
+      "id": "holographic-cosmology",
+      "name": "Holographic cosmology",
+      "definition": "Reformulation of the no-boundary measure and eternal inflation via AdS/CFT and dS/CFT: complex no-boundary saddles have a dual description as deformed Euclidean CFT partition functions on a final boundary, suggesting a finite, smooth multiverse (Hawking-Hertog smooth exit).",
+      "relatedTo": ["no-boundary-proposal", "holographic-principle", "eternal-inflation"]
+    },
+    {
+      "id": "dark-energy-quantum-gravity",
+      "name": "Dark energy from quantum gravity",
+      "definition": "Attempts to derive or constrain dark energy from quantum-gravity principles: swampland de Sitter / TCC conjectures favoring dynamical quintessence over a constant Lambda, causal-set prediction of Lambda ~ 1/sqrt(V) fluctuations, and the DESI 2024-2025 hint of an evolving equation of state.",
+      "relatedTo": ["swampland", "de-sitter-conjecture", "cosmological-constant-problem"]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "wheeler-dewitt-full",
+      "name": "Wheeler-DeWitt equation (full)",
+      "latex": "\\left[-16\\pi G\\, G_{ijkl}\\frac{\\delta^2}{\\delta h_{ij}\\delta h_{kl}} - \\frac{\\sqrt{h}}{16\\pi G}\\left({}^{(3)}R - 2\\Lambda\\right) + \\hat{\\mathcal{H}}_{\\text{matter}}\\right]\\Psi = 0",
+      "meaning": "Quantum Hamiltonian constraint of GR; the timeless Schroedinger equation for the wave functional of the universe on superspace, with DeWitt supermetric G_ijkl.",
+      "source": "dewitt-1967"
+    },
+    {
+      "id": "wdw-minisuperspace-flrw",
+      "name": "Minisuperspace WDW for closed FLRW with Lambda",
+      "latex": "\\left[\\frac{\\hbar^2}{a^p}\\frac{d}{da}\\left(a^p\\frac{d}{da}\\right) - a^2 + \\frac{\\Lambda}{3}a^4\\right]\\Psi(a) = 0",
+      "meaning": "Effective one-dimensional WDW equation with potential V(a)=a^2 - (Lambda/3)a^4; the barrier (classically forbidden region a < sqrt(3/Lambda)) underlies the tunneling interpretation; p encodes operator-ordering ambiguity.",
+      "source": "hartle-hawking-1983"
+    },
+    {
+      "id": "no-boundary-path-integral",
+      "name": "No-boundary wave function",
+      "latex": "\\Psi_{\\text{NB}}[h_{ij},\\phi] = \\int_{\\mathcal{C}} \\mathcal{D}g_{\\mu\\nu}\\,\\mathcal{D}\\phi\\; e^{-I_E[g_{\\mu\\nu},\\phi]/\\hbar}",
+      "meaning": "Euclidean path integral over compact regular 4-geometries with the single boundary h_ij; replaces an initial condition by the geometric requirement of smooth closure (no boundary in the past).",
+      "source": "hartle-hawking-1983"
+    },
+    {
+      "id": "no-boundary-probability-desitter",
+      "name": "No-boundary de Sitter weight",
+      "latex": "|\\Psi_{\\text{NB}}|^2 \\sim e^{-2I_E/\\hbar} = \\exp\\!\\left(+\\frac{3}{8 G^2 \\rho_\\Lambda}\\right) = \\exp\\!\\left(+\\frac{12\\pi^2}{\\hbar\\,\\Lambda}\\right)",
+      "meaning": "Semiclassical no-boundary probability from the regular Euclidean 4-sphere action I_E = -3pi/(2 G Lambda); favors SMALL Lambda (problematically prefers nearly empty universes).",
+      "source": "hartle-hawking-1983"
+    },
+    {
+      "id": "tunneling-probability",
+      "name": "Vilenkin tunneling weight",
+      "latex": "|\\Psi_{\\text{T}}|^2 \\sim \\exp\\!\\left(-\\frac{12\\pi^2}{\\hbar\\,\\Lambda}\\right) = \\exp\\!\\left(-\\frac{3}{8 G^2 \\rho_\\Lambda}\\right)",
+      "meaning": "Tunneling probability with the opposite sign of the exponent versus no-boundary; favors LARGE Lambda and hence nucleation of inflating universes. The opposite sign is the core of the no-boundary-vs-tunneling dispute.",
+      "source": "vilenkin-1982"
+    },
+    {
+      "id": "lorentzian-minisuperspace-integral",
+      "name": "Lorentzian minisuperspace path integral (FLT)",
+      "latex": "G[q_1;q_0] = \\int_{0^+}^{\\infty} dN \\int \\mathcal{D}q\\; e^{iS[q,N]/\\hbar}, \\quad S = 2\\pi^2\\!\\int_0^1 dt\\, N\\!\\left[-\\frac{3}{4N^2}\\dot q^2 + 3 - \\Lambda q\\right]",
+      "meaning": "Feldbrugge-Lehners-Turok lapse integral in q=a^2; q integrated as a Gaussian, then N over a Picard-Lefschetz contour. The dominant saddle gives exactly the inverse of the Hartle-Hawking factor, i.e. the tunneling sign.",
+      "source": "feldbrugge-lehners-turok-2017"
+    },
+    {
+      "id": "no-boundary-perturbation-weight",
+      "name": "Unstable perturbation weight (FLT)",
+      "latex": "P(\\phi_l) \\sim \\exp\\!\\left(+\\frac{3}{2\\hbar\\Lambda}\\sum_{l} l(l+1)(l+2)\\,|\\phi_l|^2\\right)",
+      "meaning": "Inverse-Gaussian (positive-exponent) weighting of perturbations in the Lorentzian no-boundary state: larger perturbations are MORE probable, giving a non-normalizable, non-classical wave function contradicting the smooth CMB. Multipole factor l(l+1)(l+2) and prefactor 3/(2 hbar Lambda) as in Feldbrugge-Lehners-Turok 2017b.",
+      "source": "feldbrugge-lehners-turok-2017b"
+    },
+    {
+      "id": "lqc-effective-friedmann",
+      "name": "LQC effective Friedmann equation",
+      "latex": "H^2 = \\frac{8\\pi G}{3}\\,\\rho\\left(1 - \\frac{\\rho}{\\rho_c}\\right), \\qquad \\rho_c = \\frac{\\sqrt{3}}{32\\pi^2\\gamma^3 G^2\\hbar} \\approx 0.41\\,\\rho_{\\text{Pl}}",
+      "meaning": "Semiclassical LQC dynamics: at rho = rho_c, H = 0 and the universe bounces; for rho << rho_c the classical Friedmann equation is recovered. rho_c ~ 0.41 rho_Planck is LQC's signature quantitative prediction.",
+      "source": "taveras-2008"
+    },
+    {
+      "id": "lqc-area-gap-constraint",
+      "name": "Area gap and quantum difference constraint",
+      "latex": "\\Delta = 4\\sqrt{3}\\,\\pi\\,\\gamma\\, \\ell_{\\text{Pl}}^2, \\qquad C^+(v)\\Psi(v+4) + C^0(v)\\Psi(v) + C^-(v)\\Psi(v-4) = 0",
+      "meaning": "The area gap Delta sets the discreteness scale; the WDW differential equation is replaced by a difference equation in the volume variable v, ensuring deterministic evolution across the bounce (no singularity).",
+      "source": "ashtekar-pawlowski-singh-2006"
+    },
+    {
+      "id": "mukhanov-sasaki",
+      "name": "Mukhanov-Sasaki equation and power spectrum",
+      "latex": "v_k'' + \\left(k^2 - \\frac{z''}{z}\\right)v_k = 0, \\qquad \\mathcal{P}_{\\mathcal{R}}(k) = \\frac{k^3}{2\\pi^2}\\left|\\frac{v_k}{z}\\right|^2, \\quad z = a\\frac{\\dot\\phi}{H}",
+      "meaning": "Universal equation governing primordial curvature perturbations; inflation, LQC bounce, ekpyrotic and string gas scenarios differ in the pump term z''/z and the vacuum, yielding distinguishable spectra.",
+      "source": "planck-2018-inflation"
+    },
+    {
+      "id": "tcc-bound",
+      "name": "Trans-Planckian Censorship bound",
+      "latex": "\\frac{a_f}{a_i}\\,\\ell_{\\text{Pl}} < \\frac{1}{H_f} \\;\\Longrightarrow\\; \\frac{|V'|}{V} \\gtrsim \\frac{2}{\\sqrt{d-2}}\\,\\frac{1}{M_{\\text{Pl}}}",
+      "meaning": "No sub-Planckian mode may be stretched beyond the Hubble horizon; implies a steep-potential bound that caps the inflationary energy scale (V^{1/4} <~ 6e8 GeV) and gives r <~ 1e-30 for simple models, in tension with high-scale inflation.",
+      "source": "bedroya-vafa-2019"
+    },
+    {
+      "id": "slow-roll-spectral-index",
+      "name": "Slow-roll spectral index and tensor ratio",
+      "latex": "n_s - 1 = -6\\epsilon + 2\\eta, \\qquad r = 16\\epsilon, \\qquad \\epsilon = \\frac{M_{\\text{Pl}}^2}{2}\\left(\\frac{V'}{V}\\right)^2",
+      "meaning": "Single-field slow-roll predictions linking the inflaton potential to observables; Planck 2018 measures n_s = 0.9649 +/- 0.0042 and BK18 bounds r < 0.036, tightly constraining the potential shape.",
+      "source": "planck-2018-inflation"
+    }
+  ],
+  "references": [
+    {
+      "id": "dewitt-1967",
+      "authors": "B. S. DeWitt",
+      "title": "Quantum Theory of Gravity. I. The Canonical Theory",
+      "year": 1967,
+      "doi": "10.1103/PhysRev.160.1113",
+      "url": "https://doi.org/10.1103/PhysRev.160.1113",
+      "significance": "Derived the Wheeler-DeWitt equation; foundation of canonical quantum cosmology and the problem of time."
+    },
+    {
+      "id": "misner-1972",
+      "authors": "C. W. Misner",
+      "title": "Minisuperspace",
+      "year": 1972,
+      "url": "https://ui.adsabs.harvard.edu/abs/1972mwm..book..441M",
+      "significance": "Introduced the minisuperspace truncation that made quantum cosmology calculationally tractable."
+    },
+    {
+      "id": "vilenkin-1982",
+      "authors": "A. Vilenkin",
+      "title": "Creation of Universes from Nothing",
+      "year": 1982,
+      "doi": "10.1016/0370-2693(82)90866-8",
+      "url": "https://doi.org/10.1016/0370-2693(82)90866-8",
+      "significance": "Original tunneling proposal: universe nucleates from nothing into de Sitter, no initial singularity or boundary condition."
+    },
+    {
+      "id": "hartle-hawking-1983",
+      "authors": "J. B. Hartle, S. W. Hawking",
+      "title": "Wave function of the Universe",
+      "year": 1983,
+      "doi": "10.1103/PhysRevD.28.2960",
+      "url": "https://doi.org/10.1103/PhysRevD.28.2960",
+      "significance": "The no-boundary proposal; most influential paper of quantum cosmology, defines Psi via a Euclidean path integral over compact geometries."
+    },
+    {
+      "id": "halliwell-hawking-1985",
+      "authors": "J. J. Halliwell, S. W. Hawking",
+      "title": "Origin of structure in the Universe",
+      "year": 1985,
+      "doi": "10.1103/PhysRevD.31.1777",
+      "url": "https://doi.org/10.1103/PhysRevD.31.1777",
+      "significance": "Treated perturbations about minisuperspace and the emergence of structure from the no-boundary state."
+    },
+    {
+      "id": "vilenkin-2002",
+      "authors": "A. Vilenkin",
+      "title": "Quantum cosmology and eternal inflation",
+      "year": 2002,
+      "arxiv": "gr-qc/0204061",
+      "url": "https://arxiv.org/abs/gr-qc/0204061",
+      "significance": "Connects the tunneling wave function with eternal inflation and the measure problem."
+    },
+    {
+      "id": "bojowald-2001",
+      "authors": "M. Bojowald",
+      "title": "Absence of a Singularity in Loop Quantum Cosmology",
+      "year": 2001,
+      "arxiv": "gr-qc/0102069",
+      "url": "https://arxiv.org/abs/gr-qc/0102069",
+      "significance": "First demonstration that the LQC difference equation resolves the big bang singularity; birth of loop quantum cosmology."
+    },
+    {
+      "id": "martin-brandenberger-2001",
+      "authors": "J. Martin, R. H. Brandenberger",
+      "title": "The Trans-Planckian Problem of Inflationary Cosmology",
+      "year": 2001,
+      "arxiv": "hep-th/0005209",
+      "url": "https://arxiv.org/abs/hep-th/0005209",
+      "significance": "Formulated the trans-Planckian problem and showed sensitivity of the inflationary spectrum to modified dispersion relations."
+    },
+    {
+      "id": "khoury-2001-ekpyrotic",
+      "authors": "J. Khoury, B. A. Ovrut, P. J. Steinhardt, N. Turok",
+      "title": "The Ekpyrotic Universe: Colliding Branes and the Origin of the Hot Big Bang",
+      "year": 2001,
+      "arxiv": "hep-th/0103239",
+      "url": "https://arxiv.org/abs/hep-th/0103239",
+      "significance": "Introduced the ekpyrotic scenario as a string/brane alternative to inflation."
+    },
+    {
+      "id": "ashtekar-pawlowski-singh-2006",
+      "authors": "A. Ashtekar, T. Pawlowski, P. Singh",
+      "title": "Quantum Nature of the Big Bang",
+      "year": 2006,
+      "arxiv": "gr-qc/0602086",
+      "doi": "10.1103/PhysRevLett.96.141301",
+      "url": "https://arxiv.org/abs/gr-qc/0602086",
+      "significance": "Rigorous LQC big bounce at rho_c ~ 0.41 rho_Planck; scalar field as internal clock; deterministic evolution across the Planck regime."
+    },
+    {
+      "id": "ashtekar-pawlowski-singh-2006b",
+      "authors": "A. Ashtekar, T. Pawlowski, P. Singh",
+      "title": "Quantum Nature of the Big Bang: An Analytical and Numerical Investigation",
+      "year": 2006,
+      "arxiv": "gr-qc/0604013",
+      "doi": "10.1103/PhysRevD.73.124038",
+      "url": "https://arxiv.org/abs/gr-qc/0604013",
+      "significance": "Detailed numerical confirmation of the bounce and construction of the physical Hilbert space and Dirac observables."
+    },
+    {
+      "id": "taveras-2008",
+      "authors": "V. Taveras",
+      "title": "Corrections to the Friedmann Equations from LQG for a Universe with a Free Scalar Field",
+      "year": 2008,
+      "arxiv": "0807.3325",
+      "doi": "10.1103/PhysRevD.78.064072",
+      "url": "https://arxiv.org/abs/0807.3325",
+      "significance": "Derived the effective modified Friedmann equation H^2 = (8piG/3) rho (1 - rho/rho_c) from LQG coherent states."
+    },
+    {
+      "id": "hartle-hawking-hertog-2008",
+      "authors": "J. B. Hartle, S. W. Hawking, T. Hertog",
+      "title": "The Classical Universes of the No-Boundary Quantum State",
+      "year": 2008,
+      "arxiv": "0803.1663",
+      "doi": "10.1103/PhysRevD.77.123537",
+      "url": "https://arxiv.org/abs/0803.1663",
+      "significance": "Computed the classical histories and their probabilities predicted by the no-boundary state."
+    },
+    {
+      "id": "brandenberger-stringgas-2008",
+      "authors": "R. H. Brandenberger",
+      "title": "String Gas Cosmology",
+      "year": 2008,
+      "arxiv": "0808.0746",
+      "url": "https://arxiv.org/abs/0808.0746",
+      "significance": "Review of string gas cosmology: Hagedorn phase, winding modes, T-duality singularity resolution, scale-invariant spectrum."
+    },
+    {
+      "id": "lehners-ekpyrotic-2008",
+      "authors": "J.-L. Lehners",
+      "title": "Ekpyrotic and Cyclic Cosmology",
+      "year": 2008,
+      "arxiv": "0806.1245",
+      "doi": "10.1016/j.physrep.2008.06.001",
+      "url": "https://arxiv.org/abs/0806.1245",
+      "significance": "Comprehensive Physics Reports review of ekpyrotic and cyclic models."
+    },
+    {
+      "id": "ashtekar-singh-2011",
+      "authors": "A. Ashtekar, P. Singh",
+      "title": "Loop Quantum Cosmology: A Status Report",
+      "year": 2011,
+      "arxiv": "1108.0893",
+      "doi": "10.1088/0264-9381/28/21/213001",
+      "url": "https://arxiv.org/abs/1108.0893",
+      "significance": "The standard 138-page reference review of loop quantum cosmology, formalism and results."
+    },
+    {
+      "id": "ijjas-lehners-steinhardt-2014",
+      "authors": "A. Ijjas, J.-L. Lehners, P. J. Steinhardt",
+      "title": "A general mechanism for producing scale-invariant perturbations and small non-Gaussianity in ekpyrotic models",
+      "year": 2014,
+      "arxiv": "1404.1265",
+      "doi": "10.1103/PhysRevD.89.123520",
+      "url": "https://arxiv.org/abs/1404.1265",
+      "significance": "Entropic mechanism yielding scale-invariant perturbations and f_NL ~ 5 in ekpyrotic cosmology."
+    },
+    {
+      "id": "feldbrugge-lehners-turok-2017",
+      "authors": "J. Feldbrugge, J.-L. Lehners, N. Turok",
+      "title": "Lorentzian Quantum Cosmology",
+      "year": 2017,
+      "arxiv": "1703.02076",
+      "doi": "10.1103/PhysRevD.95.103508",
+      "url": "https://arxiv.org/abs/1703.02076",
+      "significance": "Picard-Lefschetz definition of the path integral; dominant saddle gives precisely the inverse of the Hartle-Hawking result, igniting the no-boundary controversy."
+    },
+    {
+      "id": "feldbrugge-lehners-turok-2017b",
+      "authors": "J. Feldbrugge, J.-L. Lehners, N. Turok",
+      "title": "No smooth beginning for spacetime",
+      "year": 2017,
+      "arxiv": "1705.00192",
+      "doi": "10.1103/PhysRevLett.119.171301",
+      "url": "https://arxiv.org/abs/1705.00192",
+      "significance": "Showed Lorentzian no-boundary gives inverse-Gaussian (unstable, unsuppressed) perturbations, arguing the proposal is ill-defined."
+    },
+    {
+      "id": "halliwell-hartle-hertog-2019",
+      "authors": "J. J. Halliwell, J. B. Hartle, T. Hertog",
+      "title": "What is the no-boundary wave function of the Universe?",
+      "year": 2019,
+      "arxiv": "1812.01760",
+      "doi": "10.1103/PhysRevD.99.043526",
+      "url": "https://arxiv.org/abs/1812.01760",
+      "significance": "Defense of no-boundary: a real wave function with damped, nearly-Gaussian perturbations via a properly chosen contour."
+    },
+    {
+      "id": "hawking-hertog-2018",
+      "authors": "S. W. Hawking, T. Hertog",
+      "title": "A Smooth Exit from Eternal Inflation?",
+      "year": 2018,
+      "arxiv": "1707.07702",
+      "doi": "10.1007/JHEP04(2018)147",
+      "url": "https://arxiv.org/abs/1707.07702",
+      "significance": "Holographic reformulation giving a finite, smooth (non-fractal) multiverse; Hawking's final paper."
+    },
+    {
+      "id": "ditucci-lehners-2019",
+      "authors": "A. Di Tucci, J.-L. Lehners",
+      "title": "No-Boundary Proposal as a Path Integral with Robin Boundary Conditions",
+      "year": 2019,
+      "arxiv": "1903.06757",
+      "doi": "10.1103/PhysRevLett.122.201302",
+      "url": "https://arxiv.org/abs/1903.06757",
+      "significance": "Robin/weighted-lapse formulation restoring stable, suppressed perturbations to the no-boundary state."
+    },
+    {
+      "id": "bedroya-vafa-2019",
+      "authors": "A. Bedroya, C. Vafa",
+      "title": "Trans-Planckian Censorship and the Swampland",
+      "year": 2020,
+      "arxiv": "1909.11063",
+      "doi": "10.1007/JHEP09(2020)123",
+      "url": "https://arxiv.org/abs/1909.11063",
+      "significance": "TCC conjecture; bounds inflation energy scale and forbids long-lived de Sitter, directly linking quantum cosmology to the swampland."
+    },
+    {
+      "id": "lehners-review-2023",
+      "authors": "J.-L. Lehners",
+      "title": "Review of the no-boundary wave function",
+      "year": 2023,
+      "arxiv": "2303.08802",
+      "doi": "10.1016/j.physrep.2023.06.002",
+      "url": "https://arxiv.org/abs/2303.08802",
+      "significance": "Modern Physics Reports review summarizing the no-boundary formalism, the controversy and its current status."
+    },
+    {
+      "id": "lehners-allowable-2021",
+      "authors": "J.-L. Lehners",
+      "title": "Allowable complex metrics in minisuperspace quantum cosmology",
+      "year": 2022,
+      "arxiv": "2111.07816",
+      "doi": "10.1103/PhysRevD.105.026022",
+      "url": "https://arxiv.org/abs/2111.07816",
+      "significance": "Applies the Kontsevich-Segal criterion to dS/AdS/no-boundary saddles, constraining which complex metrics and inflationary models are allowed."
+    },
+    {
+      "id": "planck-2018-inflation",
+      "authors": "Planck Collaboration",
+      "title": "Planck 2018 results. X. Constraints on inflation",
+      "year": 2020,
+      "arxiv": "1807.06211",
+      "doi": "10.1051/0004-6361/201833887",
+      "url": "https://arxiv.org/abs/1807.06211",
+      "significance": "Key observational constraints: n_s = 0.9649 +/- 0.0042, r_0.002 < 0.064 (with BK14); favors concave potentials."
+    },
+    {
+      "id": "bicep-keck-2021",
+      "authors": "BICEP/Keck Collaboration",
+      "title": "Improved Constraints on Primordial Gravitational Waves using Planck, WMAP, and BICEP/Keck Observations through the 2018 Observing Season",
+      "year": 2021,
+      "arxiv": "2110.00483",
+      "doi": "10.1103/PhysRevLett.127.151301",
+      "url": "https://arxiv.org/abs/2110.00483",
+      "significance": "Tightest tensor-to-scalar bound r < 0.036 (95% CL), constraining inflationary energy scale and disfavoring large-r models."
+    },
+    {
+      "id": "desi-2024",
+      "authors": "DESI Collaboration",
+      "title": "DESI 2024: Constraints on Physics-Focused Aspects of Dark Energy using DESI DR1 BAO Data",
+      "year": 2024,
+      "arxiv": "2405.13588",
+      "doi": "10.1103/PhysRevD.111.023532",
+      "url": "https://arxiv.org/abs/2405.13588",
+      "significance": "Hint of evolving dark energy (w0waCDM), tension with LambdaCDM up to ~4 sigma; revives quintessence and swampland scenarios."
+    },
+    {
+      "id": "brandenberger-superstring-2023",
+      "authors": "R. H. Brandenberger",
+      "title": "Superstring Cosmology - A Complementary Review",
+      "year": 2023,
+      "arxiv": "2306.12458",
+      "url": "https://arxiv.org/abs/2306.12458",
+      "significance": "Up-to-date review of string gas, pre-big-bang, ekpyrotic, double field theory and matrix cosmology."
+    },
+    {
+      "id": "gasperini-veneziano-1993",
+      "authors": "M. Gasperini, G. Veneziano",
+      "title": "Pre-big-bang in string cosmology",
+      "year": 1993,
+      "arxiv": "hep-th/9211021",
+      "doi": "10.1016/0927-6505(93)90017-8",
+      "url": "https://arxiv.org/abs/hep-th/9211021",
+      "significance": "Founding paper of the pre-big-bang scenario based on scale-factor duality of string theory."
+    },
+    {
+      "id": "vilenkin-predictions-1995",
+      "authors": "A. Vilenkin",
+      "title": "Predictions from Quantum Cosmology",
+      "year": 1995,
+      "arxiv": "gr-qc/9406010",
+      "doi": "10.1103/PhysRevLett.74.846",
+      "url": "https://arxiv.org/abs/gr-qc/9406010",
+      "significance": "Discusses extracting predictions from the wave function of the universe and the measure problem."
+    },
+    {
+      "id": "isham-1992",
+      "authors": "C. J. Isham",
+      "title": "Canonical Quantum Gravity and the Problem of Time",
+      "year": 1992,
+      "arxiv": "gr-qc/9210011",
+      "url": "https://arxiv.org/abs/gr-qc/9210011",
+      "significance": "Classic comprehensive review of the problem of time in canonical quantum gravity and cosmology."
+    },
+    {
+      "id": "nayeri-2026",
+      "authors": "A. Nayeri",
+      "title": "The Cosmological Arrow of Time from Inflationary Branch Decoherence",
+      "year": 2026,
+      "arxiv": "2602.21263",
+      "url": "https://arxiv.org/abs/2602.21263",
+      "significance": "Derives branch decoherence of inflationary perturbations; shows WKB and squeezing alone do not yield classicality, and obtains an emergent cosmological arrow of time."
+    },
+    {
+      "id": "li-singh-motaharfar-2024",
+      "authors": "B.-F. Li, P. Singh, M. Motaharfar",
+      "title": "Constraining regularization ambiguities in Loop Quantum Cosmology via CMB",
+      "year": 2024,
+      "arxiv": "2405.12296",
+      "doi": "10.1103/PhysRevD.110.066005",
+      "url": "https://arxiv.org/abs/2405.12296",
+      "significance": "Compares primordial spectra of LQC, mLQC-I/II in dressed-metric and hybrid approaches, deriving distinguishable CMB signatures; all three give a non-singular bounce converging within a few Planck seconds."
+    },
+    {
+      "id": "hertog-janssen-karlsson-2023",
+      "authors": "T. Hertog, O. Janssen, J. Karlsson",
+      "title": "The Kontsevich-Segal Criterion in the No-Boundary State Constrains Inflation",
+      "year": 2023,
+      "arxiv": "2305.15440",
+      "doi": "10.1103/PhysRevLett.131.191501",
+      "url": "https://arxiv.org/abs/2305.15440",
+      "significance": "Applies the Kontsevich-Segal allowability criterion to no-boundary saddles as a selection mechanism on inflaton potentials, bounding r < 0.08 (failures traced to a tachyon in the perturbation spectrum); 2025 follow-up constrains anisotropy."
+    }
+  ],
+  "openProblems": [
+    {
+      "id": "correct-initial-condition",
+      "statement": "Determine the correct boundary/initial condition for the wave function of the universe: no-boundary and tunneling proposals give opposite signs of the exponent (+/- 12 pi^2 / hbar Lambda) and hence opposite predictions for Lambda and the likelihood of inflation.",
+      "whyHard": "No first principle uniquely fixes the contour of the Lorentzian path integral; even Picard-Lefschetz leaves freedom in lapse range and boundary conditions (Dirichlet vs Robin vs weighted) that flip the result.",
+      "attempts": "Euclidean prescription (Hartle-Hawking), Lorentzian Picard-Lefschetz (Feldbrugge-Lehners-Turok), Robin/weighted lapse (Di Tucci-Lehners), Kontsevich-Segal allowability (Lehners); no consensus."
+    },
+    {
+      "id": "no-boundary-perturbation-stability",
+      "statement": "Resolve whether the no-boundary state predicts damped (Gaussian) or unstable (inverse-Gaussian, unbounded) perturbations.",
+      "whyHard": "The naive Lorentzian saddle yields a positive-exponent weight making large perturbations more probable (non-normalizable); defenses require specific contour/boundary choices whose legitimacy is disputed.",
+      "attempts": "FLT 2017 (instability), Halliwell-Hartle-Hertog 2019 and Di Tucci-Lehners 2019 (restored damping via contour/Robin conditions), exact Bianchi IX evaluations claiming suppression."
+    },
+    {
+      "id": "problem-of-time-cosmology",
+      "statement": "Provide a consistent notion of time, unitary evolution and a positive-definite inner product for the timeless Wheeler-DeWitt equation.",
+      "whyHard": "H-hat Psi = 0 has no external time and the natural Klein-Gordon inner product is not positive-definite; every timeless strategy trades away unitarity, clock-independence, or global validity in curved backgrounds.",
+      "attempts": "Internal clocks (scalar field, LQC emergent time), Page-Wootters conditional probabilities, Rovelli partial/complete observables, semiclassical WKB time."
+    },
+    {
+      "id": "measure-problem-multiverse",
+      "statement": "Define a well-behaved probability measure on the eternally inflating multiverse and assign meaningful probabilities given only a single observed universe.",
+      "whyHard": "Volumes and observer counts diverge with no canonical normalization; different cutoffs give different (often paradoxical) predictions for Lambda and amplitude Q.",
+      "attempts": "Causal patch, scale-factor cutoff, stationary, comoving-volume measures; all suffer Boltzmann-brain, youngness or Q-catastrophe pathologies."
+    },
+    {
+      "id": "trans-planckian-problem-open",
+      "statement": "Determine whether and how trans-Planckian physics affects the predicted CMB spectrum, and whether inflation is even compatible with quantum gravity (TCC).",
+      "whyHard": "Observed modes originated from sub-Planckian wavelengths where the vacuum and dispersion relation are unknown; modified dispersions (Corley-Jacobson) can change the spectrum while Unruh-type do not, and TCC bounds may forbid high-scale inflation entirely.",
+      "attempts": "Modified dispersion relations, minimal-length/GUP vacua, adiabatic vacuum prescriptions, Trans-Planckian Censorship Conjecture (Bedroya-Vafa)."
+    },
+    {
+      "id": "scenario-discrimination",
+      "statement": "Find observational signatures that uniquely distinguish inflation, the LQC bounce, ekpyrotic/cyclic and string gas cosmology.",
+      "whyHard": "All can produce a nearly scale-invariant spectrum; their distinguishing features (LQC low-multipole suppression and oscillations, ekpyrotic r~0 and f_NL~5, string-gas blue tensor tilt) lie near or below current CMB sensitivity.",
+      "attempts": "Planck low-multipole anomalies, BK18 tensor bounds, non-Gaussianity constraints; future LiteBIRD, CMB-S4, 21cm and spectral-distortion probes."
+    },
+    {
+      "id": "emergence-classical-spacetime",
+      "statement": "Explain rigorously how a quantum superposition of geometries and perturbations decoheres into a single classical spacetime with classical density fluctuations.",
+      "whyHard": "Squeezing alone does not yield classicality; one must trace out an environment, but in a closed universe with no external observer the choice of environment, pointer basis and coarse-graining is ambiguous.",
+      "attempts": "Decoherence via influence functionals (Nayeri 2026), continuous spontaneous localization (CSL), gravitationally-induced decoherence, branch-amplitude formalism."
+    },
+    {
+      "id": "minisuperspace-truncation-validity",
+      "statement": "Establish whether minisuperspace results (no-boundary, LQC bounce, WDW solutions) survive in the full theory with infinitely many degrees of freedom.",
+      "whyHard": "The full gravitational path integral / WDW equation is mathematically undefined; symmetry reduction before quantization need not commute with quantization, and back-reaction of neglected modes is uncontrolled.",
+      "attempts": "Spin-foam cosmology, group field theory condensate cosmology, perturbations about minisuperspace, lattice/CDT comparisons."
+    },
+    {
+      "id": "dark-energy-from-qg",
+      "statement": "Derive the observed dark energy (its tiny value and possible time evolution) from quantum gravity, reconciling it with the swampland de Sitter/TCC conjectures.",
+      "whyHard": "Quantum corrections naturally give a cosmological constant ~120 orders too large; swampland conjectures forbid stable de Sitter, pushing toward quintessence, but no controlled string construction yields the observed scale.",
+      "attempts": "Quintessence/dynamical dark energy, swampland de Sitter and TCC bounds, causal-set Lambda ~ 1/sqrt(V) prediction, DESI 2024-2025 evolving-w fits."
+    }
+  ],
+  "connections": [
+    {
+      "from": "quantum-cosmology",
+      "to": "loop-quantum-gravity",
+      "type": "limit",
+      "description": "Loop quantum cosmology is the symmetry-reduced cosmological sector of LQG, importing Ashtekar variables, holonomies, the area gap Delta = 4 sqrt(3) pi gamma l_Pl^2 and the Barbero-Immirzi parameter; it predicts a big bounce at rho_c ~ 0.41 rho_Pl. Whether LQC is a genuine limit of full LQG (reduce-then-quantize vs quantize-then-reduce) remains open but is heavily studied via spin-foam and GFT cosmology.",
+      "explored": "well"
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "string-theory",
+      "type": "shared-structure",
+      "description": "String cosmology (string gas, pre-big-bang, ekpyrotic/cyclic) embeds quantum-cosmological scenarios using T-duality, the Hagedorn temperature, winding modes, the dilaton and branes; the no-boundary wave function has a holographic AdS/CFT representation. Missing: a fully stringy computation of the wave function of the universe and controlled de Sitter vacua.",
+      "explored": "partially"
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "holography-adscft",
+      "type": "duality",
+      "description": "Holographic cosmology (Hartle-Hawking-Hertog, Hawking-Hertog smooth exit) represents the no-boundary measure as deformed Euclidean CFT partition functions on a final boundary, and dual-describes eternal inflation as a CFT at the eternal-inflation threshold; dS/CFT is the related but more speculative arm. The dual CFTs for realistic cosmology are not under computational control.",
+      "explored": "partially"
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "swampland",
+      "type": "shared-structure",
+      "description": "The de Sitter conjecture (|grad V|/V >~ O(1)) and Trans-Planckian Censorship Conjecture (|V'|/V >~ 2/sqrt(d-2)) directly constrain inflation and dark energy, favoring dynamical quintessence over a constant Lambda and bounding r <~ 1e-30 for simple models; resonates with the DESI 2024-2025 evolving-dark-energy hint. Active and conceptually clear; quantitative force depends on swampland constants.",
+      "explored": "partially"
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "asymptotic-safety",
+      "type": "conjecture",
+      "description": "An asymptotically safe UV fixed point could define trans-Planckian physics and the gravitational path integral above the Planck scale, potentially resolving the trans-Planckian problem and giving RG-improved Friedmann equations and inflation. Linking the fixed-point action to the WDW wave function and the no-boundary path integral is almost unexplored - a potential gold mine.",
+      "explored": "barely"
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-math",
+      "description": "CDT numerically evaluates the Lorentzian gravitational path integral and dynamically recovers a semiclassical de Sitter cosmological 'blob' with an effective minisuperspace action - precisely what quantum cosmology postulates. Comparing the CDT-measured effective action with the no-boundary / FLT Lorentzian minisuperspace integral is conceptually very close but barely done.",
+      "explored": "barely"
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "causal-sets",
+      "type": "conjecture",
+      "description": "Causal-set cosmology (sequential growth, cosmic renormalization) offers an alternative quantum-gravity origin of initial conditions and famously predicts everpresent Lambda fluctuations ~ +/- 1/sqrt(V) of the observed magnitude (Sorkin). The bridge to the WDW wave function and the no-boundary measure is essentially nonexistent - a promising unexplored link, especially for dark energy.",
+      "explored": "barely"
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "group-field-theory",
+      "type": "limit",
+      "description": "Group field theory condensate cosmology aims to derive an effective Friedmann dynamics and a bounce from the hydrodynamics of GFT quanta of geometry, providing a possible first-principles origin of the LQC effective equations. Active but young; the precise matching to the LQC rho_c and to the WDW/no-boundary framework is only partially established.",
+      "explored": "partially"
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "Spacetime noncommutativity introduces a minimal length and modified dispersion / generalized uncertainty in the minisuperspace WDW equation, directly bearing on the trans-Planckian problem. Isolated 'noncommutative quantum cosmology' studies exist (deformed minisuperspace), but a systematic connection to no-boundary/LQC is largely missing.",
+      "explored": "barely"
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "Both rest on the Euclidean gravitational path integral and saddle methods (the Hartle-Hawking state names both the no-boundary cosmology and the black-hole thermal vacuum). Replica wormholes / baby universes, alpha-parameters and Marolf-Maxfield 'bra-ket' cosmological wormholes tie the cosmological wave function to the information problem. Young but active.",
+      "explored": "partially"
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "semiclassical-gravity",
+      "type": "limit",
+      "description": "In the WKB limit Psi ~ exp(iS_0/hbar) the wave function of the universe yields classical background trajectories plus quantum fields on them, from which the functional Schroedinger equation for perturbations (Banks, Halliwell-Hawking) is derived. This is the standard, well-understood bridge from WDW to inflationary perturbation theory.",
+      "explored": "well"
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "Observational interface via the CMB (Planck n_s = 0.9649, BK18 r < 0.036, low-multipole suppression as a possible LQC signature), primordial gravitational waves (LiteBIRD, CMB-S4 targeting r ~ 1e-3), non-Gaussianity (ekpyrotic f_NL ~ 5), spectral distortions, and DESI/Euclid dark-energy evolution. Concrete model predictions exist but a decisive discriminating test is still lacking.",
+      "explored": "partially"
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "entanglement-spacetime",
+      "type": "conjecture",
+      "description": "Cosmic decoherence and the quantum-to-classical transition of primordial perturbations rely on entanglement between observed superhorizon modes and an unobserved environment; emergent-arrow-of-time and ER=EPR-style ideas suggest spacetime/structure emerges from entanglement. The link between the cosmological wave function and entanglement-built spacetime is suggestive but barely formalized.",
+      "explored": "barely"
+    },
+    {
+      "from": "quantum-cosmology",
+      "to": "conceptual-problems",
+      "type": "shared-structure",
+      "description": "Quantum cosmology is the arena where the deepest conceptual problems of quantum gravity are sharpest: the problem of time, the meaning of |Psi|^2 for a unique universe, the measure problem, and the interpretation of the quantum state of a closed system with no external observer. Heavily discussed in the philosophy-of-physics and foundations literature.",
+      "explored": "well"
+    }
+  ]
+}

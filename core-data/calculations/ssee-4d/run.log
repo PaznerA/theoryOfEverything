@@ -1,0 +1,23 @@
+[demo] sprinkling N=3000 in 4D diamond, Vol=2.0944
+[demo] timings: C=0.0s L(matmul)=0.1s eig=9.3s
+[demo] mean links/point=36.37  n_sub=183  #pos modes=1501
+[demo] intrinsic knee (dev10%) = 28
+[demo] S(no trunc)=164.364  S(double-trunc @5%max, rank=742)=10.491
+[scaling] N=  500 rho=  238.7  r@0.02= 189.5  r@0.05= 142.5  r@0.1=  95.8  slopeknee=  39.2
+[scaling] N=  800 rho=  382.0  r@0.02= 301.0  r@0.05= 222.5  r@0.1= 143.8  slopeknee=  62.0
+[scaling] N= 1200 rho=  573.0  r@0.02= 443.0  r@0.05= 321.0  r@0.1= 197.5  slopeknee=  92.0
+[scaling] N= 1800 rho=  859.4  r@0.02= 655.5  r@0.05= 463.8  r@0.1= 270.2  slopeknee= 136.8
+[scaling] N= 2600 rho= 1241.4  r@0.02= 937.2  r@0.05= 651.2  r@0.1= 360.0  slopeknee= 197.0
+[scaling] N= 3600 rho= 1718.9  r@0.02=1275.5  r@0.05= 864.2  r@0.1= 447.0  slopeknee= 271.5
+[scaling] N= 5000 rho= 2387.3  r@0.02=1747.5  r@0.05=1155.8  r@0.1= 558.2  slopeknee= 377.0
+[fit] rank@0.02*lmax ~ N^p:  p=0.9640 +/- 0.0031  (pred 3/4=0.75; 2D was 1/2)
+[fit] rank@0.05*lmax ~ N^p:  p=0.9032 +/- 0.0048  (pred 3/4=0.75; 2D was 1/2)
+[fit] rank@0.1*lmax ~ N^p:  p=0.7505 +/- 0.0073  (pred 3/4=0.75; 2D was 1/2)
+[fit] intrinsic knee tol=0.1 ~ N^p:  p=0.6513 +/- 0.0224
+[fit] intrinsic knee tol=0.2 ~ N^p:  p=0.6530 +/- 0.0219
+[fit] slope-knee (2008.07697) ~ N^p:  p=0.9847 +/- 0.0014  (pred 3/4)
+[area-law] S vs A: beta=12.1458 R2=0.962 | S vs Vol(n): R2=0.998 | S ~ f^6.07 (area=>2)
+[area-law imposed alpha=1.0] n_max=595  S~f^-52.71  R2(area)=0.052 R2(vol)=0.051  verdict=AREA
+[area-law imposed alpha=2.0] n_max=1189  S~f^3.76  R2(area)=0.016 R2(vol)=0.036  verdict=VOLUME
+
+Done in 1516.5s. Saved results.json + 4 PNGs to /Users/pazny/projects/theoryOfEverything/core-data/calculations/ssee-4d

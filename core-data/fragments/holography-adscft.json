@@ -1,0 +1,860 @@
+{
+  "slug": "holography-adscft",
+  "name": "Holographic Principle & AdS/CFT",
+  "concepts": [
+    {
+      "id": "holographic-principle",
+      "name": "Holographic Principle",
+      "definition": "Conjecture that the number of fundamental degrees of freedom describing physics in a spatial region is bounded by the area of its boundary in Planck units (N ~ A/4 l_P^2), not its volume; a full quantum-gravity description lives on a lower-dimensional boundary. Proposed by 't Hooft (1993) and Susskind (1994).",
+      "relatedTo": ["bekenstein-hawking-entropy", "covariant-entropy-bound", "adscft-correspondence", "bekenstein-bound"]
+    },
+    {
+      "id": "bekenstein-bound",
+      "name": "Bekenstein Bound",
+      "definition": "Universal upper bound on the entropy of a physical system of energy E enclosed in a sphere of radius R: S <= 2 pi k R E / (hbar c). Saturated by a black hole; implies finite information content in finite regions.",
+      "relatedTo": ["bekenstein-hawking-entropy", "holographic-principle", "covariant-entropy-bound"]
+    },
+    {
+      "id": "bekenstein-hawking-entropy",
+      "name": "Bekenstein-Hawking Entropy",
+      "definition": "Entropy of a black hole equals one quarter of its horizon area in Planck units: S_BH = k c^3 A /(4 G hbar) = A/4. Scaling with area (not volume) is the quantitative seed of holography.",
+      "relatedTo": ["holographic-principle", "bekenstein-bound", "black-hole-microstates", "ryu-takayanagi"]
+    },
+    {
+      "id": "covariant-entropy-bound",
+      "name": "Covariant Entropy Bound (Bousso Bound)",
+      "definition": "Generalized holographic bound (Bousso 1999): entropy on a light sheet (congruence of non-expanding null rays orthogonal to a surface B of area A) satisfies S <= A/4G. Valid in general spacetimes including cosmology, where the spacelike entropy bound fails.",
+      "relatedTo": ["holographic-principle", "bekenstein-bound", "light-sheet"]
+    },
+    {
+      "id": "adscft-correspondence",
+      "name": "AdS/CFT Correspondence",
+      "definition": "Exact duality (Maldacena 1997) between quantum gravity / string theory on (d+1)-dimensional anti-de Sitter space and a conformal field theory without gravity on its d-dimensional conformal boundary. Prototype: type IIB strings on AdS5 x S5 dual to N=4 super-Yang-Mills with gauge group SU(N).",
+      "relatedTo": ["holographic-principle", "gkp-witten-dictionary", "thooft-coupling", "holographic-rg-flow", "ryu-takayanagi"]
+    },
+    {
+      "id": "gkp-witten-dictionary",
+      "name": "GKP-Witten Dictionary",
+      "definition": "Precise prescription (Gubser-Klebanov-Polyakov and Witten 1998): the CFT generating functional with boundary source phi_0 equals the bulk gravity partition function with that boundary condition, Z_CFT[phi_0] = Z_grav[phi -> phi_0]. Each CFT operator maps to a bulk field; correlators are computed from the on-shell gravity action (Witten diagrams).",
+      "relatedTo": ["adscft-correspondence", "field-operator-map", "bulk-reconstruction"]
+    },
+    {
+      "id": "field-operator-map",
+      "name": "Field-Operator Map / Mass-Dimension Relation",
+      "definition": "Dictionary entry relating a bulk field's mass m to the conformal dimension Delta of the dual boundary operator: Delta(Delta - d) = m^2 L^2. Light fields map to low-dimension (relevant) operators; the Breitenlohner-Freedman bound m^2 L^2 >= -d^2/4 allows stable tachyonic fields.",
+      "relatedTo": ["gkp-witten-dictionary", "adscft-correspondence"]
+    },
+    {
+      "id": "thooft-coupling",
+      "name": "'t Hooft Limit and Coupling",
+      "definition": "Large-N planar limit with lambda = g_YM^2 N fixed as N -> infinity. In AdS5/CFT4: L^4/alpha'^2 = 4 pi g_s N = g_YM^2 N = lambda. Strong CFT coupling (lambda >> 1) maps to classical bulk gravity; weak coupling to highly curved stringy geometry.",
+      "relatedTo": ["adscft-correspondence", "integrability-n4-sym", "supersymmetric-localization"]
+    },
+    {
+      "id": "holographic-rg-flow",
+      "name": "Holographic RG Flow",
+      "definition": "Identification of the bulk radial coordinate with the boundary energy scale: motion into the AdS interior is RG flow toward the IR. Domain-wall (kink) solutions interpolating between AdS vacua of different radius realize RG flows between fixed points; the holographic c-theorem follows from the null energy condition.",
+      "relatedTo": ["adscft-correspondence", "c-theorem", "ttbar-deformation"]
+    },
+    {
+      "id": "ryu-takayanagi",
+      "name": "Ryu-Takayanagi Formula",
+      "definition": "Holographic entanglement entropy of a boundary region A equals the area of the minimal codimension-2 bulk surface gamma_A homologous to A, divided by 4 G_N: S_A = Area(gamma_A)/(4 G_N). Covariant version: HRT extremal surface. Geometrizes entanglement; respects strong subadditivity.",
+      "relatedTo": ["adscft-correspondence", "quantum-extremal-surface", "entanglement-spacetime", "holographic-error-correction", "er-epr"]
+    },
+    {
+      "id": "quantum-extremal-surface",
+      "name": "Quantum Extremal Surface / Island Formula",
+      "definition": "Fine-grained entropy including quantum corrections: S = min ext [ Area(partial I)/4G + S_bulk(I union rad) ]. After the Page time an island in the black-hole interior dominates, the radiation entropy turns over, and the Page curve is recovered, restoring unitarity (Penington 2019; Almheiri et al. 2019).",
+      "relatedTo": ["ryu-takayanagi", "page-curve", "replica-wormholes", "black-holes-information"]
+    },
+    {
+      "id": "page-curve",
+      "name": "Page Curve",
+      "definition": "Time dependence of the fine-grained entropy of Hawking radiation from a unitarily evaporating black hole: it rises then falls, peaking at the Page time. Reproduced from semiclassical gravity via quantum extremal surfaces / islands and replica wormholes.",
+      "relatedTo": ["quantum-extremal-surface", "replica-wormholes", "black-holes-information", "bekenstein-hawking-entropy"]
+    },
+    {
+      "id": "replica-wormholes",
+      "name": "Replica Wormholes",
+      "definition": "New gravitational saddle points connecting different replica copies in the replica-trick computation of the gravitational path integral. They dominate after the Page time and lead to the island rule; they also imply non-factorization of partition functions (baby-universe / ensemble issue).",
+      "relatedTo": ["quantum-extremal-surface", "page-curve", "factorization-problem", "syk-jt-gravity"]
+    },
+    {
+      "id": "bulk-reconstruction",
+      "name": "Bulk Reconstruction (HKLL)",
+      "definition": "Procedure (Hamilton-Kabat-Lifschytz-Lowe) expressing a local bulk operator as an integral of boundary CFT operators against a smearing function supported on boundary points spacelike-separated from the bulk insertion. Reveals the bulk's quantum-error-correcting structure.",
+      "relatedTo": ["gkp-witten-dictionary", "holographic-error-correction", "subregion-duality"]
+    },
+    {
+      "id": "holographic-error-correction",
+      "name": "Holographic Quantum Error Correction",
+      "definition": "Almheiri-Dong-Harlow insight that AdS/CFT realizes operator-algebra quantum error correction: bulk (logical) information is redundantly encoded on the boundary (physical) qubits and protected against erasure of large boundary regions. Modeled by tensor networks (HaPPY code).",
+      "relatedTo": ["bulk-reconstruction", "subregion-duality", "tensor-network", "ryu-takayanagi"]
+    },
+    {
+      "id": "subregion-duality",
+      "name": "Subregion / Entanglement-Wedge Duality",
+      "definition": "A boundary subregion's density matrix encodes (and allows reconstruction of) the bulk physics within its entanglement wedge, the bulk region bounded by the RT/HRT surface. Sharpens locality of the holographic map.",
+      "relatedTo": ["bulk-reconstruction", "holographic-error-correction", "ryu-takayanagi"]
+    },
+    {
+      "id": "tensor-network",
+      "name": "Tensor Network (Holographic)",
+      "definition": "Discrete networks of tensors (MERA, HaPPY perfect-tensor codes, random tensor networks) that reproduce key holographic features: RT formula, negative tripartite information, error-correcting bulk reconstruction. Toy models of emergent geometry from entanglement.",
+      "relatedTo": ["holographic-error-correction", "entanglement-spacetime", "ryu-takayanagi"]
+    },
+    {
+      "id": "er-epr",
+      "name": "ER=EPR",
+      "definition": "Maldacena-Susskind conjecture that quantum entanglement (EPR) between two systems is geometrically an Einstein-Rosen bridge (ER, wormhole). The thermofield-double state is dual to the eternal (two-sided) black hole.",
+      "relatedTo": ["ryu-takayanagi", "entanglement-spacetime", "black-holes-information", "thermofield-double"]
+    },
+    {
+      "id": "thermofield-double",
+      "name": "Thermofield Double / Eternal Black Hole",
+      "definition": "Entangled pure state of two CFT copies whose bulk dual is the two-sided eternal AdS black hole; the Einstein-Rosen bridge length grows with time, motivating complexity = volume / action proposals.",
+      "relatedTo": ["er-epr", "adscft-correspondence", "holographic-complexity"]
+    },
+    {
+      "id": "holographic-complexity",
+      "name": "Holographic Complexity",
+      "definition": "Proposals (Complexity = Volume, Complexity = Action) relating the quantum computational complexity of a boundary state to bulk geometric quantities (volume of a maximal slice or action of a Wheeler-DeWitt patch), capturing late-time growth of the Einstein-Rosen bridge.",
+      "relatedTo": ["thermofield-double", "er-epr", "wedge-holography"]
+    },
+    {
+      "id": "ds-cft",
+      "name": "dS/CFT and de Sitter Holography",
+      "definition": "Conjectured duality (Strominger 2001) between gravity on de Sitter space and a non-unitary Euclidean CFT on the future spacelike boundary; alternative static-patch holography places dual degrees of freedom on the stretched horizon. Far less understood than AdS/CFT.",
+      "relatedTo": ["holographic-principle", "celestial-holography", "swampland", "quantum-cosmology", "carrollian-holography"]
+    },
+    {
+      "id": "celestial-holography",
+      "name": "Celestial Holography",
+      "definition": "Program recasting the 4D gravitational S-matrix in asymptotically flat space as correlators of a 2D celestial CFT on the celestial sphere. Soft theorems become Ward identities of infinite-dimensional asymptotic (BMS) symmetries; celestial amplitudes are Mellin transforms of momentum-space amplitudes.",
+      "relatedTo": ["holographic-principle", "soft-theorems", "bms-symmetry", "twistors-amplitudes", "holography-of-information"]
+    },
+    {
+      "id": "soft-theorems",
+      "name": "Soft Theorems / Memory / BMS",
+      "definition": "Infrared triangle of asymptotically flat gravity: soft graviton theorems, gravitational memory effect, and BMS (super-translation / super-rotation) asymptotic symmetries are equivalent. They underpin celestial holography and the celestial symmetry algebra (w_{1+infinity}).",
+      "relatedTo": ["celestial-holography", "bms-symmetry", "twistors-amplitudes"]
+    },
+    {
+      "id": "bms-symmetry",
+      "name": "BMS Asymptotic Symmetry",
+      "definition": "Bondi-Metzner-Sachs group: the infinite-dimensional asymptotic symmetry group of asymptotically flat spacetimes at null infinity, including supertranslations and (extended) superrotations. Its charges define celestial conformal fields.",
+      "relatedTo": ["soft-theorems", "celestial-holography", "carrollian-holography"]
+    },
+    {
+      "id": "carrollian-holography",
+      "name": "Carrollian Holography",
+      "definition": "Holography of flat / de Sitter space formulated via Carrollian CFTs (the c -> 0 ultra-relativistic limit of conformal symmetry) living on null infinity or the dS boundary; complementary to the celestial (Lorentzian 2D CFT) approach.",
+      "relatedTo": ["celestial-holography", "ds-cft", "bms-symmetry"]
+    },
+    {
+      "id": "holography-of-information",
+      "name": "Holography of Information",
+      "definition": "Raju et al. principle that in quantum gravity, all information in the bulk of an asymptotically flat (or AdS/dS) spacetime is also available in a small neighbourhood of its boundary, a sharp departure from local QFT. Formulated in AdS, flat, and de Sitter space.",
+      "relatedTo": ["holographic-principle", "celestial-holography", "ds-cft", "black-holes-information"]
+    },
+    {
+      "id": "integrability-n4-sym",
+      "name": "Integrability of Planar N=4 SYM",
+      "definition": "Planar N=4 super-Yang-Mills is integrable: its one-loop dilatation operator is the Hamiltonian of an integrable spin chain, and the Quantum Spectral Curve gives exact anomalous dimensions at any 't Hooft coupling, providing the most precise quantitative tests of AdS/CFT.",
+      "relatedTo": ["adscft-correspondence", "thooft-coupling", "quantum-spectral-curve"]
+    },
+    {
+      "id": "quantum-spectral-curve",
+      "name": "Quantum Spectral Curve",
+      "definition": "Integrability-based framework giving the exact planar spectrum of N=4 SYM (and the dual string) as the solution of a Riemann-Hilbert problem for a finite set of Q-functions; interpolates from weak to strong coupling.",
+      "relatedTo": ["integrability-n4-sym", "adscft-correspondence"]
+    },
+    {
+      "id": "supersymmetric-localization",
+      "name": "Supersymmetric Localization",
+      "definition": "Technique (Pestun 2007) reducing supersymmetric partition functions and Wilson loops on spheres to finite-dimensional matrix integrals, computable exactly at finite coupling; yields exact AdS/CFT checks such as the N^{3/2} free energy of ABJM.",
+      "relatedTo": ["adscft-correspondence", "thooft-coupling", "conformal-bootstrap"]
+    },
+    {
+      "id": "conformal-bootstrap",
+      "name": "Conformal Bootstrap",
+      "definition": "Nonperturbative program constraining CFT data using crossing symmetry and unitarity; analytic (Lorentzian inversion formula) and numerical versions test and constrain holographic CFTs, with bulk locality emerging from large-spin/heavy-operator structure.",
+      "relatedTo": ["adscft-correspondence", "supersymmetric-localization"]
+    },
+    {
+      "id": "kss-bound",
+      "name": "KSS Viscosity Bound",
+      "definition": "Holographic lower bound eta/s >= hbar/(4 pi k_B) on the shear-viscosity-to-entropy-density ratio (Kovtun-Son-Starinets), saturated in Einstein gravity. Quark-gluon plasma at RHIC/LHC sits near this bound (eta/s ~ 0.1-0.3), the 'most perfect fluid'.",
+      "relatedTo": ["adscft-correspondence", "quark-gluon-plasma", "ads-cmt"]
+    },
+    {
+      "id": "quark-gluon-plasma",
+      "name": "Holographic Quark-Gluon Plasma",
+      "definition": "Application of AdS/CFT to the strongly coupled quark-gluon plasma produced in heavy-ion collisions; holography predicts near-perfect-fluid transport (eta/s ~ 1/4 pi), jet quenching, and thermalization, qualitatively matching RHIC/LHC data.",
+      "relatedTo": ["kss-bound", "adscft-correspondence", "experimental-tests"]
+    },
+    {
+      "id": "ads-cmt",
+      "name": "AdS/CMT (Holographic Condensed Matter)",
+      "definition": "Application of gauge/gravity duality to strongly correlated condensed-matter systems without quasiparticles: holographic superconductors, strange metals, non-Fermi liquids, and momentum-relaxing transport, modeled by charged AdS black holes at finite density.",
+      "relatedTo": ["adscft-correspondence", "kss-bound", "syk-jt-gravity"]
+    },
+    {
+      "id": "syk-jt-gravity",
+      "name": "SYK Model / JT Gravity / Nearly-AdS2",
+      "definition": "The Sachdev-Ye-Kitaev model (N Majorana fermions, all-to-all random couplings) is maximally chaotic and holographically dual to Jackiw-Teitelboim gravity in nearly-AdS2; the Schwarzian action captures the soft modes. A solvable laboratory for near-extremal black holes, chaos, and the gravitational path integral.",
+      "relatedTo": ["adscft-correspondence", "replica-wormholes", "ads-cmt", "ds-cft"]
+    },
+    {
+      "id": "wedge-holography",
+      "name": "Wedge / Double Holography",
+      "definition": "Holography for a wedge bounded by end-of-the-world branes (Karch-Randall braneworld), admitting equivalent bulk, brane, and boundary descriptions; central to deriving the Page curve with gravitating baths and to constructing de Sitter braneworlds.",
+      "relatedTo": ["quantum-extremal-surface", "holographic-complexity", "ds-cft"]
+    },
+    {
+      "id": "black-hole-microstates",
+      "name": "Black Hole Microstate Counting",
+      "definition": "Statistical-mechanical origin of S = A/4: Strominger-Vafa counted BPS D-brane bound states reproducing the Bekenstein-Hawking entropy of extremal 5D black holes; Cardy formula reproduces BTZ entropy. Microstates of generic non-extremal black holes remain open.",
+      "relatedTo": ["bekenstein-hawking-entropy", "string-theory", "adscft-correspondence"]
+    },
+    {
+      "id": "c-theorem",
+      "name": "Holographic c-Theorem",
+      "definition": "Monotonicity of a c-function along RG flow proven holographically: the gravity dual is the second law for causal horizons, and the holographic c-function is the Bekenstein-Hawking entropy density of the dynamical causal horizon.",
+      "relatedTo": ["holographic-rg-flow", "adscft-correspondence"]
+    },
+    {
+      "id": "factorization-problem",
+      "name": "Factorization / Baby-Universe Problem",
+      "definition": "The gravitational path integral includes wormholes that make the two-copy partition function fail to factorize, in tension with a factorizing dual QFT; resolution may require ensemble averaging (as in JT/SYK) and alpha-states, unclear for unique theories like N=4 SYM.",
+      "relatedTo": ["replica-wormholes", "syk-jt-gravity", "adscft-correspondence"]
+    },
+    {
+      "id": "ttbar-deformation",
+      "name": "T-Tbar Deformation",
+      "definition": "Solvable irrelevant deformation of a 2D CFT by the dimension-4 T-Tbar operator; holographically it places the boundary theory on a Dirichlet wall at finite bulk radius, realizing a finite cutoff and connecting to dS/dS holography. The RG flow equation matches the radial Hamilton-Jacobi equation of bulk gravity.",
+      "relatedTo": ["holographic-rg-flow", "ds-cft", "adscft-correspondence"]
+    },
+    {
+      "id": "light-sheet",
+      "name": "Light Sheet",
+      "definition": "Central geometric object of the Bousso bound: a null hypersurface generated by a congruence of non-expanding light rays emitted orthogonally from a surface; its entropy flux is bounded by the surface area over 4G.",
+      "relatedTo": ["covariant-entropy-bound", "holographic-principle"]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "bekenstein-bound-formula",
+      "name": "Bekenstein Bound",
+      "latex": "S \\le \\frac{2\\pi k R E}{\\hbar c}",
+      "meaning": "Universal upper bound on entropy S of a system of energy E in a sphere of radius R; saturated by a black hole, implying finite information in finite regions.",
+      "source": "bekenstein-1981"
+    },
+    {
+      "id": "bekenstein-hawking-formula",
+      "name": "Bekenstein-Hawking Entropy",
+      "latex": "S_{BH} = \\frac{k c^3 A}{4 G \\hbar} = \\frac{A}{4 \\ell_P^2}\\,k",
+      "meaning": "Black-hole entropy equals one quarter of the horizon area A in Planck units; area (not volume) scaling is the quantitative core of holography.",
+      "source": "strominger-vafa-1996"
+    },
+    {
+      "id": "bousso-bound-formula",
+      "name": "Covariant (Bousso) Entropy Bound",
+      "latex": "S[\\mathcal{L}] \\le \\frac{A(B)}{4 G \\hbar}",
+      "meaning": "Entropy on a light sheet L generated by non-expanding null rays from a surface B of area A(B) is bounded; generalizes holography to arbitrary spacetimes including cosmology.",
+      "source": "bousso-1999"
+    },
+    {
+      "id": "ads-metric",
+      "name": "AdS_{d+1} Poincare Metric",
+      "latex": "ds^2 = \\frac{L^2}{z^2}\\left( dz^2 + \\eta_{\\mu\\nu}\\, dx^\\mu dx^\\nu \\right)",
+      "meaning": "Anti-de Sitter geometry with radius L and radial (holographic) coordinate z; the CFT lives on the conformal boundary z -> 0 and z corresponds to boundary energy scale.",
+      "source": "maldacena-1997"
+    },
+    {
+      "id": "ads5-dictionary",
+      "name": "AdS5 x S5 Radius-Coupling Dictionary",
+      "latex": "\\frac{L^4}{\\alpha'^2} = 4\\pi g_s N = g_{YM}^2 N = \\lambda, \\qquad g_s = \\frac{g_{YM}^2}{4\\pi}",
+      "meaning": "Maps the AdS radius L and string length sqrt(alpha') to gauge-theory data; classical gravity (L >> l_s) corresponds to strong 't Hooft coupling lambda >> 1, the source of both predictive power and difficulty of a direct proof.",
+      "source": "magoo-1999"
+    },
+    {
+      "id": "mass-dimension",
+      "name": "Mass-Dimension Relation",
+      "latex": "\\Delta = \\frac{d}{2} + \\sqrt{\\frac{d^2}{4} + m^2 L^2}, \\quad \\Delta(\\Delta - d) = m^2 L^2",
+      "meaning": "Conformal dimension Delta of a CFT operator in terms of the dual bulk field mass m; light fields map to relevant operators, with the Breitenlohner-Freedman bound m^2 L^2 >= -d^2/4.",
+      "source": "witten-1998"
+    },
+    {
+      "id": "gkp-witten",
+      "name": "GKP-Witten Generating Functional",
+      "latex": "\\left\\langle \\exp \\int_{\\partial} \\phi_0 \\mathcal{O} \\right\\rangle_{\\text{CFT}} = Z_{\\text{grav}}[\\phi \\to \\phi_0] \\approx e^{-S_{\\text{grav}}^{\\text{on-shell}}[\\phi_0]}",
+      "meaning": "Core of the dictionary: CFT correlators are generated by varying the on-shell bulk gravity action with respect to boundary sources phi_0 dual to operators O (Witten diagrams).",
+      "source": "gkp-1998"
+    },
+    {
+      "id": "brown-henneaux",
+      "name": "Brown-Henneaux Central Charge",
+      "latex": "c_{\\text{AdS}_3} = \\frac{3L}{2 G_3}, \\qquad a = c = \\frac{N^2-1}{4} \\to \\frac{N^2}{4}",
+      "meaning": "AdS3 boundary CFT central charge from the bulk (1986, pre-AdS/CFT); for N=4 SYM the anomaly coefficients a=c ~ N^2/4 count adjoint degrees of freedom and control 1/N ~ G_N corrections.",
+      "source": "brown-henneaux-1986"
+    },
+    {
+      "id": "cardy-btz",
+      "name": "Cardy Formula / BTZ Entropy",
+      "latex": "S_{\\text{Cardy}} = 2\\pi \\sqrt{\\frac{c}{6}\\left(L_0 - \\frac{c}{24}\\right)} \\Rightarrow S_{\\text{BTZ}} = \\frac{A}{4 G_3}",
+      "meaning": "Counting 2D CFT states via the Cardy formula reproduces the Bekenstein-Hawking entropy of the BTZ black hole, a microscopic holographic derivation of black-hole entropy.",
+      "source": "strominger-1997-cardy"
+    },
+    {
+      "id": "ryu-takayanagi-formula",
+      "name": "Ryu-Takayanagi Formula",
+      "latex": "S_A = \\frac{\\text{Area}(\\gamma_A)}{4 G_N}",
+      "meaning": "Entanglement entropy of boundary region A equals the area of the minimal homologous bulk surface gamma_A over 4G_N; geometrizes entanglement and links quantum information to spacetime.",
+      "source": "ryu-takayanagi-2006"
+    },
+    {
+      "id": "island-formula",
+      "name": "Quantum Extremal Surface / Island Formula",
+      "latex": "S = \\min_{\\mathcal{I}} \\text{ext}_{\\mathcal{I}} \\left[ \\frac{\\text{Area}(\\partial \\mathcal{I})}{4 G_N} + S_{\\text{bulk}}(\\mathcal{I} \\cup \\text{rad}) \\right]",
+      "meaning": "Fine-grained entropy with quantum corrections; the island saddle dominates after the Page time, yielding the Page curve and unitary black-hole evaporation.",
+      "source": "penington-2019"
+    },
+    {
+      "id": "kss-formula",
+      "name": "KSS Viscosity Bound",
+      "latex": "\\frac{\\eta}{s} \\ge \\frac{\\hbar}{4\\pi k_B}",
+      "meaning": "Universal holographic lower bound on the shear-viscosity-to-entropy-density ratio, saturated in Einstein gravity; quark-gluon plasma sits near it.",
+      "source": "kss-2004"
+    },
+    {
+      "id": "ds-swampland",
+      "name": "de Sitter Swampland Conjecture",
+      "latex": "|\\nabla V| \\ge \\frac{c}{M_{pl}} V",
+      "meaning": "Proposed bound on the scalar potential V in any consistent quantum gravity (Obied-Ooguri-Spodyneiko-Vafa), forbidding stable de Sitter vacua and tightly connected to the difficulty of de Sitter holography.",
+      "source": "obied-2018"
+    }
+  ],
+  "references": [
+    {
+      "id": "bekenstein-1981",
+      "authors": "J. D. Bekenstein",
+      "title": "Universal upper bound on the entropy-to-energy ratio for bounded systems",
+      "year": 1981,
+      "doi": "10.1103/PhysRevD.23.287",
+      "url": "https://doi.org/10.1103/PhysRevD.23.287",
+      "significance": "Introduced the Bekenstein bound, the entropy bound at the root of the holographic principle."
+    },
+    {
+      "id": "thooft-1993",
+      "authors": "G. 't Hooft",
+      "title": "Dimensional Reduction in Quantum Gravity",
+      "year": 1993,
+      "arxiv": "gr-qc/9310026",
+      "url": "https://arxiv.org/abs/gr-qc/9310026",
+      "significance": "First formulation of the holographic principle: quantum gravity has a lower-dimensional boundary description."
+    },
+    {
+      "id": "susskind-1994",
+      "authors": "L. Susskind",
+      "title": "The World as a Hologram",
+      "year": 1994,
+      "arxiv": "hep-th/9409089",
+      "doi": "10.1063/1.531249",
+      "url": "https://arxiv.org/abs/hep-th/9409089",
+      "significance": "String-theoretic interpretation of holography; coined the holographic terminology."
+    },
+    {
+      "id": "strominger-vafa-1996",
+      "authors": "A. Strominger, C. Vafa",
+      "title": "Microscopic Origin of the Bekenstein-Hawking Entropy",
+      "year": 1996,
+      "arxiv": "hep-th/9601029",
+      "doi": "10.1016/0370-2693(96)00345-0",
+      "url": "https://arxiv.org/abs/hep-th/9601029",
+      "significance": "First statistical-mechanical derivation of S=A/4 by counting BPS D-brane bound states."
+    },
+    {
+      "id": "maldacena-1997",
+      "authors": "J. M. Maldacena",
+      "title": "The Large N Limit of Superconformal Field Theories and Supergravity",
+      "year": 1997,
+      "arxiv": "hep-th/9711200",
+      "doi": "10.4310/ATMP.1998.v2.n2.a1",
+      "url": "https://arxiv.org/abs/hep-th/9711200",
+      "significance": "Founding paper of AdS/CFT; the most-cited paper in high-energy theory."
+    },
+    {
+      "id": "gkp-1998",
+      "authors": "S. S. Gubser, I. R. Klebanov, A. M. Polyakov",
+      "title": "Gauge Theory Correlators from Non-Critical String Theory",
+      "year": 1998,
+      "arxiv": "hep-th/9802109",
+      "doi": "10.1016/S0370-2693(98)00377-3",
+      "url": "https://arxiv.org/abs/hep-th/9802109",
+      "significance": "GKP half of the precise AdS/CFT dictionary relating correlators to bulk fields."
+    },
+    {
+      "id": "witten-1998",
+      "authors": "E. Witten",
+      "title": "Anti De Sitter Space And Holography",
+      "year": 1998,
+      "arxiv": "hep-th/9802150",
+      "doi": "10.4310/ATMP.1998.v2.n2.a2",
+      "url": "https://arxiv.org/abs/hep-th/9802150",
+      "significance": "Witten half of the dictionary; identified Hawking-Page transition with confinement-deconfinement."
+    },
+    {
+      "id": "bousso-1999",
+      "authors": "R. Bousso",
+      "title": "A Covariant Entropy Conjecture",
+      "year": 1999,
+      "arxiv": "hep-th/9905177",
+      "doi": "10.1088/1126-6708/1999/07/004",
+      "url": "https://arxiv.org/abs/hep-th/9905177",
+      "significance": "Covariant entropy bound (light sheets) generalizing holography to arbitrary spacetimes and cosmology."
+    },
+    {
+      "id": "magoo-1999",
+      "authors": "O. Aharony, S. S. Gubser, J. Maldacena, H. Ooguri, Y. Oz",
+      "title": "Large N Field Theories, String Theory and Gravity",
+      "year": 1999,
+      "arxiv": "hep-th/9905111",
+      "doi": "10.1016/S0370-1573(99)00083-6",
+      "url": "https://arxiv.org/abs/hep-th/9905111",
+      "significance": "Canonical comprehensive review (MAGOO) containing the full AdS/CFT dictionary."
+    },
+    {
+      "id": "kss-2004",
+      "authors": "P. Kovtun, D. T. Son, A. O. Starinets",
+      "title": "Viscosity in Strongly Interacting Quantum Field Theories from Black Hole Physics",
+      "year": 2004,
+      "arxiv": "hep-th/0405231",
+      "doi": "10.1103/PhysRevLett.94.111601",
+      "url": "https://arxiv.org/abs/hep-th/0405231",
+      "significance": "Derived the universal eta/s >= 1/4pi bound; key application of holography to quark-gluon plasma."
+    },
+    {
+      "id": "hkll-2006",
+      "authors": "A. Hamilton, D. Kabat, G. Lifschytz, D. A. Lowe",
+      "title": "Local bulk operators in AdS/CFT: A boundary view of horizons and locality",
+      "year": 2006,
+      "arxiv": "hep-th/0506118",
+      "doi": "10.1103/PhysRevD.73.086003",
+      "url": "https://arxiv.org/abs/hep-th/0506118",
+      "significance": "HKLL bulk reconstruction via smearing functions, foundation of subregion duality and bulk locality."
+    },
+    {
+      "id": "ryu-takayanagi-2006",
+      "authors": "S. Ryu, T. Takayanagi",
+      "title": "Holographic Derivation of Entanglement Entropy from AdS/CFT",
+      "year": 2006,
+      "arxiv": "hep-th/0603001",
+      "doi": "10.1103/PhysRevLett.96.181602",
+      "url": "https://arxiv.org/abs/hep-th/0603001",
+      "significance": "RT formula linking entanglement entropy to bulk minimal surfaces; launched spacetime-from-entanglement."
+    },
+    {
+      "id": "hrt-2007",
+      "authors": "V. E. Hubeny, M. Rangamani, T. Takayanagi",
+      "title": "A Covariant Holographic Entanglement Entropy Proposal",
+      "year": 2007,
+      "arxiv": "0705.0016",
+      "doi": "10.1088/1126-6708/2007/07/062",
+      "url": "https://arxiv.org/abs/0705.0016",
+      "significance": "Covariant (time-dependent) HRT generalization of the RT formula via extremal surfaces."
+    },
+    {
+      "id": "pestun-2007",
+      "authors": "V. Pestun",
+      "title": "Localization of gauge theory on a four-sphere and supersymmetric Wilson loops",
+      "year": 2007,
+      "arxiv": "0712.2824",
+      "doi": "10.1007/s00220-012-1485-0",
+      "url": "https://arxiv.org/abs/0712.2824",
+      "significance": "Founded supersymmetric localization, enabling exact finite-coupling AdS/CFT tests."
+    },
+    {
+      "id": "beisert-2010",
+      "authors": "N. Beisert et al.",
+      "title": "Review of AdS/CFT Integrability: An Overview",
+      "year": 2010,
+      "arxiv": "1012.3982",
+      "doi": "10.1007/s11005-011-0529-2",
+      "url": "https://arxiv.org/abs/1012.3982",
+      "significance": "Comprehensive review establishing integrability of planar N=4 SYM and the most precise AdS/CFT tests."
+    },
+    {
+      "id": "maldacena-susskind-2013",
+      "authors": "J. Maldacena, L. Susskind",
+      "title": "Cool horizons for entangled black holes",
+      "year": 2013,
+      "arxiv": "1306.0533",
+      "doi": "10.1002/prop.201300020",
+      "url": "https://arxiv.org/abs/1306.0533",
+      "significance": "ER=EPR conjecture identifying entanglement with wormhole geometry."
+    },
+    {
+      "id": "adh-2015",
+      "authors": "A. Almheiri, X. Dong, D. Harlow",
+      "title": "Bulk Locality and Quantum Error Correction in AdS/CFT",
+      "year": 2015,
+      "arxiv": "1411.7041",
+      "doi": "10.1007/JHEP04(2015)163",
+      "url": "https://arxiv.org/abs/1411.7041",
+      "significance": "Recast bulk reconstruction as quantum error correction; basis of subregion duality and holographic codes."
+    },
+    {
+      "id": "happy-2015",
+      "authors": "F. Pastawski, B. Yoshida, D. Harlow, J. Preskill",
+      "title": "Holographic quantum error-correcting codes: toy models for the bulk/boundary correspondence",
+      "year": 2015,
+      "arxiv": "1503.06237",
+      "doi": "10.1007/JHEP06(2015)149",
+      "url": "https://arxiv.org/abs/1503.06237",
+      "significance": "HaPPY tensor-network code explicitly reproducing the RT formula and error-correcting bulk reconstruction."
+    },
+    {
+      "id": "mcgough-mezei-verlinde-2016",
+      "authors": "L. McGough, M. Mezei, H. Verlinde",
+      "title": "Moving the CFT into the bulk with T-Tbar",
+      "year": 2016,
+      "arxiv": "1611.03470",
+      "doi": "10.1007/JHEP04(2018)010",
+      "url": "https://arxiv.org/abs/1611.03470",
+      "significance": "Interpreted the T-Tbar deformation as a finite radial cutoff in AdS; bridge to dS/dS holography."
+    },
+    {
+      "id": "penington-2019",
+      "authors": "G. Penington",
+      "title": "Entanglement Wedge Reconstruction and the Information Paradox",
+      "year": 2019,
+      "arxiv": "1905.08255",
+      "doi": "10.1007/JHEP09(2020)002",
+      "url": "https://arxiv.org/abs/1905.08255",
+      "significance": "Used quantum extremal surfaces to recover the Page curve from the entanglement wedge."
+    },
+    {
+      "id": "aemm-2019",
+      "authors": "A. Almheiri, N. Engelhardt, D. Marolf, H. Maxfield",
+      "title": "The entropy of bulk quantum fields and the entanglement wedge of an evaporating black hole",
+      "year": 2019,
+      "arxiv": "1905.08762",
+      "doi": "10.1007/JHEP12(2019)063",
+      "url": "https://arxiv.org/abs/1905.08762",
+      "significance": "Introduced entanglement islands resolving the information paradox semiclassically."
+    },
+    {
+      "id": "pssy-2019",
+      "authors": "G. Penington, S. H. Shenker, D. Stanford, Z. Yang",
+      "title": "Replica wormholes and the black hole interior",
+      "year": 2019,
+      "arxiv": "1911.11977",
+      "doi": "10.1007/JHEP03(2022)205",
+      "url": "https://arxiv.org/abs/1911.11977",
+      "significance": "Derived the island rule from replica wormholes in the gravitational path integral."
+    },
+    {
+      "id": "almheiri-replica-2019",
+      "authors": "A. Almheiri, T. Hartman, J. Maldacena, E. Shaghoulian, A. Tajdini",
+      "title": "Replica Wormholes and the Entropy of Hawking Radiation",
+      "year": 2019,
+      "arxiv": "1911.12333",
+      "doi": "10.1007/JHEP05(2020)013",
+      "url": "https://arxiv.org/abs/1911.12333",
+      "significance": "Independent derivation of the Page curve via replica wormholes; raised the factorization puzzle."
+    },
+    {
+      "id": "obied-2018",
+      "authors": "G. Obied, H. Ooguri, L. Spodyneiko, C. Vafa",
+      "title": "De Sitter Space and the Swampland",
+      "year": 2018,
+      "arxiv": "1806.08362",
+      "url": "https://arxiv.org/abs/1806.08362",
+      "significance": "de Sitter swampland conjecture |grad V| >= cV forbidding stable dS, tied to the difficulty of dS holography."
+    },
+    {
+      "id": "laddha-raju-2020",
+      "authors": "A. Laddha, S. G. Prabhu, S. Raju, P. Shrivastava",
+      "title": "The Holographic Nature of Null Infinity",
+      "year": 2020,
+      "arxiv": "2002.02448",
+      "doi": "10.21468/SciPostPhys.10.2.041",
+      "url": "https://arxiv.org/abs/2002.02448",
+      "significance": "Established the principle of holography of information in asymptotically flat space."
+    },
+    {
+      "id": "pasterski-2021",
+      "authors": "S. Pasterski, M. Pate, A.-M. Raclariu",
+      "title": "Celestial Holography (Snowmass white paper)",
+      "year": 2021,
+      "arxiv": "2111.11392",
+      "url": "https://arxiv.org/abs/2111.11392",
+      "significance": "Defining review of the celestial holography program for flat space."
+    },
+    {
+      "id": "donnay-2023",
+      "authors": "L. Donnay",
+      "title": "Celestial holography: An asymptotic symmetry perspective",
+      "year": 2023,
+      "arxiv": "2310.12922",
+      "doi": "10.1016/j.physrep.2024.05.002",
+      "url": "https://arxiv.org/abs/2310.12922",
+      "significance": "Modern Physics Reports review tying celestial holography to BMS asymptotic symmetries and soft theorems."
+    },
+    {
+      "id": "strominger-2001",
+      "authors": "A. Strominger",
+      "title": "The dS/CFT Correspondence",
+      "year": 2001,
+      "arxiv": "hep-th/0106113",
+      "doi": "10.1088/1126-6708/2001/10/034",
+      "url": "https://arxiv.org/abs/hep-th/0106113",
+      "significance": "Original de Sitter holography proposal with a non-unitary Euclidean boundary CFT."
+    },
+    {
+      "id": "huang-2024",
+      "authors": "H. Huang",
+      "title": "AdS/CFT Duality and Holographic Renormalization Group: A Review",
+      "year": 2024,
+      "arxiv": "2412.05446",
+      "url": "https://arxiv.org/abs/2412.05446",
+      "significance": "Recent review of holographic RG flow, domain walls, and the holographic c-theorem."
+    },
+    {
+      "id": "hartnoll-2018",
+      "authors": "S. A. Hartnoll, A. Lucas, S. Sachdev",
+      "title": "Holographic Quantum Matter",
+      "year": 2018,
+      "arxiv": "1612.07324",
+      "url": "https://arxiv.org/abs/1612.07324",
+      "significance": "Canonical monograph on AdS/CMT: holographic superconductors and strange metals."
+    },
+    {
+      "id": "hubeny-2015",
+      "authors": "V. E. Hubeny",
+      "title": "The AdS/CFT Correspondence",
+      "year": 2015,
+      "arxiv": "1501.00007",
+      "doi": "10.1088/0264-9381/32/12/124010",
+      "url": "https://arxiv.org/abs/1501.00007",
+      "significance": "Accessible modern pedagogical review of the correspondence."
+    },
+    {
+      "id": "brown-henneaux-1986",
+      "authors": "J. D. Brown, M. Henneaux",
+      "title": "Central charges in the canonical realization of asymptotic symmetries",
+      "year": 1986,
+      "doi": "10.1007/BF01211590",
+      "url": "https://doi.org/10.1007/BF01211590",
+      "significance": "Computed c = 3L/2G for AdS3, foreshadowing AdS/CFT by a decade."
+    },
+    {
+      "id": "strominger-1997-cardy",
+      "authors": "A. Strominger",
+      "title": "Black hole entropy from near-horizon microstates",
+      "year": 1997,
+      "arxiv": "hep-th/9712251",
+      "doi": "10.1088/1126-6708/1998/02/009",
+      "url": "https://arxiv.org/abs/hep-th/9712251",
+      "significance": "Reproduced BTZ entropy from the Cardy formula, a microscopic holographic derivation."
+    },
+    {
+      "id": "holography-swampland-2025",
+      "authors": "S. Upadhyay, A. Reshetnyak, P. Moshin, R. Castro",
+      "title": "Holography and the Swampland: Constraints on Quantum Gravity from Holographic Principles",
+      "year": 2025,
+      "arxiv": "2512.14389",
+      "url": "https://arxiv.org/abs/2512.14389",
+      "significance": "2025 work realizing swampland bounds geometrically via holographic consistency conditions."
+    },
+    {
+      "id": "bridging-dscft-celestial-2025",
+      "authors": "H. Furugori, N. Ogawa, S. Sugishita, T. Waki",
+      "title": "Bridging dS/CFT and Celestial Holography via Ward-Takahashi Identities",
+      "year": 2025,
+      "arxiv": "2512.10367",
+      "url": "https://arxiv.org/abs/2512.10367",
+      "significance": "2025 bridge between de Sitter and celestial holography via shared symmetry structure."
+    }
+  ],
+  "openProblems": [
+    {
+      "id": "de-sitter-holography",
+      "statement": "Formulate a controlled holographic dual for de Sitter space and realistic cosmology (Lambda > 0): where do the degrees of freedom live and is the dual unitary?",
+      "whyHard": "There is no asymptotically timelike AdS-like boundary, no S-matrix, the observer sits inside a causal patch with a horizon, dS/CFT requires a non-unitary Euclidean CFT, and no controlled UV-complete dS string vacuum is known.",
+      "attempts": "dS/CFT (Strominger), static-patch / stretched-horizon holography, TTbar+Lambda flows, dS JT gravity from double-scaled SYK, Carrollian holography, holography of information in dS."
+    },
+    {
+      "id": "proof-of-adscft",
+      "statement": "Prove the AdS/CFT correspondence rather than rely on accumulated evidence.",
+      "whyHard": "The two sides are computable in opposite 't Hooft-coupling regimes (lambda>>1 vs lambda<<1) and there is no independent nonperturbative definition of string theory on AdS to compare against.",
+      "attempts": "Integrability / Quantum Spectral Curve interpolation, supersymmetric localization, conformal bootstrap, matching of protected quantities; none yields a full proof."
+    },
+    {
+      "id": "black-hole-interior-reconstruction",
+      "statement": "Reconstruct the black-hole interior (especially after the Page time) from boundary CFT data consistently with quantum mechanics.",
+      "whyHard": "State-dependent operators clash with linearity, the firewall (AMPS) paradox and monogamy of entanglement create tension between effective field theory and unitarity.",
+      "attempts": "Papadodimas-Raju state-dependent mirror operators, entanglement-wedge reconstruction, ER=EPR, replica wormholes."
+    },
+    {
+      "id": "sub-ads-locality",
+      "statement": "Explain how local bulk physics on scales far below the AdS radius (sub-AdS locality) emerges from the boundary CFT.",
+      "whyHard": "The dictionary naturally resolves physics on scales ~L; sub-AdS locality requires controlling stringy / 1/N corrections and the nonlocal error-correcting nature of the holographic map.",
+      "attempts": "Bulk-point singularities, large-spin / heavy-operator conformal bootstrap, geodesic Witten diagrams, modular flow."
+    },
+    {
+      "id": "flat-space-holography",
+      "statement": "Construct a complete, well-defined holographic dual for asymptotically flat (Minkowski) quantum gravity.",
+      "whyHard": "Flat space is a singular double limit (L -> infinity) of AdS; the celestial CFT is exotic (Carrollian, non-standard reps, complex weights), lacks an explicit Lagrangian, and BMS symmetries are infinite-dimensional.",
+      "attempts": "Celestial holography, Carrollian holography, holography of information at null infinity, top-down twistor-string celestial duals."
+    },
+    {
+      "id": "factorization-problem",
+      "statement": "Reconcile non-factorization of the gravitational path integral (wormholes) with the manifest factorization of a dual quantum field theory.",
+      "whyHard": "Wormhole saddles make two-copy partition functions fail to factorize, suggesting ensemble averaging that seems inappropriate for a single unique theory like N=4 SYM.",
+      "attempts": "Ensemble interpretation in JT/SYK, alpha-states / baby-universe Hilbert space, half-wormholes, possible UV completion arguments."
+    },
+    {
+      "id": "emergence-of-time",
+      "statement": "Derive the emergence of the time dimension and causality (not just the radial/spatial direction) from boundary quantum-information data.",
+      "whyHard": "The radial direction emerges cleanly via RG, but time emergence runs into the problem of time in quantum gravity and the absence of a boundary clock, especially in cosmology.",
+      "attempts": "Modular Hamiltonian / Tomita-Takesaki flow, complexity = volume, kinematic space, von Neumann algebra approaches to subregions."
+    },
+    {
+      "id": "generic-black-hole-microstates",
+      "statement": "Count the microstates of generic non-extremal (Schwarzschild / Kerr) astrophysical black holes from first principles.",
+      "whyHard": "Loss of supersymmetry removes protection from quantum corrections; the fuzzball program is incomplete and Cardy/Strominger-Vafa methods rely on BPS bounds.",
+      "attempts": "Fuzzball / microstate geometries, Kerr/CFT correspondence, near-extremal Schwarzian corrections, supersymmetric AdS black hole index matching."
+    }
+  ],
+  "connections": [
+    {
+      "from": "holography-adscft",
+      "to": "string-theory",
+      "type": "duality",
+      "description": "AdS/CFT is a statement of string theory: type IIB on AdS5xS5 dual to N=4 SYM, M-theory on AdS4xS7 (ABJM) and AdS7xS4; holography provides a nonperturbative definition of string theory on AdS backgrounds. Strominger-Vafa links D-branes to entropy.",
+      "explored": "well"
+    },
+    {
+      "from": "holography-adscft",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "Holography is the leading framework for the information paradox: AdS/CFT guarantees unitary evaporation, and islands/Page curve, replica wormholes, ER=EPR and error correction were largely derived in or transferred from AdS.",
+      "explored": "well"
+    },
+    {
+      "from": "holography-adscft",
+      "to": "entanglement-spacetime",
+      "type": "shared-structure",
+      "description": "Spacetime-from-entanglement: Ryu-Takayanagi, ER=EPR, It-from-Qubit, tensor networks, Van Raamsdonk's argument, and the entanglement first law implying linearized Einstein equations all use holography as a constructive laboratory.",
+      "explored": "well"
+    },
+    {
+      "from": "holography-adscft",
+      "to": "supergravity-uv",
+      "type": "limit",
+      "description": "The low-energy gravity side of AdS/CFT is gauged supergravity (e.g. N=8 on AdS4); holographic renormalization, domain walls, the c-theorem, and localization-matched on-shell actions are formulated in supergravity.",
+      "explored": "well"
+    },
+    {
+      "from": "holography-adscft",
+      "to": "semiclassical-gravity",
+      "type": "shared-structure",
+      "description": "The island formula and Page curve are derived within semiclassical gravity (saddle-point gravitational path integral); holography pinpoints when semiclassics fails (after the Page time) and how replica wormholes repair it.",
+      "explored": "well"
+    },
+    {
+      "from": "holography-adscft",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "Holography is the prime example of emergent gravity: bulk gravity emerges from a non-gravitational CFT. Resonates with Jacobson's thermodynamic Einstein equations and Verlinde entropic gravity via RT / first-law arguments.",
+      "explored": "well"
+    },
+    {
+      "from": "holography-adscft",
+      "to": "swampland",
+      "type": "shared-structure",
+      "description": "Swampland criteria (distance, de Sitter, weak gravity) are motivated and tested holographically: CFT consistency (unitarity, spectrum convexity, ANEC) maps to bulk EFT constraints. The dS swampland conjecture is tied to the absence of dS holography; 2025 work strengthens the dictionary but a systematic swampland<->CFT map is missing.",
+      "explored": "partially"
+    },
+    {
+      "from": "holography-adscft",
+      "to": "twistors-amplitudes",
+      "type": "shared-structure",
+      "description": "Celestial holography shares soft theorems, BMS symmetries, and collinear structure with the amplitudes program; celestial amplitudes are Mellin transforms of momentum-space amplitudes, and twistor strings appear in top-down celestial duals, but a full dictionary is incomplete.",
+      "explored": "partially"
+    },
+    {
+      "from": "holography-adscft",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "The strongest empirical fingerprint is the near-KSS eta/s of quark-gluon plasma at RHIC/LHC (eta/s ~ 0.1-0.3); AdS/CMT qualitatively predicts strange-metal transport. These test applications, not the holographic principle itself.",
+      "explored": "partially"
+    },
+    {
+      "from": "holography-adscft",
+      "to": "quantum-cosmology",
+      "type": "conjecture",
+      "description": "Hartle-Hawking-Maldacena dS/CFT computes the wavefunction of the universe as a CFT partition function, and holography of information applies to cosmological correlators, but absence of controlled dS holography throttles quantitative cosmology.",
+      "explored": "barely"
+    },
+    {
+      "from": "holography-adscft",
+      "to": "conceptual-problems",
+      "type": "shared-structure",
+      "description": "Holography sharply poses locality breakdown, the individuality of spacetime points, factorization, emergence of time, and the status of observers in dS; philosophically rich but the conceptual analysis (e.g. de Haro) is young.",
+      "explored": "partially"
+    },
+    {
+      "from": "holography-adscft",
+      "to": "asymptotic-safety",
+      "type": "shared-math",
+      "description": "Both involve RG flow and fixed points, but holographic RG is geometric (radial) while asymptotic safety seeks a UV fixed point in gravitational coupling space. A speculative bridge links the holographic c-theorem to a monotone in ASG; concrete connection essentially absent - a prime target for hidden links.",
+      "explored": "barely"
+    },
+    {
+      "from": "holography-adscft",
+      "to": "loop-quantum-gravity",
+      "type": "shared-structure",
+      "description": "Spin networks and tensor networks share quantum-geometry-from-graphs and both give S ~ A, but LQG is background-independent/canonical while AdS/CFT fixes AdS asymptotics. Isolated attempts connect spin foams to holographic codes; highly speculative.",
+      "explored": "barely"
+    },
+    {
+      "from": "holography-adscft",
+      "to": "causal-sets",
+      "type": "shared-structure",
+      "description": "Shared holographic entropy scaling (S~A) and emphasis on causal structure (the Bousso bound is causal). Causal sets could numerically test holographic bounds, but no direct AdS/CFT dictionary exists; the covariant entropy bound is the nearest conceptual bridge.",
+      "explored": "barely"
+    },
+    {
+      "from": "holography-adscft",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-structure",
+      "description": "CDT and holography both probe emergent spacetime and entropy area-laws; CDT could in principle test holographic entropy bounds numerically, but there is no quantitative AdS/CFT-CDT correspondence yet.",
+      "explored": "barely"
+    },
+    {
+      "from": "holography-adscft",
+      "to": "group-field-theory",
+      "type": "shared-structure",
+      "description": "GFT generates spacetime as a condensate while holography generates it from entanglement; both share the emergence theme but no explicit dictionary - speculatively a GFT condensate could correspond to a holographic state with geometric bulk.",
+      "explored": "barely"
+    },
+    {
+      "from": "holography-adscft",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "Holographic codes and fuzzy spheres in brane constructions introduce noncommutativity; matrix models (BFSS, IKKT) are holographically related and TTbar deformation introduces nonlocality, but the dictionary is fragmentary.",
+      "explored": "barely"
+    },
+    {
+      "from": "holography-adscft",
+      "to": "page-curve",
+      "type": "shared-structure",
+      "description": "The Page curve is computed within holography via quantum extremal surfaces / islands and replica wormholes, making it a central shared deliverable between holography and black-hole information physics.",
+      "explored": "well"
+    }
+  ]
+}

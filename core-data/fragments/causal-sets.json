@@ -1,0 +1,734 @@
+{
+  "slug": "causal-sets",
+  "name": "Causal Set Theory",
+  "concepts": [
+    {
+      "id": "causal-set",
+      "name": "Causal Set (causet)",
+      "definition": "A locally finite partially ordered set (poset) (C, <=) whose order relation is reflexive, acyclic (antisymmetric), and transitive, with every order interval I[x,y] = Fut(x) ∩ Past(y) finite. Elements model fundamental spacetime events; the order encodes proto-causality and local finiteness encodes intrinsic discreteness. No metric, topology, or differentiable structure is assumed.",
+      "relatedTo": ["order-plus-number-equals-geometry", "spacetime-discreteness", "causal-structure", "order-interval", "local-finiteness"]
+    },
+    {
+      "id": "order-plus-number-equals-geometry",
+      "name": "Order plus Number equals Geometry",
+      "definition": "Sorkin's slogan summarizing causal set theory: the causal (order) structure of spacetime fixes the conformal geometry (9/10 of the metric in 4D, via Hawking-King-McCarthy / Malament), while counting elements (number) supplies the conformal/volume factor; together they recover the full Lorentzian geometry.",
+      "relatedTo": ["causal-set", "number-volume-correspondence", "malament-theorem", "causal-structure"]
+    },
+    {
+      "id": "spacetime-discreteness",
+      "name": "Fundamental Spacetime Discreteness",
+      "definition": "The hypothesis that spacetime is fundamentally discrete at the Planck scale, with a finite number of spacetime atoms in any finite volume. In CST discreteness is postulated and physical (one element per Planck 4-volume, rho = l_p^-4), not derived as in LQG or a mere regulator as in CDT.",
+      "relatedTo": ["causal-set", "local-finiteness", "number-volume-correspondence", "planck-scale"]
+    },
+    {
+      "id": "local-finiteness",
+      "name": "Local Finiteness",
+      "definition": "The axiom that every order interval I[x,y] = {z : x <= z <= y} contains finitely many elements. This is the precise mathematical statement of discreteness in CST and distinguishes a causal set from a general (continuum) causal order.",
+      "relatedTo": ["causal-set", "order-interval", "spacetime-discreteness"]
+    },
+    {
+      "id": "order-interval",
+      "name": "Order Interval (Alexandrov interval)",
+      "definition": "The set I[x,y] = Fut(x) ∩ Past(y) of all elements causally between x and y. Its cardinality is the discrete analogue of the spacetime volume of the Alexandrov interval between two events; abundances of small order intervals build the Benincasa-Dowker action and dimension estimators.",
+      "relatedTo": ["causal-set", "local-finiteness", "benincasa-dowker-action", "myrheim-meyer-dimension"]
+    },
+    {
+      "id": "number-volume-correspondence",
+      "name": "Number-to-Volume Correspondence",
+      "definition": "The relation <n> = rho V: the expected number of causal set elements in a spacetime region equals the discreteness density times its 4-volume. Supplies the volume element missing from pure causal (conformal) structure, completing the recovery of the Lorentzian metric.",
+      "relatedTo": ["order-plus-number-equals-geometry", "sprinkling", "spacetime-discreteness", "malament-theorem"]
+    },
+    {
+      "id": "malament-theorem",
+      "name": "Hawking-Malament Theorem",
+      "definition": "Theorem (Hawking-King-McCarthy 1976, Malament 1977) that for a strongly causal spacetime the causal (conformal) structure determines the metric up to a local conformal factor — '9/10 of the metric' in 4D. Mathematical foundation of CST: order fixes conformal geometry, only the volume scale is missing.",
+      "relatedTo": ["order-plus-number-equals-geometry", "causal-structure", "number-volume-correspondence"]
+    },
+    {
+      "id": "sprinkling",
+      "name": "Sprinkling (Poisson process)",
+      "definition": "Procedure generating a causal set embedded in a given spacetime (M,g) by a Poisson point process at density rho: points placed at random uniformly w.r.t. the volume measure, inheriting the order from the manifold causal structure. The unique discretization preserving Lorentz invariance on average (no preferred frame).",
+      "relatedTo": ["poisson-distribution", "lorentz-invariance-discreteness", "hauptvermutung", "number-volume-correspondence"]
+    },
+    {
+      "id": "hauptvermutung",
+      "name": "Hauptvermutung (fundamental conjecture)",
+      "definition": "Conjecture that a causal set can be faithfully embedded at a given density into two spacetimes (M,g) and (M',g') if and only if they are approximately isometric — i.e. a causet determines its continuum spacetime up to approximate isometry. Not fully proven; central obstruction is defining a distance/closeness on Lorentzian geometries.",
+      "relatedTo": ["sprinkling", "causal-set", "order-plus-number-equals-geometry"]
+    },
+    {
+      "id": "lorentz-invariance-discreteness",
+      "name": "Lorentz Invariance of Discreteness",
+      "definition": "Theorem (Bombelli-Henson-Sorkin 2009) that a Poisson sprinkling into Minkowski space admits no equivariant way to single out a preferred direction/frame; fundamental discreteness in CST does NOT break local Lorentz invariance. Key advantage over regular lattices, which always pick a frame.",
+      "relatedTo": ["sprinkling", "poisson-distribution", "swerves", "spacetime-discreteness"]
+    },
+    {
+      "id": "poisson-distribution",
+      "name": "Poisson Distribution of Sprinkled Elements",
+      "definition": "The number of elements n in a region of volume v is Poisson-distributed: P_v(n) = (rho v)^n exp(-rho v)/n!, mean rho v, standard deviation sqrt(rho v). The sqrt-N number fluctuations drive Sorkin's cosmological constant prediction.",
+      "relatedTo": ["sprinkling", "number-volume-correspondence", "cosmological-constant-fluctuation"]
+    },
+    {
+      "id": "benincasa-dowker-action",
+      "name": "Benincasa-Dowker Action",
+      "definition": "Combinatorial discrete analogue of the Einstein-Hilbert action for causal sets (Benincasa-Dowker 2010), built from the discrete d'Alembertian / scalar curvature operator. In 4D: S/hbar = N - N1 + 9 N2 - 16 N3 + 8 N4, where Ni counts inclusive order intervals of cardinality i. Converges in mean to the EH action.",
+      "relatedTo": ["discrete-dalembertian", "order-interval", "causal-set-path-integral", "einstein-hilbert-action"]
+    },
+    {
+      "id": "discrete-dalembertian",
+      "name": "Discrete (nonlocal) d'Alembertian",
+      "definition": "A one-parameter family of retarded, Lorentz-invariant but nonlocal linear operators B on scalar fields on a causal set, summing over past layers L1..L4 with dimension-dependent coefficients. Its sprinkling average converges to (Box - R/2)phi, extracting the Ricci scalar.",
+      "relatedTo": ["benincasa-dowker-action", "nonlocality-causal-set", "ricci-scalar", "order-interval"]
+    },
+    {
+      "id": "nonlocality-causal-set",
+      "name": "Inherent Nonlocality",
+      "definition": "Because Lorentz invariance forbids a finite set of nearest neighbours (the proper-time hyperbola crosses infinitely many sprinkled points), any covariant operator must be nonlocal, summing over many layers. Nonlocality is forced by discreteness + Lorentz invariance, complicating QFT but enabling phenomenology (swerves, off-shell dark matter).",
+      "relatedTo": ["discrete-dalembertian", "lorentz-invariance-discreteness", "swerves", "off-shell-dark-matter"]
+    },
+    {
+      "id": "classical-sequential-growth",
+      "name": "Classical Sequential Growth (CSG)",
+      "definition": "Rideout-Sorkin (1999) stochastic dynamics in which a causal set grows element by element, each new element born to the future of some subset, constrained by discrete general covariance and Bell causality. A classical 'halfway house' to quantum gravity; transitive percolation is its simplest one-parameter model.",
+      "relatedTo": ["transitive-percolation", "discrete-general-covariance", "bell-causality", "causal-set-cosmology", "quantum-measure"]
+    },
+    {
+      "id": "transitive-percolation",
+      "name": "Transitive Percolation",
+      "definition": "Simplest CSG model: each new element is linked to each existing element independently with probability p, then transitive closure is taken. A one-parameter renormalizable cosmological model exhibiting scaling and a fixed point; testbed for continuum recovery.",
+      "relatedTo": ["classical-sequential-growth", "causal-set-cosmology", "discrete-general-covariance"]
+    },
+    {
+      "id": "discrete-general-covariance",
+      "name": "Discrete General Covariance",
+      "definition": "Requirement in CSG that physical predictions are independent of the (arbitrary) labelling/order in which elements are born — the discrete analogue of diffeomorphism invariance / general covariance. Together with Bell causality it strongly constrains the growth probabilities.",
+      "relatedTo": ["classical-sequential-growth", "bell-causality", "covariant-observables"]
+    },
+    {
+      "id": "bell-causality",
+      "name": "Bell Causality",
+      "definition": "Condition in CSG that the birth probability of a new element depends only on its causal past, not on causally disconnected elements; a discrete causality requirement preventing superluminal influence. With discrete general covariance it nearly fixes the form of CSG transition probabilities.",
+      "relatedTo": ["classical-sequential-growth", "discrete-general-covariance"]
+    },
+    {
+      "id": "cosmological-constant-fluctuation",
+      "name": "Everpresent Lambda (cosmological constant fluctuation)",
+      "definition": "Sorkin's 1987 heuristic prediction that the cosmological constant fluctuates around zero with magnitude Lambda ~ 1/sqrt(V) ~ 1/sqrt(N) ~ 10^-120 in Planck units, from a Lambda-V uncertainty relation in unimodular gravity and Poisson volume fluctuations Delta V ~ sqrt(N). The only successful prediction-in-advance from a quantum gravity theory.",
+      "relatedTo": ["poisson-distribution", "number-volume-correspondence", "unimodular-gravity", "causal-set-cosmology"]
+    },
+    {
+      "id": "unimodular-gravity",
+      "name": "Unimodular Gravity (Lambda-V conjugacy)",
+      "definition": "Reformulation of GR in which the cosmological constant Lambda and the spacetime 4-volume V are canonically conjugate dynamical variables. Provides the uncertainty relation Delta Lambda Delta V ~ hbar underpinning Sorkin's everpresent-Lambda prediction.",
+      "relatedTo": ["cosmological-constant-fluctuation", "number-volume-correspondence"]
+    },
+    {
+      "id": "myrheim-meyer-dimension",
+      "name": "Myrheim-Meyer Dimension",
+      "definition": "Dimension estimator for a causal set from the ordering fraction r = <R>/binom(N,2) (fraction of causally related pairs), since <R>/<N>^2 = f0(d) depends only on the Minkowski dimension d. Higher dimension => less ordering. KR posets give d_MM ~ 2.38.",
+      "relatedTo": ["order-interval", "kleitman-rothschild-order", "spectral-dimension", "causal-set"]
+    },
+    {
+      "id": "sorkin-johnston-vacuum",
+      "name": "Sorkin-Johnston (SJ) Vacuum",
+      "definition": "Covariant, uniquely defined vacuum state for a free scalar field in a bounded globally hyperbolic region (or causal set), built from the positive part of the spectrum of the Pauli-Jordan operator i*Delta. Requires no choice of time slice or mode expansion; central to QFT on causal sets.",
+      "relatedTo": ["pauli-jordan-operator", "spacetime-entanglement-entropy", "qft-on-causal-set"]
+    },
+    {
+      "id": "pauli-jordan-operator",
+      "name": "Pauli-Jordan Operator",
+      "definition": "The operator i*Delta = i(G_R - G_A), the difference of retarded and advanced Green functions, which on a finite causal set is a finite antisymmetric matrix. Its eigendecomposition defines the SJ vacuum and the spacetime entanglement entropy; the field commutator.",
+      "relatedTo": ["sorkin-johnston-vacuum", "spacetime-entanglement-entropy", "qft-on-causal-set"]
+    },
+    {
+      "id": "qft-on-causal-set",
+      "name": "Quantum Field Theory on a Causal Set",
+      "definition": "Scalar field theory defined directly on a causal set via the retarded propagator / Pauli-Jordan matrix, the SJ vacuum, and Peierls bracket — bypassing canonical quantization. Recent work extends to in-in/in-out correlators, diagrammatics, and an S-matrix analogue for early-universe observables.",
+      "relatedTo": ["sorkin-johnston-vacuum", "pauli-jordan-operator", "nonlocality-causal-set", "spacetime-entanglement-entropy"]
+    },
+    {
+      "id": "spacetime-entanglement-entropy",
+      "name": "Spacetime Entanglement Entropy (SSEE)",
+      "definition": "Sorkin's covariant spacetime formulation of entanglement entropy from a generalized eigenproblem W v = mu (i Delta) v, giving S = sum mu ln|mu|. On causal sets it obeys a volume law; an area law is recovered only after a UV truncation of the Pauli-Jordan spectrum.",
+      "relatedTo": ["pauli-jordan-operator", "sorkin-johnston-vacuum", "entanglement-entropy", "holographic-principle", "page-curve"]
+    },
+    {
+      "id": "swerves",
+      "name": "Swerves (momentum diffusion)",
+      "definition": "Phenomenological effect (Dowker-Henson-Sorkin 2004): a massive particle propagating on a causal set does not follow an exact geodesic but undergoes Lorentz-invariant diffusion in momentum space, governed by one parameter k. Named after Lucretius' clinamen; constrains the discreteness scale from cosmic-ray / nebular observations.",
+      "relatedTo": ["nonlocality-causal-set", "lorentz-invariance-discreteness", "quantum-gravity-phenomenology"]
+    },
+    {
+      "id": "off-shell-dark-matter",
+      "name": "Off-shell Dark Matter from Nonlocality",
+      "definition": "Saravani-Aslanbeigi-Afshordi proposal that the causal-set-inspired nonlocal d'Alembertian, in its continuum limit, yields a continuum of massive off-shell modes in addition to the usual massless field — a candidate cold dark matter relic of spacetime nonlocality/discreteness.",
+      "relatedTo": ["nonlocality-causal-set", "discrete-dalembertian", "dark-matter"]
+    },
+    {
+      "id": "quantum-measure",
+      "name": "Quantum Measure / Anhomomorphic Logic",
+      "definition": "Sorkin's histories-based generalized measure theory for quantum dynamics without a wavefunction: a decoherence functional D(A,A') gives a quantum measure mu(A)=D(A,A) that is non-additive due to interference, with the 'coevent' (anhomomorphic logic) interpretation for single closed systems — Sorkin's preferred route to quantum CST dynamics.",
+      "relatedTo": ["classical-sequential-growth", "causal-set-path-integral", "covariant-observables"]
+    },
+    {
+      "id": "causal-set-path-integral",
+      "name": "Causal Set Path Integral / Path-Sum",
+      "definition": "Quantum dynamics as a sum over causal sets weighted by exp(i S_BD / hbar). Lorentzian (oscillatory) and lacking Wick rotation; studied via complex/Monte Carlo methods. Central arena for the entropy problem and continuum emergence.",
+      "relatedTo": ["benincasa-dowker-action", "kleitman-rothschild-order", "continuum-emergence", "quantum-measure"]
+    },
+    {
+      "id": "kleitman-rothschild-order",
+      "name": "Kleitman-Rothschild (KR) Posets",
+      "definition": "The entropically dominant random posets: three-layer causal sets with ~n/4 elements in bottom and top layers and ~n/2 in the middle, numbering ~2^(n^2/4). They overwhelm the sample space yet look nothing like a manifold ('three moments of time'), defining the CST entropy problem.",
+      "relatedTo": ["causal-set-path-integral", "continuum-emergence", "myrheim-meyer-dimension"]
+    },
+    {
+      "id": "continuum-emergence",
+      "name": "Continuum Emergence / Suppression of Non-manifoldlike Sets",
+      "definition": "The program of showing that the path integral dynamically suppresses non-manifoldlike causal sets (especially KR posets) so that manifoldlike spacetime emerges. Carlip et al. (2017-2024) show almost all non-manifoldlike sets are strongly suppressed, but the surviving class is not yet fully understood.",
+      "relatedTo": ["causal-set-path-integral", "kleitman-rothschild-order", "benincasa-dowker-action", "hauptvermutung"]
+    },
+    {
+      "id": "black-hole-entropy-causal-links",
+      "name": "Black Hole Entropy as Causal Links (horizon molecules)",
+      "definition": "Dou-Sorkin (2003) kinematic estimate: counting causal links crossing a black hole horizon near a hypersurface gives a number proportional to the horizon area, so each 'horizon molecule' carries ~1 bit per Planck area, reproducing Bekenstein-Hawking entropy S = A/4.",
+      "relatedTo": ["bekenstein-hawking-entropy", "order-interval", "holographic-principle"]
+    },
+    {
+      "id": "causal-set-cosmology",
+      "name": "Causal Set Cosmology",
+      "definition": "Cosmological models from CSG: cyclic bounce universes with 'cosmological renormalization' of dynamical parameters at each Big Crunch-Big Bang bounce, plus the everpresent-Lambda scenario with a fluctuating cosmological term tracking the critical density at each epoch.",
+      "relatedTo": ["classical-sequential-growth", "transitive-percolation", "cosmological-constant-fluctuation"]
+    },
+    {
+      "id": "covariant-observables",
+      "name": "Covariant Observables Problem",
+      "definition": "The problem of constructing physically meaningful, label-independent observables in a coordinate-free, generally covariant discrete theory; partially solved for CSG (stem sets, covariant events) but incomplete for general/quantum dynamics.",
+      "relatedTo": ["discrete-general-covariance", "quantum-measure", "causal-set-path-integral"]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "causal-set-axioms",
+      "name": "Causal Set Axioms",
+      "latex": "x \\preceq x;\\quad x \\preceq y \\preceq x \\Rightarrow x=y;\\quad x \\preceq y \\preceq z \\Rightarrow x \\preceq z;\\quad |I[x,y]| < \\infty",
+      "meaning": "Reflexivity, acyclicity/antisymmetry, transitivity, and local finiteness define a causal set; the first three give a partial order (discrete causal structure), the last encodes fundamental discreteness.",
+      "source": "bombelli-1987"
+    },
+    {
+      "id": "poisson-sprinkling",
+      "name": "Poisson Sprinkling Distribution",
+      "latex": "P_v(n) = \\frac{(\\rho v)^n}{n!} e^{-\\rho v}, \\qquad \\langle n \\rangle = \\rho v",
+      "meaning": "Probability of finding n sprinkled elements in spacetime volume v; mean rho v, fluctuation sqrt(rho v). Poisson process is the Lorentz-invariant-on-average discretization.",
+      "source": "bombelli-1987"
+    },
+    {
+      "id": "number-volume",
+      "name": "Number-Volume Correspondence",
+      "latex": "\\langle n \\rangle = \\rho V \\;\\Longleftrightarrow\\; V = N\\, \\ell_p^{4}",
+      "meaning": "Expected element count equals density times 4-volume; supplies the volume factor that, with Malament's theorem, recovers the full Lorentzian metric ('Number = Volume').",
+      "source": "surya-2019"
+    },
+    {
+      "id": "discrete-dalembertian-4d",
+      "name": "Discrete d'Alembertian (4D)",
+      "latex": "B\\phi(x) = \\frac{4}{\\sqrt{6}\\,\\ell^2}\\left[ -\\phi(x) + \\Big(\\sum_{y\\in L_1} - 9\\!\\sum_{y\\in L_2} + 16\\!\\sum_{y\\in L_3} - 8\\!\\sum_{y\\in L_4}\\Big)\\phi(y) \\right]",
+      "meaning": "Nonlocal Lorentz-invariant operator summing over past layers L_i (elements with |I(x,y)|=i-1) with 4D coefficients (1,-9,16,-8); its sprinkling average tends to (Box - R/2)phi.",
+      "source": "benincasa-dowker-2010"
+    },
+    {
+      "id": "dalembertian-limit",
+      "name": "Continuum Limit of B",
+      "latex": "\\lim_{\\ell\\to 0} \\langle B\\phi(x)\\rangle = \\Big(\\Box - \\tfrac{1}{2}R(x)\\Big)\\phi(x)",
+      "meaning": "The mean discrete d'Alembertian recovers the curved-space scalar d'Alembertian minus half the Ricci scalar, allowing curvature (and thus an action) to be read off from order alone.",
+      "source": "benincasa-dowker-2010"
+    },
+    {
+      "id": "benincasa-dowker-action-4d",
+      "name": "Benincasa-Dowker Action (4D)",
+      "latex": "\\frac{1}{\\hbar} S^{(4)}[C] = N - N_1 + 9 N_2 - 16 N_3 + 8 N_4",
+      "meaning": "Purely combinatorial discrete Einstein-Hilbert action: N total elements, N_i = number of order intervals of cardinality i. Converges in mean to S_EH = (1/2)∫R sqrt(-g) d^4x.",
+      "source": "benincasa-dowker-2010"
+    },
+    {
+      "id": "lambda-prediction",
+      "name": "Everpresent Lambda Prediction",
+      "latex": "\\Lambda \\sim \\Delta\\Lambda \\sim \\frac{1}{\\Delta V} \\sim \\frac{1}{\\sqrt{V}} \\sim \\frac{1}{\\sqrt{N}} \\sim 10^{-120}",
+      "meaning": "From Lambda-V conjugacy (unimodular gravity) and Poisson volume fluctuation Delta V ~ sqrt(N) l_p^4: fluctuating cosmological constant of order 10^-120 in Planck units, matching the observed value (1987 prediction-in-advance).",
+      "source": "sorkin-2007"
+    },
+    {
+      "id": "myrheim-meyer",
+      "name": "Myrheim-Meyer Dimension",
+      "latex": "\\frac{\\langle R \\rangle}{\\binom{N}{2}} = f_0(d) = \\frac{\\Gamma(d+1)\\,\\Gamma(d/2)}{4\\,\\Gamma(3d/2)}",
+      "meaning": "Ordering fraction (fraction of related pairs) is a function of the Minkowski dimension d only; inverting gives a combinatorial dimension estimator. KR posets yield d_MM ~ 2.38.",
+      "source": "meyer-1988"
+    },
+    {
+      "id": "pauli-jordan",
+      "name": "Pauli-Jordan Operator and SJ Vacuum",
+      "latex": "i\\Delta = i(G_R - G_A),\\quad i\\Delta\\, u_k = \\lambda_k u_k,\\quad W_{SJ} = \\sum_{\\lambda_k>0} \\lambda_k\\, u_k u_k^{*}",
+      "meaning": "The commutator function (retarded minus advanced Green function) becomes a finite antisymmetric matrix on a causet; its positive eigenspectrum defines the unique covariant Sorkin-Johnston vacuum two-point function.",
+      "source": "surya-2019"
+    },
+    {
+      "id": "ssee",
+      "name": "Spacetime Entanglement Entropy",
+      "latex": "W v_i = \\mu_i\\, (i\\Delta) v_i,\\qquad S = \\sum_i \\mu_i \\ln|\\mu_i|",
+      "meaning": "Covariant spacetime entanglement entropy from a generalized eigenproblem of the Wightman (W) and Pauli-Jordan (i Delta) functions; volume law on causal sets, area law only after UV spectral truncation.",
+      "source": "sorkin-yazdi-2018"
+    },
+    {
+      "id": "swerves-diffusion",
+      "name": "Lorentz-Invariant Momentum Diffusion (swerves)",
+      "latex": "\\frac{\\partial \\rho}{\\partial \\tau} = k\\, \\nabla^2_{p}\\, \\rho \\quad \\text{on } p^2 = -m^2",
+      "meaning": "Macroscopic effect of discreteness on a massive particle: diffusion in momentum on the mass shell, governed by one parameter k, manifestly Lorentz invariant; observationally constrains the discreteness scale.",
+      "source": "dowker-henson-sorkin-2004"
+    },
+    {
+      "id": "kr-count",
+      "name": "Kleitman-Rothschild Counting",
+      "latex": "\\#\\{\\text{posets on } n\\} \\sim 2^{n^2/4},\\quad \\text{KR: 3 layers } (n/4,\\, n/2,\\, n/4)",
+      "meaning": "The number of labelled posets grows like 2^(n^2/4), dominated by three-layer KR orders; this entropy must be overcome by the path-integral phase for a manifold to emerge.",
+      "source": "loomis-carlip-2017"
+    }
+  ],
+  "references": [
+    {
+      "id": "bombelli-1987",
+      "authors": "L. Bombelli, J. Lee, D. Meyer, R. D. Sorkin",
+      "title": "Space-time as a causal set",
+      "year": 1987,
+      "doi": "10.1103/PhysRevLett.59.521",
+      "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.59.521",
+      "significance": "Founding paper of causal set theory: axioms, sprinkling, and the proposal that order plus number recovers Lorentzian geometry."
+    },
+    {
+      "id": "surya-2019",
+      "authors": "S. Surya",
+      "title": "The causal set approach to quantum gravity",
+      "year": 2019,
+      "arxiv": "1903.11544",
+      "doi": "10.1007/s41114-019-0023-1",
+      "url": "https://arxiv.org/abs/1903.11544",
+      "significance": "Authoritative Living Reviews survey of the entire CST program: kinematics, dynamics, phenomenology, open problems."
+    },
+    {
+      "id": "rideout-sorkin-1999",
+      "authors": "D. P. Rideout, R. D. Sorkin",
+      "title": "A Classical Sequential Growth Dynamics for Causal Sets",
+      "year": 1999,
+      "arxiv": "gr-qc/9904062",
+      "doi": "10.1103/PhysRevD.61.024002",
+      "url": "https://arxiv.org/abs/gr-qc/9904062",
+      "significance": "Defines classical sequential growth from discrete general covariance and Bell causality; transitive percolation; classical halfway house to quantum dynamics."
+    },
+    {
+      "id": "benincasa-dowker-2010",
+      "authors": "D. M. T. Benincasa, F. Dowker",
+      "title": "The Scalar Curvature of a Causal Set",
+      "year": 2010,
+      "arxiv": "1001.2725",
+      "doi": "10.1103/PhysRevLett.104.181301",
+      "url": "https://arxiv.org/abs/1001.2725",
+      "significance": "Introduces the discrete d'Alembertian approximating Box - R/2 and the combinatorial Benincasa-Dowker (Einstein-Hilbert) action."
+    },
+    {
+      "id": "dowker-glaser-2013",
+      "authors": "F. Dowker, L. Glaser",
+      "title": "Causal set d'Alembertians for various dimensions",
+      "year": 2013,
+      "arxiv": "1305.2588",
+      "doi": "10.1088/0264-9381/30/19/195016",
+      "url": "https://arxiv.org/abs/1305.2588",
+      "significance": "Generalizes the discrete d'Alembertian and BD action to arbitrary spacetime dimension with dimension-dependent layer coefficients."
+    },
+    {
+      "id": "sorkin-2007",
+      "authors": "R. D. Sorkin",
+      "title": "Is the cosmological 'constant' a nonlocal quantum residue of discreteness of the causal set type?",
+      "year": 2007,
+      "arxiv": "0710.1675",
+      "doi": "10.1063/1.2823765",
+      "url": "https://arxiv.org/abs/0710.1675",
+      "significance": "States the everpresent-Lambda argument: fluctuating cosmological constant of order 1/sqrt(V) ~ 10^-120 from discreteness and Lambda-V conjugacy."
+    },
+    {
+      "id": "ahmed-2004",
+      "authors": "M. Ahmed, S. Dodelson, P. B. Greene, R. D. Sorkin",
+      "title": "Everpresent Lambda",
+      "year": 2004,
+      "arxiv": "astro-ph/0209274",
+      "doi": "10.1103/PhysRevD.69.103523",
+      "url": "https://arxiv.org/abs/astro-ph/0209274",
+      "significance": "First dynamical model realizing Sorkin's fluctuating cosmological constant, comparing to cosmological data."
+    },
+    {
+      "id": "zwane-2018",
+      "authors": "N. Zwane, N. Afshordi, R. D. Sorkin",
+      "title": "Cosmological tests of Everpresent Lambda",
+      "year": 2018,
+      "arxiv": "1703.06265",
+      "doi": "10.1088/1361-6382/aadc36",
+      "url": "https://arxiv.org/abs/1703.06265",
+      "significance": "Confronts the everpresent-Lambda model with supernova and CMB data, a concrete observational test of CST."
+    },
+    {
+      "id": "dou-sorkin-2003",
+      "authors": "D. Dou, R. D. Sorkin",
+      "title": "Black Hole Entropy as Causal Links",
+      "year": 2003,
+      "arxiv": "gr-qc/0302009",
+      "doi": "10.1023/A:1023781022519",
+      "url": "https://arxiv.org/abs/gr-qc/0302009",
+      "significance": "Kinematic derivation of Bekenstein-Hawking entropy from counting causal links crossing a horizon ('horizon molecules')."
+    },
+    {
+      "id": "dowker-henson-sorkin-2004",
+      "authors": "F. Dowker, J. Henson, R. D. Sorkin",
+      "title": "Quantum Gravity Phenomenology, Lorentz Invariance and Discreteness",
+      "year": 2004,
+      "arxiv": "gr-qc/0311055",
+      "doi": "10.1142/S0217732304015026",
+      "url": "https://arxiv.org/abs/gr-qc/0311055",
+      "significance": "Introduces swerves: Lorentz-invariant momentum diffusion from causal-set discreteness, a phenomenological window."
+    },
+    {
+      "id": "bombelli-henson-sorkin-2009",
+      "authors": "L. Bombelli, J. Henson, R. D. Sorkin",
+      "title": "Discreteness without symmetry breaking: a theorem",
+      "year": 2009,
+      "arxiv": "gr-qc/0605006",
+      "doi": "10.1142/S0217732309031958",
+      "url": "https://arxiv.org/abs/gr-qc/0605006",
+      "significance": "Proves Poisson sprinkling singles out no preferred frame: discreteness in CST preserves local Lorentz invariance."
+    },
+    {
+      "id": "sorkin-2003-lectures",
+      "authors": "R. D. Sorkin",
+      "title": "Causal Sets: Discrete Gravity (Valdivia lectures)",
+      "year": 2003,
+      "arxiv": "gr-qc/0309009",
+      "url": "https://arxiv.org/abs/gr-qc/0309009",
+      "significance": "Pedagogical introduction to CST and the quantum-measure / histories approach to its dynamics."
+    },
+    {
+      "id": "henson-2006",
+      "authors": "J. Henson",
+      "title": "The causal set approach to quantum gravity",
+      "year": 2006,
+      "arxiv": "gr-qc/0601121",
+      "url": "https://arxiv.org/abs/gr-qc/0601121",
+      "significance": "Widely cited earlier review introducing the program and its main ideas."
+    },
+    {
+      "id": "loomis-carlip-2017",
+      "authors": "S. P. Loomis, S. Carlip",
+      "title": "Suppression of non-manifold-like sets in the causal set path integral",
+      "year": 2017,
+      "arxiv": "1709.00064",
+      "doi": "10.1088/1361-6382/aa980b",
+      "url": "https://arxiv.org/abs/1709.00064",
+      "significance": "Shows KR (non-manifoldlike) posets are strongly suppressed in the gravitational path integral — progress on the entropy problem."
+    },
+    {
+      "id": "carlip-2022",
+      "authors": "S. Carlip",
+      "title": "Path integral suppression of badly behaved causal sets",
+      "year": 2022,
+      "arxiv": "2209.00327",
+      "doi": "10.1088/1361-6382/acc50f",
+      "url": "https://arxiv.org/abs/2209.00327",
+      "significance": "Extends suppression results to broader classes of non-manifoldlike causal sets."
+    },
+    {
+      "id": "carlip-2024",
+      "authors": "S. Carlip",
+      "title": "Causal Sets and an Emerging Continuum",
+      "year": 2024,
+      "arxiv": "2405.14059",
+      "url": "https://arxiv.org/abs/2405.14059",
+      "significance": "2024 state of the art on continuum emergence: almost all non-manifoldlike sets suppressed, but the surviving class not yet understood."
+    },
+    {
+      "id": "sorkin-2014-ssee",
+      "authors": "R. D. Sorkin",
+      "title": "Expressing entropy globally in terms of (4D) field-correlations / Spacetime entanglement entropy in 1+1 dimensions",
+      "year": 2014,
+      "doi": "10.1088/0264-9381/31/21/214006",
+      "url": "https://iopscience.iop.org/article/10.1088/0264-9381/31/21/214006",
+      "significance": "Defines the covariant spacetime entanglement entropy (SSEE) from field correlations."
+    },
+    {
+      "id": "sorkin-yazdi-2018",
+      "authors": "R. D. Sorkin, Y. K. Yazdi",
+      "title": "Entanglement Entropy in Causal Set Theory",
+      "year": 2018,
+      "arxiv": "1611.10281",
+      "doi": "10.1088/1361-6382/aab06f",
+      "url": "https://arxiv.org/abs/1611.10281",
+      "significance": "Computes SSEE on causal sets: volume law, with area law recovered only after UV truncation of the SJ spectrum."
+    },
+    {
+      "id": "aslanbeigi-2014",
+      "authors": "S. Aslanbeigi, M. Saravani, R. D. Sorkin",
+      "title": "Generalized causal set d'Alembertians",
+      "year": 2014,
+      "arxiv": "1403.1622",
+      "doi": "10.1007/JHEP06(2014)024",
+      "url": "https://arxiv.org/abs/1403.1622",
+      "significance": "Families of nonlocal d'Alembertians and their continuum nonlocal QFTs, basis for off-shell dark matter."
+    },
+    {
+      "id": "saravani-2015-dm",
+      "authors": "M. Saravani, S. Aslanbeigi",
+      "title": "Dark Matter From Spacetime Nonlocality",
+      "year": 2015,
+      "arxiv": "1502.01655",
+      "doi": "10.1103/PhysRevD.92.103504",
+      "url": "https://arxiv.org/abs/1502.01655",
+      "significance": "Proposes off-shell massive modes from causal-set nonlocality as a dark matter candidate."
+    },
+    {
+      "id": "eichhorn-mizera-2014",
+      "authors": "A. Eichhorn, S. Mizera",
+      "title": "Spectral dimension in causal set quantum gravity",
+      "year": 2014,
+      "arxiv": "1311.2530",
+      "doi": "10.1088/0264-9381/31/12/125007",
+      "url": "https://arxiv.org/abs/1311.2530",
+      "significance": "Computes the spectral dimension on causal sets, connecting to dimensional reduction seen in CDT/asymptotic safety."
+    },
+    {
+      "id": "glaser-surya-2013",
+      "authors": "L. Glaser, S. Surya",
+      "title": "Towards a Definition of Locality in a Manifoldlike Causal Set",
+      "year": 2013,
+      "arxiv": "1309.3403",
+      "doi": "10.1103/PhysRevD.88.124026",
+      "url": "https://arxiv.org/abs/1309.3403",
+      "significance": "Addresses the locality / nearest-neighbour problem inherent to Lorentz-invariant discreteness."
+    },
+    {
+      "id": "adamson-wallden-2025",
+      "authors": "S. A. Adamson, P. Wallden",
+      "title": "Benincasa-Dowker-Glaser causal set actions by quantum counting",
+      "year": 2025,
+      "arxiv": "2505.22217",
+      "doi": "10.1103/PhysRevResearch.8.023188",
+      "url": "https://arxiv.org/abs/2505.22217",
+      "significance": "Quantum algorithm computing the BD-G action via Grover quantum counting of order-interval abundances; bridge to quantum computing. Published Phys. Rev. Research 8, 023188 (2026)."
+    },
+    {
+      "id": "muller-2025",
+      "authors": "O. Müller",
+      "title": "On the Hauptvermutung of Causal Set Theory",
+      "year": 2025,
+      "arxiv": "2503.01719",
+      "url": "https://arxiv.org/abs/2503.01719",
+      "significance": "Disambiguates the Hauptvermutung into two formulations (one false, one true) and proves it for countable sets."
+    },
+    {
+      "id": "qmcmc-2025",
+      "authors": "S. Ferguson, A. Nasiri, P. Wallden",
+      "title": "Dynamics of discrete spacetimes with Quantum-enhanced Markov Chain Monte Carlo",
+      "year": 2025,
+      "arxiv": "2506.19538",
+      "url": "https://arxiv.org/abs/2506.19538",
+      "significance": "Quantum-enhanced MCMC to sample causal sets uniformly and by the BD action, advancing computational CST dynamics."
+    },
+    {
+      "id": "meyer-1988",
+      "authors": "D. A. Meyer",
+      "title": "The Dimension of Causal Sets",
+      "year": 1988,
+      "url": "https://dspace.mit.edu/handle/1721.1/14328",
+      "significance": "PhD thesis introducing the Myrheim-Meyer dimension estimator from the ordering fraction."
+    },
+    {
+      "id": "malament-1977",
+      "authors": "D. B. Malament",
+      "title": "The class of continuous timelike curves determines the topology of spacetime",
+      "year": 1977,
+      "doi": "10.1063/1.523436",
+      "url": "https://doi.org/10.1063/1.523436",
+      "significance": "Theorem that causal structure fixes the conformal geometry; mathematical foundation of 'Order = conformal geometry'."
+    },
+    {
+      "id": "wallden-2013",
+      "authors": "P. Wallden",
+      "title": "Causal Sets Dynamics: Review & Outlook",
+      "year": 2013,
+      "arxiv": "1305.6557",
+      "doi": "10.1088/1742-6596/453/1/012023",
+      "url": "https://arxiv.org/abs/1305.6557",
+      "significance": "Focused review of CST dynamics (CSG, quantum measure, path integral) and open directions."
+    },
+    {
+      "id": "surya-book-2025",
+      "authors": "S. Surya (ed.)",
+      "title": "The Causal Set Approach to Quantum Gravity: An Introduction",
+      "year": 2025,
+      "doi": "10.1007/978-3-031-84420-1",
+      "url": "https://link.springer.com/book/10.1007/978-3-031-84420-1",
+      "significance": "Current pedagogical monograph collecting the modern state of the program."
+    }
+  ],
+  "openProblems": [
+    {
+      "id": "fundamental-quantum-dynamics",
+      "statement": "Construct a satisfactory quantum dynamics for causal sets from first principles, i.e. a well-defined quantum measure / path integral sum_C exp(i S_BD/hbar) over causal sets with covariant observables and an interpretation valid for a single closed universe.",
+      "whyHard": "The Lorentzian, non-simplicial path integral is oscillatory with no Wick rotation; covariant observables are hard to define; standard probability is replaced by a non-additive quantum measure (anhomomorphic logic) lacking a finished interpretation.",
+      "attempts": "Classical sequential growth (Rideout-Sorkin 1999), quantum sequential growth and decoherence-functional approaches, Sorkin's quantum measure / coevent program, and 2025 quantum-enhanced Monte Carlo sampling of the BD action."
+    },
+    {
+      "id": "entropy-problem",
+      "statement": "Show that the dynamics suppresses entropically dominant Kleitman-Rothschild (three-layer) posets and other non-manifoldlike causal sets, so that manifoldlike spacetime emerges in the continuum limit.",
+      "whyHard": "The number of posets grows like 2^(n^2/4), so configurational entropy of bad sets vastly outnumbers manifoldlike ones; the path-integral phase from S_BD must cancel this, which is shown only for large subclasses, not all.",
+      "attempts": "Loomis-Carlip 2017, Carlip 2022/2024, and P. Carlip-S. Carlip-Surya 2024 show strong suppression of KR and many non-manifoldlike sets in the path integral, but the surviving unsuppressed class is not yet understood."
+    },
+    {
+      "id": "dimension-selection",
+      "statement": "Explain why the emergent continuum should be four-dimensional rather than any other dimension.",
+      "whyHard": "Neither the kinematics nor the BD action manifestly prefers d=4; dimension appears as an emergent property tangled with the entropy problem and the structure of dominant configurations.",
+      "attempts": "Dimension estimators (Myrheim-Meyer, midpoint scaling) characterize d but do not select it; spectral-dimension studies show flow to ~2 at short scales; no dynamical selection mechanism for d=4 yet."
+    },
+    {
+      "id": "hauptvermutung-proof",
+      "statement": "Prove the Hauptvermutung: a causal set faithfully embeds into two spacetimes at fixed density iff they are approximately isometric (the causet fixes its continuum up to approximate isometry).",
+      "whyHard": "Requires a canonical notion of distance/closeness on the space of Lorentzian geometries, itself an open problem; counterexamples and ambiguities arise for finite sets.",
+      "attempts": "Bombelli-Meyer closeness functions; Noldus Lorentzian Gromov-Hausdorff-like distances; Müller 2025 disambiguates the conjecture (one form false, one true) and proves the countable case."
+    },
+    {
+      "id": "nonlocality-qft-control",
+      "statement": "Develop a controlled, renormalizable quantum field theory consistent with the inherent nonlocality of the causal-set d'Alembertian, including stability and a sensible continuum/IR limit.",
+      "whyHard": "Lorentz invariance forbids finite-neighbourhood locality, forcing nonlocal operators that introduce extra modes, potential instabilities, and ambiguous renormalization.",
+      "attempts": "Generalized/mesoscale d'Alembertians (Aslanbeigi-Saravani-Sorkin 2014), SJ-vacuum QFT, off-shell dark matter from nonlocality (Saravani 2015), and recent in-in/in-out correlator and S-matrix formulations."
+    },
+    {
+      "id": "area-vs-volume-entropy",
+      "statement": "Explain why the spacetime entanglement entropy on causal sets obeys a volume law and identify the physically correct UV truncation that yields the holographic area law S = A/4.",
+      "whyHard": "Discreteness alone fails to regulate the entropy to an area law; an ad hoc spectral truncation of the Pauli-Jordan operator is needed, whose physical origin is unclear, putting CST in tension with holography.",
+      "attempts": "Sorkin-Yazdi 2018, de Sitter horizon studies (2020-2021), spacetime-EE covariance/discreteness papers (2022), and distinguished-vacuum principle work (2024)."
+    },
+    {
+      "id": "covariant-observables-problem",
+      "statement": "Construct a complete set of covariant (label-independent) physical observables for general and quantum causal-set dynamics.",
+      "whyHard": "In a coordinate-free generally covariant discrete theory there are no natural localized quantities; predictions must be expressed via the order alone, and the quantum (interference) case has no additive probability measure.",
+      "attempts": "Covariant 'stem' observables and the Bell-causality/general-covariance framework for CSG (Brightwell-Dowker-Garcia-Henson-Sorkin), partial results only for the classical stochastic regime."
+    },
+    {
+      "id": "continuum-and-boundary-terms",
+      "statement": "Recover smooth continuum geometry, the Hamiltonian/canonical description, and Gibbons-Hawking-type boundary terms from purely order-theoretic data.",
+      "whyHard": "There is no manifold, foliation, or differentiable structure to start from; boundary contributions and a canonical/Hamiltonian formulation must be reconstructed combinatorially.",
+      "attempts": "Boundary-term analyses for the BD action (Buck-Dowker-Jubb-Surya), spatial-hypersurface and 'molecule'-based constructions; still incomplete."
+    }
+  ],
+  "connections": [
+    {
+      "from": "causal-sets",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-structure",
+      "description": "Both are Lorentzian, background-independent, causal, non-perturbative path-integral approaches recovering GR classically and exhibiting spectral-dimension reduction to ~2 in the UV. Key difference: in CDT discreteness is a removable regulator with a fixed foliation and simplex topology, whereas in CST it is fundamental/physical and only pure order is retained (more freedom in the action). Direct comparison of the two path integrals and their phase structure is largely open.",
+      "explored": "partially"
+    },
+    {
+      "from": "causal-sets",
+      "to": "asymptotic-safety",
+      "type": "shared-structure",
+      "description": "Connected via the spectral-dimension: both independently predict dimensional reduction to d_s ~ 2 in the UV. Whether the BD action / causal-set path integral realizes an asymptotically-safe-like RG fixed point is essentially unexplored — a potentially rich, unexploited bridge.",
+      "explored": "barely"
+    },
+    {
+      "from": "causal-sets",
+      "to": "loop-quantum-gravity",
+      "type": "shared-structure",
+      "description": "Both predict fundamental spacetime discreteness, but oppositely: in LQG discreteness is derived (discrete area/volume spectra on spin networks) while in CST it is postulated; LQG discretizes space, CST discretizes spacetime as a poset. Spin-foam causal evolution and CSG share a 'causal growth' idea but are formally unconnected.",
+      "explored": "barely"
+    },
+    {
+      "from": "causal-sets",
+      "to": "group-field-theory",
+      "type": "shared-math",
+      "description": "Both are combinatorial/discrete background-independent theories summing over discrete structures (posets vs. simplicial complexes/graphs) with emergent geometry from combinatorics. No direct formal map exists between causal-set path-sums and GFT amplitudes; a translation dictionary is unexplored.",
+      "explored": "barely"
+    },
+    {
+      "from": "causal-sets",
+      "to": "holography-adscft",
+      "type": "conflict",
+      "description": "The SSEE on causal sets obeys a volume law, in tension with holographic/Bekenstein area scaling, yet Dou-Sorkin horizon-molecule counting reproduces the area law S=A/4 for black holes. Whether the holographic principle is compatible with fundamental discreteness, and how an area law emerges from a volume law via UV truncation, is open and potentially decisive.",
+      "explored": "barely"
+    },
+    {
+      "from": "causal-sets",
+      "to": "entanglement-spacetime",
+      "type": "shared-structure",
+      "description": "CST provides its own covariant spacetime entanglement entropy (SSEE) and SJ vacuum, an alternative to the 'entanglement builds geometry' / ER=EPR program: here geometry comes from order+number, not primarily from entanglement. Relating SSEE to Ryu-Takayanagi / holographic entanglement entropy is only partially explored.",
+      "explored": "partially"
+    },
+    {
+      "from": "causal-sets",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "Dou-Sorkin derive Bekenstein-Hawking entropy kinematically by counting causal links ('horizon molecules') crossing a horizon, recently extended via Boltzmannian state counting (2023-2024). The information paradox and Page curve have not been systematically treated within CST.",
+      "explored": "partially"
+    },
+    {
+      "from": "causal-sets",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "CST is a prototype emergent-geometry theory (metric, topology, dimension emerge from order+number) and the BD action emerges from counting order intervals, conceptually close to thermodynamic/entropic gravity (Jacobson, Verlinde). Technical links between counting-based emergence and entropic-force derivations are underdeveloped.",
+      "explored": "partially"
+    },
+    {
+      "from": "causal-sets",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "Both reject a smooth UV manifold and recover geometry spectrally: the spectral triple / Dirac operator of NCG parallels the Pauli-Jordan operator and SJ spectrum that encode geometry on causal sets. A direct correspondence between these spectral reconstructions is unexplored.",
+      "explored": "barely"
+    },
+    {
+      "from": "causal-sets",
+      "to": "quantum-cosmology",
+      "type": "shared-structure",
+      "description": "CSG yields cosmological dynamics (cyclic bounce universes, 'cosmological renormalization' of parameters at each bounce) and the everpresent-Lambda scenario is a direct cosmological prediction. Connections to Hartle-Hawking / no-boundary and to LQC bounces are largely untreated.",
+      "explored": "partially"
+    },
+    {
+      "from": "causal-sets",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "Swerves (Lorentz-invariant momentum diffusion) bound the discreteness scale from cosmic-ray and nebular observations, and everpresent Lambda is testable via SNe/CMB (Zwane-Afshordi-Sorkin 2018). CST's exact Lorentz invariance makes it robust against Lorentz-violation tests, unlike many QG models.",
+      "explored": "partially"
+    },
+    {
+      "from": "causal-sets",
+      "to": "string-theory",
+      "type": "conflict",
+      "description": "Philosophically opposed: string theory assumes a smooth (super)manifold and continuous UV spacetime, CST assumes fundamental background-free discreteness. No formal bridge exists; the relationship is an unexplored conceptual conflict about the UV nature of spacetime.",
+      "explored": "barely"
+    },
+    {
+      "from": "causal-sets",
+      "to": "cosmological-constant-fluctuation",
+      "type": "conjecture",
+      "description": "Sorkin's everpresent-Lambda is CST's flagship prediction: Lambda ~ 1/sqrt(V) ~ 10^-120 in Planck units, made in 1987 a decade before the observed accelerating expansion — the only prediction-in-advance from any quantum gravity program. Dynamical realizations remain phenomenological, not derived from a full quantum theory.",
+      "explored": "partially"
+    },
+    {
+      "from": "causal-sets",
+      "to": "spectral-dimension",
+      "type": "shared-math",
+      "description": "The spectral dimension in causal set theory is strongly probe-dependent. (1) Random walks directly on the discrete causal order (Eichhorn-Mizera, arXiv:1311.2530, CQG 2014) find that d_s INCREASES at short scales — opposite to CDT/asymptotic-safety — because of the nonlocal, fundamentally Lorentzian structure of the causet graph; the causal spectral dimension (meeting probability of two walkers) shows a similar trend. (2) Propagators / heat kernels derived from the nonlocal continuum d'Alembertian inherited from causal sets (Belenchia-Benincasa-Marciano-Modesto, arXiv:1507.00330, PRD 2016) give a UNIVERSAL REDUCTION to d_s ~ 2 in the UV in all spacetime dimensions, arising from the improved UV behaviour of the regularised propagator ~ (k^2)^(d/2). The two results are not contradictory: they probe genuinely different aspects of the discrete structure. The probe-dependence is a distinctive signature of causal set nonlocality.",
+      "explored": "partially"
+    },
+    {
+      "from": "causal-sets",
+      "to": "twistors-amplitudes",
+      "type": "conjecture",
+      "description": "Recent CST QFT work defines scattering amplitudes / an S-matrix analogue on a discrete causal background and quantum-counting algorithms for the action; whether any structural link exists to amplitude methods or twistor positivity (both built on causal/positive structure) is entirely speculative and unexamined.",
+      "explored": "barely"
+    }
+  ]
+}

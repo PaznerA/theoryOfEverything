@@ -1,0 +1,960 @@
+{
+  "slug": "conceptual-problems",
+  "name": "Conceptual Problems of Quantum Gravity",
+  "concepts": [
+    {
+      "id": "problem-of-time",
+      "name": "Problem of time",
+      "definition": "In canonical quantum gravity the Hamiltonian is a sum of constraints that annihilate physical states (H psi = 0), so there is no external time against which the state of the universe evolves. Encompasses the Hilbert-space problem (no canonical positive inner product), the multiple-choice/global-time problem, and the interpretation of probabilities in a timeless theory. Isham's classification: time before quantization (deparametrization), time after quantization (Page-Wootters), and timeless approaches.",
+      "relatedTo": ["wheeler-dewitt-equation", "deparametrization", "page-wootters-time", "background-independence", "diffeomorphism-invariance"]
+    },
+    {
+      "id": "wheeler-dewitt-equation",
+      "name": "Wheeler-DeWitt equation",
+      "definition": "The quantum super-Hamiltonian constraint H psi[h_ab] = 0 acting on a wave functional on superspace (the space of 3-geometries). Contains no i hbar d/dt term, making the wave function of the universe formally static. Plagued by operator-ordering ambiguity, regularization, and ill-definedness of functional differential operators. The DeWitt supermetric G_abcd has Lorentzian signature, giving the scale factor the role of an intrinsic time.",
+      "relatedTo": ["problem-of-time", "deparametrization", "minisuperspace", "hamiltonian-constraint"]
+    },
+    {
+      "id": "hamiltonian-constraint",
+      "name": "Hamiltonian (scalar) constraint",
+      "definition": "The constraint generating time reparametrizations in the ADM formulation of GR; together with the diffeomorphism (momentum) constraints it forms the Dirac/hypersurface-deformation algebra with structure functions. Its vanishing on physical states is the origin of the problem of time. In LQG it becomes the master constraint or Thiemann's quantum Hamiltonian.",
+      "relatedTo": ["wheeler-dewitt-equation", "diffeomorphism-invariance", "problem-of-time"]
+    },
+    {
+      "id": "deparametrization",
+      "name": "Deparametrization",
+      "definition": "Selecting a physical field (massless scalar, pressureless dust, universe volume / scale factor) as a clock and solving the scalar constraint for the clock momentum to obtain a true (non-vanishing) physical Hamiltonian generating relational evolution. Works cleanly in minisuperspace and for matter reference fields; fails globally due to turning points and Gribov ambiguities (global time problem).",
+      "relatedTo": ["problem-of-time", "page-wootters-time", "relational-observables", "trinity-relational-dynamics"]
+    },
+    {
+      "id": "page-wootters-time",
+      "name": "Page-Wootters relational time",
+      "definition": "A global timeless state satisfying H_tot |Psi>> = 0 is conditioned on the reading of a clock subsystem; the conditioned state |psi(t)> = <t|_C |Psi>> obeys an effective Schroedinger equation. Time emerges as a correlation between clock and system rather than as an external parameter ('evolution without evolution'). Criticized by Kuchar (propagators, multiple clocks), revived post-2015 and extended to non-ideal clocks via covariant POVMs.",
+      "relatedTo": ["problem-of-time", "deparametrization", "trinity-relational-dynamics", "quantum-reference-frames", "relational-observables"]
+    },
+    {
+      "id": "trinity-relational-dynamics",
+      "name": "Trinity of relational dynamics",
+      "definition": "Hoehn-Smith-Lock equivalence of three formulations of relational quantum dynamics via quantum reduction maps: (i) relational Dirac observables in the clock-neutral picture of Dirac quantization, (ii) the Page-Wootters Schroedinger picture, (iii) the relational Heisenberg picture from symmetry reduction. Shows the apparently competing solutions to the problem of time are three faces of the same dynamics.",
+      "relatedTo": ["page-wootters-time", "deparametrization", "relational-observables", "quantum-reference-frames"]
+    },
+    {
+      "id": "background-independence",
+      "name": "Background independence",
+      "definition": "The requirement that a quantum theory of gravity employ no fixed, prior spacetime metric; the gauge group is Diff(M) and geometry is fully dynamical. Linked to the hole argument: diffeomorphic metrics are physically identical. There is no agreed precise definition (Anderson, Giulini, Pooley, Read 2023), which is itself a conceptual problem and a source of the LQG-vs-string-theory dispute.",
+      "relatedTo": ["diffeomorphism-invariance", "problem-of-time", "relational-observables", "hole-argument"]
+    },
+    {
+      "id": "diffeomorphism-invariance",
+      "name": "Diffeomorphism invariance",
+      "definition": "Physical observables must have vanishing Poisson brackets with all constraints (be constant along gauge orbits), so they cannot be local fields at manifold points or regions. Forces observables to be global or relational, a feature inherited directly from classical GR.",
+      "relatedTo": ["background-independence", "relational-observables", "hamiltonian-constraint", "partial-complete-observables"]
+    },
+    {
+      "id": "hole-argument",
+      "name": "Hole argument",
+      "definition": "Einstein's argument (revived by Stachel, Earman, Norton) that if the metric is determined only up to diffeomorphism, then spacetime points have no independent physical identity; only relations are physical. Gryb and Thebault argue it is structurally linked to the problem of time.",
+      "relatedTo": ["background-independence", "diffeomorphism-invariance", "relational-observables"]
+    },
+    {
+      "id": "relational-observables",
+      "name": "Relational / dressed observables",
+      "definition": "Gauge-invariant (Dirac) quantities encoding 'the value of field f when clock field T equals tau', constructed as a power series of nested Poisson brackets with the constraint. Equivalently fields 'dressed' by a gravitational Wilson line or a material reference frame to make them diffeomorphism-invariant; such observables are intrinsically nonlocal. Recently linked to crossed-product von Neumann algebras and observer degrees of freedom.",
+      "relatedTo": ["partial-complete-observables", "diffeomorphism-invariance", "deparametrization", "quantum-reference-frames", "crossed-product-algebra"]
+    },
+    {
+      "id": "partial-complete-observables",
+      "name": "Partial vs complete observables",
+      "definition": "Rovelli's distinction: partial observables (metric, coordinate distances) are gauge-dependent but measured in practice; complete observables are gauge-invariant relational combinations. The conjecture that partial observables of a subsystem emerge as complete observables of the full system gauge-fixed explains why gauge-dependent quantities describe correct phenomenology. Mathematically developed by Dittrich for full GR.",
+      "relatedTo": ["relational-observables", "diffeomorphism-invariance", "deparametrization"]
+    },
+    {
+      "id": "quantum-reference-frames",
+      "name": "Quantum reference frames",
+      "definition": "Reference systems that are themselves quantum and may be in superposition; changes of QRF are 'superpositions of coordinate transformations'. Initiated by Giacomini-Castro-Ruiz-Brukner. Central to relational quantum theory and to defining gravitational entropy: a QRF is mathematically a crossed product that converts a type III to a type II algebra.",
+      "relatedTo": ["relational-observables", "page-wootters-time", "crossed-product-algebra", "observer-role-qg", "background-independence"]
+    },
+    {
+      "id": "crossed-product-algebra",
+      "name": "Crossed-product observer algebra",
+      "definition": "Adjoining an observer's clock (with bounded-below Hamiltonian) to the type III_1 von Neumann algebra of QFT observables in a gravitational subregion yields a type II crossed-product algebra A_QFT x R, whose density matrices have well-defined entropy equal to the generalized entropy S_gen = A/4G + S_out. Realizes the observer/QRF as the structure that renders gravitational entropy finite and observer-dependent (CLPW 2022).",
+      "relatedTo": ["quantum-reference-frames", "relational-observables", "generalized-entropy", "observer-role-qg", "von-neumann-algebra-type"]
+    },
+    {
+      "id": "von-neumann-algebra-type",
+      "name": "von Neumann algebra type (II vs III)",
+      "definition": "QFT observables in a subregion form a type III_1 factor with no trace and no density matrices (entanglement entropy UV-divergent). Including gravitational dressing / an observer converts it to type II, which admits a trace and a renormalized (observer-relative) entropy. The algebra type is the precise mathematical fingerprint of how gravity and observers regulate entropy.",
+      "relatedTo": ["crossed-product-algebra", "generalized-entropy", "observer-role-qg"]
+    },
+    {
+      "id": "generalized-entropy",
+      "name": "Generalized entropy",
+      "definition": "S_gen = A/4G_N + S_out, the sum of horizon area in Planck units and the entropy of exterior matter. Appears as the von Neumann entropy of the type II crossed-product algebra and underlies the generalized second law used in singularity constraints. The bridge object linking observer algebras, black-hole thermodynamics and singularity theorems.",
+      "relatedTo": ["crossed-product-algebra", "generalized-second-law", "von-neumann-algebra-type"]
+    },
+    {
+      "id": "generalized-second-law",
+      "name": "Generalized second law",
+      "definition": "The statement that S_gen = A/4G + S_out never decreases. Recently proven non-perturbatively in holographic brane-world models at the species scale cG, enabling the Penrose-Wall singularity theorem to constrain quantum-gravity singularity resolution.",
+      "relatedTo": ["generalized-entropy", "singularity-theorems", "singularity-resolution"]
+    },
+    {
+      "id": "cosmological-constant-problem",
+      "name": "Cosmological constant problem",
+      "definition": "Quantum field theory predicts a vacuum energy density up to ~120 orders of magnitude (~60 after enforcing Lorentz invariance) larger than the observed dark-energy value Lambda ~ 10^-122 M_Pl^4. The most severe naturalness/fine-tuning problem in physics, connecting UV vacuum energy to IR cosmology.",
+      "relatedTo": ["weinberg-no-go", "vacuum-energy", "problem-of-time"]
+    },
+    {
+      "id": "weinberg-no-go",
+      "name": "Weinberg no-go theorem",
+      "definition": "Weinberg (1989): no local field theory including classical gravity can have a flat (Lambda=0) solution for generic parameter values without fine-tuning; adjustment mechanisms via a scalar field generically fail (the field runs to zero or no static solution exists). Extended to quantum gravity (2017); evaded only by nonlocal gravity, anthropics, or unknown symmetry.",
+      "relatedTo": ["cosmological-constant-problem", "vacuum-energy"]
+    },
+    {
+      "id": "vacuum-energy",
+      "name": "Vacuum / zero-point energy",
+      "definition": "The zero-point energy of quantum fields that should gravitate and contribute to Lambda. Its calculated magnitude vastly exceeds observation, and its cutoff-dependence (vs the observed cutoff-independent Lambda) is the core of the cosmological constant problem. Sorkin's causal-set prediction Lambda ~ +/- 1/sqrt(V) gives the right order of magnitude from fluctuations.",
+      "relatedTo": ["cosmological-constant-problem", "weinberg-no-go"]
+    },
+    {
+      "id": "singularity-theorems",
+      "name": "Penrose-Hawking singularity theorems",
+      "definition": "Under generic energy conditions and causality assumptions, GR predicts geodesic incompleteness (singularities). The theorems rely on classical energy conditions that may fail in quantum regimes, motivating but not guaranteeing singularity resolution by quantum gravity.",
+      "relatedTo": ["singularity-resolution", "generalized-second-law", "geodesic-incompleteness"]
+    },
+    {
+      "id": "geodesic-incompleteness",
+      "name": "Geodesic incompleteness",
+      "definition": "The defining technical content of a singularity: timelike or null geodesics that cannot be extended to arbitrary affine parameter, signaling breakdown of the classical spacetime description (not necessarily curvature blow-up).",
+      "relatedTo": ["singularity-theorems", "singularity-resolution"]
+    },
+    {
+      "id": "singularity-resolution",
+      "name": "Singularity resolution",
+      "definition": "Replacement of a classical singularity by a region of large-but-finite curvature or a non-singular bounce in a more complete theory. Loop quantum cosmology gives a robust big bounce at Planckian curvature in symmetry-reduced models; species-scale arguments show some singularities (BTZ) instead worsen, while null singularities can resolve. Whether resolution survives in full inhomogeneous gravity is open.",
+      "relatedTo": ["singularity-theorems", "geodesic-incompleteness", "generalized-second-law", "big-bounce"]
+    },
+    {
+      "id": "big-bounce",
+      "name": "Big bounce",
+      "definition": "In loop quantum cosmology the big-bang singularity is replaced by a quantum bounce when curvature reaches ~Planckian values; the bounce is generically asymmetric (pre- and post-bounce branches differ, effective constants such as Newton's G can be rescaled). Provides an explicit example of singularity resolution.",
+      "relatedTo": ["singularity-resolution", "deparametrization", "wheeler-dewitt-equation"]
+    },
+    {
+      "id": "gravitationally-induced-collapse",
+      "name": "Gravitationally induced collapse",
+      "definition": "The hypothesis that superpositions of distinct mass distributions, being superpositions of incompatible spacetime geometries, are unstable and collapse. Connects the measurement problem directly to gravity. Realized by Penrose (objective reduction) and Diosi (stochastic localization with diffusion and radiation emission).",
+      "relatedTo": ["penrose-objective-reduction", "diosi-penrose-model", "measurement-problem-qg", "does-gravity-need-quantizing"]
+    },
+    {
+      "id": "penrose-objective-reduction",
+      "name": "Penrose objective reduction",
+      "definition": "A spatial superposition collapses in a time tau ~ hbar/E_G, where E_G is the gravitational self-energy of the difference between the two mass distributions. For an electron tau exceeds the age of the universe; for a near-Planck-mass dust grain (~10^-8 kg) collapse occurs in ~1 s. Provides an observer-free resolution of measurement via gravity.",
+      "relatedTo": ["gravitationally-induced-collapse", "diosi-penrose-model", "measurement-problem-qg"]
+    },
+    {
+      "id": "diosi-penrose-model",
+      "name": "Diosi-Penrose model",
+      "definition": "A concrete stochastic collapse model with collapse rate set by gravitational self-energy and a cutoff R_0 on the mass-density. The collapse manifests as diffusion and spontaneous emission of radiation from charged particles. The natural parameter-free (Penrose, R_0 = nuclear size) version was experimentally ruled out at Gran Sasso (2021).",
+      "relatedTo": ["penrose-objective-reduction", "gravitationally-induced-collapse", "spontaneous-emission-test", "does-gravity-need-quantizing"]
+    },
+    {
+      "id": "spontaneous-emission-test",
+      "name": "Spontaneous emission test of collapse",
+      "definition": "Collapse-induced diffusion accelerates charged particles, producing detectable spontaneous radiation. The Gran Sasso underground experiment measured this rate in germanium/lead and ruled out the parameter-free Diosi-Penrose model, raising the lower bound on R_0 by ~3 orders of magnitude. The most sensitive class of tests is non-interferometric (diffusion/emission).",
+      "relatedTo": ["diosi-penrose-model", "penrose-objective-reduction", "spacetime-diffusion"]
+    },
+    {
+      "id": "measurement-problem-qg",
+      "name": "Measurement problem in quantum gravity",
+      "definition": "If the entire universe including observers is quantum and evolves unitarily, who or what performs measurements and selects definite outcomes? Decoherence relocates rather than solves the problem (it needs a pre-defined pointer basis and a trace over an external environment), which is unavailable for a closed universe.",
+      "relatedTo": ["observer-role-qg", "emergence-of-classicality", "gravitationally-induced-collapse", "decoherence"]
+    },
+    {
+      "id": "observer-role-qg",
+      "name": "Role of the observer",
+      "definition": "The observer is required both to define classical outcomes (measurement) and, algebraically, to render gravitational entropy finite (crossed product). In relational/QRF approaches all physics is observer-relative; gravitational entropy is observer-dependent. The observer becomes a dynamical, gravitating degree of freedom rather than an external classical agent.",
+      "relatedTo": ["measurement-problem-qg", "quantum-reference-frames", "crossed-product-algebra", "emergence-of-classicality"]
+    },
+    {
+      "id": "emergence-of-classicality",
+      "name": "Emergence of classicality",
+      "definition": "How a smooth Lorentzian spacetime with sharp geodesics and an arrow of time emerges from a timeless, nonlocal, fundamentally quantum (or discrete) description. Mechanisms invoked: decoherence, decoherent/consistent histories, semiclassical limit, gravitational collapse. Decoherence presupposes a subsystem split that is not itself background-independently defined.",
+      "relatedTo": ["decoherence", "measurement-problem-qg", "decoherent-histories", "semiclassical-gravity"]
+    },
+    {
+      "id": "decoherence",
+      "name": "Decoherence",
+      "definition": "Environment-induced suppression of interference that explains the appearance of classicality without solving the measurement problem (still requires a pointer basis and a partial trace). In quantum gravity the environment and the subsystem split are ambiguous.",
+      "relatedTo": ["emergence-of-classicality", "measurement-problem-qg", "decoherent-histories"]
+    },
+    {
+      "id": "decoherent-histories",
+      "name": "Decoherent / consistent histories",
+      "definition": "Gell-Mann-Hartle-Griffiths-Omnes framework assigning probabilities to coarse-grained histories of a closed system without an external measurement axiom; well-suited to reparametrization-invariant theories and quantum cosmology where there is no physical time coordinate. Halliwell applies it to the problem of time via spacetime coarse-grainings and the arrival-time problem.",
+      "relatedTo": ["emergence-of-classicality", "decoherence", "problem-of-time"]
+    },
+    {
+      "id": "does-gravity-need-quantizing",
+      "name": "Does gravity need quantizing?",
+      "definition": "The open question of whether gravity must be a quantum field. Arguments for: Eppley-Hannah (1977, refuted), Belenchia-Wald et al. (2018, causality+complementarity), general consistency. Arguments for agnosticism: semiclassical gravity, Oppenheim's consistent post-quantum classical gravity. Decisive evidence awaits BMV entanglement or spacetime-diffusion experiments.",
+      "relatedTo": ["bmv-entanglement-witness", "eppley-hannah", "semiclassical-gravity", "post-quantum-classical-gravity"]
+    },
+    {
+      "id": "eppley-hannah",
+      "name": "Eppley-Hannah argument",
+      "definition": "A 1977 thought experiment claiming classical gravity coupled to quantum matter must either violate the uncertainty principle or permit superluminal signaling, hence gravity must be quantized. Widely refuted (Mattingly: the device cannot be built even in principle; Kent; Huggett-Callender), so it does not establish the necessity of quantization.",
+      "relatedTo": ["does-gravity-need-quantizing", "semiclassical-gravity"]
+    },
+    {
+      "id": "bmv-entanglement-witness",
+      "name": "BMV gravity-induced entanglement witness",
+      "definition": "Bose et al. and Marletto-Vedral (2017): two ~10^-14 kg masses each in spatial superposition, coupled only via gravity, become entangled only if gravity is non-classical, because local operations and classical communication cannot create entanglement. Observing entanglement would witness the quantum nature of (linearized) gravity. Challenged in 2025-26 by claims that classical gravity can also entangle.",
+      "relatedTo": ["does-gravity-need-quantizing", "gravity-mediated-entanglement-debate", "spacetime-diffusion"]
+    },
+    {
+      "id": "gravity-mediated-entanglement-debate",
+      "name": "Classical-gravity-entanglement debate (2025-26)",
+      "definition": "Aziz-Howl (Nature 2025) claim classical gravitational interaction can transmit quantum information and generate entanglement by physically local processes, undermining BMV as a clean quantum-gravity test. Marletto-Oppenheim-Vedral-Wilson (2025) and Gundhi et al. counter that the model either produces no entanglement (discarded amplitudes) or mediates it via quantized matter, not gravity. Unresolved; hinges on the definition of a local mediator and local tomography.",
+      "relatedTo": ["bmv-entanglement-witness", "does-gravity-need-quantizing", "post-quantum-classical-gravity"]
+    },
+    {
+      "id": "semiclassical-gravity",
+      "name": "Semiclassical gravity",
+      "definition": "Moller-Rosenfeld: classical metric sourced by the expectation value of the quantum stress tensor, G_mu_nu = 8 pi G <T_mu_nu>. Its nonrelativistic one-particle limit is the nonlinear Schroedinger-Newton equation. A candidate for non-quantized gravity, but its nonlinearity threatens superluminal signaling and Born-rule violation.",
+      "relatedTo": ["does-gravity-need-quantizing", "stochastic-gravity", "schrodinger-newton", "measurement-problem-qg"]
+    },
+    {
+      "id": "schrodinger-newton",
+      "name": "Schroedinger-Newton equation",
+      "definition": "Nonlinear nonrelativistic equation in which a particle's wavefunction feels its own Newtonian self-gravity through the |psi|^2 mass density. Used to model gravitationally induced localization and to test whether gravity alone can account for classicality.",
+      "relatedTo": ["semiclassical-gravity", "gravitationally-induced-collapse", "emergence-of-classicality"]
+    },
+    {
+      "id": "stochastic-gravity",
+      "name": "Stochastic gravity",
+      "definition": "Hu-Verdaguer extension of semiclassical gravity adding Gaussian noise from quantum stress-tensor fluctuations via the Einstein-Langevin equation. An open-quantum-system view in which matter fields are the environment and the metric is the system; a bridge between semiclassical gravity and post-quantum classical gravity.",
+      "relatedTo": ["semiclassical-gravity", "post-quantum-classical-gravity", "spacetime-diffusion"]
+    },
+    {
+      "id": "post-quantum-classical-gravity",
+      "name": "Post-quantum classical gravity",
+      "definition": "Oppenheim's consistent CPTP, completely-positive theory coupling a fundamentally classical, stochastically fluctuating metric to quantum matter; reduces to GR classically. Mathematical consistency forces stochasticity in both the metric and the matter, yielding a testable decoherence-diffusion trade-off.",
+      "relatedTo": ["does-gravity-need-quantizing", "decoherence-diffusion-tradeoff", "spacetime-diffusion", "stochastic-gravity"]
+    },
+    {
+      "id": "decoherence-diffusion-tradeoff",
+      "name": "Decoherence-diffusion trade-off",
+      "definition": "Any consistent (Markovian, CPTP) classical-quantum dynamics obeys a trade-off in which the metric diffusion coefficient D_2 is bounded below by the back-reaction coupling D_1 and the inverse decoherence (Lindblad) coefficients D_0 (Oppenheim et al. 2023, Eq. 23: 2 D_2 >= D_1 D_0^-1 D_1^dagger). Long coherence times (small decoherence) force strong metric diffusion, giving a double experimental squeeze: better interferometry implies more diffusion, in tension with noise measurements.",
+      "relatedTo": ["post-quantum-classical-gravity", "spacetime-diffusion", "does-gravity-need-quantizing"]
+    },
+    {
+      "id": "spacetime-diffusion",
+      "name": "Spacetime diffusion",
+      "definition": "Stochastic fluctuation of the metric required if gravity is fundamentally classical. Parametrized by a diffusion coefficient bounded by LISA Pathfinder, torsion balances, atom interferometry and nanomechanical resonators. Atom interferometry pushes below the ultralocal discrete model bound; the nonlocal continuous model survives by ~1 order of magnitude.",
+      "relatedTo": ["post-quantum-classical-gravity", "decoherence-diffusion-tradeoff", "stochastic-gravity", "does-gravity-need-quantizing"]
+    },
+    {
+      "id": "locality-vs-unitarity",
+      "name": "Locality vs unitarity tension",
+      "definition": "For an old black hole, unitarity of Hawking evaporation demands strong correlations of late radiation with early radiation, while horizon smoothness demands maximal entanglement with interior partners, violating entanglement monogamy (firewall). Resolutions (islands/replica wormholes, ER=EPR, holography) preserve unitarity by sacrificing locality.",
+      "relatedTo": ["page-curve", "firewall-paradox", "emergence-of-classicality", "generalized-entropy"]
+    },
+    {
+      "id": "minisuperspace",
+      "name": "Minisuperspace",
+      "definition": "A finite-dimensional truncation of superspace (e.g. homogeneous FLRW with scale factor a and scalar phi) where the Wheeler-DeWitt equation becomes a single solvable equation. The laboratory for deparametrization, the problem of time, no-boundary/tunneling wave functions and the measure problem.",
+      "relatedTo": ["wheeler-dewitt-equation", "deparametrization", "big-bounce"]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "wheeler-dewitt",
+      "name": "Wheeler-DeWitt equation",
+      "latex": "\\left[-16\\pi G\\hbar^2 G_{abcd}\\frac{\\delta^2}{\\delta h_{ab}\\delta h_{cd}} - \\frac{\\sqrt{h}}{16\\pi G}\\left({}^{(3)}R - 2\\Lambda\\right) + \\hat{\\mathcal{H}}_{\\text{matter}}\\right]\\Psi[h_{ab}] = 0",
+      "meaning": "The quantum super-Hamiltonian constraint annihilating the wave functional of the universe on superspace. Absence of an i hbar d/dt term is the mathematical core of the problem of time. G_abcd is the DeWitt supermetric with Lorentzian signature.",
+      "source": "dewitt-1967"
+    },
+    {
+      "id": "flrw-hamiltonian-constraint",
+      "name": "FLRW Hamiltonian constraint (minisuperspace)",
+      "latex": "\\mathcal{H} = -\\frac{p_a^2}{24 V_0 a} + \\frac{p_\\phi^2}{2 V_0 a^3} + V_0 a^3 V(\\phi) - \\frac{3 V_0 k a}{8\\pi G} \\approx 0",
+      "meaning": "The single constraint to which the Wheeler-DeWitt equation reduces in homogeneous cosmology; a is the scale factor, phi a scalar field used as a clock for deparametrization. Quantizing it gives quantum cosmology.",
+      "source": "kaimakkamis-2024"
+    },
+    {
+      "id": "complete-observable",
+      "name": "Relational (complete) Dirac observable",
+      "latex": "F_{[f,T]}(\\tau) = \\sum_{n=0}^{\\infty}\\frac{(\\tau-T)^n}{n!}\\,\\{f,\\mathcal{H}\\}_{(n)},\\quad \\{f,\\mathcal{H}\\}_{(0)}=f,\\ \\{f,\\mathcal{H}\\}_{(n)}=\\{\\{f,\\mathcal{H}\\}_{(n-1)},\\mathcal{H}\\}",
+      "meaning": "The gauge-invariant value of partial observable f when clock T reads tau, built from iterated Poisson brackets with the constraint H. Rovelli's idea, Dittrich's construction; relationally bypasses the problem of time.",
+      "source": "dittrich-2007"
+    },
+    {
+      "id": "page-wootters-conditioning",
+      "name": "Page-Wootters conditioned state",
+      "latex": "|\\psi(t)\\rangle_S = \\langle t|_C |\\Psi\\rangle\\rangle,\\quad (\\hat H_C + \\hat H_S)|\\Psi\\rangle\\rangle = 0 \\ \\Rightarrow\\ i\\hbar\\frac{d}{dt}|\\psi(t)\\rangle_S = \\hat H_S |\\psi(t)\\rangle_S",
+      "meaning": "Conditioning a global timeless state on a clock subsystem yields an effective Schroedinger evolution for the rest. Time as correlation, not parameter ('evolution without evolution').",
+      "source": "page-wootters-1983"
+    },
+    {
+      "id": "penrose-collapse-time",
+      "name": "Penrose objective reduction time",
+      "latex": "\\tau_{\\text{OR}} \\approx \\frac{\\hbar}{E_G},\\qquad E_G = -4\\pi G\\!\\int\\!\\!\\int \\frac{[\\rho_1(\\mathbf{x})-\\rho_2(\\mathbf{x})][\\rho_1(\\mathbf{y})-\\rho_2(\\mathbf{y})]}{|\\mathbf{x}-\\mathbf{y}|}\\,d^3x\\,d^3y",
+      "meaning": "A mass superposition decays after tau_OR set by the gravitational self-energy E_G of the difference of the two mass distributions. Links the measurement problem directly to gravity.",
+      "source": "penrose-1996"
+    },
+    {
+      "id": "decoherence-diffusion",
+      "name": "Decoherence-diffusion trade-off",
+      "latex": "2 D_2 \\succeq D_1^{\\,\\mathrm{br}} D_0^{-1} (D_1^{\\,\\mathrm{br}})^{\\dagger}",
+      "meaning": "Any consistent classical-quantum (CPTP, Markovian) dynamics obeys this trade-off: the metric diffusion coefficient D_2 is bounded below by the back-reaction/coupling coefficient D_1 divided by the decoherence (Lindblad) coefficients D_0. Long coherence times (small D_0) force strong diffusion (large D_2). Falsifiable prediction for fundamentally classical gravity. (Verified against Oppenheim et al. 2023, Eq. 23; the earlier coupling-free form 2 D_2 D_0 >= 1 was incorrect.)",
+      "source": "oppenheim-decoherence-diffusion-2023"
+    },
+    {
+      "id": "semiclassical-einstein",
+      "name": "Semiclassical Einstein equation",
+      "latex": "G_{\\mu\\nu}[g] + \\Lambda g_{\\mu\\nu} = 8\\pi G\\,\\langle\\psi|\\hat T_{\\mu\\nu}|\\psi\\rangle",
+      "meaning": "Moller-Rosenfeld coupling: a classical metric sourced by the expectation value of the quantum stress tensor. The prototype non-quantized theory of gravity.",
+      "source": "hu-verdaguer-2008"
+    },
+    {
+      "id": "schrodinger-newton-eq",
+      "name": "Schroedinger-Newton equation",
+      "latex": "i\\hbar\\partial_t\\psi(\\mathbf r) = \\left[-\\frac{\\hbar^2}{2m}\\nabla^2 - Gm^2\\!\\int\\frac{|\\psi(\\mathbf r')|^2}{|\\mathbf r-\\mathbf r'|}d^3r'\\right]\\psi(\\mathbf r)",
+      "meaning": "Nonlinear nonrelativistic limit of semiclassical gravity; the particle feels its own self-gravity through its probability density. Tests whether gravity alone yields localization/classicality.",
+      "source": "hu-verdaguer-2008"
+    },
+    {
+      "id": "einstein-langevin",
+      "name": "Einstein-Langevin equation",
+      "latex": "G_{\\mu\\nu}[g] + \\Lambda g_{\\mu\\nu} = 8\\pi G\\left(\\langle\\hat T_{\\mu\\nu}\\rangle + \\xi_{\\mu\\nu}\\right),\\quad \\langle\\xi_{\\mu\\nu}(x)\\xi_{\\alpha\\beta}(y)\\rangle = N_{\\mu\\nu\\alpha\\beta}(x,y)",
+      "meaning": "Stochastic gravity adds Gaussian noise xi from quantum stress-tensor fluctuations, with the noise kernel N given by the symmetrized two-point function. Bridges semiclassical and post-quantum classical gravity.",
+      "source": "hu-verdaguer-2008"
+    },
+    {
+      "id": "crossed-product-entropy",
+      "name": "Crossed-product / generalized entropy",
+      "latex": "\\mathcal{A}_{\\text{obs}} = \\mathcal{A}_{\\text{QFT}} \\rtimes \\mathbb{R}\\ (\\text{type II}),\\qquad S(\\hat\\rho) = \\frac{\\langle A\\rangle}{4 G_N} + S_{\\text{out}} + \\text{const} = S_{\\text{gen}}",
+      "meaning": "Adjoining an observer's clock to the type III_1 QFT algebra gives a type II crossed product whose von Neumann entropy equals the generalized entropy. The observer/QRF is what renders gravitational entropy finite.",
+      "source": "clpw-2022"
+    },
+    {
+      "id": "weinberg-flatness-condition",
+      "name": "Weinberg no-go flatness condition",
+      "latex": "\\left.\\frac{\\partial \\mathcal{L}_{\\text{eff}}}{\\partial \\phi_n}\\right|_{\\langle\\phi\\rangle} = 0 \\;\\forall n \\;\\Rightarrow\\; \\text{flat (}\\Lambda=0\\text{) solution only for fine-tuned parameters}",
+      "meaning": "A flat vacuum requires all field equations (including the metric's) to vanish simultaneously, which is non-generic; scalar adjustment mechanisms fail. The formal statement of why the cosmological constant cannot be relaxed to zero locally.",
+      "source": "weinberg-1989"
+    },
+    {
+      "id": "sorkin-lambda-fluctuation",
+      "name": "Sorkin causal-set Lambda fluctuation",
+      "latex": "\\Lambda \\sim \\pm \\frac{1}{\\sqrt{V}} \\sim \\frac{1}{\\sqrt{N}}\\ \\text{(in Planck units)}",
+      "meaning": "Causal-set prediction that Lambda fluctuates as one over the square root of the spacetime four-volume (number of elements N), giving an order-of-magnitude-correct residual dark energy from discreteness. A rare quantitative connection of the CC problem to a fundamental-discreteness approach.",
+      "source": "weinberg-1989"
+    }
+  ],
+  "references": [
+    {
+      "id": "dewitt-1967",
+      "authors": "B. S. DeWitt",
+      "title": "Quantum Theory of Gravity. I. The Canonical Theory",
+      "year": 1967,
+      "doi": "10.1103/PhysRev.160.1113",
+      "url": "https://doi.org/10.1103/PhysRev.160.1113",
+      "significance": "Introduces the Wheeler-DeWitt equation; origin of the problem of time."
+    },
+    {
+      "id": "page-wootters-1983",
+      "authors": "D. N. Page, W. K. Wootters",
+      "title": "Evolution without evolution: Dynamics described by stationary observables",
+      "year": 1983,
+      "doi": "10.1103/PhysRevD.27.2885",
+      "url": "https://doi.org/10.1103/PhysRevD.27.2885",
+      "significance": "Founding paper of relational/conditional time; time as correlation."
+    },
+    {
+      "id": "isham-1992",
+      "authors": "C. J. Isham",
+      "title": "Canonical Quantum Gravity and the Problem of Time",
+      "year": 1992,
+      "arxiv": "gr-qc/9210011",
+      "url": "https://arxiv.org/abs/gr-qc/9210011",
+      "significance": "Canonical review classifying approaches to the problem of time into three camps."
+    },
+    {
+      "id": "kuchar-1991",
+      "authors": "K. V. Kuchar",
+      "title": "Time and interpretations of quantum gravity",
+      "year": 1991,
+      "doi": "10.1142/S0218271811019347",
+      "url": "https://doi.org/10.1142/S0218271811019347",
+      "significance": "Influential critique of Page-Wootters and survey of the problem of time."
+    },
+    {
+      "id": "anderson-2012",
+      "authors": "E. Anderson",
+      "title": "The Problem of Time in Quantum Gravity",
+      "year": 2012,
+      "arxiv": "1009.2157",
+      "url": "https://arxiv.org/abs/1009.2157",
+      "significance": "Comprehensive modern review of the problem of time and its facets."
+    },
+    {
+      "id": "eppley-hannah-1977",
+      "authors": "K. Eppley, E. Hannah",
+      "title": "The necessity of quantizing the gravitational field",
+      "year": 1977,
+      "doi": "10.1007/BF00715241",
+      "url": "https://doi.org/10.1007/BF00715241",
+      "significance": "Classic thought experiment arguing gravity must be quantized (widely contested)."
+    },
+    {
+      "id": "mattingly-2006",
+      "authors": "J. Mattingly",
+      "title": "Why Eppley and Hannah's thought experiment fails",
+      "year": 2006,
+      "arxiv": "gr-qc/0601127",
+      "url": "https://arxiv.org/abs/gr-qc/0601127",
+      "significance": "Shows the Eppley-Hannah device cannot be built even in principle."
+    },
+    {
+      "id": "kent-2018",
+      "authors": "A. Kent",
+      "title": "Simple Refutation of the Eppley-Hannah argument",
+      "year": 2018,
+      "arxiv": "1807.08708",
+      "url": "https://arxiv.org/abs/1807.08708",
+      "significance": "Further refutation; weakens the necessity-of-quantization claim."
+    },
+    {
+      "id": "rovelli-1996",
+      "authors": "C. Rovelli",
+      "title": "Relational Quantum Mechanics",
+      "year": 1996,
+      "arxiv": "quant-ph/9609002",
+      "url": "https://arxiv.org/abs/quant-ph/9609002",
+      "significance": "Relational QM and the partial-observable viewpoint underpinning relational time."
+    },
+    {
+      "id": "dittrich-2007",
+      "authors": "B. Dittrich",
+      "title": "Partial and Complete Observables for Hamiltonian Constrained Systems",
+      "year": 2007,
+      "arxiv": "gr-qc/0411013",
+      "url": "https://arxiv.org/abs/gr-qc/0411013",
+      "significance": "Robust construction of relational Dirac observables for full general relativity."
+    },
+    {
+      "id": "tambornino-2012",
+      "authors": "J. Tambornino",
+      "title": "Relational Observables in Gravity: a Review",
+      "year": 2012,
+      "arxiv": "1109.0740",
+      "url": "https://arxiv.org/abs/1109.0740",
+      "significance": "Authoritative review of relational observables; gives the F_[f,T](tau) power series."
+    },
+    {
+      "id": "hoehn-smith-lock-2021",
+      "authors": "P. A. Hoehn, A. R. H. Smith, M. P. E. Lock",
+      "title": "The Trinity of Relational Quantum Dynamics",
+      "year": 2021,
+      "arxiv": "1912.00033",
+      "doi": "10.1103/PhysRevD.104.066001",
+      "url": "https://arxiv.org/abs/1912.00033",
+      "significance": "Proves equivalence of Page-Wootters, Dirac relational observables and symmetry reduction."
+    },
+    {
+      "id": "calcinari-gielen-2024",
+      "authors": "A. Calcinari, S. Gielen",
+      "title": "Relational dynamics and Page-Wootters formalism in group field theory",
+      "year": 2024,
+      "arxiv": "2407.03432",
+      "doi": "10.22331/q-2025-01-27-1610",
+      "url": "https://arxiv.org/abs/2407.03432",
+      "significance": "First application of Page-Wootters directly to non-perturbative quantum gravity (GFT); clock-neutral GFT equals deparametrized canonical GFT."
+    },
+    {
+      "id": "giacomini-2019",
+      "authors": "F. Giacomini, E. Castro-Ruiz, C. Brukner",
+      "title": "Quantum mechanics and the covariance of physical laws in quantum reference frames",
+      "year": 2019,
+      "arxiv": "1712.07207",
+      "doi": "10.1038/s41467-018-08155-0",
+      "url": "https://arxiv.org/abs/1712.07207",
+      "significance": "Founding paper of the systematic theory of quantum reference frames."
+    },
+    {
+      "id": "qrf-revisited-2023",
+      "authors": "M. J. Lake, M. Miller",
+      "title": "Quantum reference frames, revisited",
+      "year": 2023,
+      "arxiv": "2312.03811",
+      "url": "https://arxiv.org/abs/2312.03811",
+      "significance": "Critiques the mainstream QRF program, rejecting unitary QRF transformations and proposing an alternative definition with an experimental test to distinguish them."
+    },
+    {
+      "id": "clpw-2022",
+      "authors": "V. Chandrasekaran, R. Longo, G. Penington, E. Witten",
+      "title": "An algebra of observables for de Sitter space",
+      "year": 2023,
+      "arxiv": "2206.10780",
+      "doi": "10.1007/JHEP02(2023)082",
+      "url": "https://arxiv.org/abs/2206.10780",
+      "significance": "Observer-dressed type II crossed-product algebra whose entropy is the generalized entropy."
+    },
+    {
+      "id": "witten-crossed-2021",
+      "authors": "E. Witten",
+      "title": "Gravity and the crossed product",
+      "year": 2021,
+      "arxiv": "2112.12828",
+      "doi": "10.1007/JHEP10(2022)008",
+      "url": "https://arxiv.org/abs/2112.12828",
+      "significance": "Shows including an observer converts the type III QFT algebra to type II in gravity."
+    },
+    {
+      "id": "observer-entropy-2024",
+      "authors": "J. Kudler-Flam, S. Leutheusser, G. Satishchandran",
+      "title": "Generalized Black Hole Entropy is von Neumann Entropy",
+      "year": 2023,
+      "arxiv": "2309.15897",
+      "doi": "10.1103/PhysRevD.111.025013",
+      "url": "https://arxiv.org/abs/2309.15897",
+      "significance": "Gravitationally dressed algebras for any Killing horizon are type II with a trace; their von Neumann entropy equals the generalized entropy, establishing observer-dependence of gravitational entropy beyond the KMS case."
+    },
+    {
+      "id": "qrf-crossed-2024",
+      "authors": "J. De Vuyst, S. Eccles, P. A. Hoehn, J. Kirklin",
+      "title": "Crossed products and quantum reference frames: on the observer-dependence of gravitational entropy",
+      "year": 2024,
+      "arxiv": "2412.15502",
+      "url": "https://arxiv.org/abs/2412.15502",
+      "significance": "Identifies QRFs with crossed products, unifying the observer and algebra pictures."
+    },
+    {
+      "id": "penrose-1996",
+      "authors": "R. Penrose",
+      "title": "On Gravity's Role in Quantum State Reduction",
+      "year": 1996,
+      "doi": "10.1007/BF02105068",
+      "url": "https://doi.org/10.1007/BF02105068",
+      "significance": "Objective reduction: collapse time tau ~ hbar/E_G linking measurement to gravity."
+    },
+    {
+      "id": "diosi-1989",
+      "authors": "L. Diosi",
+      "title": "Models for universal reduction of macroscopic quantum fluctuations",
+      "year": 1989,
+      "doi": "10.1103/PhysRevA.40.1165",
+      "url": "https://doi.org/10.1103/PhysRevA.40.1165",
+      "significance": "Independent stochastic-collapse model with gravitational rate and diffusion."
+    },
+    {
+      "id": "donadi-2021",
+      "authors": "S. Donadi, K. Piscicchia, A. Bassi et al.",
+      "title": "Underground test of gravity-related wave function collapse",
+      "year": 2021,
+      "arxiv": "2111.13490",
+      "doi": "10.1038/s41567-020-1008-4",
+      "url": "https://arxiv.org/abs/2111.13490",
+      "significance": "Gran Sasso experiment ruling out the parameter-free Diosi-Penrose model."
+    },
+    {
+      "id": "weinberg-1989",
+      "authors": "S. Weinberg",
+      "title": "The cosmological constant problem",
+      "year": 1989,
+      "doi": "10.1103/RevModPhys.61.1",
+      "url": "https://doi.org/10.1103/RevModPhys.61.1",
+      "significance": "Defines the problem and proves the no-go theorem against adjustment mechanisms."
+    },
+    {
+      "id": "weinberg-nogo-qg-2017",
+      "authors": "I. Oda",
+      "title": "Weinberg's No Go Theorem in Quantum Gravity",
+      "year": 2017,
+      "arxiv": "1706.05804",
+      "doi": "10.1103/PhysRevD.96.124012",
+      "url": "https://arxiv.org/abs/1706.05804",
+      "significance": "Extends Weinberg's no-go from classical to quantum gravity."
+    },
+    {
+      "id": "nonlocal-cc-2025",
+      "authors": "S. Capozziello, A. Mazumdar, G. Meluccio",
+      "title": "The Weinberg no-go theorem for cosmological constant and nonlocal gravity",
+      "year": 2025,
+      "arxiv": "2502.07321",
+      "url": "https://arxiv.org/abs/2502.07321",
+      "significance": "Shows nonlocal (infinite-derivative) gravity can evade the Weinberg no-go."
+    },
+    {
+      "id": "bose-2017",
+      "authors": "S. Bose, A. Mazumdar, G. W. Morley et al.",
+      "title": "A Spin Entanglement Witness for Quantum Gravity",
+      "year": 2017,
+      "arxiv": "1707.06050",
+      "doi": "10.1103/PhysRevLett.119.240401",
+      "url": "https://arxiv.org/abs/1707.06050",
+      "significance": "BMV proposal: gravity-induced entanglement as a witness of quantum gravity."
+    },
+    {
+      "id": "marletto-vedral-2017",
+      "authors": "C. Marletto, V. Vedral",
+      "title": "Gravitationally Induced Entanglement between Two Massive Particles is Sufficient Evidence of Quantum Effects in Gravity",
+      "year": 2017,
+      "arxiv": "1707.06036",
+      "doi": "10.1103/PhysRevLett.119.240402",
+      "url": "https://arxiv.org/abs/1707.06036",
+      "significance": "LOCC argument that gravity-mediated entanglement implies non-classical gravity."
+    },
+    {
+      "id": "belenchia-2018",
+      "authors": "A. Belenchia, R. M. Wald, F. Giacomini, E. Castro-Ruiz, C. Brukner, M. Aspelmeyer",
+      "title": "Quantum Superposition of Massive Objects and the Quantization of Gravity",
+      "year": 2018,
+      "arxiv": "1807.07015",
+      "doi": "10.1103/PhysRevD.98.126009",
+      "url": "https://arxiv.org/abs/1807.07015",
+      "significance": "Causality+complementarity argument supporting quantization of linearized gravity."
+    },
+    {
+      "id": "oppenheim-pqcg-2018",
+      "authors": "J. Oppenheim",
+      "title": "A Postquantum Theory of Classical Gravity?",
+      "year": 2023,
+      "arxiv": "1811.03116",
+      "doi": "10.1103/PhysRevX.13.041040",
+      "url": "https://arxiv.org/abs/1811.03116",
+      "significance": "Consistent CPTP theory of classical gravity coupled to quantum matter."
+    },
+    {
+      "id": "oppenheim-decoherence-diffusion-2023",
+      "authors": "J. Oppenheim, C. Sparaciari, B. Soda, Z. Weller-Davies",
+      "title": "Gravitationally induced decoherence vs spacetime diffusion: testing the quantum nature of gravity",
+      "year": 2023,
+      "arxiv": "2203.01982",
+      "doi": "10.1038/s41467-023-43348-2",
+      "url": "https://arxiv.org/abs/2203.01982",
+      "significance": "Derives the decoherence-diffusion trade-off 2 D_2 >= D_1 D_0^-1 D_1^dagger as a falsifiable signature (diffusion bounded below by coupling over decoherence)."
+    },
+    {
+      "id": "diffusion-bounds-2024",
+      "authors": "M. Janse, D. G. Uitenbroek, L. van Everdingen, J. Plugge, B. Hensen, T. H. Oosterkamp",
+      "title": "Current experimental upper bounds on spacetime diffusion",
+      "year": 2024,
+      "arxiv": "2403.08912",
+      "doi": "10.1103/PhysRevResearch.6.033076",
+      "url": "https://arxiv.org/abs/2403.08912",
+      "significance": "Reviews force-noise experiments from single atoms to kg masses; atom interferometry improves the spacetime-diffusion figure of merit by ~25 orders over the original Cavendish bound, dropping below the ultralocal discrete model while the nonlocal continuous model survives by ~1 order."
+    },
+    {
+      "id": "stochastic-modes-2026",
+      "authors": "J. Oppenheim, M. Sajjad",
+      "title": "Stochastic modes in postquantum classical gravity",
+      "year": 2026,
+      "arxiv": "2605.05375",
+      "url": "https://arxiv.org/abs/2605.05375",
+      "significance": "Linearizes the classical-quantum path integral around Minkowski; identifies diffusing classical spin-2 and spin-0 stochastic modes (related to quadratic-gravity dof), with a positive-semidefinite action."
+    },
+    {
+      "id": "li-singh-2023",
+      "authors": "B.-F. Li, P. Singh",
+      "title": "Loop Quantum Cosmology: Physics of Singularity Resolution and its Implications",
+      "year": 2023,
+      "arxiv": "2304.05426",
+      "url": "https://arxiv.org/abs/2304.05426",
+      "significance": "Review establishing the robust big bounce replacing the big-bang singularity via quantum-geometry discreteness."
+    },
+    {
+      "id": "singularity-constraints-2025",
+      "authors": "A. Shahbazi-Moghaddam",
+      "title": "Constraints on the resolution of spacetime singularities",
+      "year": 2025,
+      "arxiv": "2510.25927",
+      "url": "https://arxiv.org/abs/2510.25927",
+      "significance": "Penrose-Wall theorem with a non-perturbatively proven GSL at the species scale cG; an outer-trapped surface implies geodesic incompleteness, classical BTZ worsens while a null Rindler-horizon singularity resolves."
+    },
+    {
+      "id": "hu-verdaguer-2008",
+      "authors": "B.-L. Hu, E. Verdaguer",
+      "title": "Stochastic Gravity: Theory and Applications",
+      "year": 2008,
+      "doi": "10.12942/lrr-2008-3",
+      "url": "https://doi.org/10.12942/lrr-2008-3",
+      "significance": "Living Review on semiclassical/stochastic gravity and the Einstein-Langevin equation."
+    },
+    {
+      "id": "hartle-hawking-1983",
+      "authors": "J. B. Hartle, S. W. Hawking",
+      "title": "Wave function of the Universe",
+      "year": 1983,
+      "doi": "10.1103/PhysRevD.28.2960",
+      "url": "https://doi.org/10.1103/PhysRevD.28.2960",
+      "significance": "No-boundary proposal; raises the measure problem in quantum cosmology."
+    },
+    {
+      "id": "aziz-howl-2025",
+      "authors": "J. Aziz, R. Howl",
+      "title": "Classical theories of gravity produce entanglement",
+      "year": 2025,
+      "arxiv": "2510.19714",
+      "url": "https://arxiv.org/abs/2510.19714",
+      "significance": "Controversial claim that classical gravity can entangle, challenging the BMV interpretation."
+    },
+    {
+      "id": "marletto-cannot-2025",
+      "authors": "C. Marletto, J. Oppenheim, V. Vedral, E. Wilson",
+      "title": "Classical gravity cannot mediate entanglement",
+      "year": 2025,
+      "arxiv": "2511.07348",
+      "url": "https://arxiv.org/abs/2511.07348",
+      "significance": "Rebuttal to Aziz-Howl defending entanglement as a quantum-gravity witness."
+    },
+    {
+      "id": "kaimakkamis-2024",
+      "authors": "E. Kaimakkamis, H. Partouche, K. Sil, N. Toumbas",
+      "title": "The exact Wheeler-DeWitt equation for the scale-factor minisuperspace model",
+      "year": 2024,
+      "arxiv": "2412.18532",
+      "url": "https://arxiv.org/abs/2412.18532",
+      "significance": "Resolves the operator-ordering / path-integral-measure ambiguity, deriving a universal Wheeler-DeWitt equation independent of the quantization prescription."
+    },
+    {
+      "id": "halliwell-histories-2007",
+      "authors": "J. J. Halliwell, J. M. Yearsley",
+      "title": "Spacetime Coarse Grainings in the Decoherent Histories Approach to Quantum Theory",
+      "year": 2007,
+      "arxiv": "gr-qc/0607072",
+      "url": "https://arxiv.org/abs/gr-qc/0607072",
+      "significance": "Applies decoherent histories to the arrival-time problem and the problem of time in reparametrization-invariant theories such as canonical quantum gravity."
+    },
+    {
+      "id": "sep-quantum-gravity",
+      "authors": "Stanford Encyclopedia of Philosophy",
+      "title": "Quantum Gravity",
+      "year": 2021,
+      "url": "https://plato.stanford.edu/entries/quantum-gravity/",
+      "significance": "Authoritative philosophical survey of the conceptual problems and the definition debates."
+    },
+    {
+      "id": "jusufi-collapse-2025",
+      "authors": "K. Jusufi, D. Singleton, F. S. N. Lobo",
+      "title": "Spontaneous wave function collapse from non-local gravitational self-energy",
+      "year": 2025,
+      "arxiv": "2512.15393",
+      "url": "https://arxiv.org/abs/2512.15393",
+      "significance": "Inserts a string-inspired T-duality non-local gravitational self-energy into the Schroedinger-Newton equation; linear superposition becomes only approximate and collapse follows from the tension between the equivalence principle and superposition. A concrete bridge between gravitational collapse and string-theory T-duality."
+    },
+    {
+      "id": "tabletop-interpretation-2022",
+      "authors": "E. Adlam",
+      "title": "Tabletop Experiments for Quantum Gravity Are Also Tests of the Interpretation of Quantum Mechanics",
+      "year": 2022,
+      "arxiv": "2204.08064",
+      "doi": "10.1007/s10701-022-00635-0",
+      "url": "https://arxiv.org/abs/2204.08064",
+      "significance": "Argues BMV-type tests probe the interpretation of QM: psi-complete interpretations predict entanglement, psi-nonphysical ones do not; a positive result would rule out psi-incomplete quantum gravity."
+    },
+    {
+      "id": "large-spin-sg-2023",
+      "authors": "L. Braccini, M. Schut, A. Serafini, A. Mazumdar, S. Bose",
+      "title": "Large Spin Stern-Gerlach Interferometry for Gravitational Entanglement",
+      "year": 2023,
+      "arxiv": "2312.05170",
+      "url": "https://arxiv.org/abs/2312.05170",
+      "significance": "Generalizes the BMV Stern-Gerlach interferometer to arbitrary spin j (2j+1 trajectories); larger spins give a modest enhancement of gravity-induced entanglement."
+    },
+    {
+      "id": "lqc-review-2015",
+      "authors": "P. Singh",
+      "title": "Loop quantum cosmology and the fate of cosmological singularities",
+      "year": 2015,
+      "arxiv": "1509.09182",
+      "url": "https://arxiv.org/abs/1509.09182",
+      "significance": "Review showing generic resolution (big bounce) of strong singularities, including exotic ones (big rip), across LQC models."
+    }
+  ],
+  "openProblems": [
+    {
+      "id": "global-time-problem",
+      "statement": "No globally valid, monotonic clock variable exists on the full constraint surface even when local deparametrization works.",
+      "whyHard": "Superspace topology and the nonlinear scalar constraint produce turning points where the clock momentum vanishes and Gribov ambiguities; different clock choices yield inequivalent, often non-unitary, quantizations.",
+      "attempts": "Page-Wootters with covariant POVM clocks, multi-fingered time extensions, the trinity equivalence, effective/relational time in LQC; all succeed locally, none globally."
+    },
+    {
+      "id": "physical-inner-product",
+      "statement": "There is no canonical, positive-definite, gauge-invariant inner product on solutions of the Wheeler-DeWitt constraint, so probabilities are ill-defined.",
+      "whyHard": "The DeWitt supermetric is indefinite and the constraint spectrum typically contains zero in its continuous part; group-averaging/refined algebraic quantization require choices and do not always converge.",
+      "attempts": "Refined algebraic quantization, group averaging, Rieffel induction, conditional probabilities; partial successes in minisuperspace."
+    },
+    {
+      "id": "observables-full-gravity",
+      "statement": "Relational Dirac observables are formally defined but practically incomputable beyond minisuperspace and deparametrizable matter models.",
+      "whyHard": "They are infinite power series of nested Poisson brackets with the nonlocal scalar constraint; in the deep quantum regime there is no classical subsystem to serve as a reference frame.",
+      "attempts": "Brown-Kuchar dust, scalar reference fields, Dittrich's construction, perturbative/relational frameworks; GFT relational dynamics."
+    },
+    {
+      "id": "define-background-independence",
+      "statement": "There is no agreed precise definition of background independence, blocking meaningful comparison of approaches.",
+      "whyHard": "Diffeomorphism invariance, absence of absolute objects, and full dynamicality of geometry are conflated; the LQG-string dispute may be partly verbal.",
+      "attempts": "Anderson's absolute-object analysis, Giulini, Pooley (2017), Read (2023); no consensus."
+    },
+    {
+      "id": "cosmological-constant",
+      "statement": "Derive the observed Lambda ~ 10^-122 M_Pl^4 from first principles without fine-tuning or anthropics.",
+      "whyHard": "Weinberg's no-go forbids generic local solutions; the problem links UV vacuum energy to IR cosmology and resists symmetry protection.",
+      "attempts": "Landscape+anthropics, unimodular gravity, sequestering, nonlocal/infinite-derivative gravity, Sorkin's causal-set fluctuation (right order of magnitude)."
+    },
+    {
+      "id": "singularity-resolution-full",
+      "statement": "Whether quantum gravity generically resolves singularities (bounce) in full inhomogeneous spacetimes, not just symmetry-reduced models.",
+      "whyHard": "Singularity theorems use classical energy conditions and the GSL whose quantum analogues are only partially proven; species-scale arguments show some singularities worsen.",
+      "attempts": "LQC big bounce, effective dynamics, Penrose-Wall theorem at species scale, string/brane resolutions of specific singularities."
+    },
+    {
+      "id": "measurement-in-closed-universe",
+      "statement": "How definite outcomes and classicality arise when the observer is inside a closed, unitarily evolving quantum universe.",
+      "whyHard": "Decoherence needs an external environment and a pointer basis, both unavailable for the whole universe; candidate ontologies (many-worlds, relational QM, collapse, QRF) are mutually incompatible.",
+      "attempts": "Decoherent histories, relational QM, gravitational collapse, quantum reference frames, crossed-product observer algebras."
+    },
+    {
+      "id": "is-gravity-quantum",
+      "statement": "Whether gravity is fundamentally a quantum field or can remain classical.",
+      "whyHard": "Eppley-Hannah is refuted, BWGCBA relies on assumptions, and consistent classical-quantum theories (Oppenheim) exist; only experiment (BMV entanglement or spacetime diffusion) can decide, both at the technological edge.",
+      "attempts": "BMV interferometry, Gran Sasso emission tests, spacetime-diffusion bounds, decoherence-diffusion trade-off."
+    },
+    {
+      "id": "locality-unitarity-reconciliation",
+      "statement": "Reconcile black-hole unitarity with horizon smoothness without an ad hoc loss of locality.",
+      "whyHard": "Entanglement monogamy plus effective field theory at the horizon plus unitarity are jointly inconsistent (firewall); resolutions invoke nonlocality whose microscopic origin is unclear.",
+      "attempts": "Islands/replica wormholes, ER=EPR, complementarity, holography, fuzzballs, nonlocal qubits."
+    },
+    {
+      "id": "classical-entanglement-controversy",
+      "statement": "Settle whether classical gravitational interaction can generate entanglement, which determines if BMV is a clean witness of quantum gravity.",
+      "whyHard": "Disagreement on what counts as a local mediator and whether local tomography holds; the same model is argued to entangle or not depending on which amplitudes are retained.",
+      "attempts": "Aziz-Howl (yes, locally), Marletto-Oppenheim-Vedral-Wilson and Gundhi et al. (no); ongoing 2025-26 debate."
+    }
+  ],
+  "connections": [
+    {
+      "from": "conceptual-problems",
+      "to": "loop-quantum-gravity",
+      "type": "shared-structure",
+      "description": "The problem of time, diffeomorphism invariance and relational Dirac observables are native to the canonical (LQG) tradition; LQG provides concrete realizations (spin networks, master/quantum Hamiltonian constraint, Brown-Kuchar dust and Rovelli-Smolin matter clocks) and LQC supplies an explicit big bounce. Dense, bidirectional bridge.",
+      "explored": "well"
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "quantum-cosmology",
+      "type": "shared-structure",
+      "description": "Minisuperspace is the principal laboratory for the problem of time: Wheeler-DeWitt in FLRW, deparametrization by scalar/volume, no-boundary and tunneling wave functions, the measure problem, and tests of Page-Wootters and decoherent histories.",
+      "explored": "well"
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "group-field-theory",
+      "type": "shared-structure",
+      "description": "The Page-Wootters formalism and the trinity of relational dynamics were applied directly to GFT (Calcinari & Gielen 2024, arXiv:2407.03432): deparametrized GFT equals the clock-neutral Dirac GFT in a Page-Wootters reading, with an expanding universe emerging from discrete geometry relative to a scalar-matter clock. The first application of Page-Wootters to non-perturbative quantum gravity; related effective relational cosmology was developed by Marchetti & Oriti. Conceptually central but technically recent.",
+      "explored": "partially"
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "holography-adscft",
+      "type": "shared-math",
+      "description": "Crossed-product von Neumann algebras (CLPW 2022, Witten 2021) tie the observer and quantum reference frames - core conceptual issues - to generalized entropy and type II/III algebra structure, converting a type III QFT algebra to type II with finite, observer-dependent entropy. The fastest-growing crossroads of the pillar.",
+      "explored": "partially"
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "black-holes-information",
+      "type": "conflict",
+      "description": "Locality vs unitarity, the firewall, the Page curve and entanglement monogamy are the conceptual problems instantiated for black holes; the generalized second law is shared with singularity theorems and the observer near the horizon embodies complementarity.",
+      "explored": "well"
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "entanglement-spacetime",
+      "type": "shared-math",
+      "description": "Quantum reference frames and dressed observables make subregion entanglement entropy observer-dependent and require gravitational dressing; ER=EPR addresses locality-vs-unitarity. Linking relational time to spacetime emergence from entanglement is promising but immature.",
+      "explored": "partially"
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "semiclassical-gravity",
+      "type": "shared-structure",
+      "description": "Moller-Rosenfeld, Schroedinger-Newton and stochastic gravity are candidate non-quantized theories and the arena for the measurement/backreaction problem; Eppley-Hannah, BWGCBA and Oppenheim's theory all probe their consistency.",
+      "explored": "well"
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "BMV entanglement, Gran Sasso spontaneous emission (Diosi-Penrose), and spacetime-diffusion bounds (LISA Pathfinder, atom interferometry) convert conceptual disputes into numbers; the decoherence-diffusion trade-off is a falsifiable prediction. The most dynamic frontier.",
+      "explored": "partially"
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "string-theory",
+      "type": "conflict",
+      "description": "Tension over background independence (LQG critique), Lambda addressed by landscape+anthropics, some singularities resolved by T-duality/branes, and holography as a bridge to the observer. The link to the fundamental problem of time is weaker since strings usually work on a fixed background.",
+      "explored": "partially"
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "asymptotic-safety",
+      "type": "conflict",
+      "description": "Asymptotic safety is background-dependent (an RG fixed point), so background independence and the problem of time are latent there; a canonical reformulation was only recently opened (arXiv:2507.14296). A thin, new bridge and a candidate for fresh connections.",
+      "explored": "barely"
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "causal-sets",
+      "type": "conjecture",
+      "description": "Causal sets address the problem of time via causal order and predict Lambda ~ +/- 1/sqrt(V) (right order of magnitude) from discreteness fluctuations, a rare quantitative handle on the cosmological constant problem. Links to relational observables and Page-Wootters are almost unexplored - promising and underrated.",
+      "explored": "barely"
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "twistors-amplitudes",
+      "type": "shared-structure",
+      "description": "The amplitude/S-matrix program is radically timeless (no evolution, only scattering data), structurally resonant with timeless solutions to the problem of time and the lack of local diffeomorphism-invariant observables, but the relation is essentially unarticulated. A near-empty bridge worth mining.",
+      "explored": "barely"
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "Minimal length / generalized uncertainty and noncommutative spacetime modify locality and diffeomorphism structure; their operator-algebra framing is kin to the crossed-product observer algebras, but the explicit connection is unexplored - a candidate for shared mathematics.",
+      "explored": "barely"
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "page-curve",
+      "type": "shared-structure",
+      "description": "The Page curve is the quantitative expression of the locality-vs-unitarity tension; its derivation via islands/replica wormholes uses generalized entropy, the same object that appears in the observer crossed-product algebra of this pillar.",
+      "explored": "well"
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "swampland",
+      "type": "conjecture",
+      "description": "Swampland constraints (e.g. de Sitter and species-scale conjectures) bear on the cosmological constant problem and on whether singularity resolution must occur at the species scale cG, intersecting Weinberg's no-go and the GSL-based singularity constraints. The overlap is suggestive but only partly worked out.",
+      "explored": "barely"
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "string-theory",
+      "type": "shared-math",
+      "description": "Jusufi-Singleton-Lobo (2025, arXiv:2512.15393) derive gravitationally induced wave-function collapse by inserting a string-inspired T-duality non-local gravitational self-energy into the Schroedinger-Newton equation: T-duality's intrinsic minimal-length non-locality makes linear superposition only approximate and forces collapse. A concrete but brand-new and essentially unexplored bridge between the measurement problem / Penrose collapse and string-theoretic T-duality.",
+      "explored": "barely"
+    },
+    {
+      "from": "conceptual-problems",
+      "to": "semiclassical-gravity",
+      "type": "conflict",
+      "description": "Adlam (2022, arXiv:2204.08064) shows BMV-type tests are simultaneously tests of the interpretation of quantum mechanics: psi-incomplete quantum-gravity models (gravity coupled to non-quantum beables, i.e. effectively semiclassical) predict no entanglement, so a positive BMV result would falsify them. This ties the measurement problem, the is-gravity-quantum question and semiclassical gravity into a single experimentally addressable knot; the interpretation-dependence is only partially mapped.",
+      "explored": "partially"
+    }
+  ]
+}

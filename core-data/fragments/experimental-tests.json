@@ -1,0 +1,838 @@
+{
+  "slug": "experimental-tests",
+  "name": "Quantum Gravity Phenomenology & Experimental Tests",
+  "concepts": [
+    {
+      "id": "modified-dispersion-relation",
+      "name": "Modified Dispersion Relation (MDR)",
+      "definition": "A Planck-suppressed deformation of E^2 = p^2 c^2 + m^2 c^4 of the form E^2 = p^2 c^2 [1 +/- (E/E_QG)^n], with n=1 (linear) or n=2 (quadratic) and E_QG the sought quantum-gravity energy scale. Implies an energy-dependent photon group velocity v(E) = c[1 -/+ ((n+1)/2)(E/E_QG)^n]. Core object of all time-of-flight phenomenology.",
+      "relatedTo": ["lorentz-invariance-violation", "deformed-special-relativity", "time-of-flight-delay", "planck-scale", "spectral-dimension"]
+    },
+    {
+      "id": "lorentz-invariance-violation",
+      "name": "Lorentz Invariance Violation (LIV)",
+      "definition": "Explicit breaking of Lorentz symmetry by a preferred frame/scale, systematically parametrized by Standard-Model Extension (SME) coefficients organized by operator mass dimension (4,5,6,...). Dimension-5 and -6 operators generate modified dispersion and vacuum birefringence. Constrained by GRB time-of-flight, UHECR thresholds, neutrinos, and polarization.",
+      "relatedTo": ["modified-dispersion-relation", "standard-model-extension", "vacuum-birefringence", "threshold-anomaly", "time-of-flight-delay"]
+    },
+    {
+      "id": "deformed-special-relativity",
+      "name": "Doubly/Deformed Special Relativity (DSR) and kappa-Poincare",
+      "definition": "A quantum-gravity-motivated deformation of special relativity adding a second invariant scale (E_Pl) WITHOUT a preferred frame, realized algebraically by the kappa-Poincare Hopf algebra. Implies relative locality. Crucially, unlike LIV some DSR models predict NO observable time-of-flight delay for massless particles.",
+      "relatedTo": ["relative-locality", "noncommutative-geometry", "modified-dispersion-relation", "time-of-flight-delay"]
+    },
+    {
+      "id": "relative-locality",
+      "name": "Relative Locality",
+      "definition": "Principle replacing absolute locality in DSR/curved-momentum-space models: coincidence of events is observer-dependent, with curvature in momentum space at the Planck scale. Has the consequence that energy-dependent arrival-time delays can vanish despite a deformed dispersion relation, complicating LIV interpretation of GRB data.",
+      "relatedTo": ["deformed-special-relativity", "noncommutative-geometry", "time-of-flight-delay"]
+    },
+    {
+      "id": "time-of-flight-delay",
+      "name": "Time-of-Flight Delay",
+      "definition": "Energy-dependent difference in arrival time of photons (or neutrinos) emitted simultaneously from a distant source, accumulated over cosmological distance: Delta t ~ ((n+1)/2)(E_h^n - E_l^n)/E_QG^n times a redshift integral. Non-observation yields lower bounds on E_QG. Primary observable for Fermi-LAT and LHAASO GRB studies.",
+      "relatedTo": ["modified-dispersion-relation", "lorentz-invariance-violation", "graviton-mass", "deformed-special-relativity"]
+    },
+    {
+      "id": "vacuum-birefringence",
+      "name": "Vacuum Birefringence",
+      "definition": "For a CPT-odd (dimension-5) LIV operator, left- and right-circular polarizations propagate at different speeds, rotating the linear polarization vector by an energy-dependent angle Delta theta ~ xi (E^2-E0^2) d / (2 E_Pl). High observed polarization of distant GRBs excludes large xi; more sensitive than time-of-flight by ~1/omega, giving the tightest propagation bound (xi < ~2.4e-15).",
+      "relatedTo": ["lorentz-invariance-violation", "standard-model-extension", "modified-dispersion-relation"]
+    },
+    {
+      "id": "threshold-anomaly",
+      "name": "Threshold Anomaly",
+      "definition": "LIV shifts the energy thresholds of particle reactions (GZK photopion production p + gamma_CMB -> Delta; pair production gamma gamma -> e+ e-), distorting observed UHECR and TeV gamma-ray spectra and the cosmogenic neutrino flux. A complementary, source-model-independent LIV probe.",
+      "relatedTo": ["lorentz-invariance-violation", "uhecr-liv", "modified-dispersion-relation"]
+    },
+    {
+      "id": "uhecr-liv",
+      "name": "UHECR and Neutrino LIV Constraints",
+      "definition": "Ultra-high-energy cosmic rays (Auger) and astrophysical neutrinos (IceCube) constrain LIV: LIV would suppress GZK photopion interactions, modify the highest-energy spectrum, and shift the cosmogenic neutrino peak. Energy-dependent neutrino-photon delays can reach M_QG >~ 1e26 eV (linear) / 1e19 eV (quadratic) in principle.",
+      "relatedTo": ["threshold-anomaly", "lorentz-invariance-violation", "time-of-flight-delay"]
+    },
+    {
+      "id": "gravitationally-induced-entanglement",
+      "name": "Gravitationally Induced Entanglement (GIE / QGEM)",
+      "definition": "If two masses in spatial superposition, interacting ONLY gravitationally, become entangled, then (assuming locality and quantum information theory) the gravitational mediator cannot be classical, implying gravity is quantum. The central tabletop test of the quantum nature of gravity.",
+      "relatedTo": ["bmv-experiment", "entanglement-witness", "semiclassical-gravity", "two-mode-squeezing", "gravitational-decoherence"]
+    },
+    {
+      "id": "bmv-experiment",
+      "name": "Bose-Marletto-Vedral (BMV) Experiment",
+      "definition": "Concrete GIE realization: two ~1e-14 kg masses (NV-center nanodiamonds) placed in adjacent Stern-Gerlach matter-wave interferometers, separated by >~200 um (to suppress Casimir-Polder), held in superposition ~250 um wide for ~1 s; a spin entanglement witness certifies gravity-mediated entanglement.",
+      "relatedTo": ["gravitationally-induced-entanglement", "entanglement-witness", "levitated-optomechanics", "gravitational-decoherence", "gravitational-phase"]
+    },
+    {
+      "id": "gravitational-phase",
+      "name": "Gravitational Phase (BMV)",
+      "definition": "The relative phase Delta phi = G m^2 Delta t / (hbar d) acquired between interferometer branches due to the Newtonian potential difference; entanglement is detectable when Delta phi reaches O(1) rad within the coherence time. For m~1e-14 kg, d~200 um, Delta t~1 s this is order radians.",
+      "relatedTo": ["bmv-experiment", "gravitationally-induced-entanglement", "two-mode-squeezing"]
+    },
+    {
+      "id": "two-mode-squeezing",
+      "name": "Two-Mode Squeezing (gravitational entangler)",
+      "definition": "Expansion of the Newtonian interaction yields a bilinear coupling H_int ~ (G m1 m2 / d^3) x1 x2, a two-mode squeezing Hamiltonian that entangles the positions/momenta of the two masses. The mechanism underlying GIE even in variants without spin-based Stern-Gerlach splitting.",
+      "relatedTo": ["gravitationally-induced-entanglement", "gravitational-phase", "bmv-experiment"]
+    },
+    {
+      "id": "entanglement-witness",
+      "name": "Entanglement Witness",
+      "definition": "An observable whose value outside a classical bound certifies the presence of entanglement. In BMV, spin correlations such as <sigma_x^(1) sigma_y^(2)> witness gravity-mediated entanglement without full state tomography.",
+      "relatedTo": ["gravitationally-induced-entanglement", "bmv-experiment"]
+    },
+    {
+      "id": "gravitational-decoherence",
+      "name": "Gravitational Decoherence",
+      "definition": "Loss of quantum coherence induced by gravity: either fundamental objective collapse (Diosi-Penrose) or universal decoherence from gravitational time dilation (Pikovski et al.). Sets the dominant limit on BMV-type experiments and is itself a testable quantum-gravity-adjacent prediction.",
+      "relatedTo": ["diosi-penrose-model", "time-dilation-decoherence", "bmv-experiment", "gravitationally-induced-entanglement"]
+    },
+    {
+      "id": "diosi-penrose-model",
+      "name": "Diosi-Penrose (DP) Collapse Model",
+      "definition": "Gravity-driven objective wave-function collapse with rate 1/tau = Delta E_g / hbar, where Delta E_g is the gravitational self-energy of the difference between two mass-density configurations, regularized at a cutoff length R0. Tested by searching for spontaneous heating / X-ray emission; the scale-free version is excluded.",
+      "relatedTo": ["gravitational-decoherence", "time-dilation-decoherence", "semiclassical-gravity"]
+    },
+    {
+      "id": "time-dilation-decoherence",
+      "name": "Universal Decoherence from Time Dilation",
+      "definition": "Pikovski-Zych-Costa-Brukner mechanism: gravitational time dilation couples a composite particle's internal energy to its center of mass, decohering its position without any external environment. Earth's g already suffices for micrometre objects, offering a gravitational route to the quantum-to-classical transition.",
+      "relatedTo": ["gravitational-decoherence", "diosi-penrose-model", "bmv-experiment"]
+    },
+    {
+      "id": "holographic-noise",
+      "name": "Holographic Noise",
+      "definition": "Hogan's conjecture that transverse positions of bodies fluctuate randomly by ~Planck length per Planck time (Planckian geometric indeterminacy), giving a flat (frequency-independent) strain power spectral density set only by the Planck time. Measured by the Fermilab Holometer (two cross-correlated 40 m Michelson interferometers).",
+      "relatedTo": ["holographic-principle", "minimal-length", "planck-scale"]
+    },
+    {
+      "id": "generalized-uncertainty-principle",
+      "name": "Generalized Uncertainty Principle (GUP)",
+      "definition": "Deformation Delta x Delta p >= (hbar/2)(1 + beta (Delta p)^2 + ...) implying a minimal measurable length Delta x_min = beta_0 ell_Pl. Common to string theory, LQG, and noncommutative geometry; constrained in macroscopic oscillators, interferometers, and LIGO (currently beta_0 <~ 1e6-1e10).",
+      "relatedTo": ["minimal-length", "planck-scale", "noncommutative-geometry"]
+    },
+    {
+      "id": "minimal-length",
+      "name": "Minimal Length",
+      "definition": "The existence of a smallest measurable distance ~ell_Pl, a shared feature of string theory (string length ell_s), loop quantum gravity (discrete area), and noncommutative geometry. Phenomenologically encoded via GUP and modified dispersion relations.",
+      "relatedTo": ["generalized-uncertainty-principle", "spectral-dimension", "planck-scale", "noncommutative-geometry"]
+    },
+    {
+      "id": "spectral-dimension",
+      "name": "Spectral Dimension",
+      "definition": "Effective dimension probed by diffusion, d_s = -2 d ln P(sigma)/d ln sigma. Many approaches (CDT, asymptotic safety, LQG, noncommutative geometry, Horava-Lifshitz) predict it runs from 4 at large scales to ~2 at the Planck scale ('dimensional reduction'), a candidate shared signature but phenomenologically hard to access.",
+      "relatedTo": ["minimal-length", "modified-dispersion-relation", "planck-scale"]
+    },
+    {
+      "id": "planck-scale",
+      "name": "Planck Scale",
+      "definition": "The natural quantum-gravity scale: E_Pl = sqrt(hbar c^5/G) ~ 1.22e19 GeV, ell_Pl ~ 1.6e-35 m, t_Pl ~ 5.4e-44 s. ~15 orders of magnitude above LHC, motivating amplification strategies (cosmological distance, high energy, macroscopic quantum coherence) in phenomenology.",
+      "relatedTo": ["modified-dispersion-relation", "minimal-length", "holographic-noise", "graviton-mass"]
+    },
+    {
+      "id": "gravitational-wave-echoes",
+      "name": "Gravitational Wave Echoes",
+      "definition": "Repeated pulses following ringdown, predicted if the classical horizon is replaced by quantum structure (firewall, fuzzball, exotic compact object) reflecting waves at ~ell_Pl from the horizon. Searched for in LIGO/Virgo/KAGRA data; no statistically significant detection, first model-independent late-time QNM bounds set.",
+      "relatedTo": ["ringdown-spectroscopy", "black-holes-information", "holography-adscft", "planck-scale"]
+    },
+    {
+      "id": "ringdown-spectroscopy",
+      "name": "Ringdown / Black-Hole Spectroscopy",
+      "definition": "Measurement of quasinormal-mode (QNM) frequencies after a binary black-hole merger, testing the Kerr metric and the no-hair theorem and constraining beyond-GR (quadratic gravity, dynamical Chern-Simons, scalar-Gauss-Bonnet). GW250114 (O4) provided a high-SNR ringdown consistent with GR.",
+      "relatedTo": ["gravitational-wave-echoes", "black-holes-information", "graviton-mass"]
+    },
+    {
+      "id": "gravitational-wave-memory",
+      "name": "Gravitational Wave Memory",
+      "definition": "Permanent shift in the relative position of test masses after a GW passes; mathematically the Fourier transform of Weinberg's soft graviton theorem (Strominger-Zhiboedov). Its detection would test the soft-graviton/BMS-supertranslation structure underlying scattering amplitudes.",
+      "relatedTo": ["soft-theorem-bms", "ringdown-spectroscopy", "twistors-amplitudes"]
+    },
+    {
+      "id": "soft-theorem-bms",
+      "name": "Soft Theorem / BMS Supertranslations",
+      "definition": "The memory-soft-symmetry triangle: GW memory = soft graviton theorem = BMS supertranslation Ward identity. A deep link between an observable GW phenomenon and the asymptotic symmetries and soft structure of gravitational scattering amplitudes.",
+      "relatedTo": ["gravitational-wave-memory", "twistors-amplitudes", "holography-adscft"]
+    },
+    {
+      "id": "graviton-mass",
+      "name": "Graviton Mass Bound",
+      "definition": "A nonzero graviton mass m_g modifies GW dispersion E^2 = p^2 c^2 + m_g^2 c^4, causing frequency-dependent delay in the waveform. LIGO/Virgo (GWTC-3) bounds m_g <~ 1.3e-23 eV/c^2; GW170817-GRB170817A coincidence gives |v_g - c|/c <~ 1e-15.",
+      "relatedTo": ["time-of-flight-delay", "ringdown-spectroscopy", "planck-scale", "modified-dispersion-relation"]
+    },
+    {
+      "id": "single-graviton-detection",
+      "name": "Single-Graviton Detection",
+      "definition": "Gravito-phononic analog of the photoelectric effect: stimulated absorption of a single graviton in a macroscopic quantum resonator, resolvable with quantum sensing (Tobar et al. 2024). A possible first experimental clue of gravity quantization, though stimulated processes also occur classically.",
+      "relatedTo": ["gravitational-wave-memory", "levitated-optomechanics", "planck-scale"]
+    },
+    {
+      "id": "atom-interferometry-magis",
+      "name": "Atom Interferometry / MAGIS-100",
+      "definition": "A 100 m matter-wave atomic gradiometer (Fermilab, NuMI shaft) using ultracold strontium to search for ultralight (wave-like) dark matter, test quantum mechanics on macroscopic scales and the equivalence principle, and pathfind mid-band (0.1-10 Hz) GW detection. Laser lab completed 2026; multi-year commissioning.",
+      "relatedTo": ["levitated-optomechanics", "planck-scale", "gravitational-decoherence"]
+    },
+    {
+      "id": "levitated-optomechanics",
+      "name": "Levitated Optomechanics",
+      "definition": "Levitated nanoparticles/nanodiamonds cooled to the motional ground state in optical/magnetic/electric traps; the leading route to high-mass quantum superpositions (10^6 amu and above) needed for BMV-type tests, with electron diffraction giving ~1000x larger momentum splitting than two-photon recoil.",
+      "relatedTo": ["bmv-experiment", "single-graviton-detection", "gravitational-decoherence", "atom-interferometry-magis"]
+    },
+    {
+      "id": "standard-model-extension",
+      "name": "Standard-Model Extension (SME)",
+      "definition": "An effective field theory framework cataloging all Lorentz- and CPT-violating operators by mass dimension, providing the standard parametrization (coefficients) against which GRB, UHECR, neutrino, and laboratory LIV bounds are reported.",
+      "relatedTo": ["lorentz-invariance-violation", "vacuum-birefringence", "modified-dispersion-relation"]
+    },
+    {
+      "id": "geontropic-noise",
+      "name": "Geontropic Noise (Verlinde-Zurek effect)",
+      "definition": "Predicted correlated fluctuation of an interferometer arm length arising from fluctuations of the modular (entanglement) energy of holographic degrees of freedom on the boundary of a causal diamond: <Delta K^2> = <K> gives <Delta L^2> ~ ell_Pl L with a characteristic (non-flat, IR-dominated) spectral shape. Unlike Hogan's flat holographic noise it can evade Holometer bounds; targeted by the GQuEST single-photon interferometer. A concrete experimental window onto the 'spacetime from entanglement' program.",
+      "relatedTo": ["holographic-noise", "holographic-principle", "entanglement-spacetime", "emergent-gravity", "planck-scale"]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "mdr-velocity",
+      "name": "Modified dispersion relation and energy-dependent velocity",
+      "latex": "E^2 = p^2 c^2\\left[1 \\pm \\left(\\frac{E}{E_{\\mathrm{QG},n}}\\right)^{n}\\right],\\qquad v(E)\\simeq c\\left[1 \\mp \\frac{n+1}{2}\\left(\\frac{E}{E_{\\mathrm{QG},n}}\\right)^{n}\\right]",
+      "meaning": "Planck-suppressed deformation of the photon dispersion; n=1 linear, n=2 quadratic; sign distinguishes subluminal/superluminal. Foundation of all time-of-flight LIV phenomenology.",
+      "source": "amelino-camelia-1998"
+    },
+    {
+      "id": "time-of-flight",
+      "name": "Cosmological time-of-flight delay",
+      "latex": "\\Delta t \\simeq \\frac{n+1}{2}\\,\\frac{E_h^{n}-E_l^{n}}{E_{\\mathrm{QG},n}^{n}}\\,\\frac{1}{H_0}\\int_0^{z}\\frac{(1+z')^{n}\\,dz'}{\\sqrt{\\Omega_m(1+z')^3+\\Omega_\\Lambda}}",
+      "meaning": "Arrival-time difference of photons of energy E_h vs E_l from a source at redshift z; non-observation gives lower bounds on E_QG (e.g. GRB 221009A: E_QG,1 >~ several E_Pl).",
+      "source": "amelino-camelia-1998"
+    },
+    {
+      "id": "vacuum-birefringence-rotation",
+      "name": "Polarization rotation from vacuum birefringence",
+      "latex": "\\Delta\\theta(E) \\simeq \\xi\\,\\frac{E^2 - E_0^2}{2\\,E_{\\mathrm{Pl}}}\\,d",
+      "meaning": "Energy-dependent rotation of the polarization vector by a dimension-5 LIV operator; high observed GRB polarization forces xi <~ 2.4e-15, the tightest propagation bound.",
+      "source": "laurent-2011"
+    },
+    {
+      "id": "bmv-gravitational-phase",
+      "name": "BMV gravitational entangling phase",
+      "latex": "\\Delta\\phi = \\frac{G\\,m^2}{\\hbar\\,d}\\,\\Delta t",
+      "meaning": "Relative phase between interferometer branches from the Newtonian potential difference; entanglement detectable when Delta phi ~ O(1) rad within coherence time. For m~1e-14 kg, d~200 um, Delta t~1 s.",
+      "source": "marletto-vedral-2017"
+    },
+    {
+      "id": "two-mode-squeeze-hamiltonian",
+      "name": "Newtonian two-mode squeezing interaction",
+      "latex": "H_{\\mathrm{int}} \\simeq \\frac{G\\,m_1 m_2}{d^3}\\,\\hat x_1 \\hat x_2",
+      "meaning": "Bilinear coupling from expanding the Newtonian potential; entangles positions/momenta of the two masses (mechanism of GIE even without spin splitting).",
+      "source": "bose-2017"
+    },
+    {
+      "id": "diosi-penrose-rate",
+      "name": "Diosi-Penrose collapse/decoherence rate",
+      "latex": "\\frac{1}{\\tau_{\\mathrm{DP}}} = \\frac{\\Delta E_g}{\\hbar},\\quad \\Delta E_g = -4\\pi G\\!\\int\\! d^3x\\,d^3y\\,\\frac{[\\rho_1(\\mathbf x)-\\rho_2(\\mathbf x)][\\rho_1(\\mathbf y)-\\rho_2(\\mathbf y)]}{|\\mathbf x - \\mathbf y|}",
+      "meaning": "Gravitational self-energy of the mass-density difference (cutoff R0) sets the collapse rate; a fundamental, non-Planck-suppressed prediction testable via spontaneous heating/X-ray emission.",
+      "source": "donadi-2021"
+    },
+    {
+      "id": "time-dilation-decoherence",
+      "name": "Decoherence rate from gravitational time dilation",
+      "latex": "\\Gamma \\propto \\frac{E_{\\mathrm{int}}\\,g\\,\\Delta x}{\\hbar c^2}",
+      "meaning": "Internal energy E_int coupled to center of mass by time dilation decoheres position over vertical splitting Delta x in gravitational field g, without any external environment.",
+      "source": "pikovski-2015"
+    },
+    {
+      "id": "gup-minimal-length",
+      "name": "Generalized uncertainty principle and minimal length",
+      "latex": "\\Delta x\\,\\Delta p \\geq \\frac{\\hbar}{2}\\left(1+\\beta(\\Delta p)^2+\\dots\\right)\\;\\Rightarrow\\;\\Delta x_{\\min}=\\beta_0\\,\\ell_{\\mathrm{Pl}}",
+      "meaning": "Momentum-dependent deformation implying a minimal measurable length; constrained in oscillators and LIGO (beta_0 <~ 1e6-1e10, far above naive O(1)).",
+      "source": "hossenfelder-2010"
+    },
+    {
+      "id": "holographic-noise-spectrum",
+      "name": "Holographic noise variance and flat spectrum",
+      "latex": "\\langle\\Delta x^2\\rangle \\sim \\ell_{\\mathrm{Pl}}\\,L,\\qquad S(f)\\simeq \\frac{c\\,t_{\\mathrm{Pl}}}{2\\pi}",
+      "meaning": "Hogan's prediction of transverse position fluctuations and a frequency-independent strain PSD fixed by the Planck time; the Holometer measured S(f) and excluded this model at 4.6 sigma.",
+      "source": "chou-2017"
+    },
+    {
+      "id": "graviton-mass-dispersion",
+      "name": "Massive graviton GW dispersion",
+      "latex": "E^2 = p^2 c^2 + m_g^2 c^4\\;\\Rightarrow\\; \\frac{v_g^2}{c^2}=1-\\frac{m_g^2 c^4}{E^2},\\quad m_g=\\frac{h}{\\lambda_g c}",
+      "meaning": "Nonzero graviton mass gives frequency-dependent GW delay; LVK GWTC-3 bounds m_g <~ 1.3e-23 eV/c^2 (lambda_g >~ 1e16 km).",
+      "source": "lvk-gwtc3-2021"
+    },
+    {
+      "id": "spectral-dimension-running",
+      "name": "Running spectral dimension (dimensional reduction)",
+      "latex": "d_s(\\sigma)=-2\\,\\frac{\\partial\\ln P(\\sigma)}{\\partial\\ln\\sigma},\\qquad d_s:\\;4\\xrightarrow[\\sigma\\to\\ell_{\\mathrm{Pl}}^2]{}\\approx 2",
+      "meaning": "Diffusion-defined effective dimension running from 4 to ~2 at the Planck scale, a signature shared by CDT, asymptotic safety, LQG, NCG, and Horava-Lifshitz.",
+      "source": "ambjorn-2005"
+    },
+    {
+      "id": "gw-speed-bound",
+      "name": "GW speed bound from multimessenger timing",
+      "latex": "\\left|\\frac{v_g-c}{c}\\right| \\lesssim 10^{-15}",
+      "meaning": "From the ~1.7 s offset between GW170817 and GRB 170817A over ~40 Mpc; ruled out many modified-gravity / dark-energy theories.",
+      "source": "abbott-gw170817-2017"
+    },
+    {
+      "id": "geontropic-noise-spectrum",
+      "name": "Verlinde-Zurek geontropic arm-length noise",
+      "latex": "\\langle\\Delta K^2\\rangle = \\langle K\\rangle\\;\\Rightarrow\\;\\langle\\Delta L^2\\rangle \\sim \\ell_{\\mathrm{Pl}}\\,L,\\qquad \\frac{\\Delta L}{L}\\sim\\sqrt{\\frac{\\ell_{\\mathrm{Pl}}}{L}}",
+      "meaning": "Fluctuation of the modular energy K of holographic boundary dof induces correlated arm-length noise with a non-flat, IR-dominated spectrum that can evade Holometer bounds; targeted by GQuEST single-photon detection. Amplitude normalization is model-dependent.",
+      "source": "verlinde-zurek-2021"
+    }
+  ],
+  "references": [
+    {
+      "id": "amelino-camelia-1998",
+      "authors": "G. Amelino-Camelia, J. Ellis, N. E. Mavromatos, D. V. Nanopoulos, S. Sarkar",
+      "title": "Potential Sensitivity of Gamma-Ray Burster Observations to Wave Dispersion in Vacuo",
+      "year": 1998,
+      "arxiv": "astro-ph/9712103",
+      "doi": "10.1038/31647",
+      "url": "https://arxiv.org/abs/astro-ph/9712103",
+      "significance": "Founding proposal that cosmological distances amplify E/E_Pl effects into observability; birth of quantitative QG phenomenology."
+    },
+    {
+      "id": "amelino-camelia-livrev-2013",
+      "authors": "G. Amelino-Camelia",
+      "title": "Quantum-Spacetime Phenomenology",
+      "year": 2013,
+      "arxiv": "0806.0339",
+      "doi": "10.12942/lrr-2013-5",
+      "url": "https://arxiv.org/abs/0806.0339",
+      "significance": "Canonical Living Review of the whole field; defines amplification strategies and observational windows."
+    },
+    {
+      "id": "hossenfelder-2010",
+      "authors": "S. Hossenfelder",
+      "title": "Experimental Search for Quantum Gravity",
+      "year": 2010,
+      "arxiv": "1010.3420",
+      "url": "https://arxiv.org/abs/1010.3420",
+      "significance": "Honest survey of testability; stresses that 'tests' constrain specific models (SME, DSR) not QG in general; search for imperfections not discreteness."
+    },
+    {
+      "id": "bose-2017",
+      "authors": "S. Bose, A. Mazumdar, G. W. Morley, H. Ulbricht, M. Toros, M. Paternostro, A. Geraci, P. Barker, M. S. Kim, G. Milburn",
+      "title": "Spin Entanglement Witness for Quantum Gravity",
+      "year": 2017,
+      "arxiv": "1707.06050",
+      "doi": "10.1103/PhysRevLett.119.240401",
+      "url": "https://arxiv.org/abs/1707.06050",
+      "significance": "Founding QGEM proposal with spin entanglement witness and Stern-Gerlach nanodiamond interferometers."
+    },
+    {
+      "id": "marletto-vedral-2017",
+      "authors": "C. Marletto, V. Vedral",
+      "title": "Gravitationally Induced Entanglement between Two Massive Particles is Sufficient Evidence of Quantum Effects in Gravity",
+      "year": 2017,
+      "arxiv": "1707.06036",
+      "doi": "10.1103/PhysRevLett.119.240402",
+      "url": "https://arxiv.org/abs/1707.06036",
+      "significance": "Theorem that an entanglement-mediating field must be quantum; second founding BMV paper, gives gravitational phase formula."
+    },
+    {
+      "id": "pikovski-2015",
+      "authors": "I. Pikovski, M. Zych, F. Costa, C. Brukner",
+      "title": "Universal decoherence due to gravitational time dilation",
+      "year": 2015,
+      "arxiv": "1311.1095",
+      "doi": "10.1038/nphys3366",
+      "url": "https://arxiv.org/abs/1311.1095",
+      "significance": "Time dilation decoheres composite-particle superpositions without an environment; gravitational route to classicality."
+    },
+    {
+      "id": "chou-2017",
+      "authors": "A. Chou et al. (Holometer Collaboration)",
+      "title": "The Holometer: An Instrument to Probe Planckian Quantum Geometry",
+      "year": 2017,
+      "arxiv": "1611.08265",
+      "doi": "10.1088/1361-6382/aa5e5c",
+      "url": "https://arxiv.org/abs/1611.08265",
+      "significance": "Holometer; strain < 1e-21/sqrt(Hz); excluded Hogan's holographic noise model at 4.6 sigma."
+    },
+    {
+      "id": "lhaaso-liv-2023",
+      "authors": "T. Piran, D. D. Ofengeim",
+      "title": "Lorentz Invariance Violation Limits from GRB 221009A",
+      "year": 2024,
+      "arxiv": "2308.03031",
+      "url": "https://arxiv.org/abs/2308.03031",
+      "significance": "Independent (non-collaboration) analysis by Piran & Ofengeim deriving time-of-flight LIV bounds, E_QG,1 >~ several E_Pl, from the LHAASO GRB 221009A (BOAT, z=0.151, 0.2-18 TeV) data. NOTE: this is NOT the official LHAASO collaboration paper (cf. lhaaso-liv-prd-2024). DOI removed — the original PRD 109 L081501 DOI refers to the official LHAASO paper, not this one."
+    },
+    {
+      "id": "lhaaso-liv-2312",
+      "authors": "Yu-Ming Yang, Xiao-Jun Bi, Peng-Fei Yin",
+      "title": "Constraints on Lorentz invariance violation from the LHAASO observation of GRB 221009A",
+      "year": 2024,
+      "arxiv": "2312.09079",
+      "doi": "10.1088/1475-7516/2024/04/060",
+      "url": "https://arxiv.org/abs/2312.09079",
+      "significance": "Independent (non-collaboration) complementary LIV analysis using publicly available LHAASO data on GRB 221009A, photons 0.2-18 TeV; published JCAP 04 (2024) 060."
+    },
+    {
+      "id": "laurent-2011",
+      "authors": "P. Laurent, D. Gotz, P. Binetruy, S. Covino, A. Fernandez-Soto",
+      "title": "A New Limit on Planck Scale Lorentz Violation from Gamma-ray Burst Polarization",
+      "year": 2011,
+      "arxiv": "1102.2784",
+      "doi": "10.1103/PhysRevD.83.121301",
+      "url": "https://arxiv.org/abs/1102.2784",
+      "significance": "Vacuum birefringence: dimension-5 LIV xi <~ 2.4e-15, >5 orders better than Crab Nebula."
+    },
+    {
+      "id": "tobar-2024",
+      "authors": "G. Tobar, S. K. Manikandan, T. Beitel, I. Pikovski",
+      "title": "Detecting single gravitons with quantum sensing",
+      "year": 2024,
+      "arxiv": "2308.15440",
+      "doi": "10.1038/s41467-024-51420-8",
+      "url": "https://arxiv.org/abs/2308.15440",
+      "significance": "Gravito-phononic photoelectric effect; stimulated absorption of a single graviton in a macroscopic resonator."
+    },
+    {
+      "id": "shenderov-2024",
+      "authors": "V. Shenderov et al.",
+      "title": "Stimulated absorption of single gravitons: First light on quantum gravity",
+      "year": 2024,
+      "arxiv": "2407.11929",
+      "url": "https://arxiv.org/abs/2407.11929",
+      "significance": "Complementary analysis of single-graviton detection feasibility."
+    },
+    {
+      "id": "nanodiamond-bmv-2024",
+      "authors": "G. Di Pietra, F. Piacentini, E. Bernardi, E. Moreva, C. Napoli, I. P. Degiovanni, M. Genovese, V. Vedral, C. Marletto",
+      "title": "The Bose-Marletto-Vedral experiment with nanodiamond interferometers: an insight on entanglement detection",
+      "year": 2024,
+      "arxiv": "2410.19601",
+      "url": "https://arxiv.org/abs/2410.19601",
+      "significance": "Detailed NV-nanodiamond BMV design (INRiM/Oxford group, with Vedral & Marletto) with optical position/complementary-basis readout."
+    },
+    {
+      "id": "tabletop-nanodiamond-2024",
+      "authors": "M. Vicentini, E. Bernardi, M. Bordin, E. Moreva, F. Piacentini, C. Napoli, et al.",
+      "title": "Table-top nanodiamond interferometer enabling quantum gravity tests",
+      "year": 2024,
+      "arxiv": "2405.21029",
+      "url": "https://arxiv.org/abs/2405.21029",
+      "significance": "Feasibility study for a less resource-demanding tabletop QGEM interferometer."
+    },
+    {
+      "id": "aziz-howl-2025",
+      "authors": "J. Aziz, R. Howl",
+      "title": "Classical theories of gravity produce entanglement",
+      "year": 2025,
+      "doi": "10.1038/s41586-025-09595-7",
+      "url": "https://www.nature.com/articles/s41586-025-09595-7",
+      "significance": "Controversial Nature claim that unquantized gravity entangles; triggered the 2025 debate over what GIE actually proves."
+    },
+    {
+      "id": "marletto-2025-rebuttal",
+      "authors": "C. Marletto, J. Oppenheim, V. Vedral, A. Wilson",
+      "title": "Classical gravity cannot mediate entanglement",
+      "year": 2025,
+      "arxiv": "2511.07348",
+      "url": "https://arxiv.org/abs/2511.07348",
+      "significance": "Rebuttal of Aziz-Howl: ultralocal limit factorizes, any entanglement is matter- not gravity-mediated."
+    },
+    {
+      "id": "classical-no-entangle-2025",
+      "authors": "Multiple authors",
+      "title": "A demonstration that classical gravity does not produce entanglement",
+      "year": 2025,
+      "arxiv": "2511.19242",
+      "url": "https://arxiv.org/abs/2511.19242",
+      "significance": "Newton-Cartan analysis showing classical gravity does not entangle spatially separated masses."
+    },
+    {
+      "id": "absence-gie-semiclassical-2025",
+      "authors": "Multiple authors",
+      "title": "Absence of gravitationally induced entanglement in certain semi-classical theories of gravity",
+      "year": 2025,
+      "arxiv": "2510.20991",
+      "url": "https://arxiv.org/abs/2510.20991",
+      "significance": "Newton-Schrodinger, Bohmian, Doner-Grossardt models and their differing entanglement predictions; clarifies GIE loopholes."
+    },
+    {
+      "id": "lvk-gwtc3-2021",
+      "authors": "R. Abbott et al. (LIGO-Virgo-KAGRA)",
+      "title": "Tests of General Relativity with GWTC-3",
+      "year": 2021,
+      "arxiv": "2112.06861",
+      "url": "https://arxiv.org/abs/2112.06861",
+      "significance": "Graviton mass m_g <~ 1.3e-23 eV/c^2, GW dispersion and beyond-GR constraints."
+    },
+    {
+      "id": "abbott-gw170817-2017",
+      "authors": "B. P. Abbott et al. (LVC, Fermi-GBM, INTEGRAL)",
+      "title": "Gravitational Waves and Gamma-Rays from a Binary Neutron Star Merger: GW170817 and GRB 170817A",
+      "year": 2017,
+      "arxiv": "1710.05834",
+      "doi": "10.3847/2041-8213/aa920c",
+      "url": "https://arxiv.org/abs/1710.05834",
+      "significance": "|v_g - c|/c <~ 1e-15; ruled out a wide class of modified-gravity and dark-energy theories."
+    },
+    {
+      "id": "magis-100-2021",
+      "authors": "M. Abe et al. (MAGIS-100 Collaboration)",
+      "title": "Matter-wave Atomic Gradiometer Interferometric Sensor (MAGIS-100)",
+      "year": 2021,
+      "arxiv": "2104.02835",
+      "doi": "10.1088/2058-9565/abf719",
+      "url": "https://arxiv.org/abs/2104.02835",
+      "significance": "100 m atom interferometer for ultralight dark matter, macroscopic QM tests, and mid-band GW pathfinding."
+    },
+    {
+      "id": "magis-100-fermilab-2018",
+      "authors": "Jon Coleman (on behalf of the MAGIS-100 Collaboration)",
+      "title": "MAGIS-100 at Fermilab",
+      "year": 2018,
+      "arxiv": "1812.00482",
+      "url": "https://arxiv.org/abs/1812.00482",
+      "significance": "Conceptual design of the MAGIS-100 detector (conference proceedings, MAGIS-100 Collaboration)."
+    },
+    {
+      "id": "ambjorn-2005",
+      "authors": "J. Ambjorn, J. Jurkiewicz, R. Loll",
+      "title": "The Spectral Dimension of the Universe is Scale Dependent",
+      "year": 2005,
+      "arxiv": "hep-th/0505113",
+      "doi": "10.1103/PhysRevLett.95.171301",
+      "url": "https://arxiv.org/abs/hep-th/0505113",
+      "significance": "Dimensional reduction d_s: 4 -> 2 (CDT); a signature shared across QG approaches."
+    },
+    {
+      "id": "carlip-2019",
+      "authors": "S. Carlip",
+      "title": "Dimension and Dimensional Reduction in Quantum Gravity",
+      "year": 2019,
+      "arxiv": "1904.04379",
+      "doi": "10.3390/universe5030083",
+      "url": "https://arxiv.org/abs/1904.04379",
+      "significance": "Review of universality of d_s -> 2 and its (lack of) phenomenology."
+    },
+    {
+      "id": "relative-locality-2011",
+      "authors": "G. Amelino-Camelia, L. Freidel, J. Kowalski-Glikman, L. Smolin",
+      "title": "The principle of relative locality",
+      "year": 2011,
+      "arxiv": "1101.0931",
+      "doi": "10.1103/PhysRevD.84.084010",
+      "url": "https://arxiv.org/abs/1101.0931",
+      "significance": "Relative locality; explains why DSR can null the time-of-flight effect, complicating LIV interpretation."
+    },
+    {
+      "id": "dsr-review-2010",
+      "authors": "G. Amelino-Camelia",
+      "title": "Doubly-Special Relativity: Facts, Myths and Some Key Open Issues",
+      "year": 2010,
+      "arxiv": "1003.3942",
+      "doi": "10.3390/sym2010230",
+      "url": "https://arxiv.org/abs/1003.3942",
+      "significance": "Critical review of DSR and kappa-Poincare phenomenology."
+    },
+    {
+      "id": "strominger-zhiboedov-2014",
+      "authors": "A. Strominger, A. Zhiboedov",
+      "title": "Gravitational Memory, BMS Supertranslations and Soft Theorems",
+      "year": 2014,
+      "arxiv": "1411.5745",
+      "doi": "10.1007/JHEP01(2016)086",
+      "url": "https://arxiv.org/abs/1411.5745",
+      "significance": "Memory = soft graviton theorem = BMS supertranslation; bridges GW phenomenology to amplitudes/asymptotic symmetries."
+    },
+    {
+      "id": "donadi-2021",
+      "authors": "S. Donadi, K. Piscicchia, C. Curceanu, L. Diosi, M. Laubenstein, A. Bassi",
+      "title": "Underground test of gravity-related wave function collapse",
+      "year": 2021,
+      "doi": "10.1038/s41567-020-1008-4",
+      "url": "https://www.nature.com/articles/s41567-020-1008-4",
+      "significance": "Spontaneous X-ray emission excludes the scale-free Diosi-Penrose model; bounds R0."
+    },
+    {
+      "id": "dp-effectiveness-2024",
+      "authors": "Multiple authors",
+      "title": "On the effectiveness of the collapse in the Diosi-Penrose model",
+      "year": 2024,
+      "arxiv": "2406.18494",
+      "doi": "10.1088/1367-2630/ad8c77",
+      "url": "https://arxiv.org/abs/2406.18494",
+      "significance": "Updated bounds on the DP cutoff parameter R0."
+    },
+    {
+      "id": "calcagni-kuroyanagi-2020",
+      "authors": "G. Calcagni, S. Kuroyanagi",
+      "title": "Stochastic gravitational-wave background in quantum gravity",
+      "year": 2020,
+      "arxiv": "2012.00170",
+      "doi": "10.1088/1475-7516/2021/03/019",
+      "url": "https://arxiv.org/abs/2012.00170",
+      "significance": "Blue-tilted tensor spectra from non-local QG, string-gas, multifractal spacetimes; detectable by DECIGO not LISA/ET."
+    },
+    {
+      "id": "lhaaso-science-2023",
+      "authors": "LHAASO Collaboration",
+      "title": "A tera-electron-volt afterglow from a narrow jet in the brightest gamma-ray burst",
+      "year": 2023,
+      "arxiv": "2306.06372",
+      "doi": "10.1126/science.adg9328",
+      "url": "https://arxiv.org/abs/2306.06372",
+      "significance": "TeV afterglow detection of GRB 221009A (BOAT); the input dataset for the LIV bounds."
+    },
+    {
+      "id": "bicep-keck-2024",
+      "authors": "BICEP/Keck Collaboration",
+      "title": "Constraining Inflation with the BICEP/Keck CMB Polarization Experiments",
+      "year": 2024,
+      "arxiv": "2405.19469",
+      "url": "https://arxiv.org/abs/2405.19469",
+      "significance": "r_0.05 < 0.036 (95% CL), sigma(r)=0.009; primordial tensor constraints relevant to QG CMB imprints."
+    },
+    {
+      "id": "lhaaso-liv-prd-2024",
+      "authors": "Z. Cao et al. (LHAASO Collaboration)",
+      "title": "Stringent Tests of Lorentz Invariance Violation from LHAASO Observations of GRB 221009A",
+      "year": 2024,
+      "arxiv": "2402.06009",
+      "doi": "10.1103/PhysRevLett.133.071501",
+      "url": "https://arxiv.org/abs/2402.06009",
+      "significance": "Official LHAASO collaboration bounds (PRL 133, 071501) E_QG,1 > 10 E_Pl (linear) and E_QG,2 > 6e-8 E_Pl (quadratic); quadratic 5-7x better than previous best."
+    },
+    {
+      "id": "gw250114-2025",
+      "authors": "A. G. Abac et al. (LIGO-Virgo-KAGRA)",
+      "title": "GW250114: Testing Hawking's Area Law and the Kerr Nature of Black Holes",
+      "year": 2025,
+      "arxiv": "2509.08054",
+      "doi": "10.1103/kw5g-d732",
+      "url": "https://arxiv.org/abs/2509.08054",
+      "significance": "Cleanest GW signal (SNR ~80); first overtone at 4.1 sigma, most stringent single-event no-hair/Kerr test, observational confirmation of the black-hole area law."
+    },
+    {
+      "id": "km3net-uhe-2025",
+      "authors": "S. Aiello et al. (KM3NeT Collaboration)",
+      "title": "Observation of an ultra-high-energy cosmic neutrino with KM3NeT",
+      "year": 2025,
+      "doi": "10.1038/s41586-024-08543-1",
+      "url": "https://www.km3net.org/km3net-detects-the-highest-energy-neutrino-ever-observed/",
+      "significance": "KM3-230213A ~220 PeV, highest-energy neutrino ever; new channel for threshold/time-of-flight LIV tests in the neutrino sector."
+    },
+    {
+      "id": "verlinde-zurek-2021",
+      "authors": "E. P. Verlinde, K. M. Zurek",
+      "title": "Observational signatures of quantum gravity in interferometers",
+      "year": 2021,
+      "arxiv": "1902.08207",
+      "doi": "10.1016/j.physletb.2021.136663",
+      "url": "https://arxiv.org/abs/1902.08207",
+      "significance": "Geontropic noise from holographic modular-energy fluctuations; theoretical basis of the GQuEST interferometer search, a phenomenological window onto entanglement-spacetime."
+    },
+    {
+      "id": "carmona-dsr-delays-2022",
+      "authors": "J. M. Carmona, J. L. Cortes, J. J. Relancio, M. A. Reyes",
+      "title": "Time delays, choice of energy-momentum variables and relative locality in doubly special relativity",
+      "year": 2022,
+      "arxiv": "2207.03799",
+      "url": "https://arxiv.org/abs/2207.03799",
+      "significance": "Clarifies when DSR predicts a nonzero vs vanishing photon time-of-flight delay, sharpening the LIV-vs-DSR discrimination problem."
+    },
+    {
+      "id": "wu-echo-search-2026",
+      "authors": "D. Wu, X.-L. Zhang, Q.-G. Huang, J. Ren",
+      "title": "Model-independent search of gravitational wave echoes in LVK data",
+      "year": 2026,
+      "arxiv": "2512.24730",
+      "url": "https://arxiv.org/abs/2512.24730",
+      "significance": "Template-independent echo search over three significant LVK mergers; more robust upper bounds, no significant signal."
+    },
+    {
+      "id": "gundhi-classical-entangle-2026",
+      "authors": "A. Gundhi, G. Infantino, A. Bassi",
+      "title": "Can classical theories of gravity produce entanglement?",
+      "year": 2026,
+      "arxiv": "2604.19696",
+      "url": "https://arxiv.org/abs/2604.19696",
+      "significance": "Formalizes the 2025 debate; analyzes when classical gravity does or does not generate entanglement, refining what GIE actually proves."
+    }
+  ],
+  "openProblems": [
+    {
+      "id": "liv-source-degeneracy",
+      "statement": "Energy-dependent time-of-flight delays from LIV cannot be cleanly separated from intrinsic energy-dependent emission within the GRB source.",
+      "whyHard": "The GRB prompt-emission mechanism is not known from first principles, producing a degeneracy between E_QG and astrophysical lag.",
+      "attempts": "Statistical bounds over many sources, redshift-correlation tests, and (model-independent) vacuum birefringence which is insensitive to emission timing."
+    },
+    {
+      "id": "macroscopic-superposition-reach",
+      "statement": "It is unproven that a ~1e-14 kg mass can be put and held in a ~100 um spatial superposition for ~1 s as required by BMV.",
+      "whyHard": "Decoherence from residual-gas scattering, blackbody radiation and gravity gradients scales extremely unfavorably; required ~1e-15 Pa vacuum and cryogenics are at the edge of feasibility.",
+      "attempts": "Needle Paul traps, diamagnetic microchip traps, levitated optomechanics ground-state cooling, electron-diffraction momentum splitting (~1000x recoil)."
+    },
+    {
+      "id": "gie-interpretation",
+      "statement": "It is contested what gravitationally induced entanglement would actually prove about the quantum nature of gravity.",
+      "whyHard": "Depends on definitions of 'classical mediator', locality, and whether matter rather than gravity mediates; semiclassical models (Newton-Schrodinger, Bohmian) give conflicting predictions.",
+      "attempts": "Tightened criteria of entanglement 'responsibility', quantum-information theorems, operational QFT models; active 2025 Aziz-Howl vs Marletto et al. debate."
+    },
+    {
+      "id": "liv-vs-dsr",
+      "statement": "Time-of-flight data cannot currently distinguish LIV (preferred frame) from DSR (deformed relativity), which may predict no delay at all.",
+      "whyHard": "Relative locality makes 'delay' observer/coordinate dependent, so a deformed dispersion relation need not yield an observable arrival-time difference.",
+      "attempts": "Multi-particle coincidence observables and explicit relative-locality computations of arrival times."
+    },
+    {
+      "id": "planck-signature-access",
+      "statement": "Dimensional reduction to d_s~2 and minimal length are shared QG signatures but lie ~10 Planck lengths deep with no known amplifier.",
+      "whyHard": "No observable couples the spectral-dimension running into a measurable regime; GUP bounds remain weak (beta_0 <~ 1e6).",
+      "attempts": "Running dispersion in curved momentum space, correlations with LIV, GUP tests in macroscopic oscillators and LIGO."
+    },
+    {
+      "id": "single-graviton-quantumness",
+      "statement": "Detecting stimulated single-graviton absorption does not by itself prove the gravitational field is quantized.",
+      "whyHard": "Stimulated processes occur for classical waves too; distinguishing a spontaneous (genuinely quantum) signature would require resolving vacuum fluctuations, near Dyson's no-detection argument.",
+      "attempts": "Graviton-counting statistics, antibunching, gravito-phononic photoelectric-effect analogs."
+    },
+    {
+      "id": "gw-echo-robustness",
+      "statement": "No robust detection of post-merger GW echoes (a signature of quantum horizon structure) has been achieved.",
+      "whyHard": "Low late-time SNR, strong template model-dependence, and false alarms from detector noise.",
+      "attempts": "Model-independent late-time QNM searches and catalog stacking across LVK events."
+    },
+    {
+      "id": "gravitational-collapse-universality",
+      "statement": "The parameters (R0, cutoffs) of gravity-related collapse/decoherence models are not fixed by theory, leaving open whether such models are universal.",
+      "whyHard": "Hard to distinguish gravitational collapse from ordinary environmental decoherence and CSL; heating bounds constrain but do not close the parameter window.",
+      "attempts": "X-ray spontaneous-emission limits, mechanical oscillators, molecular interferometry."
+    }
+  ],
+  "connections": [
+    {
+      "from": "experimental-tests",
+      "to": "semiclassical-gravity",
+      "type": "conflict",
+      "description": "BMV/QGEM is designed as a direct discriminator: if gravity is fundamentally semiclassical (Moller-Rosenfeld, G_uv = 8 pi G <T_uv>) it should not entangle two masses. The 2025 Aziz-Howl Nature claim that classical gravity DOES entangle, and its multiple rebuttals (Marletto-Oppenheim-Vedral-Wilson, Newton-Cartan analyses), make this the sharpest, most active experimental decision point between quantum and semiclassical gravity.",
+      "explored": "well"
+    },
+    {
+      "from": "experimental-tests",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "kappa-Poincare (the Hopf-algebra deformation underlying DSR) is the mathematical core that generates modified dispersion relations, relative locality, and deformed time-of-flight predictions. Vacuum birefringence and UHECR bounds directly test NCG-inspired MDR. The best-developed bridge between a fundamental approach and phenomenology, though whether it yields an observable delay (vs relative-locality nullification) is unsettled.",
+      "explored": "well"
+    },
+    {
+      "from": "experimental-tests",
+      "to": "conceptual-problems",
+      "type": "shared-structure",
+      "description": "BMV/QGEM, Diosi-Penrose collapse, and Pikovski time-dilation decoherence make the laboratory a testbed for the measurement problem and the quantum-to-classical transition, and for whether gravity MUST be quantized (Penrose, Brukner). Intensely discussed conceptually and operationally.",
+      "explored": "well"
+    },
+    {
+      "from": "experimental-tests",
+      "to": "twistors-amplitudes",
+      "type": "shared-math",
+      "description": "Gravitational-wave memory is the Fourier transform of Weinberg's soft graviton theorem (Strominger-Zhiboedov), forming the memory-soft-BMS triangle. Detecting GW memory in LIGO would test the soft structure and asymptotic (BMS) symmetries underlying gravitational scattering amplitudes. Theoretically deep; awaits experimental memory detection.",
+      "explored": "partially"
+    },
+    {
+      "from": "experimental-tests",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "GW echoes, ringdown spectroscopy, and no-hair tests directly probe whether the horizon hides quantum structure (firewall, fuzzball, ECO). An echo detection would be the most direct experimental input to the information paradox. Conceptually clear but echoes remain undetected and templates are model-dependent.",
+      "explored": "partially"
+    },
+    {
+      "from": "experimental-tests",
+      "to": "causal-sets",
+      "type": "shared-structure",
+      "description": "Causal sets predict Lorentz-invariant discreteness (Poisson sprinkling), so they do NOT predict LIV/birefringence (unlike lattice models); birefringence bounds therefore favor CST. CST instead predicts momentum-diffusion 'swerves' and a fluctuating Lambda of the observed order. Swerve phenomenology is studied but never systematically linked to BMV/decoherence tests.",
+      "explored": "partially"
+    },
+    {
+      "from": "experimental-tests",
+      "to": "loop-quantum-gravity",
+      "type": "shared-structure",
+      "description": "LQG motivated polymer-quantization minimal length/area and early LIV proposals (Gambini-Pullin), strongly constrained by birefringence; loop quantum cosmology predicts modified primordial tensor spectra (CMB). The link to QGEM/gravitational-phase predictions in the nonrelativistic limit is essentially unexplored.",
+      "explored": "partially"
+    },
+    {
+      "from": "experimental-tests",
+      "to": "asymptotic-safety",
+      "type": "shared-structure",
+      "description": "Asymptotic safety predicts running couplings and dimensional reduction to d_s~2 (shared with CDT/CST), with possible GW, black-hole-shadow, and inflationary signatures. Its connection to time-of-flight LIV is weak since some formulations preserve Lorentz invariance; d_s -> 2 is a shared but hard-to-measure bridge.",
+      "explored": "partially"
+    },
+    {
+      "from": "experimental-tests",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-structure",
+      "description": "CDT shares the d_s: 4 -> 2 dimensional reduction and partition-function phase transitions with ASG/CST, but offers essentially no direct phenomenology (no LIV/BMV/GW prediction). The shared spectral-dimension scaling is the only identified bridge and has never been carried into observables.",
+      "explored": "barely"
+    },
+    {
+      "from": "experimental-tests",
+      "to": "quantum-cosmology",
+      "type": "shared-structure",
+      "description": "CMB carries candidate QG imprints: modified primordial tensor spectra (NCG phase space, blue-tilt from non-local QG / string-gas / multifractals), large-scale power suppression (>3 sigma preference in some analyses), non-Gaussianity. BICEP/Keck (r_0.05<0.036, target sigma(r)<~0.003 by 2027) and future SGWB (DECIGO) are the channels; predictions are model-fragmented.",
+      "explored": "partially"
+    },
+    {
+      "from": "experimental-tests",
+      "to": "holography-adscft",
+      "type": "conjecture",
+      "description": "Hogan's holographic noise was inspired by the holographic principle (information ~ area/ell_Pl^2) but was excluded by the Holometer. The newer, more concrete bridge is the Verlinde-Zurek geontropic noise: correlated arm-length fluctuations derived from modular-energy fluctuations of holographic dof on a causal-diamond boundary, directly targeted by the GQuEST single-photon interferometer. This is a quantitative holography-to-lab link (vs Hogan's heuristic), pushing the bridge from 'barely' toward 'partially'. GW echoes additionally test near-horizon structure that holography/fuzzballs predict.",
+      "explored": "partially"
+    },
+    {
+      "from": "experimental-tests",
+      "to": "emergent-gravity",
+      "type": "conjecture",
+      "description": "If gravity is emergent/thermodynamic (Verlinde, Jacobson) it may have no quantized mediator, so a NEGATIVE BMV result could be read as evidence for emergence rather than for semiclassical gravity. Discussed as an interpretation but lacks quantitative phenomenology - a gold-grade unexplored link.",
+      "explored": "barely"
+    },
+    {
+      "from": "experimental-tests",
+      "to": "string-theory",
+      "type": "shared-structure",
+      "description": "String length gives minimal length and GUP; spontaneous Lorentz breaking (Kostelecky-Samuel) historically motivated LIV; swampland bounds constrain inflationary r (CMB). The memory-soft-BMS triangle connects to string amplitudes. Direct string predictions for QGEM/BMV gravitational phase are essentially absent.",
+      "explored": "partially"
+    },
+    {
+      "from": "experimental-tests",
+      "to": "swampland",
+      "type": "shared-structure",
+      "description": "Swampland conjectures (de Sitter, distance, tensor-to-scalar bounds) translate into constraints on inflationary observables measured by CMB experiments (BICEP/Keck r limits) and on light-field/axion phenomenology. The phenomenological link runs through cosmology rather than direct lab tests and is only partially mapped.",
+      "explored": "barely"
+    },
+    {
+      "from": "experimental-tests",
+      "to": "spectral-dimension",
+      "type": "shared-structure",
+      "description": "Running of the spectral dimension to d_s~2 at the Planck scale is a signature shared by CDT, asymptotic safety, LQG, noncommutative geometry, and Horava-Lifshitz, and could in principle feed modified dispersion relations. No known observable amplifies it into measurability, making it a shared-but-inaccessible target.",
+      "explored": "barely"
+    },
+    {
+      "from": "experimental-tests",
+      "to": "entanglement-spacetime",
+      "type": "conjecture",
+      "description": "Two distinct bridges. (1) Verlinde-Zurek geontropic noise turns the 'spacetime from entanglement' idea (modular/entanglement energy of holographic dof) into a measurable interferometer signal (GQuEST) - the only concrete experimental window onto entanglement=geometry. (2) BMV/GIE tests the converse: whether gravity itself entangles matter. Both are deep but phenomenologically nascent; speculative-but-grounded, gold-grade.",
+      "explored": "barely"
+    },
+    {
+      "from": "experimental-tests",
+      "to": "group-field-theory",
+      "type": "shared-structure",
+      "description": "GFT condensate cosmology yields an effective Friedmann dynamics with a bounce and possible large-scale CMB modifications (shared with loop quantum cosmology). There is essentially no direct GFT prediction for LIV, BMV, or GW; the only tangible phenomenological channel is cosmological. A gold-grade unexplored bridge to lab tests.",
+      "explored": "barely"
+    },
+    {
+      "from": "experimental-tests",
+      "to": "supergravity-uv",
+      "type": "shared-structure",
+      "description": "Supergravity / M-theory UV completions predict light fields (moduli, axions, gravitino) whose phenomenology is mostly collider/cosmological (dark matter, N_eff). The nearest lab contact is ultralight-axion searches via atom interferometry (MAGIS-100) and inflationary r; the link to propagation LIV or BMV is indirect and barely mapped.",
+      "explored": "barely"
+    }
+  ]
+}

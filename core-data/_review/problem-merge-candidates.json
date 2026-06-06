@@ -1,0 +1,47 @@
+[
+  {
+    "a": "background-independence-problem",
+    "b": "define-background-independence",
+    "ratio": 0.75
+  },
+  {
+    "a": "background-independence-problem",
+    "b": "background-independent-emergence",
+    "ratio": 0.73
+  },
+  {
+    "a": "nonperturbative-existence",
+    "b": "nonperturbative-twistor-string",
+    "ratio": 0.73
+  },
+  {
+    "a": "factorization-puzzle",
+    "b": "factorization-problem",
+    "ratio": 0.83
+  },
+  {
+    "a": "evaporation-endpoint",
+    "b": "evaporation-endpoint-information",
+    "ratio": 0.77
+  },
+  {
+    "a": "background-independent-renormalization",
+    "b": "background-independent-emergence",
+    "ratio": 0.74
+  },
+  {
+    "a": "define-background-independence",
+    "b": "background-independent-emergence",
+    "ratio": 0.74
+  },
+  {
+    "a": "cosmological-constant",
+    "b": "cosmological-consistency",
+    "ratio": 0.84
+  },
+  {
+    "a": "lorentz-invariance-phenomenology",
+    "b": "lorentz-invariance-recovery",
+    "ratio": 0.78
+  }
+]

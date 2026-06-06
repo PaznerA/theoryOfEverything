@@ -1,0 +1,715 @@
+{
+  "slug": "supergravity-uv",
+  "name": "Supergravity & UV Behavior of Perturbative Gravity",
+  "concepts": [
+    {
+      "id": "perturbative-nonrenormalizability",
+      "name": "Perturbative non-renormalizability of gravity",
+      "definition": "Because Newton's constant has negative mass dimension ([G]=M^-2), the superficial degree of divergence grows with loop order (D=2L+2 in d=4), requiring infinitely many independent counterterms of ever higher curvature dimension and destroying predictivity in the UV.",
+      "relatedTo": ["goroff-sagnotti-term", "effective-field-theory-gravity", "power-counting"]
+    },
+    {
+      "id": "goroff-sagnotti-term",
+      "name": "Goroff-Sagnotti two-loop counterterm",
+      "definition": "Nonzero two-loop divergence of pure Einstein gravity proportional to the cube of the Weyl/Riemann tensor (C^3) with coefficient 209/2880; it cannot be removed by field redefinition or equations of motion, definitively proving perturbative non-renormalizability.",
+      "relatedTo": ["perturbative-nonrenormalizability", "higher-derivative-gravity"]
+    },
+    {
+      "id": "effective-field-theory-gravity",
+      "name": "Gravity as an effective field theory (Donoghue)",
+      "definition": "General relativity treated as a low-energy EFT: unknown UV physics is absorbed into renormalized coefficients of a local Lagrangian, while nonanalytic terms (ln, sqrt of momentum) give universal, parameter-independent low-energy quantum predictions such as the leading correction to the Newtonian potential.",
+      "relatedTo": ["nonanalytic-corrections", "quantum-newtonian-potential", "perturbative-nonrenormalizability"]
+    },
+    {
+      "id": "nonanalytic-corrections",
+      "name": "Nonanalytic quantum corrections",
+      "definition": "Parts of loop amplitudes that are nonanalytic in momentum transfer (e.g. sqrt(-q^2), ln(-q^2)); they dominate at long distance, are insensitive to UV counterterms, and yield reliable, UV-completion-independent predictions in the EFT of gravity.",
+      "relatedTo": ["effective-field-theory-gravity", "quantum-newtonian-potential"]
+    },
+    {
+      "id": "quantum-newtonian-potential",
+      "name": "Quantum correction to the Newtonian potential",
+      "definition": "Leading genuine quantum (hbar) correction to V(r) computed in the EFT of gravity, with universal coefficient 41/(10 pi); accompanied by the classical post-Newtonian 3G(m1+m2)/(rc^2) term. Too small to measure but a mandatory IR check for any quantum gravity theory.",
+      "relatedTo": ["effective-field-theory-gravity", "nonanalytic-corrections"]
+    },
+    {
+      "id": "supergravity",
+      "name": "Supergravity (N=1..8)",
+      "definition": "Locally supersymmetric extension of general relativity with N supercharges and a gravitino (spin 3/2). Higher N gives stronger UV cancellations; N=8 is maximal in 4D since more supersymmetry would force spins greater than 2.",
+      "relatedTo": ["n8-supergravity", "eleven-dimensional-supergravity", "enhanced-cancellations"]
+    },
+    {
+      "id": "n8-supergravity",
+      "name": "N=8 supergravity",
+      "definition": "Maximal 4D supergravity (toroidal reduction of 11D supergravity) with 1 graviton, 8 gravitinos, 28 vectors, 56 fermions, 70 scalars; hidden global E7(7) and local SU(8) symmetry. Candidate for a perturbatively UV-finite point-particle quantum gravity.",
+      "relatedTo": ["supergravity", "e7-duality", "enhanced-cancellations", "double-copy", "n8-critical-dimension"]
+    },
+    {
+      "id": "e7-duality",
+      "name": "E7(7) duality symmetry",
+      "definition": "Exceptional continuous global symmetry of N=8 supergravity that constrains allowed UV counterterms; F-term counterterms cannot be E7(7)-invariant below seven loops, so the lowest admissible invariant counterterm (partial^6 R^4) appears only at L=7.",
+      "relatedTo": ["n8-supergravity", "n8-critical-dimension", "bps-protected-operators"]
+    },
+    {
+      "id": "enhanced-cancellations",
+      "name": "Enhanced UV cancellations",
+      "definition": "UV cancellations in supergravity amplitudes that go beyond what all known symmetries and superspace power-counting predict (e.g. N=5 finite at 4 loops, N=8 better than expected at 3-5 loops). No symmetry-based explanation currently exists.",
+      "relatedTo": ["n8-supergravity", "n5-supergravity-finiteness", "n8-critical-dimension"]
+    },
+    {
+      "id": "n8-critical-dimension",
+      "name": "Critical dimension D_c(L) for N=8 UV finiteness",
+      "definition": "Spacetime dimension below which the L-loop four-point amplitude of N=8 supergravity is finite: D_c=6 (3 loops), 11/2 (4 loops), 24/5 (5 loops). The relation D_c=4+6/L (the N=4 SYM bound) holds only through four loops; at five loops D_c=24/5 lies below the 26/5 that formula would give, but Bern et al. (2018) show 24/5 is exactly the standard D^8R^4 / E7(7) prediction (no enhanced cancellation at five loops). D=4 is reached at L=7, making the seventh loop critical for the 4D finiteness question.",
+      "relatedTo": ["n8-supergravity", "enhanced-cancellations", "e7-duality"]
+    },
+    {
+      "id": "n5-supergravity-finiteness",
+      "name": "N=5 supergravity four-loop finiteness",
+      "definition": "N=5 supergravity is UV finite at four loops despite supersymmetry and duality arguments predicting a divergence; the cancellation is an enhanced cancellation, contrasting with N=4 which diverges at four loops via a U(1) duality anomaly.",
+      "relatedTo": ["enhanced-cancellations", "supergravity"]
+    },
+    {
+      "id": "double-copy",
+      "name": "Double copy / KLT / BCJ color-kinematics duality",
+      "definition": "Construction expressing gravity amplitudes as a 'square' of gauge-theory amplitudes via the KLT momentum kernel; BCJ color-kinematics duality (kinematic Jacobi identity) extends this to loop level, enabling otherwise impossible multiloop supergravity integrand computations. N=8 SUGRA = (N=4 SYM)^2.",
+      "relatedTo": ["n8-supergravity", "generalized-unitarity", "string-theory"]
+    },
+    {
+      "id": "generalized-unitarity",
+      "name": "Generalized unitarity method",
+      "definition": "On-shell amplitude technique that reconstructs loop integrands by sewing tree amplitudes on multiple cuts; together with color-kinematics duality and the double copy it powers state-of-the-art supergravity UV computations.",
+      "relatedTo": ["double-copy", "n8-supergravity"]
+    },
+    {
+      "id": "eleven-dimensional-supergravity",
+      "name": "Eleven-dimensional supergravity",
+      "definition": "Unique maximal supergravity (Cremmer-Julia-Scherk 1978); the highest dimension supporting a consistent supergravity with spin <=2. Its dimensional reduction yields 4D N=8 supergravity, and it is the low-energy limit of M-theory.",
+      "relatedTo": ["n8-supergravity", "supergravity", "string-theory"]
+    },
+    {
+      "id": "higher-derivative-gravity",
+      "name": "Higher-derivative (quadratic) gravity",
+      "definition": "Gravity action with curvature-squared terms (C^2, R^2); the propagator falls off as 1/p^4, making the theory power-counting renormalizable (Stelle 1977), but the Weyl-squared term introduces a massive spin-2 state with wrong-sign kinetic term (ghost).",
+      "relatedTo": ["ostrogradsky-ghost", "agravity", "conformal-gravity", "goroff-sagnotti-term"]
+    },
+    {
+      "id": "ostrogradsky-ghost",
+      "name": "Ostrogradsky ghost",
+      "definition": "Generic instability of theories with more than two time derivatives: the Hamiltonian is unbounded below classically, and upon quantization the extra degree of freedom carries negative norm/energy, violating unitarity. The central obstruction for higher-derivative gravity.",
+      "relatedTo": ["higher-derivative-gravity", "conformal-gravity", "fakeons", "nonlocal-ghost-free-gravity"]
+    },
+    {
+      "id": "agravity",
+      "name": "Agravity (adimensional gravity)",
+      "definition": "Salvio-Strumia scale-invariant gravity with only dimensionless couplings and a four-derivative graviton kinetic term; renormalizable and asymptotically free with no input mass scale, at the price of a physical ghost; predicts inflation from beta-functions.",
+      "relatedTo": ["higher-derivative-gravity", "ostrogradsky-ghost"]
+    },
+    {
+      "id": "horava-lifshitz-gravity",
+      "name": "Horava-Lifshitz gravity",
+      "definition": "Gravity with anisotropic (Lifshitz) scaling t->b^z t, x->b x with z=3 in the UV, giving propagators ~1/(omega^2 - k^6) and power-counting renormalizability at the cost of breaking Lorentz invariance, which must re-emerge in the IR.",
+      "relatedTo": ["lorentz-violation", "spectral-dimension", "perturbative-nonrenormalizability"]
+    },
+    {
+      "id": "lorentz-violation",
+      "name": "UV Lorentz-invariance violation",
+      "definition": "Breaking of Lorentz symmetry at high momenta (as in Horava-Lifshitz), allowing improved UV behavior; radiative corrections threaten to leak the violation to low energies (tightly experimentally bounded), requiring fine-tuning, and a scalar mode suffers strong coupling.",
+      "relatedTo": ["horava-lifshitz-gravity"]
+    },
+    {
+      "id": "nonlocal-ghost-free-gravity",
+      "name": "Nonlocal / infinite-derivative ghost-free gravity",
+      "definition": "Gravity whose kinetic operator contains an entire (root-free) function of the d'Alembertian, e.g. exp(-Box/M_s^2), exponentially suppressing the UV propagator and improving loop convergence without introducing new poles (no new ghosts); price is nonlocality.",
+      "relatedTo": ["ostrogradsky-ghost", "higher-derivative-gravity"]
+    },
+    {
+      "id": "conformal-gravity",
+      "name": "Conformal (Weyl) gravity",
+      "definition": "Gravity with action proportional to the Weyl tensor squared, invariant under local conformal rescalings; renormalizable but contains an Ostrogradsky ghost. In critical gravity / Maldacena's construction the massive ghost can be removed by boundary conditions.",
+      "relatedTo": ["higher-derivative-gravity", "ostrogradsky-ghost", "holographic-principle"]
+    },
+    {
+      "id": "unimodular-gravity",
+      "name": "Unimodular gravity",
+      "definition": "Gravity with the constraint sqrt(-g)=const, so the cosmological constant appears as an integration constant rather than a Lagrangian coupling, offering a new vantage on the cosmological-constant problem; classically equivalent to GR, with subtle quantum (in)equivalence.",
+      "relatedTo": ["cosmological-constant-problem"]
+    },
+    {
+      "id": "shape-dynamics",
+      "name": "Shape dynamics",
+      "definition": "Reformulation of GR (Barbour, Gomes, Koslowski) that trades spacetime refoliation invariance for 3D local conformal (scale) invariance as a gauge symmetry, realizing a relational, Machian description of gravitational dynamics.",
+      "relatedTo": ["unimodular-gravity", "conformal-gravity"]
+    },
+    {
+      "id": "fakeons",
+      "name": "Fakeons / purely virtual particles",
+      "definition": "Anselmi's prescription quantizing would-be ghosts as fake, strictly off-shell degrees of freedom that never appear as asymptotic in/out states; this preserves unitarity (in the limit of vanishing cosmological constant) while keeping renormalizability of quadratic gravity.",
+      "relatedTo": ["ostrogradsky-ghost", "higher-derivative-gravity"]
+    },
+    {
+      "id": "bps-protected-operators",
+      "name": "BPS-protected counterterm operators",
+      "definition": "Supersymmetric invariants built from shortened (BPS) superconformal multiplets that could serve as candidate counterterms; in N=8 supergravity these BPS invariants fail to be E7(7)-invariant, removing protected counterterms below seven loops.",
+      "relatedTo": ["e7-duality", "n8-critical-dimension"]
+    },
+    {
+      "id": "spectral-dimension",
+      "name": "Spectral dimension",
+      "definition": "Effective dimension probed by a diffusion process on spacetime; Horava-Lifshitz gravity (like CDT) flows from d_s=4 in the IR to d_s=2 in the UV, an indicator of improved UV behavior shared across several quantum-gravity approaches.",
+      "relatedTo": ["horava-lifshitz-gravity"]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "gravity-power-counting",
+      "name": "Superficial degree of divergence in gravity",
+      "latex": "D = (d-2)L + 2 \\;\\xrightarrow{d=4}\\; 2L + 2",
+      "meaning": "The superficial degree of divergence of an L-loop amplitude grows with loop order in d=4, so each loop needs counterterms of higher curvature dimension, making Einstein gravity perturbatively non-renormalizable.",
+      "source": "tHooft-Veltman-1974"
+    },
+    {
+      "id": "goroff-sagnotti-counterterm",
+      "name": "Goroff-Sagnotti two-loop counterterm",
+      "latex": "\\Gamma^{(2)}_{\\rm GS} = \\frac{1}{\\varepsilon}\\,\\frac{209}{2880}\\,\\frac{1}{(16\\pi^2)^2}\\int d^4x\\,\\sqrt{-g}\\;C_{\\mu\\nu}{}^{\\rho\\sigma}C_{\\rho\\sigma}{}^{\\kappa\\lambda}C_{\\kappa\\lambda}{}^{\\mu\\nu}",
+      "meaning": "Nonzero two-loop divergence of pure gravity (coefficient 209/2880, Weyl tensor cubed) that cannot be removed by field redefinition; the definitive proof of perturbative non-renormalizability.",
+      "source": "Goroff-Sagnotti-1986"
+    },
+    {
+      "id": "quantum-potential",
+      "name": "Quantum-corrected Newtonian potential",
+      "latex": "V(r) = -\\frac{G\\,m_1 m_2}{r}\\left[1 + 3\\frac{G(m_1+m_2)}{r c^2} + \\frac{41}{10\\pi}\\frac{G\\hbar}{r^2 c^3}\\right]",
+      "meaning": "EFT result for the gravitational potential: the second term is the classical post-Newtonian correction, the third (coefficient 41/(10 pi)) is the universal genuine quantum correction proportional to hbar.",
+      "source": "Bjerrum-Bohr-Donoghue-Holstein-2003"
+    },
+    {
+      "id": "stelle-action",
+      "name": "Stelle quadratic-gravity action",
+      "latex": "S = \\int d^4x\\,\\sqrt{-g}\\left[\\gamma R + \\alpha\\,C_{\\mu\\nu\\rho\\sigma}^2 - \\beta R^2\\right]",
+      "meaning": "Curvature-squared action whose 1/p^4 propagator makes gravity renormalizable; the Weyl-squared term carries a massive spin-2 ghost.",
+      "source": "Stelle-1977"
+    },
+    {
+      "id": "stelle-propagator",
+      "name": "Higher-derivative propagator pole decomposition",
+      "latex": "\\frac{1}{p^2(p^2+M^2)} = \\frac{1}{M^2}\\left(\\frac{1}{p^2} - \\frac{1}{p^2+M^2}\\right)",
+      "meaning": "Partial-fraction form showing the negative-residue pole at p^2=-M^2: a massive spin-2 ghost responsible for the unitarity problem of quadratic gravity.",
+      "source": "Stelle-1977"
+    },
+    {
+      "id": "horava-action",
+      "name": "Horava-Lifshitz action (z=3)",
+      "latex": "S_{\\rm HL} = \\frac{1}{2\\kappa^2}\\int dt\\,d^3x\\,\\sqrt{g}\\,N\\left[K_{ij}K^{ij} - \\lambda K^2 - \\mathcal{V}[g_{ij}]\\right],\\quad \\mathcal{V}\\supset M^{-4}(\\nabla R)^2",
+      "meaning": "Anisotropic gravity action with up to sixth-order spatial derivatives (z=3); the propagator ~1/(omega^2 - k^6) gives power-counting renormalizability at the cost of Lorentz violation.",
+      "source": "Horava-2009"
+    },
+    {
+      "id": "nonlocal-form-factor",
+      "name": "Ghost-free nonlocal form factor",
+      "latex": "\\mathcal{L} \\supset \\tfrac{1}{2} h_{\\mu\\nu}\\,\\Box\\,a(\\Box)\\,h^{\\mu\\nu},\\qquad a(\\Box) = e^{-\\Box/M_s^2}",
+      "meaning": "Infinite-derivative kinetic operator built from an entire function with no zeros; it exponentially suppresses the UV propagator without adding new poles, so no new ghosts appear.",
+      "source": "Biswas-Gerwick-Koivisto-Mazumdar-2012"
+    },
+    {
+      "id": "n8-critical-dimension-formula",
+      "name": "N=8 critical dimension vs loop order",
+      "latex": "D_c(L) = 4 + \\frac{6}{L}\\quad(2\\le L\\le 4):\\;\\; D_c(3)=6,\\; D_c(4)=\\tfrac{11}{2}; \\quad\\text{but } D_c(5)=\\tfrac{24}{5}\\;(<\\tfrac{26}{5})",
+      "meaning": "Dimension below which the L-loop four-point N=8 amplitude is finite. The relation D_c=4+6/L (matching the N=4 SYM bound) holds through four loops. At five loops the measured critical dimension is D_c=24/5, BELOW the 26/5 the formula would give: Bern et al. (2018) show this 24/5 is exactly what the D^8 R^4 counterterm and standard E7(7)/supersymmetry arguments predict, i.e. at five loops N=8 shows NO enhanced cancellation and behaves like N=4 SYM. D=4 finiteness is first threatened at L=7 (E7(7)-invariant partial^6 R^4).",
+      "source": "Bern-et-al-2018-5loop"
+    },
+    {
+      "id": "klt-relation",
+      "name": "KLT / double-copy relation",
+      "latex": "M_n^{\\rm tree} = \\sum_{\\sigma,\\tau} A_n^{\\rm tree}(\\sigma)\\,S[\\sigma|\\tau]\\,\\tilde A_n^{\\rm tree}(\\tau)",
+      "meaning": "Gravity amplitudes are a double copy of two gauge-theory amplitudes joined by the KLT kernel S; N=8 SUGRA = (N=4 SYM)^2, enabling multiloop UV computations.",
+      "source": "Bern-Carrasco-Johansson-2010"
+    },
+    {
+      "id": "bcj-jacobi",
+      "name": "BCJ color-kinematics duality",
+      "latex": "c_i + c_j + c_k = 0 \\;\\Longrightarrow\\; n_i + n_j + n_k = 0",
+      "meaning": "Kinematic numerators n_i can be arranged to satisfy the same Jacobi identities as the color factors c_i; replacing color by a second kinematic factor yields the gravity (double-copy) integrand.",
+      "source": "Bern-Carrasco-Johansson-2008-BCJ"
+    },
+    {
+      "id": "onshell-oneloop-counterterm",
+      "name": "One-loop pure-gravity counterterm",
+      "latex": "\\Delta\\Gamma^{(1)} = \\frac{1}{\\varepsilon}\\frac{1}{(4\\pi)^2}\\int d^4x\\sqrt{-g}\\left(\\frac{1}{120}R^2 + \\frac{7}{20}R_{\\mu\\nu}R^{\\mu\\nu}\\right)",
+      "meaning": "The one-loop divergence of pure gravity is proportional to R^2 and Ricci-squared, both of which vanish on-shell (R_{mu nu}=0), so pure gravity is one-loop finite; adding matter spoils this.",
+      "source": "tHooft-Veltman-1974"
+    },
+    {
+      "id": "e7-soft-scalar-constraint",
+      "name": "E7(7) single-soft-scalar constraint on counterterms",
+      "latex": "\\lim_{p\\to 0} M_{n+1}(\\dots,\\phi(p)) = 0 \\;\\Longleftrightarrow\\; \\text{candidate is } E_{7(7)}\\text{-invariant}",
+      "meaning": "A counterterm is E7(7)-invariant iff the amplitude with one soft scalar (Goldstone of broken E7(7)) vanishes; D^4R^4 and D^6R^4 have nonzero soft limits, so no E7(7)-invariant counterterm exists below seven loops.",
+      "source": "Beisert-et-al-2010-E7"
+    },
+    {
+      "id": "n8-spin-content",
+      "name": "N=8 supermultiplet spin content",
+      "latex": "\\#(\\text{spin } s) = \\binom{8}{4-2s}\\;\\Rightarrow\\; (2,\\tfrac32,1,\\tfrac12,0) = (1,8,28,56,70)",
+      "meaning": "Binomial coefficients give the field content: 1 graviton, 8 gravitinos, 28 vectors, 56 fermions, 70 scalars (256 states total); the 70 scalars parametrize the coset E7(7)/SU(8).",
+      "source": "Cremmer-Julia-Scherk-1978"
+    },
+    {
+      "id": "eft-effective-action",
+      "name": "EFT effective action of gravity",
+      "latex": "S_{\\rm eff} = \\int d^4x\\sqrt{-g}\\left[\\Lambda + \\frac{R}{16\\pi G} + c_1 R^2 + c_2 R_{\\mu\\nu}R^{\\mu\\nu} + \\frac{d_1}{M^2}R^3 + \\dots\\right]",
+      "meaning": "Derivative (energy) expansion of the gravitational effective action; unknown UV physics is absorbed into Wilson coefficients c_i, d_i while nonanalytic loop contributions give universal IR predictions, making GR predictive despite non-renormalizability.",
+      "source": "Donoghue-1994"
+    }
+  ],
+  "references": [
+    {
+      "id": "tHooft-Veltman-1974",
+      "authors": "G. 't Hooft, M. Veltman",
+      "title": "One-loop divergencies in the theory of gravitation",
+      "year": 1974,
+      "doi": "10.1016/0003-4916(74)90232-9",
+      "url": "https://doi.org/10.1016/0003-4916(74)90232-9",
+      "significance": "Showed pure gravity is one-loop on-shell finite but diverges once matter is added; opened the question of perturbative renormalizability."
+    },
+    {
+      "id": "Freedman-vanNieuwenhuizen-Ferrara-1976",
+      "authors": "D. Z. Freedman, P. van Nieuwenhuizen, S. Ferrara",
+      "title": "Progress toward a theory of supergravity",
+      "year": 1976,
+      "doi": "10.1103/PhysRevD.13.3214",
+      "url": "https://doi.org/10.1103/PhysRevD.13.3214",
+      "significance": "Construction of the first N=1 supergravity in 4D; founding paper of the supergravity program (Breakthrough Prize 2019)."
+    },
+    {
+      "id": "Stelle-1977",
+      "authors": "K. S. Stelle",
+      "title": "Renormalization of higher-derivative quantum gravity",
+      "year": 1977,
+      "doi": "10.1103/PhysRevD.16.953",
+      "url": "https://doi.org/10.1103/PhysRevD.16.953",
+      "significance": "Proved that curvature-squared gravity is renormalizable in 4D, at the cost of a massive spin-2 ghost; the canonical reference for higher-derivative gravity."
+    },
+    {
+      "id": "Cremmer-Julia-Scherk-1978",
+      "authors": "E. Cremmer, B. Julia, J. Scherk",
+      "title": "Supergravity theory in eleven dimensions",
+      "year": 1978,
+      "doi": "10.1016/0370-2693(78)90894-8",
+      "url": "https://doi.org/10.1016/0370-2693(78)90894-8",
+      "significance": "Unique maximal 11D supergravity, the low-energy limit of M-theory and the parent of 4D N=8 supergravity."
+    },
+    {
+      "id": "Goroff-Sagnotti-1986",
+      "authors": "M. H. Goroff, A. Sagnotti",
+      "title": "The ultraviolet behavior of Einstein gravity",
+      "year": 1986,
+      "doi": "10.1016/0550-3213(86)90193-8",
+      "url": "https://doi.org/10.1016/0550-3213(86)90193-8",
+      "significance": "Computed the nonzero two-loop R^3 divergence (coefficient 209/2880), proving the perturbative non-renormalizability of pure gravity."
+    },
+    {
+      "id": "vandeVen-1992",
+      "authors": "A. E. M. van de Ven",
+      "title": "Two-loop quantum gravity",
+      "year": 1992,
+      "doi": "10.1016/0550-3213(92)90011-Y",
+      "url": "https://doi.org/10.1016/0550-3213(92)90011-Y",
+      "significance": "Independent confirmation of the Goroff-Sagnotti two-loop divergence."
+    },
+    {
+      "id": "Donoghue-1994",
+      "authors": "J. F. Donoghue",
+      "title": "General relativity as an effective field theory: the leading quantum corrections",
+      "year": 1994,
+      "arxiv": "gr-qc/9405057",
+      "doi": "10.1103/PhysRevD.50.3874",
+      "url": "https://arxiv.org/abs/gr-qc/9405057",
+      "significance": "Founding paper of gravity-as-EFT; showed reliable low-energy quantum predictions exist independent of UV completion."
+    },
+    {
+      "id": "Bjerrum-Bohr-Donoghue-Holstein-2003",
+      "authors": "N. E. J. Bjerrum-Bohr, J. F. Donoghue, B. R. Holstein",
+      "title": "Quantum gravitational corrections to the nonrelativistic scattering potential of two masses",
+      "year": 2003,
+      "arxiv": "hep-th/0211072",
+      "doi": "10.1103/PhysRevD.67.084033",
+      "url": "https://arxiv.org/abs/hep-th/0211072",
+      "significance": "Established the universal 41/(10 pi) coefficient of the leading quantum correction to the Newtonian potential."
+    },
+    {
+      "id": "Bern-Dixon-Roiban-2006",
+      "authors": "Z. Bern, L. J. Dixon, R. Roiban",
+      "title": "Is N=8 supergravity ultraviolet finite?",
+      "year": 2006,
+      "arxiv": "hep-th/0611086",
+      "doi": "10.1016/j.physletb.2006.11.030",
+      "url": "https://arxiv.org/abs/hep-th/0611086",
+      "significance": "Posed the modern finiteness question; the no-triangle hypothesis shows N=8 and N=4 SYM share UV behavior at one loop."
+    },
+    {
+      "id": "Bern-et-al-2007-3loop",
+      "authors": "Z. Bern, J. J. M. Carrasco, L. J. Dixon, H. Johansson, D. A. Kosower, R. Roiban",
+      "title": "Three-loop superfiniteness of N=8 supergravity",
+      "year": 2007,
+      "arxiv": "hep-th/0702112",
+      "doi": "10.1103/PhysRevLett.98.161303",
+      "url": "https://arxiv.org/abs/hep-th/0702112",
+      "significance": "Demonstrated three-loop cancellations stronger than superspace power-counting predicts; first evidence of enhanced cancellations."
+    },
+    {
+      "id": "Green-Ooguri-Schwarz-2007",
+      "authors": "M. B. Green, H. Ooguri, J. H. Schwarz",
+      "title": "Decoupling Supergravity from the Superstring",
+      "year": 2007,
+      "arxiv": "0704.0777",
+      "doi": "10.1103/PhysRevLett.99.041601",
+      "url": "https://arxiv.org/abs/0704.0777",
+      "significance": "Argued N=8 supergravity cannot be decoupled from string theory for d>3, so even if UV-finite it is not a standalone quantum gravity."
+    },
+    {
+      "id": "Bern-Carrasco-Johansson-2008-BCJ",
+      "authors": "Z. Bern, J. J. M. Carrasco, H. Johansson",
+      "title": "New relations for gauge-theory amplitudes",
+      "year": 2008,
+      "arxiv": "0805.3993",
+      "doi": "10.1103/PhysRevD.78.085011",
+      "url": "https://arxiv.org/abs/0805.3993",
+      "significance": "Introduced BCJ color-kinematics duality, the key to the double copy and to multiloop supergravity computations."
+    },
+    {
+      "id": "Bern-et-al-2008-3loop-manifest",
+      "authors": "Z. Bern, J. J. M. Carrasco, L. J. Dixon, H. Johansson, R. Roiban",
+      "title": "Manifest ultraviolet behavior for the three-loop four-point amplitude of N=8 supergravity",
+      "year": 2008,
+      "arxiv": "0808.4112",
+      "doi": "10.1103/PhysRevD.78.105019",
+      "url": "https://arxiv.org/abs/0808.4112",
+      "significance": "Explicit three-loop integrand showing D_c=6, matching N=4 SYM UV behavior."
+    },
+    {
+      "id": "Bern-Carrasco-Johansson-2010",
+      "authors": "Z. Bern, J. J. M. Carrasco, H. Johansson",
+      "title": "Perturbative quantum gravity as a double copy of gauge theory",
+      "year": 2010,
+      "arxiv": "1004.0476",
+      "doi": "10.1103/PhysRevLett.105.061602",
+      "url": "https://arxiv.org/abs/1004.0476",
+      "significance": "Established the loop-level double copy: gravity integrands obtained directly from BCJ-form gauge-theory numerators."
+    },
+    {
+      "id": "Beisert-et-al-2010-E7",
+      "authors": "N. Beisert, H. Elvang, D. Z. Freedman, M. Kiermaier, A. Morales, S. Stieberger",
+      "title": "E7(7) constraints on counterterms in N=8 supergravity",
+      "year": 2010,
+      "arxiv": "1009.1643",
+      "doi": "10.1016/j.physletb.2010.09.069",
+      "url": "https://arxiv.org/abs/1009.1643",
+      "significance": "Proved no E7(7)-invariant candidate counterterm exists below seven loops, making L=7 the critical order in 4D."
+    },
+    {
+      "id": "Bern-Davies-Dennen-Huang-2012",
+      "authors": "Z. Bern, S. Davies, T. Dennen, Y.-t. Huang",
+      "title": "Absence of three-loop four-point divergences in N=4 supergravity",
+      "year": 2012,
+      "arxiv": "1202.3423",
+      "doi": "10.1103/PhysRevLett.108.201301",
+      "url": "https://arxiv.org/abs/1202.3423",
+      "significance": "Showed N=4 supergravity is unexpectedly finite at three loops, an early enhanced-cancellation example."
+    },
+    {
+      "id": "Bern-Davies-Dennen-2013-N4",
+      "authors": "Z. Bern, S. Davies, T. Dennen, A. V. Smirnov, V. A. Smirnov",
+      "title": "Ultraviolet properties of N=4 supergravity at four loops",
+      "year": 2013,
+      "arxiv": "1309.2498",
+      "doi": "10.1103/PhysRevLett.112.131601",
+      "url": "https://arxiv.org/abs/1309.2498",
+      "significance": "First UV divergence in a pure ungauged 4D supergravity, attributed to a U(1) duality anomaly."
+    },
+    {
+      "id": "Bern-Davies-Dennen-2014-N5",
+      "authors": "Z. Bern, S. Davies, T. Dennen",
+      "title": "Enhanced ultraviolet cancellations in N=5 supergravity at four loops",
+      "year": 2014,
+      "arxiv": "1409.3089",
+      "doi": "10.1103/PhysRevD.90.105011",
+      "url": "https://arxiv.org/abs/1409.3089",
+      "significance": "N=5 is finite at four loops despite expectations, defining the notion of enhanced cancellation."
+    },
+    {
+      "id": "Salvio-Strumia-2014",
+      "authors": "A. Salvio, A. Strumia",
+      "title": "Agravity",
+      "year": 2014,
+      "arxiv": "1403.4226",
+      "doi": "10.1007/JHEP06(2014)080",
+      "url": "https://arxiv.org/abs/1403.4226",
+      "significance": "Dimensionless, renormalizable, asymptotically free gravity with no input scale; revived the ghost debate and links gravity to inflation."
+    },
+    {
+      "id": "Kallosh-2014-update",
+      "authors": "R. Kallosh",
+      "title": "An update on perturbative N=8 supergravity",
+      "year": 2014,
+      "arxiv": "1412.7117",
+      "url": "https://arxiv.org/abs/1412.7117",
+      "significance": "Pure-spinor argument for possible all-loop finiteness; highlights the conflict over a putative seven-loop divergence."
+    },
+    {
+      "id": "Barvinsky-et-al-2016-Horava",
+      "authors": "A. O. Barvinsky, D. Blas, M. Herrero-Valea, S. M. Sibiryakov, C. F. Steinwachs",
+      "title": "Renormalization of Horava gravity",
+      "year": 2016,
+      "arxiv": "1512.02250",
+      "doi": "10.1103/PhysRevD.93.064022",
+      "url": "https://arxiv.org/abs/1512.02250",
+      "significance": "Proof of perturbative renormalizability of projectable Horava-Lifshitz gravity, a concrete renormalizable quantum gravity."
+    },
+    {
+      "id": "Gies-Knorr-Lippoldt-Saueressig-2016",
+      "authors": "H. Gies, B. Knorr, S. Lippoldt, F. Saueressig",
+      "title": "Gravitational two-loop counterterm is asymptotically safe",
+      "year": 2016,
+      "arxiv": "1601.01800",
+      "doi": "10.1103/PhysRevLett.116.211302",
+      "url": "https://arxiv.org/abs/1601.01800",
+      "significance": "Connects the Goroff-Sagnotti counterterm to a nontrivial fixed point, bridging perturbative gravity and asymptotic safety."
+    },
+    {
+      "id": "Bern-et-al-2018-5loop",
+      "authors": "Z. Bern, J. J. Carrasco, W.-M. Chen, A. Edison, H. Johansson, J. Parra-Martinez, R. Roiban, M. Zeng",
+      "title": "Ultraviolet properties of N=8 supergravity at five loops",
+      "year": 2018,
+      "arxiv": "1804.09311",
+      "doi": "10.1103/PhysRevD.98.086021",
+      "url": "https://arxiv.org/abs/1804.09311",
+      "significance": "State-of-the-art five-loop result: critical dimension D_c=24/5 with a D^8 R^4 counterterm, the most advanced explicit N=8 UV computation."
+    },
+    {
+      "id": "Horava-2009",
+      "authors": "P. Horava",
+      "title": "Quantum gravity at a Lifshitz point",
+      "year": 2009,
+      "arxiv": "0901.3775",
+      "doi": "10.1103/PhysRevD.79.084008",
+      "url": "https://arxiv.org/abs/0901.3775",
+      "significance": "Introduced anisotropic z=3 gravity, power-counting renormalizable via Lorentz violation in the UV."
+    },
+    {
+      "id": "Biswas-Gerwick-Koivisto-Mazumdar-2012",
+      "authors": "T. Biswas, E. Gerwick, T. Koivisto, A. Mazumdar",
+      "title": "Towards singularity- and ghost-free theories of gravity",
+      "year": 2012,
+      "arxiv": "1110.5249",
+      "doi": "10.1103/PhysRevLett.108.031101",
+      "url": "https://arxiv.org/abs/1110.5249",
+      "significance": "General infinite-derivative (nonlocal) ghost-free gravity action with improved UV behavior and resolved singularities."
+    },
+    {
+      "id": "Maldacena-2011-conformal",
+      "authors": "J. Maldacena",
+      "title": "Einstein gravity from conformal gravity",
+      "year": 2011,
+      "arxiv": "1105.5632",
+      "url": "https://arxiv.org/abs/1105.5632",
+      "significance": "Showed conformal gravity reduces to Einstein gravity with the massive ghost removed by boundary conditions; links to holography."
+    },
+    {
+      "id": "Donoghue-2022-review",
+      "authors": "J. F. Donoghue",
+      "title": "Quantum general relativity and effective field theory",
+      "year": 2022,
+      "arxiv": "2211.09902",
+      "url": "https://arxiv.org/abs/2211.09902",
+      "significance": "Modern review of gravity-as-EFT, the consensus IR baseline that any quantum-gravity theory must reproduce."
+    },
+    {
+      "id": "Bern-et-al-2023-review",
+      "authors": "Z. Bern, J. J. Carrasco, M. Chiodaroli, H. Johansson, R. Roiban",
+      "title": "Supergravity amplitudes, the double copy and ultraviolet behavior",
+      "year": 2023,
+      "arxiv": "2304.07392",
+      "url": "https://arxiv.org/abs/2304.07392",
+      "significance": "Authoritative 2023 review of the amplitudes/double-copy approach to supergravity UV behavior and the open finiteness question."
+    },
+    {
+      "id": "Anselmi-2024-fakeons",
+      "authors": "D. Anselmi",
+      "title": "Quantum gravity with purely virtual particles from asymptotically local quantum field theory",
+      "year": 2024,
+      "arxiv": "2410.21599",
+      "url": "https://arxiv.org/abs/2410.21599",
+      "significance": "Latest fakeon-based proposal for unitary, renormalizable quantum gravity that quantizes the quadratic-gravity ghost as a purely virtual particle."
+    },
+    {
+      "id": "Quanta-2025-ghost",
+      "authors": "Quanta Magazine (C. Wood)",
+      "title": "Old 'ghost' theory of quantum gravity makes a comeback",
+      "year": 2025,
+      "url": "https://www.quantamagazine.org/old-ghost-theory-of-quantum-gravity-makes-a-comeback-20251117/",
+      "significance": "Documents the 2025 revival of quadratic gravity and competing ghost resolutions (Donoghue, Buoninfante, Salvio, Holdom, Anselmi vs Platania)."
+    }
+  ],
+  "openProblems": [
+    {
+      "id": "n8-four-dim-finiteness",
+      "statement": "Is N=8 supergravity ultraviolet finite in D=4 to all loop orders? The critical test is the seventh loop, where an E7(7)-invariant partial^6 R^4 candidate counterterm first becomes admissible.",
+      "whyHard": "An explicit seven-loop four-point computation is far beyond current technology (the five-loop result already required generalized double copy and cutting-edge integral reduction), and the observed enhanced cancellations have no symmetry explanation to extrapolate from.",
+      "attempts": "Explicit computations to five loops (D_c=24/5), E7(7) counterterm analyses, pure-spinor arguments (Kallosh: no divergence beyond six loops; earlier pure-spinor work: divergence at seven loops). No consensus."
+    },
+    {
+      "id": "enhanced-cancellation-mechanism",
+      "statement": "What is the mechanism behind enhanced UV cancellations seen in N=5 (four loops) and N=8 (three to five loops), which exceed all known symmetry and superspace power-counting predictions?",
+      "whyHard": "It appears to require an as-yet-unidentified symmetry or nonlocal structure; without it, results cannot be extrapolated to higher loops or used to settle finiteness.",
+      "attempts": "Duality-symmetry (E7(7), U(1)) analyses, supersymmetric decomposition of amplitudes, double-copy structural studies; partial explanations only (e.g. N=5 via duality anomaly absence)."
+    },
+    {
+      "id": "ghost-problem-higher-derivative",
+      "statement": "Can the massive spin-2 Ostrogradsky ghost of renormalizable higher-derivative (Stelle/conformal/agravity) gravity be made compatible with unitarity and stability?",
+      "whyHard": "Renormalizability requires a 1/p^4 propagator that necessarily introduces a wrong-sign pole; reconciling this with positive norms and causal stability is a deep structural tension.",
+      "attempts": "Fakeons / purely virtual particles (Anselmi), PT-symmetry, modified probability rules (Salvio, Holdom), short-distance-only instability with statistical macro-causality (Donoghue, Menezes); all contested (Platania)."
+    },
+    {
+      "id": "lorentz-invariance-recovery",
+      "statement": "Does Horava-Lifshitz gravity recover Lorentz invariance in the IR without fine-tuning and avoid strong coupling of the extra scalar mode?",
+      "whyHard": "Radiative corrections leak UV Lorentz violation into low energies (tightly bounded experimentally), demanding extreme fine-tuning; the scalar graviton mode becomes strongly coupled near the GR limit.",
+      "attempts": "Detailed-balance and projectable/non-projectable variants, proof of renormalizability (Barvinsky et al. 2016), RG analyses; strong-coupling problem persists."
+    },
+    {
+      "id": "unimodular-quantum-equivalence",
+      "statement": "Is unimodular gravity quantum-mechanically equivalent to general relativity, and does it genuinely improve the cosmological-constant problem?",
+      "whyHard": "Whether Lambda as an integration constant (rather than a coupling) escapes radiative corrections is regularization- and measure-dependent; arguments on both sides are subtle.",
+      "attempts": "Path-integral and renormalization-group analyses, comparisons of effective actions; results suggest equivalence up to high momenta but the cosmological-constant payoff is disputed."
+    },
+    {
+      "id": "nonlocal-causality",
+      "statement": "Do infinite-derivative ghost-free (nonlocal) gravity theories admit a consistent, causal initial-value problem and a unitary S-matrix?",
+      "whyHard": "Infinitely many derivatives obscure the notion of initial data and analytic continuation of the nonlocal propagator (contour choice) is ambiguous, threatening causality.",
+      "attempts": "Entire-function form factors e^{-Box/M_s^2}, prescriptions for the nonlocal propagator, explicit UV finiteness checks; full S-matrix consistency not proven."
+    },
+    {
+      "id": "n8-swampland",
+      "statement": "Does perturbatively finite N=8 supergravity belong to the swampland (no consistent UV completion as a standalone theory of quantum gravity)?",
+      "whyHard": "Green-Ooguri-Schwarz show it cannot decouple from strings for d>3, but a formal proof via modern swampland criteria, and the role of nonperturbative effects, are missing.",
+      "attempts": "Nondecoupling argument (towers of KK/winding/brane states), swampland-distance and weak-gravity heuristics; no rigorous swampland classification."
+    },
+    {
+      "id": "enhanced-cancellation-vs-string-completion",
+      "statement": "If N=8 supergravity is perturbatively finite, what does this imply about the relationship between UV finiteness and UV completeness (a finite theory need not be a complete theory of quantum gravity)?",
+      "whyHard": "Finiteness and completeness are logically distinct; black-hole/nonperturbative physics may obstruct consistency even for a perturbatively finite theory, and there is no theorem connecting the two.",
+      "attempts": "Conceptual analyses, string-decoupling arguments, swampland reasoning; remains a foundational open question."
+    }
+  ],
+  "connections": [
+    {
+      "from": "supergravity-uv",
+      "to": "string-theory",
+      "type": "limit",
+      "description": "N=8 supergravity is the low-energy limit of type II superstrings on T^6 and 11D supergravity is the low-energy limit of M-theory. Green-Ooguri-Schwarz (2007) proved N=8 SUGRA cannot be decoupled from strings for d>3, so string theory is its UV completion. The double copy/KLT explicitly relates closed strings (gravity) to open strings (gauge).",
+      "explored": "well"
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "twistors-amplitudes",
+      "type": "shared-math",
+      "description": "All multiloop progress on N=8 UV behavior relies on amplitude technology: generalized unitarity, BCJ color-kinematics duality, the double copy and the no-triangle hypothesis. The KLT kernel and kinematic numerators are the shared mathematical substrate.",
+      "explored": "well"
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "asymptotic-safety",
+      "type": "shared-structure",
+      "description": "Both target the non-renormalizability of gravity but differently: asymptotic safety seeks a nonperturbative UV fixed point while supergravity relies on perturbative cancellations. Gies-Knorr-Lippoldt-Saueressig (2016) showed the Goroff-Sagnotti two-loop counterterm sits at a fixed point, and Stelle's higher-derivative gravity feeds asymptotic-safety truncations.",
+      "explored": "partially"
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "semiclassical-gravity",
+      "type": "limit",
+      "description": "Donoghue's EFT of gravity is the universal low-energy/semiclassical baseline: the quantum correction to the Newtonian potential (coefficient 41/(10 pi)) and other nonanalytic terms must be reproduced by any quantum-gravity theory, providing a mandatory IR consistency check.",
+      "explored": "well"
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "conceptual-problems",
+      "type": "shared-structure",
+      "description": "The distinction between UV finiteness and UV completeness, the meaning of non-renormalizability, and the ghost/unitarity tension in higher-derivative gravity are central conceptual issues that the EFT viewpoint reframes (predictivity without renormalizability).",
+      "explored": "well"
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "holography-adscft",
+      "type": "shared-structure",
+      "description": "Conformal (Weyl) gravity and critical gravity arise in renormalized AdS actions and boundary holographic descriptions; Maldacena's removal of the conformal-gravity ghost uses boundary conditions, and color-kinematics/double copy is being studied in curved (AdS) backgrounds.",
+      "explored": "partially"
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-structure",
+      "description": "Horava-Lifshitz gravity shares with CDT a preferred foliation (causal/preferred time) and UV spectral-dimension reduction d_s -> 2, suggesting a common UV structure. The formal link between the CDT continuum limit and a Horava fixed point is essentially unexplored.",
+      "explored": "barely"
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "swampland",
+      "type": "conjecture",
+      "description": "Green-Ooguri-Schwarz conjecture that perturbatively finite N=8 supergravity is in the swampland because it cannot decouple from strings (infinite towers of KK/winding/brane states). A formal proof via modern swampland criteria (distance, weak-gravity) is missing.",
+      "explored": "barely"
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "cosmological-constant-problem",
+      "type": "shared-structure",
+      "description": "Unimodular gravity recasts the cosmological constant as an integration constant rather than a Lagrangian coupling, potentially shielding it from radiative corrections; whether this genuinely addresses the cosmological-constant problem at the quantum level is contested.",
+      "explored": "partially"
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "Nonlocal/infinite-derivative ghost-free gravity regularizes the UV via a fundamental nonlocality scale M_s with form factor e^{-Box/M_s^2}, analogous to noncommutative 'smearing' of spacetime points. The relationship is analogical and almost unexplored.",
+      "explored": "barely"
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "quantum-cosmology",
+      "type": "shared-structure",
+      "description": "Horava-Lifshitz z=3 scaling yields scale-invariant primordial perturbations without inflation; agravity predicts inflation (n_s ~ 0.967, r ~ 0.13) from beta-functions; unimodular gravity changes the status of Lambda in cosmology. Explicit per-theory, not unified.",
+      "explored": "partially"
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "loop-quantum-gravity",
+      "type": "shared-structure",
+      "description": "Almost no direct bridge: LQG is nonperturbative and background-independent, supergravity/EFT perturbative and background-dependent. Shape dynamics (conformal reformulation of GR) has a distant kinship with relational/problem-of-time aspects of LQG, but no concrete link to UV behavior exists.",
+      "explored": "barely"
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "spectral-dimension",
+      "type": "shared-structure",
+      "description": "Horava-Lifshitz gravity exhibits a UV spectral dimension d_s -> 2 (from d_s=4 in the IR), the same dimensional-reduction signature found in CDT, asymptotic safety and other approaches; this shared UV indicator is a candidate deep cross-approach structure but is not quantitatively connected to the supergravity cancellation mechanism.",
+      "explored": "barely"
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "Some Lifshitz/Horava models were proposed as a 'Fermi-point scenario of emergent gravity' (emergent Lorentz symmetry from a Fermi point); agravity and Stelle gravity present Einstein gravity as IR-emergent from a dimensionless UV theory, with Newton's constant generated by dimensional transmutation from beta-functions. Conceptual bridge only, not formalized.",
+      "explored": "barely"
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "A UV-finite or UV-complete quantum gravity must consistently describe black holes and the information paradox; the Green-Ooguri-Schwarz nondecoupling of N=8 from strings relies on black-hole/brane states. Whether perturbative finiteness says anything about black-hole microstates is open. The classical double copy (Kerr-Schild, gravitational waves) may link perturbative amplitudes to black-hole physics.",
+      "explored": "barely"
+    },
+    {
+      "from": "supergravity-uv",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "EFT amplitudes in the classical limit yield post-Newtonian/post-Minkowskian coefficients for binary inspirals (gravitational-wave 'amplitudes for LIGO/LISA' program). Universal quantum corrections (light bending, Shapiro delay, 41/(10 pi) potential) are computed but far below experimental sensitivity; the bridge to measuring quantum gravity via EFT is conceptually clear but practically out of reach.",
+      "explored": "partially"
+    }
+  ]
+}

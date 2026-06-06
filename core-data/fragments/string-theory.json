@@ -1,0 +1,885 @@
+{
+  "slug": "string-theory",
+  "name": "String Theory & M-theory",
+  "concepts": [
+    {
+      "id": "fundamental-string",
+      "name": "Fundamental string",
+      "definition": "One-dimensional extended relativistic object whose motion sweeps out a two-dimensional worldsheet. Open strings have endpoints; closed strings are loops. Characteristic length scale is the string length l_s = sqrt(alpha'), with tension T = 1/(2 pi alpha'). Vibrational modes correspond to particles, including a massless spin-2 graviton in the closed-string spectrum.",
+      "relatedTo": ["worldsheet-cft", "critical-dimension", "regge-trajectory", "string-tension", "graviton"]
+    },
+    {
+      "id": "worldsheet-cft",
+      "name": "Worldsheet conformal field theory",
+      "definition": "The 2D quantum field theory living on the string worldsheet, governed by the Polyakov action. Reparametrization plus Weyl invariance make it a conformal field theory whose Virasoro algebra has a central charge. Consistency (vanishing total central charge including ghosts) fixes the spacetime dimension and forces the target-space Einstein equations as the beta-function vanishing condition.",
+      "relatedTo": ["fundamental-string", "central-charge", "critical-dimension", "conformal-anomaly"]
+    },
+    {
+      "id": "critical-dimension",
+      "name": "Critical dimension",
+      "definition": "The number of spacetime dimensions for which the conformal (Weyl) anomaly on the worldsheet cancels: D=26 for the bosonic string and D=10 for the superstring. The anomaly is proportional to (D-26) for the bosonic case (each X contributes c=1, the bc ghosts contribute c=-26) and to (3/2)(D-10) for the superstring.",
+      "relatedTo": ["worldsheet-cft", "central-charge", "conformal-anomaly", "bosonic-string", "superstring"]
+    },
+    {
+      "id": "conformal-anomaly",
+      "name": "Conformal (Weyl) anomaly",
+      "definition": "Quantum breaking of worldsheet Weyl invariance; its coefficient is the total Virasoro central charge. Requiring it to vanish (c_total = 0) selects the critical dimension and, in curved backgrounds, requires the spacetime beta functions to vanish, which are precisely the (super)gravity equations of motion.",
+      "relatedTo": ["worldsheet-cft", "central-charge", "critical-dimension", "low-energy-effective-action"]
+    },
+    {
+      "id": "bosonic-string",
+      "name": "Bosonic string theory",
+      "definition": "Simplest string theory containing only bosonic worldsheet fields. Lives in D=26, contains a tachyon in its ground state (M^2 = -1/alpha' for the open string, signaling vacuum instability) and no spacetime fermions. Mainly a pedagogical and structural laboratory; not a viable theory of nature.",
+      "relatedTo": ["critical-dimension", "tachyon", "superstring", "regge-trajectory"]
+    },
+    {
+      "id": "superstring",
+      "name": "Superstring theory",
+      "definition": "String theory with worldsheet supersymmetry (added fermionic fields). Lives in D=10, is tachyon-free after the GSO projection, and contains spacetime fermions and supersymmetry. Comes in five consistent versions: Type I, Type IIA, Type IIB, heterotic SO(32), heterotic E8xE8.",
+      "relatedTo": ["critical-dimension", "supersymmetry", "five-superstring-theories", "gso-projection", "bosonic-string"]
+    },
+    {
+      "id": "gso-projection",
+      "name": "GSO projection",
+      "definition": "Gliozzi-Scherk-Olive truncation of the superstring spectrum keeping states of definite worldsheet fermion number (-1)^F. It removes the tachyon, yields a spacetime-supersymmetric and modular-invariant spectrum, and is essential for the consistency of the superstring.",
+      "relatedTo": ["superstring", "supersymmetry", "tachyon"]
+    },
+    {
+      "id": "five-superstring-theories",
+      "name": "Five superstring theories",
+      "definition": "The five consistent 10D superstring theories: Type I (open+closed, gauge group SO(32), N=1), Type IIA (closed, non-chiral, N=2), Type IIB (closed, chiral, N=2), heterotic SO(32) and heterotic E8xE8 (hybrid of bosonic left-movers and superstring right-movers). All are connected by T/S/U dualities and unified by M-theory.",
+      "relatedTo": ["superstring", "t-duality", "s-duality", "u-duality", "m-theory", "heterotic-string"]
+    },
+    {
+      "id": "heterotic-string",
+      "name": "Heterotic string",
+      "definition": "String whose left-movers are bosonic (effectively in D=26 with 16 internal dimensions compactified on an even self-dual lattice) and right-movers are superstring (D=10). Consistency forces the gauge group to be SO(32) or E8xE8; the E8xE8 case contains the Standard Model gauge group and was the leading phenomenological candidate (Gross-Harvey-Martinec-Rohm 1985).",
+      "relatedTo": ["five-superstring-theories", "anomaly-cancellation", "calabi-yau-compactification", "gauge-group"]
+    },
+    {
+      "id": "anomaly-cancellation",
+      "name": "Green-Schwarz anomaly cancellation",
+      "definition": "Mechanism (Green-Schwarz 1984) by which gauge and gravitational anomalies of 10D N=1 supergravity coupled to super-Yang-Mills cancel only for gauge groups SO(32) and E8xE8, via a B-field counterterm B ^ X_8. Triggered the first superstring revolution by isolating consistent gauge theories.",
+      "relatedTo": ["heterotic-string", "five-superstring-theories", "supergravity-uv"]
+    },
+    {
+      "id": "d-brane",
+      "name": "D-brane",
+      "definition": "A (p+1)-dimensional hypersurface (Dp-brane) on which open strings end (Dirichlet boundary conditions). D-branes carry Ramond-Ramond charge, are dynamical, have tension scaling as 1/g_s, and host a gauge theory on their worldvolume. They are essential for string dualities, supply the microstates in black-hole entropy counting, and underlie AdS/CFT (Polchinski 1995).",
+      "relatedTo": ["ramond-ramond-charge", "dbi-action", "ads-cft-correspondence", "strominger-vafa-entropy", "string-dualities", "gauge-group"]
+    },
+    {
+      "id": "ramond-ramond-charge",
+      "name": "Ramond-Ramond charge",
+      "definition": "Charge under the antisymmetric p-form gauge potentials in the Ramond-Ramond sector of Type II strings. D-branes are the sources of RR charge, with charges quantized by a Dirac condition exactly as required by string duality, which is why D-branes are intrinsic to Type II string theory.",
+      "relatedTo": ["d-brane", "string-dualities", "low-energy-effective-action"]
+    },
+    {
+      "id": "string-dualities",
+      "name": "String dualities (T/S/U)",
+      "definition": "Web of equivalences relating the string theories. T-duality maps a string on a circle of radius R to radius alpha'/R (exchanging momentum and winding modes), relating IIA<->IIB and heterotic SO(32)<->E8xE8. S-duality exchanges strong and weak coupling g_s <-> 1/g_s (e.g. Type I <-> heterotic SO(32), IIB self-dual). U-duality unifies T and S, realized by exceptional groups E_n(n).",
+      "relatedTo": ["t-duality", "s-duality", "u-duality", "m-theory", "five-superstring-theories", "d-brane"]
+    },
+    {
+      "id": "t-duality",
+      "name": "T-duality",
+      "definition": "Target-space duality identifying string compactified on a circle of radius R with one on radius alpha'/R, exchanging Kaluza-Klein momentum number n with winding number m. The self-dual radius is R = sqrt(alpha'). A genuinely stringy symmetry with no point-particle analogue.",
+      "relatedTo": ["string-dualities", "compactification", "five-superstring-theories", "fundamental-string"]
+    },
+    {
+      "id": "s-duality",
+      "name": "S-duality",
+      "definition": "Strong-weak coupling duality g_s <-> 1/g_s that exchanges fundamental strings with solitonic (D- or NS5-brane) objects. Relates Type I to heterotic SO(32), maps IIB to itself, and is non-perturbative evidence for the unity of string theory.",
+      "relatedTo": ["string-dualities", "d-brane", "string-coupling", "m-theory"]
+    },
+    {
+      "id": "u-duality",
+      "name": "U-duality",
+      "definition": "Unification of T- and S-dualities in toroidally compactified string/M-theory, realized by the exceptional groups E_n(n)(Z). It acts on the full BPS spectrum and the moduli space, and is a central organizing principle of M-theory (Obers-Pioline 1999, Hull-Townsend).",
+      "relatedTo": ["string-dualities", "m-theory", "supergravity-uv", "bps-states"]
+    },
+    {
+      "id": "m-theory",
+      "name": "M-theory",
+      "definition": "Conjectured 11-dimensional quantum theory whose low-energy limit is 11D supergravity and whose various limits/compactifications give the five superstring theories. Strongly coupled Type IIA grows an 11th dimension of radius R_11 = g_s^(2/3) l_p; M-theory has no fundamental string but M2- and M5-branes. A complete non-perturbative definition remains unknown (Witten 1995).",
+      "relatedTo": ["eleven-d-supergravity", "string-dualities", "bfss-matrix-model", "u-duality", "five-superstring-theories"]
+    },
+    {
+      "id": "eleven-d-supergravity",
+      "name": "11D supergravity",
+      "definition": "Unique maximal supergravity in 11 dimensions (Cremmer-Julia-Scherk 1978), with metric, gravitino and a 3-form potential C_3 (sourcing M2-branes) whose 7-form dual sources M5-branes. It is the low-energy effective field theory of M-theory.",
+      "relatedTo": ["m-theory", "supergravity-uv", "low-energy-effective-action"]
+    },
+    {
+      "id": "compactification",
+      "name": "Compactification",
+      "definition": "Reduction of the 10D/11D theory to 4D by curling up extra dimensions on a compact internal manifold. Preserving N=1 supersymmetry in 4D requires the internal space to be a Calabi-Yau threefold (SU(3) holonomy). The geometry of the internal manifold determines the 4D gauge group, matter content and couplings.",
+      "relatedTo": ["calabi-yau-compactification", "moduli-stabilization", "flux-compactification", "string-landscape", "t-duality"]
+    },
+    {
+      "id": "calabi-yau-compactification",
+      "name": "Calabi-Yau compactification",
+      "definition": "Compactification on a Calabi-Yau threefold (Ricci-flat, SU(3) holonomy Kahler manifold) preserving minimal N=1 supersymmetry in 4D. The topology (Hodge numbers, intersection numbers) fixes the number of generations and moduli. Introduces a vast number of geometric choices feeding the landscape.",
+      "relatedTo": ["compactification", "moduli-stabilization", "heterotic-string", "string-landscape"]
+    },
+    {
+      "id": "moduli-stabilization",
+      "name": "Moduli stabilization",
+      "definition": "Fixing the massless scalar moduli (shape/size of the internal manifold, dilaton) by generating a potential, otherwise they yield unobserved long-range forces and undetermined couplings. Achieved in scenarios like KKLT (fluxes fix complex-structure moduli and dilaton; non-perturbative effects fix Kahler moduli) and the Large Volume Scenario.",
+      "relatedTo": ["flux-compactification", "calabi-yau-compactification", "string-landscape", "de-sitter-vacua", "swampland"]
+    },
+    {
+      "id": "flux-compactification",
+      "name": "Flux compactification",
+      "definition": "Compactification with nonzero background values (fluxes) of p-form field strengths threading internal cycles. Fluxes generate a superpotential that lifts and stabilizes moduli, and their quantized choices produce an enormous discretuum of vacua (the landscape).",
+      "relatedTo": ["moduli-stabilization", "string-landscape", "de-sitter-vacua", "compactification"]
+    },
+    {
+      "id": "string-landscape",
+      "name": "String landscape",
+      "definition": "The vast ensemble of metastable string vacua arising from compactification with fluxes and branes, often quoted as of order 10^500 or more. It lacks a known dynamical selection principle, raising the vacuum-selection problem and motivating anthropic and statistical reasoning, plus the swampland program.",
+      "relatedTo": ["flux-compactification", "moduli-stabilization", "swampland", "de-sitter-vacua", "compactification"]
+    },
+    {
+      "id": "de-sitter-vacua",
+      "name": "de Sitter vacua",
+      "definition": "String vacua with a positive cosmological constant, needed to model the observed dark energy. Constructed via uplift (e.g. anti-D3 branes in KKLT), but their full control is debated; the refined de Sitter swampland conjecture claims metastable dS may be impossible, favoring quintessence instead.",
+      "relatedTo": ["moduli-stabilization", "flux-compactification", "swampland", "string-landscape", "quantum-cosmology"]
+    },
+    {
+      "id": "swampland",
+      "name": "Swampland program",
+      "definition": "Program (Vafa 2005) characterizing which low-energy effective field theories admit a UV completion in quantum gravity (the landscape) versus those that do not (the swampland). Central conjectures: Swampland Distance Conjecture, Weak Gravity Conjecture, de Sitter Conjecture, Emergent String Conjecture, plus the species scale as a gravitational cutoff.",
+      "relatedTo": ["swampland-distance-conjecture", "weak-gravity-conjecture", "emergent-string-conjecture", "species-scale", "de-sitter-vacua", "string-landscape"]
+    },
+    {
+      "id": "swampland-distance-conjecture",
+      "name": "Swampland Distance Conjecture",
+      "definition": "Conjecture that traversing a super-Planckian geodesic distance Delta in moduli space triggers an infinite tower of states whose mass falls exponentially, m ~ m_0 exp(-alpha Delta/M_Pl), causing the effective field theory to break down. One of the best-supported swampland constraints.",
+      "relatedTo": ["swampland", "emergent-string-conjecture", "species-scale", "weak-gravity-conjecture"]
+    },
+    {
+      "id": "weak-gravity-conjecture",
+      "name": "Weak Gravity Conjecture",
+      "definition": "Conjecture that any consistent U(1) gauge theory coupled to gravity must contain a state with charge q and mass m satisfying g q M_Pl >= m, i.e. gravity is the weakest force. Ensures extremal black holes can decay and forbids exactly stable extremal remnants.",
+      "relatedTo": ["swampland", "swampland-distance-conjecture", "black-holes-information"]
+    },
+    {
+      "id": "emergent-string-conjecture",
+      "name": "Emergent String Conjecture",
+      "definition": "Conjecture (Lee-Lerche-Weigand) that every infinite-distance limit in moduli space is either a decompactification limit or a limit in which a fundamental, asymptotically tensionless critical string emerges in some duality frame. Sharpens the Distance Conjecture and ties the tower of light states to string or KK origin.",
+      "relatedTo": ["swampland-distance-conjecture", "swampland", "species-scale", "string-dualities"]
+    },
+    {
+      "id": "species-scale",
+      "name": "Species scale",
+      "definition": "Gravitational UV cutoff Lambda_sp = M_Pl / sqrt(N) set by the number N of light species below it, above which a semiclassical gravitational EFT cannot be trusted. Connects the swampland towers of states to black-hole physics and to the gravitational EFT expansion.",
+      "relatedTo": ["swampland", "swampland-distance-conjecture", "emergent-string-conjecture", "black-holes-information"]
+    },
+    {
+      "id": "strominger-vafa-entropy",
+      "name": "Strominger-Vafa black-hole entropy",
+      "definition": "First microscopic derivation of the Bekenstein-Hawking entropy (1996): the degeneracy of BPS bound states of Q1 D1-branes, Q5 D5-branes and n momentum units in Type IIB reproduces S = 2 pi sqrt(Q1 Q5 n) = A/(4G) exactly, via the Cardy formula of the dual 2D CFT with central charge c = 6 Q1 Q5.",
+      "relatedTo": ["bekenstein-hawking-entropy", "cardy-formula", "d-brane", "bps-states", "black-holes-information", "fuzzball"]
+    },
+    {
+      "id": "bekenstein-hawking-entropy",
+      "name": "Bekenstein-Hawking entropy",
+      "definition": "Thermodynamic entropy of a black hole, S = A/(4 G) (in natural units), proportional to the horizon area A rather than volume. It is the target reproduced by microscopic state counting in string theory and the seed of the holographic principle.",
+      "relatedTo": ["strominger-vafa-entropy", "holographic-principle", "black-holes-information", "page-curve"]
+    },
+    {
+      "id": "cardy-formula",
+      "name": "Cardy formula",
+      "definition": "Universal asymptotic growth of the density of states of a 2D CFT with central charge c: S = 2 pi sqrt((c/6)(L_0 - c/24)) (plus the right-moving copy). It underlies microscopic black-hole entropy counting and the universality of near-horizon (AdS3) microstate counting.",
+      "relatedTo": ["strominger-vafa-entropy", "worldsheet-cft", "ads-cft-correspondence", "central-charge"]
+    },
+    {
+      "id": "bps-states",
+      "name": "BPS states",
+      "definition": "States saturating a Bogomolnyi-Prasad-Sommerfield bound (mass equal to central charge), preserving a fraction of supersymmetry. Their degeneracies are protected against continuation in the coupling, which is what makes weak-coupling D-brane counting valid at strong coupling where the black hole forms.",
+      "relatedTo": ["strominger-vafa-entropy", "supersymmetry", "d-brane", "u-duality"]
+    },
+    {
+      "id": "fuzzball",
+      "name": "Fuzzball",
+      "definition": "Mathur's proposal that a black hole with entropy S is described by exp(S) horizonless, singularity-free string/supergravity microstate geometries; the classical black hole is their coarse-grained average. Resolves the information paradox by removing the horizon (Bena-Martinec-Mathur-Warner microstate geometries program).",
+      "relatedTo": ["strominger-vafa-entropy", "black-holes-information", "page-curve", "bekenstein-hawking-entropy"]
+    },
+    {
+      "id": "ads-cft-correspondence",
+      "name": "AdS/CFT correspondence",
+      "definition": "Maldacena's holographic duality (1997) equating Type IIB string theory on AdS5 x S5 with 4D N=4 super-Yang-Mills, derived from the two descriptions of D3-branes. A strong-weak duality and the sharpest realization of the holographic principle; provides a non-perturbative definition of quantum gravity in asymptotically AdS space.",
+      "relatedTo": ["holographic-principle", "d-brane", "ryu-takayanagi", "black-holes-information", "cardy-formula"]
+    },
+    {
+      "id": "holographic-principle",
+      "name": "Holographic principle",
+      "definition": "Conjecture (t'Hooft, Susskind) that the degrees of freedom of a gravitating region are encoded on its boundary, scaling with area not volume. AdS/CFT is its precise realization; the entropy bound originates in the Bekenstein-Hawking area law.",
+      "relatedTo": ["ads-cft-correspondence", "bekenstein-hawking-entropy", "ryu-takayanagi", "entanglement-spacetime"]
+    },
+    {
+      "id": "ryu-takayanagi",
+      "name": "Ryu-Takayanagi formula",
+      "definition": "Holographic entanglement entropy: the entanglement entropy of a boundary region equals Area(gamma)/(4G) for the minimal bulk surface gamma homologous to it. Geometrizes entanglement, connects spacetime geometry to quantum information, and underlies the 'spacetime from entanglement' program.",
+      "relatedTo": ["ads-cft-correspondence", "holographic-principle", "entanglement-spacetime", "bekenstein-hawking-entropy", "page-curve"]
+    },
+    {
+      "id": "bfss-matrix-model",
+      "name": "BFSS matrix model",
+      "definition": "Maximally supersymmetric U(N) matrix quantum mechanics (Banks-Fischler-Shenker-Susskind 1996) describing N D0-branes, conjectured to give a non-perturbative definition of M-theory in the infinite-momentum/DLCQ frame. Spacetime coordinates become non-commuting matrices; gravity and branes emerge from matrix dynamics.",
+      "relatedTo": ["m-theory", "ikkt-matrix-model", "d-brane", "emergent-gravity", "noncommutative-geometry"]
+    },
+    {
+      "id": "ikkt-matrix-model",
+      "name": "IKKT matrix model",
+      "definition": "Type IIB (0+0)-dimensional matrix model (Ishibashi-Kawai-Kitazawa-Tsuchiya 1997), the dimensional reduction of 10D super-Yang-Mills to a point. Proposed as a non-perturbative, manifestly Lorentz-covariant definition of Type IIB superstring; candidate for dynamical emergence of (3+1)-dimensional spacetime.",
+      "relatedTo": ["bfss-matrix-model", "m-theory", "emergent-gravity", "noncommutative-geometry"]
+    },
+    {
+      "id": "hagedorn-temperature",
+      "name": "Hagedorn temperature",
+      "definition": "Limiting temperature T_H ~ 1/l_s at which the canonical partition function of a string gas diverges because the density of states grows exponentially, rho(M) ~ M^(-a) exp(beta_H M). Signals a phase transition / breakdown of standard thermodynamics; relevant to early-universe string cosmology and black-hole/string transitions.",
+      "relatedTo": ["fundamental-string", "string-thermodynamics", "black-holes-information", "quantum-cosmology"]
+    },
+    {
+      "id": "string-thermodynamics",
+      "name": "String thermodynamics",
+      "definition": "Statistical mechanics of strings, dominated by the exponential Hagedorn density of states. Underlies the string-black-hole correspondence (a highly excited long string has the same entropy scaling as a black hole at the correspondence point) and string-gas cosmology.",
+      "relatedTo": ["hagedorn-temperature", "fundamental-string", "black-holes-information", "quantum-cosmology"]
+    },
+    {
+      "id": "string-field-theory",
+      "name": "String field theory",
+      "definition": "Second-quantized formulation of string theory with a spacetime action functional of a string field, off-shell and (in principle) non-perturbative. Witten's cubic open bosonic SFT (Chern-Simons-like action) admits analytic tachyon-vacuum solutions (Schnabl, Erler-Schnabl); closed SFT requires an L-infinity structure with infinitely many vertices.",
+      "relatedTo": ["fundamental-string", "tachyon", "worldsheet-cft"]
+    },
+    {
+      "id": "tachyon",
+      "name": "Tachyon",
+      "definition": "A state with negative mass-squared, signaling instability of the vacuum. Present in the bosonic string and on unstable D-brane systems; removed in the superstring by the GSO projection. Open-string tachyon condensation describes D-brane decay (Sen's conjectures, solved analytically in cubic SFT).",
+      "relatedTo": ["bosonic-string", "gso-projection", "string-field-theory", "d-brane"]
+    },
+    {
+      "id": "regge-trajectory",
+      "name": "Regge trajectory",
+      "definition": "Linear relation J <= alpha' M^2 + const between angular momentum and mass-squared of string excitations, with slope alpha' (the Regge slope). It was the original 1960s motivation (Veneziano amplitude, dual resonance model) before strings were reinterpreted as quantum gravity.",
+      "relatedTo": ["fundamental-string", "string-tension", "bosonic-string"]
+    },
+    {
+      "id": "string-tension",
+      "name": "String tension / Regge slope",
+      "definition": "The energy per unit length of the string, T = 1/(2 pi alpha'), setting the fundamental scale. alpha' is the Regge slope and l_s = sqrt(alpha') the string length; in superstring phenomenology this scale is typically near the Planck scale.",
+      "relatedTo": ["fundamental-string", "regge-trajectory", "string-coupling"]
+    },
+    {
+      "id": "string-coupling",
+      "name": "String coupling",
+      "definition": "Dimensionless coupling g_s = exp(<Phi>) governing the strength of string interactions, set by the vacuum expectation value of the dilaton Phi. D-brane tension scales as 1/g_s and NS5-brane tension as 1/g_s^2; S-duality acts as g_s <-> 1/g_s.",
+      "relatedTo": ["s-duality", "d-brane", "low-energy-effective-action", "string-tension"]
+    },
+    {
+      "id": "low-energy-effective-action",
+      "name": "Low-energy effective (super)gravity action",
+      "definition": "The spacetime effective action obtained by integrating out massive string modes; its leading terms are 10D supergravity (plus alpha' and g_s corrections). Einstein's equations appear as the condition of worldsheet conformal invariance (vanishing beta functions), not as an input postulate.",
+      "relatedTo": ["worldsheet-cft", "conformal-anomaly", "eleven-d-supergravity", "supergravity-uv", "string-coupling"]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "polyakov-action",
+      "name": "Polyakov action",
+      "latex": "S_P = -\\frac{1}{4\\pi\\alpha'} \\int d^2\\sigma \\,\\sqrt{-h}\\, h^{ab}\\, \\partial_a X^\\mu \\,\\partial_b X^\\nu \\, G_{\\mu\\nu}(X)",
+      "meaning": "Worldsheet sigma-model action: X^mu embeds the worldsheet (coords sigma^a) into target spacetime with metric G_munu, h_ab is the auxiliary worldsheet metric, alpha' the Regge slope. Reparametrization + Weyl invariance at the quantum level forces the critical dimension and the target Einstein equations.",
+      "source": "polyakov-1981"
+    },
+    {
+      "id": "string-tension-regge",
+      "name": "String tension and Regge trajectory",
+      "latex": "T = \\frac{1}{2\\pi\\alpha'}, \\qquad M^2 \\approx \\frac{1}{\\alpha'}\\,(N - a), \\qquad J \\le \\alpha' M^2 + \\text{const}",
+      "meaning": "T is the string tension, M the mass of a vibrational mode, N the oscillator level number, a the normal-ordering constant (a=1 for the open bosonic string). The linear J vs M^2 relation is the Regge trajectory, the original phenomenological motivation.",
+      "source": "veneziano-1968"
+    },
+    {
+      "id": "critical-dimension-anomaly",
+      "name": "Critical dimension from conformal anomaly",
+      "latex": "c_{\\text{total}} = D - 26 \\stackrel{!}{=} 0 \\Rightarrow D=26;\\qquad c_{\\text{total}} = \\tfrac{3}{2}(D-10) \\stackrel{!}{=} 0 \\Rightarrow D=10",
+      "meaning": "c is the Virasoro central charge of the worldsheet CFT. Each X^mu contributes c=1, the reparametrization ghosts c=-26; vanishing of the total anomaly fixes D=26 (bosonic) or D=10 (super, with worldsheet fermions and superghosts).",
+      "source": "polyakov-1981"
+    },
+    {
+      "id": "t-duality-spectrum",
+      "name": "T-duality spectrum on a circle",
+      "latex": "M^2 = \\left(\\frac{n}{R}\\right)^2 + \\left(\\frac{m R}{\\alpha'}\\right)^2 + \\frac{2}{\\alpha'}(N+\\tilde N - 2), \\qquad R \\leftrightarrow \\frac{\\alpha'}{R},\\; n \\leftrightarrow m",
+      "meaning": "n is the Kaluza-Klein momentum number, m the winding number, R the circle radius, N, tilde N the left/right oscillator levels. The spectrum is invariant under R -> alpha'/R with n <-> m; the self-dual radius is R = sqrt(alpha'). T-duality relates IIA<->IIB and heterotic SO(32)<->E8xE8.",
+      "source": "polchinski-textbook"
+    },
+    {
+      "id": "dp-brane-tension",
+      "name": "Dp-brane tension",
+      "latex": "T_{Dp} = \\frac{2\\pi}{g_s\\,(2\\pi\\sqrt{\\alpha'})^{p+1}}",
+      "meaning": "Tension of a Dp-brane; g_s = e^<Phi> is the string coupling, p the brane dimension. The 1/g_s scaling makes D-branes heavy at weak coupling (solitons), in contrast to the fundamental string (g_s^0) and NS5-brane (1/g_s^2), enabling non-perturbative calculations.",
+      "source": "polchinski-1995"
+    },
+    {
+      "id": "dbi-action",
+      "name": "Dirac-Born-Infeld action",
+      "latex": "S_{DBI} = -T_{Dp} \\int d^{p+1}\\xi\\; e^{-\\Phi}\\,\\sqrt{-\\det\\!\\big(g_{ab} + B_{ab} + 2\\pi\\alpha' F_{ab}\\big)}",
+      "meaning": "Low-energy worldvolume action of a Dp-brane: g_ab is the pullback target metric, B_ab the Kalb-Ramond pullback, F_ab the worldvolume gauge field strength, Phi the dilaton. Expanding it reproduces Maxwell/Yang-Mills; the large-B limit gives non-commutative gauge theory.",
+      "source": "seiberg-witten-1999"
+    },
+    {
+      "id": "strominger-vafa-entropy",
+      "name": "Strominger-Vafa entropy",
+      "latex": "c = 6\\,Q_1 Q_5, \\qquad S = 2\\pi\\sqrt{\\frac{c\\,L_0}{6}} = 2\\pi\\sqrt{Q_1 Q_5 \\, n} = \\frac{A}{4G} = S_{BH}",
+      "meaning": "A 5D extremal BPS black hole is a bound state of Q1 D1-branes, Q5 D5-branes and n momentum units in IIB. The dual 2D CFT has central charge c=6 Q1 Q5; the Cardy degeneracy at L_0=n gives S=2 pi sqrt(Q1 Q5 n), matching the Bekenstein-Hawking area entropy exactly.",
+      "source": "strominger-vafa-1996"
+    },
+    {
+      "id": "cardy-formula",
+      "name": "Cardy formula",
+      "latex": "S = 2\\pi\\sqrt{\\frac{c}{6}\\Big(L_0 - \\frac{c}{24}\\Big)} + 2\\pi\\sqrt{\\frac{\\bar c}{6}\\Big(\\bar L_0 - \\frac{\\bar c}{24}\\Big)}",
+      "meaning": "Universal asymptotic density of states of a 2D CFT with central charges c, bar c at large conformal weights L_0, bar L_0. It is the mathematical core of all microscopic black-hole entropy computations, including AdS3 / BTZ black holes.",
+      "source": "strominger-1997"
+    },
+    {
+      "id": "bekenstein-hawking",
+      "name": "Bekenstein-Hawking entropy",
+      "latex": "S_{BH} = \\frac{A}{4 G \\hbar} = \\frac{k_B c^3 A}{4 G \\hbar}",
+      "meaning": "Entropy of a black hole equals one quarter of its horizon area A in Planck units. It is the universal target reproduced by string microstate counting and the seed of the holographic principle.",
+      "source": "strominger-vafa-1996"
+    },
+    {
+      "id": "hagedorn-density",
+      "name": "Hagedorn density of states / temperature",
+      "latex": "\\rho(M) \\sim M^{-a}\\, e^{\\beta_H M}, \\qquad T_H = \\frac{1}{\\beta_H} \\sim \\frac{1}{\\sqrt{\\alpha'}}",
+      "meaning": "The string density of states grows exponentially with mass, so the canonical partition function Z = int dM rho(M) e^{-beta M} diverges for beta < beta_H, i.e. above the Hagedorn temperature T_H ~ 1/l_s. It marks a phase transition / breakdown of standard thermodynamics.",
+      "source": "ydri-2017"
+    },
+    {
+      "id": "string-frame-sugra",
+      "name": "Low-energy effective action (NS-NS sector)",
+      "latex": "S = \\frac{1}{2\\kappa^2}\\int d^{10}x\\,\\sqrt{-G}\\,e^{-2\\Phi}\\Big(R + 4(\\partial\\Phi)^2 - \\tfrac{1}{12}H_{\\mu\\nu\\rho}H^{\\mu\\nu\\rho}\\Big)",
+      "meaning": "Leading 10D effective action from requiring vanishing worldsheet beta functions: R is the target Ricci scalar, Phi the dilaton, H=dB the NS-NS field strength, kappa the gravitational coupling. Einstein's equations emerge as the conformal-invariance (Weyl anomaly cancellation) condition.",
+      "source": "polchinski-textbook"
+    },
+    {
+      "id": "eleven-d-sugra",
+      "name": "11D supergravity action",
+      "latex": "S_{11} = \\frac{1}{2\\kappa_{11}^2}\\int d^{11}x\\,\\sqrt{-g}\\Big(R - \\tfrac{1}{2}|F_4|^2\\Big) - \\frac{1}{12\\kappa_{11}^2}\\int C_3\\wedge F_4 \\wedge F_4",
+      "meaning": "Unique 11D supergravity (Cremmer-Julia-Scherk 1978): F_4 = dC_3 is the field strength of the 3-form sourcing M2-branes; the last term is Chern-Simons. The 11th-dimension radius R_11 = g_s^(2/3) l_p ties strongly-coupled IIA to M-theory.",
+      "source": "witten-1995"
+    },
+    {
+      "id": "bfss-hamiltonian",
+      "name": "BFSS Hamiltonian",
+      "latex": "H = R\\,\\mathrm{Tr}\\Big(\\tfrac{1}{2}P_I P^I - \\tfrac{1}{4}[X^I,X^J][X_I,X_J] - \\tfrac{1}{2}\\Psi^T\\Gamma_I[X^I,\\Psi]\\Big)",
+      "meaning": "Hamiltonian of the maximally supersymmetric U(N) matrix quantum mechanics of N D0-branes: X^I (I=1..9) are SO(9) coordinate matrices with conjugate momenta P_I, Psi a 16-component Spin(9) spinor, all adjoint-valued. Commutator potential encodes non-abelian D0-brane dynamics; conjectured to define M-theory.",
+      "source": "bfss-1996"
+    },
+    {
+      "id": "swampland-distance",
+      "name": "Swampland Distance Conjecture",
+      "latex": "m(\\phi + \\Delta\\phi) \\;\\lesssim\\; m(\\phi)\\, e^{-\\alpha\\,\\Delta\\phi / M_{\\rm Pl}}",
+      "meaning": "Beyond a super-Planckian field excursion Delta phi in moduli space, an infinite tower of states becomes exponentially light with rate alpha ~ O(1), causing the effective field theory cutoff to collapse. A leading swampland criterion separating landscape from swampland.",
+      "source": "ooguri-vafa-2006"
+    },
+    {
+      "id": "weak-gravity",
+      "name": "Weak Gravity Conjecture",
+      "latex": "g\\,q\\,M_{\\rm Pl} \\;\\ge\\; m",
+      "meaning": "In any consistent U(1) gauge theory coupled to gravity there must exist a state of charge q and mass m for which gravity is weaker than the gauge force, allowing extremal black holes to decay and forbidding stable extremal remnants.",
+      "source": "arkani-hamed-2007"
+    },
+    {
+      "id": "ryu-takayanagi",
+      "name": "Ryu-Takayanagi formula",
+      "latex": "S_A = \\frac{\\mathrm{Area}(\\gamma_A)}{4 G_N}",
+      "meaning": "Entanglement entropy of a boundary region A equals one quarter of the area of the minimal bulk surface gamma_A homologous to A (in Planck units). Geometrizes entanglement in AdS/CFT, linking spacetime geometry and quantum information.",
+      "source": "ryu-takayanagi-2006"
+    },
+    {
+      "id": "species-scale",
+      "name": "Species scale",
+      "latex": "\\Lambda_{\\rm sp} = \\frac{M_{\\rm Pl}}{\\sqrt{N}}",
+      "meaning": "Gravitational UV cutoff set by the number N of light species below it; above Lambda_sp the semiclassical EFT and black-hole effective description break down. Connects swampland towers, the gravitational EFT expansion, and black-hole entropy bounds.",
+      "source": "palti-2019"
+    }
+  ],
+  "references": [
+    {
+      "id": "veneziano-1968",
+      "authors": "G. Veneziano",
+      "title": "Construction of a crossing-symmetric, Regge-behaved amplitude for linearly rising trajectories",
+      "year": 1968,
+      "doi": "10.1007/BF02824451",
+      "url": "https://doi.org/10.1007/BF02824451",
+      "significance": "Birth of string theory: the Euler beta-function dual-resonance amplitude that strings were later seen to produce."
+    },
+    {
+      "id": "polyakov-1981",
+      "authors": "A. M. Polyakov",
+      "title": "Quantum geometry of bosonic strings",
+      "year": 1981,
+      "doi": "10.1016/0370-2693(81)90743-7",
+      "url": "https://doi.org/10.1016/0370-2693(81)90743-7",
+      "significance": "Path-integral quantization of the string; critical dimension from the Weyl anomaly."
+    },
+    {
+      "id": "green-schwarz-1984",
+      "authors": "M. B. Green, J. H. Schwarz",
+      "title": "Anomaly cancellations in supersymmetric D=10 gauge theory and superstring theory",
+      "year": 1984,
+      "doi": "10.1016/0370-2693(84)91565-X",
+      "url": "https://doi.org/10.1016/0370-2693(84)91565-X",
+      "significance": "Trigger of the first superstring revolution; isolates SO(32) and E8xE8 as anomaly-free."
+    },
+    {
+      "id": "gross-harvey-1985",
+      "authors": "D. J. Gross, J. A. Harvey, E. Martinec, R. Rohm",
+      "title": "Heterotic String",
+      "year": 1985,
+      "doi": "10.1103/PhysRevLett.54.502",
+      "url": "https://doi.org/10.1103/PhysRevLett.54.502",
+      "significance": "Construction of the heterotic string; leading phenomenological candidate (E8xE8 contains the Standard Model)."
+    },
+    {
+      "id": "witten-1995",
+      "authors": "E. Witten",
+      "title": "String theory dynamics in various dimensions",
+      "year": 1995,
+      "arxiv": "hep-th/9503124",
+      "url": "https://arxiv.org/abs/hep-th/9503124",
+      "significance": "Proposes M-theory; unifies the five superstring theories as limits of an 11D theory (second superstring revolution)."
+    },
+    {
+      "id": "polchinski-1995",
+      "authors": "J. Polchinski",
+      "title": "Dirichlet-branes and Ramond-Ramond charges",
+      "year": 1995,
+      "arxiv": "hep-th/9510017",
+      "doi": "10.1103/PhysRevLett.75.4724",
+      "url": "https://arxiv.org/abs/hep-th/9510017",
+      "significance": "Identifies D-branes as the RR-charged objects required by duality; key to non-perturbative string theory."
+    },
+    {
+      "id": "horava-witten-1996",
+      "authors": "P. Horava, E. Witten",
+      "title": "Heterotic and Type I string dynamics from eleven dimensions",
+      "year": 1996,
+      "arxiv": "hep-th/9510209",
+      "url": "https://arxiv.org/abs/hep-th/9510209",
+      "significance": "Heterotic M-theory: E8 gauge fields on the boundaries of an 11D interval."
+    },
+    {
+      "id": "strominger-vafa-1996",
+      "authors": "A. Strominger, C. Vafa",
+      "title": "Microscopic origin of the Bekenstein-Hawking entropy",
+      "year": 1996,
+      "arxiv": "hep-th/9601029",
+      "doi": "10.1016/0370-2693(96)00345-0",
+      "url": "https://arxiv.org/abs/hep-th/9601029",
+      "significance": "First microscopic derivation of black-hole entropy S = A/4G from D-brane BPS state counting."
+    },
+    {
+      "id": "bfss-1996",
+      "authors": "T. Banks, W. Fischler, S. H. Shenker, L. Susskind",
+      "title": "M theory as a matrix model: A conjecture",
+      "year": 1996,
+      "arxiv": "hep-th/9610043",
+      "doi": "10.1103/PhysRevD.55.5112",
+      "url": "https://arxiv.org/abs/hep-th/9610043",
+      "significance": "BFSS matrix model: candidate non-perturbative (DLCQ) definition of M-theory from D0-brane quantum mechanics."
+    },
+    {
+      "id": "ikkt-1996",
+      "authors": "N. Ishibashi, H. Kawai, Y. Kitazawa, A. Tsuchiya",
+      "title": "A large-N reduced model as superstring",
+      "year": 1996,
+      "arxiv": "hep-th/9612115",
+      "url": "https://arxiv.org/abs/hep-th/9612115",
+      "significance": "IKKT matrix model: covariant non-perturbative definition of Type IIB string; candidate for emergent spacetime."
+    },
+    {
+      "id": "maldacena-1997",
+      "authors": "J. M. Maldacena",
+      "title": "The large N limit of superconformal field theories and supergravity",
+      "year": 1997,
+      "arxiv": "hep-th/9711200",
+      "doi": "10.1023/A:1026654312961",
+      "url": "https://arxiv.org/abs/hep-th/9711200",
+      "significance": "AdS/CFT correspondence; the most-cited HEP paper and the sharpest realization of holography."
+    },
+    {
+      "id": "gkp-1998",
+      "authors": "S. S. Gubser, I. R. Klebanov, A. M. Polyakov",
+      "title": "Gauge theory correlators from non-critical string theory",
+      "year": 1998,
+      "arxiv": "hep-th/9802109",
+      "url": "https://arxiv.org/abs/hep-th/9802109",
+      "significance": "Establishes the AdS/CFT dictionary for correlation functions."
+    },
+    {
+      "id": "witten-1998",
+      "authors": "E. Witten",
+      "title": "Anti-de Sitter space and holography",
+      "year": 1998,
+      "arxiv": "hep-th/9802150",
+      "url": "https://arxiv.org/abs/hep-th/9802150",
+      "significance": "Holographic dictionary; bulk-to-boundary propagators and Wilson loops in AdS/CFT."
+    },
+    {
+      "id": "obers-pioline-1999",
+      "authors": "N. A. Obers, B. Pioline",
+      "title": "U-duality and M-theory",
+      "year": 1999,
+      "arxiv": "hep-th/9809039",
+      "doi": "10.1016/S0370-1573(99)00004-6",
+      "url": "https://arxiv.org/abs/hep-th/9809039",
+      "significance": "Comprehensive review of U-duality, exceptional groups and the BPS spectrum of M-theory."
+    },
+    {
+      "id": "seiberg-witten-1999",
+      "authors": "N. Seiberg, E. Witten",
+      "title": "String theory and noncommutative geometry",
+      "year": 1999,
+      "arxiv": "hep-th/9908142",
+      "doi": "10.1088/1126-6708/1999/09/032",
+      "url": "https://arxiv.org/abs/hep-th/9908142",
+      "significance": "Non-commutative gauge theory from D-branes in a B-field; the Seiberg-Witten map."
+    },
+    {
+      "id": "kklt-2003",
+      "authors": "S. Kachru, R. Kallosh, A. Linde, S. P. Trivedi",
+      "title": "de Sitter vacua in string theory",
+      "year": 2003,
+      "arxiv": "hep-th/0301240",
+      "doi": "10.1103/PhysRevD.68.046005",
+      "url": "https://arxiv.org/abs/hep-th/0301240",
+      "significance": "KKLT construction of metastable de Sitter vacua; origin of the landscape debate."
+    },
+    {
+      "id": "conlon-quevedo-2005",
+      "authors": "J. P. Conlon, F. Quevedo, K. Suruliz",
+      "title": "Large-volume flux compactifications: Moduli spectrum and D3/D7 soft supersymmetry breaking",
+      "year": 2005,
+      "arxiv": "hep-th/0505076",
+      "url": "https://arxiv.org/abs/hep-th/0505076",
+      "significance": "Large Volume Scenario for moduli stabilization, an alternative to KKLT."
+    },
+    {
+      "id": "vafa-2005",
+      "authors": "C. Vafa",
+      "title": "The string landscape and the swampland",
+      "year": 2005,
+      "arxiv": "hep-th/0509212",
+      "url": "https://arxiv.org/abs/hep-th/0509212",
+      "significance": "Introduces the swampland concept distinguishing consistent from inconsistent low-energy EFTs."
+    },
+    {
+      "id": "strominger-1997",
+      "authors": "A. Strominger",
+      "title": "Black hole entropy from near-horizon microstates",
+      "year": 1997,
+      "arxiv": "hep-th/9712251",
+      "doi": "10.1088/1126-6708/1998/02/009",
+      "url": "https://arxiv.org/abs/hep-th/9712251",
+      "significance": "Cardy-formula universality of black-hole entropy; AdS3/CFT2 and BTZ entropy."
+    },
+    {
+      "id": "ryu-takayanagi-2006",
+      "authors": "S. Ryu, T. Takayanagi",
+      "title": "Holographic derivation of entanglement entropy from AdS/CFT",
+      "year": 2006,
+      "arxiv": "hep-th/0603001",
+      "doi": "10.1103/PhysRevLett.96.181602",
+      "url": "https://arxiv.org/abs/hep-th/0603001",
+      "significance": "Geometrizes entanglement entropy as a minimal-surface area; seed of 'spacetime from entanglement'."
+    },
+    {
+      "id": "arkani-hamed-2007",
+      "authors": "N. Arkani-Hamed, L. Motl, A. Nicolis, C. Vafa",
+      "title": "The string landscape, black holes and gravity as the weakest force",
+      "year": 2006,
+      "arxiv": "hep-th/0601001",
+      "doi": "10.1088/1126-6708/2007/06/060",
+      "url": "https://arxiv.org/abs/hep-th/0601001",
+      "significance": "Formulates the Weak Gravity Conjecture, a cornerstone swampland constraint."
+    },
+    {
+      "id": "ooguri-vafa-2006",
+      "authors": "H. Ooguri, C. Vafa",
+      "title": "On the Geometry of the String Landscape and the Swampland",
+      "year": 2006,
+      "arxiv": "hep-th/0605264",
+      "doi": "10.1016/j.nuclphysb.2006.10.033",
+      "url": "https://arxiv.org/abs/hep-th/0605264",
+      "significance": "Original Swampland Distance Conjecture: infinite-distance moduli-space limits produce an infinite tower of exponentially light states."
+    },
+    {
+      "id": "obied-ooguri-2018",
+      "authors": "G. Obied, H. Ooguri, L. Spodyneiko, C. Vafa",
+      "title": "de Sitter Space and the Swampland",
+      "year": 2018,
+      "arxiv": "1806.08362",
+      "url": "https://arxiv.org/abs/1806.08362",
+      "significance": "de Sitter swampland conjecture; sharpens the tension between string theory and a positive cosmological constant."
+    },
+    {
+      "id": "mathur-2005",
+      "authors": "S. D. Mathur",
+      "title": "The fuzzball proposal for black holes: an elementary review",
+      "year": 2005,
+      "arxiv": "hep-th/0502050",
+      "doi": "10.1002/prop.200410203",
+      "url": "https://arxiv.org/abs/hep-th/0502050",
+      "significance": "Fuzzball proposal: horizonless microstate geometries resolve the information paradox."
+    },
+    {
+      "id": "bena-warner-2022",
+      "authors": "I. Bena, E. J. Martinec, S. D. Mathur, N. P. Warner",
+      "title": "Fuzzballs and microstate geometries: black-hole structure in string theory",
+      "year": 2022,
+      "arxiv": "2204.13113",
+      "url": "https://arxiv.org/abs/2204.13113",
+      "significance": "Snowmass white paper reviewing the microstate-geometry program for black holes."
+    },
+    {
+      "id": "lee-lerche-weigand-2019",
+      "authors": "S.-J. Lee, W. Lerche, T. Weigand",
+      "title": "Emergent strings from infinite distance limits",
+      "year": 2019,
+      "arxiv": "1910.01135",
+      "doi": "10.1007/JHEP02(2022)190",
+      "url": "https://arxiv.org/abs/1910.01135",
+      "significance": "Emergent String Conjecture: infinite-distance limits are decompactification or emergent-string limits."
+    },
+    {
+      "id": "palti-2019",
+      "authors": "E. Palti",
+      "title": "The swampland: introduction and review",
+      "year": 2019,
+      "arxiv": "1903.06239",
+      "doi": "10.1002/prop.201900037",
+      "url": "https://arxiv.org/abs/1903.06239",
+      "significance": "Standard pedagogical review of the swampland program and its web of conjectures."
+    },
+    {
+      "id": "montero-vafa-2022",
+      "authors": "M. Montero, C. Vafa, I. Valenzuela",
+      "title": "The dark dimension and the swampland",
+      "year": 2022,
+      "arxiv": "2205.12293",
+      "doi": "10.1007/JHEP02(2023)022",
+      "url": "https://arxiv.org/abs/2205.12293",
+      "significance": "Dark dimension scenario: one mesoscopic (micron-scale) extra dimension predicted from the dark-energy scale and swampland bounds; KK gravitons as dark matter."
+    },
+    {
+      "id": "ydri-2017",
+      "authors": "B. Ydri",
+      "title": "Review of M(atrix)-theory, type IIB matrix model and matrix string theory",
+      "year": 2017,
+      "arxiv": "1708.00734",
+      "url": "https://arxiv.org/abs/1708.00734",
+      "significance": "Comprehensive 200+ page review of matrix models (BFSS, IKKT, matrix strings)."
+    },
+    {
+      "id": "sft-review-2024",
+      "authors": "A. Sen, B. Zwiebach",
+      "title": "String Field Theory: A Review",
+      "year": 2024,
+      "arxiv": "2405.19421",
+      "url": "https://arxiv.org/abs/2405.19421",
+      "significance": "Modern review of string field theory, including cubic open SFT and closed-string L-infinity structure."
+    },
+    {
+      "id": "brennan-carta-vafa-2017",
+      "authors": "T. D. Brennan, F. Carta, C. Vafa",
+      "title": "The string landscape, the swampland, and the missing corner",
+      "year": 2017,
+      "arxiv": "1711.00864",
+      "url": "https://arxiv.org/abs/1711.00864",
+      "significance": "TASI lectures motivating the swampland and noting the 'missing corner': lack of a direct non-perturbative definition of quantum gravity."
+    },
+    {
+      "id": "polchinski-textbook",
+      "authors": "J. Polchinski",
+      "title": "String Theory, Vols. I & II",
+      "year": 1998,
+      "doi": "10.1017/CBO9780511816079",
+      "url": "https://doi.org/10.1017/CBO9780511816079",
+      "significance": "Standard graduate textbook; canonical source for spectrum, T-duality, D-branes and effective actions."
+    }
+  ],
+  "openProblems": [
+    {
+      "id": "de-sitter-construction",
+      "statement": "Can a stable or sufficiently long-lived metastable de Sitter vacuum with positive cosmological constant be constructed in a fully controlled regime of string theory?",
+      "whyHard": "dS breaks supersymmetry and requires an uplift (e.g. anti-D3 branes) in a regime where alpha' and g_s corrections are hard to control; swampland conjectures suggest it may be forbidden.",
+      "attempts": "KKLT (2003) and the Large Volume Scenario; ongoing debate with refined de Sitter conjecture proponents (Obied-Ooguri-Spodyneiko-Vafa 2018); quintessence as an alternative; numerical Kahler moduli stabilization (2025)."
+    },
+    {
+      "id": "vacuum-selection",
+      "statement": "Which of the ~10^500 (or more) string vacua, if any, corresponds to our universe, and is there a dynamical selection principle?",
+      "whyHard": "No known non-perturbative formulation lets one compute vacuum transition amplitudes or compare vacua; the anthropic principle is not a sharp prediction; the landscape is largely uncharted.",
+      "attempts": "Flux landscape statistics; machine-learning scans of Calabi-Yau vacua; cosmological measure proposals; swampland program to prune inconsistent EFTs."
+    },
+    {
+      "id": "nonperturbative-mtheory",
+      "statement": "What is M-theory as a complete, background-independent, non-perturbative theory beyond perturbative expansions and duality limits?",
+      "whyHard": "Only perturbative string expansions, low-energy 11D supergravity and a web of dualities are known; the 'missing corner' lacks a first-principles definition; Lorentz invariance of candidate definitions is not proven.",
+      "attempts": "BFSS and IKKT matrix models; string field theory; the duality web (Witten 1995); E11 conjectures; recent lattice and bootstrap studies of BFSS."
+    },
+    {
+      "id": "falsifiability",
+      "statement": "Does string theory make a sharp, falsifiable prediction accessible to current or near-future experiments?",
+      "whyHard": "The string scale is typically near the Planck scale; the landscape removes uniqueness; SUSY was not found at the LHC and cosmic strings / SUSY signatures remain unobserved.",
+      "attempts": "Cosmic superstrings in gravitational-wave backgrounds (LISA, PTA); dark dimension scenario predicting micron-scale gravity deviations and KK dark matter; swampland-based cosmological bounds (e.g. on quintessence)."
+    },
+    {
+      "id": "string-cosmology-time",
+      "statement": "How does time emerge and how is the initial (Big Bang) singularity resolved in string theory, given that holography is best understood for static AdS boundaries?",
+      "whyHard": "AdS/CFT requires negative cosmological constant and a timelike boundary; no analogous holographic definition exists for de Sitter or cosmological spacetimes; time-dependent backgrounds are poorly controlled.",
+      "attempts": "Pre-Big-Bang and ekpyrotic scenarios; string-gas (Brandenberger-Vafa) cosmology with Hagedorn thermodynamics; matrix-model emergent cosmology; dS/CFT proposals."
+    },
+    {
+      "id": "information-paradox-dynamical",
+      "statement": "Does string theory provide a complete, dynamical mechanism for unitary information recovery from a generic (non-extremal, evaporating) black hole?",
+      "whyHard": "Microstate counting and fuzzballs are best established for extremal/BPS or near-extremal cases; extending smooth horizonless geometries and a Page-curve mechanism to dynamical, neutral black holes is unsolved.",
+      "attempts": "Fuzzball / microstate-geometry program (Bena-Martinec-Mathur-Warner); replica wormholes and the island formula via AdS/CFT; non-extremal microstate studies (2025)."
+    },
+    {
+      "id": "moduli-control",
+      "statement": "Are the approximations underlying moduli-stabilization scenarios (KKLT, LVS) self-consistent and free of uncontrolled corrections?",
+      "whyHard": "They rely on non-perturbative superpotentials, anti-brane uplifts and warping in regimes where higher alpha'/g_s and backreaction effects may not be negligible.",
+      "attempts": "Explicit Calabi-Yau constructions; tadpole-conjecture analyses; numerical and effective-field-theory scrutiny; ongoing critiques from the swampland community."
+    },
+    {
+      "id": "emergent-spacetime-matrix",
+      "statement": "How does a (3+1)-dimensional classical spacetime with realistic cosmology emerge dynamically from the matrix models (IKKT/BFSS)?",
+      "whyHard": "It requires spontaneous breaking of the SO(10)/SO(9) symmetry to produce exactly three large dimensions and recover Lorentz invariance and Einstein gravity, which is only seen numerically, not derived analytically.",
+      "attempts": "Monte Carlo and complex-Langevin simulations of IKKT showing emergence of expanding 3+1 dimensions; BFSS lattice studies matching gauge/gravity duality thermodynamics."
+    }
+  ],
+  "connections": [
+    {
+      "from": "string-theory",
+      "to": "holography-adscft",
+      "type": "limit",
+      "description": "AdS/CFT is a direct product of string theory (the two descriptions of D3-branes give IIB on AdS5xS5 = N=4 SYM). The boundary between 'string theory' and 'holography' is organizational rather than physical; AdS/CFT is the string result par excellence and the sharpest realization of holography.",
+      "explored": "well"
+    },
+    {
+      "from": "string-theory",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "String theory gave the first microscopic black-hole entropy count (Strominger-Vafa, S=2 pi sqrt(Q1 Q5 n)=A/4G), the fuzzball/microstate-geometry program, and (via AdS/CFT) the route to the Page curve and replica wormholes. Strongest quantitative bridge to black-hole physics.",
+      "explored": "well"
+    },
+    {
+      "from": "string-theory",
+      "to": "supergravity-uv",
+      "type": "limit",
+      "description": "10D supergravity is the low-energy limit of superstrings and 11D supergravity that of M-theory; string theory provides the UV completion. Whether N=8 supergravity is UV-finite by itself is a closely related but distinct question.",
+      "explored": "well"
+    },
+    {
+      "from": "string-theory",
+      "to": "swampland",
+      "type": "shared-structure",
+      "description": "The swampland program is an internal branch of string theory delimiting which EFTs admit a stringy/quantum-gravity UV completion (Distance, Weak Gravity, Emergent String conjectures, species scale). The most active bridge to cosmology and phenomenology.",
+      "explored": "well"
+    },
+    {
+      "from": "string-theory",
+      "to": "entanglement-spacetime",
+      "type": "shared-structure",
+      "description": "Via AdS/CFT, the Ryu-Takayanagi formula (S = Area/4G for entanglement entropy) and the ER=EPR / 'spacetime from entanglement' program connect geometry to quantum information. Active but incompletely understood, especially away from AdS.",
+      "explored": "partially"
+    },
+    {
+      "from": "string-theory",
+      "to": "noncommutative-geometry",
+      "type": "limit",
+      "description": "In a strong B-field, the D-brane worldvolume becomes a non-commutative space with a Moyal product; the Seiberg-Witten map relates commutative and non-commutative descriptions. Matrix models (IKKT/BFSS) also realize non-commuting coordinates. The B-field limit is well understood, but the broader link to Connes-style noncommutative geometry and the Standard Model is barely explored.",
+      "explored": "partially"
+    },
+    {
+      "from": "string-theory",
+      "to": "twistors-amplitudes",
+      "type": "shared-math",
+      "description": "Witten's twistor string (2003) supports perturbative N=4 SYM amplitudes on holomorphic curves in twistor space; ambitwistor strings reproduce field-theory amplitudes and connect to celestial holography and soft theorems. Shared mathematical structure, growing but partial.",
+      "explored": "partially"
+    },
+    {
+      "from": "string-theory",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "In AdS/CFT gravity emerges from a non-gravitational boundary gauge theory; in matrix models spacetime and gravity emerge from matrix dynamics. Conceptually allied to Verlinde entropic gravity and Jacobson's thermodynamic derivation, but those remain formally separate.",
+      "explored": "partially"
+    },
+    {
+      "from": "string-theory",
+      "to": "semiclassical-gravity",
+      "type": "limit",
+      "description": "Einstein's equations arise in string theory as the worldsheet conformal-invariance (beta-function vanishing) condition; semiclassical gravity is the leading low-energy approximation with computable alpha' and g_s corrections.",
+      "explored": "well"
+    },
+    {
+      "from": "string-theory",
+      "to": "quantum-cosmology",
+      "type": "shared-structure",
+      "description": "String-gas cosmology (Brandenberger-Vafa) uses Hagedorn thermodynamics and T-duality to select three large dimensions; pre-Big-Bang and ekpyrotic scenarios, the landscape and quintessence feed cosmology. No controlled holographic cosmology yet; partial.",
+      "explored": "partially"
+    },
+    {
+      "from": "string-theory",
+      "to": "loop-quantum-gravity",
+      "type": "shared-math",
+      "description": "Both seek quantum gravity and both reproduce S=A/4G for black holes, but by entirely different mechanisms (D-brane state counting vs spin-network area quanta) with radically different kinematics (continuous strings on a background vs background-independent discrete geometry). Essentially no direct mathematical bridge - one of the project's prime unexplored opportunities.",
+      "explored": "barely"
+    },
+    {
+      "from": "string-theory",
+      "to": "asymptotic-safety",
+      "type": "conjecture",
+      "description": "Asymptotic safety posits a non-trivial UV fixed point of gravity with no new degrees of freedom, whereas string theory adds an infinite tower of states and alpha' corrections. A possible bridge is the species scale relating the tower of states to UV running of couplings, but this is almost unexplored.",
+      "explored": "barely"
+    },
+    {
+      "from": "string-theory",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-structure",
+      "description": "Both involve emergence of smooth geometry, and matrix models (IKKT/BFSS) are 'pre-geometric' formulations conceptually akin to discrete/combinatorial gravity. An explicit map from matrix dynamics to CDT-style discretized geometry has essentially not been pursued.",
+      "explored": "barely"
+    },
+    {
+      "from": "string-theory",
+      "to": "group-field-theory",
+      "type": "shared-structure",
+      "description": "GFT generates spacetime from a field over a group manifold via Feynman diagrams summing discrete geometries; matrix/tensor models (an ancestor of GFT) overlap technically with the IKKT/BFSS matrix-model approach to emergent space. The shared 'matrix/tensor -> spacetime' structure is recognized but the explicit correspondence is barely explored.",
+      "explored": "barely"
+    },
+    {
+      "from": "string-theory",
+      "to": "causal-sets",
+      "type": "conjecture",
+      "description": "Causal sets build spacetime from a discrete partial order; string theory has no fundamental discreteness of causal structure, but both confront Lorentz invariance and emergent continuum geometry. Any technical bridge (e.g. via matrix models or holographic causal structure) is speculative and essentially untouched.",
+      "explored": "barely"
+    },
+    {
+      "from": "string-theory",
+      "to": "experimental-tests",
+      "type": "conjecture",
+      "description": "Candidate signatures: cosmic superstrings in the stochastic gravitational-wave background (LISA, pulsar timing arrays); the dark dimension scenario predicting micron-scale deviations from Newtonian gravity and Kaluza-Klein dark matter; SUSY (not yet observed). No confirmed prediction; the weakest link of the program.",
+      "explored": "barely"
+    },
+    {
+      "from": "string-theory",
+      "to": "conceptual-problems",
+      "type": "shared-structure",
+      "description": "String theory frames foundational debates on background independence (the duality web vs a manifestly background-independent formulation), the meaning of the landscape and anthropic reasoning, and the criteria of scientific testability (the 'string wars').",
+      "explored": "partially"
+    }
+  ]
+}

@@ -1,0 +1,677 @@
+{
+  "slug": "group-field-theory",
+  "name": "Group Field Theory & Tensor Models",
+  "concepts": [
+    {
+      "id": "group-field-theory",
+      "name": "Group Field Theory (GFT)",
+      "definition": "A quantum field theory for a field phi: G^d -> C (or R) defined over d copies of a Lie group G. Field arguments represent parallel transports on the d boundary faces of an elementary d-simplex; the interaction vertex glues d+1 fields into a d-simplex, so Feynman graphs are dual to simplicial complexes (triangulations) and Feynman amplitudes equal spin-foam amplitudes. The partition function is a non-perturbative sum over simplicial topologies and geometries.",
+      "relatedTo": ["tensor-model", "spin-foam", "second-quantization-lqg", "boulatov-ooguri-model", "gft-condensate", "tensorial-gft"]
+    },
+    {
+      "id": "tensor-model",
+      "name": "Tensor Model",
+      "definition": "A 0-dimensional probabilistic/combinatorial model for a rank-d tensor T_{a_1...a_d} with indices a_i in {1,...,N}, generalizing random matrix models (d=2) to higher rank. Generates random triangulations of d-dimensional pseudomanifolds as Feynman graphs; the combinatorial 'skeleton' of GFT without geometric (group) data.",
+      "relatedTo": ["matrix-model", "group-field-theory", "colored-tensor-model", "gurau-degree", "melonic-dominance"]
+    },
+    {
+      "id": "matrix-model",
+      "name": "Matrix Model of 2D Gravity",
+      "definition": "Integral over N x N Hermitian matrices whose Feynman graphs are dual to random triangulated 2D surfaces, organized by a genus (topological) expansion F ~ sum_g N^{2-2g} F_g. In the double-scaling limit it provides a non-perturbative definition of 2D quantum gravity / 2D string theory; pure gravity is governed by a Painleve I equation.",
+      "relatedTo": ["tensor-model", "double-scaling-limit", "large-n-expansion", "two-d-quantum-gravity"]
+    },
+    {
+      "id": "colored-tensor-model",
+      "name": "Colored Tensor Model",
+      "definition": "Gurau's variant with d+1 distinct fields ('colors'), each vertex containing exactly one field of each color. Coloring guarantees that dual complexes are simplicial pseudomanifolds in any dimension and enables a well-defined topological 1/N expansion via the Gurau degree.",
+      "relatedTo": ["tensor-model", "gurau-degree", "melonic-dominance", "group-field-theory"]
+    },
+    {
+      "id": "gurau-degree",
+      "name": "Gurau Degree",
+      "definition": "A non-negative integer omega assigned to a colored tensor graph, defined as the sum of genera of its jackets (globally embedded ribbon subgraphs). It plays the role that genus plays for matrix models, controlling the 1/N expansion via the power N^{d - (2/(d-1)!) omega}. It is a combinatorial invariant of the graph, not a topological invariant of the dual manifold.",
+      "relatedTo": ["colored-tensor-model", "melonic-dominance", "large-n-expansion", "matrix-model"]
+    },
+    {
+      "id": "melonic-dominance",
+      "name": "Melonic Dominance",
+      "definition": "The phenomenon that graphs of Gurau degree omega=0 ('melons', dual to triangulations of the sphere S^d, built by iterated insertion of pairs of vertices joined by d parallel edges) dominate the leading order of the large-N / 1/N expansion. Melonic sums are explicitly resummable and yield closed Schwinger-Dyson (gap) equations. Shared by tensor models and the SYK model.",
+      "relatedTo": ["gurau-degree", "colored-tensor-model", "syk-model", "schwinger-dyson-equation", "large-n-expansion"]
+    },
+    {
+      "id": "large-n-expansion",
+      "name": "1/N Expansion",
+      "definition": "Systematic topological expansion of free energy / correlators in inverse powers of the index range N, organizing the sum over geometries by suppressing more complicated topologies. For matrices organized by genus; for tensors by the Gurau degree; for SYK/tensor QM by a melonic limit (e.g. g^2 N^3 fixed).",
+      "relatedTo": ["matrix-model", "gurau-degree", "melonic-dominance", "double-scaling-limit"]
+    },
+    {
+      "id": "double-scaling-limit",
+      "name": "Double Scaling Limit",
+      "definition": "A coordinated limit of large index N together with tuning the coupling to its critical value, retaining all orders of the topological expansion to give a non-perturbative result. For matrix models yields 2D gravity (Painleve I); for tensor models in D<6 it is stable and resums melons plus subleading 'cherry trees'.",
+      "relatedTo": ["matrix-model", "tensor-model", "large-n-expansion", "two-d-quantum-gravity"]
+    },
+    {
+      "id": "boulatov-ooguri-model",
+      "name": "Boulatov-Ooguri Model",
+      "definition": "The original GFT: Boulatov (1992) defined a field theory over three copies of SU(2) (with gauge invariance) whose Feynman amplitudes reproduce the Ponzano-Regge model of 3D gravity; Ooguri (1992) extended it to 4D BF theory over four copies of SU(2). Backbone of all geometric GFT models.",
+      "relatedTo": ["group-field-theory", "ponzano-regge-model", "spin-foam"]
+    },
+    {
+      "id": "spin-foam",
+      "name": "Spin Foam",
+      "definition": "A 2-complex with faces carrying group irreducible representations and edges carrying intertwiners; the 'history' of a spin network. GFT Feynman amplitudes equal spin-foam amplitudes, so GFT is the generating functional that also sums over the underlying complexes and topologies.",
+      "relatedTo": ["group-field-theory", "loop-quantum-gravity", "boulatov-ooguri-model", "barrett-crane-model"]
+    },
+    {
+      "id": "second-quantization-lqg",
+      "name": "Second Quantization of LQG",
+      "definition": "Reformulation in which GFT fields are creation/annihilation operators for 'atoms of space' (open spin-network nodes dual to d-simplices). The Fock space of many such quanta reproduces the LQG kinematical Hilbert space; the GFT action encodes the canonical LQG dynamics.",
+      "relatedTo": ["group-field-theory", "loop-quantum-gravity", "spin-network", "gft-condensate"]
+    },
+    {
+      "id": "gft-condensate",
+      "name": "GFT Condensate",
+      "definition": "A coherent / squeezed state of a large number of GFT quanta in the same single-particle geometric configuration, analogous to a Bose-Einstein condensate ('atoms of space'). A macroscopically homogeneous condensate describes a homogeneous quantum cosmology; its hydrodynamics yields effective cosmological dynamics.",
+      "relatedTo": ["group-field-theory", "effective-friedmann-equation", "quantum-bounce", "relational-time", "geometrogenesis"]
+    },
+    {
+      "id": "effective-friedmann-equation",
+      "name": "Effective Friedmann Equation (GFT)",
+      "definition": "A generalization of the Friedmann equations derived from GFT condensate hydrodynamics in the Gross-Pitaevskii approximation, including quantum-gravity corrections. For a single-spin condensate (V'/3V)^2 = (4 pi G/3)(1 - rho/rho_c) + ..., recovering classical GR for rho << rho_c and producing a bounce at rho = rho_c.",
+      "relatedTo": ["gft-condensate", "quantum-bounce", "relational-time", "loop-quantum-cosmology", "emergent-cosmology"]
+    },
+    {
+      "id": "quantum-bounce",
+      "name": "Quantum Bounce",
+      "definition": "Resolution of the big-bang/big-crunch singularity: the GFT condensate volume reaches a non-zero turning point (V'=0) at a critical Planckian density rho_c, replacing the singularity by a bounce. A repulsive divergent term -Q^2/rho^3 prevents the condensate amplitude from vanishing. Qualitatively matches loop quantum cosmology.",
+      "relatedTo": ["effective-friedmann-equation", "gft-condensate", "loop-quantum-cosmology", "emergent-cosmology"]
+    },
+    {
+      "id": "relational-time",
+      "name": "Relational Time (Clock Field)",
+      "definition": "A minimally coupled massless scalar field phi used as a physical clock; the GFT condensate dynamics and effective Friedmann equations are expressed relationally with respect to phi (derivatives d/dphi), bypassing the problem of time and the absence of background coordinates.",
+      "relatedTo": ["gft-condensate", "effective-friedmann-equation", "problem-of-time"]
+    },
+    {
+      "id": "tensorial-gft",
+      "name": "Tensorial Group Field Theory (TGFT)",
+      "definition": "GFT/tensor field theory with tensorial (combinatorially non-trivial, non-melonically-bonded) interactions, suited to renormalization and FRG analysis; may include both non-local group degrees of freedom and local (scalar/clock) degrees of freedom. Exhibits asymptotic freedom and Wilson-Fisher-type fixed points.",
+      "relatedTo": ["group-field-theory", "gft-renormalization", "asymptotic-freedom", "functional-renormalization-group", "phase-transition-gft"]
+    },
+    {
+      "id": "gft-renormalization",
+      "name": "GFT/TGFT Renormalization",
+      "definition": "Adaptation of QFT renormalization (multiscale analysis, power counting, Wick ordering by subtracting melonic tadpoles) to GFT/TGFT. Rank-4 tensor field theory is renormalizable to all orders; 4D Abelian U(1) TGFT with gauge invariance is super-renormalizable for any polynomial interaction.",
+      "relatedTo": ["tensorial-gft", "asymptotic-freedom", "functional-renormalization-group", "phase-transition-gft"]
+    },
+    {
+      "id": "asymptotic-freedom",
+      "name": "Asymptotic Freedom (TGFT)",
+      "definition": "Generic feature of renormalizable tensorial GFTs: the leading (melonic) coupling has beta function beta(lambda) ~ -lambda^3, so the coupling decreases in the UV. Wavefunction renormalization at one loop is crucial. Coexists with IR Wilson-Fisher-type fixed points.",
+      "relatedTo": ["gft-renormalization", "tensorial-gft", "functional-renormalization-group", "asymptotic-safety"]
+    },
+    {
+      "id": "functional-renormalization-group",
+      "name": "Functional Renormalization Group (in TGFT)",
+      "definition": "Wetterich-equation-based non-perturbative RG flow applied to TGFTs to search for fixed points and phase transitions. In the cyclic-melonic potential approximation a U(1) TGFT is equivalent to an effective O(N) model and exhibits a continuous phase transition.",
+      "relatedTo": ["tensorial-gft", "gft-renormalization", "phase-transition-gft", "asymptotic-safety"]
+    },
+    {
+      "id": "phase-transition-gft",
+      "name": "Phase Transition / Geometrogenesis Transition",
+      "definition": "Proposal that continuum spacetime emerges as a phase (condensate or critical point) of the underlying GFT system, reached via a quantum-gravity analogue of a thermodynamic limit. Landau-Ginzburg mean-field and FRG analyses determine critical dimensions and conditions for a continuous transition.",
+      "relatedTo": ["geometrogenesis", "functional-renormalization-group", "gft-condensate", "emergent-spacetime", "tensorial-gft"]
+    },
+    {
+      "id": "geometrogenesis",
+      "name": "Geometrogenesis / Emergence of Spacetime",
+      "definition": "The hypothesis that smooth, continuum spacetime is not fundamental but emerges from a large number of pre-geometric, non-spatiotemporal GFT quanta, analogous to a condensed-matter system (a 'spacetime fluid'). Spacetime emergence is decoupled from the ontology of the fundamental entities.",
+      "relatedTo": ["phase-transition-gft", "gft-condensate", "emergent-spacetime", "emergent-gravity"]
+    },
+    {
+      "id": "syk-model",
+      "name": "Sachdev-Ye-Kitaev (SYK) Model",
+      "definition": "Quantum mechanics of N Majorana fermions with random all-to-all q-body interactions in (0+1)D. In the large-N limit it is dominated by melonic diagrams, develops an emergent conformal (reparametrization) symmetry in the IR with operator dimension Delta=1/q, saturates the chaos bound with Lyapunov exponent lambda_L = 2 pi/beta, and is holographically dual to near-AdS2 / Jackiw-Teitelboim gravity.",
+      "relatedTo": ["melonic-dominance", "schwinger-dyson-equation", "schwarzian-action", "tensor-model", "near-ads2-holography", "maximal-chaos"]
+    },
+    {
+      "id": "schwinger-dyson-equation",
+      "name": "Melonic Schwinger-Dyson (Gap) Equation",
+      "definition": "Self-consistent equation for the two-point function in a melonically dominated model: G = 1/(K - Sigma) with self-energy Sigma(t1,t2) = g^2 [G(t1,t2)]^{q-1}. In the IR (kinetic term dropped) it admits a conformal solution G ~ |t|^{-2Delta} with Delta=1/q, giving emergent conformal symmetry shared by SYK and tensor models.",
+      "relatedTo": ["melonic-dominance", "syk-model", "tensor-model", "schwarzian-action"]
+    },
+    {
+      "id": "schwarzian-action",
+      "name": "Schwarzian Action",
+      "definition": "Low-energy effective action S = -(N alpha_S/J) integral {f,tau} dtau of the reparametrization (soft) mode f(tau) describing the spontaneous + explicit breaking of conformal symmetry in SYK at large but finite coupling. It is maximally chaotic and is the boundary mode of near-AdS2 dilaton (Jackiw-Teitelboim) gravity.",
+      "relatedTo": ["syk-model", "near-ads2-holography", "maximal-chaos", "schwinger-dyson-equation"]
+    },
+    {
+      "id": "ponzano-regge-model",
+      "name": "Ponzano-Regge Model",
+      "definition": "State-sum model for 3D Euclidean quantum gravity assigning SU(2) 6j-symbols to tetrahedra of a triangulated 3-manifold. The Boulatov GFT generates its triangulations and amplitudes as Feynman diagrams.",
+      "relatedTo": ["boulatov-ooguri-model", "spin-foam"]
+    },
+    {
+      "id": "barrett-crane-model",
+      "name": "Barrett-Crane Model",
+      "definition": "A 4D spin-foam model of quantum gravity obtained by imposing simplicity constraints on BF theory; arises from a Boulatov-Ooguri GFT over the homogeneous space SO(4)/SO(3) (Euclidean) and admits a complete Lorentzian version with spacelike, timelike and lightlike tetrahedra encoding local causal structure.",
+      "relatedTo": ["spin-foam", "boulatov-ooguri-model", "group-field-theory", "causal-structure"]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "gft-action",
+      "name": "Rank-d GFT action",
+      "latex": "S[\\varphi]=\\frac{1}{2}\\int \\prod_{i=1}^{d}dg_i\\,\\varphi(g_1,\\dots,g_d)\\,\\mathcal{K}\\,\\varphi(g_1,\\dots,g_d)+\\frac{\\lambda}{d+1}\\int \\prod dg\\,\\mathcal{V}[\\varphi^{\\,d+1}]",
+      "meaning": "Generic GFT action: kinetic term with kernel K and an interaction gluing d+1 fields into a d-simplex; Feynman graphs are dual to d-dimensional triangulations and amplitudes equal spin-foam amplitudes.",
+      "source": "freidel-2005"
+    },
+    {
+      "id": "boulatov-action",
+      "name": "Boulatov 3D GFT action",
+      "latex": "S=\\frac{1}{2}\\!\\int[dg]^3\\varphi(g_1,g_2,g_3)^2+\\frac{\\lambda}{4!}\\!\\int[dg]^6\\varphi(g_1,g_2,g_3)\\varphi(g_3,g_4,g_5)\\varphi(g_5,g_2,g_6)\\varphi(g_6,g_4,g_1)",
+      "meaning": "The original GFT over SU(2)^3 with tetrahedral interaction; Feynman amplitudes reproduce the Ponzano-Regge model (6j-symbols) of 3D quantum gravity.",
+      "source": "boulatov-1992"
+    },
+    {
+      "id": "gurau-1n-expansion",
+      "name": "1/N expansion of colored tensor models",
+      "latex": "F(N,\\lambda)=\\sum_{\\mathcal{G}} N^{\\,d-\\frac{2}{(d-1)!}\\,\\omega(\\mathcal{G})}\\,C_{\\mathcal{G}}(\\lambda)",
+      "meaning": "Free energy as a topological expansion organized by the Gurau degree omega; leading order omega=0 (melons, spheres), higher omega exponentially suppressed. The tensor analogue of the matrix genus expansion.",
+      "source": "gurau-2010"
+    },
+    {
+      "id": "matrix-genus-expansion",
+      "name": "Matrix-model genus expansion",
+      "latex": "F=\\sum_{g\\ge 0} N^{2-2g}\\,F_g(\\lambda)",
+      "meaning": "2D random-surface free energy organized by surface genus g; the double-scaling limit (N->infinity, lambda->lambda_c) retains all g and defines non-perturbative 2D gravity.",
+      "source": "brezin-kazakov-1990"
+    },
+    {
+      "id": "melonic-gap-equation",
+      "name": "Melonic Schwinger-Dyson (gap) equation",
+      "latex": "G=\\frac{1}{\\mathcal{K}-\\Sigma},\\qquad \\Sigma(\\tau_1,\\tau_2)=g^2\\,[G(\\tau_1,\\tau_2)]^{\\,q-1}",
+      "meaning": "Self-consistent two-point function equation from resumming melons; in the IR gives conformal solution G~|tau|^{-2/q} with dimension Delta=1/q, shared by tensor models and SYK.",
+      "source": "klebanov-tarnopolsky-2016"
+    },
+    {
+      "id": "syk-hamiltonian",
+      "name": "SYK Hamiltonian",
+      "latex": "H=\\frac{(i)^{q/2}}{q!}\\sum_{i_1<\\dots<i_q} J_{i_1\\dots i_q}\\,\\chi_{i_1}\\cdots\\chi_{i_q},\\quad \\overline{J^2}=\\frac{(q-1)!\\,J^2}{N^{q-1}}",
+      "meaning": "N Majorana fermions with random q-body all-to-all couplings; melon-dominated at large N, with emergent conformal symmetry and maximal chaos. Tensor models reproduce the same large-N limit without disorder.",
+      "source": "maldacena-stanford-2016"
+    },
+    {
+      "id": "syk-gsigma-action",
+      "name": "SYK bilocal G-Sigma effective action",
+      "latex": "\\frac{S_{\\text{eff}}}{N}=-\\frac12\\log\\det(\\partial_\\tau-\\Sigma)+\\frac12\\int d\\tau_1 d\\tau_2\\Big[\\Sigma G-\\frac{J^2}{q}G^{\\,q}\\Big]",
+      "meaning": "Disorder-averaged effective action in bilocal fields G (fermion bilinear) and self-energy Sigma; its saddle is the gap equation, its soft-mode fluctuation is the Schwarzian.",
+      "source": "maldacena-stanford-2016"
+    },
+    {
+      "id": "klebanov-tarnopolsky-action",
+      "name": "Klebanov-Tarnopolsky O(N)^3 tensor model",
+      "latex": "S=\\int d\\tau\\Big[\\tfrac12\\psi^{abc}\\partial_\\tau\\psi^{abc}+\\tfrac14 g\\,\\psi^{a_1b_1c_1}\\psi^{a_1b_2c_2}\\psi^{a_2b_1c_2}\\psi^{a_2b_2c_1}\\Big],\\ \\ g^2N^3=\\text{fix}",
+      "meaning": "Real rank-3 tensor with O(N)^3 symmetry and tetrahedral interaction; the new large-N limit (g^2 N^3 fixed) is melon-dominated and reproduces the SYK large-N limit without disorder.",
+      "source": "klebanov-tarnopolsky-2016"
+    },
+    {
+      "id": "gft-friedmann-single-spin",
+      "name": "GFT effective Friedmann equation (single spin)",
+      "latex": "\\left(\\frac{V'}{3V}\\right)^{2}=\\frac{4\\pi G}{3}\\left(1-\\frac{\\rho}{\\rho_c}\\right)+\\frac{4V_{j_o}E_{j_o}}{9V},\\qquad \\rho_c=\\frac{3\\pi G\\hbar^2}{2V_{j_o}^{2}}",
+      "meaning": "Emergent Friedmann equation from a single-spin GFT condensate with relational time phi (prime = d/dphi). Recovers classical GR for rho << rho_c; a quantum bounce V'=0 occurs at the Planckian critical density rho_c.",
+      "source": "oriti-sindoni-wilson-ewing-2016"
+    },
+    {
+      "id": "gft-friedmann-multi-spin",
+      "name": "GFT effective Friedmann equation (multi-spin)",
+      "latex": "\\left(\\frac{V'}{3V}\\right)^{2}=\\left(\\frac{2\\sum_j V_j\\rho_j\\,\\mathrm{sgn}(\\rho_j')\\sqrt{E_j-Q_j^2/\\rho_j^2+m_j^2\\rho_j^2}}{3\\sum_j V_j\\rho_j^2}\\right)^{2}",
+      "meaning": "General multi-spin condensate Friedmann equation with conserved charges E_j=(rho_j')^2+rho_j^2(theta_j')^2-m_j^2 rho_j^2 and Q_j=rho_j^2 theta_j'; the repulsive term -Q_j^2/rho_j^3 forces a generic bounce.",
+      "source": "oriti-sindoni-wilson-ewing-2017"
+    },
+    {
+      "id": "tgft-beta-function",
+      "name": "TGFT melonic beta function / asymptotic freedom",
+      "latex": "\\beta(\\lambda)\\;\\propto\\;-\\lambda^{3}",
+      "meaning": "Leading (melonic) coupling beta function of renormalizable tensorial GFTs is negative, implying asymptotic freedom (coupling vanishes in the UV); generic feature, with wavefunction renormalization crucial already at one loop.",
+      "source": "ben-geloun-2012"
+    },
+    {
+      "id": "schwarzian-action-formula",
+      "name": "Schwarzian effective action",
+      "latex": "S_{\\text{Sch}}=-\\frac{N\\alpha_S}{\\mathcal{J}}\\int d\\tau\\,\\{f,\\tau\\},\\qquad \\lambda_L=\\frac{2\\pi}{\\beta}",
+      "meaning": "Low-energy reparametrization-mode action governing SYK's IR; saturates the chaos bound (maximal Lyapunov exponent) and is the boundary dynamics of near-AdS2 (JT) gravity.",
+      "source": "maldacena-stanford-2016"
+    }
+  ],
+  "references": [
+    {
+      "id": "boulatov-1992",
+      "authors": "D.V. Boulatov",
+      "title": "A Model of Three-Dimensional Lattice Gravity",
+      "year": 1992,
+      "arxiv": "hep-th/9202074",
+      "doi": "10.1142/S0217732392001324",
+      "url": "https://arxiv.org/abs/hep-th/9202074",
+      "significance": "First group field theory; SU(2)^3 field theory reproducing the Ponzano-Regge model of 3D gravity as Feynman diagrams."
+    },
+    {
+      "id": "ooguri-1992",
+      "authors": "H. Ooguri",
+      "title": "Topological Lattice Models in Four Dimensions",
+      "year": 1992,
+      "doi": "10.1142/S0217732392002231",
+      "url": "https://www.worldscientific.com/doi/10.1142/S0217732392002231",
+      "significance": "4D extension of Boulatov: GFT over SU(2)^4 generating 4D BF theory, backbone of 4D geometric GFT models."
+    },
+    {
+      "id": "brezin-kazakov-1990",
+      "authors": "E. Brezin, V.A. Kazakov",
+      "title": "Exactly Solvable Field Theories of Closed Strings",
+      "year": 1990,
+      "doi": "10.1016/0370-2693(90)90818-Q",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/037026939090818Q",
+      "significance": "Double-scaling limit of matrix models giving a non-perturbative definition of 2D quantum gravity; conceptual template generalized by tensor models."
+    },
+    {
+      "id": "de-pietri-1999",
+      "authors": "R. De Pietri, L. Freidel, K. Krasnov, C. Rovelli",
+      "title": "Barrett-Crane model from a Boulatov-Ooguri field theory over a homogeneous space",
+      "year": 2000,
+      "arxiv": "hep-th/9907154",
+      "doi": "10.1016/S0550-3213(00)00005-5",
+      "url": "https://arxiv.org/abs/hep-th/9907154",
+      "significance": "Showed the 4D Barrett-Crane spin-foam model arises from a GFT, establishing GFT as the generating functional of spin foams."
+    },
+    {
+      "id": "freidel-2005",
+      "authors": "L. Freidel",
+      "title": "Group Field Theory: An Overview",
+      "year": 2005,
+      "arxiv": "hep-th/0505016",
+      "doi": "10.1007/s10773-005-8894-1",
+      "url": "https://arxiv.org/abs/hep-th/0505016",
+      "significance": "Standard early review establishing GFT as a field-theoretic completion of spin foams."
+    },
+    {
+      "id": "oriti-2006",
+      "authors": "D. Oriti",
+      "title": "The group field theory approach to quantum gravity",
+      "year": 2006,
+      "arxiv": "gr-qc/0607032",
+      "url": "https://arxiv.org/abs/gr-qc/0607032",
+      "significance": "Conceptual review: GFT as 3rd quantization of gravity, dynamical topology, non-commutative flux representation."
+    },
+    {
+      "id": "oriti-2007-fluid",
+      "authors": "D. Oriti",
+      "title": "Group field theory as the microscopic description of the quantum spacetime fluid",
+      "year": 2007,
+      "arxiv": "0710.3276",
+      "url": "https://arxiv.org/abs/0710.3276",
+      "significance": "Articulated geometrogenesis: continuum spacetime as a phase (condensate) of a many-body system of pre-geometric GFT quanta."
+    },
+    {
+      "id": "gurau-2010",
+      "authors": "R. Gurau",
+      "title": "The 1/N expansion of colored tensor models",
+      "year": 2011,
+      "arxiv": "1011.2726",
+      "doi": "10.1007/s00023-011-0101-8",
+      "url": "https://arxiv.org/abs/1011.2726",
+      "significance": "Breakthrough: defined the Gurau degree and a topological 1/N expansion for tensor models, with melons (spheres) dominating; the missing control parameter."
+    },
+    {
+      "id": "bonzom-2011",
+      "authors": "V. Bonzom, R. Gurau, A. Riello, V. Rivasseau",
+      "title": "Critical behavior of colored tensor models in the large N limit",
+      "year": 2011,
+      "arxiv": "1105.3122",
+      "doi": "10.1016/j.nuclphysb.2011.07.022",
+      "url": "https://arxiv.org/abs/1105.3122",
+      "significance": "Explicit melonic resummation, melonic phase transition and continuum limit; tensor models as higher-dimensional gravity candidates."
+    },
+    {
+      "id": "gurau-ryan-2012",
+      "authors": "R. Gurau, J.P. Ryan",
+      "title": "Colored Tensor Models - a review",
+      "year": 2012,
+      "arxiv": "1109.4812",
+      "doi": "10.3842/SIGMA.2012.020",
+      "url": "https://arxiv.org/abs/1109.4812",
+      "significance": "Standard review of colored tensor models, Gurau degree, jackets and random geometry in D>=3."
+    },
+    {
+      "id": "ben-geloun-rivasseau-2011",
+      "authors": "J. Ben Geloun, V. Rivasseau",
+      "title": "A Renormalizable 4-Dimensional Tensor Field Theory",
+      "year": 2013,
+      "arxiv": "1111.4997",
+      "doi": "10.1007/s00220-012-1549-1",
+      "url": "https://arxiv.org/abs/1111.4997",
+      "significance": "First proof of all-orders renormalizability of a rank-4 tensorial field theory, opening tensorial GFT renormalization."
+    },
+    {
+      "id": "ben-geloun-2012",
+      "authors": "J. Ben Geloun",
+      "title": "Asymptotic Freedom of Rank 4 Tensor Group Field Theory",
+      "year": 2012,
+      "arxiv": "1205.5513",
+      "url": "https://arxiv.org/abs/1205.5513",
+      "significance": "Established asymptotic freedom as a generic feature of renormalizable tensorial group field theories."
+    },
+    {
+      "id": "carrozza-oriti-rivasseau-2012",
+      "authors": "S. Carrozza, D. Oriti, V. Rivasseau",
+      "title": "Renormalization of Tensorial Group Field Theories: Abelian U(1) Models in Four Dimensions",
+      "year": 2014,
+      "arxiv": "1207.6734",
+      "doi": "10.1007/s00220-014-1954-8",
+      "url": "https://arxiv.org/abs/1207.6734",
+      "significance": "Proved super-renormalizability of gauge-invariant 4D Abelian U(1) TGFT for any polynomial interaction; defined melonic Wick ordering."
+    },
+    {
+      "id": "oriti-2013-2ndquant",
+      "authors": "D. Oriti",
+      "title": "Group field theory as the 2nd quantization of Loop Quantum Gravity",
+      "year": 2016,
+      "arxiv": "1310.7786",
+      "doi": "10.1088/0264-9381/33/8/085005",
+      "url": "https://arxiv.org/abs/1310.7786",
+      "significance": "Constructed a Fock space of spin networks whose creation/annihilation operators are GFT fields; direct LQG<->GFT correspondence."
+    },
+    {
+      "id": "gielen-oriti-sindoni-2013",
+      "authors": "S. Gielen, D. Oriti, L. Sindoni",
+      "title": "Cosmology from Group Field Theory Formalism for Quantum Gravity",
+      "year": 2013,
+      "arxiv": "1303.3576",
+      "doi": "10.1103/PhysRevLett.111.031301",
+      "url": "https://arxiv.org/abs/1303.3576",
+      "significance": "Launched GFT condensate cosmology: homogeneous universes as condensates with effective dynamics from the fundamental GFT."
+    },
+    {
+      "id": "gurau-schaeffer-2014",
+      "authors": "R. Gurau, G. Schaeffer",
+      "title": "The double scaling limit of random tensor models",
+      "year": 2014,
+      "arxiv": "1404.7517",
+      "doi": "10.1007/JHEP09(2014)051",
+      "url": "https://arxiv.org/abs/1404.7517",
+      "significance": "Showed tensor models admit a stable double-scaling limit (unlike matrices) resumming melons and 'cherry trees' for D<6."
+    },
+    {
+      "id": "benedetti-2015",
+      "authors": "D. Benedetti, J. Ben Geloun, D. Oriti",
+      "title": "Functional Renormalisation Group Approach for Tensorial Group Field Theory",
+      "year": 2015,
+      "arxiv": "1411.3180",
+      "doi": "10.1007/JHEP03(2015)084",
+      "url": "https://arxiv.org/abs/1411.3180",
+      "significance": "Introduced FRG (Wetterich) methods to TGFT, finding fixed points relevant to phase transitions and the continuum limit."
+    },
+    {
+      "id": "maldacena-stanford-2016",
+      "authors": "J. Maldacena, D. Stanford",
+      "title": "Comments on the Sachdev-Ye-Kitaev model",
+      "year": 2016,
+      "arxiv": "1604.07818",
+      "doi": "10.1103/PhysRevD.94.106002",
+      "url": "https://arxiv.org/abs/1604.07818",
+      "significance": "Definitive SYK analysis: G-Sigma action, conformal IR, Schwarzian soft mode, maximal chaos; the bridge target for tensor models."
+    },
+    {
+      "id": "witten-2016",
+      "authors": "E. Witten",
+      "title": "An SYK-Like Model Without Disorder",
+      "year": 2016,
+      "arxiv": "1610.09758",
+      "doi": "10.1088/1751-8121/ab3752",
+      "url": "https://arxiv.org/abs/1610.09758",
+      "significance": "Showed the Gurau-Witten colored tensor model has the same large-N limit as SYK but is a genuine (disorder-free) quantum theory."
+    },
+    {
+      "id": "klebanov-tarnopolsky-2016",
+      "authors": "I.R. Klebanov, G. Tarnopolsky",
+      "title": "Uncolored Random Tensors, Melon Diagrams, and the Sachdev-Ye-Kitaev Models",
+      "year": 2017,
+      "arxiv": "1611.08915",
+      "doi": "10.1103/PhysRevD.95.046004",
+      "url": "https://arxiv.org/abs/1611.08915",
+      "significance": "Simplified Witten's model to an uncolored O(N)^3 tensor model with g^2 N^3 fixed; melon-dominated, IR dimension Delta=1/q."
+    },
+    {
+      "id": "oriti-sindoni-wilson-ewing-2016",
+      "authors": "D. Oriti, L. Sindoni, E. Wilson-Ewing",
+      "title": "Emergent Friedmann dynamics with a quantum bounce from quantum gravity condensates",
+      "year": 2016,
+      "arxiv": "1602.05881",
+      "doi": "10.1088/0264-9381/33/22/224001",
+      "url": "https://arxiv.org/abs/1602.05881",
+      "significance": "Derived the GFT effective Friedmann equation with a quantum bounce at Planckian rho_c, qualitatively matching loop quantum cosmology."
+    },
+    {
+      "id": "oriti-sindoni-wilson-ewing-2017",
+      "authors": "D. Oriti, L. Sindoni, E. Wilson-Ewing",
+      "title": "Bouncing cosmologies from quantum gravity condensates",
+      "year": 2017,
+      "arxiv": "1602.08271",
+      "doi": "10.1088/1361-6382/aa549a",
+      "url": "https://arxiv.org/abs/1602.08271",
+      "significance": "Multi-spin GFT Friedmann equation with conserved charges E_j, Q_j; repulsive term forces a generic singularity-resolving bounce."
+    },
+    {
+      "id": "pithis-thurigen-2018",
+      "authors": "A.G.A. Pithis, J. Thurigen",
+      "title": "Phase transitions in group field theory: The Landau perspective",
+      "year": 2018,
+      "arxiv": "1808.09765",
+      "doi": "10.1103/PhysRevD.98.126006",
+      "url": "https://arxiv.org/abs/1808.09765",
+      "significance": "Landau-Ginzburg mean-field analysis of GFT phase transitions, framing geometrogenesis as a continuous phase transition."
+    },
+    {
+      "id": "marchetti-2021-ginzburg",
+      "authors": "L. Marchetti, D. Oriti, A.G.A. Pithis, J. Thurigen",
+      "title": "Phase transitions in tensorial group field theories: Landau-Ginzburg analysis of models with both local and non-local degrees of freedom",
+      "year": 2021,
+      "arxiv": "2110.15336",
+      "doi": "10.1007/JHEP12(2021)201",
+      "url": "https://arxiv.org/abs/2110.15336",
+      "significance": "Extended Landau-Ginzburg phase-transition analysis to realistic TGFTs with both local (scalar) and non-local (group) degrees of freedom."
+    },
+    {
+      "id": "jercher-oriti-pithis-2022",
+      "authors": "A.F. Jercher, D. Oriti, A.G.A. Pithis",
+      "title": "Complete Barrett-Crane model and its causal structure",
+      "year": 2022,
+      "arxiv": "2206.15442",
+      "doi": "10.1103/PhysRevD.106.066019",
+      "url": "https://arxiv.org/abs/2206.15442",
+      "significance": "Full Lorentzian Barrett-Crane GFT with spacelike, timelike and lightlike tetrahedra, implementing local causal structure microscopically."
+    },
+    {
+      "id": "gurau-rivasseau-2024",
+      "authors": "R. Gurau, V. Rivasseau",
+      "title": "Quantum Gravity and Random Tensors",
+      "year": 2024,
+      "arxiv": "2401.13510",
+      "url": "https://arxiv.org/abs/2401.13510",
+      "significance": "Modern review (Poincare Seminar 2023) positioning tensor field theories as a new family of large-N CFTs relevant for AdS/CFT."
+    },
+    {
+      "id": "carrozza-review-2024",
+      "authors": "S. Carrozza, R. Toriumi, et al.",
+      "title": "Tensor models and group field theories: combinatorics, large N and renormalization",
+      "year": 2024,
+      "arxiv": "2404.07834",
+      "url": "https://arxiv.org/abs/2404.07834",
+      "significance": "Comprehensive contemporary review of combinatorics, the 1/N expansion, melonic dominance and TGFT renormalization."
+    },
+    {
+      "id": "gielen-mickel-2025",
+      "authors": "S. Gielen, L. Mickel",
+      "title": "Cosmological scalar perturbations for a metric reconstructed from group field theory",
+      "year": 2025,
+      "arxiv": "2505.07951",
+      "doi": "10.1088/1361-6382/ae134e",
+      "url": "https://arxiv.org/abs/2505.07951",
+      "significance": "Reconstructs an effective metric from GFT and defines gauge-invariant cosmological scalar perturbations from the GFT energy-momentum tensor."
+    },
+    {
+      "id": "marchetti-ladstatter-oriti-2025",
+      "authors": "L. Marchetti, T. Ladstatter, D. Oriti",
+      "title": "Cosmic Acceleration from Quantum Gravity: Emergent Inflation and Dynamical Dark Energy",
+      "year": 2025,
+      "arxiv": "2512.11712",
+      "url": "https://arxiv.org/abs/2512.11712",
+      "significance": "Derives emergent slow-roll inflation and a phantom-like dynamical dark-energy attractor from GFT mean-field interactions."
+    },
+    {
+      "id": "emergent-lorentzian-2025",
+      "authors": "A.F. Jercher",
+      "title": "Emergent Lorentzian Geometries from Spin-Foams and Group Field Theories",
+      "year": 2025,
+      "arxiv": "2506.20340",
+      "url": "https://arxiv.org/abs/2506.20340",
+      "significance": "PhD thesis (Jercher 2025): spectral dimension, Lorentzian Regge calculus, causal completion of Barrett-Crane GFT, quantum corrections to perturbations."
+    }
+  ],
+  "openProblems": [
+    {
+      "id": "geometrogenesis-phase-transition",
+      "statement": "Does a realistic 4D Lorentzian GFT possess a continuous (geometrogenesis) phase transition whose ordered phase is a macroscopically 4D spacetime obeying Einstein dynamics?",
+      "whyHard": "Requires non-perturbative FRG control beyond the melonic approximation, on the non-compact group SL(2,C), with tensorially non-local interactions; mean-field can fail, and some models exhibit no transition at all.",
+      "attempts": "Landau-Ginzburg mean-field and FRG analyses (Pithis-Thurigen 2018; Marchetti et al. 2021; cyclic-melonic/O(N) equivalence; complete Barrett-Crane 2025), so far without a definitive proof for a fully geometric model."
+    },
+    {
+      "id": "continuum-einstein-dynamics",
+      "statement": "Does the condensate (hydrodynamic) limit of a geometric GFT reproduce full Einstein gravity, not merely the homogeneous Friedmann sector?",
+      "whyHard": "Effective dynamics needs non-perturbative resummation and control of inhomogeneities; reconstructing a metric from GFT data is ambiguous, and beyond homogeneity only linearized results exist.",
+      "attempts": "Metric reconstruction and gauge-invariant scalar perturbations (Gielen-Mickel 2025); relational observables (Marchetti-Oriti) - all to linear order."
+    },
+    {
+      "id": "model-selection-gft",
+      "statement": "Which specific GFT (choice of kinetic kernel, interaction, group, simplicity constraints) corresponds to 4D general relativity?",
+      "whyHard": "No first principle fixes the action; EPRL/FK and Barrett-Crane have distinct GFT formulations and the kinetic term is largely free. Renormalizability only partially restricts the choice.",
+      "attempts": "Renormalizability criteria, asymptotic freedom and causal-completeness requirements progressively narrow the model space."
+    },
+    {
+      "id": "renormalization-geometric-4d",
+      "statement": "Are the fully geometric 4D models (EPRL, Lorentzian Barrett-Crane) renormalizable, and what is their UV/IR flow?",
+      "whyHard": "Non-compact SL(2,C), simplicity constraints, and tensorial non-locality complicate power counting; the melonic approximation may be insufficient for the physical interactions.",
+      "attempts": "Renormalizability and asymptotic freedom proven only for Abelian/simplified TGFTs (Ben Geloun-Rivasseau; Carrozza-Oriti-Rivasseau)."
+    },
+    {
+      "id": "topology-sum-control",
+      "statement": "How can one control the non-perturbative sum over all simplicial topologies (including pseudomanifolds), which grows factorially?",
+      "whyHard": "Tensor models generate pseudomanifolds, not just manifolds; the perturbative series is divergent and requires Borel summation or a double-scaling limit, neither yet available for geometric 4D models.",
+      "attempts": "Stable double-scaling limit established for D<6 abstract tensor models (Gurau-Schaeffer), but not for the geometric/group-decorated case."
+    },
+    {
+      "id": "tensor-model-holography",
+      "statement": "Does a (gauged) tensor model have a healthy spectrum and a gravitational dual analogous to SYK / JT gravity?",
+      "whyHard": "Ungauged tensor models possess a huge number of non-singlet and complex/tachyonic operators; gauging removes non-singlets but makes explicit computation difficult, and no explicit bulk dual is known.",
+      "attempts": "Lines of fixed points, supersymmetric and prismatic tensor models, gauged variants studied (Klebanov-Tarnopolsky and collaborators); full dual still missing."
+    },
+    {
+      "id": "lorentzian-causal-microstructure",
+      "statement": "How is local Lorentzian causal structure (light cones, time orientation) consistently embedded in GFT amplitudes?",
+      "whyHard": "Standard spin foams use special classes of Lorentzian triangulations; timelike/lightlike faces require new SL(2,C) representation-theoretic input and careful gluing rules.",
+      "attempts": "Complete Barrett-Crane model with all tetrahedron types (Jercher-Oriti-Pithis 2022); emergent Lorentzian geometries (2025)."
+    },
+    {
+      "id": "relational-time-full-covariance",
+      "statement": "Is the relational scalar 'clock' sufficient to recover full diffeomorphism invariance, or only the homogeneous/perturbative sector?",
+      "whyHard": "Four scalar clocks define coordinates only locally; gauge-invariance of perturbations is not automatic and the relation to full background-independent covariance is unclear.",
+      "attempts": "Relational observables and gauge-invariant perturbation schemes (Marchetti-Oriti; Gielen-Mickel 2024-2025)."
+    }
+  ],
+  "connections": [
+    {
+      "from": "group-field-theory",
+      "to": "loop-quantum-gravity",
+      "type": "shared-structure",
+      "description": "GFT is the second quantization of LQG: GFT fields are creation/annihilation operators for open spin-network nodes, the Fock space of many quanta reproduces the LQG kinematical Hilbert space, and the GFT action encodes the canonical dynamics. Geometric operators (area, volume) coincide. The 3D dynamical correspondence is explicit; 4D is partial.",
+      "explored": "well"
+    },
+    {
+      "from": "group-field-theory",
+      "to": "loop-quantum-gravity",
+      "type": "shared-structure",
+      "description": "Spin-foam link: GFT Feynman amplitudes equal spin-foam amplitudes, and GFT additionally sums over the underlying 2-complexes and topologies, acting as the generating functional of spin foams (Boulatov/Ponzano-Regge in 3D, Barrett-Crane and EPRL/FK in 4D).",
+      "explored": "well"
+    },
+    {
+      "from": "group-field-theory",
+      "to": "string-theory",
+      "type": "limit",
+      "description": "GFT/tensor models are the direct higher-dimensional generalization of the matrix models of 2D gravity/2D string theory: matrices->tensors, genus->Gurau degree, and the double-scaling limit carries over (and is more stable for D<6). The shared math is orthogonal polynomials and loop/Schwinger-Dyson equations.",
+      "explored": "well"
+    },
+    {
+      "from": "group-field-theory",
+      "to": "quantum-cosmology",
+      "type": "limit",
+      "description": "GFT condensate cosmology yields an effective Friedmann equation with a Planckian quantum bounce qualitatively matching loop quantum cosmology; LQC can be read as the effective hydrodynamics of (second-quantized) LQG = GFT. Recent work derives emergent inflation and dynamical dark energy. Deriving LQC 'improved dynamics' from first principles is only partial.",
+      "explored": "partially"
+    },
+    {
+      "from": "group-field-theory",
+      "to": "holography-adscft",
+      "type": "shared-math",
+      "description": "Melonic tensor models (Gurau-Witten, Klebanov-Tarnopolsky) reproduce the SYK large-N limit without disorder: same melonic dominance, gap equation, IR dimension Delta=1/q, Schwarzian soft mode and near-AdS2 holography. The bridge is at the level of large-N combinatorics; linking the melonic structure of geometric quantum-gravity GFTs to holography is largely unexplored - a prime gold vein.",
+      "explored": "partially"
+    },
+    {
+      "from": "group-field-theory",
+      "to": "black-holes-information",
+      "type": "shared-math",
+      "description": "Via the SYK connection, tensor models inherit SYK's maximal chaos (lambda_L=2pi/beta) and near-extremal/near-AdS2 black hole physics; the Schwarzian appears in both near-extremal black hole throats and tensor-model IR. The direct relevance of geometric GFT to black hole microstates/Page curve is barely explored.",
+      "explored": "barely"
+    },
+    {
+      "from": "group-field-theory",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-structure",
+      "description": "Both treat random simplicial triangulations as the microstructure of spacetime and sum over geometries; CDT is a fixed-group Lorentzian lattice version while GFT/tensors provide the generating field theory with control over topology. Whether a GFT continuum limit reproduces CDT's de Sitter phase and spectral-dimension flow is barely studied.",
+      "explored": "partially"
+    },
+    {
+      "from": "group-field-theory",
+      "to": "asymptotic-safety",
+      "type": "shared-math",
+      "description": "Both use the functional renormalization group: TGFTs show asymptotic freedom and Wilson-Fisher-type IR fixed points; the open question is whether a non-trivial UV fixed point (a GFT analogue of asymptotic safety) controls the continuum limit. The shared element is the FRG technique, not (yet) a shared result.",
+      "explored": "partially"
+    },
+    {
+      "from": "group-field-theory",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "GFT has a natural non-commutative 'flux'/Lie-algebra (non-commutative Fourier) representation, and effective matter coupled to 3D GFT is described by non-commutative field theory (e.g. on kappa-Minkowski). The technical link exists but whether emergent GFT geometry is generically non-commutative is barely investigated.",
+      "explored": "barely"
+    },
+    {
+      "from": "group-field-theory",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "Geometrogenesis: continuum spacetime and gravity emerge as a collective/condensed phase of pre-geometric GFT quanta (a 'spacetime fluid'), an explicit realization of emergent-gravity ideas with a concrete microscopic many-body model and order parameter.",
+      "explored": "partially"
+    },
+    {
+      "from": "group-field-theory",
+      "to": "entanglement-spacetime",
+      "type": "conjecture",
+      "description": "Recent proposals suggest quantum-gravitational entanglement between GFT quanta can seed cosmological inhomogeneities and modify trans-Planckian dynamics, hinting at an 'entanglement-builds-geometry' (ER=EPR / it-from-qubit) link. Speculative and almost entirely unexplored.",
+      "explored": "barely"
+    },
+    {
+      "from": "group-field-theory",
+      "to": "spectral-dimension",
+      "type": "shared-structure",
+      "description": "Like CDT, asymptotic safety and causal sets, GFT-derived geometries are expected to display a scale-dependent (and possibly dimension-reducing) spectral dimension; emergent-Lorentzian-geometry work (2025) studies dynamical spacetime dimension. Quantitative GFT spectral-dimension results are scarce.",
+      "explored": "barely"
+    }
+  ]
+}

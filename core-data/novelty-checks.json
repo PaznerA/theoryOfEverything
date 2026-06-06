@@ -1,0 +1,389 @@
+[
+  {
+    "cluster": "dsContradiction",
+    "type": "dataFix",
+    "date": "2026-06-06",
+    "resolution": "The spectral dimension in causal set theory is probe-dependent. (1) Random walks on the discrete causal order (Eichhorn-Mizera, arXiv:1311.2530, CQG 2014) find that d_s INCREASES at short scales — opposite to CDT/asymptotic safety — because of the nonlocal, fundamentally Lorentzian structure of the causet graph. (2) Propagators/heat kernels derived from the nonlocal continuum d'Alembertian inherited from causal sets (Belenchia-Benincasa-Marciano-Modesto, arXiv:1507.00330, PRD 2016) give a UNIVERSAL REDUCTION to d_s ~ 2 in the UV in all spacetime dimensions. The two probes measure genuinely different aspects of the discrete structure and are not contradictory. Edge A was wrong to attribute the ~2 drop to random walks; Edge B was only half-right: the 'opposite' direction claim applies only to the random-walk probe in CST versus NCG heat-kernel, while the d'Alembertian probe in CST and NCG heat-kernel agree on reduction toward 2.",
+    "bothCorrect": true,
+    "fragmentsEdited": [
+      "/Users/pazny/projects/theoryOfEverything/core-data/fragments/causal-sets.json",
+      "/Users/pazny/projects/theoryOfEverything/core-data/fragments/noncommutative-geometry.json"
+    ],
+    "registriesRebuilt": true,
+    "keyRefs": [
+      {"arxiv": "1311.2530", "authors": "Eichhorn, Mizera", "year": 2014, "finding": "random-walk probe: d_s increases at short scales in CST"},
+      {"arxiv": "1507.00330", "authors": "Belenchia, Benincasa, Marciano, Modesto", "year": 2016, "finding": "d'Alembertian probe: universal reduction d_s -> 2 in UV"}
+    ],
+    "implicationForDsCluster": "Probe-dependence of d_s in CST is direct empirical confirmation of hypothesis L3-1, which predicts that the effective dimension depends on the choice of probe as a physically fundamental signature of discrete, nonlocal spacetime structure. The master-formula d_s(z, D, probe) must add 'probe' as a third classification parameter alongside z and D."
+  },
+  {
+    "cluster": "ds-cluster (L3-1 + L2-5 + L5-5)",
+    "verdict": "partially-known",
+    "priorArt": [
+      {
+        "title": "Spectral Dimension of the Universe in Quantum Gravity at a Lifshitz Point",
+        "arxiv": "0902.3657",
+        "year": 2009,
+        "relation": "Derivuje explicitně d_s = 1 + D/z pro Hořavovu gravitaci s exponentem z — toto JE master-vzorec pro anisotropní propagátor (G^{-1} ~ p^{2z}). Pro z=3, D=3 vychází d_s=2 v UV a d_s=4 v IR. Přímý a nejsilnější předchůdce L3-1; ukazuje, že d_s není universálně 2, ale závisí na z."
+      },
+      {
+        "title": "From dispersion relations to spectral dimension — and back again",
+        "arxiv": "1105.6098",
+        "year": 2011,
+        "relation": "Sotiriou, Visser a Weinfurtner zobecňují výpočet d_s na libovolnou disperzní relaci (= propagátorový exponent). Explicitně srovnávají CDT a Hořavu; ukazují, jak d_s sleduje UV chování propagátoru. Téměř totožný záměr s L3-1, ale nepracují s P(s)=Tr e^{-sG^{-1}} formalizmem explicitně přes AS/LQG/CST."
+      },
+      {
+        "title": "Quantum spectral dimension in quantum field theory",
+        "arxiv": "1408.0199",
+        "year": 2016,
+        "relation": "Calcagni, Modesto a Nardelli počítají d_s(z,D) pro logaritmické disperzní relace a Stelle gravitaci pomocí rozšíření Seeley-DeWitt a sedlového bodu; ukazují d_s=2 pro Stelle v libovolném D, ale d_s variabilní pro obecné z. Silný přesah s L3-1 pro speciální třídy propagátorů."
+      },
+      {
+        "title": "Spectral dimension of quantum geometries",
+        "arxiv": "1311.3340",
+        "year": 2014,
+        "relation": "Calcagni, Oriti a Thürigen srovnávají d_s přes LQG, spin-foam, GFT. Zjišťují, že d_s NENÍ universální a závisí na kombinatorické struktuře — podporuje L3-1 v části o ne-universalitě, ale nevyvozuje master-vzorec d_s(z,D) a nepracuje s heat-kernel P(s)=Tr e^{-sG^{-1}} přes AS/CDT/CST."
+      },
+      {
+        "title": "Spectral dimension and diffusion in multi-scale spacetimes",
+        "arxiv": "1304.2709",
+        "year": 2013,
+        "relation": "Calcagni a Nardelli odvozují d_s(α,D) pro multifrakcionální prostory s frakcionálním exponentem α (analogon z). Srovnávají tři třídy multifrakcionálních symetrií. Střední přesah s L3-1 — formulace je jiná (frakcionální míra vs. propagátorový exponent), ale matematická struktura je ekvivalentní."
+      },
+      {
+        "title": "Dimension and Dimensional Reduction in Quantum Gravity",
+        "arxiv": "1705.05417",
+        "year": 2017,
+        "relation": "Carlipův přehledový článek uvádí d_s~2 v UV jako 'almost universal feature' pro UV-renormalizovatelné teorie, ale zároveň uznává výjimky a cituje Hořavův vzorec. Nezavádí systematický master-vzorec d_s(z,D) přes přístupy; diskutuje různé mechanismy dimenzionální redukce. Kontextuální přesah."
+      },
+      {
+        "title": "Spectral dimension in causal set quantum gravity",
+        "arxiv": "1311.2530",
+        "year": 2014,
+        "relation": "Eichhorn a Mizera nacházejí probe-dependence v CST: d_s roste na krátkých škálách pro náhodnou procházku na diskrétním kauzálním grafu. Přímo relevantní pro L2-5 — ukazuje, že znaménko běhu d_s v CST závisí na sondě, čímž podkopává tvrzení o universální konvergenci k Reuterovu fixed pointu."
+      },
+      {
+        "title": "Towards the map of quantum gravity",
+        "arxiv": "1708.07445",
+        "year": 2017,
+        "relation": "Calcagni srovnává d_s^UV přes CDT, AS, LQG, Hořavu, NCG, nelokalní gravitaci, Stelle a CST. Nejblíže 'srovnávací tabulce' — ale bez explicitního master-vzorce d_s(z,D) a bez heat-kernel P(s)=Tr e^{-sG^{-1}} jako unifikující framework. Silný kontextuální přesah."
+      }
+    ],
+    "whatRemainsNovel": "Tři věci nejsou v literatuře explicitně publikovány jako celek: (1) Systematická srovnávací tabulka d_s^UV(z,D) pro přesně čtyři přístupy AS/CDT/LQG/CST, všechny zpracované jednotným formalizmem P(s) = Tr e^{-sG^{-1}} — Hořavův vzorec d_s=1+D/z je znám pro Hořavovu gravitaci, ale ne jako explicitní výpočet z P(s)=Tr e^{-sG^{-1}} pro AS propagátor, LQG modifikovaný Laplacián a CST BD propagátor. (2) Probe-dependence jako explicitní *klasifikační parametr* vedle z a D — tatáž teorie (CST) dává kvalitativně opačné d_s podle volby sondy; toto není v literatuře formulováno jako d_s(z, D, probe). (3) Tvrzení, že d_s není universálně 2 jako *diskriminátor mezi přístupy* (ne jen technický fakt): kdybychom změřili d_s^UV > 2 nebo různé hodnoty pro různé sondy ve stejné teorii, odlišujeme přístupy — tato klasifikační interpretace není v žádném nalezené práci centrálním tvrzením.",
+    "recommendation": "reframe",
+    "notes": "Formule d_s = 1 + D/z pro anisotropní propagátor G^{-1} ~ p^{2z} je explicitně publikována od roku 2009 (Hořava) a zobecněna na libovolné disperzní relace Sotirioum, Visserem a Weinfornerem (2011). Hypotéza L3-1 proto NEMŮŽE být prezentována jako nový objev vzorce. Hodnotná novost spočívá v trojici: jednotný heat-kernel formalizmus P(s) = Tr e^{-sG^{-1}} aplikovaný systematicky přes AS/CDT/LQG/CST, přidání probe-dependence jako třetího parametru klasifikace (vedle z a D), a interpretace celého výsledku jako diskriminátoru mezi přístupy ke kvantové gravitaci — nikoli jako důkazu konvergence. Doporučujeme přeformulovat L3-1 na 'klasifikační tabulku d_s(z,D,probe) pro čtyři přístupy', explicitně navázat na Hořavův vzorec a uvést jej jako speciální případ, a ústřední novou hodnotou učinit systematičnost srovnání a klasifikační interpretaci probe-dependence."
+  },
+  {
+    "cluster": "a4-cluster (L1-1 + L2-4 + L5-4)",
+    "verdict": "partially-known",
+    "priorArt": [
+      {
+        "title": "Bosonic Spectral Action Induced from Anomaly Cancelation",
+        "arxiv": "1001.2036",
+        "year": 2010,
+        "relation": "Proves that the bosonic Chamseddine-Connes spectral action emerges as the anomaly-cancellation term for a scale anomaly of fermions in curved background — covers the spectral action ↔ anomaly two-way link explicitly, but does not make the three-way identification with Sakharov AND (a,c) trace anomaly via a_4, and does not compute central charges for C+H+M3(C)."
+      },
+      {
+        "title": "Spectral action, Weyl anomaly and the Higgs-dilaton potential",
+        "arxiv": "1106.3263",
+        "year": 2011,
+        "relation": "Shows that the bosonic spectral action emerges from fermionic action via RG flow in the presence of a dilaton and Weyl anomaly. Covers spectral action ↔ Weyl anomaly link via heat-kernel; does not make the full three-way identification or anomaly-matching test for C+H+M3(C)."
+      },
+      {
+        "title": "Spectral Action from Anomalies",
+        "arxiv": "1103.0478",
+        "year": 2011,
+        "relation": "Andrianov-Kurkov-Lizzi: anomaly cancellation (scale invariance) leads to Chamseddine-Connes spectral action. Adjacent: covers the NCG-anomaly two-way link, but not the Sakharov side and not the (a,c) identification."
+      },
+      {
+        "title": "Higgs-Dilaton Lagrangian from Spectral Regularization",
+        "arxiv": "1210.2663",
+        "year": 2012,
+        "relation": "Kurkov-Lizzi: computes full Weyl anomaly contribution via bosonic spectral action, describes the anomaly-generating functional at classical level. Adjacent to the claim but does not perform a three-way identification or anomaly-matching for C+H+M3(C)."
+      },
+      {
+        "title": "Spectral Regularisation: Induced Gravity and the Onset of Inflation",
+        "arxiv": "1311.6979",
+        "year": 2013,
+        "relation": "Explicitly places Sakharov induced gravity and anomaly-induced effective action on equal footing using spectral regularisation with heat-kernel. This is the closest prior art to the spectral action = Sakharov side, but still does not make the a_4 three-way identification explicit and does not connect to the (a,c) conformal anomaly coefficients."
+      },
+      {
+        "title": "Sakharov's induced gravity: a modern perspective",
+        "arxiv": "gr-qc/0204062",
+        "year": 2002,
+        "relation": "Visser's review: translates Sakharov induced gravity into modern Seeley-DeWitt language, clearly identifies that higher-derivative terms (Weyl² and Gauss-Bonnet = a_4 sector) are generated by matter loops. Does not connect to spectral action or to (a,c) central charges."
+      },
+      {
+        "title": "Heat kernel expansion: user's manual",
+        "arxiv": "hep-th/0306138",
+        "year": 2003,
+        "relation": "Vassilevich review: provides the standard lore that a_4 controls both one-loop divergences and conformal anomalies (a,c) in 4D. Known background fact, not a claim that it is the common parent of all three frameworks."
+      },
+      {
+        "title": "Anomaly Cancellation and gauge group of the Standard Model in NCG",
+        "arxiv": "hep-th/9506115",
+        "year": 1995,
+        "relation": "Lizzi et al.: shows that unimodularity condition in NCG C+H+M3(C) is equivalent to absence of gauge anomalies, i.e. anomaly cancellation in the gauge sense. Different from the conformal (a,c) trace anomaly matching the hypothesis proposes; does not compute central charges a,c."
+      }
+    ],
+    "whatRemainsNovel": "The explicit THREE-WAY identification — a_4 as the single coefficient simultaneously controlling (i) the Λ⁰ gravitational term in the Chamseddine-Connes spectral action, (ii) the Weyl²/Gauss-Bonnet terms generated by matter loops in Sakharov induced gravity, and (iii) the (a,c) conformal trace-anomaly central charges — stated as a coefficient-level identity (not analogy) with normalization comparison across all three formalisms. In particular: the anomaly-matching test for C⊕H⊕M₃(C) — computing a,c from NCG field content using the standard formula a=(1/360)(N_s+11N_f+62N_v) and comparing numerically with the C² coefficient that the spectral action assigns to the same spectrum — has not been performed in any found paper. The two-way links (spectral action ↔ Weyl anomaly; spectral action ↔ Sakharov) are well-covered, but the third vertex of the triangle (Sakharov ↔ (a,c) via spectral action cutoff) and the explicit numerical test for the SM algebra are absent. The L5-4 extension linking the NCG spectral action cutoff to the swampland species scale Λ_sp = M_Pl/√N is also absent from the literature.",
+    "recommendation": "pursue",
+    "notes": "Dvoustranné vazby (spektrální akce ↔ Weyl anomálie, spektrální akce ↔ Sakharov) jsou pokryty pracemi Andrianova-Lizziho a Kurkova-Lizziho z let 2010–2013, takže hypotéza není plně nová. Jádro hypotézy — explicitní trojstranná identifikace přes a_4 jako koeficient s porovnáním normalizací a konkrétní anomaly-matching test pro algebru C⊕H⊕M₃(C) porovnávající (a,c) s Λ⁰ členem spektrální akce — nebylo nalezeno. Výpočet je uzavřený (čistě heat-kernel), proto stojí za provedení; největší riziko je normalizační artefakt, na který upozorňuje sám brainstorm. Propojení L5-4 (NCG finiteness ↔ swampland species scale) zůstává zcela nepokryto, ale trivialita škálovacího argumentu snižuje jeho váhu."
+  },
+  {
+    "cluster": "lambda-cluster (L1-2 + L3-2 + L2-2)",
+    "verdict": "partially-known",
+    "priorArt": [
+      {
+        "title": "Everpresent Lambda (Ahmed, Dodelson, Greene, Sorkin)",
+        "arxiv": "astro-ph/0209274",
+        "year": 2004,
+        "relation": "Establishes the core Sorkin pillar in full: Lambda conjugate to 4-volume in unimodular gravity, Poisson fluctuations delta-N ~ sqrt(N) in causal set give delta-Lambda ~ 1/sqrt(V) ~ H^2. This is the dominant prior art for the causal-sets branch of the claim."
+      },
+      {
+        "title": "Everpresent Lambda II: Structural Stability (Ahmed, Sorkin)",
+        "arxiv": "1210.2589",
+        "year": 2012,
+        "relation": "Confirms and extends the Sorkin mechanism; no comparison with EDT or CosMIn."
+      },
+      {
+        "title": "Cosmological Tests of Everpresent Lambda (Zwane, Afshordi, Sorkin)",
+        "arxiv": "1703.06265",
+        "year": 2017,
+        "relation": "Phenomonology of everpresent Lambda; fits CMB/SN data as well as LCDM. Covers the L2-2 swampland/dynamic-DE angle partially but does not compare with EDT or CosMIn prefactors."
+      },
+      {
+        "title": "Aspects of Everpresent Lambda I (Afshordi et al.)",
+        "arxiv": "2304.03819",
+        "year": 2023,
+        "relation": "Most recent theoretical development of Sorkin mechanism. Explicitly does NOT mention CosMIn, Padmanabhan, EDT, or CDT. No cross-pillar comparison."
+      },
+      {
+        "title": "Aspects of Everpresent Lambda II: Cosmological Tests (Afshordi et al.)",
+        "arxiv": "2307.13743",
+        "year": 2023,
+        "relation": "Observational tests of current everpresent-Lambda models against SN Ia and CMB. No reference to EDT or CosMIn."
+      },
+      {
+        "title": "CosMIn: The Solution to the Cosmological Constant Problem (H. Padmanabhan, T. Padmanabhan)",
+        "arxiv": "1302.3226",
+        "year": 2013,
+        "relation": "Establishes the CosMIn pillar: N ~ 4pi modes crossing Hubble radius gives Lambda L_P^2 ~ 3.4e-122. No mention of causal sets, Sorkin, EDT, or Poisson statistics."
+      },
+      {
+        "title": "Cosmological Constant from the Emergent Gravity Perspective (T. Padmanabhan)",
+        "arxiv": "1404.2284",
+        "year": 2014,
+        "relation": "Extends CosMIn in emergent-gravity frame. No comparison with everpresent Lambda or EDT."
+      },
+      {
+        "title": "Dynamical Dark Energy from Lattice Quantum Gravity (Dai, Laiho et al.)",
+        "arxiv": "2408.08963",
+        "year": 2024,
+        "relation": "Establishes the EDT pillar: lattice simulations show Lambda(H) = Lambda_0 + c*H^2 with quadratic dominant running. No mention of Sorkin, causal sets, CosMIn, or Poisson number fluctuations. The three pillars are confirmed independent."
+      },
+      {
+        "title": "Is the cosmological constant a nonlocal quantum residue of discreteness of the causal set type? (Sorkin)",
+        "arxiv": "0710.1675",
+        "year": 2007,
+        "relation": "Explicit derivation of Lambda-V conjugacy and Poisson-fluctuation logic within causal sets / unimodular gravity — shows the bridge unimodular<->causal sets is already internal to pillar 1, not a new unification."
+      }
+    ],
+    "whatRemainsNovel": "No published paper identifies all three mechanisms (Sorkin everpresent Lambda, EDT running Lambda~H^2, Padmanabhan CosMIn N=4pi) as instances of the same number-fluctuation statistic conjugate to 4-volume. Specifically absent: (1) the explicit substitution V=c_H/H^4 into delta-Lambda~1/sqrt(V) to check whether the Sorkin prefactor alpha, the EDT coefficient c, and the CosMIn factor 4pi/(H*L_P)^2 agree numerically after the same substitution; (2) any claim that a mismatch of prefactors would falsify the unification while agreement would imply a single underlying principle; (3) the CosMIn-to-causal-sets bridge at the level of prefactors, not just order-of-magnitude.",
+    "recommendation": "reframe",
+    "notes": "Základní matematika (konjugace Λ–V, Poissonovy fluktuace causal setů) je v literatuře plně zavedena od Sorkinovy práce z roku 2004 a explicitně rozebrána v arXiv:0710.1675. Každý ze tří pilířů je samostatně publikován a fenomenologicky testován. Přidaná hodnota hypotézy spočívá výhradně v mezipilířovém srovnání prefaktorů — tento test nebyl dosud proveden ani navržen. Doporučujeme hypotézu reframovat jako 'falzifikovatelný prefaktorový test tří nezávislých Λ~1/√V mechanismů', nikoli jako objev nového principu konjugace."
+  },
+  {
+    "cluster": "entropy-cluster (L2-3 + L3-4 + L4-4)",
+    "verdict": "partially-known",
+    "priorArt": [
+      {
+        "title": "Entanglement Entropy in Causal Set Theory",
+        "arxiv": "1611.10281",
+        "year": 2016,
+        "relation": "Sorkin–Yazdi paper founding SSEE in causal sets; establishes that area law emerges only after UV truncation of the Pauli-Jordan spectrum. Covers the causal-set arm of the hypothesis in full, but makes no connection to crossed products or LQG area gap."
+      },
+      {
+        "title": "Entanglement Entropy of Causal Set de Sitter Horizons",
+        "arxiv": "2008.07697",
+        "year": 2020,
+        "relation": "Extends Sorkin-Yazdi SSEE to de Sitter causal sets; identifies a 'knee' in the eigenvalue spectrum as the natural truncation threshold giving area law. Covers the SSEE truncation arm in detail; no crossed products, no LQG."
+      },
+      {
+        "title": "An Algebra of Observables for de Sitter Space (Chandrasekaran–Longo–Penington–Witten)",
+        "arxiv": "2206.10780",
+        "year": 2022,
+        "relation": "Constructs type-II_1 von Neumann algebra for de Sitter static patch via observer clock crossing type-III to type-II. Covers the crossed-product arm of the hypothesis. No mention of causal sets, LQG, area gap, or Immirzi parameter."
+      },
+      {
+        "title": "Large N Algebras and Generalized Entropy (Chandrasekaran–Penington–Witten)",
+        "arxiv": "2209.10454",
+        "year": 2022,
+        "relation": "Constructs type-II_inf von Neumann algebra in AdS/CFT; entropy equals generalized entropy of bifurcation surface. Establishes crossed-product machinery but operates exclusively within AdS/CFT; no LQG, no causal sets."
+      },
+      {
+        "title": "Statistical and Entanglement Entropy for Black Holes in Quantum Geometry (Perez)",
+        "arxiv": "1405.7287",
+        "year": 2014,
+        "relation": "Links statistical and entanglement entropy in LQG black holes; identifies Planck-scale quantum geometry (area eigenstates) as the mechanism correlating inside/outside. Covers two-way LQG–entanglement connection but uses no crossed-product algebras and does not connect to causal sets."
+      },
+      {
+        "title": "Crossed Product Algebras and Generalized Entropy for Subregions",
+        "arxiv": "2306.07323",
+        "year": 2023,
+        "relation": "Generalizes crossed-product construction to arbitrary spacetime subregions, yielding type-II von Neumann entropy without UV divergences. Adjacent to the hypothesis but stays within perturbative QFT; no causal sets, no LQG area gap."
+      },
+      {
+        "title": "Ashtekar-Barbero Holonomy on the Hyperboloid: Immirzi Parameter as a Cut-off for Quantum Gravity",
+        "arxiv": "1507.00851",
+        "year": 2015,
+        "relation": "Argues the Immirzi parameter functions as a quantum cutoff via compactification of the gauge group. Overlaps with the hypothesis's claim that gamma is a cutoff parameter, but uses no crossed-product algebras and no causal-set machinery."
+      },
+      {
+        "title": "Subregion Algebras in Classical and Quantum Gravity",
+        "arxiv": "2601.07915",
+        "year": 2026,
+        "relation": "Constructs type-II_inf algebras for black hole subregions; identifies area operator as Connes cocycle flow. Adjacent to L3-4 but works in perturbative quantum gravity, not LQG spin-network regime; no causal sets, no Immirzi identification."
+      },
+      {
+        "title": "Entanglement Entropy in LQG through Quantum Error Correction",
+        "arxiv": "2510.26911",
+        "year": 2025,
+        "relation": "Computes entanglement entropy in LQG via type-I von Neumann algebras and quantum error correction. Directly adjacent to L3-4 but uses type-I, not type-II crossed-product construction; no connection to causal sets or Sorkin-Johnston."
+      }
+    ],
+    "whatRemainsNovel": "The specific three-way synthesis has no precedent in the literature: (1) the explicit identification of the SSEE Pauli-Jordan truncation rank (giving S=A/4 in causal sets) with the modular/observer cutoff epsilon of the crossed-product type-III-to-type-II transition; (2) the claim that the LQG area gap Delta = 4*sqrt(3)*pi*gamma*l_P^2 IS that observer cutoff; (3) the role of the Barbero-Immirzi gamma as a renormalization constant normalizing the type-II trace to the Bekenstein-Hawking value. The two-way bridges all exist separately (SSEE truncation is well-studied; crossed-product type-II construction is established since 2022; LQG area gap as entanglement cutoff was touched by Perez and Bianchi), but no paper identifies all three as the same regularization operation or treats gamma as a renormalization constant linking the LQG discrete trace to the type-II trace. The 'mirage theorem' reading of L4-4 -- that the area-law window in SSEE selects geometric states from generic quantum states -- also has no direct prior art.",
+    "recommendation": "pursue",
+    "notes": "Hypotéza přežívá jako plausibly-novel v trojcestné syntéze, i když dvoucestné spoje jsou etablované. Největší riziko není z prior art, ale z vnitřní nejednoznačnosti: tři subclaims se liší v tom, co přesně hraje roli cutoffu (γ vs. Δ vs. ε), a Immirziho normalizace je v LQG samotném sporná (log-korekce −1/2 vs. −3/2). Doporučuji pursue s numerickým testem jako prvním krokem: spočítat SSEE eigenvalues na sprinklovaném diamantu a ověřit korelaci truncačního ranku s modulárním cutoffem ε ~ ρ^(−1/4). Communita algebraické kvantové teorie pole a communita causal sets sdílejí terminologii (modulární tok, KMS, Pauli-Jordan), ale zatím se nepřekryla v tomto konkrétním bodě."
+  },
+  {
+    "cluster": "cardy-lqg",
+    "verdict": "partially-known",
+    "priorArt": [
+      {
+        "title": "Black Hole Entropy from Conformal Field Theory in Any Dimension",
+        "arxiv": "hep-th/9812013",
+        "year": 1998,
+        "relation": "Carlip's foundational program: near-horizon Virasoro algebra with calculable central charge + Cardy formula reproduces Bekenstein-Hawking entropy universally. Establishes the general framework the hypothesis sits inside, but is not specific to LQG or the Immirzi parameter."
+      },
+      {
+        "title": "Near-Horizon Conformal Symmetry and Black Hole Entropy",
+        "arxiv": "gr-qc/0203001",
+        "year": 2002,
+        "relation": "Carlip's PRL successor: chiral Virasoro algebra at any horizon with computable central charge; Cardy entropy derived. Covers the near-horizon CFT route but not the specific SU(2) Chern-Simons LQG connection or the Immirzi normalization."
+      },
+      {
+        "title": "Logarithmic Corrections to Black Hole Entropy from the Cardy Formula",
+        "arxiv": "gr-qc/0005017",
+        "year": 2000,
+        "relation": "Derives logarithmic corrections to BH entropy via Cardy formula in near-horizon CFT; establishes -3/2 ln A coefficient. Covers the log-correction side of the hypothesis, but not the LQG Immirzi/Chern-Simons identification."
+      },
+      {
+        "title": "Black Hole Entropy and SU(2) Chern-Simons Theory",
+        "arxiv": "0905.3168",
+        "year": 2009,
+        "relation": "Engle-Noui-Perez: LQG isolated horizon described by SU(2) Chern-Simons theory; state counting via CS Hilbert space dimensions; entropy proportional to A_H with logarithmic correction -3/2 ln A_H. Directly establishes the CS boundary theory the hypothesis invokes, including the Immirzi-dependent level k ~ A/(4pi gamma l_P^2). Does not explicitly extract c=6k or invoke the Cardy formula by name."
+      },
+      {
+        "title": "Black-hole entropy from complex Ashtekar variables",
+        "arxiv": "1212.4060",
+        "year": 2013,
+        "relation": "Frodden-Geiller-Noui-Perez: analytic continuation gamma -> +/-i recovers exp(A/4l_P^2) microstate count; the imaginary/self-dual Immirzi route to Bekenstein-Hawking entropy. Covers the gamma=i conformal route the hypothesis mentions, without explicit Cardy central charge identification."
+      },
+      {
+        "title": "CFT/Gravity Correspondence on the Isolated Horizon",
+        "arxiv": "1405.7056",
+        "year": 2014,
+        "relation": "Ghosh-Pranzetti: local 2D conformal symmetry at each CS puncture; Kac-Moody algebra; WZW partition function with imaginary Immirzi parameter reproduces Bekenstein-Hawking entropy. Directly overlaps with the hypothesis claim that horizon SU(2) CS theory has a boundary CFT structure. Does not explicitly frame gamma as analogous to c=6Q1Q5 from string theory."
+      },
+      {
+        "title": "A Note on Black Hole Entropy in Loop Quantum Gravity",
+        "arxiv": "1410.5763",
+        "year": 2014,
+        "relation": "Carlip: the most direct hit. Explicitly identifies the LQG horizon boundary term with Liouville CFT with central charge c=6k (where k=iA/(8*pi*G) is the Chern-Simons level); Sections 5-6 apply the Cardy formula with this central charge to derive S=A/(8G) for imaginary Barbero-Immirzi gamma=i. This covers the core mathematical claim of the hypothesis (Cardy formula hidden in LQG via c=6k from the CS level). Does NOT compare gamma to c=6*Q1*Q5 from string D-brane counting."
+      },
+      {
+        "title": "Horizon Entropy with Loop Quantum Gravity Methods",
+        "arxiv": "1412.7435",
+        "year": 2014,
+        "relation": "Pranzetti-Sahlmann: SU(2) isolated horizon as 3D first-order gravity; Bekenstein-Hawking recovered for imaginary Barbero-Immirzi parameter. Confirms the boundary-CFT/3D-gravity identification used in the hypothesis."
+      }
+    ],
+    "whatRemainsNovel": "Two specific claims were not found published explicitly: (1) The explicit comparative framing that the Immirzi parameter gamma plays the same structural role in LQG as c=6*Q1*Q5 plays in the Strominger-Vafa D-brane counting — i.e., that gamma is a LQG *central-charge normalizer* and that the two quantities are functionally analogous across the LQG/string divide. No paper states this cross-theory identification. (2) The specific prediction that the Cardy/CS logarithmic correction coefficient selects a unique *real* value of gamma (approximately 0.274) by demanding that the LQG log term -1/2 ln A (U(1) ensemble) or -3/2 ln A (SU(2) Engle-Noui-Perez) matches the universal Cardy log term -3/2 ln c computed from c=6k — i.e., using the log correction as a CFT consistency condition to fix gamma without phenomenological input. This reverse-engineering of gamma from a CFT log-matching condition is absent from the literature surveyed.",
+    "recommendation": "reframe",
+    "notes": "Jádro hypotézy — efektivní centrální náboj c = 6k z CS levelu a Cardyho formule v LQG horizonu — je explicitně publikováno (Carlip 1410.5763, Ghosh–Pranzetti 1405.7056). Hypotéza v aktuální formulaci je tedy z velké části 'known'. Zbývají dva nepokryté prvky: explicitní analogie γ ↔ c = 6Q₁Q₅ přes hranici LQG/string, a predikce, že Cardyho logaritmická korekce fixuje reálné γ ~ 0.274 bez fenomenologického vstupu. Doporučuje se přeformulovat hypotézu tak, aby se soustředila právě na tyto dva body, které mají potenciál být plausibly-novel a testovatelné."
+  },
+  {
+    "cluster": "preprint-checks (L4-2, L4-5/L4-6, L5-3, L2-1)",
+    "verdict": "partially-known",
+    "priorArt": [
+      {
+        "title": "Asymptotic safety, quantum gravity, and the swampland: a conceptual assessment",
+        "arxiv": "2502.12290",
+        "year": 2026,
+        "relation": "L4-2: Basile, Knorr, Platania, Schiffer directly map the AS vs. no-global-symmetries tension. They identify that robust derivations of no-global-symmetries (via topology change + BH thermodynamics + holography) are hard to implement in strict field-theoretic AS, framing the conflict as an open question with loopholes. They do not perform the FRG coefficient calculation our hypothesis proposes."
+      },
+      {
+        "title": "Constraints on discrete global symmetries in quantum gravity",
+        "arxiv": "2012.07868",
+        "year": 2021,
+        "relation": "L4-2: Eichhorn et al. collect evidence that within AS, discrete Z_n (n>4) global symmetries cannot be realized in a near-perturbative regime — AS here enforces, rather than violates, no-global-symmetries for discrete cases."
+      },
+      {
+        "title": "A non-local way around the no-global-symmetries conjecture in quantum gravity?",
+        "arxiv": "2407.09595",
+        "year": 2024,
+        "relation": "L4-2: Proposes a non-AS mechanism (non-local gravitational action from integrating out matter) to suppress black-hole configurations and evade no-global-symmetries. Adjacent but different from the AS FRG fixed-point route."
+      },
+      {
+        "title": "Classical gravity cannot mediate entanglement",
+        "arxiv": "2511.07348",
+        "year": 2025,
+        "relation": "L4-5: Marletto, Oppenheim, Vedral, Wilson respond to Aziz-Howl Nature 2025. They show that in the nonrelativistic limit the interaction becomes ultra-local, the total unitary factorizes, and no entanglement is generated from a product input. The arXiv ID cited in the brainstorm is verified and resolves correctly."
+      },
+      {
+        "title": "Comment on Classical-Gravity–Quantum-Matter Claims About Gravity-Mediated Entanglement",
+        "arxiv": "2511.20717",
+        "year": 2025,
+        "relation": "L4-5: Sienicki & Sienicki, channel-theoretic reformulation supporting arXiv:2511.07348. Third piece of the rebuttal exchange cited in our brainstorm. Verified."
+      },
+      {
+        "title": "Classical gravity cannot mediate entanglement on independent grounds (Schneider, Huggett, Linnemann)",
+        "arxiv": "2511.19242",
+        "year": 2025,
+        "relation": "L4-5: Newton-Cartan analysis independently concluding classical gravity cannot mediate entanglement. This is the Schneider-Huggett-Linnemann paper. Verified. Not a direct reply to 2511.07348 but a parallel independent argument."
+      },
+      {
+        "title": "Classical theories of gravity produce entanglement (Aziz & Howl)",
+        "year": 2025,
+        "relation": "L4-5: Nature vol. 646 (2025), DOI: 10.1038/s41586-025-09595-7. The original claim that QFT-coupled classical gravity can generate entanglement. The rebuttal chain targets this paper. Citation in brainstorm verified."
+      },
+      {
+        "title": "Double scaling limits of Dirac ensembles and Liouville quantum gravity",
+        "arxiv": "2204.14206",
+        "year": 2023,
+        "relation": "L2-1: Hessam, Khalkhali, Pagliaroli. Establishes the NCG-Dirac-ensemble → Liouville CFT + gravity link via double scaling limit; Painlevé I arises as reduction of KdV hierarchy. This is the two-sided NCG↔Liouville part of L2-1, which is fully published."
+      },
+      {
+        "title": "Coloured combinatorial maps and quartic bi-tracial 2-matrix ensembles from noncommutative geometry",
+        "arxiv": "2312.10530",
+        "year": 2024,
+        "relation": "L2-1: Khalkhali, Pagliaroli. 2-matrix Dirac ensemble gives string susceptibility γ=1/2, universality class is the continuous random tree — different from Liouville. Shows that within NCG Dirac ensembles, different models fall into different universality classes; the three-way NCG=GFT=CDT claim needs to specify which model."
+      },
+      {
+        "title": "On the (Non)Hadamard Property of the SJ State in a 1+1D Causal Diamond",
+        "arxiv": "2212.10592",
+        "year": 2022,
+        "relation": "L5-3: Shows the SJ state is not Hadamard at the boundary of the 1+1D causal diamond. Confirms the Hadamard deficiency of SJ states in simple geometries. Only treats the causal diamond, not Kerr or SdS."
+      },
+      {
+        "title": "Studies on the SJ vacuum in de Sitter spacetime",
+        "year": 2019,
+        "relation": "L5-3: JHEP 2019. SJ vacuum computed on de Sitter background; does not correspond to any known Mottola-Allen vacuum. The Hadamard issue in dS is present but unresolved. Kerr and SdS remain untreated."
+      }
+    ],
+    "whatRemainsNovel": "(a) L4-2: The specific FRG calculation — whether the global-charge operator coefficient is exactly zero at the AS fixed point — has not been explicitly performed in any found paper. Basile et al. frame the tension qualitatively; the quantitative FRG test is new. (b) L4-5: The framing that BMV/QGEM discriminates between different quantum gravity approaches (AS graviton spectral function vs. Verlinde entropic mediator), rather than merely quantum vs. classical gravity, does not appear in the literature. The rebuttal exchange citations (2511.07348, 2511.19242, 2511.20717, Nature 2025) are all verified and accurately cited. (c) L4-6: No found paper inserts a 1/p^4 AS propagator into the Hamada-Noumi-Shiu WGC framework to compute the sign of δ(Q/M). This computation is novel. (d) L5-3: The SJ state has never been constructed for Kerr or Schwarzschild-de Sitter spacetime in any found paper; this is genuinely open territory. (e) L2-1: The two-sided NCG↔Liouville link (Khalkhali group) is published. The three-way claim NCG = GFT = CDT sharing the same Liouville/Painlevé I universality class has not been synthesized in any single paper; the GFT side of the bridge is missing from Khalkhali's published work.",
+    "recommendation": "reframe",
+    "notes": "Pro L4-2 je potřeba aktualizovat texty tak, aby odrážely, že Basile et al. (2502.12290) tento konflikt již mapují jako otevřenou otázku — naše přidaná hodnota je konkrétní FRG výpočet, nikoli identifikace samotného konfliktu. Pro L4-5/L4-6 jsou všechny citované arXiv preprints a Nature paper ověřeny a platné; framing L4-5 (AS vs. Verlinde, ne Q vs. C) je legitimně nový a měl by být zachován a explicitněji zdůrazněn. Pro L5-3 je situace příznivá — SJ pro Kerr/SdS je skutečně nepokryté území, stačí přidat odkaz na Fewster-Verch a Kay-Wald jako sousední literaturu. Pro L2-1 je třeba odlišit publikovanou NCG↔Liouville část od nepublikované trojstranné syntézy a ověřit, zda CDT a GFT modely skutečně leží ve stejné universální třídě jako příslušný Dirac ensemble model."
+  }
+]

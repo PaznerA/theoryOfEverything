@@ -1,0 +1,1380 @@
+[
+  {
+    "id": "emergence-of-time",
+    "statement": "Derive the emergence of the time dimension and causality (not just the radial/spatial direction) from boundary quantum-information data.",
+    "whyHard": "Time is tied to the problem of time (Wheeler-DeWitt H|psi>=0); modular 'time' is not geometric time, and Lorentzian signature lacks a positive-definite density matrix to entangle.",
+    "attempts": "Half-sided modular flow, Connes cocycle, kink transform; pseudo-entropy and timelike entanglement in de Sitter / cosmological holography.",
+    "pillars": [
+      "entanglement-spacetime",
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "lorentzian-vs-euclidean",
+    "statement": "Establish asymptotic safety directly in Lorentzian (real-time) signature, since most evidence is Euclidean and there is no simple background-independent Wick rotation in gravity.",
+    "whyHard": "A Wick rotation needs a global time structure that fluctuating quantum geometry may lack, and different foliations give different flows; covariant Lorentzian flows are state-dependent.",
+    "attempts": "Covariant Lorentzian FRG (D'Angelo 2024) and foliated AS via Wick rotation (Saueressig-Wang 2023) find a fixed point in Einstein-Hilbert truncation; graviton spectral-function studies extend this.",
+    "pillars": [
+      "asymptotic-safety"
+    ]
+  },
+  {
+    "id": "unitarity-ghosts",
+    "statement": "Determine whether asymptotically safe gravity is unitary, in particular whether higher-derivative operators generate physical Ostrogradski ghosts at the fixed point.",
+    "whyHard": "Ghost poles must be analysed non-perturbatively at the physical fixed-point couplings rather than in a perturbative expansion; spectral positivity is required but not guaranteed by truncations.",
+    "attempts": "UV-decreasing e+e- -> mu+mu- cross section (2024) and a positive graviton spectral function with unit weight (2025) give strong, though not conclusive, evidence for unitarity.",
+    "pillars": [
+      "asymptotic-safety"
+    ]
+  },
+  {
+    "id": "background-independence-problem",
+    "statement": "Reconcile the coarse-graining cutoff k, which requires an auxiliary background metric, with full background independence of the quantum theory.",
+    "whyHard": "Gamma_k depends on two metric arguments and only the modified (split) Ward identities relate them; solving these identities across general backgrounds is technically demanding.",
+    "attempts": "Bimetric and fluctuation-field approaches (Pawlowski, Reichert and collaborators) compute split Ward identities, but results still scatter across approximations.",
+    "pillars": [
+      "asymptotic-safety"
+    ]
+  },
+  {
+    "id": "truncation-scheme-dependence",
+    "statement": "Prove that the Reuter fixed point and its critical exponents converge as truncations are enlarged and that they are scheme-independent observables.",
+    "whyHard": "There is no small expansion parameter, so convergence is empirical ('apparent convergence'); only some quantities (g* lambda*, leading exponents) are robustly universal.",
+    "attempts": "High-order f(R) truncations to R^34+ show convergence; Donoghue (2019) argues the running disagrees with explicit low-energy calculations, keeping the issue open.",
+    "pillars": [
+      "asymptotic-safety"
+    ]
+  },
+  {
+    "id": "observables-from-fixed-point",
+    "statement": "Construct genuine physical observables (S-matrix elements, cosmological signatures) from the fixed-point RG data, including an unambiguous identification of the RG scale k with a physical scale.",
+    "whyHard": "The fixed point lives in dimensionless theory space; mapping to dimensionful observables requires a scale identification that is not unique, and Planck-scale S-matrix measurements are inaccessible.",
+    "attempts": "RG-improved black holes and cosmology, plus AS Standard-Model scattering computations, but no agreed observable program yet.",
+    "pillars": [
+      "asymptotic-safety"
+    ]
+  },
+  {
+    "id": "nonperturbative-existence",
+    "statement": "Prove the existence of the Reuter fixed point in the full (untruncated) theory space, not just in finite truncations.",
+    "whyHard": "The Wetterich equation is a non-linear functional differential equation in an infinite-dimensional space; complementary methods (CDT, tensor models) give evidence, not a proof.",
+    "attempts": "Ever-larger truncations, lattice/CDT cross-checks, and tensor-model studies all support but do not prove existence.",
+    "pillars": [
+      "asymptotic-safety"
+    ]
+  },
+  {
+    "id": "full-standard-model-compatibility",
+    "statement": "Determine whether the Reuter fixed point survives when coupled to the complete interacting Standard Model and whether the system stays below the weak-gravity bound.",
+    "whyHard": "Gravitational fluctuations can generate complex fixed points in the scalar sector above a critical strength; the answer is sensitive to truncation and to inclusion of all Yukawa and quartic couplings.",
+    "attempts": "Dona-Eichhorn-Percacci (2014) compatibility analysis, weak-gravity-bound studies (2021) showing spinning matter helps, and AS Standard-Model scattering (2024).",
+    "pillars": [
+      "asymptotic-safety"
+    ]
+  },
+  {
+    "id": "information-escape-mechanism",
+    "statement": "The island formula gives the entropy of the radiation but not its precise quantum state or the local mechanism by which interior information escapes the black hole.",
+    "whyHard": "Semiclassical effective field theory near the horizon offers no channel for escape; replica wormholes live in the path integral, not in any single spacetime.",
+    "attempts": "Entanglement-wedge reconstruction, Hayden-Preskill decoding, state dependence, Petz map.",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "factorization-puzzle",
+    "statement": "The gravitational path integral with wormholes implies ensemble averaging, yet a genuine CFT (as in AdS/CFT) is a single theory, not an ensemble; partition functions for disconnected boundaries fail to factorize.",
+    "whyHard": "Reconciling a single unitary theory with results that look like an ensemble average; defining which topologies and contours to include.",
+    "attempts": "Alpha-states, baby-universe Hilbert space, half-wormholes, JT-gravity matrix-integral models.",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "massive-vs-massless-graviton-islands",
+    "statement": "Do islands and the Page curve require a massive graviton or a non-dynamical bath, or do they hold in asymptotically flat space with long-range (massless) gravity?",
+    "whyHard": "Holography of information and the split property suggest information cannot be localized in a compact island when gravity is long-range.",
+    "attempts": "Massive islands conjecture (Geng-Karch), inconsistency arguments (Raju et al.), An Apologia for Islands (2025), calculations at null infinity.",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "interior-state-dependence",
+    "statement": "Are operators describing the black-hole interior necessarily state-dependent (Papadodimas-Raju), and is this compatible with ordinary quantum mechanics?",
+    "whyHard": "State dependence appears to conflict with the universality of quantum observables and the linearity of measurement.",
+    "attempts": "Papadodimas-Raju mirror operators, Python's lunch geometrization, critiques by Marolf-Polchinski.",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "evaporation-endpoint",
+    "statement": "What happens at the very endpoint of evaporation and at the singularity: a remnant, complete evaporation, or a transition to Planck-scale physics?",
+    "whyHard": "Requires full quantum gravity; remnants suffer infinite production and degeneracy, while complete disappearance must account for information in the last quanta.",
+    "attempts": "Remnant scenarios, fuzzball/microstate endpoints, swampland-style bounds against remnants.",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "unitary-s-matrix-construction",
+    "statement": "Can an explicit unitary S-matrix for black-hole formation and evaporation be constructed, giving the precise quantum state of the radiation?",
+    "whyHard": "No controlled calculation exists beyond semiclassics or low-dimensional (JT) models; superposing geometries is not understood.",
+    "attempts": "JT gravity, double-scaled SYK, microstate geometries, celestial S-matrix programs.",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "firewall-or-smooth-horizon",
+    "statement": "Is the horizon of an old black hole smooth, or is there a firewall / fuzz?",
+    "whyHard": "Entanglement monogamy (AMPS) pushes toward a firewall, while ER=EPR and islands claim the interior is not independent of the radiation.",
+    "attempts": "ER=EPR, A=R_B identification, island reconstruction without firewalls, fuzzball alternatives.",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "universality-across-dimensions",
+    "statement": "Most exact results are in 2D (JT) or doubly-holographic models; does the same picture hold for realistic 4D astrophysical (rotating, uncharged, asymmetric) black holes?",
+    "whyHard": "QES and islands are hard to compute without high symmetry or a holographic dual.",
+    "attempts": "Islands in Kerr/Schwarzschild, eternal AdS_d black holes, numerical relativity inputs.",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "path-integral-status",
+    "statement": "Which saddles (topologies, contours, replica wormholes) should be included in the gravitational path integral, and is the wormhole contribution real physics of a single theory or an artifact of averaging?",
+    "whyHard": "The gravitational path integral is not rigorously defined; contour choice (Kontsevich-Segal, Euclidean vs Lorentzian) is ambiguous.",
+    "attempts": "Half-wormholes, allowable complex metrics (Witten), constrained instantons.",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "entropy-interpretation-observer",
+    "statement": "The algebraic approach yields a type II von Neumann entropy only after choosing an observer; what is the correct fine-grained entropy and how does it relate to microstate counting (Strominger-Vafa, LQG)?",
+    "whyHard": "Different observers see different algebras; the relation of Wald's dynamical entropy to microstate counting is open.",
+    "attempts": "Crossed-product constructions, type II_1/II_infinity algebras, comparison with string and LQG microstate counts.",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "uv-continuum-limit",
+    "statement": "Does CDT possess a genuine nontrivial continuum (UV) limit, i.e. a second/higher-order critical point realizing the asymptotic-safety (Reuter) fixed point?",
+    "whyHard": "Requires controlled extrapolation to infinite volume and zero lattice spacing with strong finite-size effects; correlation-length notions differ fundamentally from fixed-background field theory in a background-independent setting.",
+    "attempts": "Lines of constant physics (2014); identification of the B-C / C_dS-C_b second-order line; direct CDT-FRG comparison (2024) which allows but does not prove a UV fixed point.",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "bifurcation-phase-meaning",
+    "statement": "What is the physical meaning of the bifurcation phase C_b and its singular vertices of very high order, and where exactly are the C_dS-C_b and B-C_b transitions?",
+    "whyHard": "C_b contains vertices of near-infinite local connectivity whose continuum interpretation is unclear; the apparent transition order and location depend on the volume-fixing scheme used in simulations.",
+    "attempts": "Discovery and characterization (2016-2017); transfer-matrix bifurcation analysis; toroidal-topology confirmation of higher-order B-C_b (2020).",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "foliation-vs-diffeomorphism",
+    "statement": "Is the preferred global time foliation a physical feature of quantum gravity or merely a technical regulator, and is full 4D diffeomorphism invariance recovered in the continuum?",
+    "whyHard": "Introducing a foliation seemingly breaks 4D diffeomorphism invariance; disentangling physical anisotropy from gauge artefact requires comparison with foliation-free formulations.",
+    "attempts": "Argument that CDT works on metrics modulo diffeomorphisms (Loll); 'CDT without preferred foliation' studies; the 2D CDT = Horava-Lifshitz equivalence suggests genuine anisotropy.",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "local-tensor-observables",
+    "statement": "How can local/tensorial observables (graviton propagator, Ricci tensor, curvature correlators) be defined and measured on singular triangulated geometries?",
+    "whyHard": "Tensor calculus is ill-defined on simplicial, conically singular configurations; CDT naturally yields only global volume/diffusion observables.",
+    "attempts": "Quantum Ricci curvature (2018); quantum-Ricci and effective-topology observables; topological data analysis (2025) as scalar curvature/topology proxies.",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "matter-backreaction",
+    "statement": "How does CDT behave with fully dynamical, interacting matter (gauge fields, fermions) and matter backreaction in 4D?",
+    "whyHard": "Enlarged configuration space and correlated geometry-matter sampling are computationally expensive; fermions face sign problems; gauge fields need gauge-invariant lattice observables.",
+    "attempts": "Free/weakly interacting massless scalars (2021); preliminary Hodge-Laplacian-based gauge-field observables; no full backreacting interacting matter yet.",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "background-independent-renormalization",
+    "statement": "How should renormalization and the running of couplings be defined consistently in a background-independent lattice theory of gravity?",
+    "whyHard": "Standard correlation-length and scale notions presuppose a fixed background; in CDT the 'scale' must be defined via the dynamically generated universe, which is conceptually and operationally subtle.",
+    "attempts": "Lines of constant physics; CDT-FRG matching of the scale-factor effective action (2024); running cosmological constant tied to the Hubble scale in EDT (2024).",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "physical-constants-prediction",
+    "statement": "Can CDT predict the physical values (or at least dimensionless ratios) of Newton's and the cosmological constant from the bare lattice couplings?",
+    "whyHard": "Translating (kappa_0, Delta, Gamma) into G and Lambda depends on the scaling behaviour near the as-yet-uncontrolled continuum transition; absolute normalization is not fixed.",
+    "attempts": "Extraction of G from the measured fluctuation coupling Gamma via sqrt(V_4)/Gamma = sqrt(V_4)/(24 pi G); running-Lambda studies in EDT.",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "cdt-horava-4d",
+    "statement": "Is 4D CDT a (projectable) Horava-Lifshitz quantum gravity, as is rigorously the case in 2D?",
+    "whyHard": "The 4D equivalence is only qualitative (matching phase diagrams) and lacks an analytic derivation; the continuum effective field theory of 4D CDT is not known in closed form.",
+    "attempts": "Phase-diagram resemblance argument (2010); rigorous 2D equivalence (2013); ongoing search for the 4D continuum effective action.",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "fundamental-quantum-dynamics",
+    "statement": "Construct a satisfactory quantum dynamics for causal sets from first principles, i.e. a well-defined quantum measure / path integral sum_C exp(i S_BD/hbar) over causal sets with covariant observables and an interpretation valid for a single closed universe.",
+    "whyHard": "The Lorentzian, non-simplicial path integral is oscillatory with no Wick rotation; covariant observables are hard to define; standard probability is replaced by a non-additive quantum measure (anhomomorphic logic) lacking a finished interpretation.",
+    "attempts": "Classical sequential growth (Rideout-Sorkin 1999), quantum sequential growth and decoherence-functional approaches, Sorkin's quantum measure / coevent program, and 2025 quantum-enhanced Monte Carlo sampling of the BD action.",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "entropy-problem",
+    "statement": "Show that the dynamics suppresses entropically dominant Kleitman-Rothschild (three-layer) posets and other non-manifoldlike causal sets, so that manifoldlike spacetime emerges in the continuum limit.",
+    "whyHard": "The number of posets grows like 2^(n^2/4), so configurational entropy of bad sets vastly outnumbers manifoldlike ones; the path-integral phase from S_BD must cancel this, which is shown only for large subclasses, not all.",
+    "attempts": "Loomis-Carlip 2017, Carlip 2022/2024, and P. Carlip-S. Carlip-Surya 2024 show strong suppression of KR and many non-manifoldlike sets in the path integral, but the surviving unsuppressed class is not yet understood.",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "dimension-selection",
+    "statement": "Explain why the emergent continuum should be four-dimensional rather than any other dimension.",
+    "whyHard": "Neither the kinematics nor the BD action manifestly prefers d=4; dimension appears as an emergent property tangled with the entropy problem and the structure of dominant configurations.",
+    "attempts": "Dimension estimators (Myrheim-Meyer, midpoint scaling) characterize d but do not select it; spectral-dimension studies show flow to ~2 at short scales; no dynamical selection mechanism for d=4 yet.",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "hauptvermutung-proof",
+    "statement": "Prove the Hauptvermutung: a causal set faithfully embeds into two spacetimes at fixed density iff they are approximately isometric (the causet fixes its continuum up to approximate isometry).",
+    "whyHard": "Requires a canonical notion of distance/closeness on the space of Lorentzian geometries, itself an open problem; counterexamples and ambiguities arise for finite sets.",
+    "attempts": "Bombelli-Meyer closeness functions; Noldus Lorentzian Gromov-Hausdorff-like distances; Müller 2025 disambiguates the conjecture (one form false, one true) and proves the countable case.",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "nonlocality-qft-control",
+    "statement": "Develop a controlled, renormalizable quantum field theory consistent with the inherent nonlocality of the causal-set d'Alembertian, including stability and a sensible continuum/IR limit.",
+    "whyHard": "Lorentz invariance forbids finite-neighbourhood locality, forcing nonlocal operators that introduce extra modes, potential instabilities, and ambiguous renormalization.",
+    "attempts": "Generalized/mesoscale d'Alembertians (Aslanbeigi-Saravani-Sorkin 2014), SJ-vacuum QFT, off-shell dark matter from nonlocality (Saravani 2015), and recent in-in/in-out correlator and S-matrix formulations.",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "area-vs-volume-entropy",
+    "statement": "Explain why the spacetime entanglement entropy on causal sets obeys a volume law and identify the physically correct UV truncation that yields the holographic area law S = A/4.",
+    "whyHard": "Discreteness alone fails to regulate the entropy to an area law; an ad hoc spectral truncation of the Pauli-Jordan operator is needed, whose physical origin is unclear, putting CST in tension with holography.",
+    "attempts": "Sorkin-Yazdi 2018, de Sitter horizon studies (2020-2021), spacetime-EE covariance/discreteness papers (2022), and distinguished-vacuum principle work (2024).",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "covariant-observables-problem",
+    "statement": "Construct a complete set of covariant (label-independent) physical observables for general and quantum causal-set dynamics.",
+    "whyHard": "In a coordinate-free generally covariant discrete theory there are no natural localized quantities; predictions must be expressed via the order alone, and the quantum (interference) case has no additive probability measure.",
+    "attempts": "Covariant 'stem' observables and the Bell-causality/general-covariance framework for CSG (Brightwell-Dowker-Garcia-Henson-Sorkin), partial results only for the classical stochastic regime.",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "continuum-and-boundary-terms",
+    "statement": "Recover smooth continuum geometry, the Hamiltonian/canonical description, and Gibbons-Hawking-type boundary terms from purely order-theoretic data.",
+    "whyHard": "There is no manifold, foliation, or differentiable structure to start from; boundary contributions and a canonical/Hamiltonian formulation must be reconstructed combinatorially.",
+    "attempts": "Boundary-term analyses for the BD action (Buck-Dowker-Jubb-Surya), spatial-hypersurface and 'molecule'-based constructions; still incomplete.",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "global-time-problem",
+    "statement": "No globally valid, monotonic clock variable exists on the full constraint surface even when local deparametrization works.",
+    "whyHard": "Superspace topology and the nonlinear scalar constraint produce turning points where the clock momentum vanishes and Gribov ambiguities; different clock choices yield inequivalent, often non-unitary, quantizations.",
+    "attempts": "Page-Wootters with covariant POVM clocks, multi-fingered time extensions, the trinity equivalence, effective/relational time in LQC; all succeed locally, none globally.",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "physical-inner-product",
+    "statement": "There is no canonical, positive-definite, gauge-invariant inner product on solutions of the Wheeler-DeWitt constraint, so probabilities are ill-defined.",
+    "whyHard": "The DeWitt supermetric is indefinite and the constraint spectrum typically contains zero in its continuous part; group-averaging/refined algebraic quantization require choices and do not always converge.",
+    "attempts": "Refined algebraic quantization, group averaging, Rieffel induction, conditional probabilities; partial successes in minisuperspace.",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "observables-full-gravity",
+    "statement": "Relational Dirac observables are formally defined but practically incomputable beyond minisuperspace and deparametrizable matter models.",
+    "whyHard": "They are infinite power series of nested Poisson brackets with the nonlocal scalar constraint; in the deep quantum regime there is no classical subsystem to serve as a reference frame.",
+    "attempts": "Brown-Kuchar dust, scalar reference fields, Dittrich's construction, perturbative/relational frameworks; GFT relational dynamics.",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "define-background-independence",
+    "statement": "There is no agreed precise definition of background independence, blocking meaningful comparison of approaches.",
+    "whyHard": "Diffeomorphism invariance, absence of absolute objects, and full dynamicality of geometry are conflated; the LQG-string dispute may be partly verbal.",
+    "attempts": "Anderson's absolute-object analysis, Giulini, Pooley (2017), Read (2023); no consensus.",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "cosmological-constant",
+    "statement": "Derive the observed Lambda ~ 10^-122 M_Pl^4 from first principles without fine-tuning or anthropics.",
+    "whyHard": "Weinberg's no-go forbids generic local solutions; the problem links UV vacuum energy to IR cosmology and resists symmetry protection.",
+    "attempts": "Landscape+anthropics, unimodular gravity, sequestering, nonlocal/infinite-derivative gravity, Sorkin's causal-set fluctuation (right order of magnitude).",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "singularity-resolution-full",
+    "statement": "Whether quantum gravity generically resolves singularities (bounce) in full inhomogeneous spacetimes, not just symmetry-reduced models.",
+    "whyHard": "Singularity theorems use classical energy conditions and the GSL whose quantum analogues are only partially proven; species-scale arguments show some singularities worsen.",
+    "attempts": "LQC big bounce, effective dynamics, Penrose-Wall theorem at species scale, string/brane resolutions of specific singularities.",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "measurement-in-closed-universe",
+    "statement": "How definite outcomes and classicality arise when the observer is inside a closed, unitarily evolving quantum universe.",
+    "whyHard": "Decoherence needs an external environment and a pointer basis, both unavailable for the whole universe; candidate ontologies (many-worlds, relational QM, collapse, QRF) are mutually incompatible.",
+    "attempts": "Decoherent histories, relational QM, gravitational collapse, quantum reference frames, crossed-product observer algebras.",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "is-gravity-quantum",
+    "statement": "Whether gravity is fundamentally a quantum field or can remain classical.",
+    "whyHard": "Eppley-Hannah is refuted, BWGCBA relies on assumptions, and consistent classical-quantum theories (Oppenheim) exist; only experiment (BMV entanglement or spacetime diffusion) can decide, both at the technological edge.",
+    "attempts": "BMV interferometry, Gran Sasso emission tests, spacetime-diffusion bounds, decoherence-diffusion trade-off.",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "locality-unitarity-reconciliation",
+    "statement": "Reconcile black-hole unitarity with horizon smoothness without an ad hoc loss of locality.",
+    "whyHard": "Entanglement monogamy plus effective field theory at the horizon plus unitarity are jointly inconsistent (firewall); resolutions invoke nonlocality whose microscopic origin is unclear.",
+    "attempts": "Islands/replica wormholes, ER=EPR, complementarity, holography, fuzzballs, nonlocal qubits.",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "classical-entanglement-controversy",
+    "statement": "Settle whether classical gravitational interaction can generate entanglement, which determines if BMV is a clean witness of quantum gravity.",
+    "whyHard": "Disagreement on what counts as a local mediator and whether local tomography holds; the same model is argued to entangle or not depending on which amplitudes are retained.",
+    "attempts": "Aziz-Howl (yes, locally), Marletto-Oppenheim-Vedral-Wilson and Gundhi et al. (no); ongoing 2025-26 debate.",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "atoms-of-spacetime",
+    "statement": "Identify the microscopic degrees of freedom ('atoms of spacetime') whose statistical mechanics reproduces S = A/4 l_P^2 and the Einstein equation.",
+    "whyHard": "The thermodynamic derivations give only an equation of state, which is by construction insensitive to microscopic details; horizon entropy is universal and observer-dependent (Rindler), making the inverse problem ill-posed.",
+    "attempts": "LQG spin-network counting, causal-set link counting (Dou-Sorkin), induced-gravity field content, and entanglement-based 'it from qubit' programs each supply candidate microstates but none is established as THE microtheory.",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "induced-G-sign-and-cc",
+    "statement": "Show that Sakharov-style integrating-out of matter gives the correct sign and magnitude of Newton's constant while not generating a huge cosmological constant.",
+    "whyHard": "1/G_ind ~ Lambda_UV^2 and Lambda_0 ~ Lambda_UV^4 depend on a delicate boson/fermion balance at the UV cutoff where the effective theory breaks down; the sign can come out wrong.",
+    "attempts": "Supersymmetric cancellations, specific field-content tuning, and reformulations on AdS backgrounds; CosMIn and Bianconi's G-field address Lambda but by postulate.",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "equilibrium-vs-entropy-production",
+    "statement": "Determine when spacetime is 'in equilibrium' (reversible delta Q = T dS giving Einstein) versus when internal entropy production (giving f(R)/viscosity) is required.",
+    "whyHard": "The boundary between equilibrium and non-equilibrium thermodynamics of horizons is imposed by hand and lacks a microscopic justification.",
+    "attempts": "Eling-Guedens-Jacobson bulk/shear viscosity terms; Chirco-Liberati origin-of-entropy-production analyses; still no first-principles criterion.",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "verlinde-covariant-and-clusters",
+    "statement": "Provide a fully covariant, Lagrangian formulation of Verlinde's 2016 emergent gravity that also fits galaxy clusters and respects solar-system constraints.",
+    "whyHard": "The de Sitter volume-law entropy and 'elastic' response are heuristic, mix relativistic (Mc^2) and non-relativistic notions, lack a variational principle, and underpredict cluster cores by a factor of 2-3.",
+    "attempts": "Numerous phenomenological fits (Brouwer pass, Lelli/Hodson-Zhao fail); Hossenfelder's covariant version of a Verlinde-like force; no complete theory yet.",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "entropic-decoherence",
+    "statement": "Reconcile an entropic/statistical origin of gravity with the observed quantum coherence of gravitationally bound states (qBounce, neutron interferometry).",
+    "whyHard": "Genuinely entropic forces should be noisy and induce decoherence that ultracold-neutron experiments do not see.",
+    "attempts": "Kobakhidze's no-go; rebuttals by Chaichian-Oksanen-Tureanu; decoherence-free open-system models (TU Wien) that evade it with extra assumptions.",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "what-analogues-prove",
+    "statement": "Determine what, if anything, analogue Hawking radiation establishes about astrophysical black holes and trans-Planckian robustness.",
+    "whyHard": "The astrophysical target is experimentally inaccessible; inferring it from analogues requires assuming the modelling framework's adequacy, which critics call question-begging.",
+    "attempts": "Dardashti et al. Bayesian universality arguments for confirmation; Crowther-Linnemann-Wuthrich circularity counterargument; unresolved.",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "beyond-semiclassical",
+    "statement": "Establish whether the emergent/thermodynamic picture survives beyond the semiclassical regime and how it meshes with theories that quantize the metric.",
+    "whyHard": "Horizon thermodynamics is intrinsically semiclassical; the emergent program and the quantization program make opposite assumptions about what is fundamental.",
+    "attempts": "Entanglement-equilibrium and bulk-entanglement-gravity push toward Hilbert-space formulations; connections to AdS/CFT exist but a full quantum completion does not.",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "second-law-and-arrow",
+    "statement": "Explain the origin and validity of a generalized second law and the thermodynamic arrow of time within emergent gravity.",
+    "whyHard": "If gravity is thermodynamic, the second law should be derivable, but horizon entropy is observer-dependent and lacks an agreed microscopic ensemble.",
+    "attempts": "Generalized second law proofs (Wall), Jacobson-Parentani analyses; remains conceptually open in the emergent framework.",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "emergence-beyond-ads",
+    "statement": "Formulate emergence of spacetime from entanglement outside AdS - in de Sitter and asymptotically flat space.",
+    "whyHard": "dS/CFT duals are non-unitary; cosmology has no AdS-like asymptotic boundary on which entanglement can be anchored, so RT surfaces and the dictionary are absent.",
+    "attempts": "dS/CFT (Strominger), de Sitter connectivity from holographic entanglement (2024), celestial/Carrollian holography, timelike-entanglement probes.",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "replica-wormhole-microscopics",
+    "statement": "Provide a microscopic, single-theory interpretation of replica wormholes and resolve the factorization puzzle.",
+    "whyHard": "Replica wormholes imply the gravitational path integral computes an ensemble average, conflicting with factorization of a product-CFT partition function; no microscopic account exists in d>2.",
+    "attempts": "Ensemble interpretations in JT gravity (2D), half-wormholes, baby universes / alpha-states.",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "which-entanglement-gives-geometry",
+    "statement": "Find a sufficient criterion for which entanglement structures yield a classical bulk geometry.",
+    "whyHard": "Not every entangled state has a geometric dual; maximal entanglement destroys reconstructable spacetime, and holographic-looking CFTs (symmetric orbifolds) can be a 'mirage' without genuine geometry.",
+    "attempts": "Holographic entropy cone inequalities, large-N factorization, code-subspace / convexity conditions, mirage critiques (JHEP 2025).",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "background-independent-emergence",
+    "statement": "Make the emergence of the full background (topology, cosmology) - not just perturbations about fixed AdS - follow from information-theoretic principles.",
+    "whyHard": "AdS/CFT presupposes fixed asymptotics; there is no boundary-free formulation, unlike background-independent approaches (LQG, spin foams, causal sets).",
+    "attempts": "Tensor-network and algebraic (subregion-subalgebra) constructions; speculative 'It from BC-bit' (Van Raamsdonk II).",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "complexity-definition",
+    "statement": "Give an unambiguous definition of holographic complexity and resolve the CV vs CA (and 'complexity=anything') ambiguity.",
+    "whyHard": "Quantum computational complexity depends on choice of reference state, gate set and tolerance; CV and CA differ by volume-order terms and there is no canonical normalization for null boundaries.",
+    "attempts": "Complexity=anything family, Nielsen geometric complexity, Krylov/spread complexity, first-law of complexity.",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "qfc-general-proof",
+    "statement": "Prove the quantum focusing conjecture in general, dynamical gravitational backgrounds.",
+    "whyHard": "Requires control of S_gen and its second null variation in fully dynamical gravity, where S_bulk is not computable; current proofs cover only free or holographic QFTs.",
+    "attempts": "Holographic proof of QNEC (2016), free-field proofs, restricted (e.g. perturbative AdS) QFC arguments.",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "qg-in-lab-realism",
+    "statement": "Determine whether laboratory simulations (sparsified SYK on quantum processors) realize genuine emergent gravitational dynamics or merely generic chaotic scrambling.",
+    "whyHard": "Distinguishing wormhole/gravitational signatures (size winding, Shapiro delay) from generic thermalization requires implementation-independent diagnostics; sparsification may discard gravity-relevant structure.",
+    "attempts": "Sycamore experiment (2022) and follow-up critiques/comments (2023); proposals for sharper observables.",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "liv-source-degeneracy",
+    "statement": "Energy-dependent time-of-flight delays from LIV cannot be cleanly separated from intrinsic energy-dependent emission within the GRB source.",
+    "whyHard": "The GRB prompt-emission mechanism is not known from first principles, producing a degeneracy between E_QG and astrophysical lag.",
+    "attempts": "Statistical bounds over many sources, redshift-correlation tests, and (model-independent) vacuum birefringence which is insensitive to emission timing.",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "macroscopic-superposition-reach",
+    "statement": "It is unproven that a ~1e-14 kg mass can be put and held in a ~100 um spatial superposition for ~1 s as required by BMV.",
+    "whyHard": "Decoherence from residual-gas scattering, blackbody radiation and gravity gradients scales extremely unfavorably; required ~1e-15 Pa vacuum and cryogenics are at the edge of feasibility.",
+    "attempts": "Needle Paul traps, diamagnetic microchip traps, levitated optomechanics ground-state cooling, electron-diffraction momentum splitting (~1000x recoil).",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "gie-interpretation",
+    "statement": "It is contested what gravitationally induced entanglement would actually prove about the quantum nature of gravity.",
+    "whyHard": "Depends on definitions of 'classical mediator', locality, and whether matter rather than gravity mediates; semiclassical models (Newton-Schrodinger, Bohmian) give conflicting predictions.",
+    "attempts": "Tightened criteria of entanglement 'responsibility', quantum-information theorems, operational QFT models; active 2025 Aziz-Howl vs Marletto et al. debate.",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "liv-vs-dsr",
+    "statement": "Time-of-flight data cannot currently distinguish LIV (preferred frame) from DSR (deformed relativity), which may predict no delay at all.",
+    "whyHard": "Relative locality makes 'delay' observer/coordinate dependent, so a deformed dispersion relation need not yield an observable arrival-time difference.",
+    "attempts": "Multi-particle coincidence observables and explicit relative-locality computations of arrival times.",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "planck-signature-access",
+    "statement": "Dimensional reduction to d_s~2 and minimal length are shared QG signatures but lie ~10 Planck lengths deep with no known amplifier.",
+    "whyHard": "No observable couples the spectral-dimension running into a measurable regime; GUP bounds remain weak (beta_0 <~ 1e6).",
+    "attempts": "Running dispersion in curved momentum space, correlations with LIV, GUP tests in macroscopic oscillators and LIGO.",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "single-graviton-quantumness",
+    "statement": "Detecting stimulated single-graviton absorption does not by itself prove the gravitational field is quantized.",
+    "whyHard": "Stimulated processes occur for classical waves too; distinguishing a spontaneous (genuinely quantum) signature would require resolving vacuum fluctuations, near Dyson's no-detection argument.",
+    "attempts": "Graviton-counting statistics, antibunching, gravito-phononic photoelectric-effect analogs.",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "gw-echo-robustness",
+    "statement": "No robust detection of post-merger GW echoes (a signature of quantum horizon structure) has been achieved.",
+    "whyHard": "Low late-time SNR, strong template model-dependence, and false alarms from detector noise.",
+    "attempts": "Model-independent late-time QNM searches and catalog stacking across LVK events.",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "gravitational-collapse-universality",
+    "statement": "The parameters (R0, cutoffs) of gravity-related collapse/decoherence models are not fixed by theory, leaving open whether such models are universal.",
+    "whyHard": "Hard to distinguish gravitational collapse from ordinary environmental decoherence and CSL; heating bounds constrain but do not close the parameter window.",
+    "attempts": "X-ray spontaneous-emission limits, mechanical oscillators, molecular interferometry.",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "geometrogenesis-phase-transition",
+    "statement": "Does a realistic 4D Lorentzian GFT possess a continuous (geometrogenesis) phase transition whose ordered phase is a macroscopically 4D spacetime obeying Einstein dynamics?",
+    "whyHard": "Requires non-perturbative FRG control beyond the melonic approximation, on the non-compact group SL(2,C), with tensorially non-local interactions; mean-field can fail, and some models exhibit no transition at all.",
+    "attempts": "Landau-Ginzburg mean-field and FRG analyses (Pithis-Thurigen 2018; Marchetti et al. 2021; cyclic-melonic/O(N) equivalence; complete Barrett-Crane 2025), so far without a definitive proof for a fully geometric model.",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "continuum-einstein-dynamics",
+    "statement": "Does the condensate (hydrodynamic) limit of a geometric GFT reproduce full Einstein gravity, not merely the homogeneous Friedmann sector?",
+    "whyHard": "Effective dynamics needs non-perturbative resummation and control of inhomogeneities; reconstructing a metric from GFT data is ambiguous, and beyond homogeneity only linearized results exist.",
+    "attempts": "Metric reconstruction and gauge-invariant scalar perturbations (Gielen-Mickel 2025); relational observables (Marchetti-Oriti) - all to linear order.",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "model-selection-gft",
+    "statement": "Which specific GFT (choice of kinetic kernel, interaction, group, simplicity constraints) corresponds to 4D general relativity?",
+    "whyHard": "No first principle fixes the action; EPRL/FK and Barrett-Crane have distinct GFT formulations and the kinetic term is largely free. Renormalizability only partially restricts the choice.",
+    "attempts": "Renormalizability criteria, asymptotic freedom and causal-completeness requirements progressively narrow the model space.",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "renormalization-geometric-4d",
+    "statement": "Are the fully geometric 4D models (EPRL, Lorentzian Barrett-Crane) renormalizable, and what is their UV/IR flow?",
+    "whyHard": "Non-compact SL(2,C), simplicity constraints, and tensorial non-locality complicate power counting; the melonic approximation may be insufficient for the physical interactions.",
+    "attempts": "Renormalizability and asymptotic freedom proven only for Abelian/simplified TGFTs (Ben Geloun-Rivasseau; Carrozza-Oriti-Rivasseau).",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "topology-sum-control",
+    "statement": "How can one control the non-perturbative sum over all simplicial topologies (including pseudomanifolds), which grows factorially?",
+    "whyHard": "Tensor models generate pseudomanifolds, not just manifolds; the perturbative series is divergent and requires Borel summation or a double-scaling limit, neither yet available for geometric 4D models.",
+    "attempts": "Stable double-scaling limit established for D<6 abstract tensor models (Gurau-Schaeffer), but not for the geometric/group-decorated case.",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "tensor-model-holography",
+    "statement": "Does a (gauged) tensor model have a healthy spectrum and a gravitational dual analogous to SYK / JT gravity?",
+    "whyHard": "Ungauged tensor models possess a huge number of non-singlet and complex/tachyonic operators; gauging removes non-singlets but makes explicit computation difficult, and no explicit bulk dual is known.",
+    "attempts": "Lines of fixed points, supersymmetric and prismatic tensor models, gauged variants studied (Klebanov-Tarnopolsky and collaborators); full dual still missing.",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "lorentzian-causal-microstructure",
+    "statement": "How is local Lorentzian causal structure (light cones, time orientation) consistently embedded in GFT amplitudes?",
+    "whyHard": "Standard spin foams use special classes of Lorentzian triangulations; timelike/lightlike faces require new SL(2,C) representation-theoretic input and careful gluing rules.",
+    "attempts": "Complete Barrett-Crane model with all tetrahedron types (Jercher-Oriti-Pithis 2022); emergent Lorentzian geometries (2025).",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "relational-time-full-covariance",
+    "statement": "Is the relational scalar 'clock' sufficient to recover full diffeomorphism invariance, or only the homogeneous/perturbative sector?",
+    "whyHard": "Four scalar clocks define coordinates only locally; gauge-invariance of perturbations is not automatic and the relation to full background-independent covariance is unclear.",
+    "attempts": "Relational observables and gauge-invariant perturbation schemes (Marchetti-Oriti; Gielen-Mickel 2024-2025).",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "de-sitter-holography",
+    "statement": "Formulate a controlled holographic dual for de Sitter space and realistic cosmology (Lambda > 0): where do the degrees of freedom live and is the dual unitary?",
+    "whyHard": "There is no asymptotically timelike AdS-like boundary, no S-matrix, the observer sits inside a causal patch with a horizon, dS/CFT requires a non-unitary Euclidean CFT, and no controlled UV-complete dS string vacuum is known.",
+    "attempts": "dS/CFT (Strominger), static-patch / stretched-horizon holography, TTbar+Lambda flows, dS JT gravity from double-scaled SYK, Carrollian holography, holography of information in dS.",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "proof-of-adscft",
+    "statement": "Prove the AdS/CFT correspondence rather than rely on accumulated evidence.",
+    "whyHard": "The two sides are computable in opposite 't Hooft-coupling regimes (lambda>>1 vs lambda<<1) and there is no independent nonperturbative definition of string theory on AdS to compare against.",
+    "attempts": "Integrability / Quantum Spectral Curve interpolation, supersymmetric localization, conformal bootstrap, matching of protected quantities; none yields a full proof.",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "black-hole-interior-reconstruction",
+    "statement": "Reconstruct the black-hole interior (especially after the Page time) from boundary CFT data consistently with quantum mechanics.",
+    "whyHard": "State-dependent operators clash with linearity, the firewall (AMPS) paradox and monogamy of entanglement create tension between effective field theory and unitarity.",
+    "attempts": "Papadodimas-Raju state-dependent mirror operators, entanglement-wedge reconstruction, ER=EPR, replica wormholes.",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "sub-ads-locality",
+    "statement": "Explain how local bulk physics on scales far below the AdS radius (sub-AdS locality) emerges from the boundary CFT.",
+    "whyHard": "The dictionary naturally resolves physics on scales ~L; sub-AdS locality requires controlling stringy / 1/N corrections and the nonlocal error-correcting nature of the holographic map.",
+    "attempts": "Bulk-point singularities, large-spin / heavy-operator conformal bootstrap, geodesic Witten diagrams, modular flow.",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "flat-space-holography",
+    "statement": "Construct a complete, well-defined holographic dual for asymptotically flat (Minkowski) quantum gravity.",
+    "whyHard": "Flat space is a singular double limit (L -> infinity) of AdS; the celestial CFT is exotic (Carrollian, non-standard reps, complex weights), lacks an explicit Lagrangian, and BMS symmetries are infinite-dimensional.",
+    "attempts": "Celestial holography, Carrollian holography, holography of information at null infinity, top-down twistor-string celestial duals.",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "factorization-problem",
+    "statement": "Reconcile non-factorization of the gravitational path integral (wormholes) with the manifest factorization of a dual quantum field theory.",
+    "whyHard": "Wormhole saddles make two-copy partition functions fail to factorize, suggesting ensemble averaging that seems inappropriate for a single unique theory like N=4 SYM.",
+    "attempts": "Ensemble interpretation in JT/SYK, alpha-states / baby-universe Hilbert space, half-wormholes, possible UV completion arguments.",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "generic-black-hole-microstates",
+    "statement": "Count the microstates of generic non-extremal (Schwarzschild / Kerr) astrophysical black holes from first principles.",
+    "whyHard": "Loss of supersymmetry removes protection from quantum corrections; the fuzzball program is incomplete and Cardy/Strominger-Vafa methods rely on BPS bounds.",
+    "attempts": "Fuzzball / microstate geometries, Kerr/CFT correspondence, near-extremal Schwarzian corrections, supersymmetric AdS black hole index matching.",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "hamiltonian-constraint-dynamics",
+    "statement": "Define and solve the quantum Hamiltonian constraint (dynamics) of canonical LQG with a closing constraint algebra and a controlled physical state space.",
+    "whyHard": "Diffeomorphism invariance yields an algebra with structure functions (not constants); Thiemann's operator is graph-changing and plagued by factor-ordering and regularization ambiguities, and coherent states miss the newly generated degrees of freedom.",
+    "attempts": "Thiemann's QSD operator; the Master Constraint Programme; algebraic quantum gravity; 2024 numerical graph-changing implementations.",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "semiclassical-continuum-limit",
+    "statement": "Prove that LQG / spin foams reproduce general relativity (plus controlled quantum corrections) in the semiclassical and continuum limits.",
+    "whyHard": "Background independence means there is no fixed background to perturb around; the large-spin and continuum limits need not commute, and strong convergence can collapse the theory to a topological one.",
+    "attempts": "Large-spin Regge asymptotics; graviton propagator; tensor-network/coarse-graining renormalization; 2026 distributional (TQFT/RAQ) continuum-limit framework.",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "flatness-problem",
+    "statement": "Determine whether spin-foam dynamics is dominated by flat (Regge-flat) geometries in the semiclassical limit and how to avoid it.",
+    "whyHard": "Gluing constraints and the choice of areas as fundamental variables peak the path integral on flat configurations; the issue is confirmed numerically in BF and EPRL cases.",
+    "attempts": "Effective spin foams avoiding flatness in a restricted regime; numerical studies with sl2cfoam-next; Monte Carlo sampling.",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "immirzi-parameter-status",
+    "statement": "Clarify the physical status and value of the Barbero-Immirzi parameter gamma.",
+    "whyHard": "Classically gamma is a canonical-transformation label (unobservable) yet quantum-mechanically sets the geometry scale and entropy; different counting schemes (U(1) vs SU(2), minimal-spin assumptions) give different values (~0.237-0.274).",
+    "attempts": "U(1) and SU(2) entropy countings; proposals making gamma a dynamical field; analytic-continuation (self-dual) approaches gamma = +-i.",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "canonical-covariant-equivalence",
+    "statement": "Establish that the EPRL spin-foam amplitude implements the projector onto the kernel of the canonical LQG Hamiltonian constraint.",
+    "whyHard": "Canonical (graph-changing) and covariant (fixed 2-complex) formulations use different degrees of freedom; the equivalence requires controlling the sum/refinement over 2-complexes.",
+    "attempts": "Group field theory completion; refinement-limit and renormalization studies; boundary Hilbert space matching.",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "matter-and-standard-model",
+    "statement": "Incorporate matter (fermions, gauge fields) and recover Standard Model low-energy physics from LQG.",
+    "whyHard": "LQG quantizes geometry but has no built-in principle fixing the matter content; coupling matter to spin networks/foams and extracting particle physics remains piecemeal.",
+    "attempts": "Spin foams coupled to scalar/fermion fields; quantum-reduced loop gravity; speculative spinor/octonion Standard-Model constructions.",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "lorentz-invariance-phenomenology",
+    "statement": "Show that discrete LQG geometry is compatible with (or testably deforms) local Lorentz invariance, and derive falsifiable phenomenology.",
+    "whyHard": "Discrete area is a frame-dependent-looking scale; reconciling it with relativity points to deformed (DSR/kappa-Poincare) rather than broken symmetry, but a full proof is lacking and data tightly constrain modified dispersions.",
+    "attempts": "Deformed hypersurface-deformation algebra; kappa-Poincare/DSR linkage; gamma-ray-burst dispersion constraints.",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "lorentzian-quantization-ncg",
+    "statement": "Formulate the spectral action and spectral triples in a Lorentzian signature and quantize the resulting gravitational theory, controlling Wick rotation and fermion doubling.",
+    "whyHard": "Noncompactness and indefinite signature destroy the compact resolvent and discrete real spectrum of D on which the entire formalism rests; a fully Lorentzian definition of a spectral triple is still incomplete.",
+    "attempts": "Krein-space / Lorentzian spectral triples; D'Andrea-Kurkov-Lizzi analysis of Wick rotation and fermion doubling (2016); ongoing pseudo-Riemannian generalizations.",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "ncg-as-full-quantum-gravity",
+    "statement": "Turn noncommutative geometry into a genuine quantum theory of gravity, not merely a classical/effective action, with a controlled continuum limit reconstructing 4D spacetime.",
+    "whyHard": "The space of Dirac operators has no canonical measure; the spectral action is classical; random-NCG path integrals are controlled only for finite/fuzzy geometries and the N->infinity limit is not generically tractable.",
+    "attempts": "Random NCG / Dirac ensembles (Barrett-Glaser); double-scaling limits and links to Liouville gravity (Hessam-Khalkhali-Pagliaroli 2022); bootstrap and Schwinger-Dyson methods (2025-2026).",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "uniqueness-finite-algebra",
+    "statement": "Derive the finite Standard Model algebra C + H + M_3(C) from a deeper principle rather than postulated axioms, and explain why exactly this algebra.",
+    "whyHard": "Classification arguments and volume quantization strongly prefer it, but relaxing the first-order condition opens Pati-Salam and other options, so uniqueness is conditional on axiom choices that are themselves unexplained.",
+    "attempts": "Classification of irreducible almost-commutative geometries (Chamseddine-Connes); quanta-of-geometry derivation of M_2(H), M_4(C) (2014); Pati-Salam analysis (2015).",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "yukawa-mixing-predictions",
+    "statement": "Predict fermion masses and CKM/PMNS mixing angles from the geometry instead of feeding them in as parameters of the finite Dirac operator.",
+    "whyHard": "Geometry constrains the structure (representations, hypercharges, gauge-coupling relations) but leaves the Yukawa matrices as free input data; no dynamical principle currently fixes their entries.",
+    "attempts": "Spectral torsion functionals linking Yukawa/Majorana data to geometric invariants (2025); moduli-space analyses of finite Dirac operators.",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "connes-vs-deformed-relation",
+    "statement": "Clarify the precise relationship between Connes' spectral (Riemannian, compact spin) program and the deformed-spacetime branch (Moyal, kappa-Minkowski, DSR).",
+    "whyHard": "Lorentzian signature and Hopf-algebra symmetries of kappa-Minkowski do not fit the standard spectral-triple axioms; whether kappa-Minkowski admits a genuine spectral triple is only partially resolved.",
+    "attempts": "Twisted spectral triples; spectral triples on kappa-Minkowski and on the Moyal plane; Lizzi and collaborators' bridging work.",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "empirical-testability-ncg",
+    "statement": "Find a falsifiable, currently accessible prediction that distinguishes noncommutative geometry from other approaches.",
+    "whyHard": "Characteristic effects (Lorentz violation, minimal length, modified dispersion) are Planck-suppressed (~E/E_Planck); spectral-SM predictions are largely post-dictive or at inaccessible scales.",
+    "attempts": "Lorentz-violation bounds from gamma-ray bursts (M > 10^15-10^17 GeV); GUP laboratory bounds on beta; energy-resolved GRB polarimetry (2025).",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "matrix-phase-to-geometry-dictionary",
+    "statement": "Establish a dictionary between the phases of random Dirac ensembles (matrix integrals) and continuum geometric/topological data, and tame sign/convergence problems.",
+    "whyHard": "Matrix integrals over Dirac operators can have sign and convergence issues, and the physical meaning of observed phase transitions relative to geometric reconstruction is not understood.",
+    "attempts": "Monte Carlo phase studies (Barrett-Glaser, Glaser); analytic phase-transition results (Hessam et al. 2026); topological-recursion and bi-tracial matrix-model techniques (2023-2026).",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "correct-initial-condition",
+    "statement": "Determine the correct boundary/initial condition for the wave function of the universe: no-boundary and tunneling proposals give opposite signs of the exponent (+/- 12 pi^2 / hbar Lambda) and hence opposite predictions for Lambda and the likelihood of inflation.",
+    "whyHard": "No first principle uniquely fixes the contour of the Lorentzian path integral; even Picard-Lefschetz leaves freedom in lapse range and boundary conditions (Dirichlet vs Robin vs weighted) that flip the result.",
+    "attempts": "Euclidean prescription (Hartle-Hawking), Lorentzian Picard-Lefschetz (Feldbrugge-Lehners-Turok), Robin/weighted lapse (Di Tucci-Lehners), Kontsevich-Segal allowability (Lehners); no consensus.",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "no-boundary-perturbation-stability",
+    "statement": "Resolve whether the no-boundary state predicts damped (Gaussian) or unstable (inverse-Gaussian, unbounded) perturbations.",
+    "whyHard": "The naive Lorentzian saddle yields a positive-exponent weight making large perturbations more probable (non-normalizable); defenses require specific contour/boundary choices whose legitimacy is disputed.",
+    "attempts": "FLT 2017 (instability), Halliwell-Hartle-Hertog 2019 and Di Tucci-Lehners 2019 (restored damping via contour/Robin conditions), exact Bianchi IX evaluations claiming suppression.",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "problem-of-time-cosmology",
+    "statement": "Provide a consistent notion of time, unitary evolution and a positive-definite inner product for the timeless Wheeler-DeWitt equation.",
+    "whyHard": "H-hat Psi = 0 has no external time and the natural Klein-Gordon inner product is not positive-definite; every timeless strategy trades away unitarity, clock-independence, or global validity in curved backgrounds.",
+    "attempts": "Internal clocks (scalar field, LQC emergent time), Page-Wootters conditional probabilities, Rovelli partial/complete observables, semiclassical WKB time.",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "measure-problem-multiverse",
+    "statement": "Define a well-behaved probability measure on the eternally inflating multiverse and assign meaningful probabilities given only a single observed universe.",
+    "whyHard": "Volumes and observer counts diverge with no canonical normalization; different cutoffs give different (often paradoxical) predictions for Lambda and amplitude Q.",
+    "attempts": "Causal patch, scale-factor cutoff, stationary, comoving-volume measures; all suffer Boltzmann-brain, youngness or Q-catastrophe pathologies.",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "trans-planckian-problem-open",
+    "statement": "Determine whether and how trans-Planckian physics affects the predicted CMB spectrum, and whether inflation is even compatible with quantum gravity (TCC).",
+    "whyHard": "Observed modes originated from sub-Planckian wavelengths where the vacuum and dispersion relation are unknown; modified dispersions (Corley-Jacobson) can change the spectrum while Unruh-type do not, and TCC bounds may forbid high-scale inflation entirely.",
+    "attempts": "Modified dispersion relations, minimal-length/GUP vacua, adiabatic vacuum prescriptions, Trans-Planckian Censorship Conjecture (Bedroya-Vafa).",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "scenario-discrimination",
+    "statement": "Find observational signatures that uniquely distinguish inflation, the LQC bounce, ekpyrotic/cyclic and string gas cosmology.",
+    "whyHard": "All can produce a nearly scale-invariant spectrum; their distinguishing features (LQC low-multipole suppression and oscillations, ekpyrotic r~0 and f_NL~5, string-gas blue tensor tilt) lie near or below current CMB sensitivity.",
+    "attempts": "Planck low-multipole anomalies, BK18 tensor bounds, non-Gaussianity constraints; future LiteBIRD, CMB-S4, 21cm and spectral-distortion probes.",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "emergence-classical-spacetime",
+    "statement": "Explain rigorously how a quantum superposition of geometries and perturbations decoheres into a single classical spacetime with classical density fluctuations.",
+    "whyHard": "Squeezing alone does not yield classicality; one must trace out an environment, but in a closed universe with no external observer the choice of environment, pointer basis and coarse-graining is ambiguous.",
+    "attempts": "Decoherence via influence functionals (Nayeri 2026), continuous spontaneous localization (CSL), gravitationally-induced decoherence, branch-amplitude formalism.",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "minisuperspace-truncation-validity",
+    "statement": "Establish whether minisuperspace results (no-boundary, LQC bounce, WDW solutions) survive in the full theory with infinitely many degrees of freedom.",
+    "whyHard": "The full gravitational path integral / WDW equation is mathematically undefined; symmetry reduction before quantization need not commute with quantization, and back-reaction of neglected modes is uncontrolled.",
+    "attempts": "Spin-foam cosmology, group field theory condensate cosmology, perturbations about minisuperspace, lattice/CDT comparisons.",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "dark-energy-from-qg",
+    "statement": "Derive the observed dark energy (its tiny value and possible time evolution) from quantum gravity, reconciling it with the swampland de Sitter/TCC conjectures.",
+    "whyHard": "Quantum corrections naturally give a cosmological constant ~120 orders too large; swampland conjectures forbid stable de Sitter, pushing toward quintessence, but no controlled string construction yields the observed scale.",
+    "attempts": "Quintessence/dynamical dark energy, swampland de Sitter and TCC bounds, causal-set Lambda ~ 1/sqrt(V) prediction, DESI 2024-2025 evolving-w fits.",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "scg-initial-value-problem",
+    "statement": "Formulate a well-posed initial-value problem for the self-consistent semiclassical Einstein equation in general (non-symmetric) spacetimes.",
+    "whyHard": "The equation is fourth order with 16 free data functions against 4 constraints, has a nonlocal bidistributional source, and the Hadamard property is a spacetime (not initial-surface) condition; renormalization of <T_ab> must be done simultaneously with solving the field equations, and runaway (Horowitz) solutions appear at the Planck scale.",
+    "attempts": "Parker-Simon order reduction; Flanagan-Wald order-reduced second-order equations; Juarez-Aubry-Kay-Miramontes-Sudarsky smooth-in-hbar conjecture; Meda-Pinamonti-Siemssen local existence/uniqueness in FLRW; structural solutions in static/spherically symmetric/maximally symmetric spacetimes.",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "scg-validity-limits",
+    "statement": "Characterize precisely the regime of validity of semiclassical gravity, i.e. when replacing T_ab by its expectation value is justified.",
+    "whyHard": "Stress-tensor fluctuations can be comparable to the mean (macroscopic 'cat states', near-horizon/Page-time regimes); no universal state-independent criterion exists; the criterion must reference the full quantum correlation functions.",
+    "attempts": "Hu-Verdaguer stochastic-gravity / noise-kernel stability criterion; large-N agreement of induced metric fluctuations with graviton correlators; Ford and collaborators on metric fluctuations; analyses of de Sitter and Minkowski stability.",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "trans-planckian-hawking-robustness",
+    "statement": "Determine whether Hawking radiation is genuinely universal and independent of unknown Planck-scale (trans-Planckian) physics.",
+    "whyHard": "The derivation formally invokes arbitrarily high near-horizon frequencies; the answer depends on UV physics that QFTCS cannot fix; robustness is established only for monotonic dispersion and invariant cutoffs.",
+    "attempts": "Unruh's sonic/analogue derivations; Jacobson, Corley-Jacobson dispersive-mode analyses; tunneling and anomaly derivations; demonstrations of robustness for monotonic dispersion and of modification by non-monotonic dispersion after the scrambling time.",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "stress-tensor-uniqueness-massive",
+    "statement": "Reduce or physically fix the infinite-parameter ambiguity in the renormalized <T_ab> for massive fields.",
+    "whyHard": "Wald's axioms leave finitely many parameters for massless but infinitely many local curvature counterterms for massive fields; the ambiguity corresponds to physical renormalization of couplings and requires input beyond QFTCS.",
+    "attempts": "Hadamard / point-splitting prescriptions; zeta-function regularization (Moretti's proof of agreement); adiabatic subtraction in cosmology; matching to effective field theory of gravity.",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "hartle-hawking-rotating-cosmological",
+    "statement": "Identify the correct quantum state for rotating (Kerr) and multi-horizon (Schwarzschild-de Sitter) black holes, where no stationary Hadamard state exists.",
+    "whyHard": "Kay-Wald proved nonexistence of a stationary Hadamard state on Kerr and Schwarzschild-de Sitter; superradiance and horizons at different temperatures obstruct a globally thermal state.",
+    "attempts": "Frolov-Thorne and Candelas-Chrzanowski-Howard constructions; numerical renormalized <T_ab> on Kerr (Casals, Thompson, Winstanley); Hartle-Hawking-Israel state construction across static bifurcate horizons (Sanders, Gerard-Wrochna).",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "gie-discriminator",
+    "statement": "Establish what gravitationally induced entanglement experiments actually test, and design a protocol that distinguishes quantized gravity from classical/stochastic gravity.",
+    "whyHard": "The 'quantum mediator' argument assumes locality and reversibility; post-quantum and Diosi-Penrose classical-gravity models also generate entanglement, so observing GIE alone is not decisive. A discriminating observable likely requires measuring decoherence/diffusion in addition.",
+    "attempts": "Bose et al. and Marletto-Vedral protocols; Oppenheim diffusion-decoherence trade-off bounds; analyses showing Newtonian-potential constrained dynamics reproduce GIE; proposals using rotational/relativistic superpositions and resonant decoherence.",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "evaporation-endpoint-information",
+    "statement": "Reconcile the semiclassical fate of an evaporating black hole and its information content with unitarity.",
+    "whyHard": "The Page-time paradox signals a breakdown of low-energy physics where energies are still low; whether information is preserved by a final singularity (semiclassical) or recovered via islands/replica wormholes (holographic) is unresolved, and the two pictures are not obviously equivalent.",
+    "attempts": "Quantum-extremal-surface / island formula and replica wormholes (Almheiri et al., Penington et al.); Juarez-Aubry 'quantum strong cosmic censorship' conjectures; central-dogma and complementarity proposals; stochastic-gravity backreaction near the horizon.",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "is-gravity-fundamentally-classical",
+    "statement": "Decide whether the gravitational field must be quantized at all, or whether a consistent fundamental theory of classical (possibly stochastic) gravity coupled to quantum matter exists.",
+    "whyHard": "No-go theorems (Eppley-Hannah, DeWitt, Marletto-Vedral) rely on assumptions (reversibility, locality, ideal measurements) that recent post-quantum constructions deny; ruling out classical gravity requires either a watertight no-go theorem or a decisive experiment.",
+    "attempts": "Moller-Rosenfeld semiclassical equation; Oppenheim post-quantum classical gravity; Diosi-Penrose collapse; experimental bounds on metric diffusion and gravitational decoherence; Grossardt analyses of paradoxes in semiclassical gravity.",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "de-sitter-construction",
+    "statement": "Can a stable or sufficiently long-lived metastable de Sitter vacuum with positive cosmological constant be constructed in a fully controlled regime of string theory?",
+    "whyHard": "dS breaks supersymmetry and requires an uplift (e.g. anti-D3 branes) in a regime where alpha' and g_s corrections are hard to control; swampland conjectures suggest it may be forbidden.",
+    "attempts": "KKLT (2003) and the Large Volume Scenario; ongoing debate with refined de Sitter conjecture proponents (Obied-Ooguri-Spodyneiko-Vafa 2018); quintessence as an alternative; numerical Kahler moduli stabilization (2025).",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "vacuum-selection",
+    "statement": "Which of the ~10^500 (or more) string vacua, if any, corresponds to our universe, and is there a dynamical selection principle?",
+    "whyHard": "No known non-perturbative formulation lets one compute vacuum transition amplitudes or compare vacua; the anthropic principle is not a sharp prediction; the landscape is largely uncharted.",
+    "attempts": "Flux landscape statistics; machine-learning scans of Calabi-Yau vacua; cosmological measure proposals; swampland program to prune inconsistent EFTs.",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "nonperturbative-mtheory",
+    "statement": "What is M-theory as a complete, background-independent, non-perturbative theory beyond perturbative expansions and duality limits?",
+    "whyHard": "Only perturbative string expansions, low-energy 11D supergravity and a web of dualities are known; the 'missing corner' lacks a first-principles definition; Lorentz invariance of candidate definitions is not proven.",
+    "attempts": "BFSS and IKKT matrix models; string field theory; the duality web (Witten 1995); E11 conjectures; recent lattice and bootstrap studies of BFSS.",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "falsifiability",
+    "statement": "Does string theory make a sharp, falsifiable prediction accessible to current or near-future experiments?",
+    "whyHard": "The string scale is typically near the Planck scale; the landscape removes uniqueness; SUSY was not found at the LHC and cosmic strings / SUSY signatures remain unobserved.",
+    "attempts": "Cosmic superstrings in gravitational-wave backgrounds (LISA, PTA); dark dimension scenario predicting micron-scale gravity deviations and KK dark matter; swampland-based cosmological bounds (e.g. on quintessence).",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "string-cosmology-time",
+    "statement": "How does time emerge and how is the initial (Big Bang) singularity resolved in string theory, given that holography is best understood for static AdS boundaries?",
+    "whyHard": "AdS/CFT requires negative cosmological constant and a timelike boundary; no analogous holographic definition exists for de Sitter or cosmological spacetimes; time-dependent backgrounds are poorly controlled.",
+    "attempts": "Pre-Big-Bang and ekpyrotic scenarios; string-gas (Brandenberger-Vafa) cosmology with Hagedorn thermodynamics; matrix-model emergent cosmology; dS/CFT proposals.",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "information-paradox-dynamical",
+    "statement": "Does string theory provide a complete, dynamical mechanism for unitary information recovery from a generic (non-extremal, evaporating) black hole?",
+    "whyHard": "Microstate counting and fuzzballs are best established for extremal/BPS or near-extremal cases; extending smooth horizonless geometries and a Page-curve mechanism to dynamical, neutral black holes is unsolved.",
+    "attempts": "Fuzzball / microstate-geometry program (Bena-Martinec-Mathur-Warner); replica wormholes and the island formula via AdS/CFT; non-extremal microstate studies (2025).",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "moduli-control",
+    "statement": "Are the approximations underlying moduli-stabilization scenarios (KKLT, LVS) self-consistent and free of uncontrolled corrections?",
+    "whyHard": "They rely on non-perturbative superpotentials, anti-brane uplifts and warping in regimes where higher alpha'/g_s and backreaction effects may not be negligible.",
+    "attempts": "Explicit Calabi-Yau constructions; tadpole-conjecture analyses; numerical and effective-field-theory scrutiny; ongoing critiques from the swampland community.",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "emergent-spacetime-matrix",
+    "statement": "How does a (3+1)-dimensional classical spacetime with realistic cosmology emerge dynamically from the matrix models (IKKT/BFSS)?",
+    "whyHard": "It requires spontaneous breaking of the SO(10)/SO(9) symmetry to produce exactly three large dimensions and recover Lorentz invariance and Einstein gravity, which is only seen numerically, not derived analytically.",
+    "attempts": "Monte Carlo and complex-Langevin simulations of IKKT showing emergence of expanding 3+1 dimensions; BFSS lattice studies matching gauge/gravity duality thermodynamics.",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "n8-four-dim-finiteness",
+    "statement": "Is N=8 supergravity ultraviolet finite in D=4 to all loop orders? The critical test is the seventh loop, where an E7(7)-invariant partial^6 R^4 candidate counterterm first becomes admissible.",
+    "whyHard": "An explicit seven-loop four-point computation is far beyond current technology (the five-loop result already required generalized double copy and cutting-edge integral reduction), and the observed enhanced cancellations have no symmetry explanation to extrapolate from.",
+    "attempts": "Explicit computations to five loops (D_c=24/5), E7(7) counterterm analyses, pure-spinor arguments (Kallosh: no divergence beyond six loops; earlier pure-spinor work: divergence at seven loops). No consensus.",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "enhanced-cancellation-mechanism",
+    "statement": "What is the mechanism behind enhanced UV cancellations seen in N=5 (four loops) and N=8 (three to five loops), which exceed all known symmetry and superspace power-counting predictions?",
+    "whyHard": "It appears to require an as-yet-unidentified symmetry or nonlocal structure; without it, results cannot be extrapolated to higher loops or used to settle finiteness.",
+    "attempts": "Duality-symmetry (E7(7), U(1)) analyses, supersymmetric decomposition of amplitudes, double-copy structural studies; partial explanations only (e.g. N=5 via duality anomaly absence).",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "ghost-problem-higher-derivative",
+    "statement": "Can the massive spin-2 Ostrogradsky ghost of renormalizable higher-derivative (Stelle/conformal/agravity) gravity be made compatible with unitarity and stability?",
+    "whyHard": "Renormalizability requires a 1/p^4 propagator that necessarily introduces a wrong-sign pole; reconciling this with positive norms and causal stability is a deep structural tension.",
+    "attempts": "Fakeons / purely virtual particles (Anselmi), PT-symmetry, modified probability rules (Salvio, Holdom), short-distance-only instability with statistical macro-causality (Donoghue, Menezes); all contested (Platania).",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "lorentz-invariance-recovery",
+    "statement": "Does Horava-Lifshitz gravity recover Lorentz invariance in the IR without fine-tuning and avoid strong coupling of the extra scalar mode?",
+    "whyHard": "Radiative corrections leak UV Lorentz violation into low energies (tightly bounded experimentally), demanding extreme fine-tuning; the scalar graviton mode becomes strongly coupled near the GR limit.",
+    "attempts": "Detailed-balance and projectable/non-projectable variants, proof of renormalizability (Barvinsky et al. 2016), RG analyses; strong-coupling problem persists.",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "unimodular-quantum-equivalence",
+    "statement": "Is unimodular gravity quantum-mechanically equivalent to general relativity, and does it genuinely improve the cosmological-constant problem?",
+    "whyHard": "Whether Lambda as an integration constant (rather than a coupling) escapes radiative corrections is regularization- and measure-dependent; arguments on both sides are subtle.",
+    "attempts": "Path-integral and renormalization-group analyses, comparisons of effective actions; results suggest equivalence up to high momenta but the cosmological-constant payoff is disputed.",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "nonlocal-causality",
+    "statement": "Do infinite-derivative ghost-free (nonlocal) gravity theories admit a consistent, causal initial-value problem and a unitary S-matrix?",
+    "whyHard": "Infinitely many derivatives obscure the notion of initial data and analytic continuation of the nonlocal propagator (contour choice) is ambiguous, threatening causality.",
+    "attempts": "Entire-function form factors e^{-Box/M_s^2}, prescriptions for the nonlocal propagator, explicit UV finiteness checks; full S-matrix consistency not proven.",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "n8-swampland",
+    "statement": "Does perturbatively finite N=8 supergravity belong to the swampland (no consistent UV completion as a standalone theory of quantum gravity)?",
+    "whyHard": "Green-Ooguri-Schwarz show it cannot decouple from strings for d>3, but a formal proof via modern swampland criteria, and the role of nonperturbative effects, are missing.",
+    "attempts": "Nondecoupling argument (towers of KK/winding/brane states), swampland-distance and weak-gravity heuristics; no rigorous swampland classification.",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "enhanced-cancellation-vs-string-completion",
+    "statement": "If N=8 supergravity is perturbatively finite, what does this imply about the relationship between UV finiteness and UV completeness (a finite theory need not be a complete theory of quantum gravity)?",
+    "whyHard": "Finiteness and completeness are logically distinct; black-hole/nonperturbative physics may obstruct consistency even for a perturbatively finite theory, and there is no theorem connecting the two.",
+    "attempts": "Conceptual analyses, string-decoupling arguments, swampland reasoning; remains a foundational open question.",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "order-one-constants",
+    "statement": "Determine the O(1) constants c, c', alpha in the de Sitter and distance conjectures, or prove universal lower bounds independent of the compactification.",
+    "whyHard": "The constants depend on asymptotic details of moduli space and compactification; no example-independent derivation exists, so falsifiability remains weak.",
+    "attempts": "The universal pattern (grad m/m)(grad Lambda/Lambda)=1/(d-2) of Castellano-Ruiz-Valenzuela fixes asymptotic decay rates; entropy/Bousso-bound arguments constrain c but only heuristically.",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "metastable-de-sitter-existence",
+    "statement": "Does a fully controlled metastable de Sitter vacuum exist in string theory (status of KKLT, LVS)?",
+    "whyHard": "Requires a complete 10D computation with quantum corrections, anti-brane uplift, warping and backreaction; known constructions either lose control (singular bulk, small volume) or remain AdS.",
+    "attempts": "KKLT (anti-D3 / nilpotent superfield), LVS, racetrack uplifts vs. 10D critiques (Bena-Grana, Moritz-Retolaza-Westphal, Gao-Hebecker); 'Crisis on Infinite Earths' shows short lifetimes.",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "which-wgc-is-correct",
+    "statement": "Establish the correct strong form of the WGC (tower vs. sublattice vs. lattice) and prove it beyond U(1) toy models, including non-abelian and gravitational cases.",
+    "whyHard": "The variants are inequivalent and have counterexamples in specific setups; positivity proofs rely on assumptions (Regge boundedness, gravity subdominance).",
+    "attempts": "Hamada-Noumi-Shiu positivity/causality proof; modular-invariance arguments; convex-hull and tower/sublattice refinements by Heidenreich-Reece-Rudelius.",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "first-principles-derivation",
+    "statement": "Derive the swampland conjectures from first principles of quantum gravity rather than from string examples and black-hole heuristics.",
+    "whyHard": "No nonperturbative definition of quantum gravity exists outside holography, and the de Sitter / cosmological 'missing corner' has no known holographic dual.",
+    "attempts": "Holographic proofs of no-global-symmetries and completeness (Harlow-Ooguri); emergence proposal deriving SDC from loop effects of towers.",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "ads-scale-separation",
+    "statement": "Can the AdS scale be parametrically separated from the KK scale in a fully controlled string vacuum?",
+    "whyHard": "All controlled examples (DGKT-type) sit in smeared or parametrically questionable regimes; the strong AdS Distance Conjecture would forbid separation outright.",
+    "attempts": "DGKT massive IIA vacua, scale-separation no-go discussions (Gautason et al.); strong vs. weak AdS-DC debate by Lust-Palti-Vafa and follow-ups.",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "cosmological-consistency",
+    "statement": "Reconcile observed accelerated expansion (DESI dynamical dark energy) with the TCC ban on eternal acceleration and with CMB fluctuation amplitudes.",
+    "whyHard": "TCC pushes V^{1/4}<10^9 GeV and epsilon<10^-31, in tension with simple inflation; requires multi-field or non-canonical trajectories to achieve acceleration on steep potentials.",
+    "attempts": "S-dual quintessence and DESI-fit models; multi-field rapid-turn inflation; refined TCC linking species scale to a finite de Sitter lifetime (2026 works).",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "cobordism-universality",
+    "statement": "Is the cobordism conjecture (triviality of all bordism groups) truly universal, and what concrete new defects/branes does it predict for realistic compactifications?",
+    "whyHard": "Computing relevant bordism groups for realistic backgrounds is technically demanding, and physically interpreting new generators as defects is uncertain.",
+    "attempts": "McNamara-Vafa cobordism program; computations of spin/string-bordism for string backgrounds; connection to generalized (higher-form) symmetries.",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "swampland-vs-string-theory-scope",
+    "statement": "Are swampland conjectures properties of string theory specifically or of every quantum gravity, and would falsifying one falsify string theory?",
+    "whyHard": "There is no provider-independent definition of 'quantum gravity' against which to test the conjectures, so logical scope is ambiguous.",
+    "attempts": "Holographic universality arguments; tests in non-stringy toy models; the ongoing Banks/Woit critiques of falsifiability.",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "googly-problem",
+    "statement": "Give a twistor description of right-handed (positive-helicity), fully interacting (non-self-dual) massless fields using the same conventions that yield left-handed fields in the nonlinear graviton and Ward constructions.",
+    "whyHard": "The full Einstein and Yang-Mills equations are not integrable; deformations of complex structure only encode the ASD half. There is no analogous holomorphic data structure for the SD half.",
+    "attempts": "Penrose's palatial (noncommutative quantized) twistor theory; twistor actions expanding perturbatively around the self-dual sector; cocycle-twist quantizations of twistor space.",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "nonperturbative-twistor-string",
+    "statement": "Provide a non-perturbative, background-independent definition of twistor / ambitwistor string theory that reproduces full quantum gravity rather than only perturbative amplitudes.",
+    "whyHard": "The models are chiral/topological with a super-Calabi-Yau target lacking standard worldsheet dynamics; the conformal-supergravity sector does not decouple from Yang-Mills at loop level.",
+    "attempts": "Ambitwistor string field theory for supergravity; refinements of the original twistor string; twisted/celestial holography reformulations.",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "amplituhedron-loops-nonplanar",
+    "statement": "Extend the amplituhedron / positive-geometry program to the integrated (transcendental-function) level, to non-planar amplitudes, and to theories with less or no supersymmetry (real QCD).",
+    "whyHard": "Outside the planar limit there is no cyclic ordering and the notion of positivity breaks down; integration introduces IR divergences that fall outside the geometry.",
+    "attempts": "Cluster-algebra and tropical methods; BCFW tiling proofs; momentum amplituhedron; surfaceology for colored (incl. non-planar) theories.",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "gravituhedron",
+    "statement": "Find a positive geometry whose canonical form yields gravity (not just gauge-theory) scattering amplitudes.",
+    "whyHard": "Gravity lacks color ordering and a simple cyclic structure; the double copy that produces gravity is algebraic, not (yet) realized geometrically.",
+    "attempts": "Attempts to geometrize the double copy; KLT and BCJ geometric reinterpretations; positive-geometry studies of gravity integrands.",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "n8-uv-fate",
+    "statement": "Determine whether the four-graviton amplitude of N=8 supergravity diverges at seven loops in D=4 (partial(8)R^4 counterterm) or is protected by a further enhanced cancellation, i.e. whether a perturbatively finite point-particle quantum gravity exists.",
+    "whyHard": "A seven-loop four-graviton computation is computationally extreme; symmetry arguments (E7(7), light-cone superspace) do not give a decisive prediction.",
+    "attempts": "Four-loop explicit finiteness; enhanced-cancellation studies in N=4,5 supergravity; unitarity/double-copy multiloop integrand constructions.",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "celestial-cft-construction",
+    "statement": "Construct the full 2D celestial conformal field theory on the celestial sphere whose correlators reproduce the S-matrix of 4D quantum gravity, beyond the self-dual / tree-level w(1+infinity) sector.",
+    "whyHard": "Celestial correlators have distributionally singular kinematics; control over massive states, loops and the non-self-dual sector is lacking; the w(1+infinity) link is so far mainly tree-level/self-dual.",
+    "attempts": "Asymptotic-symmetry constraints (BMS, w(1+infinity)); celestial chiral algebras from twistor space; twisted-holography (Costello-Paquette) constructions.",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "spacetime-from-amplitudes",
+    "statement": "Find the fundamental (background-independent, combinatorial) formulation from which spacetime, locality and unitarity emerge, as suggested by the amplituhedron and surfaceology.",
+    "whyHard": "Current positive geometries are defined kinematically using external momenta (i.e. presuppose spacetime data); a genuinely spacetime-free definition of the physics is missing.",
+    "attempts": "Hidden-zeros / emergence-of-unitarity studies; surfaceology where n and L decouple; cosmological positive geometries as a testing ground.",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "higher-d-and-massive",
+    "statement": "Extend the twistor magic and its amplitude consequences to D>4 and to systematically include massive fields, so as to reach the Standard Model and realistic gravity.",
+    "whyHard": "The three special isomorphisms making twistors powerful are tied to 4D; SO(D) generally does not factorize into chiral halves, and twistor geometry is less rigid for massive states.",
+    "attempts": "Hypertwistors and higher-dimensional ambitwistors; massive spinor-helicity (Arkani-Hamed-Huang-Huang); 6D twistor/twistor-string constructions.",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "type-ii-microstate-resolution",
+    "statement": "Whether the type II description (entropy up to an additive constant, no pure states) is fundamental or an approximation to an underlying type I theory that resolves black-hole/de Sitter microstates.",
+    "whyHard": "Type II has no minimal projections, so it cannot count microstates; recovering type I (a definite Hilbert space of states) presumably requires non-perturbative quantum gravity that fixes the additive constant and the number of states e^{S}.",
+    "attempts": "Type I approximations of the crossed product, ensemble/baby-universe interpretations of the additive constant, microcanonical and stretched-horizon refinements.",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "observer-dependence-of-entropy",
+    "statement": "What objective, frame-independent content gravitational entropy has, given that different observers / quantum reference frames yield different type II algebras and different entropies.",
+    "whyHard": "Entropy differences and relative entropies are frame-covariant, but the absolute entropy and even the algebra type depend on the chosen QRF, clock spectrum and dressing; there is no agreed notion of a preferred frame in a closed universe.",
+    "attempts": "Perspective-neutral QRF formalism (De Vuyst-Eccles-Hoehn-Kirklin), comparison of dressings, focus on relative entropy as the invariant content.",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "modular-flow-non-geometric",
+    "statement": "Compute and interpret modular flow for generic regions/states where it is nonlocal and non-geometric, as needed to reconstruct bulk geometry and prove energy conditions.",
+    "whyHard": "Outside wedges, conformal cases and a few exactly solvable models the modular Hamiltonian is a nonlocal operator with no closed form; its flow mixes points and scales unpredictably.",
+    "attempts": "Modular Berry phase / modular chaos, half-sided inclusion techniques, perturbation around the vacuum, numerical/lattice modular Hamiltonians.",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "emergent-geometry-from-modular-data",
+    "statement": "Reconstruct full bulk spacetime geometry (metric, causal structure, radial direction) purely from algebraic modular data (flows, inclusions, cocycles).",
+    "whyHard": "Half-sided modular inclusions yield only translations and a positive generator; obtaining a full metric and the holographic radial coordinate requires extra spectral input (non-compact support) whose origin is unclear.",
+    "attempts": "Borchers-Wiesbrock translations, Leutheusser-Liu emergent-time program, spectral-function/radial-direction analyses, modular-chaos diagnostics.",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "type-iii-to-vacuum-uniqueness",
+    "statement": "Whether the type III_1 property and the associated lack of factorization are obstructions to a tensor-factorized Hilbert space of gravity, or are removed in the full theory.",
+    "whyHard": "Type III_1 forbids a global tensor split and local density matrices; whether quantum gravity restores factorization (edge modes, soft hair, discreteness) or keeps it intrinsically non-factorized is unsettled.",
+    "attempts": "Edge-mode / extended-Hilbert-space constructions, split property, discreteness (causal sets, LQG area gap) as a physical UV cutoff.",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "ssee-truncation-justification",
+    "statement": "Justify and derive the geometric truncation needed for the Sorkin spacetime entanglement entropy to obey an area law, and relate it to the type II/regulated entropy of modular constructions.",
+    "whyHard": "The near-zero-mode truncation is presently a prescription chosen to recover the area law; its physical origin and its precise correspondence to the crossed-product regularization are not established.",
+    "attempts": "Causal-set SSEE calculations, Sorkin-Johnston state, comparison with continuum modular entropy and the LQG area gap as candidate physical cutoffs.",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "de-sitter-static-patch-meaning",
+    "statement": "Clarify the physical status of the de Sitter type II_1 maximal-entropy state and whether a single static-patch observer suffices to define cosmological entropy and dynamics.",
+    "whyHard": "The construction needs an observer inside a closed universe with finite-dimensional-like (II_1) entropy; the role of multiple observers, the global state and the cosmological horizon's microstates is unclear.",
+    "attempts": "Multi-observer QRF crossed products, covariant-observer algebras, Janus deformations and transitions in gravitational algebras.",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "thermal-time-empirical-content",
+    "statement": "Whether the thermal time hypothesis has genuine empirical content beyond reproducing Unruh/Hawking temperatures, i.e. whether modular flow is the physical time in realistic non-equilibrium settings.",
+    "whyHard": "Generic physical states are not KMS and have nonlocal, state-dependent modular flow that need not match clock-measured proper time; matching modular time to laboratory time in non-stationary situations is unproven.",
+    "attempts": "Tolman-Ehrenfest derivations, epistemic analyses, links to the problem of time and to crossed-product clocks.",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  }
+]

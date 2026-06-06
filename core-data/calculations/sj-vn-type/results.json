@@ -1,0 +1,359 @@
+{
+  "meta": {
+    "task": "VYPOCET-12 von-Neumann TYPE diagnostics of SSEE truncation (H3g-3)",
+    "dimension": "2D (clean case)",
+    "claim": "truncation volume->area == type III_1 -> type II transition; kappa=sqrt(N)/4pi == modular/observer (crossed-product) cutoff",
+    "conventions": {
+      "G_R": "G_R=(1/2)C (Sorkin-Yazdi 1611.10281)",
+      "iDelta": "i(G_R-G_R^T)=i/2(C-C^T), Hermitian, +/- paired",
+      "W_SJ": "positive part of iDelta",
+      "SSEE": "W_O v=mu iDelta_O v ; S=sum mu ln|mu| ; pairs (mu,1-mu)",
+      "kappa": "sqrt(N)/(4 pi) (1712.04227); double truncation",
+      "modular_energy": "eps=ln[mu/(mu-1)]=ln[(nu+1/2)/(nu-1/2)], nu=mu-1/2 (Casini-Huerta 0905.2562 bosonic single-mode)",
+      "trace_probe": "Tr|iDelta_O|=sum|eig(iDelta_O)| (nuclear norm) = trace existence probe (finite=II, divergent=III)"
+    }
+  },
+  "proxy1_trace": {
+    "description": "TWO distinct trace objects. (A) ENTROPY-TRACE S=-Tr(rho ln rho): the actual von Neumann trace functional; III=no finite trace (volume law, diverges), II=finite trace (area/log law, saturates). (B) Pauli-Jordan NUCLEAR NORM Tr|iDelta_O|: a kinematic (symplectic-form) object, type-independent. Reported as an honest control.",
+    "Ns": [
+      400,
+      600,
+      800,
+      1000,
+      1200,
+      1500,
+      1800
+    ],
+    "rho": [
+      100.0,
+      150.0,
+      200.0,
+      250.0,
+      300.0,
+      375.0,
+      450.0
+    ],
+    "entropy_trace_full": {
+      "mean": [
+        28.676857188615045,
+        42.62619218804889,
+        59.655175739055245,
+        72.85289298355055,
+        91.20972701292371,
+        113.20851678726191,
+        135.92547127859575
+      ],
+      "std": [
+        2.3505114651738808,
+        2.9792308535373517,
+        2.5796504818732404,
+        2.4183436133370715,
+        3.674095158715739,
+        3.819313196104701,
+        3.480563396677377
+      ],
+      "exponent_a": 1.0433381703439863,
+      "a_err": 0.775853511479044,
+      "note": "volume law ~ N^1 = divergent trace (III-like)"
+    },
+    "entropy_trace_trunc": {
+      "mean": [
+        1.2996461380534172,
+        1.3856270361839844,
+        1.5107240450483612,
+        1.5127685229853296,
+        1.5812464436437494,
+        1.6187186387333623,
+        1.6971498009048749
+      ],
+      "std": [
+        0.10262503900577118,
+        0.08234132860039285,
+        0.07411052572375806,
+        0.06874215249217881,
+        0.048737687954125905,
+        0.04587130007497066,
+        0.051464032687404106
+      ],
+      "exponent_a": 0.17243056092717168,
+      "a_err": 0.775853511479044,
+      "note": "area/log law, saturates ~1.3-1.7 = finite trace (II-like)"
+    },
+    "PJ_nuclear_norm_full": {
+      "mean": [
+        136.94675456971328,
+        228.54652098878475,
+        332.42890954375366,
+        422.5759973235816,
+        529.5319500647759,
+        670.4079459192883,
+        825.3526380799465
+      ],
+      "std": [
+        6.597381473614748,
+        16.48687924581093,
+        18.434759242709376,
+        27.09398371236687,
+        22.717916671978134,
+        40.07431003621021,
+        42.92342939655472
+      ],
+      "exponent_a": 1.1964254026266872,
+      "a_err": 0.0404162953180251
+    },
+    "PJ_nuclear_norm_trunc": {
+      "mean": [
+        117.15186005023975,
+        190.22511486809776,
+        271.17865720902716,
+        340.47355581200475,
+        422.20575156288186,
+        529.6631893949461,
+        645.0966157187983
+      ],
+      "std": [
+        5.616965818737301,
+        12.98866754408317,
+        13.297887110296948,
+        21.004736309512214,
+        17.026837315086798,
+        30.76633300341121,
+        32.17116707195409
+      ],
+      "exponent_a": 1.1350179986237663,
+      "a_err": 0.03942533435139074,
+      "note": "grows ~N^1 like full: kappa removes only a constant ~20% fraction, NOT the divergence"
+    },
+    "rank_full_mean": [
+      94.25,
+      143.5,
+      198.75,
+      243.0,
+      296.75,
+      362.5,
+      434.75
+    ],
+    "rank_trunc_mean": [
+      77.25,
+      95.5,
+      111.0,
+      124.25,
+      136.5,
+      152.75,
+      167.5
+    ],
+    "prediction": "III->II in the ENTROPY-TRACE: S_full divergent (a~1, volume), S_trunc saturates (a~0, area/log).",
+    "trace_collapse_factor_largest_N": 80.09043821949243,
+    "entropy_full_divergent": true,
+    "entropy_trunc_saturates": true,
+    "verdict_III_to_II": true
+  },
+  "proxy2_modular_spectrum": {
+    "description": "Modular spectrum eps=ln[mu/(mu-1)] from SSEE mu. III_1: flat dense spectrum, small-eps pile-up grows with N. II: integrable density, fixed UV edge, pile-up saturates.",
+    "Ns": [
+      400,
+      600,
+      800,
+      1000,
+      1200,
+      1500,
+      1800
+    ],
+    "eps0_threshold": 0.5,
+    "pile_below_eps0_full": {
+      "mean": [
+        3.625,
+        5.75,
+        8.75,
+        10.125,
+        13.5,
+        17.25,
+        20.375
+      ],
+      "std": [
+        0.9161253813129043,
+        1.0350983390135313,
+        0.8864052604279183,
+        0.6408699444616557,
+        0.7559289460184544,
+        0.8864052604279183,
+        1.1877349391654208
+      ],
+      "exponent": 1.1427939074441724,
+      "err": 0.09104744996032563
+    },
+    "pile_below_eps0_trunc": {
+      "mean": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "std": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exponent": 1.1368683772161603e-13,
+      "err": 0.775853511479044
+    },
+    "epsmax_full": {
+      "mean": [
+        5.419588185311751,
+        5.738775220542639,
+        5.981636872320488,
+        6.0508353069925,
+        6.131400735358335,
+        6.241505612347574,
+        6.403896265242274
+      ],
+      "std": [
+        0.2507056561393993,
+        0.2614716922746061,
+        0.2048537893587521,
+        0.14236389992193196,
+        0.13108807315316662,
+        0.12751520822961354,
+        0.18366035639326195
+      ],
+      "slope_vs_N": 0.0006282036442517229
+    },
+    "epsmax_trunc": {
+      "mean": [
+        5.45124701580022,
+        6.054188480534671,
+        6.26065383652508,
+        6.374024184222128,
+        6.52380551787605,
+        6.563109963965596,
+        6.764994484467647
+      ],
+      "std": [
+        0.24549620443877754,
+        0.29787963693637504,
+        0.279022482547205,
+        0.09997990537845934,
+        0.2101381526010077,
+        0.2173090793539496,
+        0.18200216780002948
+      ],
+      "slope_vs_N": 0.0007909762170129915
+    },
+    "nmodes_full_mean": [
+      47.125,
+      71.75,
+      99.375,
+      121.5,
+      148.375,
+      181.25,
+      217.375
+    ],
+    "nmodes_trunc_mean": [
+      8.5,
+      11.25,
+      13.125,
+      14.75,
+      16.25,
+      17.625,
+      19.625
+    ],
+    "frac_below_eps0_full": [
+      0.07692307692307693,
+      0.08013937282229965,
+      0.0880503144654088,
+      0.08333333333333333,
+      0.09098567818028644,
+      0.09517241379310344,
+      0.09373202990224266
+    ],
+    "frac_below_eps0_trunc": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "prediction": "III->II: pile_full exponent >0 (UV pile-up grows, dense spectrum toward eps=0); pile_trunc saturates (exponent ~0).",
+    "full_pileup_grows": true,
+    "trunc_pileup_saturates": true,
+    "verdict_III_to_II": true
+  },
+  "proxy3_central_sequences": {
+    "description": "Central-sequences / factor proxy: seed-to-seed CV of the TRUNCATED SSEE should shrink with N (self-averaging / trivial centre / boundary-microstructure independent).",
+    "Ns": [
+      400,
+      600,
+      800,
+      1000,
+      1200,
+      1500,
+      1800
+    ],
+    "n_seeds": 8,
+    "CV_S_trunc": [
+      0.07896383176999303,
+      0.05942531897122966,
+      0.04905629586466643,
+      0.045441289561288324,
+      0.030822322573461153,
+      0.028338031685892415,
+      0.030323800916079925
+    ],
+    "CV_S_full": [
+      0.08196544864431844,
+      0.06989202414314265,
+      0.04324269352850781,
+      0.03319488786647236,
+      0.04028183483319875,
+      0.033736977609925244,
+      0.02560641036545343
+    ],
+    "CV_epsmax_trunc": [
+      0.045034870686875256,
+      0.049202240381863376,
+      0.044567626614231394,
+      0.015685523381907387,
+      0.03221097747705732,
+      0.033110686937606326,
+      0.026903520500704686
+    ],
+    "CV_epsmax_full": [
+      0.04625917091244415,
+      0.04556228153677053,
+      0.03424711224225186,
+      0.023527974684323764,
+      0.021379792124369357,
+      0.02043020004297523,
+      0.02867947086996008
+    ],
+    "CV_S_trunc_slope_vs_N": -3.3973058078647335e-05,
+    "CV_S_full_slope_vs_N": -3.68470519822435e-05,
+    "CV_S_trunc_powerlaw": -0.7135270246444776,
+    "CV_S_trunc_powerlaw_err": 0.775853511479044,
+    "CV_S_full_powerlaw": -0.7536145177934088,
+    "CV_S_full_powerlaw_err": 0.775853511479044,
+    "CV_S_trunc_largest_N": 0.030323800916079925,
+    "prediction": "factor-like (II): CV(S_trunc) small and DECREASING with N (slope<0, power-law exponent significantly <0).",
+    "trunc_is_self_averaging": true,
+    "trunc_trend_significant": false,
+    "trunc_trend_decreasing": true,
+    "verdict_factor_like": false,
+    "verdict_note": "self-averaging (small CV) CONFIRMED; decreasing trend NOT significant at this seed count"
+  },
+  "VERDICT": {
+    "proxy1_trace_III_to_II": true,
+    "proxy2_modular_spectrum_III_to_II": true,
+    "proxy3_factor_like": false,
+    "n_proxies_passing": 2,
+    "overall": "MIXED: 2/3 proxies consistent with III_1 -> II"
+  }
+}

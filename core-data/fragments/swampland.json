@@ -1,0 +1,717 @@
+{
+  "slug": "swampland",
+  "name": "Swampland Program & the String Landscape",
+  "concepts": [
+    {
+      "id": "string-landscape",
+      "name": "String Landscape",
+      "definition": "The vast set of consistent low-energy effective field theories (EFTs) that arise as low-energy limits of string theory, typically from flux compactifications of Calabi-Yau / F-theory backgrounds. Statistical estimates range from ~10^500 to lower bounds of 10^272000 flux vacua. The multiplicity motivates anthropic selection of the cosmological constant and Standard Model parameters.",
+      "relatedTo": ["swampland-region", "flux-compactification", "anthropic-principle"]
+    },
+    {
+      "id": "swampland-region",
+      "name": "Swampland",
+      "definition": "The (even larger) set of seemingly consistent semiclassical EFTs coupled to gravity that nonetheless admit NO ultraviolet completion into quantum gravity. The swampland program seeks universal criteria (conjectures) that separate the landscape from the swampland. Introduced by Vafa (2005).",
+      "relatedTo": ["string-landscape", "weak-gravity-conjecture", "distance-conjecture", "de-sitter-conjecture"]
+    },
+    {
+      "id": "weak-gravity-conjecture",
+      "name": "Weak Gravity Conjecture (WGC)",
+      "definition": "In any consistent quantum gravity with a U(1) gauge field of coupling g there must exist a charged particle for which the gauge force is at least as strong as gravity: q g M_Pl >= m, i.e. its charge-to-mass ratio exceeds that of an extremal black hole. Ensures extremal black holes can decay. Variants: electric, magnetic (cutoff Lambda <~ g M_Pl), convex-hull (multiple U(1)s), lattice, sublattice/tower.",
+      "relatedTo": ["swampland-region", "no-global-symmetries", "black-hole-extremality", "distance-conjecture", "positivity-bounds"]
+    },
+    {
+      "id": "distance-conjecture",
+      "name": "Swampland Distance Conjecture (SDC)",
+      "definition": "Traversing an infinite geodesic distance in moduli/scalar-field space triggers an infinite tower of states becoming exponentially light: m ~ m_0 exp(-alpha d / M_Pl) with alpha ~ O(1). The tower (KK modes or string excitations) signals a breakdown of the EFT and an emergent dual description. Proposed by Ooguri-Vafa (2006).",
+      "relatedTo": ["swampland-region", "emergent-string-conjecture", "species-scale", "ads-distance-conjecture", "universal-pattern"]
+    },
+    {
+      "id": "de-sitter-conjecture",
+      "name": "de Sitter Conjecture",
+      "definition": "The scalar potential of a consistent quantum gravity satisfies |grad V| >= c V / M_Pl (forbidding metastable de Sitter vacua). Refined version (Ooguri-Palti-Shiu-Vafa): either that gradient bound OR min(grad_i grad_j V) <= -c' V / M_Pl^2, with c,c' ~ O(1). Implies dark energy is quintessence-like rather than a true positive cosmological constant.",
+      "relatedTo": ["swampland-region", "trans-planckian-censorship", "festina-lente", "distance-conjecture", "dark-energy"]
+    },
+    {
+      "id": "no-global-symmetries",
+      "name": "No Global Symmetries",
+      "definition": "Quantum gravity admits no exact global symmetries, continuous or discrete. Originally argued from black hole physics (global charge swallowed by a black hole is not conserved/measurable after evaporation). Proven within AdS/CFT by Harlow-Ooguri (2018) using quantum error correction; gauge groups must be compact and the spectrum complete.",
+      "relatedTo": ["completeness-hypothesis", "cobordism-conjecture", "weak-gravity-conjecture", "holographic-principle", "quantum-error-correction"]
+    },
+    {
+      "id": "completeness-hypothesis",
+      "name": "Completeness Hypothesis",
+      "definition": "The spectrum of a quantum gravity theory must contain a physical state (particle or brane) for every allowed gauge charge in the charge lattice (Polchinski 2003). Equivalent to the absence of (possibly non-invertible) one-form global symmetries; broadened by Heidenreich-McNamara et al. (2021).",
+      "relatedTo": ["no-global-symmetries", "cobordism-conjecture", "weak-gravity-conjecture", "generalized-symmetries"]
+    },
+    {
+      "id": "cobordism-conjecture",
+      "name": "Cobordism Conjecture",
+      "definition": "All cobordism classes in the configuration space of a quantum gravity theory must be trivial; cobordism classes are conserved global charges whose triviality follows from no-global-symmetries. Forces the existence of defects (branes), domain walls between any two consistent theories, and end-of-the-world branes (McNamara-Vafa 2019).",
+      "relatedTo": ["no-global-symmetries", "completeness-hypothesis", "end-of-world-brane", "generalized-symmetries"]
+    },
+    {
+      "id": "emergent-string-conjecture",
+      "name": "Emergent String Conjecture",
+      "definition": "Refinement of the SDC: every infinite-distance limit in moduli space is either a decompactification limit (a KK tower becomes light, dimension grows) or a limit in which a unique critical, asymptotically tensionless, weakly coupled string becomes the lightest object. Established for M-/IIA on CY3 by Lee-Lerche-Weigand (2019).",
+      "relatedTo": ["distance-conjecture", "species-scale", "string-theory"]
+    },
+    {
+      "id": "species-scale",
+      "name": "Species Scale",
+      "definition": "Gravitational cutoff in the presence of N light species: Lambda_sp ~ M_Pl / sqrt(N), below the Planck scale. Marks where EFT description of gravity breaks down; equals the inverse size of the smallest black hole whose Bekenstein-Hawking entropy S_BH ~ N. Central to the emergence proposal and the universal pattern.",
+      "relatedTo": ["distance-conjecture", "bekenstein-hawking-entropy", "universal-pattern", "emergent-gravity"]
+    },
+    {
+      "id": "universal-pattern",
+      "name": "Universal Pattern at Infinite Distance",
+      "definition": "Empirical relation found in all known string infinite-distance limits relating the tower mass scale m and the species scale Lambda_sp: (grad m / m) . (grad Lambda_sp / Lambda_sp) = 1/(d-2) in d dimensions (Castellano-Ruiz-Valenzuela 2023). Sharpens the SDC and fixes lower bounds on exponential decay rates.",
+      "relatedTo": ["distance-conjecture", "species-scale", "emergent-string-conjecture"]
+    },
+    {
+      "id": "trans-planckian-censorship",
+      "name": "Trans-Planckian Censorship Conjecture (TCC)",
+      "definition": "Sub-Planckian quantum fluctuations must never be stretched by cosmic expansion beyond the Hubble horizon and freeze: (a_f/a_i) l_Pl < 1/H_f. Over a monotonic stretch this implies |grad V|/V >= 2/sqrt((d-1)(d-2)) / M_Pl, sharpening asymptotically to |grad V|/V >= 2/sqrt(d-2) / M_Pl, forbidding eternal acceleration. Bounds inflation scale to V^{1/4} <~ 10^9 GeV and epsilon < 10^-31 (Bedroya-Vafa 2019).",
+      "relatedTo": ["de-sitter-conjecture", "inflation", "dark-energy", "distance-conjecture"]
+    },
+    {
+      "id": "festina-lente",
+      "name": "Festina Lente Bound",
+      "definition": "Lower bound on the mass of any charged particle in quasi-de Sitter: m^2 >= sqrt(6) g q M_Pl H, equivalently m^4 >= 6 (gq)^2 V. Derived by requiring charged Nariai black holes evaporate back to empty dS without a big crunch. Forces electroweak symmetry breaking and confinement/Higgsing of non-abelian gauge fields above H.",
+      "relatedTo": ["de-sitter-conjecture", "weak-gravity-conjecture", "black-hole-extremality", "electroweak-symmetry-breaking"]
+    },
+    {
+      "id": "ads-distance-conjecture",
+      "name": "AdS Distance Conjecture",
+      "definition": "The flat-space limit Lambda -> 0^- of AdS lies in the swampland, accompanied by an infinite tower of light states with m ~ M_Pl |Lambda/M_Pl^2|^alpha, alpha = 1/2 in the supersymmetric case. Strong version forbids parametric scale separation between the AdS scale and the KK scale, constraining KKLT/DGKT-type AdS vacua.",
+      "relatedTo": ["distance-conjecture", "de-sitter-conjecture", "scale-separation", "holography-adscft"]
+    },
+    {
+      "id": "finiteness-conjecture",
+      "name": "Finiteness / Tameness Conjecture",
+      "definition": "The number of flux vacua is finite, and all valid EFTs have scalar field spaces and coupling functions definable in an o-minimal (tame) structure (Grimm 2021). Proven for self-dual flux vacua of F-theory using breakthroughs on the tameness of Hodge theory; gives the program a rigorous mathematical core.",
+      "relatedTo": ["string-landscape", "flux-compactification", "swampland-region"]
+    },
+    {
+      "id": "dark-dimension",
+      "name": "Dark Dimension Scenario",
+      "definition": "Phenomenological scenario from SDC + small dark energy: a single mesoscopic extra dimension of size l ~ Lambda^{-1/4} ~ 1-10 micron, with a KK tower at m ~ Lambda^{1/4} ~ meV and a higher-dimensional (species) Planck scale ~10^9-10^10 GeV. Predicts a sterile-neutrino tower, KK graviton dark matter, and links neutrino mass to the dark energy scale (Montero-Vafa-Valenzuela 2022).",
+      "relatedTo": ["distance-conjecture", "ads-distance-conjecture", "species-scale", "neutrino-mass", "dark-energy"]
+    },
+    {
+      "id": "convex-hull-condition",
+      "name": "Convex Hull Condition",
+      "definition": "Multi-U(1) generalization of the WGC: for charge-to-mass vectors z_i = q_i g M_Pl / m_i, the convex hull of {+/- z_i} must contain the unit ball, ensuring every extremal multi-charged black hole has an allowed decay channel (Cheung-Remmen 2014).",
+      "relatedTo": ["weak-gravity-conjecture", "black-hole-extremality"]
+    },
+    {
+      "id": "anthropic-principle",
+      "name": "Anthropic Principle (Landscape)",
+      "definition": "Selection argument that the observed small cosmological constant and Standard Model parameters are fixed by requiring observers, given a vast landscape of vacua. Central to the Susskind landscape debate that triggered the swampland program; criticized for weak predictivity.",
+      "relatedTo": ["string-landscape", "dark-energy", "de-sitter-conjecture"]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "wgc-electric",
+      "name": "Electric Weak Gravity Conjecture",
+      "latex": "q\\, g\\, M_{\\mathrm{Pl}} \\;\\ge\\; m \\qquad\\Longleftrightarrow\\qquad \\frac{q g}{m/M_{\\mathrm{Pl}}} \\ge \\left|\\frac{Q}{M}\\right|_{\\mathrm{ext}}",
+      "meaning": "Some charged particle has gauge force >= gravity, i.e. its charge-to-mass ratio exceeds the extremal black hole value, so extremal black holes can decay.",
+      "source": "amnv-2006"
+    },
+    {
+      "id": "wgc-magnetic",
+      "name": "Magnetic WGC Cutoff",
+      "latex": "\\Lambda \\;\\lesssim\\; g\\, M_{\\mathrm{Pl}}",
+      "meaning": "EFT validity cutoff set by the gauge coupling; as g -> 0 (global symmetry limit) the cutoff vanishes, forbidding exact global symmetries. Above Lambda a tower of states appears.",
+      "source": "amnv-2006"
+    },
+    {
+      "id": "convex-hull",
+      "name": "Convex Hull Condition",
+      "latex": "B_{\\mathrm{unit}} \\subseteq \\mathrm{ConvHull}\\big(\\{\\pm \\vec{z}_i\\}\\big),\\qquad \\vec{z}_i = \\frac{\\vec{q}_i\\, g\\, M_{\\mathrm{Pl}}}{m_i}",
+      "meaning": "For multiple U(1) gauge fields the convex hull of charge-to-mass vectors must contain the unit ball, guaranteeing decay channels for all extremal multi-charged black holes.",
+      "source": "palti-2019"
+    },
+    {
+      "id": "distance-conjecture-formula",
+      "name": "Swampland Distance Conjecture",
+      "latex": "m(Q) \\;\\sim\\; m(P)\\; e^{-\\alpha\\, d(P,Q)/M_{\\mathrm{Pl}}},\\qquad \\alpha \\sim O(1)",
+      "meaning": "A tower of states becomes exponentially light with geodesic distance d in moduli space, ending EFT validity at infinite distance.",
+      "source": "ooguri-vafa-2006"
+    },
+    {
+      "id": "species-scale-formula",
+      "name": "Species Scale",
+      "latex": "\\Lambda_{\\mathrm{sp}} \\;\\sim\\; \\frac{M_{\\mathrm{Pl}}}{\\sqrt{N}},\\qquad S_{\\mathrm{BH}}(\\Lambda_{\\mathrm{sp}}^{-1}) \\sim N",
+      "meaning": "Gravitational cutoff lowered by N light species; equals inverse size of the minimal black hole whose entropy counts the species.",
+      "source": "dvali-three-scales-2024"
+    },
+    {
+      "id": "universal-pattern-formula",
+      "name": "Universal Pattern at Infinite Distance",
+      "latex": "\\frac{\\vec{\\nabla} m}{m}\\cdot\\frac{\\vec{\\nabla}\\Lambda_{\\mathrm{sp}}}{\\Lambda_{\\mathrm{sp}}} \\;=\\; \\frac{1}{d-2}",
+      "meaning": "Universal product of the logarithmic field-space gradients of tower mass and species scale in d dimensions; sharpens the SDC and bounds decay rates.",
+      "source": "castellano-ruiz-valenzuela-2023"
+    },
+    {
+      "id": "de-sitter-refined",
+      "name": "Refined de Sitter Conjecture",
+      "latex": "|\\nabla V| \\ge \\frac{c}{M_{\\mathrm{Pl}}} V \\quad\\text{OR}\\quad \\min(\\nabla_i\\nabla_j V) \\le -\\frac{c'}{M_{\\mathrm{Pl}}^2} V,\\quad c,c'\\sim O(1)",
+      "meaning": "Scalar potential must be steep or tachyonic at positive V, forbidding metastable de Sitter minima but allowing maxima/saddles (quintessence).",
+      "source": "opsv-2018"
+    },
+    {
+      "id": "tcc-bound",
+      "name": "Trans-Planckian Censorship Bound",
+      "latex": "\\frac{a(t_f)}{a(t_i)}\\, l_{\\mathrm{Pl}} < \\frac{1}{H_f} \\;\\Rightarrow\\; \\frac{|\\nabla V|}{V} \\ge \\frac{2}{\\sqrt{(d-1)(d-2)}}\\frac{1}{M_{\\mathrm{Pl}}}\\ \\ (\\text{stretch}),\\quad \\ge \\frac{2}{\\sqrt{d-2}}\\frac{1}{M_{\\mathrm{Pl}}}\\ \\ (\\text{asymptotic})",
+      "meaning": "Sub-Planckian modes never cross the horizon; forces a steep potential. The bound over a monotonic stretch is 2/sqrt((d-1)(d-2)); the asymptotic large-field bound sharpens to 2/sqrt(d-2). Bounds the inflation scale to V^{1/4} <~ 10^9 GeV.",
+      "source": "bedroya-vafa-2019"
+    },
+    {
+      "id": "festina-lente-formula",
+      "name": "Festina Lente Bound",
+      "latex": "m^2 \\;\\ge\\; \\sqrt{6}\\; g\\, q\\, M_{\\mathrm{Pl}}\\, H \\quad\\Longleftrightarrow\\quad m^4 \\ge 6\\,(g q\\, M_{\\mathrm{Pl}} H)^2 = 2\\,(g q)^2\\, V",
+      "meaning": "Lower mass bound on charged particles in quasi-de Sitter so charged Nariai black holes evaporate safely; forces EW breaking and non-abelian confinement above H. Using V = 3 M_Pl^2 H^2 the bound reads m^4 >= 2 (gq)^2 V.",
+      "source": "fl-pheno-2021"
+    },
+    {
+      "id": "ads-distance-formula",
+      "name": "AdS Distance Conjecture",
+      "latex": "m \\;\\sim\\; M_{\\mathrm{Pl}}\\,\\left|\\frac{\\Lambda}{M_{\\mathrm{Pl}}^2}\\right|^{\\alpha},\\qquad \\alpha=\\tfrac{1}{2}\\ \\text{(SUSY)}",
+      "meaning": "Tower mass scales as a power of the (negative) cosmological constant; the flat-space limit of AdS is at infinite distance, constraining scale separation.",
+      "source": "lust-palti-vafa-2019"
+    },
+    {
+      "id": "dark-dimension-formula",
+      "name": "Dark Dimension Size and Species Scale",
+      "latex": "\\ell \\sim \\lambda\\,\\Lambda^{-1/4} \\sim 1\\text{–}10\\,\\mu\\mathrm{m},\\qquad \\hat{M} = m^{1/3} M_{\\mathrm{Pl}}^{2/3} \\sim 10^{9\\text{–}10}\\,\\mathrm{GeV}",
+      "meaning": "From SDC with alpha=1/d and small dark energy: one mesoscopic extra dimension, KK tower at m=1/l ~ Lambda^{1/4} ~ meV, higher-dimensional Planck (species) scale ~10^9-10^10 GeV.",
+      "source": "montero-vafa-valenzuela-2022"
+    },
+    {
+      "id": "wgc-kk-rate",
+      "name": "KK Tower Decay Rate",
+      "latex": "m_{\\mathrm{KK}} \\sim e^{-\\gamma \\phi},\\quad \\gamma = \\sqrt{\\tfrac{d-1}{d-2}}\\ \\ (n=1),\\quad \\gamma = \\sqrt{\\tfrac{d+n-2}{n(d-2)}}\\ \\ (\\text{general }n)",
+      "meaning": "Explicit SDC exponent for a Kaluza-Klein tower from decompactifying n extra dimensions under the canonical radion phi, giving an O(1) decay rate alpha = gamma. For a single extra dimension (n=1) this is sqrt((d-1)/(d-2)); in d=4 it equals sqrt(3/2).",
+      "source": "etheredge-sharpening-2022"
+    }
+  ],
+  "references": [
+    {
+      "id": "vafa-2005",
+      "authors": "C. Vafa",
+      "title": "The String Landscape and the Swampland",
+      "year": 2005,
+      "arxiv": "hep-th/0509212",
+      "url": "https://arxiv.org/abs/hep-th/0509212",
+      "significance": "Founding paper introducing the swampland concept as the complement of the string landscape."
+    },
+    {
+      "id": "amnv-2006",
+      "authors": "N. Arkani-Hamed, L. Motl, A. Nicolis, C. Vafa",
+      "title": "The String Landscape, Black Holes and Gravity as the Weakest Force",
+      "year": 2007,
+      "arxiv": "hep-th/0601001",
+      "doi": "10.1088/1126-6708/2007/06/060",
+      "url": "https://arxiv.org/abs/hep-th/0601001",
+      "significance": "Original Weak Gravity Conjecture; first sharp quantitative swampland criterion."
+    },
+    {
+      "id": "ooguri-vafa-2006",
+      "authors": "H. Ooguri, C. Vafa",
+      "title": "On the Geometry of the String Landscape and the Swampland",
+      "year": 2007,
+      "arxiv": "hep-th/0605264",
+      "doi": "10.1016/j.nuclphysb.2006.10.033",
+      "url": "https://arxiv.org/abs/hep-th/0605264",
+      "significance": "Original Distance Conjecture and conjectures on moduli-space geometry (infinite diameter, light towers)."
+    },
+    {
+      "id": "polchinski-2003",
+      "authors": "J. Polchinski",
+      "title": "Monopoles, Duality, and String Theory",
+      "year": 2003,
+      "arxiv": "hep-th/0304042",
+      "doi": "10.1142/S0217751X0401866X",
+      "url": "https://arxiv.org/abs/hep-th/0304042",
+      "significance": "Source of the completeness hypothesis: all gauge charges must be populated."
+    },
+    {
+      "id": "denef-douglas-2007",
+      "authors": "F. Denef, M. R. Douglas, S. Kachru",
+      "title": "Physics of String Flux Compactifications",
+      "year": 2007,
+      "arxiv": "hep-th/0701050",
+      "doi": "10.1146/annurev.nucl.57.090506.123042",
+      "url": "https://arxiv.org/abs/hep-th/0701050",
+      "significance": "Statistical foundations of the landscape (flux vacua counting, ~10^500)."
+    },
+    {
+      "id": "brennan-carta-vafa-2017",
+      "authors": "T. D. Brennan, F. Carta, C. Vafa",
+      "title": "The String Landscape, the Swampland, and the Missing Corner",
+      "year": 2017,
+      "arxiv": "1711.00864",
+      "doi": "10.22323/1.305.0015",
+      "url": "https://arxiv.org/abs/1711.00864",
+      "significance": "Standard introductory review enumerating the core swampland conjectures."
+    },
+    {
+      "id": "obied-2018",
+      "authors": "G. Obied, H. Ooguri, L. Spodyneiko, C. Vafa",
+      "title": "De Sitter Space and the Swampland",
+      "year": 2018,
+      "arxiv": "1806.08362",
+      "url": "https://arxiv.org/abs/1806.08362",
+      "significance": "Original de Sitter conjecture |grad V| >= c V; bridges swampland to observational cosmology."
+    },
+    {
+      "id": "agrawal-2018",
+      "authors": "P. Agrawal, G. Obied, P. J. Steinhardt, C. Vafa",
+      "title": "On the Cosmological Implications of the String Swampland",
+      "year": 2018,
+      "arxiv": "1806.09718",
+      "doi": "10.1016/j.physletb.2018.07.040",
+      "url": "https://arxiv.org/abs/1806.09718",
+      "significance": "Derives quintessence/dark-energy consequences of the de Sitter conjecture."
+    },
+    {
+      "id": "opsv-2018",
+      "authors": "H. Ooguri, E. Palti, G. Shiu, C. Vafa",
+      "title": "Distance and de Sitter Conjectures on the Swampland",
+      "year": 2019,
+      "arxiv": "1810.05506",
+      "doi": "10.1016/j.physletb.2018.11.018",
+      "url": "https://arxiv.org/abs/1810.05506",
+      "significance": "Refined de Sitter conjecture with the Hessian alternative; links it to the SDC via Bousso bound."
+    },
+    {
+      "id": "harlow-ooguri-2018a",
+      "authors": "D. Harlow, H. Ooguri",
+      "title": "Constraints on Symmetry from Holography",
+      "year": 2019,
+      "arxiv": "1810.05337",
+      "doi": "10.1103/PhysRevLett.122.191601",
+      "url": "https://arxiv.org/abs/1810.05337",
+      "significance": "Holographic proof that there are no global symmetries in AdS/CFT (via quantum error correction)."
+    },
+    {
+      "id": "harlow-ooguri-2018b",
+      "authors": "D. Harlow, H. Ooguri",
+      "title": "Symmetries in Quantum Field Theory and Quantum Gravity",
+      "year": 2021,
+      "arxiv": "1810.05338",
+      "doi": "10.1007/s00220-021-04040-y",
+      "url": "https://arxiv.org/abs/1810.05338",
+      "significance": "Detailed companion: compactness of gauge groups, completeness, no global symmetries."
+    },
+    {
+      "id": "hamada-noumi-shiu-2018",
+      "authors": "Y. Hamada, T. Noumi, G. Shiu",
+      "title": "Weak Gravity Conjecture from Unitarity and Causality",
+      "year": 2019,
+      "arxiv": "1810.03637",
+      "doi": "10.1103/PhysRevLett.123.051601",
+      "url": "https://arxiv.org/abs/1810.03637",
+      "significance": "Existence proof of the WGC from positivity bounds on higher-derivative corrections to black holes."
+    },
+    {
+      "id": "palti-2019",
+      "authors": "E. Palti",
+      "title": "The Swampland: Introduction and Review",
+      "year": 2019,
+      "arxiv": "1903.06239",
+      "doi": "10.1002/prop.201900037",
+      "url": "https://arxiv.org/abs/1903.06239",
+      "significance": "Comprehensive 198-page review with 600+ references; the standard reference."
+    },
+    {
+      "id": "lust-palti-vafa-2019",
+      "authors": "D. Lust, E. Palti, C. Vafa",
+      "title": "AdS and the Swampland",
+      "year": 2019,
+      "arxiv": "1906.05225",
+      "doi": "10.1016/j.physletb.2019.134867",
+      "url": "https://arxiv.org/abs/1906.05225",
+      "significance": "AdS Distance Conjecture; tower with m ~ |Lambda|^{1/2}, constraining scale separation."
+    },
+    {
+      "id": "mcnamara-vafa-2019",
+      "authors": "J. McNamara, C. Vafa",
+      "title": "Cobordism Classes and the Swampland",
+      "year": 2019,
+      "arxiv": "1909.10355",
+      "url": "https://arxiv.org/abs/1909.10355",
+      "significance": "Cobordism conjecture: trivial cobordism classes, predicting branes and end-of-world branes."
+    },
+    {
+      "id": "bedroya-vafa-2019",
+      "authors": "A. Bedroya, C. Vafa",
+      "title": "Trans-Planckian Censorship and the Swampland",
+      "year": 2020,
+      "arxiv": "1909.11063",
+      "doi": "10.1007/JHEP09(2020)123",
+      "url": "https://arxiv.org/abs/1909.11063",
+      "significance": "Trans-Planckian Censorship Conjecture; arguably implies the de Sitter and distance bounds."
+    },
+    {
+      "id": "bedroya-cosmo-2019",
+      "authors": "A. Bedroya, R. Brandenberger, M. Loverde, C. Vafa",
+      "title": "Trans-Planckian Censorship and Inflationary Cosmology",
+      "year": 2020,
+      "arxiv": "1909.11106",
+      "doi": "10.1103/PhysRevD.101.103502",
+      "url": "https://arxiv.org/abs/1909.11106",
+      "significance": "TCC bound on inflation: V^{1/4} < 10^9 GeV, epsilon < 10^-31, small tensor-to-scalar ratio."
+    },
+    {
+      "id": "lee-lerche-weigand-2019",
+      "authors": "S.-J. Lee, W. Lerche, T. Weigand",
+      "title": "Emergent Strings from Infinite Distance Limits",
+      "year": 2022,
+      "arxiv": "1910.01135",
+      "doi": "10.1007/JHEP02(2022)190",
+      "url": "https://arxiv.org/abs/1910.01135",
+      "significance": "Emergent String Conjecture: infinite-distance limits decompactify or yield a tensionless string."
+    },
+    {
+      "id": "montero-vanriet-venken-2019",
+      "authors": "M. Montero, T. Van Riet, V. Venken",
+      "title": "Festina Lente: EFT Constraints from Charged Black Hole Evaporation in de Sitter",
+      "year": 2020,
+      "arxiv": "1910.01648",
+      "doi": "10.1007/JHEP01(2020)039",
+      "url": "https://arxiv.org/abs/1910.01648",
+      "significance": "Festina Lente bound on charged-particle masses in de Sitter."
+    },
+    {
+      "id": "bena-kklt-control-2020",
+      "authors": "X. Gao, A. Hebecker, D. Junghans",
+      "title": "Control issues of KKLT",
+      "year": 2020,
+      "arxiv": "2009.03914",
+      "doi": "10.1002/prop.202000089",
+      "url": "https://arxiv.org/abs/2009.03914",
+      "significance": "Ten-dimensional critique of KKLT (singular-bulk problem, negative warp factor)."
+    },
+    {
+      "id": "crisis-infinite-earths-2020",
+      "authors": "H. Bernardo, S. Brahma, K. Dasgupta, R. Tatar",
+      "title": "Crisis on Infinite Earths: Short-lived de Sitter Vacua in the String Theory Landscape",
+      "year": 2020,
+      "arxiv": "2009.04504",
+      "doi": "10.1007/JHEP04(2021)037",
+      "url": "https://arxiv.org/abs/2009.04504",
+      "significance": "Constructs non-perturbative dS uplifts with short lifetimes, sharpening the de Sitter debate."
+    },
+    {
+      "id": "vanbeest-lectures-2021",
+      "authors": "M. van Beest, J. Calderon-Infante, D. Mirfendereski, I. Valenzuela",
+      "title": "Lectures on the Swampland Program in String Compactifications",
+      "year": 2022,
+      "arxiv": "2102.01111",
+      "doi": "10.1016/j.physrep.2022.09.002",
+      "url": "https://arxiv.org/abs/2102.01111",
+      "significance": "Modern pedagogical review (Physics Reports) of the swampland program."
+    },
+    {
+      "id": "heidenreich-completeness-2021",
+      "authors": "B. Heidenreich, J. McNamara, M. Montero, M. Reece, T. Rudelius, I. Valenzuela",
+      "title": "Non-Invertible Global Symmetries and Completeness of the Spectrum",
+      "year": 2021,
+      "arxiv": "2104.07036",
+      "doi": "10.1007/JHEP09(2021)203",
+      "url": "https://arxiv.org/abs/2104.07036",
+      "significance": "Recasts completeness as absence of non-invertible symmetries; links to generalized symmetries."
+    },
+    {
+      "id": "fl-pheno-2021",
+      "authors": "M. Montero, C. Vafa, T. Van Riet, V. Venken",
+      "title": "The FL Bound and its Phenomenological Implications",
+      "year": 2021,
+      "arxiv": "2106.07650",
+      "doi": "10.1007/JHEP10(2021)009",
+      "url": "https://arxiv.org/abs/2106.07650",
+      "significance": "Exact Festina Lente bound m^2 >= sqrt(6) g q M_Pl H; Standard Model and Higgs implications."
+    },
+    {
+      "id": "grimm-tameness-2021",
+      "authors": "T. W. Grimm",
+      "title": "Taming the Landscape of Effective Theories",
+      "year": 2022,
+      "arxiv": "2112.08383",
+      "doi": "10.1007/JHEP11(2022)003",
+      "url": "https://arxiv.org/abs/2112.08383",
+      "significance": "Tameness Conjecture (o-minimal geometry); rigorous finiteness of F-theory flux vacua."
+    },
+    {
+      "id": "wgc-review-2022",
+      "authors": "D. Harlow, B. Heidenreich, M. Reece, T. Rudelius",
+      "title": "The Weak Gravity Conjecture: A Review",
+      "year": 2023,
+      "arxiv": "2201.08380",
+      "doi": "10.1103/RevModPhys.95.035003",
+      "url": "https://arxiv.org/abs/2201.08380",
+      "significance": "Authoritative Reviews of Modern Physics survey of the WGC and its variants/evidence (Rev. Mod. Phys. 95 (2023) 035003)."
+    },
+    {
+      "id": "montero-vafa-valenzuela-2022",
+      "authors": "M. Montero, C. Vafa, I. Valenzuela",
+      "title": "The Dark Dimension and the Swampland",
+      "year": 2023,
+      "arxiv": "2205.12293",
+      "doi": "10.1007/JHEP02(2023)022",
+      "url": "https://arxiv.org/abs/2205.12293",
+      "significance": "Predicts one ~micron extra dimension, sterile-neutrino tower, species scale ~10^9-10^10 GeV."
+    },
+    {
+      "id": "castellano-ruiz-valenzuela-2023",
+      "authors": "A. Castellano, I. Ruiz, I. Valenzuela",
+      "title": "Stringy Evidence for a Universal Pattern at Infinite Distance",
+      "year": 2024,
+      "arxiv": "2311.01536",
+      "doi": "10.1007/JHEP06(2024)037",
+      "url": "https://arxiv.org/abs/2311.01536",
+      "significance": "Universal pattern relating tower mass and species scale; (grad m/m)(grad Lambda/Lambda)=1/(d-2)."
+    },
+    {
+      "id": "etheredge-sharpening-2022",
+      "authors": "M. Etheredge, B. Heidenreich, S. Kaya, Y. Qiu, T. Rudelius",
+      "title": "Sharpening the Distance Conjecture in Diverse Dimensions",
+      "year": 2022,
+      "arxiv": "2206.04063",
+      "doi": "10.1007/JHEP12(2022)114",
+      "url": "https://arxiv.org/abs/2206.04063",
+      "significance": "Sharpened Distance Conjecture: lower bound alpha >= 1/sqrt(d-2); gives explicit KK tower exponent sqrt((d+n-2)/(n(d-2))) for n decompactifying dimensions."
+    },
+    {
+      "id": "grimm-monnee-2023",
+      "authors": "T. W. Grimm, J. Monnee",
+      "title": "Finiteness Theorems and Counting Conjectures for the Flux Landscape",
+      "year": 2024,
+      "arxiv": "2311.09295",
+      "doi": "10.1007/JHEP08(2024)039",
+      "url": "https://arxiv.org/abs/2311.09295",
+      "significance": "Precise finiteness/counting conjectures for flux vacua grounded in tame Hodge theory."
+    },
+    {
+      "id": "dvali-three-scales-2024",
+      "authors": "A. Bedroya, C. Vafa, D. H. Wu",
+      "title": "The Tale of Three Scales: the Planck, the Species, and the Black Hole Scales",
+      "year": 2024,
+      "arxiv": "2403.18005",
+      "url": "https://arxiv.org/abs/2403.18005",
+      "significance": "Clarifies hierarchy Lambda_BH <= Lambda_sp <= M_Pl linking species scale to black hole entropy."
+    },
+    {
+      "id": "sdual-quintessence-desi-2025",
+      "authors": "L. A. Anchordoqui, I. Antoniadis, D. Lust",
+      "title": "S-dual Quintessence, the Swampland, and the DESI DR2 Results",
+      "year": 2025,
+      "arxiv": "2503.19428",
+      "url": "https://arxiv.org/abs/2503.19428",
+      "significance": "Builds a quintessence potential consistent with SDC/dS/TCC and matching DESI DR2 dynamical dark energy."
+    },
+    {
+      "id": "neutrinos-bl-dark-dimension-2025",
+      "authors": "M. Montero, C. Vafa, I. Valenzuela",
+      "title": "Neutrinos, B-L Symmetry and the Dark Dimension",
+      "year": 2025,
+      "arxiv": "2512.09052",
+      "url": "https://arxiv.org/abs/2512.09052",
+      "significance": "Gauged B-L in the dark dimension predicts 3 right-handed neutrinos, a keV sterile-neutrino tower, and a natural neutrino-mass / dark-energy coincidence."
+    },
+    {
+      "id": "rudelius-pattern-interior-2023",
+      "authors": "T. Rudelius",
+      "title": "Persistence of the Pattern in the Interior of 5d Moduli Spaces",
+      "year": 2023,
+      "arxiv": "2312.00120",
+      "url": "https://arxiv.org/abs/2312.00120",
+      "significance": "Proves the universal tower/species-scale pattern holds for BPS states and strings even in the interior (not just asymptotics) of 5d vector-multiplet moduli space."
+    },
+    {
+      "id": "moradpouri-refined-tcc-2025",
+      "authors": "A. Moradpouri",
+      "title": "The species scale and the refined TCC bound in time-dependent backgrounds of string theory",
+      "year": 2025,
+      "arxiv": "2512.22694",
+      "url": "https://arxiv.org/abs/2512.22694",
+      "significance": "Refined TCC tying the species scale to the fundamental cutoff; predicts a shorter de Sitter lifetime, a bound on the cosmological constant, and incompatibility with a big-bang singularity."
+    },
+    {
+      "id": "cai-refined-tcc-2019",
+      "authors": "R.-G. Cai, S.-J. Wang",
+      "title": "A refined trans-Planckian censorship conjecture",
+      "year": 2019,
+      "arxiv": "1912.00607",
+      "url": "https://arxiv.org/abs/1912.00607",
+      "significance": "Earlier refinement of the TCC derived from the strong scalar Weak Gravity Conjecture and entropy bounds; compatible with hilltop eternal inflation."
+    }
+  ],
+  "openProblems": [
+    {
+      "id": "order-one-constants",
+      "statement": "Determine the O(1) constants c, c', alpha in the de Sitter and distance conjectures, or prove universal lower bounds independent of the compactification.",
+      "whyHard": "The constants depend on asymptotic details of moduli space and compactification; no example-independent derivation exists, so falsifiability remains weak.",
+      "attempts": "The universal pattern (grad m/m)(grad Lambda/Lambda)=1/(d-2) of Castellano-Ruiz-Valenzuela fixes asymptotic decay rates; entropy/Bousso-bound arguments constrain c but only heuristically."
+    },
+    {
+      "id": "metastable-de-sitter-existence",
+      "statement": "Does a fully controlled metastable de Sitter vacuum exist in string theory (status of KKLT, LVS)?",
+      "whyHard": "Requires a complete 10D computation with quantum corrections, anti-brane uplift, warping and backreaction; known constructions either lose control (singular bulk, small volume) or remain AdS.",
+      "attempts": "KKLT (anti-D3 / nilpotent superfield), LVS, racetrack uplifts vs. 10D critiques (Bena-Grana, Moritz-Retolaza-Westphal, Gao-Hebecker); 'Crisis on Infinite Earths' shows short lifetimes."
+    },
+    {
+      "id": "which-wgc-is-correct",
+      "statement": "Establish the correct strong form of the WGC (tower vs. sublattice vs. lattice) and prove it beyond U(1) toy models, including non-abelian and gravitational cases.",
+      "whyHard": "The variants are inequivalent and have counterexamples in specific setups; positivity proofs rely on assumptions (Regge boundedness, gravity subdominance).",
+      "attempts": "Hamada-Noumi-Shiu positivity/causality proof; modular-invariance arguments; convex-hull and tower/sublattice refinements by Heidenreich-Reece-Rudelius."
+    },
+    {
+      "id": "first-principles-derivation",
+      "statement": "Derive the swampland conjectures from first principles of quantum gravity rather than from string examples and black-hole heuristics.",
+      "whyHard": "No nonperturbative definition of quantum gravity exists outside holography, and the de Sitter / cosmological 'missing corner' has no known holographic dual.",
+      "attempts": "Holographic proofs of no-global-symmetries and completeness (Harlow-Ooguri); emergence proposal deriving SDC from loop effects of towers."
+    },
+    {
+      "id": "ads-scale-separation",
+      "statement": "Can the AdS scale be parametrically separated from the KK scale in a fully controlled string vacuum?",
+      "whyHard": "All controlled examples (DGKT-type) sit in smeared or parametrically questionable regimes; the strong AdS Distance Conjecture would forbid separation outright.",
+      "attempts": "DGKT massive IIA vacua, scale-separation no-go discussions (Gautason et al.); strong vs. weak AdS-DC debate by Lust-Palti-Vafa and follow-ups."
+    },
+    {
+      "id": "cosmological-consistency",
+      "statement": "Reconcile observed accelerated expansion (DESI dynamical dark energy) with the TCC ban on eternal acceleration and with CMB fluctuation amplitudes.",
+      "whyHard": "TCC pushes V^{1/4}<10^9 GeV and epsilon<10^-31, in tension with simple inflation; requires multi-field or non-canonical trajectories to achieve acceleration on steep potentials.",
+      "attempts": "S-dual quintessence and DESI-fit models; multi-field rapid-turn inflation; refined TCC linking species scale to a finite de Sitter lifetime (2026 works)."
+    },
+    {
+      "id": "cobordism-universality",
+      "statement": "Is the cobordism conjecture (triviality of all bordism groups) truly universal, and what concrete new defects/branes does it predict for realistic compactifications?",
+      "whyHard": "Computing relevant bordism groups for realistic backgrounds is technically demanding, and physically interpreting new generators as defects is uncertain.",
+      "attempts": "McNamara-Vafa cobordism program; computations of spin/string-bordism for string backgrounds; connection to generalized (higher-form) symmetries."
+    },
+    {
+      "id": "swampland-vs-string-theory-scope",
+      "statement": "Are swampland conjectures properties of string theory specifically or of every quantum gravity, and would falsifying one falsify string theory?",
+      "whyHard": "There is no provider-independent definition of 'quantum gravity' against which to test the conjectures, so logical scope is ambiguous.",
+      "attempts": "Holographic universality arguments; tests in non-stringy toy models; the ongoing Banks/Woit critiques of falsifiability."
+    }
+  ],
+  "connections": [
+    {
+      "from": "swampland",
+      "to": "string-theory",
+      "type": "shared-structure",
+      "description": "The landscape IS the set of string compactifications, and every conjecture (WGC, SDC, emergent string, finiteness) is distilled and tested in explicit string vacua (CY, F-theory, heterotic). Open question whether conjectures hold beyond string theory.",
+      "explored": "well"
+    },
+    {
+      "from": "swampland",
+      "to": "holography-adscft",
+      "type": "shared-structure",
+      "description": "The only proofs of swampland statements (no global symmetries, compact gauge groups, completeness) are holographic, via quantum error correction (Harlow-Ooguri). AdS Distance Conjecture directly constrains AdS/CFT vacua; Bousso bound enters the refined de Sitter derivation.",
+      "explored": "well"
+    },
+    {
+      "from": "swampland",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "WGC derives from extremal black hole decay and absence of remnants; Festina Lente from charged Nariai evaporation in de Sitter; species scale equals the inverse minimal-black-hole size with S_BH ~ N; no-global-symmetries from black-hole charge non-conservation. Deeply quantitative.",
+      "explored": "well"
+    },
+    {
+      "from": "swampland",
+      "to": "supergravity-uv",
+      "type": "limit",
+      "description": "Conjectures are tested in 4D N=1 supergravities from compactification; de Sitter and AdS conjectures constrain F-term potentials; KKLT/LVS are SUGRA constructions; Maldacena-Nunez no-go theorems feed the de Sitter debate.",
+      "explored": "well"
+    },
+    {
+      "from": "swampland",
+      "to": "quantum-cosmology",
+      "type": "conjecture",
+      "description": "de Sitter conjecture, TCC and Festina Lente bound inflation, dark energy and quintessence (V^{1/4}<10^9 GeV); DESI dynamical dark energy data is interpreted through these. But eternal inflation, creation-from-nothing and the de Sitter 'missing corner' are only heuristically connected (Banks: eternal inflation itself is swampy).",
+      "explored": "partially"
+    },
+    {
+      "from": "swampland",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "Emergence proposal: gauge/gravitational kinetic terms and finite moduli-space diameter emerge from integrating out towers of states; the species scale is an emergent gravitational cutoff. Concrete but limited to one-loop computations in specific limits.",
+      "explored": "partially"
+    },
+    {
+      "from": "swampland",
+      "to": "entanglement-spacetime",
+      "type": "shared-math",
+      "description": "No-global-symmetries is proven via quantum error correction, the same machinery underlying 'entanglement builds geometry' (RT, ER=EPR). Species scale ties species count to holographic entanglement entropy. Quantitative linking of swampland bounds to entanglement entropy remains open.",
+      "explored": "partially"
+    },
+    {
+      "from": "swampland",
+      "to": "twistors-amplitudes",
+      "type": "shared-math",
+      "description": "The WGC follows from positivity/causality bounds on EFT amplitudes (gravitational positivity, EFT-hedron, Regge boundedness). Swampland constraints act as boundaries of the allowed S-matrix space. Connection to twistor methods and amplitude positive geometry is largely unexplored.",
+      "explored": "partially"
+    },
+    {
+      "from": "swampland",
+      "to": "asymptotic-safety",
+      "type": "conflict",
+      "description": "Both target UV consistency of gravity from opposite ends: AS posits a UV fixed point within pure QFT, while the swampland claims pure-QFT gravity is in the swampland (must produce strings/towers). Possible tension or complementarity; almost no direct literature comparing WGC bounds with AS scaling predictions. Prime hunting zone.",
+      "explored": "barely"
+    },
+    {
+      "from": "swampland",
+      "to": "loop-quantum-gravity",
+      "type": "conjecture",
+      "description": "LQG lacks a natural moduli landscape and string towers, so SDC/WGC are hard to state. Whether LQG/spin foams satisfy no-global-symmetries and completeness is essentially untouched. Speculative bridges: area-spectrum discreteness vs. charge-spectrum completeness; cobordism vs. spin-foam amplitudes.",
+      "explored": "barely"
+    },
+    {
+      "from": "swampland",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "Connes spectral action and spectrum finiteness could resonate with the finiteness/tameness conjecture and spectrum completeness, and o-minimal/tame structures might mirror spectral-triple constraints. Virtually no literature linking the two formalisms. Hunting zone.",
+      "explored": "barely"
+    },
+    {
+      "from": "swampland",
+      "to": "causal-dynamical-triangulations",
+      "type": "conjecture",
+      "description": "CDT generates its own 'landscape' of phases (phase diagram with C, B, A, bifurcation phases); whether continuum limits respect swampland criteria (no global symmetries, WGC, finiteness) is unexplored. Possible analogy between CDT phase structure and landscape/swampland separation.",
+      "explored": "barely"
+    },
+    {
+      "from": "swampland",
+      "to": "causal-sets",
+      "type": "conjecture",
+      "description": "Causal sets predict a fluctuating small cosmological constant ~ +/- 1/sqrt(V) (Sorkin), intriguingly resonant with the swampland preference for dynamical rather than constant dark energy and with TCC. No direct comparison of the two dark-energy mechanisms exists.",
+      "explored": "barely"
+    },
+    {
+      "from": "swampland",
+      "to": "group-field-theory",
+      "type": "conjecture",
+      "description": "GFT condensate cosmology produces effective cosmological dynamics and its own parameter space; whether its continuum EFTs satisfy swampland constraints (de Sitter, distance) is unexamined. Potential analogy between GFT phase landscape and the string landscape.",
+      "explored": "barely"
+    },
+    {
+      "from": "swampland",
+      "to": "dark-energy",
+      "type": "conjecture",
+      "description": "de Sitter conjecture and TCC reinterpret dark energy as evolving quintessence rather than a true cosmological constant, with explicit potentials (S-dual, hilltop) fitting DESI DR1/DR2 dynamical dark energy. Active observational interface 2024-2026.",
+      "explored": "partially"
+    },
+    {
+      "from": "swampland",
+      "to": "neutrino-mass",
+      "type": "conjecture",
+      "description": "Dark dimension scenario ties the active neutrino mass scale and a sterile-neutrino tower to the dark energy scale via m_nu ~ y^2 <H>^2 / M_hat and a ~micron extra dimension; gauged B-L extension predicts neutrino-mass / dark-energy coincidence. Testable but speculative.",
+      "explored": "partially"
+    }
+  ]
+}

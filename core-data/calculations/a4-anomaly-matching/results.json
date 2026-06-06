@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "title": "a4 anomaly-matching test for NCG SM algebra C+H+M3(C)",
+    "hypothesis": "L1-1: a4 is the common parent of NCG spectral-action gravity and the (a,c) trace-anomaly central charges; the spectral C^2 coefficient should equal the c-charge of the inducing fermion content.",
+    "date": "2026-06-06",
+    "conventions": {
+      "anomaly": "<T> = (1/(4pi)^2)(c F - a G), F=Weyl^2, G=Euler [Duff arXiv:2003.02688 eq.14]",
+      "central_charges_basis": "2-component Weyl spinor [Duff arXiv:2003.02688 eq.17, Table 1]",
+      "heat_kernel": "a4 master coeffs [Vassilevich hep-th/0306138 eq.4.28, Table 1]",
+      "spectral_action": "alpha0=-3f0/10pi^2 (C^2), tau0=11f0/60pi^2 (R*R*) [Chamseddine-Connes hep-th/9606001 eq.2.24; CCM hep-th/0610241]"
+    }
+  },
+  "inputs": {
+    "central_charges_per_field": {
+      "real_scalar": {
+        "a": "1/360",
+        "c": "1/120"
+      },
+      "weyl_fermion": {
+        "a": "11/720",
+        "c": "1/40"
+      },
+      "vector": {
+        "a": "31/180",
+        "c": "1/10"
+      }
+    },
+    "SM_content": {
+      "N0_real_scalars": 4,
+      "N1_vectors": 12,
+      "N_Weyl_without_nuR": 45,
+      "N_Weyl_with_nuR": 48
+    },
+    "vassilevich_table1_Weyl2_coeff_aH": {
+      "real_scalar": "1",
+      "dirac_4comp": "-7/2",
+      "vector_plus_ghost": "-13"
+    }
+  },
+  "spectral_action_a4": {
+    "C2_coefficient_alpha0": "-3*f0/(10*pi^2)",
+    "Euler_R*R*_coefficient_tau0": "11*f0/(60*pi^2)",
+    "ratio_C2_over_Euler": "-18/11",
+    "ratio_C2_over_Euler_float": -1.6363636363636365
+  },
+  "central_charges_totals": {
+    "fermions_only_without_nuR": {
+      "a": "11/16",
+      "c": "9/8"
+    },
+    "fermions_only_with_nuR": {
+      "a": "11/15",
+      "c": "6/5"
+    },
+    "full_SM_without_nuR": {
+      "a": "1991/720",
+      "c": "283/120"
+    },
+    "full_SM_with_nuR": {
+      "a": "253/90",
+      "c": "73/30"
+    }
+  },
+  "TEST_A_ratio_C2_over_Euler": {
+    "spectral_target": "-18/11",
+    "spectral_target_float": -1.6363636363636365,
+    "anomaly_single_weyl": "-18/11",
+    "anomaly_fermions_only_without_nuR": "-18/11",
+    "anomaly_fermions_only_with_nuR": "-18/11",
+    "anomaly_full_SM_without_nuR": "-1698/1991",
+    "anomaly_full_SM_with_nuR": "-219/253",
+    "anomaly_full_SM_without_nuR_float": -0.8528377699648418,
+    "anomaly_full_SM_with_nuR_float": -0.8656126482213439,
+    "mismatch_fermions_only_without_nuR": "0",
+    "mismatch_fermions_only_with_nuR": "0",
+    "mismatch_full_SM_without_nuR": "1560/1991",
+    "mismatch_full_SM_with_nuR": "195/253",
+    "rel_mismatch_full_SM_without_nuR_float": -0.47882136279926335,
+    "rel_mismatch_full_SM_with_nuR_float": -0.47101449275362317
+  },
+  "TEST_B_per_fermion_magnitude": {
+    "conv_factor_a4basis_to_anomaly": "1/180",
+    "c_from_vassilevich_dirac_aH": "7/360",
+    "c_from_vassilevich_dirac_aH_float": 0.019444444444444445,
+    "duff_c_one_dirac_(2x weyl)": "1/20",
+    "note": "Vassilevich aH gives Weyl-coeff in a4-basis; magnitude matches Duff c only up to the documented 120-vs-180 normalization; ratios between spins are convention-free and DO match."
+  },
+  "BONUS_Euler_vs_a": {
+    "spectral_Euler_num_11_60": "11/60",
+    "anomaly_a_per_weyl_11_720": "11/720",
+    "both_carry_factor_11": true,
+    "ratio_spectralEuler_over_a_weyl": "12"
+  },
+  "VERDICT": {
+    "fermionic_sector_exact_match": true,
+    "nuR_changes_fermionic_match": false,
+    "full_SM_match": false,
+    "full_SM_with_nuR_closer_than_without": true
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "title": "VYPOCET-11: graviton sector + index-theorem cross-check for -18/11",
+    "date": "2026-06-06",
+    "hypothesis": "H3g-4: spectral action = fermion-induced (Sakharov) gravity; bosons incl. graviton are NOT part of the a4 identity.",
+    "tasks": "BRAINSTORM-03 Vypocetni-fronta #1 (graviton/Weyl sector) + #7 (index)."
+  },
+  "PART2_index_theorem": {
+    "derivation_basis": "{C2 (Weyl^2), E4 (Euler/Gauss-Bonnet), R^2}; total-derivative Box R tracked separately",
+    "master_coefficient": "Gilkey / Vassilevich hep-th/0306138 eq.4.28",
+    "scalar_a4_bracket": {
+      "C2": "1/120",
+      "E4": "-1/360",
+      "R2": "0"
+    },
+    "dirac_a4_bracket": {
+      "C2": "-1/20",
+      "E4": "11/360",
+      "R2": "0"
+    },
+    "scalar_is_conformal_R2_zero": true,
+    "dirac_is_conformal_R2_zero": true,
+    "scalar_(a,c)_from_heatkernel": [
+      "1/360",
+      "1/120"
+    ],
+    "dirac_(a,c)_from_heatkernel": [
+      "11/360",
+      "1/20"
+    ],
+    "weyl_(a,c)_from_heatkernel": [
+      "11/720",
+      "1/40"
+    ],
+    "weyl_(a,c)_literature_Duff": [
+      "11/720",
+      "1/40"
+    ],
+    "match_weyl_literature": true,
+    "ratio_c_over_minus_a_dirac_from_heatkernel": "-18/11",
+    "ratio_spectral_action_alpha0_over_tau0": "-18/11",
+    "minus_18_over_11_emerges_from_spinor_a4": true
+  },
+  "PART2b_index_normalization_lock": {
+    "type_A_conformal_a_anomaly": "coeff(E_4) in a4(D^2) = a = 11/720 per Weyl fermion",
+    "gauss_bonnet": "chi(M) = (1/(32 pi^2)) Int E_4  [Euler characteristic, integer]",
+    "type_topological_index": "ind(D) = Int A-hat = -(1/24) Int p1  (Pontryagin/chiral)",
+    "Ahat_4D": "A-hat|_4 = -p1/24",
+    "p1_equals_3_sigma": true,
+    "ind_equals_minus_sigma_over_8": "-sigma/8",
+    "rohlin_sigma16_gives_ind": "-2",
+    "rohlin_check_even_integer": true,
+    "lesson": "The E_4 (Euler) coefficient of the Dirac a4 is the conformal a-anomaly (Gauss-Bonnet/Euler-characteristic response); the SEPARATE Pontryagin sector of the same a4(D^2) is the A-hat index density (chiral anomaly). -18/11 = coeff(C2)/coeff(E4) lives inside this index-protected object, which is why it is content-independent: every Weyl fermion carries the SAME (a,c) and the SAME unit of index density.",
+    "textbook_vs_added_value": {
+      "textbook": [
+        "Gilkey a4 master",
+        "spinor (a,c)=(11/720,1/40)",
+        "A-hat=-p1/24",
+        "Gauss-Bonnet chi",
+        "Rohlin sigma div 16"
+      ],
+      "note_added_value": [
+        "explicit {C2,E4,R^2}-basis derivation showing -18/11 is the C2/E4 ratio of the spinor a4",
+        "lock that the SAME spinor a4 carrying a=11/720 (Euler/conformal sector) carries the A-hat index density in its Pontryagin sector",
+        "content-independence read as index-protection"
+      ]
+    }
+  },
+  "PART1_graviton_sector": {
+    "i_graviton_c_over_minus_a": {
+      "conformal_Weyl_graviton": {
+        "a": "87/20",
+        "c": "199/30",
+        "c_over_minus_a": "-398/261",
+        "c_over_minus_a_float": -1.524904214559387,
+        "source": "Beccaria-Tseytlin arXiv:1710.03779 eq.(31); s=2 conformal HS",
+        "equals_minus_18_11": false
+      },
+      "physical_Einstein_graviton": {
+        "is_conformal": false,
+        "clean_c_over_minus_a_exists": false,
+        "reason": "2-derivative massless spin 2 is NOT conformal; trace anomaly is gauge/scheme dependent, defined only on-shell, carries R^2/Box-R. No convention-free (a,c).",
+        "duff_360A_ledger_entry_gauge_fixed": 848,
+        "source": "Duff hep-th/9308075 Table 1; gauge-dep hep-th/9503187, 2206.13287"
+      }
+    },
+    "ii_can_any_partition_restore_minus_18_11": {
+      "per_field_c_over_minus_a": {
+        "weyl_fermion": "-18/11",
+        "real_scalar": "-3",
+        "vector": "-18/31",
+        "conformal_graviton": "-398/261"
+      },
+      "only_weyl_on_the_minus_18_11_ray": true,
+      "collinear_with_weyl_fermion": {
+        "real_scalar": false,
+        "vector": false,
+        "conformal_graviton": false
+      },
+      "full_SM_no_graviton_ratio": "-1698/1991",
+      "full_SM_plus_conformal_graviton_ratio": "-6474/5123",
+      "full_SM_plus_conformal_graviton_float": -1.2637126683583837,
+      "graviton_multiplicity_to_force_minus_18_11": "-143/32",
+      "graviton_multiplicity_is_physical_positive": false,
+      "verdict": "No consistent assignment with the graviton (conformal OR physical) on the fundamental side restores -18/11. The identity strictly delimits the Dirac (Weyl-fermion) sector: only fields collinear with (a_W,c_W) sit on the ratio, and no boson is collinear. H3g-4 confirmed: graviton+bosons are on the INDUCED side of the ledger."
+    },
+    "iii_sakharov_consistency": {
+      "induced_gravity_logic": "In Sakharov/induced gravity the graviton is NOT a fundamental field; the Einstein-Hilbert + C^2 terms are the vacuum polarization (a4 heat kernel) of the MATTER (here Dirac) loop. The graviton does not run in the loop that induces the action.",
+      "prediction_for_ledger": "The induced C^2/Euler ratio must equal the c/(-a) of the INDUCING loop content only. In NCG the spectral action loop content is the fermionic Hilbert space H_F (Tr f(D/Lambda) is a function of D alone), so the ratio must be -18/11 (Dirac value) and must NOT receive a graviton contribution.",
+      "internal_consistency_check": {
+        "graviton_is_conformal": false,
+        "why_consistent": "Because the physical graviton is non-conformal, it carries NO clean (a,c) and CANNOT be a term in the convention-free C^2/Euler ratio to begin with. The induced-gravity ledger is therefore self-consistent: the object that the -18/11 identity equates (a ratio of conformal a4 coefficients) is structurally a fermion-loop object, and the graviton -- being non-conformal and not a loop in the spectral action -- cannot and does not appear in it. The conformal (Weyl) graviton DOES have a clean ratio (-398/261) but it is a DIFFERENT field (4-derivative conformal gravity), not the dynamical graviton, and it too fails to give -18/11.",
+        "no_double_counting": "Counting the graviton as a fundamental conformal loop would double-count: its kinetic term is already the induced a4. Sakharov logic forbids it, and the anomaly ledger independently forbids it (non-conformal => no (a,c)). The two prohibitions agree."
+      }
+    }
+  },
+  "VERDICT": {
+    "PART1_graviton_does_not_restore_minus_18_11": true,
+    "PART1_only_weyl_collinear": true,
+    "PART1_physical_graviton_nonconformal_no_clean_ratio": true,
+    "PART1_sakharov_internally_consistent": true,
+    "PART2_minus_18_11_from_spinor_heatkernel": true,
+    "PART2_spinor_a4_reproduces_literature_(a,c)": true,
+    "PART2_dirac_conformal_scalar_conformal": true,
+    "PART2_index_normalization_lock_holds": true,
+    "H3g-4_strengthened": true
+  }
+}

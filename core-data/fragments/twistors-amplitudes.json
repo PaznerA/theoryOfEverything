@@ -1,0 +1,755 @@
+{
+  "slug": "twistors-amplitudes",
+  "name": "Twistor Theory & the Amplitudes Program",
+  "concepts": [
+    {
+      "id": "twistor-space",
+      "name": "Twistor space (PT = CP3)",
+      "definition": "Penrose's complex projective 3-space PT = CP3 whose points are spinor pairs Z^alpha = (omega^A, pi_{A'}) in the fundamental representation of the conformal group SU(2,2). Points of complexified Minkowski space correspond to projective lines CP1 in twistor space; points of twistor space correspond to self-dual totally null 2-planes (alpha-planes). Twistor space replaces the spacetime point with the null ray as the fundamental geometric object.",
+      "relatedTo": ["incidence-relation", "penrose-transform", "self-duality", "twistor-string", "spinor-helicity"]
+    },
+    {
+      "id": "incidence-relation",
+      "name": "Incidence relation",
+      "definition": "The fundamental correspondence omega^A = i x^{AA'} pi_{A'} relating a spacetime point x to a holomorphic line CP1 in twistor space. Encodes the duality: spacetime points <-> CP1 lines in PT; twistor points <-> alpha-planes in spacetime. Geometry of spacetime is recoded as complex geometry of PT.",
+      "relatedTo": ["twistor-space", "alpha-surfaces", "penrose-transform"]
+    },
+    {
+      "id": "penrose-transform",
+      "name": "Penrose transform",
+      "definition": "Isomorphism between sheaf cohomology classes on twistor space and solutions of massless free field equations of helicity h: H^1(PT, O(-2h-2)) ~ {solutions of helicity-h field equation}. Massless fields become free holomorphic data; the scalar wave equation corresponds to H^1(PT, O(-2)). A contour-integral / cohomological map.",
+      "relatedTo": ["twistor-space", "incidence-relation", "self-duality", "cohomology"]
+    },
+    {
+      "id": "nonlinear-graviton",
+      "name": "Nonlinear graviton",
+      "definition": "Penrose's 1976 construction encoding anti-self-dual (ASD) vacuum Einstein metrics as deformations of the complex structure of (the upper half of) twistor space. A three-parameter family of alpha-surfaces exists iff the Weyl tensor is anti-self-dual. The self-dual sector of gravity is exactly integrable; only the ASD/left-handed half is captured.",
+      "relatedTo": ["self-duality", "twistor-space", "googly-problem", "ward-correspondence", "integrability"]
+    },
+    {
+      "id": "ward-correspondence",
+      "name": "Ward correspondence",
+      "definition": "Ward's 1977 theorem: a one-to-one correspondence between self-dual Yang-Mills fields on spacetime and holomorphic vector bundles over twistor space PT that are trivial on every line CP1. The twistor origin of the integrability of instantons, monopoles and solitons.",
+      "relatedTo": ["nonlinear-graviton", "self-duality", "integrability", "twistor-space"]
+    },
+    {
+      "id": "self-duality",
+      "name": "Self-dual / anti-self-dual sector",
+      "definition": "Decomposition of 2-forms and the Weyl/field-strength curvature into self-dual (SD) and anti-self-dual (ASD) parts, possible in 4D due to SO(4,C) = (SL(2,C) x SL(2,C))/Z2. The SD/ASD sector of Yang-Mills and gravity is classically integrable and fully twistorial; the full non-self-dual theory is not integrable.",
+      "relatedTo": ["nonlinear-graviton", "ward-correspondence", "integrability", "googly-problem", "w-infinity-symmetry"]
+    },
+    {
+      "id": "googly-problem",
+      "name": "Googly problem",
+      "definition": "The ~40-year unsolved problem of giving a twistor description of right-handed (positive-helicity), interacting massless fields using the same twistor conventions that yield left-handed (negative-helicity) fields in the nonlinear graviton / Ward constructions. Hard because the full Einstein/Yang-Mills equations are not integrable. Penrose's proposed answer is palatial (noncommutative) twistor theory.",
+      "relatedTo": ["nonlinear-graviton", "self-duality", "palatial-twistor-theory", "noncommutative-geometry"]
+    },
+    {
+      "id": "palatial-twistor-theory",
+      "name": "Palatial twistor theory",
+      "definition": "Penrose's 2015 proposal extending twistor theory into a noncommutative, quantized 'Heisenberg algebra' of twistors, enlarging the sheaves of holomorphic functions to include twistor differentiation operators, in order to resolve the googly problem and describe full (non-self-dual) gravity. Spacetime points acquire a quantum fuzziness.",
+      "relatedTo": ["googly-problem", "noncommutative-geometry", "twistor-space"]
+    },
+    {
+      "id": "spinor-helicity",
+      "name": "Spinor-helicity formalism",
+      "definition": "Parametrization of massless momenta as p_{A A'} = lambda_A tilde-lambda_{A'}, splitting a null momentum into holomorphic and anti-holomorphic 2-spinors. Lorentz invariants are the angle bracket <ij> = eps_AB lambda_i^A lambda_j^B and square bracket [ij]; <ij>[ji] = 2 p_i . p_j = s_ij. Makes little-group covariance and the simplicity of amplitudes manifest.",
+      "relatedTo": ["mhv-amplitude", "bcfw-recursion", "twistor-space", "massive-spinor-helicity"]
+    },
+    {
+      "id": "mhv-amplitude",
+      "name": "MHV amplitude / Parke-Taylor formula",
+      "definition": "The maximally-helicity-violating tree amplitude has n-2 gluons of one helicity and 2 of the opposite. The Parke-Taylor formula gives the n-gluon color-ordered MHV amplitude as a single fraction <ij>^4 / (<12><23>...<n1>). Its holomorphy (localization on lines in twistor space) was Witten's founding observation.",
+      "relatedTo": ["spinor-helicity", "twistor-string", "bcfw-recursion", "csw-rules"]
+    },
+    {
+      "id": "bcfw-recursion",
+      "name": "BCFW recursion",
+      "definition": "Britto-Cachazo-Feng-Witten on-shell recursion building higher-point tree amplitudes from lower-point on-shell amplitudes via a complex shift of a pair of spinors and Cauchy's theorem, bypassing Feynman diagrams while preserving gauge invariance. Works when the shifted amplitude vanishes at large complex deformation z.",
+      "relatedTo": ["mhv-amplitude", "spinor-helicity", "on-shell-methods", "positive-grassmannian", "amplituhedron"]
+    },
+    {
+      "id": "on-shell-methods",
+      "name": "On-shell / unitarity methods",
+      "definition": "Computing loop amplitudes by sewing on-shell tree amplitudes across unitarity cuts (generalized unitarity), avoiding off-shell Feynman diagrams. The engine behind multiloop super-Yang-Mills and supergravity computations and the discovery of enhanced UV cancellations.",
+      "relatedTo": ["bcfw-recursion", "double-copy", "uv-finiteness-n8", "generalized-unitarity"]
+    },
+    {
+      "id": "momentum-twistors",
+      "name": "Momentum twistors",
+      "definition": "Hodges's variables (2009) that make the hidden dual (super)conformal symmetry of planar N=4 SYM manifest and trivialize momentum conservation. The natural variables for the Grassmannian and amplituhedron formulations.",
+      "relatedTo": ["twistor-space", "dual-conformal-symmetry", "positive-grassmannian", "amplituhedron"]
+    },
+    {
+      "id": "dual-conformal-symmetry",
+      "name": "Dual (super)conformal symmetry",
+      "definition": "A hidden symmetry of planar N=4 SYM scattering amplitudes, distinct from ordinary conformal symmetry, made manifest by momentum twistors. Together with ordinary superconformal symmetry it generates a Yangian, reflecting the integrability of planar N=4 SYM.",
+      "relatedTo": ["momentum-twistors", "integrability", "yangian", "holographic-principle"]
+    },
+    {
+      "id": "positive-grassmannian",
+      "name": "Positive Grassmannian / positroids",
+      "definition": "The totally non-negative part G_+(k,n) of the Grassmannian. On-shell diagrams of planar N=4 SYM map to positroid cells, and the all-loop integrand is naturally represented by integrals over the positive Grassmannian. Forerunner of the amplituhedron.",
+      "relatedTo": ["amplituhedron", "bcfw-recursion", "momentum-twistors", "positive-geometry"]
+    },
+    {
+      "id": "amplituhedron",
+      "name": "Amplituhedron",
+      "definition": "A positive geometry (generalization of the positive Grassmannian / cyclic polytope) introduced by Arkani-Hamed and Trnka (2013) whose canonical differential form yields the integrand of planar N=4 SYM amplitudes. Locality and unitarity emerge as consequences of positivity rather than being imposed; the BCFW recursion corresponds to triangulations (tilings) of the amplituhedron.",
+      "relatedTo": ["positive-grassmannian", "positive-geometry", "emergent-spacetime", "bcfw-recursion", "cluster-algebras"]
+    },
+    {
+      "id": "positive-geometry",
+      "name": "Positive geometry",
+      "definition": "A class of geometric regions equipped with a unique canonical form having logarithmic singularities only on boundaries. Physical observables (amplitudes, cosmological wavefunctions) emerge as canonical forms. Examples: amplituhedron, associahedron, cosmological polytopes. A paradigm where physics is read off geometry rather than spacetime dynamics.",
+      "relatedTo": ["amplituhedron", "cosmological-polytopes", "emergent-spacetime", "surfaceology"]
+    },
+    {
+      "id": "twistor-string",
+      "name": "Twistor string theory",
+      "definition": "Witten's 2003 equivalence between perturbative N=4 super-Yang-Mills and the topological B-model string on the super-Calabi-Yau CP^{3|4}; amplitudes localize on holomorphic curves in twistor space. The perturbative SYM expansion equals the D-instanton expansion of the string model. Contains conformal supergravity that does not decouple at loop level (Berkovits-Witten).",
+      "relatedTo": ["twistor-space", "mhv-amplitude", "string-theory", "conformal-supergravity", "ambitwistor-string"]
+    },
+    {
+      "id": "conformal-supergravity",
+      "name": "Conformal supergravity (twistor-string sector)",
+      "definition": "The closed-string / gauge-singlet open-string sector of twistor string theory contains conformal supergravity states that couple with the same coupling as Yang-Mills and therefore contribute to gluon loop amplitudes, preventing a clean decoupling and a pure-N=4-SYM interpretation at loop level.",
+      "relatedTo": ["twistor-string", "supergravity-uv", "string-theory"]
+    },
+    {
+      "id": "double-copy",
+      "name": "Double copy / color-kinematics duality",
+      "definition": "The statement gravity = (gauge theory)^2. When color factors satisfy Jacobi identities, kinematic numerators can be chosen to satisfy the same identities (BCJ duality); replacing a color factor by a second copy of the kinematic numerator turns a gauge amplitude into a gravity amplitude. The field-theory limit of KLT relations; extends (proven in cases, conjectured generally) to loop level.",
+      "relatedTo": ["klt-relations", "bcj-duality", "supergravity-uv", "classical-double-copy", "scattering-equations"]
+    },
+    {
+      "id": "bcj-duality",
+      "name": "BCJ (color-kinematics) duality",
+      "definition": "Bern-Carrasco-Johansson duality (2008): kinematic numerators of trivalent diagrams obey the same Jacobi identities as the color factors. Makes the double copy possible and exposes hidden structure in gauge and gravity amplitudes, EFTs (chiral perturbation theory, Born-Infeld), and string amplitudes.",
+      "relatedTo": ["double-copy", "klt-relations", "on-shell-methods"]
+    },
+    {
+      "id": "klt-relations",
+      "name": "KLT relations",
+      "definition": "Kawai-Lewellen-Tye relations assembling closed-string tree amplitudes from squares of color-stripped open-string amplitudes; in the field-theory limit they relate Einstein-gravity tree amplitudes to squares of gauge-theory partial amplitudes via the KLT momentum kernel S[sigma|tau]. The string-theoretic origin of the double copy.",
+      "relatedTo": ["double-copy", "bcj-duality", "string-theory"]
+    },
+    {
+      "id": "classical-double-copy",
+      "name": "Classical double copy (Kerr-Schild / Weyl)",
+      "definition": "Map between exact classical gauge-theory solutions and gravity solutions, e.g. Kerr-Schild metrics double-copied from gauge fields (Kerr = sqrt(Kerr)). Used to compute black-hole binary inspiral waveforms (PM/PN expansion) for gravitational-wave observatories; extended to bigravity, multigravity, Taub-NUT, time-dependent interiors.",
+      "relatedTo": ["double-copy", "black-holes-information", "gravitational-waves", "experimental-tests"]
+    },
+    {
+      "id": "scattering-equations",
+      "name": "CHY scattering equations",
+      "definition": "Cachazo-He-Yuan formulation: tree-level S-matrix of massless particles in arbitrary dimension as an integral over the moduli space of the Riemann sphere localized on the (n-3)! solutions of sum_{j!=i} (p_i . p_j)/(sigma_i - sigma_j) = 0. The integrand selects the theory (Parke-Taylor for YM, its square for gravity, Pfaffian Pf'Psi). Unifies YM, gravity and scalars.",
+      "relatedTo": ["ambitwistor-string", "double-copy", "mhv-amplitude"]
+    },
+    {
+      "id": "ambitwistor-string",
+      "name": "Ambitwistor string",
+      "definition": "A chiral, infinite-tension string theory of holomorphic maps to ambitwistor space (the space of complex null geodesics). Its quantization reproduces the CHY scattering equations and amplitudes, extends them to loop level and to many theories (type II = supergravity, heterotic = SYM), and manifests the double copy on the worldsheet.",
+      "relatedTo": ["scattering-equations", "twistor-string", "double-copy", "string-theory", "celestial-amplitudes"]
+    },
+    {
+      "id": "celestial-amplitudes",
+      "name": "Celestial amplitudes / celestial holography",
+      "definition": "Scattering amplitudes in 4D asymptotically flat spacetime recast as correlators of a putative 2D conformal field theory on the celestial sphere at null infinity (via a Mellin transform of external energies). The program seeks a holographic dual of flat-space quantum gravity, constrained by BMS and w(1+infinity) symmetries.",
+      "relatedTo": ["w-infinity-symmetry", "soft-theorems", "bms-symmetry", "holographic-principle", "ambitwistor-string"]
+    },
+    {
+      "id": "w-infinity-symmetry",
+      "name": "w(1+infinity) symmetry",
+      "definition": "An infinite-dimensional chiral symmetry algebra organizing the entire tower of tree-level soft graviton theorems on the celestial sphere into a single wedge subalgebra w(1+infinity) (Strominger 2021). It is the natural holomorphic (Poisson-diffeomorphism) symmetry of twistor space, linking celestial holography to the self-dual sector and the nonlinear graviton.",
+      "relatedTo": ["celestial-amplitudes", "soft-theorems", "self-duality", "twistor-space", "nonlinear-graviton"]
+    },
+    {
+      "id": "soft-theorems",
+      "name": "Soft theorems / memory / asymptotic symmetries",
+      "definition": "The infrared triangle: soft (low-energy) theorems for gravitons/photons are Ward identities of asymptotic (BMS, large-gauge) symmetries and are physically dual to memory effects. The infinite tower of subleading soft graviton theorems generates the w(1+infinity) algebra.",
+      "relatedTo": ["w-infinity-symmetry", "celestial-amplitudes", "bms-symmetry", "semiclassical-gravity"]
+    },
+    {
+      "id": "bms-symmetry",
+      "name": "BMS symmetry",
+      "definition": "Bondi-Metzner-Sachs symmetry: the infinite-dimensional asymptotic symmetry group of asymptotically flat spacetime at null infinity (supertranslations and superrotations). Matching conditions between past and future null infinity constrain gravitational scattering and underlie celestial holography.",
+      "relatedTo": ["soft-theorems", "celestial-amplitudes", "asymptotic-symmetries"]
+    },
+    {
+      "id": "surfaceology",
+      "name": "Surfaceology / curve integrals",
+      "definition": "Arkani-Hamed-Figueiredo (2023-2025) reformulation of colored-theory amplitudes as integrals over combinatorial data of surfaces decorated with kinematics (tropicalized 'global Schwinger' integrals). Gives compact all-loop, all-genus, all-multiplicity integrands in which the dependence on particle number n and loop order L effectively decouples; locality and unitarity emerge from 'hidden zeros'.",
+      "relatedTo": ["positive-geometry", "amplituhedron", "emergent-spacetime", "scattering-equations"]
+    },
+    {
+      "id": "uv-finiteness-n8",
+      "name": "UV behavior of N=8 supergravity",
+      "definition": "N=8 supergravity in D=4 is UV-finite through four loops (four-graviton amplitude), as good as finite N=4 SYM, due to 'enhanced cancellations' beyond standard supersymmetry; a logarithmic divergence is expected at seven loops with a partial(8) R^4 counterterm. Discovered via double-copy and on-shell unitarity methods.",
+      "relatedTo": ["double-copy", "on-shell-methods", "supergravity-uv", "asymptotic-safety"]
+    },
+    {
+      "id": "cosmological-polytopes",
+      "name": "Cosmological polytopes / cosmological correlators",
+      "definition": "Positive geometries (cosmological polytopes, kinematic flow) encoding the Bunch-Davies wavefunction of the universe and cosmological correlators in de Sitter / inflationary backgrounds, extending the positive-geometry / amplituhedron paradigm from flat-space S-matrix to cosmology.",
+      "relatedTo": ["positive-geometry", "amplituhedron", "quantum-cosmology"]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "incidence-relation-formula",
+      "name": "Incidence relation",
+      "latex": "\\omega^A = i\\,x^{AA'}\\,\\pi_{A'},\\qquad Z^\\alpha=(\\omega^A,\\pi_{A'})",
+      "meaning": "A spacetime point x corresponds to a CP1 line in twistor space; a twistor Z corresponds to an alpha-plane. The core spacetime<->twistor dictionary (points<->lines).",
+      "source": "penrose-1967"
+    },
+    {
+      "id": "penrose-transform-formula",
+      "name": "Penrose transform (cohomology)",
+      "latex": "\\{\\text{helicity-}h\\ \\text{fields}\\}\\ \\cong\\ H^1\\big(\\mathbb{PT},\\,\\mathcal{O}(-2h-2)\\big)",
+      "meaning": "Solutions of massless free field equations of helicity h are isomorphic to first sheaf cohomology of twistor space with the line bundle O(-2h-2); massless fields become free holomorphic data.",
+      "source": "atiyah-dunajski-mason-2017"
+    },
+    {
+      "id": "nonlinear-graviton-asd",
+      "name": "Anti-self-duality of the Weyl tensor",
+      "latex": "C_{abcd} = -\\tfrac{1}{2}\\,\\epsilon_{ab}{}^{pq}\\,C_{cdpq}",
+      "meaning": "A three-parameter family of alpha-surfaces exists iff the Weyl tensor is anti-self-dual; ASD conformal curvature is fully encoded in twistor cohomology (nonlinear graviton). The integrable half of Einstein's equations.",
+      "source": "penrose-1976"
+    },
+    {
+      "id": "spinor-helicity-decomp",
+      "name": "Spinor-helicity decomposition",
+      "latex": "p_{A\\dot A}=\\lambda_A\\tilde\\lambda_{\\dot A},\\quad \\langle ij\\rangle[ji]=2\\,p_i\\!\\cdot\\! p_j=s_{ij}",
+      "meaning": "A null momentum factorizes into holomorphic and anti-holomorphic 2-spinors; Lorentz invariants <ij>,[ij] build Mandelstam variables and make little-group weights manifest.",
+      "source": "elvang-huang-2013"
+    },
+    {
+      "id": "parke-taylor",
+      "name": "Parke-Taylor MHV amplitude",
+      "latex": "A_n^{\\text{MHV}} = \\frac{\\langle ij\\rangle^4}{\\langle 12\\rangle\\langle 23\\rangle\\cdots\\langle n1\\rangle}",
+      "meaning": "The n-gluon color-ordered tree MHV amplitude (gluons i,j of negative helicity) as a single fraction; its holomorphy reflects localization on lines in twistor space.",
+      "source": "parke-taylor-1986"
+    },
+    {
+      "id": "bcfw-shift",
+      "name": "BCFW recursion and shift",
+      "latex": "A_n=\\sum_{I,h} A_L(z_I)\\frac{1}{P_I^2}A_R(z_I),\\quad \\hat{\\tilde\\lambda}_i=\\tilde\\lambda_i+z\\tilde\\lambda_j,\\ \\hat\\lambda_j=\\lambda_j-z\\lambda_i",
+      "meaning": "Cauchy's theorem expresses the full amplitude as a sum over factorization-pole residues, i.e. products of lower-point on-shell subamplitudes; valid when A_n(z)->0 as z->infinity.",
+      "source": "bcfw-2005"
+    },
+    {
+      "id": "klt-double-copy",
+      "name": "KLT / double-copy formula",
+      "latex": "M_n^{\\text{grav}}=\\sum_{\\sigma,\\tau}A_n(\\sigma)\\,S[\\sigma|\\tau]\\,\\tilde A_n(\\tau)=\\sum_i \\frac{n_i\\,\\tilde n_i}{D_i}",
+      "meaning": "Gravity amplitudes are squares of gauge-theory amplitudes: either via the KLT momentum kernel S, or in BCJ form by replacing color factors c_i with a second copy of kinematic numerators n_i.",
+      "source": "bcj-2008"
+    },
+    {
+      "id": "scattering-equations-formula",
+      "name": "CHY scattering equations",
+      "latex": "\\sum_{j\\neq i}\\frac{p_i\\!\\cdot\\! p_j}{\\sigma_i-\\sigma_j}=0,\\quad A_n=\\int\\frac{d^n\\sigma}{\\mathrm{vol}\\,SL(2,\\mathbb{C})}\\,\\prod_i{}'\\delta\\Big(\\sum_{j\\neq i}\\tfrac{p_i\\cdot p_j}{\\sigma_{ij}}\\Big)\\mathcal{I}_n",
+      "meaning": "Massless tree S-matrix in any dimension as a moduli-space integral localized on (n-3)! solutions; the integrand I_n selects the theory (Parke-Taylor=YM, square=gravity).",
+      "source": "chy-2013"
+    },
+    {
+      "id": "amplituhedron-form",
+      "name": "Amplituhedron canonical form",
+      "latex": "\\mathcal{A}_{n,k,L}\\subset Gr(k,k+4;L),\\qquad \\text{integrand}=\\Omega(\\mathcal{A}_{n,k,L})",
+      "meaning": "The planar N=4 SYM integrand is the canonical differential form Omega (log singularities only on boundaries) of the amplituhedron positive geometry; locality and unitarity follow from positivity.",
+      "source": "arkani-hamed-trnka-2013"
+    },
+    {
+      "id": "w-infinity-algebra",
+      "name": "w(1+infinity) algebra",
+      "latex": "[w^p_m,\\,w^q_n]=\\big[m(q-1)-n(p-1)\\big]\\,w^{p+q-2}_{m+n}",
+      "meaning": "Commutation relations of the wedge subalgebra organizing the infinite tower of soft graviton theorems on the celestial sphere; the natural holomorphic symmetry of twistor space.",
+      "source": "strominger-2021"
+    },
+    {
+      "id": "soft-graviton-theorem",
+      "name": "Weinberg soft graviton theorem",
+      "latex": "\\mathcal{M}_{n+1}\\xrightarrow{q\\to0}\\Big(\\sum_a \\frac{\\epsilon_{\\mu\\nu}p_a^\\mu p_a^\\nu}{p_a\\cdot q}\\Big)\\mathcal{M}_n + \\mathcal{O}(q^0)",
+      "meaning": "The leading behavior of an amplitude with one soft graviton (momentum q->0) factorizes universally; its subleading tower generates the celestial w(1+infinity) symmetry and is a Ward identity of BMS supertranslations.",
+      "source": "strominger-2017"
+    },
+    {
+      "id": "ward-bundle",
+      "name": "Ward correspondence (bundle data)",
+      "latex": "\\{\\text{SD Yang-Mills}\\}\\ \\cong\\ \\{\\text{holomorphic bundles }E\\to\\mathbb{PT}\\ \\text{trivial on each }\\mathbb{CP}^1\\}",
+      "meaning": "Self-dual Yang-Mills solutions correspond to holomorphic vector bundles over twistor space trivial on every line; the twistor origin of gauge-theory integrability.",
+      "source": "ward-1977"
+    }
+  ],
+  "references": [
+    {
+      "id": "penrose-1967",
+      "authors": "R. Penrose",
+      "title": "Twistor Algebra",
+      "year": 1967,
+      "doi": "10.1063/1.1705200",
+      "url": "https://pubs.aip.org/aip/jmp/article/8/2/345/233824/Twistor-Algebra",
+      "significance": "Founding paper of twistor theory; introduces twistors as the fundamental geometry of conformal Minkowski space."
+    },
+    {
+      "id": "penrose-1976",
+      "authors": "R. Penrose",
+      "title": "Nonlinear gravitons and curved twistor theory",
+      "year": 1976,
+      "doi": "10.1007/BF00763433",
+      "url": "https://link.springer.com/article/10.1007/BF00763433",
+      "significance": "The nonlinear graviton: ASD Einstein metrics encoded as deformations of twistor complex structure; integrability of self-dual gravity."
+    },
+    {
+      "id": "ward-1977",
+      "authors": "R. S. Ward",
+      "title": "On self-dual gauge fields",
+      "year": 1977,
+      "doi": "10.1016/0375-9601(77)90842-8",
+      "url": "https://doi.org/10.1016/0375-9601(77)90842-8",
+      "significance": "Ward correspondence: self-dual Yang-Mills <-> holomorphic bundles over twistor space; twistor source of YM integrability."
+    },
+    {
+      "id": "parke-taylor-1986",
+      "authors": "S. J. Parke, T. R. Taylor",
+      "title": "Amplitude for n-gluon scattering",
+      "year": 1986,
+      "doi": "10.1103/PhysRevLett.56.2459",
+      "url": "https://en.wikipedia.org/wiki/MHV_amplitudes",
+      "significance": "The Parke-Taylor MHV formula; first hint of the hidden simplicity (holomorphy) of gauge amplitudes."
+    },
+    {
+      "id": "nair-1988",
+      "authors": "V. P. Nair",
+      "title": "A current algebra for some gauge theory amplitudes",
+      "year": 1988,
+      "doi": "10.1016/0370-2693(88)91471-2",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/0370269388914427",
+      "significance": "MHV amplitudes as correlators on supertwistor space; precursor of twistor string theory."
+    },
+    {
+      "id": "witten-2003",
+      "authors": "E. Witten",
+      "title": "Perturbative Gauge Theory As A String Theory In Twistor Space",
+      "year": 2003,
+      "arxiv": "hep-th/0312171",
+      "doi": "10.1007/s00220-004-1187-3",
+      "url": "https://arxiv.org/abs/hep-th/0312171",
+      "significance": "Twistor string theory: N=4 SYM = B-model on CP^{3|4}; ignited the modern amplitudes revolution."
+    },
+    {
+      "id": "csw-2004",
+      "authors": "F. Cachazo, P. Svrcek, E. Witten",
+      "title": "MHV vertices and tree amplitudes in gauge theory",
+      "year": 2004,
+      "arxiv": "hep-th/0403047",
+      "url": "https://arxiv.org/abs/hep-th/0403047",
+      "significance": "CSW rules: MHV amplitudes as effective vertices for building all tree amplitudes."
+    },
+    {
+      "id": "berkovits-witten-2004",
+      "authors": "N. Berkovits, E. Witten",
+      "title": "Conformal Supergravity in Twistor-String Theory",
+      "year": 2004,
+      "arxiv": "hep-th/0406051",
+      "url": "https://arxiv.org/abs/hep-th/0406051",
+      "significance": "Showed conformal supergravity does not decouple from YM in the twistor string at loop level; a key obstruction."
+    },
+    {
+      "id": "bcfw-2005",
+      "authors": "R. Britto, F. Cachazo, B. Feng, E. Witten",
+      "title": "Direct Proof of Tree-Level Recursion Relation in Yang-Mills Theory",
+      "year": 2005,
+      "arxiv": "hep-th/0501052",
+      "doi": "10.1103/PhysRevLett.94.181602",
+      "url": "https://arxiv.org/abs/hep-th/0501052",
+      "significance": "BCFW recursion: tree amplitudes from on-shell building blocks, revolutionizing amplitude computation."
+    },
+    {
+      "id": "bcj-2008",
+      "authors": "Z. Bern, J. J. M. Carrasco, H. Johansson",
+      "title": "New Relations for Gauge-Theory Amplitudes",
+      "year": 2008,
+      "arxiv": "0805.3993",
+      "doi": "10.1103/PhysRevD.78.085011",
+      "url": "https://arxiv.org/abs/0805.3993",
+      "significance": "BCJ color-kinematics duality; basis for the double copy gravity = (gauge)^2."
+    },
+    {
+      "id": "bcj-2010",
+      "authors": "Z. Bern, J. J. M. Carrasco, H. Johansson",
+      "title": "Perturbative Quantum Gravity as a Double Copy of Gauge Theory",
+      "year": 2010,
+      "arxiv": "1004.0476",
+      "doi": "10.1103/PhysRevLett.105.061602",
+      "url": "https://arxiv.org/abs/1004.0476",
+      "significance": "Extends the double copy to loop level; the workhorse for multiloop supergravity."
+    },
+    {
+      "id": "mason-skinner-2009",
+      "authors": "L. Mason, D. Skinner",
+      "title": "Dual Superconformal Invariance, Momentum Twistors and Grassmannians",
+      "year": 2009,
+      "arxiv": "0909.0250",
+      "url": "https://arxiv.org/abs/0909.0250",
+      "significance": "Momentum twistors making dual superconformal symmetry of planar N=4 SYM manifest."
+    },
+    {
+      "id": "positive-grassmannian-2012",
+      "authors": "N. Arkani-Hamed, J. Bourjaily, F. Cachazo, A. Goncharov, A. Postnikov, J. Trnka",
+      "title": "Scattering Amplitudes and the Positive Grassmannian",
+      "year": 2012,
+      "arxiv": "1212.5605",
+      "url": "https://arxiv.org/abs/1212.5605",
+      "significance": "On-shell diagrams, positroids and the all-loop integrand of N=4 SYM from the positive Grassmannian."
+    },
+    {
+      "id": "arkani-hamed-trnka-2013",
+      "authors": "N. Arkani-Hamed, J. Trnka",
+      "title": "The Amplituhedron",
+      "year": 2013,
+      "arxiv": "1312.2007",
+      "doi": "10.1007/JHEP10(2014)030",
+      "url": "https://arxiv.org/abs/1312.2007",
+      "significance": "Introduces the amplituhedron; locality and unitarity emerge from positive geometry."
+    },
+    {
+      "id": "chy-2013",
+      "authors": "F. Cachazo, S. He, E. Y. Yuan",
+      "title": "Scattering of Massless Particles in Arbitrary Dimension",
+      "year": 2013,
+      "arxiv": "1307.2199",
+      "doi": "10.1103/PhysRevLett.113.171601",
+      "url": "https://arxiv.org/abs/1307.2199",
+      "significance": "CHY scattering equations; unifies YM, gravity and scalar amplitudes in any dimension."
+    },
+    {
+      "id": "mason-skinner-2013",
+      "authors": "L. Mason, D. Skinner",
+      "title": "Ambitwistor strings and the scattering equations",
+      "year": 2013,
+      "arxiv": "1311.2564",
+      "doi": "10.1007/JHEP07(2014)048",
+      "url": "https://arxiv.org/abs/1311.2564",
+      "significance": "Derives CHY formulae from quantizing a chiral ambitwistor string; extends to loops and many theories."
+    },
+    {
+      "id": "penrose-2015",
+      "authors": "R. Penrose",
+      "title": "Palatial twistor theory and the twistor googly problem",
+      "year": 2015,
+      "doi": "10.1098/rsta.2014.0237",
+      "url": "https://royalsocietypublishing.org/doi/10.1098/rsta.2014.0237",
+      "significance": "Noncommutative quantized twistor algebra as Penrose's proposed solution to the googly problem."
+    },
+    {
+      "id": "atiyah-dunajski-mason-2017",
+      "authors": "M. Atiyah, M. Dunajski, L. Mason",
+      "title": "Twistor theory at fifty: from contour integrals to twistor strings",
+      "year": 2017,
+      "arxiv": "1704.07464",
+      "doi": "10.1098/rspa.2017.0530",
+      "url": "https://arxiv.org/abs/1704.07464",
+      "significance": "Authoritative modern review of twistor theory: three isomorphisms, incidence, nonlinear graviton, googly, twistor strings."
+    },
+    {
+      "id": "adamo-2017",
+      "authors": "T. Adamo",
+      "title": "Lectures on twistor theory",
+      "year": 2017,
+      "arxiv": "1712.02196",
+      "url": "https://arxiv.org/abs/1712.02196",
+      "significance": "Pedagogical lecture notes on twistor geometry, the Penrose transform, twistor actions and amplitudes."
+    },
+    {
+      "id": "elvang-huang-2013",
+      "authors": "H. Elvang, Y.-t. Huang",
+      "title": "Scattering Amplitudes in Gauge Theory and Gravity",
+      "year": 2013,
+      "arxiv": "1308.1697",
+      "url": "https://arxiv.org/abs/1308.1697",
+      "significance": "Standard pedagogical textbook for the modern amplitudes program (spinor-helicity, BCFW, twistors, double copy)."
+    },
+    {
+      "id": "ahhh-2017",
+      "authors": "N. Arkani-Hamed, T.-C. Huang, Y.-t. Huang",
+      "title": "Scattering Amplitudes For All Masses and Spins",
+      "year": 2017,
+      "arxiv": "1709.04891",
+      "doi": "10.1007/JHEP11(2021)070",
+      "url": "https://arxiv.org/abs/1709.04891",
+      "significance": "Massive spinor-helicity formalism with manifest little-group covariance for arbitrary mass and spin."
+    },
+    {
+      "id": "strominger-2021",
+      "authors": "A. Strominger",
+      "title": "w(1+infinity) and the Celestial Sphere",
+      "year": 2021,
+      "arxiv": "2105.14346",
+      "url": "https://arxiv.org/abs/2105.14346",
+      "significance": "The tower of soft graviton symmetries forms the wedge algebra w(1+infinity); central to celestial holography."
+    },
+    {
+      "id": "adamo-mason-sharma-2021",
+      "authors": "T. Adamo, L. Mason, A. Sharma",
+      "title": "Celestial w(1+infinity) Symmetries from Twistor Space",
+      "year": 2021,
+      "arxiv": "2110.06066",
+      "doi": "10.3842/SIGMA.2022.016",
+      "url": "https://arxiv.org/abs/2110.06066",
+      "significance": "Shows celestial w(1+infinity) is the natural geometric symmetry of twistor space / twistor sigma models."
+    },
+    {
+      "id": "strominger-2017",
+      "authors": "A. Strominger",
+      "title": "Lectures on the Infrared Structure of Gravity and Gauge Theory",
+      "year": 2017,
+      "arxiv": "1703.05448",
+      "url": "https://arxiv.org/abs/1703.05448",
+      "significance": "The infrared triangle (soft theorems = memory = asymptotic symmetry); foundation of celestial holography."
+    },
+    {
+      "id": "sagex-review-2022",
+      "authors": "G. Travaglini et al. (eds.)",
+      "title": "The SAGEX Review on Scattering Amplitudes",
+      "year": 2022,
+      "arxiv": "2203.13011",
+      "doi": "10.1088/1751-8121/ac8380",
+      "url": "https://arxiv.org/abs/2203.13011",
+      "significance": "Comprehensive modern multi-chapter review of the entire amplitudes program (double copy, ambitwistor strings, etc.)."
+    },
+    {
+      "id": "bern-2014-n5",
+      "authors": "Z. Bern, S. Davies, T. Dennen et al.",
+      "title": "Enhanced Ultraviolet Cancellations in N=5 Supergravity at Four Loop",
+      "year": 2014,
+      "arxiv": "1409.3089",
+      "url": "https://arxiv.org/abs/1409.3089",
+      "significance": "Four-loop computation revealing enhanced UV cancellations not explained by standard supersymmetry."
+    },
+    {
+      "id": "bdr-2006",
+      "authors": "Z. Bern, L. J. Dixon, R. Roiban",
+      "title": "Is N=8 Supergravity Ultraviolet Finite?",
+      "year": 2006,
+      "arxiv": "hep-th/0611086",
+      "url": "https://arxiv.org/abs/hep-th/0611086",
+      "significance": "Raised the question of N=8 SUGRA UV finiteness; expected 7-loop partial(8)R^4 divergence."
+    },
+    {
+      "id": "surfaceology-yukawa-2024",
+      "authors": "S. De, A. Pokraka, M. Skowronek, M. Spradlin, A. Volovich",
+      "title": "Surfaceology for Colored Yukawa Theory",
+      "year": 2024,
+      "arxiv": "2406.04411",
+      "doi": "10.1007/JHEP09(2024)160",
+      "url": "https://arxiv.org/abs/2406.04411",
+      "significance": "Extends the Arkani-Hamed et al. curve-integral / surfaceology framework to colored Yukawa theory; compact all-loop, all-multiplicity integrands."
+    },
+    {
+      "id": "all-loop-all-mult-2025",
+      "authors": "N. Arkani-Hamed, H. Frost, G. Salvatori, P.-G. Plamondon, H. Thomas",
+      "title": "All Loop Scattering For All Multiplicity",
+      "year": 2023,
+      "arxiv": "2311.09284",
+      "doi": "10.1007/JHEP09(2025)033",
+      "url": "https://arxiv.org/abs/2311.09284",
+      "significance": "Curve-integral formula for Tr(phi^3) in which the dependence on particle number n and loop order L decouples; recent surfaceology milestone (published JHEP 09 (2025) 033)."
+    },
+    {
+      "id": "twistor-sigma-2021",
+      "authors": "T. Adamo, L. Mason, A. Sharma",
+      "title": "Twistor sigma models for quaternionic geometry and graviton scattering",
+      "year": 2021,
+      "arxiv": "2103.16984",
+      "url": "https://arxiv.org/abs/2103.16984",
+      "significance": "Twistor sigma models; Poisson structure of twistor space and celestial realization of Lw(1+infinity)."
+    },
+    {
+      "id": "costello-paquette-2022",
+      "authors": "K. Costello, N. M. Paquette",
+      "title": "Celestial holography meets twisted holography: 4d amplitudes from chiral correlators",
+      "year": 2022,
+      "arxiv": "2201.02595",
+      "url": "https://arxiv.org/abs/2201.02595",
+      "significance": "Bridge between celestial and twisted holography; 4D amplitudes from chiral algebra correlators."
+    },
+    {
+      "id": "twistor-action-gr-2021",
+      "authors": "A. Sharma",
+      "title": "Twistor action for general relativity",
+      "year": 2021,
+      "arxiv": "2104.07031",
+      "url": "https://arxiv.org/abs/2104.07031",
+      "significance": "Twistor action for full GR; attempt to reach the non-self-dual sector perturbatively."
+    },
+    {
+      "id": "integrability-anomaly-2023",
+      "authors": "G. Doran, R. Monteiro, S. Wikeley",
+      "title": "On the anomaly interpretation of amplitudes in self-dual Yang-Mills and gravity",
+      "year": 2023,
+      "arxiv": "2312.13267",
+      "url": "https://arxiv.org/abs/2312.13267",
+      "significance": "One-loop integrability anomaly as quantum non-conservation of the tower of currents of the self-dual sector."
+    },
+    {
+      "id": "bcfw-tilings-2025",
+      "authors": "C. Even-Zohar, T. Lakrec, M. Parisi, M. Sherman-Bennett, R. Tessler, L. Williams",
+      "title": "BCFW tilings and cluster adjacency for the amplituhedron",
+      "year": 2025,
+      "doi": "10.1073/pnas.2408572122",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.2408572122",
+      "significance": "Proof of the BCFW tiling conjecture for the m=4 amplituhedron using cluster algebras."
+    }
+  ],
+  "openProblems": [
+    {
+      "id": "googly-problem",
+      "statement": "Give a twistor description of right-handed (positive-helicity), fully interacting (non-self-dual) massless fields using the same conventions that yield left-handed fields in the nonlinear graviton and Ward constructions.",
+      "whyHard": "The full Einstein and Yang-Mills equations are not integrable; deformations of complex structure only encode the ASD half. There is no analogous holomorphic data structure for the SD half.",
+      "attempts": "Penrose's palatial (noncommutative quantized) twistor theory; twistor actions expanding perturbatively around the self-dual sector; cocycle-twist quantizations of twistor space."
+    },
+    {
+      "id": "nonperturbative-twistor-string",
+      "statement": "Provide a non-perturbative, background-independent definition of twistor / ambitwistor string theory that reproduces full quantum gravity rather than only perturbative amplitudes.",
+      "whyHard": "The models are chiral/topological with a super-Calabi-Yau target lacking standard worldsheet dynamics; the conformal-supergravity sector does not decouple from Yang-Mills at loop level.",
+      "attempts": "Ambitwistor string field theory for supergravity; refinements of the original twistor string; twisted/celestial holography reformulations."
+    },
+    {
+      "id": "amplituhedron-loops-nonplanar",
+      "statement": "Extend the amplituhedron / positive-geometry program to the integrated (transcendental-function) level, to non-planar amplitudes, and to theories with less or no supersymmetry (real QCD).",
+      "whyHard": "Outside the planar limit there is no cyclic ordering and the notion of positivity breaks down; integration introduces IR divergences that fall outside the geometry.",
+      "attempts": "Cluster-algebra and tropical methods; BCFW tiling proofs; momentum amplituhedron; surfaceology for colored (incl. non-planar) theories."
+    },
+    {
+      "id": "gravituhedron",
+      "statement": "Find a positive geometry whose canonical form yields gravity (not just gauge-theory) scattering amplitudes.",
+      "whyHard": "Gravity lacks color ordering and a simple cyclic structure; the double copy that produces gravity is algebraic, not (yet) realized geometrically.",
+      "attempts": "Attempts to geometrize the double copy; KLT and BCJ geometric reinterpretations; positive-geometry studies of gravity integrands."
+    },
+    {
+      "id": "n8-uv-fate",
+      "statement": "Determine whether the four-graviton amplitude of N=8 supergravity diverges at seven loops in D=4 (partial(8)R^4 counterterm) or is protected by a further enhanced cancellation, i.e. whether a perturbatively finite point-particle quantum gravity exists.",
+      "whyHard": "A seven-loop four-graviton computation is computationally extreme; symmetry arguments (E7(7), light-cone superspace) do not give a decisive prediction.",
+      "attempts": "Four-loop explicit finiteness; enhanced-cancellation studies in N=4,5 supergravity; unitarity/double-copy multiloop integrand constructions."
+    },
+    {
+      "id": "celestial-cft-construction",
+      "statement": "Construct the full 2D celestial conformal field theory on the celestial sphere whose correlators reproduce the S-matrix of 4D quantum gravity, beyond the self-dual / tree-level w(1+infinity) sector.",
+      "whyHard": "Celestial correlators have distributionally singular kinematics; control over massive states, loops and the non-self-dual sector is lacking; the w(1+infinity) link is so far mainly tree-level/self-dual.",
+      "attempts": "Asymptotic-symmetry constraints (BMS, w(1+infinity)); celestial chiral algebras from twistor space; twisted-holography (Costello-Paquette) constructions."
+    },
+    {
+      "id": "spacetime-from-amplitudes",
+      "statement": "Find the fundamental (background-independent, combinatorial) formulation from which spacetime, locality and unitarity emerge, as suggested by the amplituhedron and surfaceology.",
+      "whyHard": "Current positive geometries are defined kinematically using external momenta (i.e. presuppose spacetime data); a genuinely spacetime-free definition of the physics is missing.",
+      "attempts": "Hidden-zeros / emergence-of-unitarity studies; surfaceology where n and L decouple; cosmological positive geometries as a testing ground."
+    },
+    {
+      "id": "higher-d-and-massive",
+      "statement": "Extend the twistor magic and its amplitude consequences to D>4 and to systematically include massive fields, so as to reach the Standard Model and realistic gravity.",
+      "whyHard": "The three special isomorphisms making twistors powerful are tied to 4D; SO(D) generally does not factorize into chiral halves, and twistor geometry is less rigid for massive states.",
+      "attempts": "Hypertwistors and higher-dimensional ambitwistors; massive spinor-helicity (Arkani-Hamed-Huang-Huang); 6D twistor/twistor-string constructions."
+    }
+  ],
+  "connections": [
+    {
+      "from": "twistors-amplitudes",
+      "to": "string-theory",
+      "type": "shared-structure",
+      "description": "Twistor and ambitwistor strings are chiral / infinite-tension string theories; KLT relations arise from closed strings as squares of open strings, and the double copy is the field-theory shadow of string factorization. N=4 SYM amplitudes and AdS/CFT are common ground. The conformal-supergravity non-decoupling in the twistor string is itself a string phenomenon.",
+      "explored": "well"
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "supergravity-uv",
+      "type": "shared-math",
+      "description": "Double copy and on-shell unitarity methods are the primary tools for computing supergravity UV divergences: N=8 supergravity is finite through four loops, with an expected partial(8)R^4 divergence at seven loops. The two pillars share a computational core.",
+      "explored": "well"
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "holography-adscft",
+      "type": "shared-structure",
+      "description": "Planar N=4 SYM (boundary of AdS5/CFT4) is the main laboratory of the amplitudes program (dual conformal symmetry, amplitude/Wilson-loop duality, integrability). Celestial holography attempts a distinct flat-space holography on the codim-2 celestial sphere; its relation to standard AdS/CFT via a flat-space limit is only partially understood.",
+      "explored": "partially"
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "Both hold that spacetime locality/causality is derived, not fundamental: the amplituhedron and surfaceology make locality and unitarity emerge from positive geometry / hidden zeros, paralleling thermodynamic/entropic emergence. Conceptual overlap is strong but the technical bridge is weak.",
+      "explored": "partially"
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "entanglement-spacetime",
+      "type": "conjecture",
+      "description": "Two independent emergence stories: 'locality from positivity' (amplituhedron) vs 'spacetime from entanglement' (ER=EPR, tensor networks). A conjectural bridge links positive-geometry positivity to positivity of the modular Hamiltonian / entanglement entropy, but the two communities barely interact. A prime target for undiscovered connections.",
+      "explored": "barely"
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "loop-quantum-gravity",
+      "type": "shared-math",
+      "description": "Shared mathematics: 2-spinors, self-duality and Ashtekar variables (self-dual connection). Penrose's alpha-surfaces and the self-dual sector parallel the LQG self-dual formulation, and nonlinear gravitons have been derived from initial-value constraints in Ashtekar variables (arXiv:0706.2702). Linking twistor cohomology to spin networks / spin foams is almost unexplored.",
+      "explored": "barely"
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "asymptotic-safety",
+      "type": "shared-structure",
+      "description": "Both concern the UV behavior of gravity but by opposite routes: asymptotic safety seeks an interacting UV fixed point in an off-shell Euclidean effective action, while amplitudes probe on-shell finiteness of specific theories. No systematic bridge; it is open whether the N=8 'enhanced cancellations' have a fixed-point interpretation.",
+      "explored": "barely"
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "noncommutative-geometry",
+      "type": "shared-math",
+      "description": "Penrose's palatial twistor theory introduces a noncommutative quantized twistor (Heisenberg) algebra, and twistor space can be quantized by cocycle twist (arXiv:math/0701893). Shares the 'fuzzy spacetime' idea with noncommutative geometry, but Connes spectral triples and twistor deformations have not yet been matched.",
+      "explored": "partially"
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "black-holes-information",
+      "type": "shared-math",
+      "description": "Amplitudes and the classical double copy compute black-hole binary inspiral waveforms and Kerr solutions (Kerr = sqrt(Kerr)); celestial holography targets the flat-space S-matrix including black-hole scattering. Links to the information paradox and the Page curve remain indirect.",
+      "explored": "partially"
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "semiclassical-gravity",
+      "type": "shared-structure",
+      "description": "Self-dual/ASD curvature splitting and soft theorems have a semiclassical (gravitational memory) counterpart; Strominger's soft-theorem = memory = asymptotic-symmetry triangle is a bridge whose twistor side is newly being developed.",
+      "explored": "barely"
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "quantum-cosmology",
+      "type": "shared-math",
+      "description": "Positive geometry extends from the flat-space S-matrix to cosmological correlators (cosmological polytopes, kinematic flow, Bunch-Davies wavefunction), a new bridge to early-universe physics. Still at an early stage.",
+      "explored": "barely"
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "swampland",
+      "type": "shared-structure",
+      "description": "Positivity and locality of amplitudes (analyticity, hidden zeros) connect to swampland positivity bounds on EFT Wilson coefficients (constraints on consistent low-energy gravity). The precise link between amplituhedron positivity and swampland bounds is only partially developed.",
+      "explored": "barely"
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "conceptual-problems",
+      "type": "shared-structure",
+      "description": "The claim that spacetime, locality and unitarity are emergent rather than fundamental directly engages the conceptual foundations of quantum gravity (background independence, the problem of time, the ontology of spacetime).",
+      "explored": "partially"
+    },
+    {
+      "from": "twistors-amplitudes",
+      "to": "experimental-tests",
+      "type": "shared-math",
+      "description": "Amplitude and double-copy techniques feed gravitational-wave waveform modeling (post-Minkowskian/post-Newtonian binary dynamics) for LIGO/Virgo/LISA, and underpin precision QCD predictions at colliders. A concrete, active application channel.",
+      "explored": "well"
+    }
+  ]
+}

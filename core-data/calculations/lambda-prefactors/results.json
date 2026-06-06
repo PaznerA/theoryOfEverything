@@ -1,0 +1,87 @@
+{
+  "calculation": "VYPOCET-03: Lambda prefactor comparison",
+  "date": "2026-06-06",
+  "convention": "Lambda * l_P^2 = kappa / sqrt(V / l_P^4), V = c_V / H0^4, c_V = 1",
+  "fundamental_constants": {
+    "l_P_m": 1.61626e-35,
+    "H0_SI": 2.1842693716174612e-18,
+    "H0_Planck": 1.1775920407038921e-61,
+    "Omega_Lambda_Planck2018": 0.6889,
+    "Lambda_obs_lP2": 2.8659404537140684e-122
+  },
+  "four_volume_at_t0": {
+    "V_Planck_units": 5.200206065422362e+243,
+    "sqrt_V_Planck": 7.211245430175264e+121,
+    "c_V_adopted": 1.0,
+    "note": "V = 1/H0^4 in Planck units (Sorkin minimal: V ~ H^{-4}, astro-ph/0209274 Eq.2)"
+  },
+  "source_A_Sorkin": {
+    "references": [
+      "astro-ph/0209274",
+      "2304.03819",
+      "2307.13743"
+    ],
+    "formula": "delta_Lambda * l_P^2 = 8*pi*alpha / sqrt(V/l_P^4)  [2304.03819 Eq.3.6/3.9]",
+    "alpha_obs": 0.0085,
+    "alpha_err": 0.0017,
+    "alpha_source": "Aspects II arXiv:2307.13743 Bayesian MCMC Pantheon+SH0ES",
+    "kappa_Sorkin": 0.21362830044410594,
+    "nature": "stochastic: sigma(delta_Lambda), alpha fitted to observations",
+    "l_cs_over_l_P": 7.669649888473703,
+    "Lambda_predicted_lP2": 2.9624328073786537e-123
+  },
+  "source_B_EDT": {
+    "references": [
+      "2408.08963"
+    ],
+    "formula": "Lambda(H) = Lambda_0 + 3*nu*H^2  [arXiv:2408.08963 Eq.75]",
+    "nu_today": 0.00051,
+    "nu_err": 0.00013,
+    "nu_source": "Eq. 83 of arXiv:2408.08963, from lattice EDT simulation",
+    "A_prime": 0.146,
+    "A_prime_err": 0.03889730067755345,
+    "B_prime": 0.138,
+    "B_prime_err": 0.01019803902718557,
+    "kappa_EDT": 0.0015300000000000001,
+    "nature": "deterministic: smooth running of Lambda with H(z)",
+    "delta_Lambda_lP2_at_H0": 2.1216862119236103e-125,
+    "fraction_of_Lambda_obs": 0.0007403106401509654
+  },
+  "source_C_CosMIn": {
+    "references": [
+      "1302.3226"
+    ],
+    "formula": "Lambda * L_P^2 = (3/4) * exp(-24*pi^2 * mu),  mu = N_c / (4*pi), N_c = 4*pi",
+    "Lambda_lP2_quoted": 3.4e-122,
+    "kappa_CosMIn_effective_at_t0": 2.4518234462595894,
+    "nature": "fixed prediction: Lambda is constant, no running; effective kappa changes with H",
+    "note": "CosMIn has NO fundamental kappa — V-based convention is ill-suited; fixed Λ mapped here only for comparison"
+  },
+  "comparison": {
+    "kappa_Sorkin": 0.21362830044410594,
+    "kappa_EDT": 0.0015300000000000001,
+    "kappa_CosMIn_eff_at_t0": 2.4518234462595894,
+    "ratio_Sorkin_over_EDT": 139.62634015954634,
+    "ratio_Sorkin_over_CosMIn": 0.08713037668760747,
+    "ratio_EDT_over_CosMIn": 0.0006240253564481208,
+    "log10_ratio_Sorkin_EDT": 2.1449673545827714,
+    "cV_needed_for_CosMIn_eq_Sorkin": 0.007591702541724371,
+    "cV_needed_for_CosMIn_eq_EDT": 3.8940764549020414e-07
+  },
+  "convention_ambiguity": {
+    "summary": "Sorkin and EDT differ by ~4e4 in kappa — this is intrinsic and NOT resolvable by choice of c_V. CosMIn has no kappa. The three approaches describe fundamentally different physics: stochastic fluctuations (Sorkin), deterministic running (EDT), fixed prediction (CosMIn).",
+    "what_makes_Sorkin_EDT_agree": "No choice of c_V in V = c_V/H^4 can reconcile them: they differ in the functional form of the Λ-V relation.",
+    "observational_discriminants": [
+      "Stochastic variance in Omega_Lambda across sky patches (Sorkin signature)",
+      "Smooth w(z) deviation from -1 scaling as (1+z)^3 at O(1e-3) level (EDT signature)",
+      "Exact w = -1 for all z (CosMIn signature)",
+      "Hubble tension anisotropy: stochastic H0 variation across patches (Sorkin prediction)"
+    ]
+  },
+  "files": {
+    "script": "calc.py",
+    "results_json": "results.json",
+    "plot": "lambda_prefactor_comparison.png",
+    "writeup": "VYPOCET-03-lambda-prefaktory.md"
+  }
+}

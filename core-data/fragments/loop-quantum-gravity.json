@@ -1,0 +1,781 @@
+{
+  "slug": "loop-quantum-gravity",
+  "name": "Loop Quantum Gravity & Spin Foams",
+  "concepts": [
+    {
+      "id": "ashtekar-barbero-variables",
+      "name": "Ashtekar-Barbero variables",
+      "definition": "Canonical reformulation of general relativity in terms of an SU(2) connection A_a^i = Gamma_a^i + gamma K_a^i and a densitized triad E^a_i, recasting gravity as a gauge theory with a Yang-Mills-like phase space. They make the constraints polynomial and form the starting point for canonical LQG.",
+      "relatedTo": ["holonomy-flux-algebra", "barbero-immirzi-parameter", "spin-network", "diffeomorphism-invariance", "background-independence"]
+    },
+    {
+      "id": "background-independence",
+      "name": "Background independence",
+      "definition": "The requirement that the theory contains no fixed prior spacetime metric; geometry itself is fully dynamical and quantized. LQG implements this exactly, unlike perturbative/string approaches built on a background metric.",
+      "relatedTo": ["diffeomorphism-invariance", "ashtekar-barbero-variables", "problem-of-time"]
+    },
+    {
+      "id": "diffeomorphism-invariance",
+      "name": "Diffeomorphism invariance",
+      "definition": "Invariance under arbitrary smooth coordinate transformations (active diffeomorphisms), the gauge symmetry of general relativity. In LQG it forces a constraint algebra with structure functions and leads to spatially diff-invariant (knot) states.",
+      "relatedTo": ["background-independence", "hamiltonian-constraint", "spin-network"]
+    },
+    {
+      "id": "holonomy-flux-algebra",
+      "name": "Holonomy-flux algebra",
+      "definition": "The fundamental kinematical algebra of LQG built from holonomies of the connection along edges and fluxes of the triad through surfaces, replacing pointwise fields. By the LOST/Fleischhack theorem it admits a unique diffeomorphism-invariant cyclic representation.",
+      "relatedTo": ["ashtekar-barbero-variables", "spin-network", "quantum-geometry", "lost-uniqueness-theorem"]
+    },
+    {
+      "id": "lost-uniqueness-theorem",
+      "name": "LOST/Fleischhack uniqueness theorem",
+      "definition": "Theorem (Lewandowski-Okolow-Sahlmann-Thiemann; Fleischhack) that the holonomy-flux algebra has a unique diffeomorphism-invariant state, hence a unique kinematical representation (the Ashtekar-Lewandowski representation). It gives LQG kinematic rigidity.",
+      "relatedTo": ["holonomy-flux-algebra", "spin-network"]
+    },
+    {
+      "id": "spin-network",
+      "name": "Spin network",
+      "definition": "A graph embedded in a spatial slice with edges labeled by SU(2) irreps (spins j) and vertices by intertwiners; spin networks form an orthonormal basis of the kinematical Hilbert space. Edges carry quanta of area and vertices quanta of volume.",
+      "relatedTo": ["holonomy-flux-algebra", "discrete-area-spectrum", "discrete-volume-spectrum", "spin-foam", "quantum-geometry"]
+    },
+    {
+      "id": "discrete-area-spectrum",
+      "name": "Discrete area spectrum",
+      "definition": "The LQG area operator has a discrete spectrum A = 8 pi gamma l_P^2 sum sqrt(j(j+1)), so surfaces have a minimum nonzero quantum of area (area gap). A signature prediction of quantized geometry.",
+      "relatedTo": ["quantum-geometry", "spin-network", "barbero-immirzi-parameter", "discrete-volume-spectrum"]
+    },
+    {
+      "id": "discrete-volume-spectrum",
+      "name": "Discrete volume spectrum",
+      "definition": "The LQG volume operator has a discrete spectrum with contributions from spin-network vertices of valence >= 4 with non-coplanar geometry, giving space a minimum meaningful volume. No closed-form general spectrum exists.",
+      "relatedTo": ["quantum-geometry", "spin-network", "discrete-area-spectrum"]
+    },
+    {
+      "id": "quantum-geometry",
+      "name": "Quantum geometry",
+      "definition": "The picture, emerging from discrete area/volume spectra, in which space has an atomic, granular structure at the Planck scale, with spin networks describing quantum states of 3-geometry.",
+      "relatedTo": ["discrete-area-spectrum", "discrete-volume-spectrum", "spin-network", "spacetime-discreteness"]
+    },
+    {
+      "id": "spacetime-discreteness",
+      "name": "Fundamental spacetime discreteness",
+      "definition": "In LQG and spin foams the discreteness of geometry is taken as physical/fundamental, in contrast to lattice regularizations (CDT) where discreteness is removed by a continuum limit.",
+      "relatedTo": ["quantum-geometry", "spin-foam", "causal-dynamical-triangulations", "causal-sets"]
+    },
+    {
+      "id": "barbero-immirzi-parameter",
+      "name": "Barbero-Immirzi parameter",
+      "definition": "A dimensionless free parameter gamma entering the Ashtekar-Barbero connection. Classically a canonical-transformation label (does not affect classical dynamics), but quantum-mechanically it sets the scale of discrete geometry and black hole entropy; fixed by matching S = A/4.",
+      "relatedTo": ["ashtekar-barbero-variables", "discrete-area-spectrum", "black-hole-entropy", "bekenstein-hawking-entropy"]
+    },
+    {
+      "id": "spin-foam",
+      "name": "Spin foam",
+      "definition": "A 2-complex (vertices, edges, faces) labeled by spins and intertwiners representing a history of spin networks; its amplitude is a product of face, edge and vertex amplitudes summed over labels, defining covariant LQG dynamics as a sum over geometries.",
+      "relatedTo": ["spin-network", "eprl-fk-model", "bf-theory", "spin-foam-partition-function", "regge-action"]
+    },
+    {
+      "id": "eprl-fk-model",
+      "name": "EPRL-FK spin foam model",
+      "definition": "The modern 4D Lorentzian spin foam model (Engle-Pereira-Rovelli-Livine / Freidel-Krasnov) obtained by imposing linear simplicity constraints p = gamma j, k = j on BF theory via the Y-map embedding SU(2) irreps into SL(2,C). Reproduces the Regge action in the large-spin limit.",
+      "relatedTo": ["spin-foam", "bf-theory", "y-map-simplicity-constraint", "regge-action", "barbero-immirzi-parameter"]
+    },
+    {
+      "id": "bf-theory",
+      "name": "BF theory / Plebanski formulation",
+      "definition": "A topological field theory (action B wedge F) from which gravity is recovered by imposing simplicity constraints forcing B = *(e wedge e). Spin foams realize this 'constrained BF' strategy by discretizing the path integral.",
+      "relatedTo": ["eprl-fk-model", "y-map-simplicity-constraint", "spin-foam", "topological-field-theory"]
+    },
+    {
+      "id": "y-map-simplicity-constraint",
+      "name": "Y-map / linear simplicity constraint",
+      "definition": "The map Y_gamma embedding SU(2) spin-j states into the SL(2,C) principal series (p = gamma j, k = j), implementing the simplicity (Plebanski) constraint at the quantum level and linking the canonical (SU(2)) and covariant (Lorentzian) theories.",
+      "relatedTo": ["eprl-fk-model", "bf-theory", "barbero-immirzi-parameter"]
+    },
+    {
+      "id": "spin-foam-partition-function",
+      "name": "Spin foam partition function / transition amplitude",
+      "definition": "Z = sum over labelings of products of face, edge and vertex amplitudes on a 2-complex, providing the covariant dynamics (a sum over geometries) and ideally a projector onto the physical Hilbert space of canonical LQG.",
+      "relatedTo": ["spin-foam", "eprl-fk-model", "regge-action", "spin-foam-renormalization"]
+    },
+    {
+      "id": "regge-action",
+      "name": "Regge action (semiclassical limit)",
+      "definition": "The discrete Einstein-Hilbert action on a triangulation; the large-spin asymptotics of the EPRL vertex amplitude is proportional to exp(i S_Regge), the key test of the spin-foam semiclassical limit.",
+      "relatedTo": ["eprl-fk-model", "spin-foam-partition-function", "flatness-problem", "graviton-propagator"]
+    },
+    {
+      "id": "flatness-problem",
+      "name": "Flatness problem of spin foams",
+      "definition": "A pathology whereby the semiclassical (large-spin) limit of spin-foam amplitudes can be dominated by flat geometries, failing to reproduce full curved Regge dynamics; numerically confirmed in BF and EPRL cases.",
+      "relatedTo": ["regge-action", "eprl-fk-model", "spin-foam-renormalization", "effective-spin-foam"]
+    },
+    {
+      "id": "effective-spin-foam",
+      "name": "Effective spin foam models",
+      "definition": "Computationally efficient spin-foam models (Asante-Dittrich-Haggard) using the quantum area spectrum, strongly imposed gluing constraints and the discrete GR action; they avoid the flatness problem in a restricted parameter regime and enable first semiclassical tests.",
+      "relatedTo": ["flatness-problem", "regge-action", "spin-foam-partition-function", "numerical-spin-foam"]
+    },
+    {
+      "id": "numerical-spin-foam",
+      "name": "Numerical spin foams (sl2cfoam-next)",
+      "definition": "High-performance computation of Lorentzian EPRL amplitudes (sl2cfoam-next code) plus Monte Carlo sampling, enabling tests of single-vertex asymptotics, the flatness problem and the first explicit spin-foam dynamics with an internal edge.",
+      "relatedTo": ["eprl-fk-model", "effective-spin-foam", "flatness-problem", "spin-foam-renormalization"]
+    },
+    {
+      "id": "spin-foam-renormalization",
+      "name": "Spin foam coarse-graining and renormalization",
+      "definition": "Tensor-network and renormalization-group methods applied to spin foams to study refinement/continuum limits and phase structure, since Monte Carlo is obstructed by complex oscillating amplitudes.",
+      "relatedTo": ["spin-foam-partition-function", "continuum-limit", "asymptotic-safety", "flatness-problem"]
+    },
+    {
+      "id": "continuum-limit",
+      "name": "Continuum limit of spin foams",
+      "definition": "The central open problem of recovering smooth spacetime from spin foams. Recent TQFT/Refined-Algebraic-Quantisation analysis shows strong convergence forces a topological theory, motivating a distributional (rigging-map) construction of the physical Hilbert space.",
+      "relatedTo": ["spin-foam-renormalization", "semiclassical-limit-problem", "asymptotic-safety", "topological-field-theory"]
+    },
+    {
+      "id": "hamiltonian-constraint",
+      "name": "Hamiltonian constraint",
+      "definition": "The constraint encoding time evolution / dynamics in canonical LQG. Thiemann's quantization is well-defined and anomaly-free but graph-changing and ambiguous; the constraint algebra closes only with structure functions, not constants.",
+      "relatedTo": ["master-constraint", "problem-of-time", "diffeomorphism-invariance", "graph-changing-dynamics"]
+    },
+    {
+      "id": "master-constraint",
+      "name": "Master constraint programme",
+      "definition": "Thiemann's proposal to combine all (infinitely many) Hamiltonian constraints into a single positive 'master' constraint M = integral H^2/sqrt(det q), bypassing the non-closure of the constraint algebra with structure functions.",
+      "relatedTo": ["hamiltonian-constraint", "problem-of-time"]
+    },
+    {
+      "id": "graph-changing-dynamics",
+      "name": "Graph-changing dynamics",
+      "definition": "Dynamics in which the Hamiltonian constraint changes both spin labels and the topology of the spin-network graph. First numerically implemented in 2024, revealing solutions and observables inaccessible to fixed-graph truncations.",
+      "relatedTo": ["hamiltonian-constraint", "spin-network", "semiclassical-limit-problem"]
+    },
+    {
+      "id": "problem-of-time",
+      "name": "Problem of time",
+      "definition": "In a background-independent, fully constrained theory there is no external time; physical states are annihilated by the Hamiltonian constraint and evolution must be relational. A conceptual obstacle shared across canonical quantum gravity.",
+      "relatedTo": ["hamiltonian-constraint", "background-independence", "diffeomorphism-invariance"]
+    },
+    {
+      "id": "isolated-horizon",
+      "name": "Isolated horizon",
+      "definition": "A quasi-local definition of a black-hole horizon in equilibrium (no global stationarity required) carrying an SU(2) Chern-Simons theory. Horizon microstates are punctures where spin-network edges pierce the horizon.",
+      "relatedTo": ["black-hole-entropy", "su2-chern-simons", "discrete-area-spectrum", "barbero-immirzi-parameter"]
+    },
+    {
+      "id": "su2-chern-simons",
+      "name": "SU(2) Chern-Simons horizon theory",
+      "definition": "The boundary theory induced on an isolated horizon; counting its Hilbert-space dimension on a punctured sphere yields the black hole microstate count and entropy in the SU(2)-invariant formulation.",
+      "relatedTo": ["isolated-horizon", "black-hole-entropy", "barbero-immirzi-parameter"]
+    },
+    {
+      "id": "black-hole-entropy",
+      "name": "Black hole entropy from microstate counting",
+      "definition": "LQG computes black hole entropy by counting horizon quantum-geometry microstates; matching the leading area term to S = A/4 fixes gamma, with a universal logarithmic correction -1/2 ln(A).",
+      "relatedTo": ["bekenstein-hawking-entropy", "isolated-horizon", "su2-chern-simons", "barbero-immirzi-parameter"]
+    },
+    {
+      "id": "bekenstein-hawking-entropy",
+      "name": "Bekenstein-Hawking entropy",
+      "definition": "The semiclassical black hole entropy S = A/(4 l_P^2). LQG reproduces it from first principles by counting quantum-geometry microstates, a key success of the program.",
+      "relatedTo": ["black-hole-entropy", "barbero-immirzi-parameter", "holographic-principle"]
+    },
+    {
+      "id": "big-bounce",
+      "name": "Big bounce (LQC)",
+      "definition": "In loop quantum cosmology the big bang singularity is replaced by a quantum bounce at critical density rho_c ~ 0.41 rho_Planck, where quantum geometry generates an effective repulsion connecting a contracting to an expanding phase.",
+      "relatedTo": ["loop-quantum-cosmology", "quantum-geometry", "singularity-resolution"]
+    },
+    {
+      "id": "loop-quantum-cosmology",
+      "name": "Loop quantum cosmology (LQC)",
+      "definition": "Symmetry-reduced (homogeneous) quantization using LQG techniques. Its effective Friedmann equation has a (1 - rho/rho_c) correction producing the big bounce and predictions for the CMB.",
+      "relatedTo": ["big-bounce", "ashtekar-barbero-variables", "quantum-cosmology", "singularity-resolution"]
+    },
+    {
+      "id": "singularity-resolution",
+      "name": "Singularity resolution",
+      "definition": "The replacement of classical curvature singularities (big bang, black hole interior) by non-singular quantum bounces in LQC and effective LQG black-hole models.",
+      "relatedTo": ["big-bounce", "loop-quantum-cosmology", "planck-star"]
+    },
+    {
+      "id": "planck-star",
+      "name": "Planck star",
+      "definition": "A compact high-density remnant formed when gravitational collapse bounces at Planck density inside a black hole; after evaporation a quasi-stable Planck-mass remnant may remain, proposed as a dark-matter candidate and partial resolution of the information paradox.",
+      "relatedTo": ["singularity-resolution", "black-hole-entropy", "page-curve"]
+    },
+    {
+      "id": "twisted-geometries",
+      "name": "Twisted geometries / twistors",
+      "definition": "Classical interpretation of the LQG phase space on a fixed graph: each edge carries two twistors, with areas and Lorentzian dihedral angles as canonical pairs; holonomies and fluxes are spinor bilinears subject to area-matching and simplicity constraints.",
+      "relatedTo": ["spin-network", "eprl-fk-model", "twistors-amplitudes", "y-map-simplicity-constraint"]
+    },
+    {
+      "id": "graviton-propagator",
+      "name": "Graviton propagator from spin foams",
+      "definition": "Two-point (and higher n-point) correlation functions computed from spin foam amplitudes; the low-energy limit of the improved-model two-point function matches the graviton propagator of linearized gravity in a transverse radial gauge.",
+      "relatedTo": ["regge-action", "eprl-fk-model", "semiclassical-limit-problem"]
+    },
+    {
+      "id": "semiclassical-limit-problem",
+      "name": "Semiclassical limit problem",
+      "definition": "The unproven recovery of general relativity as the low-energy effective theory of LQG/spin foams. Large-spin and continuum limits need not commute; graph-changing Hamiltonian dynamics complicates coherent-state analysis.",
+      "relatedTo": ["regge-action", "continuum-limit", "hamiltonian-constraint", "flatness-problem"]
+    },
+    {
+      "id": "deformed-lorentz-symmetry",
+      "name": "Deformed Lorentz symmetry / DSR",
+      "definition": "Linearization of the LQG deformed hypersurface-deformation algebra connects to kappa-Poincare symmetry and Doubly Special Relativity; Lorentz invariance is deformed (with an invariant Planck scale) rather than broken.",
+      "relatedTo": ["noncommutative-geometry", "quantum-geometry", "experimental-tests"]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "canonical-poisson-bracket",
+      "name": "Ashtekar-Barbero Poisson bracket",
+      "latex": "\\{A_a^i(x),\\, \\tilde{E}^b_j(y)\\} = 8\\pi G\\,\\gamma\\,\\delta^b_a\\,\\delta^i_j\\,\\delta^3(x-y)",
+      "meaning": "Fundamental phase-space structure of canonical LQG: the SU(2) connection A and densitized triad E are conjugate, with the Barbero-Immirzi parameter gamma rescaling the coupling.",
+      "source": "ashtekar-1986"
+    },
+    {
+      "id": "ashtekar-barbero-connection",
+      "name": "Ashtekar-Barbero connection",
+      "latex": "A_a^i = \\Gamma_a^i + \\gamma\\, K_a^i",
+      "meaning": "Combines spin connection Gamma and extrinsic curvature K into a single SU(2) connection; gamma = +-i gives the self-dual (polynomial-constraint) Ashtekar connection.",
+      "source": "ashtekar-1986"
+    },
+    {
+      "id": "holonomy",
+      "name": "Holonomy of the connection",
+      "latex": "h_\\gamma[A] = \\mathcal{P}\\exp\\!\\left(\\int_\\gamma A_a^i \\,\\tau_i\\, dx^a\\right)",
+      "meaning": "Path-ordered exponential of the connection along an edge; the smeared variable on which the holonomy-flux algebra and spin networks are built.",
+      "source": "rovelli-smolin-1990"
+    },
+    {
+      "id": "area-spectrum",
+      "name": "Area operator spectrum",
+      "latex": "\\hat{A}_S\\,|s\\rangle = 8\\pi\\,\\gamma\\,\\ell_P^2 \\sum_{p \\in S\\cap s} \\sqrt{j_p(j_p+1)}\\;|s\\rangle",
+      "meaning": "Area is quantized; each spin-network edge piercing the surface contributes 8 pi gamma l_P^2 sqrt(j(j+1)). Minimum nonzero area (gap) for j=1/2 demonstrates atomic geometry.",
+      "source": "rovelli-smolin-1995-discreteness"
+    },
+    {
+      "id": "volume-spectrum",
+      "name": "Volume operator",
+      "latex": "\\hat{V}_R\\,|s\\rangle = \\sum_{v \\in R} \\sqrt{\\left|\\tfrac{1}{48}\\,\\epsilon_{ijk}\\,\\epsilon^{abc}\\,\\hat{E}^i_a\\hat{E}^j_b\\hat{E}^k_c\\right|}\\;|s\\rangle",
+      "meaning": "Volume receives discrete contributions from spin-network vertices of valence >= 4; gives space a minimum meaningful volume.",
+      "source": "rovelli-smolin-1995-discreteness"
+    },
+    {
+      "id": "spin-foam-partition-function",
+      "name": "Spin foam partition function",
+      "latex": "Z = \\sum_{\\{j_f\\},\\{i_e\\}} \\prod_f A_f(j_f) \\prod_e A_e(j_f,i_e) \\prod_v A_v(j_f,i_e)",
+      "meaning": "Covariant LQG dynamics as a sum over spin/intertwiner labelings of a 2-complex; the vertex amplitude A_v carries the physical content of the model.",
+      "source": "perez-2013"
+    },
+    {
+      "id": "y-map",
+      "name": "EPRL Y-map / linear simplicity",
+      "latex": "Y_\\gamma: |j, m\\rangle_{SU(2)} \\longmapsto |(p=\\gamma j,\\, k=j);\\, j, m\\rangle_{SL(2,\\mathbb{C})}",
+      "meaning": "Embeds SU(2) spin states into the SL(2,C) principal series with p = gamma j, k = j, imposing the simplicity constraint and linking canonical and covariant LQG.",
+      "source": "engle-pereira-rovelli-livine-2008"
+    },
+    {
+      "id": "vertex-asymptotics",
+      "name": "Vertex amplitude large-spin asymptotics",
+      "latex": "A_v(j_f) \\xrightarrow{j_f \\to \\infty} N_+ e^{+iS_{\\mathrm{Regge}}(j_f)} + N_- e^{-iS_{\\mathrm{Regge}}(j_f)} + \\text{(degenerate)}",
+      "meaning": "The EPRL vertex reproduces the Regge action semiclassically; the presence of multiple terms and degenerate configurations is the core semiclassical-limit difficulty.",
+      "source": "engle-2013-proper-vertex"
+    },
+    {
+      "id": "bh-entropy",
+      "name": "Black hole entropy and gamma fixing",
+      "latex": "S = \\frac{\\gamma_0}{\\gamma}\\,\\frac{A}{4\\ell_P^2} - \\frac{1}{2}\\ln\\!\\left(\\frac{A}{\\ell_P^2}\\right) + \\mathcal{O}(1)",
+      "meaning": "Microstate counting gives S proportional to area; matching to S=A/4 fixes gamma = gamma0. The full SU(2) counting gives gamma0 ~ 0.274; the older U(1)/Domagala-Lewandowski-Meissner counting gives gamma0 ~ 0.2375. The naive single-spin closed form ln2/(pi sqrt3) ~ 0.127 is NOT equal to the actual SU(2) value 0.274. The log-correction coefficient is convention/scheme dependent (-1/2 for U(1) area-counting; -3/2 in the SU(2) Chern-Simons treatment).",
+      "source": "engle-noui-perez-2010"
+    },
+    {
+      "id": "lqc-friedmann",
+      "name": "LQC effective Friedmann equation",
+      "latex": "\\left(\\frac{\\dot{a}}{a}\\right)^2 = \\frac{8\\pi G}{3}\\,\\rho\\left(1 - \\frac{\\rho}{\\rho_c}\\right), \\quad \\rho_c \\approx 0.41\\,\\rho_{\\mathrm{Planck}}",
+      "meaning": "The (1 - rho/rho_c) correction makes H vanish at rho=rho_c, producing the big bounce that replaces the big bang singularity.",
+      "source": "ashtekar-pawlowski-singh-2006"
+    },
+    {
+      "id": "master-constraint",
+      "name": "Master constraint",
+      "latex": "\\mathbf{M} = \\int_\\Sigma d^3x\\,\\frac{|H(x)|^2}{\\sqrt{\\det q(x)}}, \\qquad \\mathbf{M}\\,|\\psi\\rangle_{\\mathrm{phys}} = 0",
+      "meaning": "Combines infinitely many Hamiltonian constraints into a single positive constraint, bypassing the non-closure of the algebra with structure functions; its kernel defines physical states.",
+      "source": "thiemann-2003-master"
+    },
+    {
+      "id": "cosmological-constant-deformation",
+      "name": "Cosmological constant via quantum group",
+      "latex": "\\Lambda = \\frac{6\\pi}{\\ell_P^2\\, k}, \\qquad q = e^{i\\pi/k}",
+      "meaning": "Deforming SU(2) to the quantum group SU(2)_q at root of unity q introduces a positive cosmological constant (Lambda ~ 1/k, so k->infinity recovers classical SU(2) and Lambda->0), renders amplitudes IR-finite, and yields curved-4-simplex Regge asymptotics. NOTE: the precise numerical coefficient Lambda = 6 pi/(l_P^2 k) was not independently verified; only the Lambda ~ 1/k scaling is confirmed.",
+      "source": "haggard-han-kaminski-riello-2015"
+    }
+  ],
+  "references": [
+    {
+      "id": "ashtekar-1986",
+      "authors": "A. Ashtekar",
+      "title": "New Variables for Classical and Quantum Gravity",
+      "year": 1986,
+      "doi": "10.1103/PhysRevLett.57.2244",
+      "url": "https://doi.org/10.1103/PhysRevLett.57.2244",
+      "significance": "Introduced Ashtekar variables, founding canonical LQG by recasting GR as a gauge theory with polynomial constraints."
+    },
+    {
+      "id": "rovelli-smolin-1990",
+      "authors": "C. Rovelli, L. Smolin",
+      "title": "Loop space representation of quantum general relativity",
+      "year": 1990,
+      "doi": "10.1016/0550-3213(90)90019-A",
+      "url": "https://doi.org/10.1016/0550-3213(90)90019-A",
+      "significance": "Established the loop representation, the birth of non-perturbative quantum gravity."
+    },
+    {
+      "id": "rovelli-smolin-1995-discreteness",
+      "authors": "C. Rovelli, L. Smolin",
+      "title": "Discreteness of area and volume in quantum gravity",
+      "year": 1995,
+      "arxiv": "gr-qc/9411005",
+      "url": "https://arxiv.org/abs/gr-qc/9411005",
+      "significance": "Derived the discrete area and volume spectra, the signature prediction of quantized geometry."
+    },
+    {
+      "id": "rovelli-smolin-1995-spinnet",
+      "authors": "C. Rovelli, L. Smolin",
+      "title": "Spin networks and quantum gravity",
+      "year": 1995,
+      "arxiv": "gr-qc/9505006",
+      "url": "https://arxiv.org/abs/gr-qc/9505006",
+      "significance": "Identified spin networks as an orthonormal basis of the kinematical Hilbert space."
+    },
+    {
+      "id": "ashtekar-lewandowski-1997",
+      "authors": "A. Ashtekar, J. Lewandowski",
+      "title": "Quantum theory of geometry I: Area operators",
+      "year": 1997,
+      "arxiv": "gr-qc/9602046",
+      "url": "https://arxiv.org/abs/gr-qc/9602046",
+      "significance": "Rigorous construction of the area operator and its spectrum."
+    },
+    {
+      "id": "thiemann-1998-qsd",
+      "authors": "T. Thiemann",
+      "title": "Quantum Spin Dynamics (QSD)",
+      "year": 1998,
+      "arxiv": "gr-qc/9606089",
+      "url": "https://arxiv.org/abs/gr-qc/9606089",
+      "significance": "First mathematically well-defined, anomaly-free Hamiltonian constraint operator."
+    },
+    {
+      "id": "abck-1998",
+      "authors": "A. Ashtekar, J. Baez, A. Corichi, K. Krasnov",
+      "title": "Quantum Geometry and Black Hole Entropy",
+      "year": 1998,
+      "arxiv": "gr-qc/9710007",
+      "url": "https://arxiv.org/abs/gr-qc/9710007",
+      "significance": "Derived black hole entropy from isolated-horizon microstate counting, introducing the role of gamma."
+    },
+    {
+      "id": "domagala-lewandowski-2004",
+      "authors": "M. Domagala, J. Lewandowski",
+      "title": "Black hole entropy from Quantum Geometry",
+      "year": 2004,
+      "arxiv": "gr-qc/0407051",
+      "url": "https://arxiv.org/abs/gr-qc/0407051",
+      "significance": "Precise U(1) microstate counting fixing the value of the Immirzi parameter."
+    },
+    {
+      "id": "meissner-2004",
+      "authors": "K. A. Meissner",
+      "title": "Black hole entropy in Loop Quantum Gravity",
+      "year": 2004,
+      "arxiv": "gr-qc/0407052",
+      "url": "https://arxiv.org/abs/gr-qc/0407052",
+      "significance": "Established the universal -1/2 ln(A) logarithmic correction to the entropy."
+    },
+    {
+      "id": "lost-2006",
+      "authors": "J. Lewandowski, A. Okolow, H. Sahlmann, T. Thiemann",
+      "title": "Uniqueness of diffeomorphism invariant states on holonomy-flux algebras",
+      "year": 2006,
+      "arxiv": "gr-qc/0504147",
+      "url": "https://arxiv.org/abs/gr-qc/0504147",
+      "significance": "The LOST uniqueness theorem giving LQG kinematics its rigidity."
+    },
+    {
+      "id": "ashtekar-pawlowski-singh-2006",
+      "authors": "A. Ashtekar, T. Pawlowski, P. Singh",
+      "title": "Quantum Nature of the Big Bang",
+      "year": 2006,
+      "arxiv": "gr-qc/0602086",
+      "url": "https://arxiv.org/abs/gr-qc/0602086",
+      "significance": "Discovered the big bounce in LQC with critical density ~0.41 rho_Planck."
+    },
+    {
+      "id": "bianchi-modesto-rovelli-speziale-2006",
+      "authors": "E. Bianchi, L. Modesto, C. Rovelli, S. Speziale",
+      "title": "Graviton propagator in loop quantum gravity",
+      "year": 2006,
+      "arxiv": "gr-qc/0604044",
+      "url": "https://arxiv.org/abs/gr-qc/0604044",
+      "significance": "First computation of the graviton two-point function from a spin foam, matching linearized gravity."
+    },
+    {
+      "id": "engle-pereira-rovelli-livine-2008",
+      "authors": "J. Engle, R. Pereira, C. Rovelli, E. Livine",
+      "title": "LQG vertex with finite Immirzi parameter",
+      "year": 2008,
+      "arxiv": "0711.0146",
+      "url": "https://arxiv.org/abs/0711.0146",
+      "significance": "Defined the EPRL vertex amplitude, the modern spin-foam model with finite gamma."
+    },
+    {
+      "id": "freidel-krasnov-2008",
+      "authors": "L. Freidel, K. Krasnov",
+      "title": "A new spin foam model for 4d gravity",
+      "year": 2008,
+      "arxiv": "0708.1595",
+      "url": "https://arxiv.org/abs/0708.1595",
+      "significance": "The FK model, complementary construction merged with EPRL into EPRL-FK."
+    },
+    {
+      "id": "engle-noui-perez-2010",
+      "authors": "J. Engle, K. Noui, A. Perez",
+      "title": "Black hole entropy and SU(2) Chern-Simons theory",
+      "year": 2010,
+      "arxiv": "0905.3168",
+      "url": "https://arxiv.org/abs/0905.3168",
+      "significance": "SU(2)-invariant horizon entropy and a manifestly gauge-invariant counting; the full SU(2) counting yields gamma ~ 0.274. (Note: arXiv 0905.3168 has exactly three authors; D. Pranzetti is NOT an author.)"
+    },
+    {
+      "id": "rovelli-2011-zakopane",
+      "authors": "C. Rovelli",
+      "title": "Zakopane lectures on loop gravity",
+      "year": 2011,
+      "arxiv": "1102.3660",
+      "url": "https://arxiv.org/abs/1102.3660",
+      "significance": "Authoritative pedagogical definition of covariant LQG and the spin-foam transition amplitude."
+    },
+    {
+      "id": "engle-2013-proper-vertex",
+      "authors": "J. Engle",
+      "title": "A spin-foam vertex amplitude with the correct semiclassical limit",
+      "year": 2013,
+      "arxiv": "1201.2187",
+      "url": "https://arxiv.org/abs/1201.2187",
+      "significance": "Proper vertex isolating a single gravitational sector to suppress unwanted semiclassical terms."
+    },
+    {
+      "id": "perez-2013",
+      "authors": "A. Perez",
+      "title": "The Spin Foam Approach to Quantum Gravity",
+      "year": 2013,
+      "arxiv": "1205.2019",
+      "doi": "10.12942/lrr-2013-3",
+      "url": "https://arxiv.org/abs/1205.2019",
+      "significance": "The standard Living Reviews survey of spin foams, EPRL model and open problems."
+    },
+    {
+      "id": "speziale-wieland-2012",
+      "authors": "S. Speziale, W. Wieland",
+      "title": "The twistorial structure of loop-gravity transition amplitudes",
+      "year": 2012,
+      "arxiv": "1207.6348",
+      "url": "https://arxiv.org/abs/1207.6348",
+      "significance": "Showed EPRL amplitudes derive from a twistor-space path integral, bridging LQG and twistor methods."
+    },
+    {
+      "id": "thiemann-2003-master",
+      "authors": "T. Thiemann",
+      "title": "The Phoenix Project: Master Constraint Programme for Loop Quantum Gravity",
+      "year": 2003,
+      "arxiv": "gr-qc/0305080",
+      "url": "https://arxiv.org/abs/gr-qc/0305080",
+      "significance": "Proposed the master constraint to handle the non-closing Hamiltonian constraint algebra."
+    },
+    {
+      "id": "bojowald-morales-sahlmann-2005",
+      "authors": "M. Bojowald, H. A. Morales-Tecotl, H. Sahlmann",
+      "title": "On Loop Quantum Gravity Phenomenology and the Issue of Lorentz Invariance",
+      "year": 2005,
+      "arxiv": "gr-qc/0411101",
+      "url": "https://arxiv.org/abs/gr-qc/0411101",
+      "significance": "Analysis of modified dispersion relations and Lorentz invariance in LQG phenomenology."
+    },
+    {
+      "id": "haggard-han-kaminski-riello-2015",
+      "authors": "H. Haggard, M. Han, W. Kaminski, A. Riello",
+      "title": "SL(2,C) Chern-Simons theory, a non-planar graph operator, and 4D quantum gravity with a cosmological constant",
+      "year": 2015,
+      "arxiv": "1412.7546",
+      "url": "https://arxiv.org/abs/1412.7546",
+      "significance": "Incorporated a cosmological constant via quantum-group deformation with curved-4-simplex semiclassics."
+    },
+    {
+      "id": "han-2021-lambda",
+      "authors": "M. Han",
+      "title": "Four-dimensional Spinfoam Quantum Gravity with Cosmological Constant: Finiteness and Semiclassical Limit",
+      "year": 2021,
+      "arxiv": "2109.00034",
+      "url": "https://arxiv.org/abs/2109.00034",
+      "significance": "Demonstrated finiteness and correct semiclassical limit of Lambda-deformed spin foams."
+    },
+    {
+      "id": "han-hung-2017",
+      "authors": "M. Han, L.-Y. Hung",
+      "title": "Loop Quantum Gravity, Exact Holographic Mapping, and Holographic Entanglement Entropy",
+      "year": 2017,
+      "arxiv": "1610.02134",
+      "url": "https://arxiv.org/abs/1610.02134",
+      "significance": "Mapped LQG spin networks to tensor networks satisfying the Ryu-Takayanagi formula."
+    },
+    {
+      "id": "asante-dittrich-haggard-2020",
+      "authors": "S. K. Asante, B. Dittrich, H. M. Haggard",
+      "title": "Effective Spin Foam Models for Four-Dimensional Quantum Gravity",
+      "year": 2020,
+      "arxiv": "2004.07013",
+      "url": "https://arxiv.org/abs/2004.07013",
+      "significance": "Introduced computationally efficient effective spin foams diagnosing and avoiding the flatness problem."
+    },
+    {
+      "id": "asante-dittrich-haggard-2021",
+      "authors": "S. K. Asante, B. Dittrich, J. Padua-Arguelles",
+      "title": "Effective Spin Foam Models for Lorentzian Quantum Gravity",
+      "year": 2021,
+      "arxiv": "2104.00485",
+      "url": "https://arxiv.org/abs/2104.00485",
+      "significance": "Lorentzian version of the effective spin foam models, enabling semiclassical tests in Lorentzian signature."
+    },
+    {
+      "id": "gozzini-2021",
+      "authors": "F. Gozzini",
+      "title": "A high-performance code for EPRL spin foam amplitudes (sl2cfoam-next)",
+      "year": 2021,
+      "arxiv": "2107.13952",
+      "url": "https://arxiv.org/abs/2107.13952",
+      "significance": "Orders-of-magnitude speedup enabling numerical tests of asymptotics and the flatness problem."
+    },
+    {
+      "id": "gielen-oriti-sindoni-2013",
+      "authors": "S. Gielen, D. Oriti, L. Sindoni",
+      "title": "Cosmology from Group Field Theory Formalism for Quantum Gravity",
+      "year": 2013,
+      "arxiv": "1303.3576",
+      "url": "https://arxiv.org/abs/1303.3576",
+      "significance": "Derived Friedmann dynamics and LQC corrections from GFT condensates, bridging LQG and GFT."
+    },
+    {
+      "id": "continuum-limit-2026",
+      "authors": "M. Bruno, E. Colafranceschi, F. M. Mele, C. Rovelli",
+      "title": "The Structure of the Continuum Limit of Spin Foams",
+      "year": 2026,
+      "arxiv": "2603.16999",
+      "url": "https://arxiv.org/abs/2603.16999",
+      "significance": "TQFT/RAQ no-go and distributional rigging-map construction of the physical Hilbert space (2026)."
+    },
+    {
+      "id": "graph-changing-2024",
+      "authors": "T. L. M. Guedes, G. A. Mena Marugan, F. Vidotto, M. Muller",
+      "title": "Computing the graph-changing dynamics of loop quantum gravity",
+      "year": 2024,
+      "arxiv": "2412.20257",
+      "url": "https://arxiv.org/abs/2412.20257",
+      "significance": "First numerical implementation of the graph-changing Hamiltonian constraint."
+    },
+    {
+      "id": "lqg-entanglement-arealaw-2025",
+      "authors": "(2025)",
+      "title": "Entanglement entropy in Loop Quantum Gravity and geometrical area law",
+      "year": 2025,
+      "arxiv": "2510.26922",
+      "url": "https://arxiv.org/abs/2510.26922",
+      "significance": "Derives a geometric area law for entanglement directly in LQG using von Neumann algebra methods."
+    },
+    {
+      "id": "planck-star-dm-2025",
+      "authors": "(2025)",
+      "title": "Could Planck Star Remnants be Dark Matter?",
+      "year": 2025,
+      "arxiv": "2506.03334",
+      "url": "https://arxiv.org/abs/2506.03334",
+      "significance": "Proposes Planck-mass remnants from bounced black holes as a dark-matter candidate."
+    },
+    {
+      "id": "vyas-joshi-immirzi-2022",
+      "authors": "R. P. Vyas, M. J. Joshi",
+      "title": "The Barbero-Immirzi Parameter: An Enigmatic Parameter of Loop Quantum Gravity",
+      "year": 2022,
+      "doi": "10.3390/physics4040072",
+      "url": "https://www.mdpi.com/2624-8174/4/4/72",
+      "significance": "Review of the values, interpretations and open questions surrounding gamma (Physics 4(4), 1094-1116)."
+    },
+    {
+      "id": "rovelli-vidotto-2014",
+      "authors": "C. Rovelli, F. Vidotto",
+      "title": "Covariant Loop Quantum Gravity",
+      "year": 2014,
+      "url": "https://www.cambridge.org/core/books/covariant-loop-quantum-gravity/2DF4474CBF7845C261FA78904270F226",
+      "significance": "Standard textbook on covariant LQG and spin foam theory."
+    },
+    {
+      "id": "coarse-graining-editorial-2021",
+      "authors": "A. Eichhorn, B. Bahr, A. D. Pereira",
+      "title": "Editorial: Coarse graining in quantum gravity - Bridging the gap between microscopic models and spacetime physics",
+      "year": 2021,
+      "arxiv": "2103.14605",
+      "url": "https://arxiv.org/abs/2103.14605",
+      "significance": "Surveys tensor-network renormalization of spin foams and its link to continuum/RG questions."
+    }
+  ],
+  "openProblems": [
+    {
+      "id": "hamiltonian-constraint-dynamics",
+      "statement": "Define and solve the quantum Hamiltonian constraint (dynamics) of canonical LQG with a closing constraint algebra and a controlled physical state space.",
+      "whyHard": "Diffeomorphism invariance yields an algebra with structure functions (not constants); Thiemann's operator is graph-changing and plagued by factor-ordering and regularization ambiguities, and coherent states miss the newly generated degrees of freedom.",
+      "attempts": "Thiemann's QSD operator; the Master Constraint Programme; algebraic quantum gravity; 2024 numerical graph-changing implementations."
+    },
+    {
+      "id": "semiclassical-continuum-limit",
+      "statement": "Prove that LQG / spin foams reproduce general relativity (plus controlled quantum corrections) in the semiclassical and continuum limits.",
+      "whyHard": "Background independence means there is no fixed background to perturb around; the large-spin and continuum limits need not commute, and strong convergence can collapse the theory to a topological one.",
+      "attempts": "Large-spin Regge asymptotics; graviton propagator; tensor-network/coarse-graining renormalization; 2026 distributional (TQFT/RAQ) continuum-limit framework."
+    },
+    {
+      "id": "flatness-problem",
+      "statement": "Determine whether spin-foam dynamics is dominated by flat (Regge-flat) geometries in the semiclassical limit and how to avoid it.",
+      "whyHard": "Gluing constraints and the choice of areas as fundamental variables peak the path integral on flat configurations; the issue is confirmed numerically in BF and EPRL cases.",
+      "attempts": "Effective spin foams avoiding flatness in a restricted regime; numerical studies with sl2cfoam-next; Monte Carlo sampling."
+    },
+    {
+      "id": "immirzi-parameter-status",
+      "statement": "Clarify the physical status and value of the Barbero-Immirzi parameter gamma.",
+      "whyHard": "Classically gamma is a canonical-transformation label (unobservable) yet quantum-mechanically sets the geometry scale and entropy; different counting schemes (U(1) vs SU(2), minimal-spin assumptions) give different values (~0.237-0.274).",
+      "attempts": "U(1) and SU(2) entropy countings; proposals making gamma a dynamical field; analytic-continuation (self-dual) approaches gamma = +-i."
+    },
+    {
+      "id": "canonical-covariant-equivalence",
+      "statement": "Establish that the EPRL spin-foam amplitude implements the projector onto the kernel of the canonical LQG Hamiltonian constraint.",
+      "whyHard": "Canonical (graph-changing) and covariant (fixed 2-complex) formulations use different degrees of freedom; the equivalence requires controlling the sum/refinement over 2-complexes.",
+      "attempts": "Group field theory completion; refinement-limit and renormalization studies; boundary Hilbert space matching."
+    },
+    {
+      "id": "matter-and-standard-model",
+      "statement": "Incorporate matter (fermions, gauge fields) and recover Standard Model low-energy physics from LQG.",
+      "whyHard": "LQG quantizes geometry but has no built-in principle fixing the matter content; coupling matter to spin networks/foams and extracting particle physics remains piecemeal.",
+      "attempts": "Spin foams coupled to scalar/fermion fields; quantum-reduced loop gravity; speculative spinor/octonion Standard-Model constructions."
+    },
+    {
+      "id": "lorentz-invariance-phenomenology",
+      "statement": "Show that discrete LQG geometry is compatible with (or testably deforms) local Lorentz invariance, and derive falsifiable phenomenology.",
+      "whyHard": "Discrete area is a frame-dependent-looking scale; reconciling it with relativity points to deformed (DSR/kappa-Poincare) rather than broken symmetry, but a full proof is lacking and data tightly constrain modified dispersions.",
+      "attempts": "Deformed hypersurface-deformation algebra; kappa-Poincare/DSR linkage; gamma-ray-burst dispersion constraints."
+    }
+  ],
+  "connections": [
+    {
+      "from": "loop-quantum-gravity",
+      "to": "group-field-theory",
+      "type": "shared-structure",
+      "description": "GFT is the second-quantized reformulation of the LQG state space and a completion of spin foams: GFT Feynman amplitudes ARE spin foam amplitudes, and GFT condensates reproduce Friedmann dynamics with LQC-type bounce. The tightest, best-mapped bridge from LQG.",
+      "explored": "well"
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "quantum-cosmology",
+      "type": "limit",
+      "description": "Loop quantum cosmology is the symmetry-reduced (homogeneous) sector of LQG; it yields the big bounce (rho_c ~ 0.41 rho_Pl), singularity resolution and CMB predictions. The most developed phenomenological application of LQG.",
+      "explored": "well"
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-structure",
+      "description": "Both build spacetime from discrete simplicial/combinatorial data and use a sum-over-geometries. Key difference: LQG/spin foam discreteness is fundamental while CDT discreteness is a regularization removed by a continuum limit; effective spin foams as simplicial path integrals offer a bridge, but no shared phase-diagram dictionary exists.",
+      "explored": "partially"
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "asymptotic-safety",
+      "type": "conjecture",
+      "description": "Both seek a non-perturbative UV-complete gravity. Spin-foam coarse-graining/RG could in principle reach a non-trivial fixed point analogous to the asymptotic-safety scenario, identifying the continuum limit with a UV fixed point. No direct demonstration yet - a prime 'gold' bridge.",
+      "explored": "barely"
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "holography-adscft",
+      "type": "shared-math",
+      "description": "Spin networks are PEPS-type tensor networks with an entanglement area law; Han-Hung built an exact holographic mapping whose boundary entanglement satisfies the Ryu-Takayanagi formula in the semiclassical regime. A genuine LQG-CFT duality and full AdS/CFT dictionary are still missing.",
+      "explored": "partially"
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "entanglement-spacetime",
+      "type": "shared-structure",
+      "description": "LQG spin-network states realize a geometric entanglement area law (entropy = sum over boundary punctures), connecting quantized area to entanglement and to the 'geometry from entanglement' program; recent 2025 work derives the area law directly in LQG via von Neumann algebras.",
+      "explored": "partially"
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "twistors-amplitudes",
+      "type": "shared-math",
+      "description": "The LQG phase space on a fixed graph decomposes into twistors (two per edge), with holonomies/fluxes as spinor bilinears and EPRL amplitudes derivable from a twistor-space path integral. The link to particle-physics spinor-helicity scattering amplitudes is suggested but computationally unexploited.",
+      "explored": "partially"
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "noncommutative-geometry",
+      "type": "shared-structure",
+      "description": "Linearizing the LQG deformed hypersurface-deformation algebra yields kappa-Poincare symmetry and a kappa-Minkowski noncommutative spacetime (DSR), suggesting deformed rather than broken Lorentz invariance and a route to QG phenomenology. Uniqueness of the implied deformation is unproven.",
+      "explored": "partially"
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "LQG reproduces Bekenstein-Hawking entropy via horizon microstate counting and offers bounce/Planck-star scenarios with information escaping the singularity; connections to the Page curve and unitary evaporation remain qualitative.",
+      "explored": "partially"
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "semiclassical-gravity",
+      "type": "limit",
+      "description": "Recovering linearized gravity and the graviton propagator from spin foams, and the Regge action from large-spin vertex asymptotics, is the route by which LQG should reduce to semiclassical/effective gravity; the limit is partially demonstrated but not proven in general.",
+      "explored": "partially"
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "string-theory",
+      "type": "conflict",
+      "description": "Historically rival programs: LQG is background-independent and predicts fundamental discreteness; string theory is background-dependent and perturbative. They share black-hole area-law entropy, discrete spectra and (recently) tensor-network/holographic structures. Possible but largely unexplored bridges via BF/topological structure or spin foams as worldsheet lattices.",
+      "explored": "barely"
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "causal-sets",
+      "type": "shared-structure",
+      "description": "Both posit fundamental spacetime discreteness with a discrete causal/combinatorial structure. Spin foams encode causal structure in the 2-complex while causal sets use partial orders; a precise translation between spin-foam histories and causal-set growth dynamics is essentially unexplored.",
+      "explored": "barely"
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "LQG predicts Planck-scale discreteness with potential modified dispersion relations (DSR), CMB imprints from the LQC bounce, and Planck-star/remnant dark-matter signatures - the main observational handles, all tightly constrained and not yet confirmed.",
+      "explored": "partially"
+    },
+    {
+      "from": "loop-quantum-gravity",
+      "to": "holographic-principle",
+      "type": "shared-structure",
+      "description": "Black hole entropy proportional to horizon area emerges in LQG from counting punctures, an independent realization of the area-law / holographic-principle that strings realize via D-brane counting - a shared result reached by different microscopics.",
+      "explored": "partially"
+    }
+  ]
+}

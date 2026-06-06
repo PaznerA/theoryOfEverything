@@ -1,0 +1,787 @@
+{
+  "slug": "asymptotic-safety",
+  "name": "Asymptotic Safety",
+  "concepts": [
+    {
+      "id": "asymptotic-safety",
+      "name": "Asymptotic Safety",
+      "definition": "Scenario in which gravity is a non-perturbatively renormalizable quantum field theory because its renormalization-group flow terminates in the ultraviolet at a non-trivial (interacting) fixed point, keeping all dimensionless couplings finite and physical quantities 'safe' from divergences even without asymptotic freedom (g* != 0).",
+      "relatedTo": ["reuter-fixed-point", "functional-renormalization-group", "asymptotic-freedom", "uv-completion", "renormalization-group-fixed-point"]
+    },
+    {
+      "id": "reuter-fixed-point",
+      "name": "Reuter Fixed Point",
+      "definition": "The interacting non-Gaussian UV fixed point of the gravitational RG flow, first found by Reuter (1998) in the Einstein-Hilbert truncation; UV-attractive in the relevant directions and the cornerstone of the asymptotic-safety program.",
+      "relatedTo": ["asymptotic-safety", "einstein-hilbert-truncation", "renormalization-group-fixed-point", "critical-exponents"]
+    },
+    {
+      "id": "wetterich-equation",
+      "name": "Wetterich Equation",
+      "definition": "Exact functional flow equation for the effective average action, d_t Gamma_k = (1/2) STr[(Gamma_k^(2)+R_k)^-1 d_t R_k], implementing the Wilsonian RG by integrating out fluctuations shell-by-shell in momentum space; the central computational tool of functional RG quantum gravity.",
+      "relatedTo": ["functional-renormalization-group", "effective-average-action", "ir-regulator"]
+    },
+    {
+      "id": "functional-renormalization-group",
+      "name": "Functional Renormalization Group",
+      "definition": "Non-perturbative formulation of the renormalization group based on the Wetterich equation for the scale-dependent effective average action; provides access to RG flow beyond perturbation theory and is the main method for probing the Reuter fixed point.",
+      "relatedTo": ["wetterich-equation", "asymptotic-safety", "effective-average-action", "renormalization-group-fixed-point"]
+    },
+    {
+      "id": "effective-average-action",
+      "name": "Effective Average Action",
+      "definition": "Coarse-grained functional Gamma_k in which quantum fluctuations with momenta above the cutoff scale k have been integrated out; interpolates between the microscopic action (k->infinity) and the full effective action (k->0).",
+      "relatedTo": ["wetterich-equation", "ir-regulator", "background-independence"]
+    },
+    {
+      "id": "ir-regulator",
+      "name": "IR Regulator (cutoff function R_k)",
+      "definition": "Momentum-dependent mass-like term R_k that suppresses fluctuations with p<k inside the Wetterich equation; its functional form (e.g. Litim optimized, exponential) is the chief origin of scheme dependence of fixed-point data.",
+      "relatedTo": ["wetterich-equation", "scheme-dependence", "effective-average-action"]
+    },
+    {
+      "id": "einstein-hilbert-truncation",
+      "name": "Einstein-Hilbert Truncation",
+      "definition": "Simplest non-perturbative approximation of the gravitational effective average action, retaining only the running Newton coupling and cosmological constant: Gamma_k ~ (1/16 pi G_k) int sqrt(g)(2 Lambda_k - R); yields the Reuter fixed point.",
+      "relatedTo": ["reuter-fixed-point", "dimensionless-couplings", "f-R-truncation", "wetterich-equation"]
+    },
+    {
+      "id": "dimensionless-couplings",
+      "name": "Dimensionless Couplings g and lambda",
+      "definition": "g_k = k^(d-2) G_k (dimensionless Newton coupling) and lambda_k = k^-2 Lambda_k (dimensionless cosmological constant); the fixed point exists only for these dimensionless combinations.",
+      "relatedTo": ["einstein-hilbert-truncation", "reuter-fixed-point", "beta-functions"]
+    },
+    {
+      "id": "beta-functions",
+      "name": "Beta Functions",
+      "definition": "Flow equations beta_i = d_t g_i of the dimensionless couplings, obtained from the trace in the Wetterich equation; their simultaneous zeros define RG fixed points.",
+      "relatedTo": ["dimensionless-couplings", "renormalization-group-fixed-point", "critical-exponents"]
+    },
+    {
+      "id": "renormalization-group-fixed-point",
+      "name": "Renormalization Group Fixed Point",
+      "definition": "Point in theory space where all beta functions vanish; a Gaussian fixed point has free-field (canonical) scaling, a non-Gaussian one has anomalous critical exponents and can provide UV completion without asymptotic freedom.",
+      "relatedTo": ["reuter-fixed-point", "beta-functions", "critical-exponents", "asymptotic-safety"]
+    },
+    {
+      "id": "critical-exponents",
+      "name": "Critical Exponents",
+      "definition": "Eigenvalues theta_I of (minus) the stability matrix d beta_i/d g_j at a fixed point; Re(theta)>0 marks a relevant (UV-attractive) direction and Re(theta)<0 an irrelevant one. At the Reuter fixed point they form a complex-conjugate pair theta = theta' +/- i theta'' (e.g. -1.69 +/- 2.49i in the Einstein-Hilbert truncation, Percacci's review); high-order f(R) truncations report a convergent leading exponent of order theta' ~ 2.5.",
+      "relatedTo": ["uv-critical-surface", "reuter-fixed-point", "relevant-directions"]
+    },
+    {
+      "id": "uv-critical-surface",
+      "name": "UV Critical Surface",
+      "definition": "Submanifold of theory space spanned by RG trajectories that emanate from the UV fixed point; its dimension equals the number of relevant directions and hence the number of free parameters, determining the predictivity of the theory (~3 relevant directions found).",
+      "relatedTo": ["critical-exponents", "relevant-directions", "predictivity", "near-canonical-scaling"]
+    },
+    {
+      "id": "relevant-directions",
+      "name": "Relevant Directions",
+      "definition": "Eigendirections of the flow with Re(theta)>0 that grow toward the UV; their number equals the number of free parameters of an asymptotically safe theory. Polynomial f(R) truncations consistently find about three.",
+      "relatedTo": ["uv-critical-surface", "critical-exponents", "predictivity"]
+    },
+    {
+      "id": "predictivity",
+      "name": "Predictivity",
+      "definition": "The property that a finite-dimensional UV critical surface fixes infinitely many irrelevant couplings in terms of finitely many relevant ones, so that asymptotic safety makes definite predictions once a few parameters are measured.",
+      "relatedTo": ["uv-critical-surface", "relevant-directions", "higgs-mass-retrodiction"]
+    },
+    {
+      "id": "near-canonical-scaling",
+      "name": "Near-Canonical Scaling",
+      "definition": "Empirical finding that quantum scaling dimensions of curvature operators R^n at the Reuter fixed point stay close to their canonical values, so only operators up to about R^2 are relevant, bounding the number of relevant directions to ~3 and supporting truncation convergence.",
+      "relatedTo": ["f-R-truncation", "uv-critical-surface", "relevant-directions"]
+    },
+    {
+      "id": "f-R-truncation",
+      "name": "f(R) and Higher-Derivative Truncations",
+      "definition": "Extensions of the Einstein-Hilbert ansatz to polynomial or functional f(R), R^2_munu, R^3 etc.; high-order polynomial f(R) studies (up to R^34 and beyond) display convergence of critical exponents and ~3 relevant directions.",
+      "relatedTo": ["einstein-hilbert-truncation", "near-canonical-scaling", "unitarity", "scheme-dependence"]
+    },
+    {
+      "id": "graviton-anomalous-dimension",
+      "name": "Graviton Anomalous Dimension",
+      "definition": "At the fixed point eta_N = 2-d (eta_N = -2 in d=4), changing the effective graviton propagator from 1/p^2 to 1/p^4; this UV softening underlies dimensional reduction of spacetime.",
+      "relatedTo": ["spectral-dimension", "reuter-fixed-point", "unitarity"]
+    },
+    {
+      "id": "spectral-dimension",
+      "name": "Spectral Dimension",
+      "definition": "Effective dimension d_s probed by a diffusion process; in asymptotic safety it decreases from d_s=4 at large (IR) scales to d_s=2 at sub-Planckian (UV) scales, signalling a fractal spacetime. CDT independently finds a 4 -> 3/2 reduction.",
+      "relatedTo": ["graviton-anomalous-dimension", "dimensional-reduction", "causal-dynamical-triangulations", "holographic-principle"]
+    },
+    {
+      "id": "dimensional-reduction",
+      "name": "Dimensional Reduction",
+      "definition": "Phenomenon by which the effective dimensionality of spacetime decreases at short distances; in AS the spectral dimension runs to 2, a shared qualitative feature across several quantum-gravity approaches (CDT, LQG, Horava gravity).",
+      "relatedTo": ["spectral-dimension", "graviton-anomalous-dimension", "causal-dynamical-triangulations"]
+    },
+    {
+      "id": "weak-gravity-bound",
+      "name": "Weak-Gravity Bound",
+      "definition": "Critical strength of gravitational fluctuations above which gravity generates complex fixed-point values in matter (scalar) interactions, destroying asymptotic safety; constrains the admissible matter content and favors spinning matter (fermions, vectors).",
+      "relatedTo": ["matter-gravity-systems", "weak-gravity-conjecture", "reuter-fixed-point"]
+    },
+    {
+      "id": "matter-gravity-systems",
+      "name": "Matter-Gravity Systems",
+      "definition": "Systems coupling minimally and non-minimally interacting matter (scalars, fermions, gauge fields) to asymptotically safe gravity; for a given number of gauge fields there is a maximal number of scalars and fermions compatible with the fixed point, and the Standard Model plus common extensions are found compatible.",
+      "relatedTo": ["weak-gravity-bound", "gravity-induced-anomalous-dimension", "higgs-mass-retrodiction", "standard-model"]
+    },
+    {
+      "id": "gravity-induced-anomalous-dimension",
+      "name": "Gravity-Induced Anomalous Dimension",
+      "definition": "Contribution of gravitational fluctuations to the running of matter couplings; a positive value renders otherwise non-asymptotically-free couplings (Abelian gauge, quartic scalar) irrelevant and thus predictable, the mechanism behind SM coupling retrodictions.",
+      "relatedTo": ["matter-gravity-systems", "higgs-mass-retrodiction", "fine-structure-constant-prediction"]
+    },
+    {
+      "id": "higgs-mass-retrodiction",
+      "name": "Higgs Mass Retrodiction",
+      "definition": "Shaposhnikov-Wetterich (2009) prediction that, assuming a positive gravity-induced anomalous dimension driving the quartic Higgs coupling to a near-zero fixed point at the Planck scale, the Higgs boson mass is M_H ~ 126 GeV with a few-GeV uncertainty, close to the later measured 125.25 GeV.",
+      "relatedTo": ["gravity-induced-anomalous-dimension", "matter-gravity-systems", "predictivity", "top-mass-prediction"]
+    },
+    {
+      "id": "top-mass-prediction",
+      "name": "Top Mass Prediction",
+      "definition": "Eichhorn-Held (2017) result that asymptotically safe gravity can fix the top Yukawa as an irrelevant coupling, yielding a top pole mass M_t ~ 171 GeV and a top-bottom mass difference of about 170 GeV.",
+      "relatedTo": ["gravity-induced-anomalous-dimension", "higgs-mass-retrodiction", "matter-gravity-systems"]
+    },
+    {
+      "id": "fine-structure-constant-prediction",
+      "name": "Fine-Structure Constant Prediction",
+      "definition": "Eichhorn-Held-Wetterich (2017) mechanism in which the balance of gravity and matter fluctuations creates an attractive IR fixed point for the Abelian gauge coupling, making the value of the fine-structure constant calculable for a class of GUT models.",
+      "relatedTo": ["gravity-induced-anomalous-dimension", "matter-gravity-systems", "predictivity"]
+    },
+    {
+      "id": "background-independence",
+      "name": "Background Independence",
+      "definition": "Requirement that physics not depend on the auxiliary background metric introduced to define the coarse-graining scale k; in FRG gravity Gamma_k depends on two metric arguments and background independence is enforced via modified (split) Ward identities, a key open technical problem.",
+      "relatedTo": ["effective-average-action", "split-ward-identities", "wetterich-equation"]
+    },
+    {
+      "id": "split-ward-identities",
+      "name": "Split / Modified Ward Identities",
+      "definition": "Identities relating the dependence of the effective average action on the background metric and on the fluctuation field; their solution is required to restore background independence in functional RG quantum gravity.",
+      "relatedTo": ["background-independence", "effective-average-action"]
+    },
+    {
+      "id": "graviton-spectral-function",
+      "name": "Graviton Spectral Function",
+      "definition": "Real-time (Lorentzian) spectral representation of the graviton propagator; recent self-consistent computations find a positive spectral function with a massless graviton peak, a multi-graviton continuum, near-quadratic UV decay and unit total spectral weight, providing evidence for unitarity.",
+      "relatedTo": ["unitarity", "lorentzian-asymptotic-safety", "graviton-anomalous-dimension"]
+    },
+    {
+      "id": "lorentzian-asymptotic-safety",
+      "name": "Lorentzian Asymptotic Safety",
+      "definition": "Formulation of the asymptotic-safety RG flow directly in Lorentzian (real-time) signature rather than via Euclidean computation plus Wick rotation; recent covariant and foliated approaches find a non-trivial fixed point in the Einstein-Hilbert truncation.",
+      "relatedTo": ["graviton-spectral-function", "unitarity", "wick-rotation", "causal-dynamical-triangulations"]
+    },
+    {
+      "id": "unitarity",
+      "name": "Unitarity",
+      "definition": "Conservation of probability in the quantum theory; a central open question for AS because higher-derivative operators classically carry Ostrogradski ghosts. Recent evidence (UV-decreasing e+e- -> mu+mu- cross section, positive graviton spectral function) supports unitarity non-perturbatively.",
+      "relatedTo": ["graviton-spectral-function", "f-R-truncation", "lorentzian-asymptotic-safety"]
+    },
+    {
+      "id": "two-plus-epsilon-expansion",
+      "name": "2+epsilon Expansion",
+      "definition": "Weinberg's original perturbative evidence for asymptotic safety: near d=2, where Newton's constant is dimensionless, the beta function has a non-trivial fixed point g* ~ (3/38) epsilon with a single relevant direction; extrapolation to d=4 is uncontrolled.",
+      "relatedTo": ["asymptotic-safety", "reuter-fixed-point", "relevant-directions"]
+    },
+    {
+      "id": "scheme-dependence",
+      "name": "Scheme / Truncation Dependence",
+      "definition": "Dependence of fixed-point coordinates and individual critical exponents on the choice of gauge, regulator and truncation; only certain quantities (e.g. the product g* lambda*, leading exponents) are robustly universal, which is a main line of criticism.",
+      "relatedTo": ["ir-regulator", "f-R-truncation", "critical-exponents"]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "wetterich-flow",
+      "name": "Wetterich Equation",
+      "latex": "\\partial_t \\Gamma_k[\\Phi;\\bar{g}] = \\frac{1}{2}\\,\\mathrm{STr}\\!\\left[\\left(\\Gamma_k^{(2)}+\\mathcal{R}_k\\right)^{-1}\\partial_t \\mathcal{R}_k\\right]",
+      "meaning": "Exact functional flow of the effective average action with RG time t=ln(k/k0); Gamma_k^(2) is the Hessian, R_k the IR regulator, STr the supertrace. Central equation of FRG quantum gravity.",
+      "source": "reuter-1998"
+    },
+    {
+      "id": "einstein-hilbert-ansatz",
+      "name": "Einstein-Hilbert Truncation Ansatz",
+      "latex": "\\Gamma_k \\simeq \\frac{1}{16\\pi G_k}\\int d^dx\\,\\sqrt{\\bar{g}}\\,\\bigl(2\\Lambda_k - R\\bigr) + S_{\\mathrm{gf}} + S_{\\mathrm{gh}}",
+      "meaning": "Simplest non-perturbative truncation: running Newton coupling G_k and cosmological constant Lambda_k plus gauge-fixing and ghost terms. Yields the Reuter fixed point.",
+      "source": "reuter-1998"
+    },
+    {
+      "id": "dimensionless-couplings-def",
+      "name": "Dimensionless Couplings",
+      "latex": "g_k = k^{d-2}\\,G_k, \\qquad \\lambda_k = k^{-2}\\,\\Lambda_k",
+      "meaning": "Dimensionless Newton coupling and cosmological constant; the fixed point exists only in these variables.",
+      "source": "reuter-1998"
+    },
+    {
+      "id": "fixed-point-condition",
+      "name": "Fixed-Point Condition and Universal Product",
+      "latex": "\\beta_g(g^*,\\lambda^*)=0,\\ \\beta_\\lambda(g^*,\\lambda^*)=0;\\quad g^*>0,\\ \\lambda^*>0,\\quad \\lambda^* g^* \\approx 0.12\\text{--}0.14",
+      "meaning": "Reuter fixed point in d=4; individual coordinates are scheme dependent but the product is approximately universal. Einstein-Hilbert and high-order f(R) truncations give lambda* g* in the range ~0.12-0.14 (e.g. the R^34 study reports g* lambda* ~ 0.121). The often-quoted precise value 0.133 could not be verified against the cited sources (neovereno).",
+      "source": "falls-2014-evidence"
+    },
+    {
+      "id": "critical-exponents-def",
+      "name": "Critical Exponents",
+      "latex": "\\theta_I = -\\,\\mathrm{eig}\\!\\left(\\frac{\\partial \\beta_i}{\\partial g_j}\\Big|_{*}\\right),\\qquad \\theta_{1,2}^{\\mathrm{UV}} = \\theta' \\pm i\\,\\theta''",
+      "meaning": "Eigenvalues of minus the stability matrix; Re(theta)>0 means relevant. At the Reuter fixed point they form a complex-conjugate pair (spiralling flow); in the Einstein-Hilbert truncation theta' ~ 1.5-2.5 and theta'' ~ 2.3-4.3 (scheme dependent; e.g. eigenvalues -1.69 +/- 2.49i in Percacci's review). High-order f(R) truncations report a convergent leading real exponent of order ~2.5 (the R^34 study gives theta' ~ 2.5). The frequently quoted value 1/nu = theta' ~ 1.472 could NOT be verified against the cited sources and is flagged neovereno.",
+      "source": "falls-2014-evidence"
+    },
+    {
+      "id": "uv-critical-surface-dim",
+      "name": "Dimension of UV Critical Surface",
+      "latex": "\\dim(\\text{UV critical surface}) = \\#\\{I : \\mathrm{Re}\\,\\theta_I > 0\\} \\approx 3",
+      "meaning": "Number of relevant directions = number of free parameters; high-order f(R) truncations consistently find ~3, making the theory predictive.",
+      "source": "falls-2016-fr"
+    },
+    {
+      "id": "graviton-anomalous-dim",
+      "name": "Graviton Anomalous Dimension",
+      "latex": "\\eta_N = 2 - d \\;\\Rightarrow\\; G_{\\mathrm{grav}}(p) \\sim \\frac{1}{p^{2-\\eta_N}} = \\frac{1}{p^{4}}\\ (d=4)",
+      "meaning": "At the fixed point the Newton-coupling anomalous dimension is 2-d (=-2 in 4d), softening the graviton propagator to 1/p^4 and driving dimensional reduction.",
+      "source": "lauscher-reuter-2005"
+    },
+    {
+      "id": "spectral-dimension-flow",
+      "name": "Spectral Dimension and Dimensional Reduction",
+      "latex": "d_s(T) = -2\\,\\frac{d\\ln P(T)}{d\\ln T},\\qquad d_s \\xrightarrow{\\text{IR}} 4,\\quad d_s \\xrightarrow{\\text{UV}} 2",
+      "meaning": "Effective diffusion dimension; P(T) is the return probability after diffusion time T. AS predicts d_s running from 4 to 2, a fractal sub-Planckian spacetime.",
+      "source": "lauscher-reuter-2005"
+    },
+    {
+      "id": "two-plus-epsilon-fp",
+      "name": "2+epsilon Fixed Point",
+      "latex": "g^* = \\tfrac{3}{38}\\,\\varepsilon + O(\\varepsilon^2),\\qquad \\theta = \\varepsilon + O(\\varepsilon^2),\\qquad d = 2+\\varepsilon",
+      "meaning": "Weinberg's perturbative fixed point near two dimensions with a single relevant direction; original evidence for asymptotic safety, uncontrolled when extrapolated to d=4.",
+      "source": "weinberg-1979"
+    },
+    {
+      "id": "higgs-fixedpoint-condition",
+      "name": "Higgs Mass Retrodiction Condition",
+      "latex": "\\lambda_\\phi(M_{\\mathrm{Pl}}) \\approx 0,\\quad \\beta_{\\lambda_\\phi}\\big|_{\\mathrm{fp}} \\approx 0 \\;\\Rightarrow\\; M_H \\approx 126\\ \\mathrm{GeV}",
+      "meaning": "A positive gravity-induced anomalous dimension makes the quartic Higgs coupling irrelevant and drives it to a near-zero fixed point at the Planck scale; running back to the electroweak scale predicts M_H ~ 126 GeV.",
+      "source": "shaposhnikov-wetterich-2009"
+    },
+    {
+      "id": "top-mass-prediction-val",
+      "name": "Top Mass Prediction",
+      "latex": "M_{t,\\mathrm{pole}} \\approx 171\\ \\mathrm{GeV},\\qquad m_t - m_b \\approx 170\\ \\mathrm{GeV}",
+      "meaning": "Eichhorn-Held: AS fixes the top Yukawa as an irrelevant coupling, yielding a top pole mass near 171 GeV and a top-bottom mass difference of about 170 GeV.",
+      "source": "eichhorn-held-top-2017"
+    }
+  ],
+  "references": [
+    {
+      "id": "weinberg-1979",
+      "authors": "Steven Weinberg",
+      "title": "Ultraviolet divergences in quantum theories of gravitation",
+      "year": 1979,
+      "url": "https://inspirehep.net/literature/9028",
+      "significance": "Original formulation of the asymptotic-safety conjecture and the 2+epsilon expansion evidence."
+    },
+    {
+      "id": "thooft-veltman-1974",
+      "authors": "Gerard 't Hooft, Martinus Veltman",
+      "title": "One-loop divergencies in the theory of gravitation",
+      "year": 1974,
+      "doi": "10.1007/BF02756527",
+      "url": "https://inspirehep.net/literature/95368",
+      "significance": "Established one-loop on-shell renormalizability of pure gravity, framing the renormalizability question."
+    },
+    {
+      "id": "goroff-sagnotti-1986",
+      "authors": "Marc Goroff, Augusto Sagnotti",
+      "title": "The ultraviolet behavior of Einstein gravity",
+      "year": 1986,
+      "doi": "10.1016/0550-3213(86)90193-8",
+      "url": "https://inspirehep.net/literature/228072",
+      "significance": "Proved the two-loop R^3 divergence, showing perturbative non-renormalizability and motivating non-perturbative approaches."
+    },
+    {
+      "id": "wetterich-1993",
+      "authors": "Christof Wetterich",
+      "title": "Exact evolution equation for the effective potential",
+      "year": 1993,
+      "doi": "10.1016/0370-2693(93)90726-X",
+      "url": "https://arxiv.org/abs/1710.05815",
+      "significance": "Introduced the exact functional RG (Wetterich) equation that underlies all FRG quantum-gravity work."
+    },
+    {
+      "id": "reuter-1998",
+      "authors": "Martin Reuter",
+      "title": "Nonperturbative evolution equation for quantum gravity",
+      "year": 1998,
+      "arxiv": "hep-th/9605030",
+      "doi": "10.1103/PhysRevD.57.971",
+      "url": "https://arxiv.org/abs/hep-th/9605030",
+      "significance": "Founding paper: derived the gravitational FRG equation and discovered the Reuter fixed point in the Einstein-Hilbert truncation."
+    },
+    {
+      "id": "souma-1999",
+      "authors": "Wataru Souma",
+      "title": "Non-trivial ultraviolet fixed point in quantum gravity",
+      "year": 1999,
+      "arxiv": "hep-th/9907027",
+      "doi": "10.1143/PTP.102.181",
+      "url": "https://arxiv.org/abs/hep-th/9907027",
+      "significance": "Independent confirmation of the non-Gaussian UV fixed point."
+    },
+    {
+      "id": "lauscher-reuter-2002",
+      "authors": "Oliver Lauscher, Martin Reuter",
+      "title": "Ultraviolet fixed point and generalized flow equation of quantum gravity",
+      "year": 2002,
+      "arxiv": "hep-th/0108040",
+      "doi": "10.1103/PhysRevD.65.025013",
+      "url": "https://arxiv.org/abs/hep-th/0108040",
+      "significance": "Added the R^2 term and demonstrated weak gauge/regulator dependence of g* lambda*, theta', theta''."
+    },
+    {
+      "id": "lauscher-reuter-2005",
+      "authors": "Oliver Lauscher, Martin Reuter",
+      "title": "Fractal spacetime structure in asymptotically safe gravity",
+      "year": 2005,
+      "arxiv": "hep-th/0508202",
+      "doi": "10.1088/1126-6708/2005/10/050",
+      "url": "https://arxiv.org/abs/hep-th/0508202",
+      "significance": "Showed the spectral dimension runs from 4 to 2, predicting fractal sub-Planckian spacetime; bridge to CDT and holography."
+    },
+    {
+      "id": "niedermaier-reuter-2006",
+      "authors": "Max Niedermaier, Martin Reuter",
+      "title": "The Asymptotic Safety Scenario in Quantum Gravity",
+      "year": 2006,
+      "doi": "10.12942/lrr-2006-5",
+      "url": "https://link.springer.com/article/10.12942/lrr-2006-5",
+      "significance": "Standard Living Review summarizing evidence (2+epsilon, large-N, truncated FRG) for asymptotic safety."
+    },
+    {
+      "id": "codello-percacci-rahmede-2009",
+      "authors": "Alessandro Codello, Roberto Percacci, Christoph Rahmede",
+      "title": "Investigating the ultraviolet properties of gravity with a Wilsonian renormalization group equation",
+      "year": 2009,
+      "arxiv": "0805.2909",
+      "doi": "10.1016/j.aop.2008.08.008",
+      "url": "https://arxiv.org/abs/0805.2909",
+      "significance": "Polynomial f(R) truncations establishing ~3 relevant directions and near-canonical scaling."
+    },
+    {
+      "id": "percacci-2007",
+      "authors": "Roberto Percacci",
+      "title": "Asymptotic Safety",
+      "year": 2007,
+      "arxiv": "0709.3851",
+      "url": "https://arxiv.org/abs/0709.3851",
+      "significance": "Widely cited pedagogical review chapter on the asymptotic-safety program."
+    },
+    {
+      "id": "litim-2004",
+      "authors": "Daniel Litim",
+      "title": "Fixed points of quantum gravity",
+      "year": 2004,
+      "arxiv": "hep-th/0312114",
+      "doi": "10.1103/PhysRevLett.92.201301",
+      "url": "https://arxiv.org/abs/hep-th/0312114",
+      "significance": "Introduced the optimized regulator and gave robust evidence for the fixed point."
+    },
+    {
+      "id": "shaposhnikov-wetterich-2009",
+      "authors": "Mikhail Shaposhnikov, Christof Wetterich",
+      "title": "Asymptotic safety of gravity and the Higgs boson mass",
+      "year": 2010,
+      "arxiv": "0912.0208",
+      "doi": "10.1016/j.physletb.2009.12.022",
+      "url": "https://arxiv.org/abs/0912.0208",
+      "significance": "Predicted the Higgs mass ~126 GeV from a near-zero quartic fixed point; most famous AS phenomenology result."
+    },
+    {
+      "id": "dona-eichhorn-percacci-2014",
+      "authors": "Pietro Dona, Astrid Eichhorn, Roberto Percacci",
+      "title": "Matter matters in asymptotically safe quantum gravity",
+      "year": 2014,
+      "arxiv": "1311.2898",
+      "doi": "10.1103/PhysRevD.89.084035",
+      "url": "https://arxiv.org/abs/1311.2898",
+      "significance": "Derived bounds on the number of scalar/fermion fields and showed the Standard Model and common extensions are compatible with the fixed point."
+    },
+    {
+      "id": "falls-2013-bootstrap",
+      "authors": "Kevin Falls, Daniel F. Litim, Konstantinos Nikolakopoulos, Christoph Rahmede",
+      "title": "A bootstrap strategy for asymptotic safety",
+      "year": 2013,
+      "arxiv": "1301.4191",
+      "url": "https://arxiv.org/abs/1301.4191",
+      "significance": "High-order polynomial f(R) study (to R^34) giving the near-canonical scaling pattern and supporting the universal product g* lambda* ~ 0.12-0.14 and a low-dimensional UV critical surface."
+    },
+    {
+      "id": "nagy-critexp-2013",
+      "authors": "Sandor Nagy, B. Fazekas, L. Juhasz, K. Sailer",
+      "title": "Critical exponents in quantum Einstein gravity",
+      "year": 2013,
+      "arxiv": "1307.0765",
+      "doi": "10.1103/PhysRevD.88.116010",
+      "url": "https://arxiv.org/abs/1307.0765",
+      "significance": "Independent functional-RG study of critical exponents at the non-Gaussian fixed point in the Einstein-Hilbert truncation. NOTE: this paper is by Nagy et al., not by Falls-Litim-Nikolakopoulos-Rahmede; the high-order f(R) convergence claims are covered by falls-2014-evidence and falls-2013-bootstrap instead."
+    },
+    {
+      "id": "falls-2014-evidence",
+      "authors": "Kevin Falls, Daniel Litim, Konstantinos Nikolakopoulos, Christoph Rahmede",
+      "title": "Further evidence for asymptotic safety of quantum gravity",
+      "year": 2016,
+      "arxiv": "1410.4815",
+      "doi": "10.1103/PhysRevD.93.104022",
+      "url": "https://arxiv.org/abs/1410.4815",
+      "significance": "High-order polynomial f(R) truncations showing convergence of fixed point and exponents."
+    },
+    {
+      "id": "falls-2016-fr",
+      "authors": "Kevin Falls, Daniel F. Litim, Kostas Nikolakopoulos, Christoph Rahmede",
+      "title": "On de Sitter solutions in asymptotically safe f(R) theories",
+      "year": 2016,
+      "arxiv": "1607.04962",
+      "url": "https://arxiv.org/abs/1607.04962",
+      "significance": "High-order polynomial f(R) study confirming ~3 relevant directions and convergence of the fixed point and exponents."
+    },
+    {
+      "id": "eichhorn-held-top-2017",
+      "authors": "Astrid Eichhorn, Aaron Held",
+      "title": "Top mass from asymptotic safety",
+      "year": 2018,
+      "arxiv": "1707.01107",
+      "doi": "10.1016/j.physletb.2017.12.040",
+      "url": "https://arxiv.org/abs/1707.01107",
+      "significance": "Predicted a top pole mass ~171 GeV by fixing the top Yukawa as an irrelevant coupling."
+    },
+    {
+      "id": "eichhorn-held-fine-2017",
+      "authors": "Astrid Eichhorn, Aaron Held, Christof Wetterich",
+      "title": "Quantum-gravity predictions for the fine-structure constant",
+      "year": 2018,
+      "arxiv": "1711.02949",
+      "doi": "10.1016/j.physletb.2018.05.016",
+      "url": "https://arxiv.org/abs/1711.02949",
+      "significance": "Showed the Abelian gauge coupling / fine-structure constant becomes calculable via a gravity-matter IR fixed point."
+    },
+    {
+      "id": "eichhorn-review-2018",
+      "authors": "Astrid Eichhorn",
+      "title": "An asymptotically safe guide to quantum gravity and matter",
+      "year": 2019,
+      "arxiv": "1810.07615",
+      "doi": "10.3389/fspas.2018.00047",
+      "url": "https://www.frontiersin.org/journals/astronomy-and-space-sciences/articles/10.3389/fspas.2018.00047/full",
+      "significance": "Authoritative review of asymptotic safety with matter, predictivity and open problems."
+    },
+    {
+      "id": "critical-reflections-2020",
+      "authors": "A. Bonanno, A. Eichhorn, H. Gies, J. Pawlowski, R. Percacci, M. Reuter, F. Saueressig, G. Vacca",
+      "title": "Critical reflections on asymptotically safe gravity",
+      "year": 2020,
+      "arxiv": "2004.06810",
+      "doi": "10.3389/fphy.2020.00269",
+      "url": "https://arxiv.org/abs/2004.06810",
+      "significance": "Community response addressing background independence, unitarity, Lorentzian signature and predictivity."
+    },
+    {
+      "id": "donoghue-2019",
+      "authors": "John Donoghue",
+      "title": "A critique of the asymptotic safety program",
+      "year": 2020,
+      "arxiv": "1911.02967",
+      "doi": "10.3389/fphy.2020.00056",
+      "url": "https://arxiv.org/abs/1911.02967",
+      "significance": "Influential critique arguing AS conflicts with explicit low-energy quantum-gravity calculations and faces Lorentzian/scheme problems."
+    },
+    {
+      "id": "reuter-saueressig-book-2019",
+      "authors": "Martin Reuter, Frank Saueressig",
+      "title": "Quantum Gravity and the Functional Renormalization Group",
+      "year": 2019,
+      "doi": "10.1017/9781316227596",
+      "url": "https://www.cambridge.org/core/books/quantum-gravity-and-the-functional-renormalization-group/",
+      "significance": "Standard monograph on FRG quantum gravity and asymptotic safety."
+    },
+    {
+      "id": "saueressig-handbook-2023",
+      "authors": "Frank Saueressig",
+      "title": "The functional renormalization group in quantum gravity",
+      "year": 2023,
+      "arxiv": "2302.14152",
+      "url": "https://arxiv.org/abs/2302.14152",
+      "significance": "Pedagogical Handbook chapter deriving the Wetterich equation and Einstein-Hilbert truncation."
+    },
+    {
+      "id": "dangelo-2024",
+      "authors": "Edoardo D'Angelo",
+      "title": "Asymptotic safety in Lorentzian quantum gravity",
+      "year": 2024,
+      "arxiv": "2310.20603",
+      "doi": "10.1103/PhysRevD.109.066012",
+      "url": "https://arxiv.org/abs/2310.20603",
+      "significance": "Covariant Lorentzian FRG finding a non-trivial fixed point in Einstein-Hilbert truncation; progress on the signature problem."
+    },
+    {
+      "id": "saueressig-wang-2023",
+      "authors": "Frank Saueressig, Jian Wang",
+      "title": "Foliated asymptotically safe gravity in the fluctuation approach",
+      "year": 2023,
+      "arxiv": "2306.10408",
+      "doi": "10.1007/JHEP09(2023)064",
+      "url": "https://link.springer.com/article/10.1007/JHEP09(2023)064",
+      "significance": "Foliated (ADM) AS connecting Euclidean and Lorentzian fluctuation computations via Wick rotation."
+    },
+    {
+      "id": "pastor-gutierrez-2024",
+      "authors": "Alvaro Pastor-Gutierrez, Jan Pawlowski, Manuel Reichert, Giacomo Ruisi",
+      "title": "e+e- -> mu+mu- in the asymptotically safe Standard Model",
+      "year": 2024,
+      "arxiv": "2412.13800",
+      "url": "https://arxiv.org/abs/2412.13800",
+      "significance": "Showed the full AS cross section decreases in the UV, giving non-trivial evidence for unitarity of the asymptotically safe Standard Model."
+    },
+    {
+      "id": "pawlowski-reichert-wessely-2025",
+      "authors": "Jan Pawlowski, Manuel Reichert, Jonas Wessely",
+      "title": "Self-consistent graviton spectral function in Lorentzian quantum gravity",
+      "year": 2025,
+      "arxiv": "2507.22169",
+      "url": "https://arxiv.org/abs/2507.22169",
+      "significance": "Positive graviton spectral function with massless peak, multi-graviton continuum and unit spectral weight; strong evidence for unitarity."
+    },
+    {
+      "id": "schiffer-2025",
+      "authors": "Marc Schiffer",
+      "title": "Asymptotically safe quantum gravity: functional and lattice perspectives",
+      "year": 2025,
+      "arxiv": "2509.26352",
+      "url": "https://arxiv.org/abs/2509.26352",
+      "significance": "Recent review bridging functional RG and lattice/CDT evidence for the Reuter fixed point."
+    },
+    {
+      "id": "basile-2025-swampland",
+      "authors": "Ivano Basile, Benjamin Knorr, Alessia Platania, Marc Schiffer",
+      "title": "Asymptotic safety, quantum gravity, and the swampland: a conceptual assessment",
+      "year": 2025,
+      "arxiv": "2502.12290",
+      "url": "https://arxiv.org/abs/2502.12290",
+      "significance": "Assesses tensions between strict field-theoretic AS and kinematic swampland principles (topology change, no global symmetries)."
+    },
+    {
+      "id": "eichhorn-weakgravity-2021",
+      "authors": "Gustavo P. de Brito, Astrid Eichhorn, Rafael Robson Lino dos Santos",
+      "title": "The weak-gravity bound and the need for spin in asymptotically safe matter-gravity models",
+      "year": 2021,
+      "arxiv": "2107.03839",
+      "doi": "10.1007/JHEP11(2021)110",
+      "url": "https://arxiv.org/abs/2107.03839",
+      "significance": "Introduced the weak-gravity bound constraining matter content and showing spinning matter is needed for asymptotic safety."
+    },
+    {
+      "id": "cooperman-cdt-2015",
+      "authors": "Daniel N. Coumbe, Jerzy Jurkiewicz",
+      "title": "Evidence for asymptotic safety from dimensional reduction in causal dynamical triangulations",
+      "year": 2015,
+      "arxiv": "1411.7712",
+      "doi": "10.1007/JHEP03(2015)151",
+      "url": "https://arxiv.org/abs/1411.7712",
+      "significance": "Connected CDT dimensional reduction (4 -> 3/2) and second-order phase transition to the asymptotic-safety fixed point."
+    },
+    {
+      "id": "stelle-1977",
+      "authors": "Kellogg Stelle",
+      "title": "Renormalization of higher-derivative quantum gravity",
+      "year": 1977,
+      "doi": "10.1103/PhysRevD.16.953",
+      "url": "https://inspirehep.net/literature/120637",
+      "significance": "Perturbative renormalizability and asymptotic freedom of quadratic gravity with a massive spin-2 ghost; context for AS unitarity debate."
+    },
+    {
+      "id": "reuter-saueressig-scholarpedia-2012",
+      "authors": "Martin Reuter, Frank Saueressig",
+      "title": "Asymptotic Safety in quantum gravity",
+      "year": 2012,
+      "arxiv": "1202.2274",
+      "doi": "10.4249/scholarpedia.8508",
+      "url": "http://www.scholarpedia.org/article/Asymptotic_Safety_in_quantum_gravity",
+      "significance": "Encyclopedic overview of the AS program, the lines of evidence and the numerical fixed-point data."
+    },
+    {
+      "id": "platania-bh-review-2023",
+      "authors": "Alessia Platania",
+      "title": "Black Holes in Asymptotically Safe Gravity",
+      "year": 2023,
+      "arxiv": "2302.04272",
+      "url": "https://arxiv.org/abs/2302.04272",
+      "significance": "Review of RG-improved and effective-action black holes in AS: regular cores, minimal-mass remnants and singularity resolution, linking AS to the black-hole information problem."
+    }
+  ],
+  "openProblems": [
+    {
+      "id": "lorentzian-vs-euclidean",
+      "statement": "Establish asymptotic safety directly in Lorentzian (real-time) signature, since most evidence is Euclidean and there is no simple background-independent Wick rotation in gravity.",
+      "whyHard": "A Wick rotation needs a global time structure that fluctuating quantum geometry may lack, and different foliations give different flows; covariant Lorentzian flows are state-dependent.",
+      "attempts": "Covariant Lorentzian FRG (D'Angelo 2024) and foliated AS via Wick rotation (Saueressig-Wang 2023) find a fixed point in Einstein-Hilbert truncation; graviton spectral-function studies extend this."
+    },
+    {
+      "id": "unitarity-ghosts",
+      "statement": "Determine whether asymptotically safe gravity is unitary, in particular whether higher-derivative operators generate physical Ostrogradski ghosts at the fixed point.",
+      "whyHard": "Ghost poles must be analysed non-perturbatively at the physical fixed-point couplings rather than in a perturbative expansion; spectral positivity is required but not guaranteed by truncations.",
+      "attempts": "UV-decreasing e+e- -> mu+mu- cross section (2024) and a positive graviton spectral function with unit weight (2025) give strong, though not conclusive, evidence for unitarity."
+    },
+    {
+      "id": "background-independence-problem",
+      "statement": "Reconcile the coarse-graining cutoff k, which requires an auxiliary background metric, with full background independence of the quantum theory.",
+      "whyHard": "Gamma_k depends on two metric arguments and only the modified (split) Ward identities relate them; solving these identities across general backgrounds is technically demanding.",
+      "attempts": "Bimetric and fluctuation-field approaches (Pawlowski, Reichert and collaborators) compute split Ward identities, but results still scatter across approximations."
+    },
+    {
+      "id": "truncation-scheme-dependence",
+      "statement": "Prove that the Reuter fixed point and its critical exponents converge as truncations are enlarged and that they are scheme-independent observables.",
+      "whyHard": "There is no small expansion parameter, so convergence is empirical ('apparent convergence'); only some quantities (g* lambda*, leading exponents) are robustly universal.",
+      "attempts": "High-order f(R) truncations to R^34+ show convergence; Donoghue (2019) argues the running disagrees with explicit low-energy calculations, keeping the issue open."
+    },
+    {
+      "id": "observables-from-fixed-point",
+      "statement": "Construct genuine physical observables (S-matrix elements, cosmological signatures) from the fixed-point RG data, including an unambiguous identification of the RG scale k with a physical scale.",
+      "whyHard": "The fixed point lives in dimensionless theory space; mapping to dimensionful observables requires a scale identification that is not unique, and Planck-scale S-matrix measurements are inaccessible.",
+      "attempts": "RG-improved black holes and cosmology, plus AS Standard-Model scattering computations, but no agreed observable program yet."
+    },
+    {
+      "id": "nonperturbative-existence",
+      "statement": "Prove the existence of the Reuter fixed point in the full (untruncated) theory space, not just in finite truncations.",
+      "whyHard": "The Wetterich equation is a non-linear functional differential equation in an infinite-dimensional space; complementary methods (CDT, tensor models) give evidence, not a proof.",
+      "attempts": "Ever-larger truncations, lattice/CDT cross-checks, and tensor-model studies all support but do not prove existence."
+    },
+    {
+      "id": "full-standard-model-compatibility",
+      "statement": "Determine whether the Reuter fixed point survives when coupled to the complete interacting Standard Model and whether the system stays below the weak-gravity bound.",
+      "whyHard": "Gravitational fluctuations can generate complex fixed points in the scalar sector above a critical strength; the answer is sensitive to truncation and to inclusion of all Yukawa and quartic couplings.",
+      "attempts": "Dona-Eichhorn-Percacci (2014) compatibility analysis, weak-gravity-bound studies (2021) showing spinning matter helps, and AS Standard-Model scattering (2024)."
+    }
+  ],
+  "connections": [
+    {
+      "from": "asymptotic-safety",
+      "to": "causal-dynamical-triangulations",
+      "type": "shared-structure",
+      "description": "CDT is a non-perturbative lattice regularization of the gravitational path integral whose conjectured second-order phase transition (B-C line) could define the continuum limit at the Reuter fixed point. Both independently find dimensional reduction of the spectral dimension (AS: 4->2; CDT: 4->3/2 - a still-unresolved quantitative discrepancy). Quantitative matching of critical exponents is ongoing (Schiffer 2025).",
+      "explored": "partially"
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "quadratic-gravity",
+      "type": "shared-math",
+      "description": "Stelle's quadratic/higher-derivative gravity is perturbatively renormalizable and asymptotically free but carries a massive spin-2 ghost; AS can be seen as its non-perturbative generalization where the ghost may become unphysical. The two share the mathematics of higher-derivative beta functions and the unitarity debate.",
+      "explored": "well"
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "holography-adscft",
+      "type": "conjecture",
+      "description": "The UV value d_s=2 of the spectral dimension was proposed to ease tension between AS and the holographic counting of degrees of freedom, and it has been speculated that the UV fixed point might admit a CFT-dual description. No concrete AS/CFT dictionary exists, making this one of the least-explored and potentially most valuable bridges.",
+      "explored": "barely"
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "swampland",
+      "type": "conflict",
+      "description": "Basile-Knorr-Platania-Schiffer (2025) argue strict field-theoretic AS is in tension with several kinematic swampland principles (no global symmetries, spacetime-topology fluctuations) because the FRG generates no symmetry-breaking terms unless the regulator breaks the symmetry. The open question whether swampland criteria are absolute or string-specific would, if absolute, render one framework inconsistent.",
+      "explored": "partially"
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "string-theory",
+      "type": "conflict",
+      "description": "AS is a bottom-up field-theoretic UV completion competing with string theory's top-down completion. Tests via swampland conjectures (weak gravity, distance, no global symmetries) probe whether AS lies in the string landscape or swampland; the weak-gravity conjecture has been examined in AS gauge-gravity systems. The deeper relation is only partially mapped.",
+      "explored": "partially"
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "loop-quantum-gravity",
+      "type": "shared-structure",
+      "description": "Both are non-perturbative, background-independent programs aiming to predict quantum geometry, but technically almost disjoint (continuum FRG vs. canonical/covariant discrete spectra). The one explicit common feature is short-distance dimensional reduction (LQG/spin foams also show d_s->2). Whether the Reuter fixed point is the continuum limit of spin foams is essentially unexplored.",
+      "explored": "barely"
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "group-field-theory",
+      "type": "shared-math",
+      "description": "GFT uses functional RG techniques to look for its own fixed points (asymptotic safety/freedom of GFT couplings), sharing the mathematics of the Wetterich equation but applied to combinatorial rather than metric structures. The bridge is methodological, not yet physical.",
+      "explored": "barely"
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "emergent-gravity",
+      "type": "limit",
+      "description": "If gravity is emergent (Sakharov induced gravity, entropic gravity), the Reuter fixed point could be effective rather than fundamental ('effective asymptotic safety'), explicitly invoked by Basile et al. (2025) as a loophole to swampland tensions. Conceptually appealing but formally undeveloped.",
+      "explored": "barely"
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "standard-model",
+      "type": "shared-structure",
+      "description": "AS gravity can make Standard Model couplings predictable via gravity-induced anomalous dimensions: the Higgs mass retrodiction ~126 GeV (Shaposhnikov-Wetterich), the top pole mass ~171 GeV (Eichhorn-Held), and a calculable fine-structure constant. The weak-gravity bound constrains the matter content; full SM compatibility is still being checked.",
+      "explored": "well"
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "quantum-cosmology",
+      "type": "shared-structure",
+      "description": "RG-improved cosmology and black holes (G->G_k, Lambda->Lambda_k) give AS-based scenarios for singularity resolution and inflation. The scale identification k <-> physical scale is ambiguous (an open problem), but the phenomenology is active.",
+      "explored": "partially"
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "semiclassical-gravity",
+      "type": "limit",
+      "description": "In the IR the asymptotically safe flow must reproduce classical general relativity plus semiclassical effective-field-theory corrections; matching the predicted running of G and Lambda to known low-energy quantum-gravity calculations is precisely where Donoghue (2019) raises his critique.",
+      "explored": "partially"
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "Potential empirical handles include UV-modified scattering cross sections, the retrodicted Higgs mass, the fine-structure constant, and cosmological/black-hole imprints of RG-improved dynamics. Direct Planck-scale tests are inaccessible, so all current contact is indirect.",
+      "explored": "barely"
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "twistors-amplitudes",
+      "type": "shared-math",
+      "description": "AS supplies non-perturbative momentum-dependent vertices from the effective action, enabling computation of graviton-mediated scattering amplitudes whose UV-decreasing cross sections respect the Froissart bound (Pastor-Gutierrez et al. 2024). A formal link to modern on-shell amplitude / positivity / twistor methods is only hinted at, not established.",
+      "explored": "barely"
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "spectral-dimension",
+      "type": "shared-structure",
+      "description": "Spectral-dimension dimensional reduction (d_s: 4->2 from eta_N=-2) is a quantitative fingerprint shared by AS, CDT (4->3/2), Horava-Lifshitz gravity and several other approaches, making the spectral dimension a candidate universal observable for cross-approach comparison.",
+      "explored": "partially"
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "black-holes-information",
+      "type": "shared-structure",
+      "description": "RG-improved black holes (Bonanno-Reuter; Platania) replace G and Lambda by their scale-dependent fixed-point values, producing regular sub-Planckian cores, a minimal-mass remnant that halts evaporation, and possible singularity resolution. This bears directly on the information problem (remnant vs. complete evaporation) but the scale identification k<->r is ambiguous, and a genuine quantum (non-RG-improved) computation of the Page curve in AS does not yet exist.",
+      "explored": "partially"
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "noncommutative-geometry",
+      "type": "shared-structure",
+      "description": "The 1/p^4 UV graviton propagator and d_s->2 dimensional reduction suggest an effective minimal length / smearing of spacetime points at the Planck scale, qualitatively echoing noncommutative-geometry and generalized-uncertainty scenarios. The link is so far phenomenological (matching of dimensional-reduction and minimal-length signatures); no derivation of a noncommutative structure from the Reuter fixed point exists.",
+      "explored": "barely"
+    },
+    {
+      "from": "asymptotic-safety",
+      "to": "causal-sets",
+      "type": "shared-structure",
+      "description": "Both seek a non-perturbative continuum limit of a discrete/coarse-grained gravitational path integral; causal sets provide an alternative regularization whose continuum approximation could in principle realize the same UV scaling. Direct comparison of critical behaviour or spectral dimension between AS and causal sets is essentially absent.",
+      "explored": "barely"
+    }
+  ]
+}

@@ -1,0 +1,2474 @@
+[
+  {
+    "id": "wetterich-flow",
+    "name": "Wetterich Equation",
+    "latex": "\\partial_t \\Gamma_k[\\Phi;\\bar{g}] = \\frac{1}{2}\\,\\mathrm{STr}\\!\\left[\\left(\\Gamma_k^{(2)}+\\mathcal{R}_k\\right)^{-1}\\partial_t \\mathcal{R}_k\\right]",
+    "meaning": "Exact functional flow of the effective average action with RG time t=ln(k/k0); Gamma_k^(2) is the Hessian, R_k the IR regulator, STr the supertrace. Central equation of FRG quantum gravity.",
+    "source": "reuter-1998",
+    "pillars": [
+      "asymptotic-safety"
+    ]
+  },
+  {
+    "id": "einstein-hilbert-ansatz",
+    "name": "Einstein-Hilbert Truncation Ansatz",
+    "latex": "\\Gamma_k \\simeq \\frac{1}{16\\pi G_k}\\int d^dx\\,\\sqrt{\\bar{g}}\\,\\bigl(2\\Lambda_k - R\\bigr) + S_{\\mathrm{gf}} + S_{\\mathrm{gh}}",
+    "meaning": "Simplest non-perturbative truncation: running Newton coupling G_k and cosmological constant Lambda_k plus gauge-fixing and ghost terms. Yields the Reuter fixed point.",
+    "source": "reuter-1998",
+    "pillars": [
+      "asymptotic-safety"
+    ]
+  },
+  {
+    "id": "dimensionless-couplings-def",
+    "name": "Dimensionless Couplings",
+    "latex": "g_k = k^{d-2}\\,G_k, \\qquad \\lambda_k = k^{-2}\\,\\Lambda_k",
+    "meaning": "Dimensionless Newton coupling and cosmological constant; the fixed point exists only in these variables.",
+    "source": "reuter-1998",
+    "pillars": [
+      "asymptotic-safety"
+    ]
+  },
+  {
+    "id": "fixed-point-condition",
+    "name": "Fixed-Point Condition and Universal Product",
+    "latex": "\\beta_g(g^*,\\lambda^*)=0,\\ \\beta_\\lambda(g^*,\\lambda^*)=0;\\quad g^*>0,\\ \\lambda^*>0,\\quad \\lambda^* g^* \\approx 0.12\\text{--}0.14",
+    "meaning": "Reuter fixed point in d=4; individual coordinates are scheme dependent but the product is approximately universal. Einstein-Hilbert and high-order f(R) truncations give lambda* g* in the range ~0.12-0.14 (e.g. the R^34 study reports g* lambda* ~ 0.121). The often-quoted precise value 0.133 could not be verified against the cited sources (neovereno).",
+    "source": "falls-2014-evidence",
+    "pillars": [
+      "asymptotic-safety"
+    ]
+  },
+  {
+    "id": "critical-exponents-def",
+    "name": "Critical Exponents",
+    "latex": "\\theta_I = -\\,\\mathrm{eig}\\!\\left(\\frac{\\partial \\beta_i}{\\partial g_j}\\Big|_{*}\\right),\\qquad \\theta_{1,2}^{\\mathrm{UV}} = \\theta' \\pm i\\,\\theta''",
+    "meaning": "Eigenvalues of minus the stability matrix; Re(theta)>0 means relevant. At the Reuter fixed point they form a complex-conjugate pair (spiralling flow); in the Einstein-Hilbert truncation theta' ~ 1.5-2.5 and theta'' ~ 2.3-4.3 (scheme dependent; e.g. eigenvalues -1.69 +/- 2.49i in Percacci's review). High-order f(R) truncations report a convergent leading real exponent of order ~2.5 (the R^34 study gives theta' ~ 2.5). The frequently quoted value 1/nu = theta' ~ 1.472 could NOT be verified against the cited sources and is flagged neovereno.",
+    "source": "falls-2014-evidence",
+    "pillars": [
+      "asymptotic-safety"
+    ]
+  },
+  {
+    "id": "uv-critical-surface-dim",
+    "name": "Dimension of UV Critical Surface",
+    "latex": "\\dim(\\text{UV critical surface}) = \\#\\{I : \\mathrm{Re}\\,\\theta_I > 0\\} \\approx 3",
+    "meaning": "Number of relevant directions = number of free parameters; high-order f(R) truncations consistently find ~3, making the theory predictive.",
+    "source": "falls-2016-fr",
+    "pillars": [
+      "asymptotic-safety"
+    ]
+  },
+  {
+    "id": "graviton-anomalous-dim",
+    "name": "Graviton Anomalous Dimension",
+    "latex": "\\eta_N = 2 - d \\;\\Rightarrow\\; G_{\\mathrm{grav}}(p) \\sim \\frac{1}{p^{2-\\eta_N}} = \\frac{1}{p^{4}}\\ (d=4)",
+    "meaning": "At the fixed point the Newton-coupling anomalous dimension is 2-d (=-2 in 4d), softening the graviton propagator to 1/p^4 and driving dimensional reduction.",
+    "source": "lauscher-reuter-2005",
+    "pillars": [
+      "asymptotic-safety"
+    ]
+  },
+  {
+    "id": "spectral-dimension-flow",
+    "name": "Spectral Dimension and Dimensional Reduction",
+    "latex": "d_s(T) = -2\\,\\frac{d\\ln P(T)}{d\\ln T},\\qquad d_s \\xrightarrow{\\text{IR}} 4,\\quad d_s \\xrightarrow{\\text{UV}} 2",
+    "meaning": "Effective diffusion dimension; P(T) is the return probability after diffusion time T. AS predicts d_s running from 4 to 2, a fractal sub-Planckian spacetime.",
+    "source": "lauscher-reuter-2005",
+    "pillars": [
+      "asymptotic-safety"
+    ]
+  },
+  {
+    "id": "two-plus-epsilon-fp",
+    "name": "2+epsilon Fixed Point",
+    "latex": "g^* = \\tfrac{3}{38}\\,\\varepsilon + O(\\varepsilon^2),\\qquad \\theta = \\varepsilon + O(\\varepsilon^2),\\qquad d = 2+\\varepsilon",
+    "meaning": "Weinberg's perturbative fixed point near two dimensions with a single relevant direction; original evidence for asymptotic safety, uncontrolled when extrapolated to d=4.",
+    "source": "weinberg-1979",
+    "pillars": [
+      "asymptotic-safety"
+    ]
+  },
+  {
+    "id": "higgs-fixedpoint-condition",
+    "name": "Higgs Mass Retrodiction Condition",
+    "latex": "\\lambda_\\phi(M_{\\mathrm{Pl}}) \\approx 0,\\quad \\beta_{\\lambda_\\phi}\\big|_{\\mathrm{fp}} \\approx 0 \\;\\Rightarrow\\; M_H \\approx 126\\ \\mathrm{GeV}",
+    "meaning": "A positive gravity-induced anomalous dimension makes the quartic Higgs coupling irrelevant and drives it to a near-zero fixed point at the Planck scale; running back to the electroweak scale predicts M_H ~ 126 GeV.",
+    "source": "shaposhnikov-wetterich-2009",
+    "pillars": [
+      "asymptotic-safety"
+    ]
+  },
+  {
+    "id": "top-mass-prediction-val",
+    "name": "Top Mass Prediction",
+    "latex": "M_{t,\\mathrm{pole}} \\approx 171\\ \\mathrm{GeV},\\qquad m_t - m_b \\approx 170\\ \\mathrm{GeV}",
+    "meaning": "Eichhorn-Held: AS fixes the top Yukawa as an irrelevant coupling, yielding a top pole mass near 171 GeV and a top-bottom mass difference of about 170 GeV.",
+    "source": "eichhorn-held-top-2017",
+    "pillars": [
+      "asymptotic-safety"
+    ]
+  },
+  {
+    "id": "bekenstein-hawking-entropy-formula",
+    "name": "Bekenstein-Hawking entropy",
+    "latex": "S_{BH} = \\frac{k_B c^3 A}{4 G \\hbar} = \\frac{A}{4 G \\hbar}",
+    "meaning": "Black hole entropy equals one quarter of the horizon area in Planck units; area-scaling is the mathematical seed of the holographic principle.",
+    "source": "bekenstein-1973",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "hawking-temperature-formula",
+    "name": "Hawking temperature",
+    "latex": "T_H = \\frac{\\hbar \\kappa}{2\\pi k_B c} = \\frac{\\hbar c^3}{8\\pi G M k_B}",
+    "meaning": "Temperature of black-hole radiation, proportional to surface gravity kappa; inversely proportional to mass (Schwarzschild), giving negative heat capacity.",
+    "source": "hawking-1975",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "first-law-bh-mechanics",
+    "name": "First law of black hole mechanics",
+    "latex": "dM = \\frac{\\kappa}{8\\pi G}\\, dA + \\Omega\\, dJ + \\Phi\\, dQ",
+    "meaning": "Energy balance for black holes; comparison with dE = T dS identifies T with kappa/(2pi) and S with A/(4G).",
+    "source": "bardeen-carter-hawking-1973",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "generalized-second-law-formula",
+    "name": "Generalized second law",
+    "latex": "\\frac{d}{dt}\\left( S_{BH} + S_{\\text{matter,out}} \\right) \\geq 0",
+    "meaning": "Total of horizon entropy and exterior matter/radiation entropy never decreases, preserving thermodynamics when matter falls behind the horizon.",
+    "source": "bekenstein-1973",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "generalized-entropy-formula",
+    "name": "Generalized entropy",
+    "latex": "S_{\\text{gen}}(X) = \\frac{\\mathrm{Area}(X)}{4 G_N} + S_{\\text{semi-cl}}(\\Sigma_X)",
+    "meaning": "Sum of geometric area term and von Neumann entropy of bulk quantum fields; the quantity extremized in the QES prescription.",
+    "source": "engelhardt-wall-2015",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "quantum-extremal-surface-formula",
+    "name": "Quantum extremal surface rule",
+    "latex": "S = \\min_{X}\\, \\mathrm{ext}_{X} \\left[ \\frac{\\mathrm{Area}(X)}{4 G_N} + S_{\\text{semi-cl}}(\\Sigma_X) \\right]",
+    "meaning": "Entropy computed by extremizing generalized entropy over candidate surfaces X, then taking the minimum; quantum generalization of Ryu-Takayanagi.",
+    "source": "engelhardt-wall-2015",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "island-formula-latex",
+    "name": "Island formula",
+    "latex": "S(\\text{Rad}) = \\min\\, \\mathrm{ext}_{I} \\left[ \\frac{\\mathrm{Area}(\\partial I)}{4 G_N} + S_{\\text{semi-cl}}(\\Sigma_{\\text{Rad}} \\cup \\Sigma_{I}) \\right]",
+    "meaning": "Entropy of Hawking radiation including an island I inside the black hole; a nontrivial island after the Page time reproduces the Page curve.",
+    "source": "almheiri-mahajan-maldacena-zhao-2020",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "replica-renyi-formula",
+    "name": "Renyi entropy and replica trick",
+    "latex": "S_n = -\\frac{1}{n-1}\\ln \\mathrm{Tr}\\,\\rho^n, \\qquad S = \\lim_{n\\to 1} S_n = -\\mathrm{Tr}\\,\\rho\\ln\\rho",
+    "meaning": "Replica trick computing entropy from Tr rho^n; in gravity each power is a path integral over n replicas, and replica-wormhole saddles give the island contribution as n -> 1.",
+    "source": "penington-shenker-stanford-yang-2022",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "scrambling-time-formula",
+    "name": "Scrambling time",
+    "latex": "t_* \\sim \\frac{\\beta}{2\\pi}\\ln S_{BH} = \\frac{1}{2\\pi T_H}\\ln S_{BH}",
+    "meaning": "Logarithmically short time for an old (post-Page) black hole to re-emit injected information; black holes are fastest scramblers.",
+    "source": "hayden-preskill-2007",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "strominger-vafa-formula",
+    "name": "Strominger-Vafa microstate entropy",
+    "latex": "S_{\\text{micro}} = 2\\pi\\sqrt{Q_1 Q_5 N} = \\frac{A}{4G}",
+    "meaning": "Counting BPS D-brane bound states (D1-D5-P) at weak coupling exactly reproduces the Bekenstein-Hawking entropy at strong coupling.",
+    "source": "strominger-vafa-1996",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "mathur-bound",
+    "name": "Mathur small-corrections inequality",
+    "latex": "S_{N+1} > S_N + \\ln 2 - 2\\epsilon",
+    "meaning": "If corrections to Hawking's computation are parametrically small (epsilon), entanglement entropy grows monotonically and cannot turn over; via strong subadditivity, resolving the paradox requires O(1) corrections at the horizon.",
+    "source": "mathur-2009",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "evaporation-lifetime",
+    "name": "Mass-loss rate and evaporation time",
+    "latex": "\\frac{dM}{dt} = -\\frac{\\hbar c^4}{15360\\,\\pi\\, G^2 M^2}, \\qquad t_{\\text{evap}} \\sim \\frac{5120\\,\\pi\\, G^2 M^3}{\\hbar c^4}",
+    "meaning": "Stefan-Boltzmann mass loss for Hawking radiation; lifetime scales as M^3, so primordial black holes below ~10^15 g have already evaporated.",
+    "source": "page-1976",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "chaos-bound-formula",
+    "name": "Chaos bound (MSS)",
+    "latex": "\\lambda_L \\leq \\frac{2\\pi k_B T}{\\hbar}",
+    "meaning": "Upper bound on the Lyapunov exponent of out-of-time-order correlators; black holes saturate it, being maximally chaotic.",
+    "source": "maldacena-shenker-stanford-2016",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "holographic-complexity-formula",
+    "name": "Holographic complexity (CV and CA)",
+    "latex": "\\mathcal{C}_V = \\max \\frac{V(\\Sigma)}{G_N \\ell}, \\qquad \\mathcal{C}_A = \\frac{I_{\\text{WdW}}}{\\pi \\hbar}",
+    "meaning": "Complexity = volume of maximal slice, or complexity = action of the Wheeler-DeWitt patch; grows for time ~ e^S after entropy saturates, describing interior growth.",
+    "source": "brown-roberts-susskind-swingle-zhao-2016",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "bekenstein-bound-formula",
+    "name": "Bekenstein bound",
+    "latex": "S \\leq \\frac{2\\pi k_B R E}{\\hbar c}",
+    "meaning": "Maximum entropy in a region of radius R and energy E; precursor to area-scaling and the holographic / covariant Bousso bound.",
+    "source": "bousso-2002",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "thermofield-double-state",
+    "name": "Thermofield double state",
+    "latex": "|\\text{TFD}\\rangle = \\frac{1}{\\sqrt{Z}}\\sum_n e^{-\\beta E_n/2}\\,|n\\rangle_L\\,|n\\rangle_R",
+    "meaning": "Entangled state of two copies of a system, dual to the eternal AdS black hole whose two exteriors are joined by an Einstein-Rosen bridge; prototype of ER=EPR.",
+    "source": "maldacena-2003",
+    "pillars": [
+      "black-holes-information"
+    ]
+  },
+  {
+    "id": "cdt-euclidean-action",
+    "name": "Wick-rotated 4D CDT Regge action",
+    "latex": "S^{CDT}_{eu}[T] = -(\\kappa_0 + 6\\Delta)\\,N_0 + \\kappa_4\\,(N_{41}+N_{32}) + \\Delta\\,(2N_{41}+N_{32})",
+    "meaning": "Discretized Einstein-Hilbert action of a 4D causal triangulation: kappa_0 ~ inverse bare Newton coupling, kappa_4 bare cosmological coupling, Delta the timelike/spacelike asymmetry, with vertex count N_0 and (4,1)/(3,2)-simplex counts N_41, N_32.",
+    "source": "scholarpedia-cdt",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "cdt-partition-function",
+    "name": "CDT partition function",
+    "latex": "Z = \\sum_{T\\in\\mathcal{T}} \\frac{1}{C(T)} e^{\\,iS[T]} \\;\\xrightarrow{\\text{Wick}}\\; \\sum_{T\\in\\mathcal{T}} \\frac{1}{C(T)} e^{-S^{CDT}_{eu}[T]}",
+    "meaning": "Regularized nonperturbative gravitational path integral over causal triangulations divided by their symmetry factor C(T); after Wick rotation the summand is real and positive, enabling Monte Carlo without a sign problem.",
+    "source": "scholarpedia-cdt",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "spectral-dimension-def",
+    "name": "Spectral dimension definition",
+    "latex": "D_S(\\sigma) = -2\\,\\frac{d\\,\\ln P(\\sigma)}{d\\,\\ln \\sigma}",
+    "meaning": "Effective dimension probed by diffusion: P(sigma) is the average return probability of a random walk after diffusion time sigma; measures the dimension on length scale ~ sqrt(sigma).",
+    "source": "ajl-spectral-dimension-2005",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "spectral-dimension-fit",
+    "name": "Measured running spectral dimension",
+    "latex": "D_S(\\sigma) = 4.02 - \\frac{119}{54 + \\sigma}",
+    "meaning": "Best-fit running of the CDT spectral dimension: D_S -> 4.02 +/- 0.1 in the IR (sigma -> infinity) and D_S -> 1.80 +/- 0.25 in the UV (sigma -> 0); quantitative evidence for dynamical dimensional reduction 4 -> 2.",
+    "source": "ajl-spectral-dimension-2005",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "de-sitter-volume-profile",
+    "name": "De Sitter volume profile",
+    "latex": "\\langle V_3(t)\\rangle = \\frac{3}{4}\\,\\frac{V_4}{\\omega_0 V_4^{1/4}}\\,\\cos^3\\!\\Big(\\frac{t}{\\omega_0 V_4^{1/4}}\\Big), \\qquad \\omega_0^4 = \\frac{3}{8\\pi^3}",
+    "meaning": "Average spatial 3-volume as a function of proper time matches a round Euclidean four-sphere (de Sitter space); the width B = omega_0 V_4^{1/4} scales as V_4^{1/4}, showing the universe is a self-similar object.",
+    "source": "ambjorn-gateway-2024",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "minisuperspace-effective-action",
+    "name": "Discrete minisuperspace effective action",
+    "latex": "S_{eff}[N_3] = \\frac{1}{\\Gamma}\\sum_t\\left[\\frac{(N_3(t+1)-N_3(t))^2}{N_3(t)} + \\delta\\,N_3^{1/3}(t)\\right],\\quad \\delta_0=\\frac{3}{8\\pi^2}",
+    "meaning": "Effective action for the 3-volume measured directly from CDT data; kinetic term governs volume changes, potential ~ N_3^{1/3} is the curvature term. Gamma and delta are effective couplings; this is the discrete Hartle-Hawking minisuperspace action.",
+    "source": "ajl-semiclassical-2011",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "continuum-minisuperspace-G",
+    "name": "Continuum minisuperspace action and G",
+    "latex": "S_{eff} = \\frac{\\sqrt{\\bar N_4}}{\\Gamma}\\int ds\\left[\\frac{\\dot n_3^2(s)}{n_3(s)} + \\delta\\, n_3^{1/3}(s)\\right],\\qquad \\frac{\\sqrt{V_4}}{\\Gamma} = \\frac{\\sqrt{V_4}}{24\\pi G}",
+    "meaning": "Continuum limit of the effective action, matching the classical minisuperspace action; the identification fixes Newton's constant G from the measured fluctuation coupling Gamma.",
+    "source": "ambjorn-gateway-2024",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "transfer-matrix-element",
+    "name": "Effective transfer matrix element",
+    "latex": "\\langle n_{t+1}|M|n_t\\rangle \\propto e^{-L_{eff}[n_t,n_{t+1}]},\\quad L_{eff}[n,m]=\\frac{1}{\\Gamma}\\frac{(n-m)^2}{n+m}+\\mu\\Big(\\frac{n+m}{2}\\Big)^{1/3}-\\lambda\\frac{n+m}{2}",
+    "meaning": "One-step volume evolution operator parametrized only by 3-volumes n,m = N_3; Gamma sets fluctuation amplitude, mu the curvature coupling, lambda the cosmological coupling. Encodes the full quantum dynamics of the scale factor.",
+    "source": "scholarpedia-cdt",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "measured-effective-couplings",
+    "name": "Measured effective couplings",
+    "latex": "\\Gamma = 23\\pm 1,\\quad \\mu = 13.9\\pm 0.7,\\quad \\lambda_{eff} = 0.027\\pm 0.003 \\quad (\\kappa_0=2.2,\\ \\Delta=0.6)",
+    "meaning": "Numerically extracted values of the effective minisuperspace/transfer-matrix couplings in the de Sitter phase at a representative coupling point; demonstrate the semiclassical match.",
+    "source": "ajl-semiclassical-2011",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "edge-length-assignment",
+    "name": "Lightcone edge-length assignment",
+    "latex": "\\ell_s^2 = a^2,\\qquad \\ell_t^2 = -\\alpha\\,a^2,\\quad \\alpha>0",
+    "meaning": "Spacelike edges have positive squared length a^2; timelike edges have negative squared length -alpha a^2, encoding the Lorentzian signature. alpha (related to Delta) is continued to negative values in the Wick rotation.",
+    "source": "ambjorn-gateway-2024",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "return-probability-uv-ir",
+    "name": "Return probability asymptotics",
+    "latex": "P(\\sigma)\\sim \\sigma^{-D_S/2},\\quad D_S^{IR}\\approx 4.02,\\quad D_S^{UV}\\approx 1.80",
+    "meaning": "Power-law decay of the diffusion return probability whose exponent gives the spectral dimension; the change of exponent between large and small sigma is the dimensional reduction signal.",
+    "source": "ajl-spectral-dimension-2005",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "dark-energy-running-lambda",
+    "name": "Quadratic running cosmological constant (EDT)",
+    "latex": "\\Lambda(\\mu) \\sim \\Lambda_0 + c\\,H^2,\\qquad \\mu \\sim H",
+    "meaning": "In related EDT simulations the vacuum energy runs dominantly quadratically with a scale identified with the Hubble rate H, predicting deviations from LambdaCDM at the O(10^-3) level (dynamical dark energy).",
+    "source": "laiho-dark-energy-2024",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "two-d-cdt-hamiltonian",
+    "name": "2D CDT continuum Hamiltonian",
+    "latex": "\\hat H = -L\\,\\frac{\\partial^2}{\\partial L^2} + \\lambda\\,L,\\qquad G_\\lambda(L_1,L_2;T)=\\langle L_2|e^{-T\\hat H}|L_1\\rangle",
+    "meaning": "Exact continuum Hamiltonian of 2D CDT obtained from the transfer matrix; L is the spatial slice length, lambda the cosmological constant, T proper time. Its self-adjointness follows from forbidding spatial topology change and defines projectable 2D Horava-Lifshitz gravity.",
+    "source": "ambjorn-loll-1998",
+    "pillars": [
+      "causal-dynamical-triangulations"
+    ]
+  },
+  {
+    "id": "causal-set-axioms",
+    "name": "Causal Set Axioms",
+    "latex": "x \\preceq x;\\quad x \\preceq y \\preceq x \\Rightarrow x=y;\\quad x \\preceq y \\preceq z \\Rightarrow x \\preceq z;\\quad |I[x,y]| < \\infty",
+    "meaning": "Reflexivity, acyclicity/antisymmetry, transitivity, and local finiteness define a causal set; the first three give a partial order (discrete causal structure), the last encodes fundamental discreteness.",
+    "source": "bombelli-1987",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "poisson-sprinkling",
+    "name": "Poisson Sprinkling Distribution",
+    "latex": "P_v(n) = \\frac{(\\rho v)^n}{n!} e^{-\\rho v}, \\qquad \\langle n \\rangle = \\rho v",
+    "meaning": "Probability of finding n sprinkled elements in spacetime volume v; mean rho v, fluctuation sqrt(rho v). Poisson process is the Lorentz-invariant-on-average discretization.",
+    "source": "bombelli-1987",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "number-volume",
+    "name": "Number-Volume Correspondence",
+    "latex": "\\langle n \\rangle = \\rho V \\;\\Longleftrightarrow\\; V = N\\, \\ell_p^{4}",
+    "meaning": "Expected element count equals density times 4-volume; supplies the volume factor that, with Malament's theorem, recovers the full Lorentzian metric ('Number = Volume').",
+    "source": "surya-2019",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "discrete-dalembertian-4d",
+    "name": "Discrete d'Alembertian (4D)",
+    "latex": "B\\phi(x) = \\frac{4}{\\sqrt{6}\\,\\ell^2}\\left[ -\\phi(x) + \\Big(\\sum_{y\\in L_1} - 9\\!\\sum_{y\\in L_2} + 16\\!\\sum_{y\\in L_3} - 8\\!\\sum_{y\\in L_4}\\Big)\\phi(y) \\right]",
+    "meaning": "Nonlocal Lorentz-invariant operator summing over past layers L_i (elements with |I(x,y)|=i-1) with 4D coefficients (1,-9,16,-8); its sprinkling average tends to (Box - R/2)phi.",
+    "source": "benincasa-dowker-2010",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "dalembertian-limit",
+    "name": "Continuum Limit of B",
+    "latex": "\\lim_{\\ell\\to 0} \\langle B\\phi(x)\\rangle = \\Big(\\Box - \\tfrac{1}{2}R(x)\\Big)\\phi(x)",
+    "meaning": "The mean discrete d'Alembertian recovers the curved-space scalar d'Alembertian minus half the Ricci scalar, allowing curvature (and thus an action) to be read off from order alone.",
+    "source": "benincasa-dowker-2010",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "benincasa-dowker-action-4d",
+    "name": "Benincasa-Dowker Action (4D)",
+    "latex": "\\frac{1}{\\hbar} S^{(4)}[C] = N - N_1 + 9 N_2 - 16 N_3 + 8 N_4",
+    "meaning": "Purely combinatorial discrete Einstein-Hilbert action: N total elements, N_i = number of order intervals of cardinality i. Converges in mean to S_EH = (1/2)∫R sqrt(-g) d^4x.",
+    "source": "benincasa-dowker-2010",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "lambda-prediction",
+    "name": "Everpresent Lambda Prediction",
+    "latex": "\\Lambda \\sim \\Delta\\Lambda \\sim \\frac{1}{\\Delta V} \\sim \\frac{1}{\\sqrt{V}} \\sim \\frac{1}{\\sqrt{N}} \\sim 10^{-120}",
+    "meaning": "From Lambda-V conjugacy (unimodular gravity) and Poisson volume fluctuation Delta V ~ sqrt(N) l_p^4: fluctuating cosmological constant of order 10^-120 in Planck units, matching the observed value (1987 prediction-in-advance).",
+    "source": "sorkin-2007",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "myrheim-meyer",
+    "name": "Myrheim-Meyer Dimension",
+    "latex": "\\frac{\\langle R \\rangle}{\\binom{N}{2}} = f_0(d) = \\frac{\\Gamma(d+1)\\,\\Gamma(d/2)}{4\\,\\Gamma(3d/2)}",
+    "meaning": "Ordering fraction (fraction of related pairs) is a function of the Minkowski dimension d only; inverting gives a combinatorial dimension estimator. KR posets yield d_MM ~ 2.38.",
+    "source": "meyer-1988",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "pauli-jordan",
+    "name": "Pauli-Jordan Operator and SJ Vacuum",
+    "latex": "i\\Delta = i(G_R - G_A),\\quad i\\Delta\\, u_k = \\lambda_k u_k,\\quad W_{SJ} = \\sum_{\\lambda_k>0} \\lambda_k\\, u_k u_k^{*}",
+    "meaning": "The commutator function (retarded minus advanced Green function) becomes a finite antisymmetric matrix on a causet; its positive eigenspectrum defines the unique covariant Sorkin-Johnston vacuum two-point function.",
+    "source": "surya-2019",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "ssee",
+    "name": "Spacetime Entanglement Entropy",
+    "latex": "W v_i = \\mu_i\\, (i\\Delta) v_i,\\qquad S = \\sum_i \\mu_i \\ln|\\mu_i|",
+    "meaning": "Covariant spacetime entanglement entropy from a generalized eigenproblem of the Wightman (W) and Pauli-Jordan (i Delta) functions; volume law on causal sets, area law only after UV spectral truncation.",
+    "source": "sorkin-yazdi-2018",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "swerves-diffusion",
+    "name": "Lorentz-Invariant Momentum Diffusion (swerves)",
+    "latex": "\\frac{\\partial \\rho}{\\partial \\tau} = k\\, \\nabla^2_{p}\\, \\rho \\quad \\text{on } p^2 = -m^2",
+    "meaning": "Macroscopic effect of discreteness on a massive particle: diffusion in momentum on the mass shell, governed by one parameter k, manifestly Lorentz invariant; observationally constrains the discreteness scale.",
+    "source": "dowker-henson-sorkin-2004",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "kr-count",
+    "name": "Kleitman-Rothschild Counting",
+    "latex": "\\#\\{\\text{posets on } n\\} \\sim 2^{n^2/4},\\quad \\text{KR: 3 layers } (n/4,\\, n/2,\\, n/4)",
+    "meaning": "The number of labelled posets grows like 2^(n^2/4), dominated by three-layer KR orders; this entropy must be overcome by the path-integral phase for a manifold to emerge.",
+    "source": "loomis-carlip-2017",
+    "pillars": [
+      "causal-sets"
+    ]
+  },
+  {
+    "id": "wheeler-dewitt",
+    "name": "Wheeler-DeWitt equation",
+    "latex": "\\left[-16\\pi G\\hbar^2 G_{abcd}\\frac{\\delta^2}{\\delta h_{ab}\\delta h_{cd}} - \\frac{\\sqrt{h}}{16\\pi G}\\left({}^{(3)}R - 2\\Lambda\\right) + \\hat{\\mathcal{H}}_{\\text{matter}}\\right]\\Psi[h_{ab}] = 0",
+    "meaning": "The quantum super-Hamiltonian constraint annihilating the wave functional of the universe on superspace. Absence of an i hbar d/dt term is the mathematical core of the problem of time. G_abcd is the DeWitt supermetric with Lorentzian signature.",
+    "source": "dewitt-1967",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "flrw-hamiltonian-constraint",
+    "name": "FLRW Hamiltonian constraint (minisuperspace)",
+    "latex": "\\mathcal{H} = -\\frac{p_a^2}{24 V_0 a} + \\frac{p_\\phi^2}{2 V_0 a^3} + V_0 a^3 V(\\phi) - \\frac{3 V_0 k a}{8\\pi G} \\approx 0",
+    "meaning": "The single constraint to which the Wheeler-DeWitt equation reduces in homogeneous cosmology; a is the scale factor, phi a scalar field used as a clock for deparametrization. Quantizing it gives quantum cosmology.",
+    "source": "kaimakkamis-2024",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "complete-observable",
+    "name": "Relational (complete) Dirac observable",
+    "latex": "F_{[f,T]}(\\tau) = \\sum_{n=0}^{\\infty}\\frac{(\\tau-T)^n}{n!}\\,\\{f,\\mathcal{H}\\}_{(n)},\\quad \\{f,\\mathcal{H}\\}_{(0)}=f,\\ \\{f,\\mathcal{H}\\}_{(n)}=\\{\\{f,\\mathcal{H}\\}_{(n-1)},\\mathcal{H}\\}",
+    "meaning": "The gauge-invariant value of partial observable f when clock T reads tau, built from iterated Poisson brackets with the constraint H. Rovelli's idea, Dittrich's construction; relationally bypasses the problem of time.",
+    "source": "dittrich-2007",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "page-wootters-conditioning",
+    "name": "Page-Wootters conditioned state",
+    "latex": "|\\psi(t)\\rangle_S = \\langle t|_C |\\Psi\\rangle\\rangle,\\quad (\\hat H_C + \\hat H_S)|\\Psi\\rangle\\rangle = 0 \\ \\Rightarrow\\ i\\hbar\\frac{d}{dt}|\\psi(t)\\rangle_S = \\hat H_S |\\psi(t)\\rangle_S",
+    "meaning": "Conditioning a global timeless state on a clock subsystem yields an effective Schroedinger evolution for the rest. Time as correlation, not parameter ('evolution without evolution').",
+    "source": "page-wootters-1983",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "penrose-collapse-time",
+    "name": "Penrose objective reduction time",
+    "latex": "\\tau_{\\text{OR}} \\approx \\frac{\\hbar}{E_G},\\qquad E_G = -4\\pi G\\!\\int\\!\\!\\int \\frac{[\\rho_1(\\mathbf{x})-\\rho_2(\\mathbf{x})][\\rho_1(\\mathbf{y})-\\rho_2(\\mathbf{y})]}{|\\mathbf{x}-\\mathbf{y}|}\\,d^3x\\,d^3y",
+    "meaning": "A mass superposition decays after tau_OR set by the gravitational self-energy E_G of the difference of the two mass distributions. Links the measurement problem directly to gravity.",
+    "source": "penrose-1996",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "decoherence-diffusion",
+    "name": "Decoherence-diffusion trade-off",
+    "latex": "2 D_2 \\succeq D_1^{\\,\\mathrm{br}} D_0^{-1} (D_1^{\\,\\mathrm{br}})^{\\dagger}",
+    "meaning": "Any consistent classical-quantum (CPTP, Markovian) dynamics obeys this trade-off: the metric diffusion coefficient D_2 is bounded below by the back-reaction/coupling coefficient D_1 divided by the decoherence (Lindblad) coefficients D_0. Long coherence times (small D_0) force strong diffusion (large D_2). Falsifiable prediction for fundamentally classical gravity. (Verified against Oppenheim et al. 2023, Eq. 23; the earlier coupling-free form 2 D_2 D_0 >= 1 was incorrect.)",
+    "source": "oppenheim-decoherence-diffusion-2023",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "semiclassical-einstein",
+    "name": "Semiclassical Einstein equation",
+    "latex": "G_{\\mu\\nu}[g] + \\Lambda g_{\\mu\\nu} = 8\\pi G\\,\\langle\\psi|\\hat T_{\\mu\\nu}|\\psi\\rangle",
+    "meaning": "Moller-Rosenfeld coupling: a classical metric sourced by the expectation value of the quantum stress tensor. The prototype non-quantized theory of gravity.",
+    "source": "hu-verdaguer-2008",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "schrodinger-newton-eq",
+    "name": "Schroedinger-Newton equation",
+    "latex": "i\\hbar\\partial_t\\psi(\\mathbf r) = \\left[-\\frac{\\hbar^2}{2m}\\nabla^2 - Gm^2\\!\\int\\frac{|\\psi(\\mathbf r')|^2}{|\\mathbf r-\\mathbf r'|}d^3r'\\right]\\psi(\\mathbf r)",
+    "meaning": "Nonlinear nonrelativistic limit of semiclassical gravity; the particle feels its own self-gravity through its probability density. Tests whether gravity alone yields localization/classicality.",
+    "source": "hu-verdaguer-2008",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "einstein-langevin",
+    "name": "Einstein-Langevin equation",
+    "latex": "G_{\\mu\\nu}[g] + \\Lambda g_{\\mu\\nu} = 8\\pi G\\left(\\langle\\hat T_{\\mu\\nu}\\rangle + \\xi_{\\mu\\nu}\\right),\\quad \\langle\\xi_{\\mu\\nu}(x)\\xi_{\\alpha\\beta}(y)\\rangle = N_{\\mu\\nu\\alpha\\beta}(x,y)",
+    "meaning": "Stochastic gravity adds Gaussian noise xi from quantum stress-tensor fluctuations, with the noise kernel N given by the symmetrized two-point function. Bridges semiclassical and post-quantum classical gravity.",
+    "source": "hu-verdaguer-2008",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "crossed-product-entropy",
+    "name": "Crossed-product / generalized entropy",
+    "latex": "\\mathcal{A}_{\\text{obs}} = \\mathcal{A}_{\\text{QFT}} \\rtimes \\mathbb{R}\\ (\\text{type II}),\\qquad S(\\hat\\rho) = \\frac{\\langle A\\rangle}{4 G_N} + S_{\\text{out}} + \\text{const} = S_{\\text{gen}}",
+    "meaning": "Dressing QFT observables to an observer with a clock gives a type II crossed product whose renormalized von Neumann entropy is the generalized entropy. The observer/QRF is the structure that makes gravitational entropy finite.",
+    "source": "clpw-2022",
+    "pillars": [
+      "conceptual-problems",
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "weinberg-flatness-condition",
+    "name": "Weinberg no-go flatness condition",
+    "latex": "\\left.\\frac{\\partial \\mathcal{L}_{\\text{eff}}}{\\partial \\phi_n}\\right|_{\\langle\\phi\\rangle} = 0 \\;\\forall n \\;\\Rightarrow\\; \\text{flat (}\\Lambda=0\\text{) solution only for fine-tuned parameters}",
+    "meaning": "A flat vacuum requires all field equations (including the metric's) to vanish simultaneously, which is non-generic; scalar adjustment mechanisms fail. The formal statement of why the cosmological constant cannot be relaxed to zero locally.",
+    "source": "weinberg-1989",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "sorkin-lambda-fluctuation",
+    "name": "Sorkin causal-set Lambda fluctuation",
+    "latex": "\\Lambda \\sim \\pm \\frac{1}{\\sqrt{V}} \\sim \\frac{1}{\\sqrt{N}}\\ \\text{(in Planck units)}",
+    "meaning": "Causal-set prediction that Lambda fluctuates as one over the square root of the spacetime four-volume (number of elements N), giving an order-of-magnitude-correct residual dark energy from discreteness. A rare quantitative connection of the CC problem to a fundamental-discreteness approach.",
+    "source": "weinberg-1989",
+    "pillars": [
+      "conceptual-problems"
+    ]
+  },
+  {
+    "id": "jacobson-clausius",
+    "name": "Jacobson Clausius relation for spacetime",
+    "latex": "\\delta Q = T\\,dS,\\qquad T=\\frac{\\hbar a}{2\\pi c k_B},\\qquad dS=\\eta\\,\\delta A,\\qquad \\eta=\\frac{k_B c^3}{4G\\hbar}",
+    "meaning": "Imposing the Clausius relation with Unruh temperature and entropy proportional to horizon area for all local Rindler horizons is the starting point of the thermodynamic derivation of the Einstein equation.",
+    "source": "jacobson-1995",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "einstein-from-thermodynamics",
+    "name": "Einstein equation from delta Q = T dS",
+    "latex": "T_{\\mu\\nu}k^\\mu k^\\nu = \\frac{\\hbar\\eta}{2\\pi}R_{\\mu\\nu}k^\\mu k^\\nu \\;\\Rightarrow\\; G_{\\mu\\nu}+\\Lambda g_{\\mu\\nu}=8\\pi G\\,T_{\\mu\\nu}",
+    "meaning": "Requiring the Clausius relation to hold for every null direction at every point forces the full Einstein equation with a cosmological constant arising as an integration constant; G = 1/(4 hbar eta).",
+    "source": "jacobson-1995",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "nonequilibrium-entropy-balance",
+    "name": "Non-equilibrium spacetime entropy balance",
+    "latex": "dS = \\frac{\\delta Q}{T} + d_i S,\\qquad d_i S \\;\\propto\\; \\int (\\zeta\\,\\theta^2 + 2\\eta_s\\,\\sigma^2)\\,d\\lambda\\,dA",
+    "meaning": "Equilibrium thermodynamics yields only Einstein gravity; obtaining f(R) and accounting for horizon shear requires an internal entropy-production term interpreted as bulk/shear viscosity of spacetime.",
+    "source": "eling-guedens-jacobson-2006",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "sakharov-induced-action",
+    "name": "Sakharov induced gravitational action",
+    "latex": "\\Gamma_{\\text{eff}}[g]=\\Lambda_0\\!\\int\\!\\sqrt{-g}\\,d^4x+\\frac{1}{16\\pi G_{\\text{ind}}}\\!\\int\\!\\sqrt{-g}\\,R\\,d^4x+\\cdots,\\qquad \\frac{1}{G_{\\text{ind}}}\\sim\\Lambda_{\\text{UV}}^2",
+    "meaning": "Integrating out matter fields induces the Einstein-Hilbert term; the induced Newton constant is quadratically sensitive to the UV cutoff, implying a Planck-scale cutoff, but the sign and the induced Lambda are problematic.",
+    "source": "sakharov-1967",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "verlinde-entropic-force",
+    "name": "Verlinde entropic-force derivation of Newton's law",
+    "latex": "\\Delta S = 2\\pi k_B\\frac{mc}{\\hbar}\\Delta x,\\quad N=\\frac{Ac^3}{G\\hbar},\\quad E=\\tfrac12 N k_B T = Mc^2 \\;\\Rightarrow\\; F=T\\frac{\\Delta S}{\\Delta x}=\\frac{GMm}{r^2}",
+    "meaning": "Combining a holographic screen of N bits, equipartition of the enclosed energy Mc^2, and a Bekenstein-type entropy change recovers Newton's inverse-square law as an entropic force.",
+    "source": "verlinde-2010",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "padmanabhan-emergence-cosmic-space",
+    "name": "Padmanabhan emergence of cosmic space",
+    "latex": "\\frac{dV}{dt}=L_P^2\\,(N_{sur}-N_{bulk}),\\quad N_{sur}=\\frac{4\\pi}{L_P^2 H^2},\\quad N_{bulk}=\\frac{2|\\rho+3p|V}{k_B T},\\quad T=\\frac{H}{2\\pi}",
+    "meaning": "Cosmic expansion is the drive toward holographic equipartition N_sur = N_bulk; this single equation reproduces the standard Friedmann equation.",
+    "source": "padmanabhan-2012",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "cosmin-lambda",
+    "name": "CosMIn value of the cosmological constant",
+    "latex": "N_{\\text{CosMIn}} = 4\\pi \\;\\Longrightarrow\\; \\Lambda\\, L_P^2 \\approx 3.4\\times 10^{-122}",
+    "meaning": "Postulating that the conserved cosmic information equals 4 pi (bits on a unit sphere) yields the observed numerical value of the cosmological constant.",
+    "source": "padmanabhan-cosmin-2013",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "entanglement-equilibrium-condition",
+    "name": "Entanglement equilibrium stationarity",
+    "latex": "\\delta S_{tot}=\\eta\\,\\delta A\\big|_V+\\delta\\langle K\\rangle=0,\\quad \\delta A\\big|_V=-\\frac{\\Omega_{d-2}\\ell^d}{d^2-1}G_{00},\\quad \\eta=\\frac{1}{4\\hbar G}",
+    "meaning": "Stationarity of total (UV area + IR modular) entanglement entropy of a small causal diamond at fixed volume is equivalent to the semiclassical Einstein equation G_ab + Lambda g_ab = 8 pi G delta<T_ab>.",
+    "source": "jacobson-2015",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "verlinde-apparent-dark-matter",
+    "name": "Verlinde apparent dark matter relation",
+    "latex": "\\int_0^r \\frac{G\\,M_D^2(r')}{r'^2}\\,dr' = \\frac{a_0}{6}M_B(r)\\,r,\\qquad a_0=cH_0,\\qquad M_D(r)=\\sqrt{\\frac{cH_0}{6G}M_B r}",
+    "meaning": "Relates the apparent (emergent) dark mass M_D to the enclosed baryonic mass M_B and the Hubble acceleration a_0 = c H_0; for point masses it reduces to the MOND-like sqrt(a_0 a_N) law, with no free parameters.",
+    "source": "verlinde-2016",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "acoustic-metric",
+    "name": "Unruh acoustic metric",
+    "latex": "ds^2=\\frac{\\rho}{c_s}\\Big[-(c_s^2-v^2)dt^2-2\\,\\vec v\\cdot d\\vec x\\,dt+d\\vec x\\cdot d\\vec x\\Big]",
+    "meaning": "Sound waves in a flowing fluid of density rho, sound speed c_s and velocity v propagate on this effective Lorentzian metric; a horizon forms where |v| = c_s, with analogue Hawking temperature T_H = hbar kappa / (2 pi k_B).",
+    "source": "unruh-1981",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "analogue-hawking-temperature",
+    "name": "Analogue Hawking temperature",
+    "latex": "T_H = \\frac{\\hbar}{2\\pi k_B}\\,\\frac{\\partial (c_s-v)}{\\partial x}\\Big|_{\\text{horizon}} = \\frac{\\hbar\\,\\kappa}{2\\pi k_B}",
+    "meaning": "Thermal temperature of analogue Hawking radiation set by the analogue surface gravity kappa (velocity gradient at the sonic horizon); measured to match the spectrum's thermality by Steinhauer's group.",
+    "source": "munoz-de-nova-2019",
+    "pillars": [
+      "emergent-gravity"
+    ]
+  },
+  {
+    "id": "entanglement-entropy-def",
+    "name": "Entanglement entropy",
+    "latex": "S_A = -\\mathrm{Tr}\\,(\\rho_A \\ln \\rho_A), \\qquad \\rho_A = \\mathrm{Tr}_{\\bar A}\\,|\\psi\\rangle\\langle\\psi|",
+    "meaning": "Von Neumann entropy of the reduced density matrix; the central information-theoretic quantity translated into geometry.",
+    "source": "ryu-takayanagi-2006",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "rt-formula",
+    "name": "Ryu-Takayanagi formula",
+    "latex": "S_A = \\frac{\\mathrm{Area}(\\gamma_A)}{4 G_N}",
+    "meaning": "Entanglement entropy of a boundary region A equals one quarter of the area of the minimal bulk surface gamma_A homologous to A (in Planck units). Geometrizes entanglement in AdS/CFT, linking spacetime geometry and quantum information.",
+    "source": "ryu-takayanagi-2006",
+    "pillars": [
+      "entanglement-spacetime",
+      "string-theory"
+    ]
+  },
+  {
+    "id": "hrt-formula-eq",
+    "name": "HRT covariant formula",
+    "latex": "S_A = \\mathrm{ext}_{\\gamma_A}\\Big[\\frac{\\mathrm{Area}(\\gamma_A)}{4 G_N}\\Big]_{\\text{Lorentzian}}",
+    "meaning": "Covariant entanglement entropy via extremal (not merely minimal) codimension-2 surfaces in the full Lorentzian bulk; smallest-area extremum chosen.",
+    "source": "hubeny-rangamani-takayanagi-2007",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "generalized-entropy-eq",
+    "name": "Generalized entropy",
+    "latex": "S_{\\mathrm{gen}}(\\Sigma) = \\frac{\\mathrm{Area}(\\Sigma)}{4 G_N} + S_{\\mathrm{bulk}}(\\Sigma)",
+    "meaning": "Finite, UV-renormalized sum of geometric area term and bulk-field entanglement entropy; extremized by the QES and monitored by the QFC.",
+    "source": "engelhardt-wall-2014",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "qes-eq",
+    "name": "Quantum extremal surface prescription",
+    "latex": "S_A = \\min_{\\Sigma}\\,\\mathrm{ext}_{\\Sigma}\\Big[\\frac{\\mathrm{Area}(\\Sigma)}{4 G_N} + S_{\\mathrm{bulk}}(\\Sigma)\\Big]",
+    "meaning": "Entropy from extremizing then minimizing generalized entropy over all surfaces; valid to all orders in the bulk Planck constant.",
+    "source": "engelhardt-wall-2014",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "island-formula-eq",
+    "name": "Island formula",
+    "latex": "S(\\mathrm{rad}) = \\min\\,\\mathrm{ext}_{I}\\Big[\\frac{\\mathrm{Area}(\\partial I)}{4 G_N} + S_{\\mathrm{bulk}}(\\mathrm{rad}\\cup I)\\Big]",
+    "meaning": "Radiation entropy as a minimum over interior islands I; non-trivial islands after the Page time give the unitary Page curve.",
+    "source": "almheiri-engelhardt-marolf-maxfield-2019",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "first-law-eq",
+    "name": "First law of entanglement",
+    "latex": "\\delta S_A = \\delta \\langle H_A \\rangle, \\qquad H_A = -\\ln \\rho_A^{(0)}",
+    "meaning": "To first order, change in entanglement entropy equals change in modular-Hamiltonian expectation value; exact quantum analog of dE = T dS.",
+    "source": "faulkner-et-al-2014",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "einstein-from-entanglement-eq",
+    "name": "Linearized Einstein from entanglement",
+    "latex": "\\{\\,\\delta S_A = \\delta\\langle H_A\\rangle\\ \\forall\\ \\text{balls}\\,\\} \\;\\Longleftrightarrow\\; \\delta G_{\\mu\\nu} = 8\\pi G_N\\,\\delta T_{\\mu\\nu}\\big|_{\\mathrm{AdS}}",
+    "meaning": "First laws of entanglement for all ball-shaped regions are equivalent, via RT, to linearized Einstein equations about AdS.",
+    "source": "faulkner-et-al-2014",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "jlms-eq",
+    "name": "JLMS relation",
+    "latex": "H_A^{\\mathrm{CFT}} = \\frac{\\hat{A}}{4 G_N} + H_{\\mathrm{bulk}}^{\\mathrm{wedge}}, \\qquad S_{\\mathrm{rel}}^{\\partial} = S_{\\mathrm{rel}}^{\\mathrm{bulk}}",
+    "meaning": "Boundary modular Hamiltonian = RT area operator + bulk modular Hamiltonian; boundary relative entropy equals bulk relative entropy.",
+    "source": "jafferis-lewkowycz-maldacena-suh-2016",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "bit-threads-eq",
+    "name": "Bit threads (max-flow)",
+    "latex": "S_A = \\max_{v}\\int_A \\sqrt{h}\\,v_\\mu n^\\mu, \\quad \\nabla_\\mu v^\\mu = 0,\\ |v|\\le \\tfrac{1}{4G_N}",
+    "meaning": "RT recast as max flow of a divergence-free, norm-bounded vector field; max flow equals min-cut (RT) area.",
+    "source": "freedman-headrick-2016",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "qnec-eq",
+    "name": "Quantum null energy condition",
+    "latex": "\\langle T_{kk}\\rangle \\ge \\frac{1}{2\\pi\\sqrt{h}}\\,\\frac{\\partial^2 S_{\\mathrm{out}}}{\\partial \\lambda^2}",
+    "meaning": "Lower bound on null energy by the second variation of entropy along a null deformation; non-gravitational limit of QFC.",
+    "source": "bousso-fisher-leichenauer-wall-2015",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "qfc-eq",
+    "name": "Quantum focusing conjecture",
+    "latex": "\\Theta = \\frac{4G_N}{\\sqrt{h}}\\frac{\\delta S_{\\mathrm{gen}}}{\\delta\\lambda}, \\qquad \\frac{d\\Theta}{d\\lambda} \\le 0",
+    "meaning": "Quantum expansion is non-increasing along a null congruence; quantum generalization of focusing implying Bousso bound and QNEC.",
+    "source": "bousso-fisher-leichenauer-wall-2015",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "complexity-eq",
+    "name": "Complexity = volume / action",
+    "latex": "\\mathcal{C}_V = \\max\\frac{\\mathrm{Vol}(\\Sigma)}{G_N L}, \\qquad \\mathcal{C}_A = \\frac{I_{\\mathrm{WDW}}}{\\pi\\hbar}",
+    "meaning": "Boundary state complexity dual to maximal-slice volume (CV) or Wheeler-DeWitt patch action (CA); both grow linearly long after thermalization.",
+    "source": "brown-roberts-susskind-swingle-zhao-2016",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "tfd-eq",
+    "name": "Thermofield double state",
+    "latex": "|\\mathrm{TFD}\\rangle = Z^{-1/2}\\sum_n e^{-\\beta E_n/2}\\,|n\\rangle_L\\,|n\\rangle_R",
+    "meaning": "Pure entangled state of two CFT copies dual to the eternal two-sided AdS black hole; the horizon encodes the entanglement.",
+    "source": "maldacena-2001",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "schwarzian-eq",
+    "name": "Schwarzian action and chaos bound",
+    "latex": "I_{\\mathrm{SYK}}^{\\mathrm{IR}} \\supset -N\\alpha_S\\!\\int dt\\,\\mathrm{Sch}(f,t), \\qquad \\lambda_L = \\frac{2\\pi}{\\beta}",
+    "meaning": "Low-energy SYK / JT dynamics governed by the Schwarzian; saturates the maximal chaos bound, a black-hole signature.",
+    "source": "maldacena-stanford-2016",
+    "pillars": [
+      "entanglement-spacetime"
+    ]
+  },
+  {
+    "id": "mdr-velocity",
+    "name": "Modified dispersion relation and energy-dependent velocity",
+    "latex": "E^2 = p^2 c^2\\left[1 \\pm \\left(\\frac{E}{E_{\\mathrm{QG},n}}\\right)^{n}\\right],\\qquad v(E)\\simeq c\\left[1 \\mp \\frac{n+1}{2}\\left(\\frac{E}{E_{\\mathrm{QG},n}}\\right)^{n}\\right]",
+    "meaning": "Planck-suppressed deformation of the photon dispersion; n=1 linear, n=2 quadratic; sign distinguishes subluminal/superluminal. Foundation of all time-of-flight LIV phenomenology.",
+    "source": "amelino-camelia-1998",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "time-of-flight",
+    "name": "Cosmological time-of-flight delay",
+    "latex": "\\Delta t \\simeq \\frac{n+1}{2}\\,\\frac{E_h^{n}-E_l^{n}}{E_{\\mathrm{QG},n}^{n}}\\,\\frac{1}{H_0}\\int_0^{z}\\frac{(1+z')^{n}\\,dz'}{\\sqrt{\\Omega_m(1+z')^3+\\Omega_\\Lambda}}",
+    "meaning": "Arrival-time difference of photons of energy E_h vs E_l from a source at redshift z; non-observation gives lower bounds on E_QG (e.g. GRB 221009A: E_QG,1 >~ several E_Pl).",
+    "source": "amelino-camelia-1998",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "vacuum-birefringence-rotation",
+    "name": "Polarization rotation from vacuum birefringence",
+    "latex": "\\Delta\\theta(E) \\simeq \\xi\\,\\frac{E^2 - E_0^2}{2\\,E_{\\mathrm{Pl}}}\\,d",
+    "meaning": "Energy-dependent rotation of the polarization vector by a dimension-5 LIV operator; high observed GRB polarization forces xi <~ 2.4e-15, the tightest propagation bound.",
+    "source": "laurent-2011",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "bmv-gravitational-phase",
+    "name": "BMV gravitational entangling phase",
+    "latex": "\\Delta\\phi = \\frac{G\\,m^2}{\\hbar\\,d}\\,\\Delta t",
+    "meaning": "Relative phase between interferometer branches from the Newtonian potential difference; entanglement detectable when Delta phi ~ O(1) rad within coherence time. For m~1e-14 kg, d~200 um, Delta t~1 s.",
+    "source": "marletto-vedral-2017",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "two-mode-squeeze-hamiltonian",
+    "name": "Newtonian two-mode squeezing interaction",
+    "latex": "H_{\\mathrm{int}} \\simeq \\frac{G\\,m_1 m_2}{d^3}\\,\\hat x_1 \\hat x_2",
+    "meaning": "Bilinear coupling from expanding the Newtonian potential; entangles positions/momenta of the two masses (mechanism of GIE even without spin splitting).",
+    "source": "bose-2017",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "diosi-penrose-rate",
+    "name": "Diosi-Penrose collapse/decoherence rate",
+    "latex": "\\frac{1}{\\tau_{\\mathrm{DP}}} = \\frac{\\Delta E_g}{\\hbar},\\quad \\Delta E_g = -4\\pi G\\!\\int\\! d^3x\\,d^3y\\,\\frac{[\\rho_1(\\mathbf x)-\\rho_2(\\mathbf x)][\\rho_1(\\mathbf y)-\\rho_2(\\mathbf y)]}{|\\mathbf x - \\mathbf y|}",
+    "meaning": "Gravitational self-energy of the mass-density difference (cutoff R0) sets the collapse rate; a fundamental, non-Planck-suppressed prediction testable via spontaneous heating/X-ray emission.",
+    "source": "donadi-2021",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "time-dilation-decoherence",
+    "name": "Decoherence rate from gravitational time dilation",
+    "latex": "\\Gamma \\propto \\frac{E_{\\mathrm{int}}\\,g\\,\\Delta x}{\\hbar c^2}",
+    "meaning": "Internal energy E_int coupled to center of mass by time dilation decoheres position over vertical splitting Delta x in gravitational field g, without any external environment.",
+    "source": "pikovski-2015",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "gup-minimal-length",
+    "name": "Generalized uncertainty principle and minimal length",
+    "latex": "\\Delta x\\,\\Delta p \\geq \\frac{\\hbar}{2}\\left(1+\\beta(\\Delta p)^2+\\dots\\right)\\;\\Rightarrow\\;\\Delta x_{\\min}=\\beta_0\\,\\ell_{\\mathrm{Pl}}",
+    "meaning": "Momentum-dependent deformation implying a minimal measurable length; constrained in oscillators and LIGO (beta_0 <~ 1e6-1e10, far above naive O(1)).",
+    "source": "hossenfelder-2010",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "holographic-noise-spectrum",
+    "name": "Holographic noise variance and flat spectrum",
+    "latex": "\\langle\\Delta x^2\\rangle \\sim \\ell_{\\mathrm{Pl}}\\,L,\\qquad S(f)\\simeq \\frac{c\\,t_{\\mathrm{Pl}}}{2\\pi}",
+    "meaning": "Hogan's prediction of transverse position fluctuations and a frequency-independent strain PSD fixed by the Planck time; the Holometer measured S(f) and excluded this model at 4.6 sigma.",
+    "source": "chou-2017",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "graviton-mass-dispersion",
+    "name": "Massive graviton GW dispersion",
+    "latex": "E^2 = p^2 c^2 + m_g^2 c^4\\;\\Rightarrow\\; \\frac{v_g^2}{c^2}=1-\\frac{m_g^2 c^4}{E^2},\\quad m_g=\\frac{h}{\\lambda_g c}",
+    "meaning": "Nonzero graviton mass gives frequency-dependent GW delay; LVK GWTC-3 bounds m_g <~ 1.3e-23 eV/c^2 (lambda_g >~ 1e16 km).",
+    "source": "lvk-gwtc3-2021",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "spectral-dimension-running",
+    "name": "Running spectral dimension (dimensional reduction)",
+    "latex": "d_s(\\sigma)=-2\\,\\frac{\\partial\\ln P(\\sigma)}{\\partial\\ln\\sigma},\\qquad d_s:\\;4\\xrightarrow[\\sigma\\to\\ell_{\\mathrm{Pl}}^2]{}\\approx 2",
+    "meaning": "Diffusion-defined effective dimension running from 4 to ~2 at the Planck scale, a signature shared by CDT, asymptotic safety, LQG, NCG, and Horava-Lifshitz.",
+    "source": "ambjorn-2005",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "gw-speed-bound",
+    "name": "GW speed bound from multimessenger timing",
+    "latex": "\\left|\\frac{v_g-c}{c}\\right| \\lesssim 10^{-15}",
+    "meaning": "From the ~1.7 s offset between GW170817 and GRB 170817A over ~40 Mpc; ruled out many modified-gravity / dark-energy theories.",
+    "source": "abbott-gw170817-2017",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "geontropic-noise-spectrum",
+    "name": "Verlinde-Zurek geontropic arm-length noise",
+    "latex": "\\langle\\Delta K^2\\rangle = \\langle K\\rangle\\;\\Rightarrow\\;\\langle\\Delta L^2\\rangle \\sim \\ell_{\\mathrm{Pl}}\\,L,\\qquad \\frac{\\Delta L}{L}\\sim\\sqrt{\\frac{\\ell_{\\mathrm{Pl}}}{L}}",
+    "meaning": "Fluctuation of the modular energy K of holographic boundary dof induces correlated arm-length noise with a non-flat, IR-dominated spectrum that can evade Holometer bounds; targeted by GQuEST single-photon detection. Amplitude normalization is model-dependent.",
+    "source": "verlinde-zurek-2021",
+    "pillars": [
+      "experimental-tests"
+    ]
+  },
+  {
+    "id": "gft-action",
+    "name": "Rank-d GFT action",
+    "latex": "S[\\varphi]=\\frac{1}{2}\\int \\prod_{i=1}^{d}dg_i\\,\\varphi(g_1,\\dots,g_d)\\,\\mathcal{K}\\,\\varphi(g_1,\\dots,g_d)+\\frac{\\lambda}{d+1}\\int \\prod dg\\,\\mathcal{V}[\\varphi^{\\,d+1}]",
+    "meaning": "Generic GFT action: kinetic term with kernel K and an interaction gluing d+1 fields into a d-simplex; Feynman graphs are dual to d-dimensional triangulations and amplitudes equal spin-foam amplitudes.",
+    "source": "freidel-2005",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "boulatov-action",
+    "name": "Boulatov 3D GFT action",
+    "latex": "S=\\frac{1}{2}\\!\\int[dg]^3\\varphi(g_1,g_2,g_3)^2+\\frac{\\lambda}{4!}\\!\\int[dg]^6\\varphi(g_1,g_2,g_3)\\varphi(g_3,g_4,g_5)\\varphi(g_5,g_2,g_6)\\varphi(g_6,g_4,g_1)",
+    "meaning": "The original GFT over SU(2)^3 with tetrahedral interaction; Feynman amplitudes reproduce the Ponzano-Regge model (6j-symbols) of 3D quantum gravity.",
+    "source": "boulatov-1992",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "gurau-1n-expansion",
+    "name": "1/N expansion of colored tensor models",
+    "latex": "F(N,\\lambda)=\\sum_{\\mathcal{G}} N^{\\,d-\\frac{2}{(d-1)!}\\,\\omega(\\mathcal{G})}\\,C_{\\mathcal{G}}(\\lambda)",
+    "meaning": "Free energy as a topological expansion organized by the Gurau degree omega; leading order omega=0 (melons, spheres), higher omega exponentially suppressed. The tensor analogue of the matrix genus expansion.",
+    "source": "gurau-2010",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "matrix-genus-expansion",
+    "name": "Matrix-model genus expansion",
+    "latex": "F=\\sum_{g\\ge 0} N^{2-2g}\\,F_g(\\lambda)",
+    "meaning": "2D random-surface free energy organized by surface genus g; the double-scaling limit (N->infinity, lambda->lambda_c) retains all g and defines non-perturbative 2D gravity.",
+    "source": "brezin-kazakov-1990",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "melonic-gap-equation",
+    "name": "Melonic Schwinger-Dyson (gap) equation",
+    "latex": "G=\\frac{1}{\\mathcal{K}-\\Sigma},\\qquad \\Sigma(\\tau_1,\\tau_2)=g^2\\,[G(\\tau_1,\\tau_2)]^{\\,q-1}",
+    "meaning": "Self-consistent two-point function equation from resumming melons; in the IR gives conformal solution G~|tau|^{-2/q} with dimension Delta=1/q, shared by tensor models and SYK.",
+    "source": "klebanov-tarnopolsky-2016",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "syk-hamiltonian",
+    "name": "SYK Hamiltonian",
+    "latex": "H=\\frac{(i)^{q/2}}{q!}\\sum_{i_1<\\dots<i_q} J_{i_1\\dots i_q}\\,\\chi_{i_1}\\cdots\\chi_{i_q},\\quad \\overline{J^2}=\\frac{(q-1)!\\,J^2}{N^{q-1}}",
+    "meaning": "N Majorana fermions with random q-body all-to-all couplings; melon-dominated at large N, with emergent conformal symmetry and maximal chaos. Tensor models reproduce the same large-N limit without disorder.",
+    "source": "maldacena-stanford-2016",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "syk-gsigma-action",
+    "name": "SYK bilocal G-Sigma effective action",
+    "latex": "\\frac{S_{\\text{eff}}}{N}=-\\frac12\\log\\det(\\partial_\\tau-\\Sigma)+\\frac12\\int d\\tau_1 d\\tau_2\\Big[\\Sigma G-\\frac{J^2}{q}G^{\\,q}\\Big]",
+    "meaning": "Disorder-averaged effective action in bilocal fields G (fermion bilinear) and self-energy Sigma; its saddle is the gap equation, its soft-mode fluctuation is the Schwarzian.",
+    "source": "maldacena-stanford-2016",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "klebanov-tarnopolsky-action",
+    "name": "Klebanov-Tarnopolsky O(N)^3 tensor model",
+    "latex": "S=\\int d\\tau\\Big[\\tfrac12\\psi^{abc}\\partial_\\tau\\psi^{abc}+\\tfrac14 g\\,\\psi^{a_1b_1c_1}\\psi^{a_1b_2c_2}\\psi^{a_2b_1c_2}\\psi^{a_2b_2c_1}\\Big],\\ \\ g^2N^3=\\text{fix}",
+    "meaning": "Real rank-3 tensor with O(N)^3 symmetry and tetrahedral interaction; the new large-N limit (g^2 N^3 fixed) is melon-dominated and reproduces the SYK large-N limit without disorder.",
+    "source": "klebanov-tarnopolsky-2016",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "gft-friedmann-single-spin",
+    "name": "GFT effective Friedmann equation (single spin)",
+    "latex": "\\left(\\frac{V'}{3V}\\right)^{2}=\\frac{4\\pi G}{3}\\left(1-\\frac{\\rho}{\\rho_c}\\right)+\\frac{4V_{j_o}E_{j_o}}{9V},\\qquad \\rho_c=\\frac{3\\pi G\\hbar^2}{2V_{j_o}^{2}}",
+    "meaning": "Emergent Friedmann equation from a single-spin GFT condensate with relational time phi (prime = d/dphi). Recovers classical GR for rho << rho_c; a quantum bounce V'=0 occurs at the Planckian critical density rho_c.",
+    "source": "oriti-sindoni-wilson-ewing-2016",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "gft-friedmann-multi-spin",
+    "name": "GFT effective Friedmann equation (multi-spin)",
+    "latex": "\\left(\\frac{V'}{3V}\\right)^{2}=\\left(\\frac{2\\sum_j V_j\\rho_j\\,\\mathrm{sgn}(\\rho_j')\\sqrt{E_j-Q_j^2/\\rho_j^2+m_j^2\\rho_j^2}}{3\\sum_j V_j\\rho_j^2}\\right)^{2}",
+    "meaning": "General multi-spin condensate Friedmann equation with conserved charges E_j=(rho_j')^2+rho_j^2(theta_j')^2-m_j^2 rho_j^2 and Q_j=rho_j^2 theta_j'; the repulsive term -Q_j^2/rho_j^3 forces a generic bounce.",
+    "source": "oriti-sindoni-wilson-ewing-2017",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "tgft-beta-function",
+    "name": "TGFT melonic beta function / asymptotic freedom",
+    "latex": "\\beta(\\lambda)\\;\\propto\\;-\\lambda^{3}",
+    "meaning": "Leading (melonic) coupling beta function of renormalizable tensorial GFTs is negative, implying asymptotic freedom (coupling vanishes in the UV); generic feature, with wavefunction renormalization crucial already at one loop.",
+    "source": "ben-geloun-2012",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "schwarzian-action-formula",
+    "name": "Schwarzian effective action",
+    "latex": "S_{\\text{Sch}}=-\\frac{N\\alpha_S}{\\mathcal{J}}\\int d\\tau\\,\\{f,\\tau\\},\\qquad \\lambda_L=\\frac{2\\pi}{\\beta}",
+    "meaning": "Low-energy reparametrization-mode action governing SYK's IR; saturates the chaos bound (maximal Lyapunov exponent) and is the boundary dynamics of near-AdS2 (JT) gravity.",
+    "source": "maldacena-stanford-2016",
+    "pillars": [
+      "group-field-theory"
+    ]
+  },
+  {
+    "id": "bekenstein-bound-formula",
+    "name": "Bekenstein Bound",
+    "latex": "S \\le \\frac{2\\pi k R E}{\\hbar c}",
+    "meaning": "Universal upper bound on entropy S of a system of energy E in a sphere of radius R; saturated by a black hole, implying finite information in finite regions.",
+    "source": "bekenstein-1981",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "bekenstein-hawking-formula",
+    "name": "Bekenstein-Hawking Entropy",
+    "latex": "S_{BH} = \\frac{k c^3 A}{4 G \\hbar} = \\frac{A}{4 \\ell_P^2}\\,k",
+    "meaning": "Black-hole entropy equals one quarter of the horizon area A in Planck units; area (not volume) scaling is the quantitative core of holography.",
+    "source": "strominger-vafa-1996",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "bousso-bound-formula",
+    "name": "Covariant (Bousso) Entropy Bound",
+    "latex": "S[\\mathcal{L}] \\le \\frac{A(B)}{4 G \\hbar}",
+    "meaning": "Entropy on a light sheet L generated by non-expanding null rays from a surface B of area A(B) is bounded; generalizes holography to arbitrary spacetimes including cosmology.",
+    "source": "bousso-1999",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "ads-metric",
+    "name": "AdS_{d+1} Poincare Metric",
+    "latex": "ds^2 = \\frac{L^2}{z^2}\\left( dz^2 + \\eta_{\\mu\\nu}\\, dx^\\mu dx^\\nu \\right)",
+    "meaning": "Anti-de Sitter geometry with radius L and radial (holographic) coordinate z; the CFT lives on the conformal boundary z -> 0 and z corresponds to boundary energy scale.",
+    "source": "maldacena-1997",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "ads5-dictionary",
+    "name": "AdS5 x S5 Radius-Coupling Dictionary",
+    "latex": "\\frac{L^4}{\\alpha'^2} = 4\\pi g_s N = g_{YM}^2 N = \\lambda, \\qquad g_s = \\frac{g_{YM}^2}{4\\pi}",
+    "meaning": "Maps the AdS radius L and string length sqrt(alpha') to gauge-theory data; classical gravity (L >> l_s) corresponds to strong 't Hooft coupling lambda >> 1, the source of both predictive power and difficulty of a direct proof.",
+    "source": "magoo-1999",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "mass-dimension",
+    "name": "Mass-Dimension Relation",
+    "latex": "\\Delta = \\frac{d}{2} + \\sqrt{\\frac{d^2}{4} + m^2 L^2}, \\quad \\Delta(\\Delta - d) = m^2 L^2",
+    "meaning": "Conformal dimension Delta of a CFT operator in terms of the dual bulk field mass m; light fields map to relevant operators, with the Breitenlohner-Freedman bound m^2 L^2 >= -d^2/4.",
+    "source": "witten-1998",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "gkp-witten",
+    "name": "GKP-Witten Generating Functional",
+    "latex": "\\left\\langle \\exp \\int_{\\partial} \\phi_0 \\mathcal{O} \\right\\rangle_{\\text{CFT}} = Z_{\\text{grav}}[\\phi \\to \\phi_0] \\approx e^{-S_{\\text{grav}}^{\\text{on-shell}}[\\phi_0]}",
+    "meaning": "Core of the dictionary: CFT correlators are generated by varying the on-shell bulk gravity action with respect to boundary sources phi_0 dual to operators O (Witten diagrams).",
+    "source": "gkp-1998",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "brown-henneaux",
+    "name": "Brown-Henneaux Central Charge",
+    "latex": "c_{\\text{AdS}_3} = \\frac{3L}{2 G_3}, \\qquad a = c = \\frac{N^2-1}{4} \\to \\frac{N^2}{4}",
+    "meaning": "AdS3 boundary CFT central charge from the bulk (1986, pre-AdS/CFT); for N=4 SYM the anomaly coefficients a=c ~ N^2/4 count adjoint degrees of freedom and control 1/N ~ G_N corrections.",
+    "source": "brown-henneaux-1986",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "cardy-btz",
+    "name": "Cardy Formula / BTZ Entropy",
+    "latex": "S_{\\text{Cardy}} = 2\\pi \\sqrt{\\frac{c}{6}\\left(L_0 - \\frac{c}{24}\\right)} \\Rightarrow S_{\\text{BTZ}} = \\frac{A}{4 G_3}",
+    "meaning": "Counting 2D CFT states via the Cardy formula reproduces the Bekenstein-Hawking entropy of the BTZ black hole, a microscopic holographic derivation of black-hole entropy.",
+    "source": "strominger-1997-cardy",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "ryu-takayanagi-formula",
+    "name": "Ryu-Takayanagi Formula",
+    "latex": "S_A = \\frac{\\text{Area}(\\gamma_A)}{4 G_N}",
+    "meaning": "Entanglement entropy of boundary region A equals the area of the minimal homologous bulk surface gamma_A over 4G_N; geometrizes entanglement and links quantum information to spacetime.",
+    "source": "ryu-takayanagi-2006",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "island-formula",
+    "name": "Quantum Extremal Surface / Island Formula",
+    "latex": "S = \\min_{\\mathcal{I}} \\text{ext}_{\\mathcal{I}} \\left[ \\frac{\\text{Area}(\\partial \\mathcal{I})}{4 G_N} + S_{\\text{bulk}}(\\mathcal{I} \\cup \\text{rad}) \\right]",
+    "meaning": "Fine-grained entropy with quantum corrections; the island saddle dominates after the Page time, yielding the Page curve and unitary black-hole evaporation.",
+    "source": "penington-2019",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "kss-formula",
+    "name": "KSS Viscosity Bound",
+    "latex": "\\frac{\\eta}{s} \\ge \\frac{\\hbar}{4\\pi k_B}",
+    "meaning": "Universal holographic lower bound on the shear-viscosity-to-entropy-density ratio, saturated in Einstein gravity; quark-gluon plasma sits near it.",
+    "source": "kss-2004",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "ds-swampland",
+    "name": "de Sitter Swampland Conjecture",
+    "latex": "|\\nabla V| \\ge \\frac{c}{M_{pl}} V",
+    "meaning": "Proposed bound on the scalar potential V in any consistent quantum gravity (Obied-Ooguri-Spodyneiko-Vafa), forbidding stable de Sitter vacua and tightly connected to the difficulty of de Sitter holography.",
+    "source": "obied-2018",
+    "pillars": [
+      "holography-adscft"
+    ]
+  },
+  {
+    "id": "canonical-poisson-bracket",
+    "name": "Ashtekar-Barbero Poisson bracket",
+    "latex": "\\{A_a^i(x),\\, \\tilde{E}^b_j(y)\\} = 8\\pi G\\,\\gamma\\,\\delta^b_a\\,\\delta^i_j\\,\\delta^3(x-y)",
+    "meaning": "Fundamental phase-space structure of canonical LQG: the SU(2) connection A and densitized triad E are conjugate, with the Barbero-Immirzi parameter gamma rescaling the coupling.",
+    "source": "ashtekar-1986",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "ashtekar-barbero-connection",
+    "name": "Ashtekar-Barbero connection",
+    "latex": "A_a^i = \\Gamma_a^i + \\gamma\\, K_a^i",
+    "meaning": "Combines spin connection Gamma and extrinsic curvature K into a single SU(2) connection; gamma = +-i gives the self-dual (polynomial-constraint) Ashtekar connection.",
+    "source": "ashtekar-1986",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "holonomy",
+    "name": "Holonomy of the connection",
+    "latex": "h_\\gamma[A] = \\mathcal{P}\\exp\\!\\left(\\int_\\gamma A_a^i \\,\\tau_i\\, dx^a\\right)",
+    "meaning": "Path-ordered exponential of the connection along an edge; the smeared variable on which the holonomy-flux algebra and spin networks are built.",
+    "source": "rovelli-smolin-1990",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "area-spectrum",
+    "name": "Area operator spectrum",
+    "latex": "\\hat{A}_S\\,|s\\rangle = 8\\pi\\,\\gamma\\,\\ell_P^2 \\sum_{p \\in S\\cap s} \\sqrt{j_p(j_p+1)}\\;|s\\rangle",
+    "meaning": "Area is quantized; each spin-network edge piercing the surface contributes 8 pi gamma l_P^2 sqrt(j(j+1)). Minimum nonzero area (gap) for j=1/2 demonstrates atomic geometry.",
+    "source": "rovelli-smolin-1995-discreteness",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "volume-spectrum",
+    "name": "Volume operator",
+    "latex": "\\hat{V}_R\\,|s\\rangle = \\sum_{v \\in R} \\sqrt{\\left|\\tfrac{1}{48}\\,\\epsilon_{ijk}\\,\\epsilon^{abc}\\,\\hat{E}^i_a\\hat{E}^j_b\\hat{E}^k_c\\right|}\\;|s\\rangle",
+    "meaning": "Volume receives discrete contributions from spin-network vertices of valence >= 4; gives space a minimum meaningful volume.",
+    "source": "rovelli-smolin-1995-discreteness",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "spin-foam-partition-function",
+    "name": "Spin foam partition function",
+    "latex": "Z = \\sum_{\\{j_f\\},\\{i_e\\}} \\prod_f A_f(j_f) \\prod_e A_e(j_f,i_e) \\prod_v A_v(j_f,i_e)",
+    "meaning": "Covariant LQG dynamics as a sum over spin/intertwiner labelings of a 2-complex; the vertex amplitude A_v carries the physical content of the model.",
+    "source": "perez-2013",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "y-map",
+    "name": "EPRL Y-map / linear simplicity",
+    "latex": "Y_\\gamma: |j, m\\rangle_{SU(2)} \\longmapsto |(p=\\gamma j,\\, k=j);\\, j, m\\rangle_{SL(2,\\mathbb{C})}",
+    "meaning": "Embeds SU(2) spin states into the SL(2,C) principal series with p = gamma j, k = j, imposing the simplicity constraint and linking canonical and covariant LQG.",
+    "source": "engle-pereira-rovelli-livine-2008",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "vertex-asymptotics",
+    "name": "Vertex amplitude large-spin asymptotics",
+    "latex": "A_v(j_f) \\xrightarrow{j_f \\to \\infty} N_+ e^{+iS_{\\mathrm{Regge}}(j_f)} + N_- e^{-iS_{\\mathrm{Regge}}(j_f)} + \\text{(degenerate)}",
+    "meaning": "The EPRL vertex reproduces the Regge action semiclassically; the presence of multiple terms and degenerate configurations is the core semiclassical-limit difficulty.",
+    "source": "engle-2013-proper-vertex",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "bh-entropy",
+    "name": "Black hole entropy and gamma fixing",
+    "latex": "S = \\frac{\\gamma_0}{\\gamma}\\,\\frac{A}{4\\ell_P^2} - \\frac{1}{2}\\ln\\!\\left(\\frac{A}{\\ell_P^2}\\right) + \\mathcal{O}(1)",
+    "meaning": "Microstate counting gives S proportional to area; matching to S=A/4 fixes gamma = gamma0. The full SU(2) counting gives gamma0 ~ 0.274; the older U(1)/Domagala-Lewandowski-Meissner counting gives gamma0 ~ 0.2375. The naive single-spin closed form ln2/(pi sqrt3) ~ 0.127 is NOT equal to the actual SU(2) value 0.274. The log-correction coefficient is convention/scheme dependent (-1/2 for U(1) area-counting; -3/2 in the SU(2) Chern-Simons treatment).",
+    "source": "engle-noui-perez-2010",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "lqc-friedmann",
+    "name": "LQC effective Friedmann equation",
+    "latex": "\\left(\\frac{\\dot{a}}{a}\\right)^2 = \\frac{8\\pi G}{3}\\,\\rho\\left(1 - \\frac{\\rho}{\\rho_c}\\right), \\quad \\rho_c \\approx 0.41\\,\\rho_{\\mathrm{Planck}}",
+    "meaning": "The (1 - rho/rho_c) correction makes H vanish at rho=rho_c, producing the big bounce that replaces the big bang singularity.",
+    "source": "ashtekar-pawlowski-singh-2006",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "master-constraint",
+    "name": "Master constraint",
+    "latex": "\\mathbf{M} = \\int_\\Sigma d^3x\\,\\frac{|H(x)|^2}{\\sqrt{\\det q(x)}}, \\qquad \\mathbf{M}\\,|\\psi\\rangle_{\\mathrm{phys}} = 0",
+    "meaning": "Combines infinitely many Hamiltonian constraints into a single positive constraint, bypassing the non-closure of the algebra with structure functions; its kernel defines physical states.",
+    "source": "thiemann-2003-master",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "cosmological-constant-deformation",
+    "name": "Cosmological constant via quantum group",
+    "latex": "\\Lambda = \\frac{6\\pi}{\\ell_P^2\\, k}, \\qquad q = e^{i\\pi/k}",
+    "meaning": "Deforming SU(2) to the quantum group SU(2)_q at root of unity q introduces a positive cosmological constant (Lambda ~ 1/k, so k->infinity recovers classical SU(2) and Lambda->0), renders amplitudes IR-finite, and yields curved-4-simplex Regge asymptotics. NOTE: the precise numerical coefficient Lambda = 6 pi/(l_P^2 k) was not independently verified; only the Lambda ~ 1/k scaling is confirmed.",
+    "source": "haggard-han-kaminski-riello-2015",
+    "pillars": [
+      "loop-quantum-gravity"
+    ]
+  },
+  {
+    "id": "spectral-triple-def",
+    "name": "Spectral triple conditions",
+    "latex": "(\\mathcal{A}, \\mathcal{H}, D),\\quad [D,a]\\in\\mathcal{B}(\\mathcal{H})\\ \\forall a\\in\\mathcal{A},\\quad (D-\\lambda)^{-1}\\in\\mathcal{K}(\\mathcal{H})",
+    "meaning": "Defines a spectral triple: bounded commutators [D,a] make algebra elements Lipschitz functions; compact resolvent of D encodes compactness and discrete spectrum of the space. All geometry sits in D.",
+    "source": "connes-1994",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "real-structure-signs",
+    "name": "Real structure sign relations",
+    "latex": "J^2=\\varepsilon,\\qquad JD=\\varepsilon' DJ,\\qquad J\\gamma=\\varepsilon''\\gamma J",
+    "meaning": "Antiunitary J obeys three sign relations with epsilon, epsilon', epsilon'' in {+1,-1} fixed by KO-dimension mod 8 via Bott periodicity. KO-dim 6 for the SM finite space resolves fermion doubling.",
+    "source": "connes-1995",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "first-order-cond",
+    "name": "First-order condition",
+    "latex": "\\big[[D,a],\\,Jb^{*}J^{-1}\\big]=0\\quad\\forall a,b\\in\\mathcal{A}",
+    "meaning": "States that D is a first-order differential operator. Its relaxation generates extra inner fluctuations and the Pati-Salam extension beyond the Standard Model.",
+    "source": "connes-1995",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "connes-distance",
+    "name": "Connes distance formula",
+    "latex": "d(\\phi,\\psi)=\\sup_{a\\in\\mathcal{A}}\\big\\{\\,|\\phi(a)-\\psi(a)|\\ :\\ \\|[D,a]\\|\\le 1\\,\\big\\}",
+    "meaning": "Reconstructs the metric from D as a supremum over algebra elements; gives geodesic distance for pure states and order-1 Wasserstein distance for mixed states. Distance is derived, not assumed.",
+    "source": "connes-1994",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "spectral-action-formula",
+    "name": "Spectral action principle",
+    "latex": "S[D]=\\mathrm{Tr}\\,f\\!\\left(\\frac{D}{\\Lambda}\\right)+\\langle\\psi,D\\psi\\rangle",
+    "meaning": "Bosonic part depends only on the spectrum of D (cutoff function f, scale Lambda); fermionic part is the Dirac action. This single functional yields gravity plus the full Standard Model.",
+    "source": "chamseddine-connes-1996",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "heat-kernel-action",
+    "name": "Heat-kernel expansion of the spectral action",
+    "latex": "\\mathrm{Tr}\\,f\\!\\left(\\frac{D}{\\Lambda}\\right)\\sim f_4\\,\\Lambda^4 a_0+f_2\\,\\Lambda^2 a_2+f_0\\,a_4+\\mathcal{O}(\\Lambda^{-2})",
+    "meaning": "Asymptotic expansion in moments f_k of f and Seeley-DeWitt coefficients a_k of D^2; produces cosmological constant (Lambda^4), Einstein-Hilbert/Newton constant (Lambda^2) and Weyl-squared (Lambda^0) terms.",
+    "source": "chamseddine-connes-1996",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "gravity-terms",
+    "name": "Emergent gravitational action",
+    "latex": "S_{\\text{grav}}=\\int_M\\!\\Big(\\frac{\\Lambda_c}{8\\pi G}+\\frac{R}{16\\pi G}+\\alpha_0 C_{\\mu\\nu\\rho\\sigma}C^{\\mu\\nu\\rho\\sigma}\\Big)\\sqrt{g}\\,d^4x",
+    "meaning": "The geometric part of the spectral action: cosmological term, Einstein-Hilbert term with Newton constant G ~ 1/(f_2 Lambda^2), and conformal Weyl-squared curvature term. Gravity emerges spectrally.",
+    "source": "chamseddine-connes-1996",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "inner-fluctuations-formula",
+    "name": "Inner fluctuations of the Dirac operator",
+    "latex": "D_A=D+A+\\varepsilon' J A J^{-1},\\qquad A=\\sum_i a_i\\,[D,b_i]",
+    "meaning": "Fluctuated Dirac operator from inner automorphisms; the continuous part of A gives gauge fields, the discrete part the Higgs field, and JAJ^{-1} enforces correct charge conjugation.",
+    "source": "chamseddine-connes-marcolli-2007",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "volume-quantization",
+    "name": "Higher Heisenberg (volume quantization) relation",
+    "latex": "\\frac{1}{n!}\\big\\langle Y\\,[D,Y]\\cdots[D,Y]\\big\\rangle=\\gamma,\\qquad Y^2=1,\\ Y=Y^{*}",
+    "meaning": "With Y a Feynman-slashed coordinate and n commutators, this relation quantizes the volume in Planck units and in dimension 4 forces the algebras M_2(H) and M_4(C) of the Standard Model.",
+    "source": "chamseddine-connes-mukhanov-2014",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "moyal-commutator",
+    "name": "Canonical (Moyal) noncommutativity",
+    "latex": "[\\hat{x}^{\\mu},\\hat{x}^{\\nu}]=i\\,\\theta^{\\mu\\nu}",
+    "meaning": "Constant antisymmetric theta^{mu nu} (dimension length^2) defines canonical noncommutative spacetime; appears in D-brane effective theories with theta ~ B^{-1}.",
+    "source": "seiberg-witten-1999",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "kappa-minkowski-commutator",
+    "name": "kappa-Minkowski commutator",
+    "latex": "[\\hat{x}^{0},\\hat{x}^{i}]=\\frac{i}{\\kappa}\\,\\hat{x}^{i},\\qquad [\\hat{x}^{i},\\hat{x}^{j}]=0",
+    "meaning": "Lie-algebra-type noncommutativity with Planck-energy scale kappa; breaks boosts but preserves rotations, is dual to the kappa-Poincare Hopf algebra and underlies DSR.",
+    "source": "amelino-camelia-2002",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "moyal-star-product",
+    "name": "Moyal star product",
+    "latex": "(f\\star g)(x)=\\exp\\!\\Big(\\tfrac{i}{2}\\theta^{\\mu\\nu}\\partial^{x}_{\\mu}\\partial^{y}_{\\nu}\\Big)f(x)g(y)\\big|_{y=x}",
+    "meaning": "Deformed product encoding noncommutativity on the algebra of ordinary functions; to first order f star g = fg + (i/2) theta^{mu nu} d_mu f d_nu g.",
+    "source": "seiberg-witten-1999",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "gup-formula",
+    "name": "Generalized uncertainty principle",
+    "latex": "[\\hat{x},\\hat{p}]=i\\hbar(1+\\beta p^2)\\ \\Rightarrow\\ \\Delta x\\,\\Delta p\\ge\\tfrac{\\hbar}{2}\\big(1+\\beta(\\Delta p)^2\\big)\\ \\Rightarrow\\ \\Delta x_{\\min}=\\hbar\\sqrt{\\beta}",
+    "meaning": "Kempf-Mangano-Mann deformed commutator yields a nonzero minimal position uncertainty of order the Planck length; a model-independent quantum-gravity signature.",
+    "source": "kempf-mangano-mann-1995",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "dfr-uncertainty",
+    "name": "DFR spacetime uncertainty relations",
+    "latex": "\\Delta x^{0}\\big(\\Delta x^{1}+\\Delta x^{2}+\\Delta x^{3}\\big)\\gtrsim\\ell_P^2,\\qquad \\sum_{i<j}\\Delta x^{i}\\Delta x^{j}\\gtrsim\\ell_P^2",
+    "meaning": "Doplicher-Fredenhagen-Roberts relations following from [x^mu,x^nu]=i ell_P^2 Q^{mu nu}; derived from the requirement that Planckian localization not form a black hole.",
+    "source": "dfr-1995",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "fuzzy-sphere-relations",
+    "name": "Fuzzy sphere coordinate algebra",
+    "latex": "[\\hat{x}_i,\\hat{x}_j]=\\frac{i\\,r}{\\sqrt{j(j+1)}}\\,\\epsilon_{ijk}\\hat{x}_k,\\qquad \\sum_i \\hat{x}_i^2=r^2",
+    "meaning": "Noncommutative coordinates of the fuzzy sphere proportional to su(2) generators of spin j; algebra is M_N(C) with N=2j+1, recovering the round sphere as j -> infinity.",
+    "source": "steinacker-2010",
+    "pillars": [
+      "noncommutative-geometry"
+    ]
+  },
+  {
+    "id": "wheeler-dewitt-full",
+    "name": "Wheeler-DeWitt equation (full)",
+    "latex": "\\left[-16\\pi G\\, G_{ijkl}\\frac{\\delta^2}{\\delta h_{ij}\\delta h_{kl}} - \\frac{\\sqrt{h}}{16\\pi G}\\left({}^{(3)}R - 2\\Lambda\\right) + \\hat{\\mathcal{H}}_{\\text{matter}}\\right]\\Psi = 0",
+    "meaning": "Quantum Hamiltonian constraint of GR; the timeless Schroedinger equation for the wave functional of the universe on superspace, with DeWitt supermetric G_ijkl.",
+    "source": "dewitt-1967",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "wdw-minisuperspace-flrw",
+    "name": "Minisuperspace WDW for closed FLRW with Lambda",
+    "latex": "\\left[\\frac{\\hbar^2}{a^p}\\frac{d}{da}\\left(a^p\\frac{d}{da}\\right) - a^2 + \\frac{\\Lambda}{3}a^4\\right]\\Psi(a) = 0",
+    "meaning": "Effective one-dimensional WDW equation with potential V(a)=a^2 - (Lambda/3)a^4; the barrier (classically forbidden region a < sqrt(3/Lambda)) underlies the tunneling interpretation; p encodes operator-ordering ambiguity.",
+    "source": "hartle-hawking-1983",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "no-boundary-path-integral",
+    "name": "No-boundary wave function",
+    "latex": "\\Psi_{\\text{NB}}[h_{ij},\\phi] = \\int_{\\mathcal{C}} \\mathcal{D}g_{\\mu\\nu}\\,\\mathcal{D}\\phi\\; e^{-I_E[g_{\\mu\\nu},\\phi]/\\hbar}",
+    "meaning": "Euclidean path integral over compact regular 4-geometries with the single boundary h_ij; replaces an initial condition by the geometric requirement of smooth closure (no boundary in the past).",
+    "source": "hartle-hawking-1983",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "no-boundary-probability-desitter",
+    "name": "No-boundary de Sitter weight",
+    "latex": "|\\Psi_{\\text{NB}}|^2 \\sim e^{-2I_E/\\hbar} = \\exp\\!\\left(+\\frac{3}{8 G^2 \\rho_\\Lambda}\\right) = \\exp\\!\\left(+\\frac{12\\pi^2}{\\hbar\\,\\Lambda}\\right)",
+    "meaning": "Semiclassical no-boundary probability from the regular Euclidean 4-sphere action I_E = -3pi/(2 G Lambda); favors SMALL Lambda (problematically prefers nearly empty universes).",
+    "source": "hartle-hawking-1983",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "tunneling-probability",
+    "name": "Vilenkin tunneling weight",
+    "latex": "|\\Psi_{\\text{T}}|^2 \\sim \\exp\\!\\left(-\\frac{12\\pi^2}{\\hbar\\,\\Lambda}\\right) = \\exp\\!\\left(-\\frac{3}{8 G^2 \\rho_\\Lambda}\\right)",
+    "meaning": "Tunneling probability with the opposite sign of the exponent versus no-boundary; favors LARGE Lambda and hence nucleation of inflating universes. The opposite sign is the core of the no-boundary-vs-tunneling dispute.",
+    "source": "vilenkin-1982",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "lorentzian-minisuperspace-integral",
+    "name": "Lorentzian minisuperspace path integral (FLT)",
+    "latex": "G[q_1;q_0] = \\int_{0^+}^{\\infty} dN \\int \\mathcal{D}q\\; e^{iS[q,N]/\\hbar}, \\quad S = 2\\pi^2\\!\\int_0^1 dt\\, N\\!\\left[-\\frac{3}{4N^2}\\dot q^2 + 3 - \\Lambda q\\right]",
+    "meaning": "Feldbrugge-Lehners-Turok lapse integral in q=a^2; q integrated as a Gaussian, then N over a Picard-Lefschetz contour. The dominant saddle gives exactly the inverse of the Hartle-Hawking factor, i.e. the tunneling sign.",
+    "source": "feldbrugge-lehners-turok-2017",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "no-boundary-perturbation-weight",
+    "name": "Unstable perturbation weight (FLT)",
+    "latex": "P(\\phi_l) \\sim \\exp\\!\\left(+\\frac{3}{2\\hbar\\Lambda}\\sum_{l} l(l+1)(l+2)\\,|\\phi_l|^2\\right)",
+    "meaning": "Inverse-Gaussian (positive-exponent) weighting of perturbations in the Lorentzian no-boundary state: larger perturbations are MORE probable, giving a non-normalizable, non-classical wave function contradicting the smooth CMB. Multipole factor l(l+1)(l+2) and prefactor 3/(2 hbar Lambda) as in Feldbrugge-Lehners-Turok 2017b.",
+    "source": "feldbrugge-lehners-turok-2017b",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "lqc-effective-friedmann",
+    "name": "LQC effective Friedmann equation",
+    "latex": "H^2 = \\frac{8\\pi G}{3}\\,\\rho\\left(1 - \\frac{\\rho}{\\rho_c}\\right), \\qquad \\rho_c = \\frac{\\sqrt{3}}{32\\pi^2\\gamma^3 G^2\\hbar} \\approx 0.41\\,\\rho_{\\text{Pl}}",
+    "meaning": "Semiclassical LQC dynamics: at rho = rho_c, H = 0 and the universe bounces; for rho << rho_c the classical Friedmann equation is recovered. rho_c ~ 0.41 rho_Planck is LQC's signature quantitative prediction.",
+    "source": "taveras-2008",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "lqc-area-gap-constraint",
+    "name": "Area gap and quantum difference constraint",
+    "latex": "\\Delta = 4\\sqrt{3}\\,\\pi\\,\\gamma\\, \\ell_{\\text{Pl}}^2, \\qquad C^+(v)\\Psi(v+4) + C^0(v)\\Psi(v) + C^-(v)\\Psi(v-4) = 0",
+    "meaning": "The area gap Delta sets the discreteness scale; the WDW differential equation is replaced by a difference equation in the volume variable v, ensuring deterministic evolution across the bounce (no singularity).",
+    "source": "ashtekar-pawlowski-singh-2006",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "mukhanov-sasaki",
+    "name": "Mukhanov-Sasaki equation and power spectrum",
+    "latex": "v_k'' + \\left(k^2 - \\frac{z''}{z}\\right)v_k = 0, \\qquad \\mathcal{P}_{\\mathcal{R}}(k) = \\frac{k^3}{2\\pi^2}\\left|\\frac{v_k}{z}\\right|^2, \\quad z = a\\frac{\\dot\\phi}{H}",
+    "meaning": "Universal equation governing primordial curvature perturbations; inflation, LQC bounce, ekpyrotic and string gas scenarios differ in the pump term z''/z and the vacuum, yielding distinguishable spectra.",
+    "source": "planck-2018-inflation",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "tcc-bound",
+    "name": "Trans-Planckian Censorship bound",
+    "latex": "\\frac{a_f}{a_i}\\,\\ell_{\\text{Pl}} < \\frac{1}{H_f} \\;\\Longrightarrow\\; \\frac{|V'|}{V} \\gtrsim \\frac{2}{\\sqrt{d-2}}\\,\\frac{1}{M_{\\text{Pl}}}",
+    "meaning": "No sub-Planckian mode may be stretched beyond the Hubble horizon; implies a steep-potential bound that caps the inflationary energy scale (V^{1/4} <~ 6e8 GeV) and gives r <~ 1e-30 for simple models, in tension with high-scale inflation.",
+    "source": "bedroya-vafa-2019",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "slow-roll-spectral-index",
+    "name": "Slow-roll spectral index and tensor ratio",
+    "latex": "n_s - 1 = -6\\epsilon + 2\\eta, \\qquad r = 16\\epsilon, \\qquad \\epsilon = \\frac{M_{\\text{Pl}}^2}{2}\\left(\\frac{V'}{V}\\right)^2",
+    "meaning": "Single-field slow-roll predictions linking the inflaton potential to observables; Planck 2018 measures n_s = 0.9649 +/- 0.0042 and BK18 bounds r < 0.036, tightly constraining the potential shape.",
+    "source": "planck-2018-inflation",
+    "pillars": [
+      "quantum-cosmology"
+    ]
+  },
+  {
+    "id": "bogoliubov-particle-number",
+    "name": "Bogoliubov Particle Number",
+    "latex": "\\langle 0_{\\mathrm{in}}|\\,\\bar N_j\\,|0_{\\mathrm{in}}\\rangle = \\sum_i |\\beta_{ji}|^2,\\qquad \\bar u_j=\\sum_i(\\alpha_{ji}u_i+\\beta_{ji}u_i^*)",
+    "meaning": "Number of out-particles in mode j present in the in-vacuum equals the sum over i of |beta_ji|^2; nonzero beta-coefficients (which mix positive and negative frequencies) signal gravitational/accelerational particle creation.",
+    "source": "parker-1969",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "unruh-temperature-formula",
+    "name": "Unruh Temperature",
+    "latex": "T_U = \\frac{\\hbar a}{2\\pi c\\,k_B},\\qquad \\langle N_\\omega\\rangle = \\frac{1}{e^{2\\pi\\omega/a}-1}",
+    "meaning": "A uniformly accelerated observer with proper acceleration a detects a thermal (Bose-Einstein) bath at temperature T_U; numerically about 4e-21 K per m/s^2 of acceleration.",
+    "source": "unruh-1976",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "hawking-temperature-formula",
+    "name": "Hawking Temperature and Flux",
+    "latex": "T_H = \\frac{\\hbar\\kappa}{2\\pi c\\,k_B},\\qquad \\langle N_\\omega\\rangle = \\frac{\\Gamma_\\omega}{e^{\\hbar\\omega/k_B T_H}-1},\\qquad \\kappa_{\\mathrm{Schw}}=\\frac{c^4}{4G_N M}",
+    "meaning": "A black hole radiates nearly thermally at temperature proportional to its surface gravity kappa, modulated by greybody factors Gamma; for a solar mass T_H is about 6e-8 K.",
+    "source": "hawking-1975",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "trace-anomaly-4d",
+    "name": "4D Trace (Conformal) Anomaly",
+    "latex": "\\langle T^a{}_a\\rangle = \\frac{1}{(4\\pi)^2}\\left( c\\,C_{abcd}C^{abcd} - a\\,E_4 + b\\,\\Box R \\right),\\quad E_4=R_{abcd}R^{abcd}-4R_{ab}R^{ab}+R^2",
+    "meaning": "Even a classically conformal field has a nonzero quantum trace, controlled by the Weyl-squared (c) and Euler/Gauss-Bonnet (a) invariants; fixes <T_ab> in conformally flat spacetimes.",
+    "source": "hollands-wald-2015",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "hadamard-parametrix",
+    "name": "Hadamard Parametrix and Point-Splitting",
+    "latex": "H_\\ell(x,x') = \\frac{1}{2(2\\pi)^2}\\!\\left[\\frac{\\Delta^{1/2}}{\\sigma_\\epsilon} + v\\,\\ln\\!\\frac{\\sigma_\\epsilon}{\\ell^2}\\right],\\quad \\langle T_{ab}\\rangle_{\\mathrm{ren}}=\\lim_{x'\\to x}\\mathcal D_{ab}\\big[W(x,x')-H(x,x')\\big]",
+    "meaning": "The universal short-distance singularity (sigma is Synge's world function, Delta the Van Vleck determinant, v fixed by Hadamard recursion) is subtracted from the Wightman function to give a finite, locally covariant renormalized stress tensor; the scale ell encodes the renormalization ambiguity.",
+    "source": "moretti-2003",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "microlocal-spectrum-condition-wf",
+    "name": "Microlocal Spectrum Condition",
+    "latex": "WF(W)=\\big\\{(x,k;x',-k')\\in T^*(M\\times M)\\setminus 0:\\ (x,k)\\sim(x',k'),\\ k\\in\\overline V^+_x\\big\\}",
+    "meaning": "A state is Hadamard iff the wavefront set of its two-point function W contains only pairs connected by a null geodesic with future-pointing covector; the curved-space replacement for the positive-frequency spectrum condition.",
+    "source": "radzikowski-1996",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "semiclassical-einstein-equation-formula",
+    "name": "Semiclassical Einstein Equation",
+    "latex": "R_{ab}-\\tfrac12 R g_{ab}+\\Lambda g_{ab}=8\\pi G_N\\big(\\langle T_{ab}\\rangle_\\omega+\\alpha\\,{}^{(1)}\\!H_{ab}+\\beta\\,{}^{(2)}\\!H_{ab}\\big)",
+    "meaning": "Classical geometry is sourced by the renormalized expectation value of the quantum stress tensor plus fourth-order curvature counterterms; the field obeys its wave equation on the metric it generates.",
+    "source": "juarez-aubry-2025",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "einstein-langevin-equation",
+    "name": "Einstein-Langevin Equation",
+    "latex": "G_{ab}^{(1)}[h]-8\\pi G_N\\langle\\hat T_{ab}^{(1)}[h]\\rangle=8\\pi G_N\\,\\xi_{ab},\\qquad \\langle\\xi_{ab}(x)\\xi_{cd}(x')\\rangle=N_{abcd}(x,x')",
+    "meaning": "Stochastic-gravity equation: a Gaussian noise xi_ab with covariance given by the noise kernel N_abcd (the symmetrized stress-tensor fluctuation) drives metric perturbations, capturing quantum fluctuations beyond the mean field.",
+    "source": "hu-verdaguer-2008",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "noise-kernel-formula",
+    "name": "Noise Kernel",
+    "latex": "N_{abcd}(x,x') = \\tfrac12\\big\\langle \\{\\,\\hat t_{ab}(x),\\,\\hat t_{cd}(x')\\,\\}\\big\\rangle,\\qquad \\hat t_{ab}=\\hat T_{ab}-\\langle\\hat T_{ab}\\rangle",
+    "meaning": "The symmetrized two-point function of stress-tensor fluctuations; its size relative to the mean provides a validity criterion for semiclassical gravity.",
+    "source": "hu-verdaguer-2008",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "wald-entropy-formula",
+    "name": "Wald Entropy (Noether Charge)",
+    "latex": "S_W = -2\\pi\\oint_{\\mathcal H}\\frac{\\partial L}{\\partial R_{abcd}}\\,\\epsilon_{ab}\\,\\epsilon_{cd}\\,\\sqrt{\\gamma}\\;d^{\\,D-2}x",
+    "meaning": "Black-hole entropy as the integral over the horizon cross-section of the Lagrangian's derivative with respect to the Riemann tensor contracted with the binormal; reduces to A/4G for Einstein gravity and gives higher-curvature corrections.",
+    "source": "wald-1993",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "generalized-entropy-qfc",
+    "name": "Generalized Entropy and Quantum Focusing",
+    "latex": "S_{\\mathrm{gen}}=\\frac{A[\\Sigma]}{4G_N\\hbar}+S^{\\mathrm{vN}}_{\\mathrm{out}}(\\Sigma),\\qquad \\frac{d\\Theta}{d\\lambda}\\le 0,\\ \\ \\Theta\\equiv\\frac{4G\\hbar}{\\sqrt h}\\frac{\\delta S_{\\mathrm{gen}}}{\\delta\\lambda}",
+    "meaning": "Generalized entropy combines area and field entanglement; the quantum focusing conjecture states the quantum expansion Theta cannot increase along a null congruence, implying the QNEC.",
+    "source": "bousso-2016",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "diosi-penrose-decoherence-time",
+    "name": "Diosi-Penrose Decoherence Time",
+    "latex": "\\tau_{\\mathrm{DP}}\\sim\\frac{\\hbar}{E_G},\\qquad E_G=G\\!\\iint\\frac{[\\rho_1-\\rho_2](\\mathbf r)\\,[\\rho_1-\\rho_2](\\mathbf r')}{|\\mathbf r-\\mathbf r'|}\\,d^3r\\,d^3r'",
+    "meaning": "A spatial superposition of mass distributions rho_1, rho_2 decoheres/collapses on a timescale set by the gravitational self-energy E_G of their difference; a testable gravity-related collapse prediction.",
+    "source": "penrose-1996",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "first-law-wald",
+    "name": "First Law (Wald form)",
+    "latex": "\\delta M = \\frac{\\kappa}{2\\pi}\\,\\delta S_W + \\Omega_H\\,\\delta J + \\Phi_H\\,\\delta Q",
+    "meaning": "Variation of the black-hole mass equals the Hawking temperature times the variation of Wald entropy plus angular-velocity/charge work terms; holds in any diffeomorphism-invariant theory of gravity.",
+    "source": "wald-1993",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "unruh-kms-detailed-balance",
+    "name": "Detailed Balance / KMS for Acceleration",
+    "latex": "\\frac{P_{\\mathrm{exc}}(\\omega)}{P_{\\mathrm{deexc}}(\\omega)} = e^{-2\\pi\\omega/a} = e^{-\\hbar\\omega/k_B T_U}",
+    "meaning": "The ratio of excitation to de-excitation rates of an accelerated Unruh-DeWitt detector satisfies the KMS detailed-balance condition at the Unruh temperature, confirming the thermal character of the response.",
+    "source": "crispino-2008",
+    "pillars": [
+      "semiclassical-gravity"
+    ]
+  },
+  {
+    "id": "polyakov-action",
+    "name": "Polyakov action",
+    "latex": "S_P = -\\frac{1}{4\\pi\\alpha'} \\int d^2\\sigma \\,\\sqrt{-h}\\, h^{ab}\\, \\partial_a X^\\mu \\,\\partial_b X^\\nu \\, G_{\\mu\\nu}(X)",
+    "meaning": "Worldsheet sigma-model action: X^mu embeds the worldsheet (coords sigma^a) into target spacetime with metric G_munu, h_ab is the auxiliary worldsheet metric, alpha' the Regge slope. Reparametrization + Weyl invariance at the quantum level forces the critical dimension and the target Einstein equations.",
+    "source": "polyakov-1981",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "string-tension-regge",
+    "name": "String tension and Regge trajectory",
+    "latex": "T = \\frac{1}{2\\pi\\alpha'}, \\qquad M^2 \\approx \\frac{1}{\\alpha'}\\,(N - a), \\qquad J \\le \\alpha' M^2 + \\text{const}",
+    "meaning": "T is the string tension, M the mass of a vibrational mode, N the oscillator level number, a the normal-ordering constant (a=1 for the open bosonic string). The linear J vs M^2 relation is the Regge trajectory, the original phenomenological motivation.",
+    "source": "veneziano-1968",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "critical-dimension-anomaly",
+    "name": "Critical dimension from conformal anomaly",
+    "latex": "c_{\\text{total}} = D - 26 \\stackrel{!}{=} 0 \\Rightarrow D=26;\\qquad c_{\\text{total}} = \\tfrac{3}{2}(D-10) \\stackrel{!}{=} 0 \\Rightarrow D=10",
+    "meaning": "c is the Virasoro central charge of the worldsheet CFT. Each X^mu contributes c=1, the reparametrization ghosts c=-26; vanishing of the total anomaly fixes D=26 (bosonic) or D=10 (super, with worldsheet fermions and superghosts).",
+    "source": "polyakov-1981",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "t-duality-spectrum",
+    "name": "T-duality spectrum on a circle",
+    "latex": "M^2 = \\left(\\frac{n}{R}\\right)^2 + \\left(\\frac{m R}{\\alpha'}\\right)^2 + \\frac{2}{\\alpha'}(N+\\tilde N - 2), \\qquad R \\leftrightarrow \\frac{\\alpha'}{R},\\; n \\leftrightarrow m",
+    "meaning": "n is the Kaluza-Klein momentum number, m the winding number, R the circle radius, N, tilde N the left/right oscillator levels. The spectrum is invariant under R -> alpha'/R with n <-> m; the self-dual radius is R = sqrt(alpha'). T-duality relates IIA<->IIB and heterotic SO(32)<->E8xE8.",
+    "source": "polchinski-textbook",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "dp-brane-tension",
+    "name": "Dp-brane tension",
+    "latex": "T_{Dp} = \\frac{2\\pi}{g_s\\,(2\\pi\\sqrt{\\alpha'})^{p+1}}",
+    "meaning": "Tension of a Dp-brane; g_s = e^<Phi> is the string coupling, p the brane dimension. The 1/g_s scaling makes D-branes heavy at weak coupling (solitons), in contrast to the fundamental string (g_s^0) and NS5-brane (1/g_s^2), enabling non-perturbative calculations.",
+    "source": "polchinski-1995",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "dbi-action",
+    "name": "Dirac-Born-Infeld action",
+    "latex": "S_{DBI} = -T_{Dp} \\int d^{p+1}\\xi\\; e^{-\\Phi}\\,\\sqrt{-\\det\\!\\big(g_{ab} + B_{ab} + 2\\pi\\alpha' F_{ab}\\big)}",
+    "meaning": "Low-energy worldvolume action of a Dp-brane: g_ab is the pullback target metric, B_ab the Kalb-Ramond pullback, F_ab the worldvolume gauge field strength, Phi the dilaton. Expanding it reproduces Maxwell/Yang-Mills; the large-B limit gives non-commutative gauge theory.",
+    "source": "seiberg-witten-1999",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "strominger-vafa-entropy",
+    "name": "Strominger-Vafa entropy",
+    "latex": "c = 6\\,Q_1 Q_5, \\qquad S = 2\\pi\\sqrt{\\frac{c\\,L_0}{6}} = 2\\pi\\sqrt{Q_1 Q_5 \\, n} = \\frac{A}{4G} = S_{BH}",
+    "meaning": "A 5D extremal BPS black hole is a bound state of Q1 D1-branes, Q5 D5-branes and n momentum units in IIB. The dual 2D CFT has central charge c=6 Q1 Q5; the Cardy degeneracy at L_0=n gives S=2 pi sqrt(Q1 Q5 n), matching the Bekenstein-Hawking area entropy exactly.",
+    "source": "strominger-vafa-1996",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "cardy-formula",
+    "name": "Cardy formula",
+    "latex": "S = 2\\pi\\sqrt{\\frac{c}{6}\\Big(L_0 - \\frac{c}{24}\\Big)} + 2\\pi\\sqrt{\\frac{\\bar c}{6}\\Big(\\bar L_0 - \\frac{\\bar c}{24}\\Big)}",
+    "meaning": "Universal asymptotic density of states of a 2D CFT with central charges c, bar c at large conformal weights L_0, bar L_0. It is the mathematical core of all microscopic black-hole entropy computations, including AdS3 / BTZ black holes.",
+    "source": "strominger-1997",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "bekenstein-hawking",
+    "name": "Bekenstein-Hawking entropy",
+    "latex": "S_{BH} = \\frac{A}{4 G \\hbar} = \\frac{k_B c^3 A}{4 G \\hbar}",
+    "meaning": "Entropy of a black hole equals one quarter of its horizon area A in Planck units. It is the universal target reproduced by string microstate counting and the seed of the holographic principle.",
+    "source": "strominger-vafa-1996",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "hagedorn-density",
+    "name": "Hagedorn density of states / temperature",
+    "latex": "\\rho(M) \\sim M^{-a}\\, e^{\\beta_H M}, \\qquad T_H = \\frac{1}{\\beta_H} \\sim \\frac{1}{\\sqrt{\\alpha'}}",
+    "meaning": "The string density of states grows exponentially with mass, so the canonical partition function Z = int dM rho(M) e^{-beta M} diverges for beta < beta_H, i.e. above the Hagedorn temperature T_H ~ 1/l_s. It marks a phase transition / breakdown of standard thermodynamics.",
+    "source": "ydri-2017",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "string-frame-sugra",
+    "name": "Low-energy effective action (NS-NS sector)",
+    "latex": "S = \\frac{1}{2\\kappa^2}\\int d^{10}x\\,\\sqrt{-G}\\,e^{-2\\Phi}\\Big(R + 4(\\partial\\Phi)^2 - \\tfrac{1}{12}H_{\\mu\\nu\\rho}H^{\\mu\\nu\\rho}\\Big)",
+    "meaning": "Leading 10D effective action from requiring vanishing worldsheet beta functions: R is the target Ricci scalar, Phi the dilaton, H=dB the NS-NS field strength, kappa the gravitational coupling. Einstein's equations emerge as the conformal-invariance (Weyl anomaly cancellation) condition.",
+    "source": "polchinski-textbook",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "eleven-d-sugra",
+    "name": "11D supergravity action",
+    "latex": "S_{11} = \\frac{1}{2\\kappa_{11}^2}\\int d^{11}x\\,\\sqrt{-g}\\Big(R - \\tfrac{1}{2}|F_4|^2\\Big) - \\frac{1}{12\\kappa_{11}^2}\\int C_3\\wedge F_4 \\wedge F_4",
+    "meaning": "Unique 11D supergravity (Cremmer-Julia-Scherk 1978): F_4 = dC_3 is the field strength of the 3-form sourcing M2-branes; the last term is Chern-Simons. The 11th-dimension radius R_11 = g_s^(2/3) l_p ties strongly-coupled IIA to M-theory.",
+    "source": "witten-1995",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "bfss-hamiltonian",
+    "name": "BFSS Hamiltonian",
+    "latex": "H = R\\,\\mathrm{Tr}\\Big(\\tfrac{1}{2}P_I P^I - \\tfrac{1}{4}[X^I,X^J][X_I,X_J] - \\tfrac{1}{2}\\Psi^T\\Gamma_I[X^I,\\Psi]\\Big)",
+    "meaning": "Hamiltonian of the maximally supersymmetric U(N) matrix quantum mechanics of N D0-branes: X^I (I=1..9) are SO(9) coordinate matrices with conjugate momenta P_I, Psi a 16-component Spin(9) spinor, all adjoint-valued. Commutator potential encodes non-abelian D0-brane dynamics; conjectured to define M-theory.",
+    "source": "bfss-1996",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "swampland-distance",
+    "name": "Swampland Distance Conjecture",
+    "latex": "m(\\phi + \\Delta\\phi) \\;\\lesssim\\; m(\\phi)\\, e^{-\\alpha\\,\\Delta\\phi / M_{\\rm Pl}}",
+    "meaning": "Beyond a super-Planckian field excursion Delta phi in moduli space, an infinite tower of states becomes exponentially light with rate alpha ~ O(1), causing the effective field theory cutoff to collapse. A leading swampland criterion separating landscape from swampland.",
+    "source": "ooguri-vafa-2006",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "weak-gravity",
+    "name": "Weak Gravity Conjecture",
+    "latex": "g\\,q\\,M_{\\rm Pl} \\;\\ge\\; m",
+    "meaning": "In any consistent U(1) gauge theory coupled to gravity there must exist a state of charge q and mass m for which gravity is weaker than the gauge force, allowing extremal black holes to decay and forbidding stable extremal remnants.",
+    "source": "arkani-hamed-2007",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "species-scale",
+    "name": "Species scale",
+    "latex": "\\Lambda_{\\rm sp} = \\frac{M_{\\rm Pl}}{\\sqrt{N}}",
+    "meaning": "Gravitational UV cutoff set by the number N of light species below it; above Lambda_sp the semiclassical EFT and black-hole effective description break down. Connects swampland towers, the gravitational EFT expansion, and black-hole entropy bounds.",
+    "source": "palti-2019",
+    "pillars": [
+      "string-theory"
+    ]
+  },
+  {
+    "id": "gravity-power-counting",
+    "name": "Superficial degree of divergence in gravity",
+    "latex": "D = (d-2)L + 2 \\;\\xrightarrow{d=4}\\; 2L + 2",
+    "meaning": "The superficial degree of divergence of an L-loop amplitude grows with loop order in d=4, so each loop needs counterterms of higher curvature dimension, making Einstein gravity perturbatively non-renormalizable.",
+    "source": "tHooft-Veltman-1974",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "goroff-sagnotti-counterterm",
+    "name": "Goroff-Sagnotti two-loop counterterm",
+    "latex": "\\Gamma^{(2)}_{\\rm GS} = \\frac{1}{\\varepsilon}\\,\\frac{209}{2880}\\,\\frac{1}{(16\\pi^2)^2}\\int d^4x\\,\\sqrt{-g}\\;C_{\\mu\\nu}{}^{\\rho\\sigma}C_{\\rho\\sigma}{}^{\\kappa\\lambda}C_{\\kappa\\lambda}{}^{\\mu\\nu}",
+    "meaning": "Nonzero two-loop divergence of pure gravity (coefficient 209/2880, Weyl tensor cubed) that cannot be removed by field redefinition; the definitive proof of perturbative non-renormalizability.",
+    "source": "Goroff-Sagnotti-1986",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "quantum-potential",
+    "name": "Quantum-corrected Newtonian potential",
+    "latex": "V(r) = -\\frac{G\\,m_1 m_2}{r}\\left[1 + 3\\frac{G(m_1+m_2)}{r c^2} + \\frac{41}{10\\pi}\\frac{G\\hbar}{r^2 c^3}\\right]",
+    "meaning": "EFT result for the gravitational potential: the second term is the classical post-Newtonian correction, the third (coefficient 41/(10 pi)) is the universal genuine quantum correction proportional to hbar.",
+    "source": "Bjerrum-Bohr-Donoghue-Holstein-2003",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "stelle-action",
+    "name": "Stelle quadratic-gravity action",
+    "latex": "S = \\int d^4x\\,\\sqrt{-g}\\left[\\gamma R + \\alpha\\,C_{\\mu\\nu\\rho\\sigma}^2 - \\beta R^2\\right]",
+    "meaning": "Curvature-squared action whose 1/p^4 propagator makes gravity renormalizable; the Weyl-squared term carries a massive spin-2 ghost.",
+    "source": "Stelle-1977",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "stelle-propagator",
+    "name": "Higher-derivative propagator pole decomposition",
+    "latex": "\\frac{1}{p^2(p^2+M^2)} = \\frac{1}{M^2}\\left(\\frac{1}{p^2} - \\frac{1}{p^2+M^2}\\right)",
+    "meaning": "Partial-fraction form showing the negative-residue pole at p^2=-M^2: a massive spin-2 ghost responsible for the unitarity problem of quadratic gravity.",
+    "source": "Stelle-1977",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "horava-action",
+    "name": "Horava-Lifshitz action (z=3)",
+    "latex": "S_{\\rm HL} = \\frac{1}{2\\kappa^2}\\int dt\\,d^3x\\,\\sqrt{g}\\,N\\left[K_{ij}K^{ij} - \\lambda K^2 - \\mathcal{V}[g_{ij}]\\right],\\quad \\mathcal{V}\\supset M^{-4}(\\nabla R)^2",
+    "meaning": "Anisotropic gravity action with up to sixth-order spatial derivatives (z=3); the propagator ~1/(omega^2 - k^6) gives power-counting renormalizability at the cost of Lorentz violation.",
+    "source": "Horava-2009",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "nonlocal-form-factor",
+    "name": "Ghost-free nonlocal form factor",
+    "latex": "\\mathcal{L} \\supset \\tfrac{1}{2} h_{\\mu\\nu}\\,\\Box\\,a(\\Box)\\,h^{\\mu\\nu},\\qquad a(\\Box) = e^{-\\Box/M_s^2}",
+    "meaning": "Infinite-derivative kinetic operator built from an entire function with no zeros; it exponentially suppresses the UV propagator without adding new poles, so no new ghosts appear.",
+    "source": "Biswas-Gerwick-Koivisto-Mazumdar-2012",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "n8-critical-dimension-formula",
+    "name": "N=8 critical dimension vs loop order",
+    "latex": "D_c(L) = 4 + \\frac{6}{L}\\quad(2\\le L\\le 4):\\;\\; D_c(3)=6,\\; D_c(4)=\\tfrac{11}{2}; \\quad\\text{but } D_c(5)=\\tfrac{24}{5}\\;(<\\tfrac{26}{5})",
+    "meaning": "Dimension below which the L-loop four-point N=8 amplitude is finite. The relation D_c=4+6/L (matching the N=4 SYM bound) holds through four loops. At five loops the measured critical dimension is D_c=24/5, BELOW the 26/5 the formula would give: Bern et al. (2018) show this 24/5 is exactly what the D^8 R^4 counterterm and standard E7(7)/supersymmetry arguments predict, i.e. at five loops N=8 shows NO enhanced cancellation and behaves like N=4 SYM. D=4 finiteness is first threatened at L=7 (E7(7)-invariant partial^6 R^4).",
+    "source": "Bern-et-al-2018-5loop",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "klt-relation",
+    "name": "KLT / double-copy relation",
+    "latex": "M_n^{\\rm tree} = \\sum_{\\sigma,\\tau} A_n^{\\rm tree}(\\sigma)\\,S[\\sigma|\\tau]\\,\\tilde A_n^{\\rm tree}(\\tau)",
+    "meaning": "Gravity amplitudes are a double copy of two gauge-theory amplitudes joined by the KLT kernel S; N=8 SUGRA = (N=4 SYM)^2, enabling multiloop UV computations.",
+    "source": "Bern-Carrasco-Johansson-2010",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "bcj-jacobi",
+    "name": "BCJ color-kinematics duality",
+    "latex": "c_i + c_j + c_k = 0 \\;\\Longrightarrow\\; n_i + n_j + n_k = 0",
+    "meaning": "Kinematic numerators n_i can be arranged to satisfy the same Jacobi identities as the color factors c_i; replacing color by a second kinematic factor yields the gravity (double-copy) integrand.",
+    "source": "Bern-Carrasco-Johansson-2008-BCJ",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "onshell-oneloop-counterterm",
+    "name": "One-loop pure-gravity counterterm",
+    "latex": "\\Delta\\Gamma^{(1)} = \\frac{1}{\\varepsilon}\\frac{1}{(4\\pi)^2}\\int d^4x\\sqrt{-g}\\left(\\frac{1}{120}R^2 + \\frac{7}{20}R_{\\mu\\nu}R^{\\mu\\nu}\\right)",
+    "meaning": "The one-loop divergence of pure gravity is proportional to R^2 and Ricci-squared, both of which vanish on-shell (R_{mu nu}=0), so pure gravity is one-loop finite; adding matter spoils this.",
+    "source": "tHooft-Veltman-1974",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "e7-soft-scalar-constraint",
+    "name": "E7(7) single-soft-scalar constraint on counterterms",
+    "latex": "\\lim_{p\\to 0} M_{n+1}(\\dots,\\phi(p)) = 0 \\;\\Longleftrightarrow\\; \\text{candidate is } E_{7(7)}\\text{-invariant}",
+    "meaning": "A counterterm is E7(7)-invariant iff the amplitude with one soft scalar (Goldstone of broken E7(7)) vanishes; D^4R^4 and D^6R^4 have nonzero soft limits, so no E7(7)-invariant counterterm exists below seven loops.",
+    "source": "Beisert-et-al-2010-E7",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "n8-spin-content",
+    "name": "N=8 supermultiplet spin content",
+    "latex": "\\#(\\text{spin } s) = \\binom{8}{4-2s}\\;\\Rightarrow\\; (2,\\tfrac32,1,\\tfrac12,0) = (1,8,28,56,70)",
+    "meaning": "Binomial coefficients give the field content: 1 graviton, 8 gravitinos, 28 vectors, 56 fermions, 70 scalars (256 states total); the 70 scalars parametrize the coset E7(7)/SU(8).",
+    "source": "Cremmer-Julia-Scherk-1978",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "eft-effective-action",
+    "name": "EFT effective action of gravity",
+    "latex": "S_{\\rm eff} = \\int d^4x\\sqrt{-g}\\left[\\Lambda + \\frac{R}{16\\pi G} + c_1 R^2 + c_2 R_{\\mu\\nu}R^{\\mu\\nu} + \\frac{d_1}{M^2}R^3 + \\dots\\right]",
+    "meaning": "Derivative (energy) expansion of the gravitational effective action; unknown UV physics is absorbed into Wilson coefficients c_i, d_i while nonanalytic loop contributions give universal IR predictions, making GR predictive despite non-renormalizability.",
+    "source": "Donoghue-1994",
+    "pillars": [
+      "supergravity-uv"
+    ]
+  },
+  {
+    "id": "wgc-electric",
+    "name": "Electric Weak Gravity Conjecture",
+    "latex": "q\\, g\\, M_{\\mathrm{Pl}} \\;\\ge\\; m \\qquad\\Longleftrightarrow\\qquad \\frac{q g}{m/M_{\\mathrm{Pl}}} \\ge \\left|\\frac{Q}{M}\\right|_{\\mathrm{ext}}",
+    "meaning": "Some charged particle has gauge force >= gravity, i.e. its charge-to-mass ratio exceeds the extremal black hole value, so extremal black holes can decay.",
+    "source": "amnv-2006",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "wgc-magnetic",
+    "name": "Magnetic WGC Cutoff",
+    "latex": "\\Lambda \\;\\lesssim\\; g\\, M_{\\mathrm{Pl}}",
+    "meaning": "EFT validity cutoff set by the gauge coupling; as g -> 0 (global symmetry limit) the cutoff vanishes, forbidding exact global symmetries. Above Lambda a tower of states appears.",
+    "source": "amnv-2006",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "convex-hull",
+    "name": "Convex Hull Condition",
+    "latex": "B_{\\mathrm{unit}} \\subseteq \\mathrm{ConvHull}\\big(\\{\\pm \\vec{z}_i\\}\\big),\\qquad \\vec{z}_i = \\frac{\\vec{q}_i\\, g\\, M_{\\mathrm{Pl}}}{m_i}",
+    "meaning": "For multiple U(1) gauge fields the convex hull of charge-to-mass vectors must contain the unit ball, guaranteeing decay channels for all extremal multi-charged black holes.",
+    "source": "palti-2019",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "distance-conjecture-formula",
+    "name": "Swampland Distance Conjecture",
+    "latex": "m(Q) \\;\\sim\\; m(P)\\; e^{-\\alpha\\, d(P,Q)/M_{\\mathrm{Pl}}},\\qquad \\alpha \\sim O(1)",
+    "meaning": "A tower of states becomes exponentially light with geodesic distance d in moduli space, ending EFT validity at infinite distance.",
+    "source": "ooguri-vafa-2006",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "species-scale-formula",
+    "name": "Species Scale",
+    "latex": "\\Lambda_{\\mathrm{sp}} \\;\\sim\\; \\frac{M_{\\mathrm{Pl}}}{\\sqrt{N}},\\qquad S_{\\mathrm{BH}}(\\Lambda_{\\mathrm{sp}}^{-1}) \\sim N",
+    "meaning": "Gravitational cutoff lowered by N light species; equals inverse size of the minimal black hole whose entropy counts the species.",
+    "source": "dvali-three-scales-2024",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "universal-pattern-formula",
+    "name": "Universal Pattern at Infinite Distance",
+    "latex": "\\frac{\\vec{\\nabla} m}{m}\\cdot\\frac{\\vec{\\nabla}\\Lambda_{\\mathrm{sp}}}{\\Lambda_{\\mathrm{sp}}} \\;=\\; \\frac{1}{d-2}",
+    "meaning": "Universal product of the logarithmic field-space gradients of tower mass and species scale in d dimensions; sharpens the SDC and bounds decay rates.",
+    "source": "castellano-ruiz-valenzuela-2023",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "de-sitter-refined",
+    "name": "Refined de Sitter Conjecture",
+    "latex": "|\\nabla V| \\ge \\frac{c}{M_{\\mathrm{Pl}}} V \\quad\\text{OR}\\quad \\min(\\nabla_i\\nabla_j V) \\le -\\frac{c'}{M_{\\mathrm{Pl}}^2} V,\\quad c,c'\\sim O(1)",
+    "meaning": "Scalar potential must be steep or tachyonic at positive V, forbidding metastable de Sitter minima but allowing maxima/saddles (quintessence).",
+    "source": "opsv-2018",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "tcc-bound",
+    "name": "Trans-Planckian Censorship Bound",
+    "latex": "\\frac{a(t_f)}{a(t_i)}\\, l_{\\mathrm{Pl}} < \\frac{1}{H_f} \\;\\Rightarrow\\; \\frac{|\\nabla V|}{V} \\ge \\frac{2}{\\sqrt{(d-1)(d-2)}}\\frac{1}{M_{\\mathrm{Pl}}}\\ \\ (\\text{stretch}),\\quad \\ge \\frac{2}{\\sqrt{d-2}}\\frac{1}{M_{\\mathrm{Pl}}}\\ \\ (\\text{asymptotic})",
+    "meaning": "Sub-Planckian modes never cross the horizon; forces a steep potential. The bound over a monotonic stretch is 2/sqrt((d-1)(d-2)); the asymptotic large-field bound sharpens to 2/sqrt(d-2). Bounds the inflation scale to V^{1/4} <~ 10^9 GeV.",
+    "source": "bedroya-vafa-2019",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "festina-lente-formula",
+    "name": "Festina Lente Bound",
+    "latex": "m^2 \\;\\ge\\; \\sqrt{6}\\; g\\, q\\, M_{\\mathrm{Pl}}\\, H \\quad\\Longleftrightarrow\\quad m^4 \\ge 6\\,(g q\\, M_{\\mathrm{Pl}} H)^2 = 2\\,(g q)^2\\, V",
+    "meaning": "Lower mass bound on charged particles in quasi-de Sitter so charged Nariai black holes evaporate safely; forces EW breaking and non-abelian confinement above H. Using V = 3 M_Pl^2 H^2 the bound reads m^4 >= 2 (gq)^2 V.",
+    "source": "fl-pheno-2021",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "ads-distance-formula",
+    "name": "AdS Distance Conjecture",
+    "latex": "m \\;\\sim\\; M_{\\mathrm{Pl}}\\,\\left|\\frac{\\Lambda}{M_{\\mathrm{Pl}}^2}\\right|^{\\alpha},\\qquad \\alpha=\\tfrac{1}{2}\\ \\text{(SUSY)}",
+    "meaning": "Tower mass scales as a power of the (negative) cosmological constant; the flat-space limit of AdS is at infinite distance, constraining scale separation.",
+    "source": "lust-palti-vafa-2019",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "dark-dimension-formula",
+    "name": "Dark Dimension Size and Species Scale",
+    "latex": "\\ell \\sim \\lambda\\,\\Lambda^{-1/4} \\sim 1\\text{–}10\\,\\mu\\mathrm{m},\\qquad \\hat{M} = m^{1/3} M_{\\mathrm{Pl}}^{2/3} \\sim 10^{9\\text{–}10}\\,\\mathrm{GeV}",
+    "meaning": "From SDC with alpha=1/d and small dark energy: one mesoscopic extra dimension, KK tower at m=1/l ~ Lambda^{1/4} ~ meV, higher-dimensional Planck (species) scale ~10^9-10^10 GeV.",
+    "source": "montero-vafa-valenzuela-2022",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "wgc-kk-rate",
+    "name": "KK Tower Decay Rate",
+    "latex": "m_{\\mathrm{KK}} \\sim e^{-\\gamma \\phi},\\quad \\gamma = \\sqrt{\\tfrac{d-1}{d-2}}\\ \\ (n=1),\\quad \\gamma = \\sqrt{\\tfrac{d+n-2}{n(d-2)}}\\ \\ (\\text{general }n)",
+    "meaning": "Explicit SDC exponent for a Kaluza-Klein tower from decompactifying n extra dimensions under the canonical radion phi, giving an O(1) decay rate alpha = gamma. For a single extra dimension (n=1) this is sqrt((d-1)/(d-2)); in d=4 it equals sqrt(3/2).",
+    "source": "etheredge-sharpening-2022",
+    "pillars": [
+      "swampland"
+    ]
+  },
+  {
+    "id": "incidence-relation-formula",
+    "name": "Incidence relation",
+    "latex": "\\omega^A = i\\,x^{AA'}\\,\\pi_{A'},\\qquad Z^\\alpha=(\\omega^A,\\pi_{A'})",
+    "meaning": "A spacetime point x corresponds to a CP1 line in twistor space; a twistor Z corresponds to an alpha-plane. The core spacetime<->twistor dictionary (points<->lines).",
+    "source": "penrose-1967",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "penrose-transform-formula",
+    "name": "Penrose transform (cohomology)",
+    "latex": "\\{\\text{helicity-}h\\ \\text{fields}\\}\\ \\cong\\ H^1\\big(\\mathbb{PT},\\,\\mathcal{O}(-2h-2)\\big)",
+    "meaning": "Solutions of massless free field equations of helicity h are isomorphic to first sheaf cohomology of twistor space with the line bundle O(-2h-2); massless fields become free holomorphic data.",
+    "source": "atiyah-dunajski-mason-2017",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "nonlinear-graviton-asd",
+    "name": "Anti-self-duality of the Weyl tensor",
+    "latex": "C_{abcd} = -\\tfrac{1}{2}\\,\\epsilon_{ab}{}^{pq}\\,C_{cdpq}",
+    "meaning": "A three-parameter family of alpha-surfaces exists iff the Weyl tensor is anti-self-dual; ASD conformal curvature is fully encoded in twistor cohomology (nonlinear graviton). The integrable half of Einstein's equations.",
+    "source": "penrose-1976",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "spinor-helicity-decomp",
+    "name": "Spinor-helicity decomposition",
+    "latex": "p_{A\\dot A}=\\lambda_A\\tilde\\lambda_{\\dot A},\\quad \\langle ij\\rangle[ji]=2\\,p_i\\!\\cdot\\! p_j=s_{ij}",
+    "meaning": "A null momentum factorizes into holomorphic and anti-holomorphic 2-spinors; Lorentz invariants <ij>,[ij] build Mandelstam variables and make little-group weights manifest.",
+    "source": "elvang-huang-2013",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "parke-taylor",
+    "name": "Parke-Taylor MHV amplitude",
+    "latex": "A_n^{\\text{MHV}} = \\frac{\\langle ij\\rangle^4}{\\langle 12\\rangle\\langle 23\\rangle\\cdots\\langle n1\\rangle}",
+    "meaning": "The n-gluon color-ordered tree MHV amplitude (gluons i,j of negative helicity) as a single fraction; its holomorphy reflects localization on lines in twistor space.",
+    "source": "parke-taylor-1986",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "bcfw-shift",
+    "name": "BCFW recursion and shift",
+    "latex": "A_n=\\sum_{I,h} A_L(z_I)\\frac{1}{P_I^2}A_R(z_I),\\quad \\hat{\\tilde\\lambda}_i=\\tilde\\lambda_i+z\\tilde\\lambda_j,\\ \\hat\\lambda_j=\\lambda_j-z\\lambda_i",
+    "meaning": "Cauchy's theorem expresses the full amplitude as a sum over factorization-pole residues, i.e. products of lower-point on-shell subamplitudes; valid when A_n(z)->0 as z->infinity.",
+    "source": "bcfw-2005",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "klt-double-copy",
+    "name": "KLT / double-copy formula",
+    "latex": "M_n^{\\text{grav}}=\\sum_{\\sigma,\\tau}A_n(\\sigma)\\,S[\\sigma|\\tau]\\,\\tilde A_n(\\tau)=\\sum_i \\frac{n_i\\,\\tilde n_i}{D_i}",
+    "meaning": "Gravity amplitudes are squares of gauge-theory amplitudes: either via the KLT momentum kernel S, or in BCJ form by replacing color factors c_i with a second copy of kinematic numerators n_i.",
+    "source": "bcj-2008",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "scattering-equations-formula",
+    "name": "CHY scattering equations",
+    "latex": "\\sum_{j\\neq i}\\frac{p_i\\!\\cdot\\! p_j}{\\sigma_i-\\sigma_j}=0,\\quad A_n=\\int\\frac{d^n\\sigma}{\\mathrm{vol}\\,SL(2,\\mathbb{C})}\\,\\prod_i{}'\\delta\\Big(\\sum_{j\\neq i}\\tfrac{p_i\\cdot p_j}{\\sigma_{ij}}\\Big)\\mathcal{I}_n",
+    "meaning": "Massless tree S-matrix in any dimension as a moduli-space integral localized on (n-3)! solutions; the integrand I_n selects the theory (Parke-Taylor=YM, square=gravity).",
+    "source": "chy-2013",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "amplituhedron-form",
+    "name": "Amplituhedron canonical form",
+    "latex": "\\mathcal{A}_{n,k,L}\\subset Gr(k,k+4;L),\\qquad \\text{integrand}=\\Omega(\\mathcal{A}_{n,k,L})",
+    "meaning": "The planar N=4 SYM integrand is the canonical differential form Omega (log singularities only on boundaries) of the amplituhedron positive geometry; locality and unitarity follow from positivity.",
+    "source": "arkani-hamed-trnka-2013",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "w-infinity-algebra",
+    "name": "w(1+infinity) algebra",
+    "latex": "[w^p_m,\\,w^q_n]=\\big[m(q-1)-n(p-1)\\big]\\,w^{p+q-2}_{m+n}",
+    "meaning": "Commutation relations of the wedge subalgebra organizing the infinite tower of soft graviton theorems on the celestial sphere; the natural holomorphic symmetry of twistor space.",
+    "source": "strominger-2021",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "soft-graviton-theorem",
+    "name": "Weinberg soft graviton theorem",
+    "latex": "\\mathcal{M}_{n+1}\\xrightarrow{q\\to0}\\Big(\\sum_a \\frac{\\epsilon_{\\mu\\nu}p_a^\\mu p_a^\\nu}{p_a\\cdot q}\\Big)\\mathcal{M}_n + \\mathcal{O}(q^0)",
+    "meaning": "The leading behavior of an amplitude with one soft graviton (momentum q->0) factorizes universally; its subleading tower generates the celestial w(1+infinity) symmetry and is a Ward identity of BMS supertranslations.",
+    "source": "strominger-2017",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "ward-bundle",
+    "name": "Ward correspondence (bundle data)",
+    "latex": "\\{\\text{SD Yang-Mills}\\}\\ \\cong\\ \\{\\text{holomorphic bundles }E\\to\\mathbb{PT}\\ \\text{trivial on each }\\mathbb{CP}^1\\}",
+    "meaning": "Self-dual Yang-Mills solutions correspond to holomorphic vector bundles over twistor space trivial on every line; the twistor origin of gauge-theory integrability.",
+    "source": "ward-1977",
+    "pillars": [
+      "twistors-amplitudes"
+    ]
+  },
+  {
+    "id": "modular-polar-decomposition",
+    "name": "Tomita-Takesaki polar decomposition",
+    "latex": "S\\,a|\\Omega\\rangle = a^\\dagger|\\Omega\\rangle,\\qquad S = J\\,\\Delta^{1/2},\\qquad \\Delta^{it}\\,M\\,\\Delta^{-it} = M,\\quad J\\,M\\,J = M'",
+    "meaning": "The Tomita operator S of a cyclic-separating vector polar-decomposes into the modular conjugation J and the positive modular operator Delta. Delta generates the modular automorphism of M; J maps M onto its commutant M'. The whole of modular theory follows from this single decomposition.",
+    "source": "witten-2018",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "modular-flow-def",
+    "name": "Modular flow and modular Hamiltonian",
+    "latex": "\\sigma_t(a) = \\Delta^{it}\\,a\\,\\Delta^{-it},\\qquad \\Delta = e^{-K},\\qquad K = -\\log\\Delta",
+    "meaning": "The modular automorphism group sigma_t with generator the modular Hamiltonian K = -log Delta. For a thermal/reduced state K is the entanglement Hamiltonian; modular flow is the intrinsic 'time' a state defines on its algebra.",
+    "source": "witten-2018",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "kms-condition-formula",
+    "name": "KMS condition",
+    "latex": "\\langle A\\,\\sigma_t(B)\\rangle_\\omega = \\langle \\sigma_{t-i\\beta}(B)\\,A\\rangle_\\omega",
+    "meaning": "Equilibrium analyticity at inverse temperature beta. Every cyclic-separating state is KMS at beta=1 with respect to its own modular flow, identifying modular time with thermal time and the vacuum-on-a-wedge with an Unruh-thermal state.",
+    "source": "connes-rovelli-1994",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "bisognano-wichmann-formula",
+    "name": "Bisognano-Wichmann modular Hamiltonian",
+    "latex": "\\Delta_W^{it} = U(\\Lambda_W(2\\pi t)),\\qquad K_W = 2\\pi\\,\\hat{B}_W,\\qquad T_U = \\frac{\\hbar a}{2\\pi c\\,k_B}",
+    "meaning": "For a Rindler wedge in the Minkowski vacuum the modular flow is the boost Lorentz transformation Lambda_W and the modular Hamiltonian is 2 pi times the boost generator B_W; the wedge state is thermal at the Unruh temperature T_U. The bridge from abstract modular theory to spacetime geometry.",
+    "source": "witten-2018",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "connes-cocycle-formula",
+    "name": "Connes cocycle and Araki relative entropy",
+    "latex": "[D\\psi:D\\phi]_t = \\Delta_{\\psi|\\phi}^{it}\\,\\Delta_\\phi^{-it}\\in M,\\qquad S(\\psi\\|\\phi) = -\\langle\\psi|\\log\\Delta_{\\psi|\\phi}|\\psi\\rangle",
+    "meaning": "The Connes (Radon-Nikodym) cocycle relating the modular flows of two states lives inside M; Araki's relative entropy is built from the relative modular operator and is the t-derivative of the cocycle. UV-finite and state-independent, surviving even for type III algebras.",
+    "source": "witten-2018",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "crossed-product-def",
+    "name": "Crossed product converts type III_1 to type II",
+    "latex": "\\mathcal{N} = M \\rtimes_{\\sigma} \\mathbb{R} \\;\\text{ on } \\mathcal{H}\\otimes L^2(\\mathbb{R}),\\qquad M\\ \\text{type III}_1 \\;\\Rightarrow\\; \\mathcal{N}\\ \\text{type II}",
+    "meaning": "Adjoining the unitaries that implement the modular automorphism group sigma to a type III_1 factor M yields a type II crossed product N with a trace. Physically: adding an observer/clock with a Hamiltonian regulates the algebra so density matrices and entropy exist.",
+    "source": "witten-crossed-2021",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "type-ii-trace-entropy",
+    "name": "Type II trace and renormalized entropy",
+    "latex": "\\langle\\psi|a|\\psi\\rangle = \\mathrm{Tr}(\\rho_\\psi\\,a),\\qquad S(\\psi) = -\\mathrm{Tr}(\\rho_\\psi\\log\\rho_\\psi)\\ \\ (\\text{up to additive const})",
+    "meaning": "A type II factor's unique semifinite trace defines density matrices and a von Neumann entropy fixed only up to a state-independent additive constant -- exactly the renormalization ambiguity of generalized entropy.",
+    "source": "clpw-2022",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "jlms-formula",
+    "name": "JLMS relation",
+    "latex": "\\hat{K}_{\\text{bdy}} = \\frac{\\hat{A}}{4G_N} + \\hat{K}_{\\text{bulk}},\\qquad S_{\\text{rel}}^{\\text{bdy}} = S_{\\text{rel}}^{\\text{bulk}}",
+    "meaning": "Boundary modular Hamiltonian equals the area operator over 4G plus the bulk (entanglement-wedge) modular Hamiltonian; boundary and bulk relative entropies coincide. Algebraically the area operator is the central operator promoting bulk type III relative entropy to type II generalized entropy.",
+    "source": "jlms-2015",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "half-sided-modular-inclusion-formula",
+    "name": "Half-sided modular inclusion / positive translation",
+    "latex": "\\Delta_M^{it}\\,N\\,\\Delta_M^{-it}\\subset N\\ (t\\le 0)\\;\\Rightarrow\\; \\exists\\,U(s)=e^{iPs},\\ P\\ge 0,\\quad \\Delta_M^{it}U(s)\\Delta_M^{-it} = U(e^{-2\\pi t}s)",
+    "meaning": "Borchers-Wiesbrock: a half-sided modular inclusion forces a one-parameter translation group with a positive generator P obeying boost-translation commutation relations. Geometry and positive energy are reconstructed from two algebras and a vector -- the engine of emergent time and emergent horizons.",
+    "source": "leutheusser-liu-2021",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "modular-spectrum",
+    "name": "Connes modular spectrum invariant",
+    "latex": "S(M) = \\bigcap_{\\phi}\\,\\mathrm{Sp}(\\Delta_\\phi),\\qquad \\text{type III}_1 \\iff S(M)=[0,\\infty)",
+    "meaning": "The intersection over all faithful normal states of the modular spectra is a state-independent invariant; type III_1 (the QFT case) is characterized by S(M) = R_+ (all of the positive reals), the maximally chaotic class.",
+    "source": "connes-1973",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "ssee-formula",
+    "name": "Sorkin spacetime entanglement entropy",
+    "latex": "S = \\sum_\\lambda \\mu_\\lambda \\log|\\mu_\\lambda|,\\qquad W\\,v_\\lambda = \\mu_\\lambda\\,\\Delta_{PJ}\\,v_\\lambda",
+    "meaning": "SSEE from the generalized eigenvalues mu of the Wightman function W relative to the Pauli-Jordan (commutator) operator Delta_PJ. An area law follows only after a geometric truncation of near-zero modes; without truncation a volume law results. A causal-set/SJ-state route to regulated, region-based entropy.",
+    "source": "sorkin-yazdi-2016",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  },
+  {
+    "id": "large-n-type-transition",
+    "name": "Large-N algebra type transition",
+    "latex": "\\text{type I}\\ \\xrightarrow[\\ N\\to\\infty\\ ]{}\\ \\text{type III}_1\\ \\xrightarrow[\\ +1/N,\\ \\text{observer}\\ ]{}\\ \\text{type II}",
+    "meaning": "The boundary algebra runs from type I (finite N) to an emergent type III_1 (strict large N, sharp horizon) to type II (with the leading gravitational/observer correction), encoding the emergence of bulk locality, horizons and finite gravitational entropy.",
+    "source": "leutheusser-liu-emergent-2021",
+    "pillars": [
+      "von-neumann-algebras"
+    ]
+  }
+]

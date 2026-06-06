@@ -1,0 +1,872 @@
+{
+  "slug": "black-holes-information",
+  "name": "Black Hole Thermodynamics & the Information Paradox",
+  "concepts": [
+    {
+      "id": "bekenstein-hawking-entropy",
+      "name": "Bekenstein-Hawking entropy",
+      "definition": "The entropy of a black hole equals one quarter of its event-horizon area in Planck units, S = A/(4 G hbar). Proportionality to area (not volume) is the seed of the holographic principle.",
+      "relatedTo": ["hawking-radiation", "holographic-principle", "generalized-second-law", "bousso-bound", "strominger-vafa-counting"]
+    },
+    {
+      "id": "hawking-radiation",
+      "name": "Hawking radiation",
+      "definition": "Thermal radiation emitted by a black hole horizon, derived from quantum field theory in curved spacetime, with temperature T_H = hbar*kappa/(2*pi*k_B*c) proportional to surface gravity; nearly perfect blackbody spectrum modified by greybody factors.",
+      "relatedTo": ["bekenstein-hawking-entropy", "hawking-temperature", "information-paradox", "unruh-effect", "trans-planckian-problem"]
+    },
+    {
+      "id": "four-laws-black-hole-mechanics",
+      "name": "Four laws of black hole mechanics",
+      "definition": "Bardeen-Carter-Hawking analogues of thermodynamics: zeroth (kappa constant on horizon), first (dM = kappa/(8 pi G) dA + Omega dJ + Phi dQ), second (dA >= 0, Hawking area theorem), third (kappa cannot reach zero in finite steps).",
+      "relatedTo": ["bekenstein-hawking-entropy", "hawking-temperature", "generalized-second-law"]
+    },
+    {
+      "id": "generalized-second-law",
+      "name": "Generalized second law (GSL)",
+      "definition": "The sum of black-hole entropy and ordinary (von Neumann) entropy outside the horizon never decreases: d(S_BH + S_out) >= 0. Rescues the second law when matter falls behind the horizon; proven semiclassically by Wall (2012).",
+      "relatedTo": ["bekenstein-hawking-entropy", "four-laws-black-hole-mechanics", "bousso-bound"]
+    },
+    {
+      "id": "information-paradox",
+      "name": "Black hole information paradox",
+      "definition": "If Hawking radiation is exactly thermal and the black hole fully evaporates, an initial pure state evolves into a mixed state, apparently violating quantum unitarity. Sharpened by Mathur's theorem: growing entanglement between radiation and hole cannot decrease without O(1) corrections at the horizon.",
+      "relatedTo": ["hawking-radiation", "page-curve", "unitarity", "mathur-theorem", "central-dogma"]
+    },
+    {
+      "id": "page-curve",
+      "name": "Page curve",
+      "definition": "Time evolution of the fine-grained (von Neumann) entropy of Hawking radiation: for unitary evaporation it rises until the Page time (half the entropy radiated) then falls back to zero. Hawking's calculation gives monotonic growth instead - the conflict that defines the paradox.",
+      "relatedTo": ["page-time", "information-paradox", "island-formula", "quantum-extremal-surface", "unitarity"]
+    },
+    {
+      "id": "page-time",
+      "name": "Page time",
+      "definition": "The moment when the fine-grained entropy of Hawking radiation reaches its maximum and begins to decrease, occurring roughly halfway through evaporation when about half the initial Bekenstein-Hawking entropy has been radiated.",
+      "relatedTo": ["page-curve", "scrambling-time", "quantum-extremal-surface"]
+    },
+    {
+      "id": "black-hole-complementarity",
+      "name": "Black hole complementarity",
+      "definition": "Susskind-Thorlacius-Uglum proposal: an external observer sees information encoded in radiation on the stretched horizon while an infalling observer crosses smoothly; the two descriptions can never be operationally compared, so no contradiction arises.",
+      "relatedTo": ["firewall-paradox", "stretched-horizon", "er-epr", "information-paradox"]
+    },
+    {
+      "id": "firewall-paradox",
+      "name": "Firewall (AMPS) paradox",
+      "definition": "AMPS argument that purity of radiation, validity of effective field theory outside the horizon, and a smooth horizon cannot all hold, due to monogamy of entanglement; the most conservative resolution is that an infalling observer burns at a high-energy 'firewall' at the horizon.",
+      "relatedTo": ["black-hole-complementarity", "monogamy-of-entanglement", "er-epr", "page-time", "state-dependence"]
+    },
+    {
+      "id": "fuzzball",
+      "name": "Fuzzball / microstate geometry",
+      "definition": "In string theory each of the e^S black-hole microstates is a horizonless, non-singular supergravity solution resembling the black hole down to the horizon scale but differing in the interior; the 'fuzz' replaces the horizon so surface radiation carries information.",
+      "relatedTo": ["strominger-vafa-counting", "information-paradox", "bekenstein-hawking-entropy", "string-theory"]
+    },
+    {
+      "id": "soft-hair",
+      "name": "Soft hair",
+      "definition": "Zero-energy BMS supertranslation/superrotation charges (soft gravitons/photons) on the horizon implying infinitely many conservation laws; Hawking-Perry-Strominger proposed they store information on a holographic plate at the horizon's future boundary. Later shown insufficient alone (Bousso-Porrati).",
+      "relatedTo": ["bms-symmetry", "celestial-holography", "information-paradox", "asymptotic-symmetries"]
+    },
+    {
+      "id": "quantum-extremal-surface",
+      "name": "Quantum extremal surface (QES)",
+      "definition": "A surface extremizing the generalized entropy S_gen = Area(X)/(4 G) + S_semicl, then minimized; the Engelhardt-Wall quantum generalization of Ryu-Takayanagi/HRT surfaces used when bulk quantum corrections matter.",
+      "relatedTo": ["generalized-entropy", "island-formula", "ryu-takayanagi", "page-curve", "entanglement-wedge-reconstruction"]
+    },
+    {
+      "id": "island-formula",
+      "name": "Island formula",
+      "definition": "Prescription for the entropy of Hawking radiation: S(Rad) = min ext over islands I of [Area(boundary I)/(4 G) + S_semicl(Rad ∪ I)]. Before Page time the optimal island is empty; after Page time a nontrivial island inside the horizon lowers the entropy, reproducing the Page curve.",
+      "relatedTo": ["quantum-extremal-surface", "replica-wormholes", "page-curve", "entanglement-wedge-reconstruction", "generalized-entropy"]
+    },
+    {
+      "id": "replica-wormholes",
+      "name": "Replica wormholes",
+      "definition": "New saddle points of the gravitational path integral arising in the replica trick (Tr rho^n) that connect the different replica copies of spacetime; they dominate after the Page time and produce the island contribution upon continuation n -> 1.",
+      "relatedTo": ["island-formula", "gravitational-path-integral", "ensemble-averaging", "factorization-puzzle", "replica-trick"]
+    },
+    {
+      "id": "entanglement-wedge-reconstruction",
+      "name": "Entanglement wedge reconstruction",
+      "definition": "Bulk operators (including the black-hole interior) can be reconstructed from a boundary/radiation region once they lie in its entanglement wedge; realized as quantum error correction (Almheiri-Dong-Harlow) and the Petz map.",
+      "relatedTo": ["quantum-error-correction", "island-formula", "state-dependence", "pythons-lunch", "holography-of-information"]
+    },
+    {
+      "id": "state-dependence",
+      "name": "State dependence",
+      "definition": "Papadodimas-Raju proposal that operators describing the black-hole interior depend on the (micro)state of the black hole rather than being universal CFT operators; geometrized by the Python's lunch and tied to evading the typical-state firewall.",
+      "relatedTo": ["entanglement-wedge-reconstruction", "firewall-paradox", "pythons-lunch", "mirror-operators"]
+    },
+    {
+      "id": "holography-of-information",
+      "name": "Holography of information",
+      "definition": "Raju's principle that in quantum gravity a copy of all information on a Cauchy slice is available near its boundary; information cannot be localized in a compact bulk region. Used to critique islands in long-range gravity.",
+      "relatedTo": ["entanglement-wedge-reconstruction", "asymptotic-symmetries", "island-formula", "split-property"]
+    },
+    {
+      "id": "er-epr",
+      "name": "ER=EPR",
+      "definition": "Maldacena-Susskind conjecture that entanglement (EPR) is equivalent to a geometric Einstein-Rosen bridge (ER); maximally entangled black holes are connected by a wormhole. Proposed rescue from the firewall.",
+      "relatedTo": ["firewall-paradox", "entanglement-spacetime", "thermofield-double", "black-hole-complementarity"]
+    },
+    {
+      "id": "holographic-complexity",
+      "name": "Holographic complexity",
+      "definition": "Quantum computational complexity of a holographic state dual to interior geometry: complexity = volume (maximal slice) or complexity = action (Wheeler-DeWitt patch). Grows linearly for exponentially long time after entropy saturates, tracking interior volume growth.",
+      "relatedTo": ["scrambling-time", "pythons-lunch", "second-law-of-complexity", "er-epr"]
+    },
+    {
+      "id": "scrambling-time",
+      "name": "Scrambling time",
+      "definition": "Time t_* ~ (beta/2pi) ln S for a black hole to delocalize injected information across its degrees of freedom; black holes are the fastest scramblers and saturate the chaos bound lambda_L <= 2 pi T/hbar.",
+      "relatedTo": ["page-time", "chaos-bound", "holographic-complexity", "hayden-preskill"]
+    },
+    {
+      "id": "central-dogma",
+      "name": "Central dogma",
+      "definition": "Working hypothesis of the modern program: from the outside a black hole behaves as a quantum system with A/(4G) degrees of freedom evolving unitarily.",
+      "relatedTo": ["unitarity", "information-paradox", "holographic-principle", "page-curve"]
+    },
+    {
+      "id": "black-hole-remnant",
+      "name": "Black hole remnant",
+      "definition": "Hypothetical stable or long-lived Planck-scale object at the endpoint of evaporation that would store the information; suffers from infinite-production and infinite-degeneracy problems (Susskind).",
+      "relatedTo": ["information-paradox", "evaporation-endpoint", "swampland"]
+    },
+    {
+      "id": "quantum-error-correction",
+      "name": "Quantum error correction in holography",
+      "definition": "Almheiri-Dong-Harlow: bulk locality in AdS/CFT is realized as a quantum error-correcting code, where a bulk operator is reconstructible on multiple boundary subsystems; the interior is encoded in early radiation.",
+      "relatedTo": ["entanglement-wedge-reconstruction", "tensor-networks", "pythons-lunch", "hayden-preskill"]
+    },
+    {
+      "id": "generalized-entropy",
+      "name": "Generalized entropy",
+      "definition": "S_gen(X) = Area(X)/(4 G) + S_semicl(Sigma_X): geometric area term plus von Neumann entropy of quantum fields in the region bounded by X. Extremized/minimized in the QES prescription; identified with a type II von Neumann algebra entropy in the algebraic approach.",
+      "relatedTo": ["quantum-extremal-surface", "island-formula", "von-neumann-algebras", "bekenstein-hawking-entropy"]
+    },
+    {
+      "id": "ensemble-averaging",
+      "name": "Ensemble averaging / baby universes",
+      "definition": "Gravitational path integral with wormhole topologies appears to compute ensemble averages of theories (Saad-Shenker-Stanford: JT gravity = matrix integral); Marolf-Maxfield formalize this via alpha-states in a baby-universe Hilbert space, leading to the factorization puzzle.",
+      "relatedTo": ["replica-wormholes", "factorization-puzzle", "gravitational-path-integral", "jt-gravity"]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "bekenstein-hawking-entropy-formula",
+      "name": "Bekenstein-Hawking entropy",
+      "latex": "S_{BH} = \\frac{k_B c^3 A}{4 G \\hbar} = \\frac{A}{4 G \\hbar}",
+      "meaning": "Black hole entropy equals one quarter of the horizon area in Planck units; area-scaling is the mathematical seed of the holographic principle.",
+      "source": "bekenstein-1973"
+    },
+    {
+      "id": "hawking-temperature-formula",
+      "name": "Hawking temperature",
+      "latex": "T_H = \\frac{\\hbar \\kappa}{2\\pi k_B c} = \\frac{\\hbar c^3}{8\\pi G M k_B}",
+      "meaning": "Temperature of black-hole radiation, proportional to surface gravity kappa; inversely proportional to mass (Schwarzschild), giving negative heat capacity.",
+      "source": "hawking-1975"
+    },
+    {
+      "id": "first-law-bh-mechanics",
+      "name": "First law of black hole mechanics",
+      "latex": "dM = \\frac{\\kappa}{8\\pi G}\\, dA + \\Omega\\, dJ + \\Phi\\, dQ",
+      "meaning": "Energy balance for black holes; comparison with dE = T dS identifies T with kappa/(2pi) and S with A/(4G).",
+      "source": "bardeen-carter-hawking-1973"
+    },
+    {
+      "id": "generalized-second-law-formula",
+      "name": "Generalized second law",
+      "latex": "\\frac{d}{dt}\\left( S_{BH} + S_{\\text{matter,out}} \\right) \\geq 0",
+      "meaning": "Total of horizon entropy and exterior matter/radiation entropy never decreases, preserving thermodynamics when matter falls behind the horizon.",
+      "source": "bekenstein-1973"
+    },
+    {
+      "id": "generalized-entropy-formula",
+      "name": "Generalized entropy",
+      "latex": "S_{\\text{gen}}(X) = \\frac{\\mathrm{Area}(X)}{4 G_N} + S_{\\text{semi-cl}}(\\Sigma_X)",
+      "meaning": "Sum of geometric area term and von Neumann entropy of bulk quantum fields; the quantity extremized in the QES prescription.",
+      "source": "engelhardt-wall-2015"
+    },
+    {
+      "id": "quantum-extremal-surface-formula",
+      "name": "Quantum extremal surface rule",
+      "latex": "S = \\min_{X}\\, \\mathrm{ext}_{X} \\left[ \\frac{\\mathrm{Area}(X)}{4 G_N} + S_{\\text{semi-cl}}(\\Sigma_X) \\right]",
+      "meaning": "Entropy computed by extremizing generalized entropy over candidate surfaces X, then taking the minimum; quantum generalization of Ryu-Takayanagi.",
+      "source": "engelhardt-wall-2015"
+    },
+    {
+      "id": "island-formula-latex",
+      "name": "Island formula",
+      "latex": "S(\\text{Rad}) = \\min\\, \\mathrm{ext}_{I} \\left[ \\frac{\\mathrm{Area}(\\partial I)}{4 G_N} + S_{\\text{semi-cl}}(\\Sigma_{\\text{Rad}} \\cup \\Sigma_{I}) \\right]",
+      "meaning": "Entropy of Hawking radiation including an island I inside the black hole; a nontrivial island after the Page time reproduces the Page curve.",
+      "source": "almheiri-mahajan-maldacena-zhao-2020"
+    },
+    {
+      "id": "replica-renyi-formula",
+      "name": "Renyi entropy and replica trick",
+      "latex": "S_n = -\\frac{1}{n-1}\\ln \\mathrm{Tr}\\,\\rho^n, \\qquad S = \\lim_{n\\to 1} S_n = -\\mathrm{Tr}\\,\\rho\\ln\\rho",
+      "meaning": "Replica trick computing entropy from Tr rho^n; in gravity each power is a path integral over n replicas, and replica-wormhole saddles give the island contribution as n -> 1.",
+      "source": "penington-shenker-stanford-yang-2022"
+    },
+    {
+      "id": "scrambling-time-formula",
+      "name": "Scrambling time",
+      "latex": "t_* \\sim \\frac{\\beta}{2\\pi}\\ln S_{BH} = \\frac{1}{2\\pi T_H}\\ln S_{BH}",
+      "meaning": "Logarithmically short time for an old (post-Page) black hole to re-emit injected information; black holes are fastest scramblers.",
+      "source": "hayden-preskill-2007"
+    },
+    {
+      "id": "strominger-vafa-formula",
+      "name": "Strominger-Vafa microstate entropy",
+      "latex": "S_{\\text{micro}} = 2\\pi\\sqrt{Q_1 Q_5 N} = \\frac{A}{4G}",
+      "meaning": "Counting BPS D-brane bound states (D1-D5-P) at weak coupling exactly reproduces the Bekenstein-Hawking entropy at strong coupling.",
+      "source": "strominger-vafa-1996"
+    },
+    {
+      "id": "mathur-bound",
+      "name": "Mathur small-corrections inequality",
+      "latex": "S_{N+1} > S_N + \\ln 2 - 2\\epsilon",
+      "meaning": "If corrections to Hawking's computation are parametrically small (epsilon), entanglement entropy grows monotonically and cannot turn over; via strong subadditivity, resolving the paradox requires O(1) corrections at the horizon.",
+      "source": "mathur-2009"
+    },
+    {
+      "id": "evaporation-lifetime",
+      "name": "Mass-loss rate and evaporation time",
+      "latex": "\\frac{dM}{dt} = -\\frac{\\hbar c^4}{15360\\,\\pi\\, G^2 M^2}, \\qquad t_{\\text{evap}} \\sim \\frac{5120\\,\\pi\\, G^2 M^3}{\\hbar c^4}",
+      "meaning": "Stefan-Boltzmann mass loss for Hawking radiation; lifetime scales as M^3, so primordial black holes below ~10^15 g have already evaporated.",
+      "source": "page-1976"
+    },
+    {
+      "id": "chaos-bound-formula",
+      "name": "Chaos bound (MSS)",
+      "latex": "\\lambda_L \\leq \\frac{2\\pi k_B T}{\\hbar}",
+      "meaning": "Upper bound on the Lyapunov exponent of out-of-time-order correlators; black holes saturate it, being maximally chaotic.",
+      "source": "maldacena-shenker-stanford-2016"
+    },
+    {
+      "id": "holographic-complexity-formula",
+      "name": "Holographic complexity (CV and CA)",
+      "latex": "\\mathcal{C}_V = \\max \\frac{V(\\Sigma)}{G_N \\ell}, \\qquad \\mathcal{C}_A = \\frac{I_{\\text{WdW}}}{\\pi \\hbar}",
+      "meaning": "Complexity = volume of maximal slice, or complexity = action of the Wheeler-DeWitt patch; grows for time ~ e^S after entropy saturates, describing interior growth.",
+      "source": "brown-roberts-susskind-swingle-zhao-2016"
+    },
+    {
+      "id": "bekenstein-bound-formula",
+      "name": "Bekenstein bound",
+      "latex": "S \\leq \\frac{2\\pi k_B R E}{\\hbar c}",
+      "meaning": "Maximum entropy in a region of radius R and energy E; precursor to area-scaling and the holographic / covariant Bousso bound.",
+      "source": "bousso-2002"
+    },
+    {
+      "id": "thermofield-double-state",
+      "name": "Thermofield double state",
+      "latex": "|\\text{TFD}\\rangle = \\frac{1}{\\sqrt{Z}}\\sum_n e^{-\\beta E_n/2}\\,|n\\rangle_L\\,|n\\rangle_R",
+      "meaning": "Entangled state of two copies of a system, dual to the eternal AdS black hole whose two exteriors are joined by an Einstein-Rosen bridge; prototype of ER=EPR.",
+      "source": "maldacena-2003"
+    }
+  ],
+  "references": [
+    {
+      "id": "bekenstein-1973",
+      "authors": "J. D. Bekenstein",
+      "title": "Black Holes and Entropy",
+      "year": 1973,
+      "doi": "10.1103/PhysRevD.7.2333",
+      "url": "https://doi.org/10.1103/PhysRevD.7.2333",
+      "significance": "Introduces black-hole entropy proportional to horizon area and the generalized second law."
+    },
+    {
+      "id": "bardeen-carter-hawking-1973",
+      "authors": "J. M. Bardeen, B. Carter, S. W. Hawking",
+      "title": "The Four Laws of Black Hole Mechanics",
+      "year": 1973,
+      "doi": "10.1007/BF01645742",
+      "url": "https://link.springer.com/article/10.1007/BF01645742",
+      "significance": "Formulates the four laws of black-hole mechanics as analogues of thermodynamics."
+    },
+    {
+      "id": "hawking-1975",
+      "authors": "S. W. Hawking",
+      "title": "Particle Creation by Black Holes",
+      "year": 1975,
+      "doi": "10.1007/BF02345020",
+      "url": "https://link.springer.com/article/10.1007/BF02345020",
+      "significance": "Derives Hawking radiation and temperature, turning the thermodynamic analogy into real thermodynamics."
+    },
+    {
+      "id": "hawking-1976",
+      "authors": "S. W. Hawking",
+      "title": "Breakdown of Predictability in Gravitational Collapse",
+      "year": 1976,
+      "doi": "10.1103/PhysRevD.14.2460",
+      "url": "https://link.aps.org/doi/10.1103/PhysRevD.14.2460",
+      "significance": "Original statement of the information paradox: pure state evolves to mixed thermal state."
+    },
+    {
+      "id": "page-1976",
+      "authors": "D. N. Page",
+      "title": "Particle Emission Rates from a Black Hole",
+      "year": 1976,
+      "doi": "10.1103/PhysRevD.13.198",
+      "url": "https://doi.org/10.1103/PhysRevD.13.198",
+      "significance": "Computes greybody factors and the precise evaporation rate, fixing the M^3 lifetime."
+    },
+    {
+      "id": "page-1993a",
+      "authors": "D. N. Page",
+      "title": "Average Entropy of a Subsystem",
+      "year": 1993,
+      "arxiv": "gr-qc/9305007",
+      "doi": "10.1103/PhysRevLett.71.1291",
+      "url": "https://arxiv.org/abs/gr-qc/9305007",
+      "significance": "Random-subsystem entropy statistics underlying the Page curve."
+    },
+    {
+      "id": "page-1993b",
+      "authors": "D. N. Page",
+      "title": "Information in Black Hole Radiation",
+      "year": 1993,
+      "arxiv": "hep-th/9306083",
+      "doi": "10.1103/PhysRevLett.71.3743",
+      "url": "https://arxiv.org/abs/hep-th/9306083",
+      "significance": "Defines the Page curve and Page time for unitary evaporation."
+    },
+    {
+      "id": "susskind-thorlacius-uglum-1993",
+      "authors": "L. Susskind, L. Thorlacius, J. Uglum",
+      "title": "The Stretched Horizon and Black Hole Complementarity",
+      "year": 1993,
+      "arxiv": "hep-th/9306069",
+      "doi": "10.1103/PhysRevD.48.3743",
+      "url": "https://arxiv.org/abs/hep-th/9306069",
+      "significance": "Proposes black-hole complementarity and the stretched horizon."
+    },
+    {
+      "id": "strominger-vafa-1996",
+      "authors": "A. Strominger, C. Vafa",
+      "title": "Microscopic Origin of the Bekenstein-Hawking Entropy",
+      "year": 1996,
+      "arxiv": "hep-th/9601029",
+      "doi": "10.1016/0370-2693(96)00345-0",
+      "url": "https://arxiv.org/abs/hep-th/9601029",
+      "significance": "First microscopic derivation of A/4G by counting BPS D-brane states in string theory."
+    },
+    {
+      "id": "maldacena-2003",
+      "authors": "J. Maldacena",
+      "title": "Eternal Black Holes in Anti-de-Sitter",
+      "year": 2003,
+      "arxiv": "hep-th/0106112",
+      "doi": "10.1088/1126-6708/2003/04/021",
+      "url": "https://arxiv.org/abs/hep-th/0106112",
+      "significance": "Eternal AdS black hole = thermofield double; prototype of ER=EPR and unitarity via Euclidean path integral."
+    },
+    {
+      "id": "hayden-preskill-2007",
+      "authors": "P. Hayden, J. Preskill",
+      "title": "Black Holes as Mirrors: Quantum Information in Random Subsystems",
+      "year": 2007,
+      "arxiv": "0708.4025",
+      "doi": "10.1088/1126-6708/2007/09/120",
+      "url": "https://arxiv.org/abs/0708.4025",
+      "significance": "Shows old black holes rapidly re-emit injected information after the scrambling time."
+    },
+    {
+      "id": "mathur-2009",
+      "authors": "S. D. Mathur",
+      "title": "The Information Paradox: A Pedagogical Introduction",
+      "year": 2009,
+      "arxiv": "0909.1038",
+      "doi": "10.1088/0264-9381/26/22/224001",
+      "url": "https://arxiv.org/abs/0909.1038",
+      "significance": "Theorem that small corrections cannot resolve the paradox; uses strong subadditivity."
+    },
+    {
+      "id": "mathur-2008-fuzzball",
+      "authors": "S. D. Mathur",
+      "title": "Fuzzballs and the Information Paradox: A Summary and Conjectures",
+      "year": 2008,
+      "arxiv": "0810.4525",
+      "url": "https://arxiv.org/abs/0810.4525",
+      "significance": "Overview of the fuzzball program as a string-theory resolution of the paradox."
+    },
+    {
+      "id": "amps-2013",
+      "authors": "A. Almheiri, D. Marolf, J. Polchinski, J. Sully",
+      "title": "Black Holes: Complementarity or Firewalls?",
+      "year": 2013,
+      "arxiv": "1207.3123",
+      "doi": "10.1007/JHEP02(2013)062",
+      "url": "https://arxiv.org/abs/1207.3123",
+      "significance": "The firewall (AMPS) paradox: complementarity postulates are mutually inconsistent via entanglement monogamy."
+    },
+    {
+      "id": "maldacena-susskind-2013",
+      "authors": "J. Maldacena, L. Susskind",
+      "title": "Cool Horizons for Entangled Black Holes",
+      "year": 2013,
+      "arxiv": "1306.0533",
+      "doi": "10.1002/prop.201300020",
+      "url": "https://arxiv.org/abs/1306.0533",
+      "significance": "ER=EPR conjecture linking entanglement to wormhole geometry."
+    },
+    {
+      "id": "papadodimas-raju-2013",
+      "authors": "K. Papadodimas, S. Raju",
+      "title": "An Infalling Observer in AdS/CFT",
+      "year": 2013,
+      "arxiv": "1211.6767",
+      "doi": "10.1007/JHEP10(2013)212",
+      "url": "https://arxiv.org/abs/1211.6767",
+      "significance": "State-dependent interior operators (mirror operators) reconstructing a smooth interior."
+    },
+    {
+      "id": "engelhardt-wall-2015",
+      "authors": "N. Engelhardt, A. C. Wall",
+      "title": "Quantum Extremal Surfaces: Holographic Entanglement Entropy beyond the Classical Regime",
+      "year": 2015,
+      "arxiv": "1408.3203",
+      "doi": "10.1007/JHEP01(2015)073",
+      "url": "https://arxiv.org/abs/1408.3203",
+      "significance": "Defines the quantum extremal surface, the central tool of the island program."
+    },
+    {
+      "id": "almheiri-dong-harlow-2015",
+      "authors": "A. Almheiri, X. Dong, D. Harlow",
+      "title": "Bulk Locality and Quantum Error Correction in AdS/CFT",
+      "year": 2015,
+      "arxiv": "1411.7041",
+      "doi": "10.1007/JHEP04(2015)163",
+      "url": "https://arxiv.org/abs/1411.7041",
+      "significance": "Frames bulk reconstruction as quantum error correction; foundation of entanglement-wedge reconstruction."
+    },
+    {
+      "id": "hps-2016",
+      "authors": "S. W. Hawking, M. J. Perry, A. Strominger",
+      "title": "Soft Hair on Black Holes",
+      "year": 2016,
+      "arxiv": "1601.00921",
+      "doi": "10.1103/PhysRevLett.116.231301",
+      "url": "https://arxiv.org/abs/1601.00921",
+      "significance": "Proposes soft (BMS supertranslation) hair as a store of horizon information."
+    },
+    {
+      "id": "maldacena-shenker-stanford-2016",
+      "authors": "J. Maldacena, S. H. Shenker, D. Stanford",
+      "title": "A Bound on Chaos",
+      "year": 2016,
+      "arxiv": "1503.01409",
+      "doi": "10.1007/JHEP08(2016)106",
+      "url": "https://arxiv.org/abs/1503.01409",
+      "significance": "Proves the chaos bound lambda_L <= 2 pi T/hbar, saturated by black holes."
+    },
+    {
+      "id": "brown-roberts-susskind-swingle-zhao-2016",
+      "authors": "A. R. Brown, D. A. Roberts, L. Susskind, B. Swingle, Y. Zhao",
+      "title": "Complexity, Action, and Black Holes",
+      "year": 2016,
+      "arxiv": "1512.04993",
+      "doi": "10.1103/PhysRevD.93.086006",
+      "url": "https://arxiv.org/abs/1512.04993",
+      "significance": "Complexity = action conjecture describing interior growth long after entropy saturates."
+    },
+    {
+      "id": "penington-2020",
+      "authors": "G. Penington",
+      "title": "Entanglement Wedge Reconstruction and the Information Paradox",
+      "year": 2020,
+      "arxiv": "1905.08255",
+      "doi": "10.1007/JHEP09(2020)002",
+      "url": "https://arxiv.org/abs/1905.08255",
+      "significance": "QES phase transition at the Page time giving the Page curve without a firewall."
+    },
+    {
+      "id": "aemm-2019",
+      "authors": "A. Almheiri, N. Engelhardt, D. Marolf, H. Maxfield",
+      "title": "The Entropy of Bulk Quantum Fields and the Entanglement Wedge of an Evaporating Black Hole",
+      "year": 2019,
+      "arxiv": "1905.08762",
+      "doi": "10.1007/JHEP12(2019)063",
+      "url": "https://arxiv.org/abs/1905.08762",
+      "significance": "Independent QES phase transition reproducing the Page curve and the island concept."
+    },
+    {
+      "id": "almheiri-mahajan-maldacena-zhao-2020",
+      "authors": "A. Almheiri, R. Mahajan, J. Maldacena, Y. Zhao",
+      "title": "The Page Curve of Hawking Radiation from Semiclassical Geometry",
+      "year": 2020,
+      "arxiv": "1908.10996",
+      "doi": "10.1007/JHEP03(2020)149",
+      "url": "https://arxiv.org/abs/1908.10996",
+      "significance": "States the island rule and derives the Page curve in a doubly-holographic setup."
+    },
+    {
+      "id": "penington-shenker-stanford-yang-2022",
+      "authors": "G. Penington, S. H. Shenker, D. Stanford, Z. Yang",
+      "title": "Replica Wormholes and the Black Hole Interior",
+      "year": 2022,
+      "arxiv": "1911.11977",
+      "doi": "10.1007/JHEP03(2022)205",
+      "url": "https://arxiv.org/abs/1911.11977",
+      "significance": "Derives islands from replica-wormhole saddles of the gravitational path integral."
+    },
+    {
+      "id": "ahmst-2021",
+      "authors": "A. Almheiri, T. Hartman, J. Maldacena, E. Shaghoulian, A. Tajdini",
+      "title": "The Entropy of Hawking Radiation",
+      "year": 2021,
+      "arxiv": "2006.06872",
+      "doi": "10.1103/RevModPhys.93.035002",
+      "url": "https://arxiv.org/abs/2006.06872",
+      "significance": "Authoritative review of islands, the central dogma, and the Page curve; states what is and is not resolved."
+    },
+    {
+      "id": "saad-shenker-stanford-2019",
+      "authors": "P. Saad, S. H. Shenker, D. Stanford",
+      "title": "JT Gravity as a Matrix Integral",
+      "year": 2019,
+      "arxiv": "1903.11115",
+      "url": "https://arxiv.org/abs/1903.11115",
+      "significance": "Shows 2D JT gravity with wormholes equals a matrix integral, making ensemble averaging explicit."
+    },
+    {
+      "id": "marolf-maxfield-2020",
+      "authors": "D. Marolf, H. Maxfield",
+      "title": "Transcending the Ensemble: Baby Universes, Spacetime Wormholes, and the Order and Disorder of Black Hole Information",
+      "year": 2020,
+      "arxiv": "2002.08950",
+      "doi": "10.1007/JHEP08(2020)044",
+      "url": "https://arxiv.org/abs/2002.08950",
+      "significance": "Ensemble interpretation via alpha-states in a baby-universe Hilbert space; addresses factorization."
+    },
+    {
+      "id": "geng-karch-2020",
+      "authors": "H. Geng, A. Karch",
+      "title": "Massive Islands",
+      "year": 2020,
+      "arxiv": "2006.02438",
+      "doi": "10.1007/JHEP09(2020)121",
+      "url": "https://arxiv.org/abs/2006.02438",
+      "significance": "Massive-islands conjecture: reliable Page-curve calculations in d>2 use a massive graviton."
+    },
+    {
+      "id": "raju-2022",
+      "authors": "S. Raju",
+      "title": "Lessons from the Information Paradox",
+      "year": 2022,
+      "arxiv": "2012.05770",
+      "doi": "10.1016/j.physrep.2021.10.001",
+      "url": "https://arxiv.org/abs/2012.05770",
+      "significance": "Holography of information; critique of islands and a comprehensive review."
+    },
+    {
+      "id": "geng-karch-et-al-2022",
+      "authors": "H. Geng, A. Karch, C. Perez-Pardavila, S. Raju, L. Randall, M. Riojas, S. Shashi",
+      "title": "Inconsistency of Islands in Theories with Long-Range Gravity",
+      "year": 2022,
+      "arxiv": "2107.03390",
+      "doi": "10.1007/JHEP01(2022)182",
+      "url": "https://arxiv.org/abs/2107.03390",
+      "significance": "Argues islands are inconsistent with long-range gravity via the gravitational Gauss law and split property."
+    },
+    {
+      "id": "antonini-chen-maxfield-penington-2025",
+      "authors": "S. Antonini, C.-H. Chen, H. Maxfield, G. Penington",
+      "title": "An Apologia for Islands",
+      "year": 2025,
+      "arxiv": "2506.04311",
+      "doi": "10.1007/JHEP10(2025)034",
+      "url": "https://arxiv.org/abs/2506.04311",
+      "significance": "Defends islands for massless gravitons without an external bath; argues the Page curve is physically observable."
+    },
+    {
+      "id": "chandrasekaran-penington-witten-2023",
+      "authors": "V. Chandrasekaran, G. Penington, E. Witten",
+      "title": "Large N Algebras and Generalized Entropy",
+      "year": 2023,
+      "arxiv": "2209.10454",
+      "doi": "10.1007/JHEP04(2023)009",
+      "url": "https://arxiv.org/abs/2209.10454",
+      "significance": "Identifies generalized entropy with a type II von Neumann algebra entropy via crossed product."
+    },
+    {
+      "id": "hollands-wald-zhang-2024",
+      "authors": "S. Hollands, R. M. Wald, V. G. Zhang",
+      "title": "Entropy of Dynamical Black Holes",
+      "year": 2024,
+      "doi": "10.1103/PhysRevD.110.024070",
+      "url": "https://journals.aps.org/prd/abstract/10.1103/PhysRevD.110.024070",
+      "significance": "Derives a dynamical black-hole entropy with a nontrivial correction term in non-stationary eras."
+    },
+    {
+      "id": "wallace-2020",
+      "authors": "D. Wallace",
+      "title": "Why Black Hole Information Loss is Paradoxical",
+      "year": 2020,
+      "arxiv": "1710.03783",
+      "url": "https://arxiv.org/abs/1710.03783",
+      "significance": "Philosophical analysis distinguishing weak (global) and strong (statistical-mechanical) versions of the paradox."
+    },
+    {
+      "id": "bena-mathur-warner-2022",
+      "authors": "I. Bena, E. J. Martinec, S. D. Mathur, N. P. Warner",
+      "title": "Fuzzballs and Microstate Geometries: Black-Hole Structure in String Theory",
+      "year": 2022,
+      "arxiv": "2204.13113",
+      "url": "https://arxiv.org/abs/2204.13113",
+      "significance": "Modern review of fuzzballs and microstate geometries; argues horizons arise from too few degrees of freedom."
+    },
+    {
+      "id": "susskind-1995-remnants",
+      "authors": "L. Susskind",
+      "title": "Trouble for Remnants",
+      "year": 1995,
+      "arxiv": "hep-th/9501106",
+      "url": "https://arxiv.org/abs/hep-th/9501106",
+      "significance": "Argument against stable remnants via infinite production and degeneracy."
+    },
+    {
+      "id": "wald-2001",
+      "authors": "R. M. Wald",
+      "title": "The Thermodynamics of Black Holes",
+      "year": 2001,
+      "doi": "10.12942/lrr-2001-6",
+      "url": "https://link.springer.com/article/10.12942/lrr-2001-6",
+      "significance": "Living Reviews reference on black-hole thermodynamics."
+    },
+    {
+      "id": "jacobson-1995",
+      "authors": "T. Jacobson",
+      "title": "Thermodynamics of Spacetime: The Einstein Equation of State",
+      "year": 1995,
+      "arxiv": "gr-qc/9504004",
+      "doi": "10.1103/PhysRevLett.75.1260",
+      "url": "https://arxiv.org/abs/gr-qc/9504004",
+      "significance": "Derives the Einstein equations from horizon thermodynamics; basis of emergent gravity."
+    },
+    {
+      "id": "wall-2012-gsl",
+      "authors": "A. C. Wall",
+      "title": "A Proof of the Generalized Second Law for Rapidly Changing Fields and Arbitrary Horizon Slices",
+      "year": 2012,
+      "arxiv": "1105.3445",
+      "doi": "10.1103/PhysRevD.85.104049",
+      "url": "https://arxiv.org/abs/1105.3445",
+      "significance": "Rigorous semiclassical proof of the generalized second law."
+    },
+    {
+      "id": "bousso-2002",
+      "authors": "R. Bousso",
+      "title": "The Holographic Principle",
+      "year": 2002,
+      "arxiv": "hep-th/0203101",
+      "doi": "10.1103/RevModPhys.74.825",
+      "url": "https://arxiv.org/abs/hep-th/0203101",
+      "significance": "Covariant entropy (Bousso) bound; precise statement of the holographic principle."
+    },
+    {
+      "id": "sen-2013",
+      "authors": "A. Sen",
+      "title": "Logarithmic Corrections to N=2 Black Hole Entropy: An Infrared Window into the Microstates",
+      "year": 2013,
+      "arxiv": "1108.3842",
+      "doi": "10.1007/s10714-012-1336-5",
+      "url": "https://arxiv.org/abs/1108.3842",
+      "significance": "Universal logarithmic corrections to black-hole entropy testing one-loop quantum gravity."
+    },
+    {
+      "id": "unruh-1981",
+      "authors": "W. G. Unruh",
+      "title": "Experimental Black-Hole Evaporation?",
+      "year": 1981,
+      "doi": "10.1103/PhysRevLett.46.1351",
+      "url": "https://doi.org/10.1103/PhysRevLett.46.1351",
+      "significance": "Analogue gravity (dumb holes) and the trans-Planckian robustness question for Hawking radiation."
+    }
+  ],
+  "openProblems": [
+    {
+      "id": "information-escape-mechanism",
+      "statement": "The island formula gives the entropy of the radiation but not its precise quantum state or the local mechanism by which interior information escapes the black hole.",
+      "whyHard": "Semiclassical effective field theory near the horizon offers no channel for escape; replica wormholes live in the path integral, not in any single spacetime.",
+      "attempts": "Entanglement-wedge reconstruction, Hayden-Preskill decoding, state dependence, Petz map."
+    },
+    {
+      "id": "factorization-puzzle",
+      "statement": "The gravitational path integral with wormholes implies ensemble averaging, yet a genuine CFT (as in AdS/CFT) is a single theory, not an ensemble; partition functions for disconnected boundaries fail to factorize.",
+      "whyHard": "Reconciling a single unitary theory with results that look like an ensemble average; defining which topologies and contours to include.",
+      "attempts": "Alpha-states, baby-universe Hilbert space, half-wormholes, JT-gravity matrix-integral models."
+    },
+    {
+      "id": "massive-vs-massless-graviton-islands",
+      "statement": "Do islands and the Page curve require a massive graviton or a non-dynamical bath, or do they hold in asymptotically flat space with long-range (massless) gravity?",
+      "whyHard": "Holography of information and the split property suggest information cannot be localized in a compact island when gravity is long-range.",
+      "attempts": "Massive islands conjecture (Geng-Karch), inconsistency arguments (Raju et al.), An Apologia for Islands (2025), calculations at null infinity."
+    },
+    {
+      "id": "interior-state-dependence",
+      "statement": "Are operators describing the black-hole interior necessarily state-dependent (Papadodimas-Raju), and is this compatible with ordinary quantum mechanics?",
+      "whyHard": "State dependence appears to conflict with the universality of quantum observables and the linearity of measurement.",
+      "attempts": "Papadodimas-Raju mirror operators, Python's lunch geometrization, critiques by Marolf-Polchinski."
+    },
+    {
+      "id": "evaporation-endpoint",
+      "statement": "What happens at the very endpoint of evaporation and at the singularity: a remnant, complete evaporation, or a transition to Planck-scale physics?",
+      "whyHard": "Requires full quantum gravity; remnants suffer infinite production and degeneracy, while complete disappearance must account for information in the last quanta.",
+      "attempts": "Remnant scenarios, fuzzball/microstate endpoints, swampland-style bounds against remnants."
+    },
+    {
+      "id": "unitary-s-matrix-construction",
+      "statement": "Can an explicit unitary S-matrix for black-hole formation and evaporation be constructed, giving the precise quantum state of the radiation?",
+      "whyHard": "No controlled calculation exists beyond semiclassics or low-dimensional (JT) models; superposing geometries is not understood.",
+      "attempts": "JT gravity, double-scaled SYK, microstate geometries, celestial S-matrix programs."
+    },
+    {
+      "id": "firewall-or-smooth-horizon",
+      "statement": "Is the horizon of an old black hole smooth, or is there a firewall / fuzz?",
+      "whyHard": "Entanglement monogamy (AMPS) pushes toward a firewall, while ER=EPR and islands claim the interior is not independent of the radiation.",
+      "attempts": "ER=EPR, A=R_B identification, island reconstruction without firewalls, fuzzball alternatives."
+    },
+    {
+      "id": "universality-across-dimensions",
+      "statement": "Most exact results are in 2D (JT) or doubly-holographic models; does the same picture hold for realistic 4D astrophysical (rotating, uncharged, asymmetric) black holes?",
+      "whyHard": "QES and islands are hard to compute without high symmetry or a holographic dual.",
+      "attempts": "Islands in Kerr/Schwarzschild, eternal AdS_d black holes, numerical relativity inputs."
+    },
+    {
+      "id": "path-integral-status",
+      "statement": "Which saddles (topologies, contours, replica wormholes) should be included in the gravitational path integral, and is the wormhole contribution real physics of a single theory or an artifact of averaging?",
+      "whyHard": "The gravitational path integral is not rigorously defined; contour choice (Kontsevich-Segal, Euclidean vs Lorentzian) is ambiguous.",
+      "attempts": "Half-wormholes, allowable complex metrics (Witten), constrained instantons."
+    },
+    {
+      "id": "entropy-interpretation-observer",
+      "statement": "The algebraic approach yields a type II von Neumann entropy only after choosing an observer; what is the correct fine-grained entropy and how does it relate to microstate counting (Strominger-Vafa, LQG)?",
+      "whyHard": "Different observers see different algebras; the relation of Wald's dynamical entropy to microstate counting is open.",
+      "attempts": "Crossed-product constructions, type II_1/II_infinity algebras, comparison with string and LQG microstate counts."
+    }
+  ],
+  "connections": [
+    {
+      "from": "black-holes-information",
+      "to": "holography-adscft",
+      "type": "shared-structure",
+      "description": "Tightest bridge: the Page curve, islands, and replica wormholes are derived inside AdS/CFT (RT/HRT, QES, entanglement wedge). The central dogma equates the exterior with a unitary boundary CFT; doubly-holographic / brane-world setups map QES to higher-dimensional RT surfaces. Strominger-Vafa entropy is near-horizon AdS3/CFT2. Open: the factorization puzzle (single theory vs ensemble).",
+      "explored": "well"
+    },
+    {
+      "from": "black-holes-information",
+      "to": "entanglement-spacetime",
+      "type": "shared-structure",
+      "description": "Entanglement builds geometry (Van Raamsdonk, Ryu-Takayanagi); ER=EPR directly identifies entanglement with wormholes; islands and entanglement wedges are the language of entanglement; generalized entropy = von Neumann entropy (algebraic approach). The mechanism by which entanglement sews the interior remains conceptually open.",
+      "explored": "well"
+    },
+    {
+      "from": "black-holes-information",
+      "to": "string-theory",
+      "type": "shared-structure",
+      "description": "Strominger-Vafa microstate counting gives A/4G (robust success); fuzzballs / microstate geometries (Mathur, Bena, Warner) propose a concrete string-theory resolution via horizonless microstates. The relation between fuzzballs and islands/replica wormholes (horizon-scale structure vs nonlocal entanglement) is only partially clarified.",
+      "explored": "partially"
+    },
+    {
+      "from": "black-holes-information",
+      "to": "semiclassical-gravity",
+      "type": "limit",
+      "description": "The paradox arises precisely in the semiclassical regime (QFT in curved spacetime); the island formula is itself a semiclassical computation (gravitational path integral + QFT entropy). Mathur's theorem delimits that small semiclassical corrections are insufficient. Key question: how far semiclassics reaches and where it breaks (trans-Planckian problem).",
+      "explored": "well"
+    },
+    {
+      "from": "black-holes-information",
+      "to": "loop-quantum-gravity",
+      "type": "shared-math",
+      "description": "LQG counts black-hole entropy from spin-network horizon microstates with the Barbero-Immirzi parameter tuned to A/4G. But links to the Page curve, islands, and unitary evaporation in LQG are essentially absent: LQG lacks a finished semiclassical evaporation picture and a holographic dictionary. Big opportunity: compare LQG horizon entropy with generalized / von Neumann-algebra entropy.",
+      "explored": "barely"
+    },
+    {
+      "from": "black-holes-information",
+      "to": "asymptotic-safety",
+      "type": "shared-structure",
+      "description": "Asymptotic safety gives a running G(k) and possible regular 'quantum-improved' black holes without singularities, possibly remnants. Connection to the information paradox and the Page curve is almost unexplored; open whether an RG-improved horizon changes the entanglement structure. Evidence is only qualitative (regular cores, possible remnants).",
+      "explored": "barely"
+    },
+    {
+      "from": "black-holes-information",
+      "to": "causal-sets",
+      "type": "shared-structure",
+      "description": "Causal set theory predicts horizon-entropy fluctuations and order-by-disorder counting of causal links across the horizon (Sorkin spacetime entropy). Links to the information paradox, Hawking radiation, and the Page curve are minimal. Shared theme: entropy from discrete horizon structure.",
+      "explored": "barely"
+    },
+    {
+      "from": "black-holes-information",
+      "to": "noncommutative-geometry",
+      "type": "shared-structure",
+      "description": "Noncommutative deformations of the horizon/spacetime modify the Hawking spectrum and can produce remnants (NC-inspired regular black holes). No connection to islands or replica wormholes. Evidence: modified evaporation in NC models.",
+      "explored": "barely"
+    },
+    {
+      "from": "black-holes-information",
+      "to": "twistors-amplitudes",
+      "type": "shared-math",
+      "description": "Soft hair (HPS) uses BMS asymptotic symmetries and soft theorems, connecting to celestial holography and scattering amplitudes; the holography of information (Raju) is closely tied to asymptotic symmetries in flat space. Active but not closed; soft hair alone shown insufficient to resolve the paradox.",
+      "explored": "partially"
+    },
+    {
+      "from": "black-holes-information",
+      "to": "swampland",
+      "type": "shared-structure",
+      "description": "Swampland criteria (weak gravity, distance conjecture) constrain the spectrum and may exclude certain remnants / infinite degeneracies, echoing Susskind's arguments against remnants. Direct connection to the Page curve is sparse. Evidence: anti-remnant arguments are swampland-like.",
+      "explored": "barely"
+    },
+    {
+      "from": "black-holes-information",
+      "to": "quantum-cosmology",
+      "type": "shared-structure",
+      "description": "The island construction extends to cosmological / de Sitter horizons; baby universes (Marolf-Maxfield) link to quantum cosmology. Open: whether a Page-curve analogue exists for de Sitter and what it means for information in cosmology.",
+      "explored": "partially"
+    },
+    {
+      "from": "black-holes-information",
+      "to": "emergent-gravity",
+      "type": "shared-structure",
+      "description": "Jacobson (1995) derives the Einstein equations from delta Q = T dS on Rindler horizons; Verlinde's entropic gravity. The information paradox tests whether gravity is genuinely emergent from entanglement; the mechanism of interior emergence from radiation is open.",
+      "explored": "partially"
+    },
+    {
+      "from": "black-holes-information",
+      "to": "supergravity-uv",
+      "type": "shared-structure",
+      "description": "Fuzzballs and microstate geometries are smooth horizonless supergravity solutions (BPS and non-BPS superstrata/microstrata); their count and existence are constrained by 10/11D SUGRA field content and SUSY. Sen's logarithmic corrections test one-loop SUGRA. Link to islands is indirect.",
+      "explored": "partially"
+    },
+    {
+      "from": "black-holes-information",
+      "to": "conceptual-problems",
+      "type": "shared-structure",
+      "description": "Wallace distinguishes weak (global non-hyperbolicity) and strong (statistical-mechanical) versions of the paradox, the latter genuinely paradoxical and arising well before full evaporation. Questions about the meaning of 'information', the status of unitarity, and the role of observers/measurement in the interior; the island program largely sidesteps rather than resolves these.",
+      "explored": "partially"
+    },
+    {
+      "from": "black-holes-information",
+      "to": "experimental-tests",
+      "type": "shared-structure",
+      "description": "Astrophysical Hawking radiation is unobservably weak (~10^-8 K for a solar mass). Analogue 'dumb holes' in BECs/water/optics (Unruh, Steinhauer) measure analogue Hawking temperature and correlations but not the information paradox or Page curve. Final bursts of primordial black holes are searched for in gamma rays without detection. Direct tests are out of reach; the link is minimal but conceptually important.",
+      "explored": "barely"
+    },
+    {
+      "from": "black-holes-information",
+      "to": "holographic-complexity",
+      "type": "shared-structure",
+      "description": "Complexity=volume/action describes interior growth after entropy saturates; the second law of complexity (Brown-Susskind) parallels entropy; decoding the interior is computationally hard (Python's lunch, QEC, Bouland-Fefferman-Vazirani). Well explored inside holography, weak elsewhere.",
+      "explored": "partially"
+    },
+    {
+      "from": "black-holes-information",
+      "to": "quantum-error-correction",
+      "type": "shared-math",
+      "description": "The interior is a quantum error-correcting code (Almheiri-Dong-Harlow); Hayden-Preskill decoding; tensor networks (HaPPY code, random tensor networks); the SYK model as a solvable holographic system saturating the chaos bound. Deeply connected via entanglement and reconstruction.",
+      "explored": "well"
+    }
+  ]
+}
