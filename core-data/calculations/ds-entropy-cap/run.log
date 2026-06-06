@@ -12,8 +12,68 @@
   popt, _ = curve_fit(lambda t, cap, B, xi: cap - B * np.exp(-t / xi),
    => S_full_cap=46.186 S_trunc_cap=0.6412 A_mol=344.8 eps=0.0645 R_full=0.1339 (PRIMARY) R_trunc_cont=0.4463
 
-[rho=1000 l=1] rho=1000.0 l=1.0 n_seeds=4 ...
-   R*=1.6 N= 1843 kap=3.416 N_tot=1843.0 S_trunc=0.6973 S_full=193.40 hlinks=1519.2 pair_rel=2.3e-15
-   R*=2.0 N= 1928 kap=3.494 N_tot=1928.0 S_trunc=0.7476 S_full=203.58 hlinks=1564.8 pair_rel=5.1e-15
-   R*=2.6 N= 1978 kap=3.539 N_tot=1978.0 S_trunc=0.7356 S_full=206.78 hlinks=1554.8 pair_rel=3.7e-15
-   R*=3.4 N= 1996 kap=3.555 N_tot=1996.0 S_trunc=0.7580 S_full=207.12 hlinks=1588.5 pair_rel=2.0e-15
+[rho=600 l=1] rho=600.0 l=1.0 n_seeds=4 ...
+   R*=1.6 N= 1106 kap=2.646 N_tot=1106.0 S_trunc=0.6215 S_full=110.99 hlinks=861.0 pair_rel=7.3e-15
+   R*=2.0 N= 1157 kap=2.707 N_tot=1157.0 S_trunc=0.7272 S_full=119.03 hlinks=910.0 pair_rel=4.2e-15
+   R*=2.6 N= 1187 kap=2.742 N_tot=1187.0 S_trunc=0.6987 S_full=122.44 hlinks=968.8 pair_rel=3.1e-15
+   R*=3.4 N= 1197 kap=2.753 N_tot=1197.0 S_trunc=0.6553 S_full=119.04 hlinks=876.8 pair_rel=4.0e-15
+   R*=4.4 N= 1200 kap=2.757 N_tot=1200.0 S_trunc=0.6547 S_full=121.80 hlinks=920.8 pair_rel=1.6e-15
+   R*=5.6 N= 1200 kap=2.757 N_tot=1200.0 S_trunc=0.6842 S_full=121.57 hlinks=926.2 pair_rel=7.7e-15
+   R*=7.0 N= 1200 kap=2.757 N_tot=1200.0 S_trunc=0.6808 S_full=124.07 hlinks=918.5 pair_rel=3.3e-15
+   => S_full_cap=121.817 S_trunc_cap=0.6835 A_mol=921.8 eps=0.0408 R_full=0.1321 (PRIMARY) R_trunc_cont=0.4449
+
+[rho=1200 l=1] rho=1200.0 l=1.0 n_seeds=3 ...
+   R*=1.6 N= 2212 kap=3.743 N_tot=2212.0 S_trunc=0.6775 S_full=232.63 hlinks=1764.0 pair_rel=7.6e-15
+   R*=2.0 N= 2314 kap=3.828 N_tot=2314.0 S_trunc=0.7096 S_full=247.59 hlinks=1895.7 pair_rel=2.0e-15
+   R*=2.6 N= 2374 kap=3.877 N_tot=2374.0 S_trunc=0.7442 S_full=248.30 hlinks=1888.0 pair_rel=5.5e-15
+   R*=3.4 N= 2395 kap=3.894 N_tot=2395.0 S_trunc=0.7653 S_full=250.52 hlinks=1899.0 pair_rel=6.4e-15
+   R*=4.4 N= 2399 kap=3.898 N_tot=2399.0 S_trunc=0.7549 S_full=251.71 hlinks=1908.3 pair_rel=1.2e-14
+   R*=5.6 N= 2400 kap=3.898 N_tot=2400.0 S_trunc=0.7371 S_full=248.73 hlinks=1949.3 pair_rel=3.0e-15
+   R*=7.0 N= 2400 kap=3.898 N_tot=2400.0 S_trunc=0.7108 S_full=247.86 hlinks=1871.7 pair_rel=4.9e-15
+   => S_full_cap=249.459 S_trunc_cap=0.7426 A_mol=1909.8 eps=0.0289 R_full=0.1306 (PRIMARY) R_trunc_cont=0.4666
+
+[rho=600 l=0.7] rho=600.0 l=0.7 n_seeds=3 ...
+   R*=1.6 N=  823 kap=2.283 N_tot=823.0 S_trunc=0.3513 S_full=58.50 hlinks=460.3 pair_rel=1.3e-15
+   R*=2.0 N=  834 kap=2.298 N_tot=834.0 S_trunc=0.3924 S_full=59.03 hlinks=459.7 pair_rel=1.8e-15
+   R*=2.6 N=  839 kap=2.305 N_tot=839.0 S_trunc=0.3744 S_full=61.37 hlinks=529.0 pair_rel=1.8e-15
+   R*=3.4 N=  840 kap=2.306 N_tot=840.0 S_trunc=0.4266 S_full=64.29 hlinks=526.3 pair_rel=5.0e-15
+   R*=4.4 N=  840 kap=2.306 N_tot=840.0 S_trunc=0.4387 S_full=64.45 hlinks=488.0 pair_rel=2.1e-15
+   R*=5.6 N=  840 kap=2.306 N_tot=840.0 S_trunc=0.4150 S_full=62.66 hlinks=493.3 pair_rel=1.0e-15
+   R*=7.0 N=  840 kap=2.306 N_tot=840.0 S_trunc=0.3614 S_full=60.39 hlinks=473.0 pair_rel=2.9e-15
+   => l=0.7 S_full_cap=62.842 A_mol=484.8 R_full=0.1296 (PRIMARY)
+
+[rho=600 l=1.0] rho=600.0 l=1.0 n_seeds=3 ...
+   R*=1.6 N= 1106 kap=2.646 N_tot=1106.0 S_trunc=0.6243 S_full=112.36 hlinks=860.3 pair_rel=7.3e-15
+   R*=2.0 N= 1157 kap=2.707 N_tot=1157.0 S_trunc=0.7622 S_full=118.14 hlinks=923.0 pair_rel=3.9e-15
+   R*=2.6 N= 1187 kap=2.742 N_tot=1187.0 S_trunc=0.7273 S_full=125.69 hlinks=961.0 pair_rel=3.1e-15
+   R*=3.4 N= 1197 kap=2.753 N_tot=1197.0 S_trunc=0.6483 S_full=119.59 hlinks=875.7 pair_rel=4.0e-15
+   R*=4.4 N= 1200 kap=2.757 N_tot=1200.0 S_trunc=0.6614 S_full=121.18 hlinks=918.3 pair_rel=1.6e-15
+   R*=5.6 N= 1200 kap=2.757 N_tot=1200.0 S_trunc=0.7085 S_full=122.97 hlinks=940.7 pair_rel=7.7e-15
+   R*=7.0 N= 1200 kap=2.757 N_tot=1200.0 S_trunc=0.6849 S_full=125.35 hlinks=922.7 pair_rel=1.8e-15
+   => l=1.0 S_full_cap=122.888 A_mol=927.2 R_full=0.1325 (PRIMARY)
+
+[rho=600 l=1.5] rho=600.0 l=1.5 n_seeds=3 ...
+   R*=1.6 N= 1419 kap=2.998 N_tot=1419.0 S_trunc=0.8396 S_full=163.76 hlinks=1224.7 pair_rel=1.9e-15
+   R*=2.0 N= 1566 kap=3.149 N_tot=1566.0 S_trunc=0.9059 S_full=174.92 hlinks=1328.7 pair_rel=5.6e-15
+   R*=2.6 N= 1691 kap=3.272 N_tot=1691.0 S_trunc=0.9355 S_full=179.30 hlinks=1347.3 pair_rel=3.0e-15
+   R*=3.4 N= 1762 kap=3.340 N_tot=1762.0 S_trunc=0.9256 S_full=184.21 hlinks=1381.7 pair_rel=6.0e-15
+   R*=4.4 N= 1790 kap=3.367 N_tot=1790.0 S_trunc=0.8941 S_full=185.12 hlinks=1386.3 pair_rel=5.3e-15
+   R*=5.6 N= 1798 kap=3.374 N_tot=1798.0 S_trunc=0.8893 S_full=182.56 hlinks=1385.3 pair_rel=5.2e-15
+   R*=7.0 N= 1800 kap=3.376 N_tot=1800.0 S_trunc=0.9201 S_full=178.99 hlinks=1322.3 pair_rel=2.9e-15
+   => l=1.5 S_full_cap=182.602 A_mol=1364.7 R_full=0.1338 (PRIMARY)
+
+[[sparse hd] rho=3000 l=1] rho=3000.0 l=1.0 n_seeds=2 ...
+   R*=3.4 N= 5987 kap=6.157 N_tot=5987.0 S_trunc=1.1436 S_full=nan hlinks=nan pair_rel=2.2e-09
+   R*=4.4 N= 5998 kap=6.163 N_tot=5998.0 S_trunc=1.1273 S_full=nan hlinks=nan pair_rel=1.0e-09
+   R*=5.6 N= 6000 kap=6.164 N_tot=6000.0 S_trunc=1.1297 S_full=nan hlinks=nan pair_rel=1.9e-09
+   R*=7.0 N= 6000 kap=6.164 N_tot=6000.0 S_trunc=1.1548 S_full=nan hlinks=nan pair_rel=2.0e-09
+Traceback (most recent call last):
+  File "/Users/pazny/projects/theoryOfEverything/core-data/calculations/ds-entropy-cap/calc.py", line 748, in <module>
+  File "/Users/pazny/projects/theoryOfEverything/core-data/calculations/ds-entropy-cap/calc.py", line 532, in main
+    hd_boxes = [3.4, 4.4, 5.6, 7.0]
+            ^^^^^^^^^^^^^^^^^^^^^^^
+    hd_scan = {}
+    ^^^^^^^^^^^^
+  File "/Users/pazny/projects/theoryOfEverything/core-data/calculations/ds-entropy-cap/calc.py", line 339, in measure_caps
+    # to ~1e-9 (its intrinsic precision), so a float32-aware threshold is used.
+AssertionError: pairing invariant VIOLATED: 2.17e-09

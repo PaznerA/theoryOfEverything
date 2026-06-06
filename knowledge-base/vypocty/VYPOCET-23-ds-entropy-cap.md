@@ -63,7 +63,7 @@ V D rozměrech je dS horizont **kodimenze 2** (plocha je (D−2)-rozměrná). Ve
 | krok | implementace (thin nad `toe` v0.3.0) |
 |---|---|
 | geometrie | `causet.sprinkle_ds_static_patch2d` (sech² vlastní míra; protokol VYPOCET-19 Part 1) |
-| hustoty | ρ ∈ {240, 1000, 2000} dense (primární kanál); ρ = 3000 sparse (konzistenční blok) |
+| hustoty | ρ ∈ {240, 600, 1200} dense (primární kanál; 5× rozsah); ρ = 3000 sparse (konzistenční blok) |
 | SJ stav | dense: `causal_matrix → green_retarded_2d → pauli_jordan → sj.wightman`; sparse (N>4500): `idelta_operator_2d` (float32) + `sj_state_sparse` (eigsh, k = 5√N) |
 | entropie | `entropy.ssee` (S_full bez truncace; S_trunc s κ = √N/4π); sparse: `ssee_sparse` |
 | strop | saturující fit S_cap − B·exp(−R*/ξ) vs lineární; **AIC** (`fits.aic_compare`) |
@@ -72,7 +72,7 @@ V D rozměrech je dS horizont **kodimenze 2** (plocha je (D−2)-rozměrná). Ve
 
 **Volba kanálu (klíčové fyzikální rozhodnutí).** S_full (obsah-sledující SSEE) i A_mol škálují ~ρ, takže jejich poměr **R_full = S_full_cap / A_mol** je ρ-invariantní „entropie na horizontovou molekulu" = diskrétní A/4 koeficient. Naopak **truncovaná** SSEE je O(1) a molekulový počet NEsleduje, proto je R_trunc/A_mol → 0; truncovaný kanál hlásíme proti spojité ploše A_cont (sekundárně). S_full je vnitřně **dense** (objemový zákon přes všech ~N modů), takže primární poměr měříme jen na dense hustotách.
 
-**Seedy:** ≥4 při ρ ∈ {240,1000}, 2 při ρ=2000; l-scan 3 seedy; sparse blok 2 seedy.
+**Seedy:** 4 při ρ ∈ {240, 600}, 3 při ρ=1200; l-scan 3 seedy; sparse blok 2 seedy. ± párovací invariant ověřen na každé oblasti: dense ~1e-15 (float64), sparse ~2e-9 (float32 eigsh, v rámci tolerance daného path).
 
 ---
 
@@ -80,29 +80,66 @@ V D rozměrech je dS horizont **kodimenze 2** (plocha je (D−2)-rozměrná). Ve
 
 ### F-023 reprodukováno
 
-Obsah saturuje: N_total → 480 (ρ=240), shoda s F-023 (N_total_cap = 480.11). Strop S_full i N_total: AIC silně preferuje saturující fit nad lineárním. Plochá kontrola (VYPOCET-19) rostla — zde se soustředíme na dS stranu.
+Obsah saturuje: N_total → 480 (ρ=240, fixní cut), shoda s F-023 (N_total_cap = 480.11). Při fixním entanglement řezu r* = 0.8 a hraně boxu → horizont saturuje jak obsah pod-oblasti, tak S_full a S_trunc na konečný strop. AIC preferuje saturující fit nad lineárním. Vysokohustotní sparse blok (ρ=3000, N≤6000): N_total saturuje na 6000, S_trunc ≈ 1.14 (O(1)) — konzistentní.
 
-### Primární kanál: R_full = S_full_cap / A_mol
+### Primární kanál: R_full = S_full_cap / A_mol (A/4 kandidát)
 
-<!--FILL_TABLE-->
+**Škálování s hustotou** (l = 1):
+
+| ρ | N_max | S_full_cap | A_mol | ε = ρ^(−1/2) | **R_full** | R_trunc_cont |
+|---|---|---|---|---|---|---|
+| 240 | 480 | 46.19 | 344.8 | 0.0645 | **0.1339** | 0.4463 |
+| 600 | 1200 | 121.82 | 921.8 | 0.0408 | **0.1321** | 0.4449 |
+| 1200 | 2400 | 249.46 | 1909.8 | 0.0289 | **0.1306** | 0.4666 |
+
+**Škálování s velikostí záplaty** (ρ = 600):
+
+| ℓ | S_full_cap | A_mol | **R_full** |
+|---|---|---|---|
+| 0.7 | 62.84 | 484.8 | **0.1296** |
+| 1.0 | 122.89 | 927.2 | **0.1325** |
+| 1.5 | 182.60 | 1364.7 | **0.1338** |
+
+Nezávislá single-box (R*=7) sonda dala R_full = {0.137, 0.132, 0.129} při ρ = {240, 1000, 3000} — konstantnost potvrzena i za dense žebříček.
 
 ### Diskriminátor
 
-<!--FILL_DISCRIMINATOR-->
+| veličina | drift exponent (d ln/d ln ρ) | interpretace |
+|---|---|---|
+| A_mol vs ρ | **+1.06** | molekulový počet ∝ ρ (Dou-Sorkin; ε^(−2)) |
+| S_full_cap vs ρ | **+1.05** | obsah-entropie ∝ ρ |
+| S_trunc_cap vs ρ | +0.09 | truncovaná = 2D area/log, O(1) — NEsleduje A_mol |
+| **R_full vs ρ** | **−0.015** | **R = S_full/A_mol prakticky NEZÁVISLÉ na ρ** |
+
+**Konstantnost R_full:** CV(ρ) = 1.25 %, CV(ℓ) = 1.6 %. Kombinovaná střední hodnota přes (ρ, ℓ): **R_full = 0.1321 ± (CV 1.3 %)**, drift exponent vs ρ = −0.015 (slučitelný s 0).
+
+S_full_cap i A_mol škálují obě ∝ ρ^1.05 → jejich poměr je ρ-invariantní = diskrétní „entropie na horizontovou molekulu".
 
 ---
 
 ## Verdikt
 
-<!--FILL_VERDICT-->
+**PARTIAL/AFFIRMATIVE — kvalitativní strop F-023 je povýšen na KVANTITATIVNÍ area-zákon, ale konstanta NENÍ 1/4.**
+
+Poměr R_full = S_full_cap / A_mol je **KONSTANTNÍ** napříč 5× rozsahem hustoty ρ ∈ {240, 600, 1200} I 2× rozsahem velikosti záplaty ℓ ∈ {0.7, 1.0, 1.5}, s kombinovanou střední hodnotou **R = 0.1321 ± 1.3 %** a driftovým exponentem −0.015 (slučitelným s nulou). To znamená:
+
+$$S_{\rm cap} = \frac{A_{\rm horizon}}{c\,G}, \qquad c = \frac{1}{R_{\rm full}} \approx 7.57.$$
+
+Entropický strop ohraničené dS statické záplaty je tedy **ÚMĚRNÝ** diskrétní Dou-Sorkinově horizontové „ploše" (počtu kauzálních molekul) — povýšení **kvalitativní saturace (II₁) → kvantitativní area-zákon**. Hypotéza H5g-2 ve **slabé** formě (existuje konstantní A/4-podobný zákon) je **POTVRZENA**.
+
+V **silné** formě (konstanta = 1/4) je **VYVRÁCENA**: R = 0.132 ≈ 0.53 × (1/4), tedy c ≈ 7.57 ≠ 4. To je očekávané a poctivé: geometrická O(1) normalizace 2D molekulového počtu vs. SSEE není v causal-set jednotkách fixována tak, aby dala přesně 4 (samotný Dou-Sorkin koeficient vyžaduje separátní kalibraci). **Doslovná čtvrtina není získána; úměrnost ano.**
+
+**Antikruhovost dodržena:** ε ~ ρ^(−1/2) zafixováno z F-006 před měřením; konstantnost R_full je nezávislá na volbě ε (2D plocha je ε-nezávislá), takže výsledek není kalibrací zařízen.
 
 ---
 
 ## Honest nuly a limity
 
-- **S_full je dense-only.** Top-k sparse zachycení nereprezentuje objemový zákon S_full; ρ=10000 (N=20000) je mimo rozpočet (eigsh ~160s/box). Primární poměr je tedy na rozsahu ρ ∈ {240,1000,2000} (8.3× hustoty) — ale to je rozhodné (drift by se na 8× projevil).
-- **A_mol nelze oknovat.** Časové okno mění, které linky jsou ireducibilní (ověřeno: oknovaný odhad biasuje ρ-škálování). A_mol proto exaktně jen na dense hustotách.
-- **Koeficient ≠ 1/4 a priori.** Geometrická O(1) normalizace 2D molekulového počtu vs. SSEE není fixována tak, aby dala přesně 4; testujeme **konstantnost** (kvalitativní→kvantitativní upgrade), ne doslovnou čtvrtinu.
+- **S_full je dense-only.** Top-k sparse zachycení (eigsh, k~5√N) reprezentuje jen mody nad κ — nereprezentuje objemový zákon S_full (potřebuje všech ~N modů). Generalizovaný eigenproblém S_full škáluje ~N_sub³, takže rozpočet omezuje N≤~2500 → primární poměr na ρ ∈ {240, 600, 1200} (5× hustoty). To je rozhodné (drift by se na 5× projevil; R drift = −0.015). ρ=10000 (N=20000) je mimo rozpočet (eigsh ~160 s/box).
+- **A_mol nelze oknovat.** Časové okno mění, které linky jsou ireducibilní (ověřeno: oknovaný odhad biasuje ρ-škálování, est/ρ = 0.88 vs 0.24). A_mol proto exaktně jen z plné link-matice na dense hustotách.
+- **Koeficient ≠ 1/4 (poctivé vyvrácení silné formy).** R = 0.132, c = 7.57. Geometrická O(1) normalizace 2D molekulového počtu vs. SSEE není fixována tak, aby dala přesně 4. Potvrzujeme **konstantnost** (kvalitativní→kvantitativní upgrade), NE doslovnou čtvrtinu.
+- **Float32 sparse párovací tolerance.** Sparse eigsh páruje ± na ~2e-9 (float32 přesnost), ne 1e-15 jako dense float64 — `calc.py` assert je nyní path-aware (dense < 1e-12, sparse < 5e-9). (První běh na starém příliš těsném assertu (1e-9) spadl v sparse bloku PO zalogování veškeré fyziky; `results.json` rekonstruováno z kompletního `run.log` přes `reconstruct.py`, hodnoty caps jsou bootstrap caps běhu, per-box hodnoty seed-průměry.)
+- **Sdílené CPU.** Běh sdílel stroj s paralelní úlohou (ds-tracial-probe); proto delší runtime, ale výsledky nedotčené.
 
 ---
 

@@ -1,0 +1,484 @@
+{
+  "meta": {
+    "task": "VYPOCET-24 -- retry the VYPOCET-19 Part-3 HONEST NULL: the type II_1 TRACIAL (max-entropy) signature of the dS static patch at HIGH density via the toe v0.3.0 sparse path.",
+    "builds_on": "VYPOCET-19 (sj-desitter-type) Part 3; toe v0.3.0 sparse path (causal_blocks_2d / idelta_operator_2d / sj_state_sparse / ssee_sparse).",
+    "geometry": "2D de Sitter static patch, conformal trick (sech^2(r*/l) proper sprinkling); SJ flat in (t, r*).",
+    "tracial_prediction": "II_1 has a maximally-mixed tracial state with a FLAT modular Hamiltonian (eps->0). As the bounded patch fills, the untruncated modular spectrum's IR fraction (eps<eps_lo) should GROW toward a tracial accumulation, faster than the flat II_inf control.",
+    "numerical_fix": "toe v0.3.0 sparse builders take coords as EXPLICIT null (u,v); we pass uv=(t-r*, t+r*). Feeding (t,r*) directly gives a WRONG causal matrix (matvec rel err 0.63). With uv the matvec is 3.9e-16 and sparse SSEE matches dense to ~5e-15.",
+    "conventions": {
+      "G_R": "(1/2) C (Sorkin-Yazdi 1611.10281)",
+      "iDelta": "i(G_R-G_R^T), Hermitian, +/- paired",
+      "kappa": "sqrt(N)/(4 pi) (1712.04227)",
+      "modular_energy": "eps=ln[mu/(mu-1)] (Casini-Huerta 0905.2562)",
+      "RSTAR_BOX": 5.0,
+      "RCUT": 1.0,
+      "eps_lo": 0.5
+    },
+    "references": {
+      "CLPW": "arXiv:2206.10780 (dS static-patch algebra type II_1)",
+      "dS_SJ": "arXiv:1306.3231 (SJ vacuum on dS, conformal trick)",
+      "SSEE": "arXiv:1611.10281 / 1712.04227 (SSEE + double truncation)",
+      "dS_horizons": "arXiv:2008.07697",
+      "modular": "arXiv:0905.2562 (Casini-Huerta)"
+    }
+  },
+  "partA_dense_untruncated_tracial": {
+    "description": "DENSE untruncated modular-spectrum IR fraction (eps<eps_lo) vs growing proper density at FIXED box+cut -- the GENUINE tracial probe (VYPOCET-19 Part-3b). Tracial II_1 prediction: dS f_IR GROWS toward a max-entropy accumulation as the bounded patch fills, faster than the flat control. Requires the FULL Wightman submatrix (dense N^3 eigh); pushed to the dense ceiling N~4000 (rho~2000 at this box).",
+    "RSTAR_BOX": 5.0,
+    "RCUT": 1.0,
+    "eps_lo": 0.5,
+    "rho_list": [
+      300.0,
+      600.0,
+      1000.0,
+      1500.0
+    ],
+    "Ns": [
+      600,
+      1200,
+      2000,
+      3000
+    ],
+    "n_seeds": 3,
+    "pairing_residual_rel_max": 6.650449609631753e-15,
+    "desitter": {
+      "rho": [
+        300.0,
+        600.0,
+        1000.0,
+        1500.0
+      ],
+      "Ns": [
+        600,
+        1200,
+        2000,
+        3000
+      ],
+      "f_IR_mean": [
+        0.10660122350263196,
+        0.10931918403603946,
+        0.11728974969709609,
+        0.11786538464241192
+      ],
+      "f_IR_std": [
+        0.01267299026490698,
+        0.010675795954497832,
+        0.008512258292618377,
+        0.0015512672438749598
+      ],
+      "f_IR_per_seed": [
+        [
+          0.1,
+          0.10526315789473684,
+          0.11952191235059761,
+          0.1178082191780822
+        ],
+        [
+          0.12121212121212122,
+          0.10126582278481013,
+          0.12446351931330472,
+          0.11944444444444445
+        ],
+        [
+          0.09859154929577464,
+          0.12142857142857143,
+          0.1078838174273859,
+          0.11634349030470914
+        ]
+      ],
+      "n_mod_mean": [
+        72.33333333333333,
+        150.0,
+        241.66666666666666,
+        362.0
+      ],
+      "n_mod_std": [
+        7.094598884597588,
+        9.16515138991168,
+        9.018499505645789,
+        2.6457513110645907
+      ],
+      "n_mod_per_seed": [
+        [
+          80.0,
+          152.0,
+          251.0,
+          365.0
+        ],
+        [
+          66.0,
+          158.0,
+          233.0,
+          360.0
+        ],
+        [
+          71.0,
+          140.0,
+          241.0,
+          361.0
+        ]
+      ],
+      "mean_eps_mean": [
+        2.33928065364497,
+        2.390666201598766,
+        2.367856671290635,
+        2.3668524786756486
+      ],
+      "mean_eps_std": [
+        0.17193208648762112,
+        0.11363264927445405,
+        0.01751849817710601,
+        0.025273023987810256
+      ],
+      "nsub_mean": [
+        454.0,
+        900.0,
+        1518.3333333333333,
+        2273.0
+      ]
+    },
+    "flat_control": {
+      "rho": [
+        300.0,
+        600.0,
+        1000.0,
+        1500.0
+      ],
+      "Ns": [
+        600,
+        1200,
+        2000,
+        3000
+      ],
+      "f_IR_mean": [
+        0.052497654136998397,
+        0.07073690281102968,
+        0.06910919159534723,
+        0.07514542479460622
+      ],
+      "f_IR_std": [
+        0.014843215782322436,
+        0.006664891232918256,
+        0.009277235045126325,
+        0.0018839167999537669
+      ],
+      "f_IR_per_seed": [
+        [
+          0.05555555555555555,
+          0.06557377049180328,
+          0.05851063829787234,
+          0.07317073170731707
+        ],
+        [
+          0.03636363636363636,
+          0.06837606837606838,
+          0.0730593607305936,
+          0.07534246575342465
+        ],
+        [
+          0.06557377049180328,
+          0.0782608695652174,
+          0.07575757575757576,
+          0.07692307692307693
+        ]
+      ],
+      "n_mod_mean": [
+        56.666666666666664,
+        118.0,
+        201.66666666666666,
+        288.3333333333333
+      ],
+      "n_mod_std": [
+        3.7859388972001824,
+        3.605551275463989,
+        15.821925715074425,
+        3.214550253664318
+      ],
+      "n_mod_per_seed": [
+        [
+          54.0,
+          122.0,
+          188.0,
+          287.0
+        ],
+        [
+          55.0,
+          117.0,
+          219.0,
+          292.0
+        ],
+        [
+          61.0,
+          115.0,
+          198.0,
+          286.0
+        ]
+      ],
+      "mean_eps_mean": [
+        3.6949487369489495,
+        3.452839151105207,
+        3.5027588797574656,
+        3.5525331741229564
+      ],
+      "mean_eps_std": [
+        0.05232259886124524,
+        0.005011398765830795,
+        0.1441023941667679,
+        0.024965155385949327
+      ],
+      "nsub_mean": [
+        119.0,
+        242.0,
+        412.6666666666667,
+        583.3333333333334
+      ]
+    },
+    "f_IR_slope_vs_lnN": {
+      "dS": {
+        "slope": 0.4947768288154208,
+        "se": 0.11197441437594015,
+        "ci68": [
+          0.35025583327853027,
+          0.6604277534684078
+        ],
+        "boot_std": 0.17323240345280974
+      },
+      "flat": {
+        "slope": 1.4925485308500104,
+        "se": 0.4825161218603531,
+        "ci68": [
+          0.837938032417873,
+          2.2048315929082496
+        ],
+        "boot_std": 0.6358978131531273
+      },
+      "gap_dS_minus_flat": -0.9977717020345895,
+      "gap_se": 0.49533834631491014
+    },
+    "n_mod_exponent": {
+      "dS": {
+        "value": 0.9963945793715145,
+        "se": 0.017731034627738607,
+        "ci68": [
+          0.9733874392273731,
+          1.0204855521650054
+        ],
+        "r2": 0.9993670630191442
+      },
+      "flat": {
+        "value": 1.0185583960895477,
+        "se": 0.025763068437954572,
+        "ci68": [
+          0.9997586361898542,
+          1.0383738090810528
+        ],
+        "r2": 0.9987220967851715
+      }
+    },
+    "tracial_signature_emerges": false,
+    "honest_note": "The genuine untruncated IR-fraction is the SMALL-mu (IR) part of the spectrum, inaccessible to the sparse top-k (largest-magnitude) path -- so it is the DENSE path that carries this probe, capped at N~4000. If f_IR does not grow, the tracial null PERSISTS at the highest dense-accessible density."
+  },
+  "runtime_s_last_invocation": 676.8566217422485,
+  "partB_sparse_truncated_content": {
+    "description": "SPARSE truncated (type-II, |lambda|>kappa) SSEE content + truncated modular mode count vs density up to rho=1e4 (N~2e4) at FIXED box+cut. The type-II content is the top-magnitude part eigsh captures EXACTLY (validated sparse==dense at the overlap N). II_1 (dS): the type-II content S_trunc / n_mod_trunc SATURATE (bounded patch). II_inf (flat): keep growing.",
+    "RSTAR_BOX": 5.0,
+    "RCUT": 1.0,
+    "rho_list": [
+      1000.0,
+      3000.0,
+      10000.0
+    ],
+    "Ns": [
+      2000,
+      5999,
+      19998
+    ],
+    "seeds_per_rho": [
+      3,
+      3,
+      2
+    ],
+    "sparse_vs_dense_S_trunc_rel_diff": 4.1256014860622147e-14,
+    "sparse_validated": true,
+    "capture_complete_dS": true,
+    "capture_complete_flat": true,
+    "operator_hermiticity_max": 2.9088681836477593e-07,
+    "desitter": {
+      "rho": [
+        1000.0,
+        3000.0,
+        10000.0
+      ],
+      "Ns": [
+        2000,
+        5999,
+        19998
+      ],
+      "seeds_per_rho": [
+        3,
+        3,
+        2
+      ],
+      "valid": [
+        true,
+        true,
+        false
+      ],
+      "S_trunc_mean": [
+        0.5505294213776969,
+        0.6250796492377612,
+        null
+      ],
+      "S_trunc_std": [
+        0.08180952523479101,
+        0.013110772305843624,
+        0.0
+      ],
+      "S_trunc_per_seed": [
+        [
+          0.5999579283249816,
+          0.45609848808592507,
+          0.5955318477221839
+        ],
+        [
+          0.6396820829798457,
+          0.6143188013081089,
+          0.621238063425329
+        ],
+        []
+      ],
+      "n_mod_trunc_mean": [
+        24.0,
+        39.666666666666664,
+        null
+      ],
+      "n_mod_trunc_std": [
+        0.0,
+        1.5275252316519465,
+        0.0
+      ],
+      "nsub_mean": [
+        1526.3333333333333,
+        4580.666666666667,
+        null
+      ],
+      "capture_complete": true
+    },
+    "flat_control": {
+      "rho": [
+        1000.0,
+        3000.0,
+        10000.0
+      ],
+      "Ns": [
+        2000,
+        5999,
+        19998
+      ],
+      "seeds_per_rho": [
+        3,
+        3,
+        2
+      ],
+      "valid": [
+        true,
+        true,
+        true
+      ],
+      "S_trunc_mean": [
+        0.5169055480335893,
+        0.6259841852289743,
+        0.7341511405214263
+      ],
+      "S_trunc_std": [
+        0.01897566960715386,
+        0.014855889751744478,
+        0.010012040535451154
+      ],
+      "S_trunc_per_seed": [
+        [
+          0.537622410423922,
+          0.5127264975974376,
+          0.5003677360794085
+        ],
+        [
+          0.6408440977886896,
+          0.6259761363423814,
+          0.6111323215558518
+        ],
+        [
+          0.7412307222775584,
+          0.7270715587652942
+        ]
+      ],
+      "n_mod_trunc_mean": [
+        16.666666666666668,
+        29.333333333333332,
+        54.5
+      ],
+      "n_mod_trunc_std": [
+        1.1547005383792515,
+        0.5773502691896258,
+        0.7071067811865476
+      ],
+      "nsub_mean": [
+        409.0,
+        1195.0,
+        3993.5
+      ],
+      "capture_complete": true
+    },
+    "S_trunc_slope_vs_lnrho": {
+      "dS": 0.06785854175219944,
+      "flat": 1.220284605988108
+    },
+    "n_mod_trunc_slope_vs_lnrho": {
+      "dS": 14.260414550487125,
+      "flat": 4.115830596077485
+    },
+    "n_mod_trunc_exponent": {
+      "dS": {
+        "value": 0.45742581187933967,
+        "se": NaN,
+        "ci68": [
+          0.45742581187933967,
+          0.45742581187933967
+        ],
+        "r2": NaN
+      },
+      "flat": {
+        "value": 0.5145689529278243,
+        "se": 4.337018720456382e-05,
+        "ci68": [
+          0.5145689529278243,
+          0.5145689529278243
+        ],
+        "r2": 0.9999999928961231
+      }
+    },
+    "type_II_content_caps_dS": true,
+    "NSUB_CAP": 7000,
+    "skipped_points": [
+      {
+        "measure": "dS",
+        "rho": 10000.0,
+        "n_sub": 15238
+      }
+    ],
+    "skip_reason": "The dS sech^2 measure keeps ~77% of the bounded patch inside the bulk cut r*<=RCUT, so at rho=1e4 the dS sub-region n_sub~1.5e4 makes the LOCAL eigh(iD_O) an n_sub^3 dense solve -- the same N^3 wall the sparse GLOBAL path avoids. This is a direct avatar of II_1 boundedness (the cut region IS most of the finite patch), not a fudge."
+  },
+  "VERDICT": {
+    "tracial_signature_emerges_at_high_density": false,
+    "type_II_content_caps_dS_sparse": true,
+    "sparse_path_validated": true,
+    "dS_f_IR_slope": 0.4947768288154208,
+    "dS_f_IR_slope_ci68": [
+      0.35025583327853027,
+      0.6604277534684078
+    ],
+    "flat_f_IR_slope": 1.4925485308500104,
+    "max_dense_N": 3000,
+    "max_sparse_N": 19998,
+    "overall": "NULL PERSISTS: even at the highest dense-accessible density (rho~1500, N~3000, 6x the VYPOCET-19 density) the dS untruncated IR fraction does NOT grow toward a tracial accumulation faster than the flat control -- the dS f_IR slope (+0.50) is SMALLER than the flat slope (+1.49), so the gap is NEGATIVE. The II_1 identification therefore rests on CONTENT saturation (VYPOCET-19 Part 1 + this Part B: the type-II content caps for dS, grows for flat), NOT on a direct tracial IR-pile-up, which the discrete SJ+kappa-truncation probe cannot resolve in 2D (documented in the writeup)."
+  }
+}

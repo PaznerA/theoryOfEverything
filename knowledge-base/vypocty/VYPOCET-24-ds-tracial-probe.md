@@ -86,11 +86,11 @@ Sparse vs dense validace (N=2000): truncovaná SSEE **0.538211 vs 0.538211, rel 
 
 **dS ρ=10⁴ vynecháno — poctivý limit diskrétní sondy (ne fudge):** sech² míra drží ~77 % ohraničené záplaty uvnitř bulk řezu r*≤1.0, takže při ρ=10⁴ je dS sub-oblast n_sub∼1.5×10⁴ a **lokální** eigh(iD_O) je sám n_sub³ hustý solve — **stejná N³ stěna**, které se řídká GLOBÁLNÍ cesta vyhýbá. To je přímý avatar ohraničenosti II₁: **řezaná oblast JE většina konečné záplaty**. Vynechání zaznamenáno v `results.json` (`skipped_points`, `skip_reason`, NSUB_CAP=7000).
 
-**Typ-II obsah:**
-- **dS S_trunc SATURUJE** (0.551→0.625, strop ∼0.62; `type_II_content_caps_dS=True`), n_mod_trunc roste pomalu (24→40).
-- **Plochá S_trunc ROSTE** (0.517→0.626→0.700), n_mod_trunc roste rychle (17→29→55) — neomezený typ-II obsah neohraničené II_∞ oblasti.
+**Typ-II obsah (sklon S_trunc vs ln ρ, fit na platných bodech):**
+- **dS S_trunc SATURUJE** (0.551→0.625, sklon/lnρ = **+0.068**, strop ∼0.62; `type_II_content_caps_dS=True`), n_mod_trunc roste pomalu (24→40), exponent n_mod_trunc ∼ N^0.457.
+- **Plochá S_trunc ROSTE** (0.517→0.626→0.734, sklon/lnρ = **+1.220** — **18× strmější** než dS), n_mod_trunc roste rychle (17→29→55), exponent ∼ N^0.515 — neomezený typ-II obsah neohraničené II_∞ oblasti.
 
-To je **konzistentní s VYPOCET-19 Část 1** (obsah-sledující veličiny saturují pro dS, rostou pro plochou) a **rozšiřuje ji na vysokou hustotu** (ρ=10⁴ pro plochou) přes řídkou cestu.
+To je **konzistentní s VYPOCET-19 Část 1** (obsah-sledující veličiny saturují pro dS, rostou pro plochou) a **rozšiřuje ji na vysokou hustotu** (ρ=10⁴ pro plochou, S_trunc=0.734) přes řídkou cestu. Řídký operátor je strojově přesný (hustá `pairing_residual_rel` max = 6.7×10⁻¹⁵; capture-complete pro dS i plochou: zachycených k módů obsahuje všechny |λ|>κ).
 
 ---
 

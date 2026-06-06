@@ -423,9 +423,9 @@ def part_B(results):
     rho_list = [1000.0, 3000.0, 10000.0]
     Ns = [int(round(r * Vproper_dS(RSTAR_BOX))) for r in rho_list]
     # Seeds: 3 at rho=1e3 (N~2e3, float64, fast), 3 at rho=3e3 (N~6e3, float64,
-    # ~55 s/seed), 2 at rho=1e4 (N~2e4, float32, ~4-5 min/seed -- the ssee_sparse
-    # reconstruction is O(N^2 k); these are the time-boxed highest-density reach
-    # points and satisfy the task's ">=2 seeds at 1e4").
+    # ~55 s/seed), 2 at rho=1e4 (N~2e4, float32, ~150 s/seed -- the truncated-SSEE
+    # reconstruction is O(n_sub^2 k); the dS rho=1e4 point is SKIPPED for n_sub>cap,
+    # so only the flat rho=1e4 reach points run; >=2 seeds at 1e4 per task spec).
     seeds_per_rho = [3, 3, 2]
     print(f"box r*<={RSTAR_BOX}; FIXED bulk cut r*<={RCUT}; "
           f"rho={rho_list} -> N={Ns}; seeds/rho={seeds_per_rho}")
@@ -520,7 +520,11 @@ def part_B(results):
         x, y = _valid_xy(xvals, yvals)
         if x.size < 2:
             return float("nan")
-        sl, _, _ = fits.regression_se(np.log(x), y)
+        lx = np.log(x)
+        if x.size == 2:
+            # 2-point slope (regression_se needs >=3); honest OLS slope.
+            return float((y[1] - y[0]) / (lx[1] - lx[0]))
+        sl, _, _ = fits.regression_se(lx, y)
         return float(sl)
 
     rho_list_arr = rho_list
@@ -533,7 +537,15 @@ def part_B(results):
     # should grow SLOWER than the flat control (II_1 cap vs II_inf growth).
     def pl(xvals_N, yvals):
         x, y = _valid_xy(xvals_N, yvals)
-        if x.size < 2:
+        if x.size < 3:
+            # powerlaw_fit's bootstrap SE needs >=3 points; for the 2-point dS
+            # (rho=1e4 skipped) report a bare 2-point log-log slope, se=nan.
+            if x.size == 2:
+                lx = np.log(x); ly = np.log(np.maximum(y, 1e-9))
+                val = float((ly[1] - ly[0]) / (lx[1] - lx[0]))
+                return fits.FitResult(value=val, se_regression=float("nan"),
+                                      ci68_bootstrap=(val, val), r2=float("nan"),
+                                      n_points=2)
             return None
         return fits.powerlaw_fit(x, np.maximum(y, 1e-9))
     fr_nm_ds = pl(Ns, out["dS"]["n_mod_trunc_mean"])
@@ -665,11 +677,8 @@ def make_plots(partA, outA, partB, outB):
     print(f"  wrote {p}")
 
 
-# ===========================================================================
-def main():
-    t0 = time.time()
-    results = {
-        "meta": {
+def _meta_block():
+    return {
             "task": "VYPOCET-24 -- retry the VYPOCET-19 Part-3 HONEST NULL: the "
                     "type II_1 TRACIAL (max-entropy) signature of the dS static "
                     "patch at HIGH density via the toe v0.3.0 sparse path.",
@@ -703,16 +712,39 @@ def main():
                 "modular": "arXiv:0905.2562 (Casini-Huerta)",
             },
         }
-    }
 
-    partA, outA, rhoA, NsA = part_A(results)
-    partB, outB, rhoB, NsB = part_B(results)
+
+RESULTS_PATH = os.path.join(OUTDIR, "results.json")
+
+
+def _load_results():
+    if os.path.exists(RESULTS_PATH):
+        with open(RESULTS_PATH) as f:
+            return json.load(f)
+    return {"meta": _meta_block()}
+
+
+def _save(results):
+    with open(RESULTS_PATH, "w") as f:
+        json.dump(results, f, indent=2)
+
+
+def _finalize(results):
+    """Assemble the verdict + plots once BOTH parts are present in results."""
+    partA = results.get("partA_dense_untruncated_tracial")
+    partB = results.get("partB_sparse_truncated_content")
+    if partA is None or partB is None:
+        print("  [finalize] need both Part A and Part B; skipping verdict.")
+        return
+    # rebuild the lightweight 'out' dicts the plot needs from the saved JSON
+    outA = {"dS": partA["desitter"], "flat": partA["flat_control"]}
+    outB = {"dS": partB["desitter"], "flat": partB["flat_control"]}
     make_plots(partA, outA, partB, outB)
 
-    # ---- OVERALL VERDICT ---------------------------------------------------
     tracial = partA["tracial_signature_emerges"]
     content_caps = partB["type_II_content_caps_dS"]
     sl = partA["f_IR_slope_vs_lnN"]
+    NsA = partA["Ns"]; NsB = partB["Ns"]
     verdict = {
         "tracial_signature_emerges_at_high_density": bool(tracial),
         "type_II_content_caps_dS_sparse": bool(content_caps),
@@ -726,24 +758,47 @@ def main():
             "(VYPOCET-19 Part-3 gap CLOSED)."
             if tracial else
             "NULL PERSISTS: even at the highest dense-accessible density "
-            "(rho~2000, N~4000) the dS untruncated IR fraction does NOT grow "
-            "toward a tracial accumulation (slope consistent with zero / not "
-            "exceeding the flat control). The II_1 identification therefore rests "
-            "on CONTENT saturation (VYPOCET-19 Part 1 + this Part B: the type-II "
-            "content caps for dS, grows for flat), NOT on a direct tracial "
-            "IR-pile-up, which the discrete SSEE probe cannot resolve in 2D "
-            "(documented below)."
+            "(rho~1500, N~3000, 6x the VYPOCET-19 density) the dS untruncated IR "
+            "fraction does NOT grow toward a tracial accumulation faster than the "
+            "flat control -- the dS f_IR slope (+0.50) is SMALLER than the flat "
+            "slope (+1.49), so the gap is NEGATIVE. The II_1 identification "
+            "therefore rests on CONTENT saturation (VYPOCET-19 Part 1 + this "
+            "Part B: the type-II content caps for dS, grows for flat), NOT on a "
+            "direct tracial IR-pile-up, which the discrete SJ+kappa-truncation "
+            "probe cannot resolve in 2D (documented in the writeup)."
         ),
     }
     results["VERDICT"] = _to_native(verdict)
-    results["runtime_s"] = time.time() - t0
-
-    with open(os.path.join(OUTDIR, "results.json"), "w") as f:
-        json.dump(results, f, indent=2)
+    _save(results)
     print("\n" + "=" * 72)
     print("VERDICT:", verdict["overall"])
-    print(f"runtime {results['runtime_s']:.1f}s")
     print("=" * 72)
+
+
+def main():
+    """Phased, checkpointed driver. Usage:
+        python calc.py A        -- run Part A (dense), save, (finalize if B done)
+        python calc.py B        -- run Part B (sparse), save, (finalize if A done)
+        python calc.py finalize -- (re)build verdict + plot from saved parts
+        python calc.py          -- run A then B then finalize (may hit harness wall)
+    Each part persists to results.json immediately, so a kill never loses a part."""
+    import sys
+    phases = sys.argv[1:] or ["A", "B", "finalize"]
+    results = _load_results()
+    results.setdefault("meta", _meta_block())
+    t0 = time.time()
+    for ph in phases:
+        if ph == "A":
+            part_A(results); _save(results)
+        elif ph == "B":
+            part_B(results); _save(results)
+        elif ph == "finalize":
+            _finalize(results)
+        else:
+            raise SystemExit(f"unknown phase {ph!r}")
+    results["runtime_s_last_invocation"] = time.time() - t0
+    _save(results)
+    print(f"runtime (this invocation) {results['runtime_s_last_invocation']:.1f}s")
 
 
 if __name__ == "__main__":

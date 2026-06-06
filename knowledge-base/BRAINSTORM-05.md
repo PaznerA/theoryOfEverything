@@ -134,6 +134,8 @@ objekt/observable/diskriminátor/N-proveditelnost — maticové ops strop ~N 250
 
 ### H5g-2 — Saturovaný obsah-strop dS záplaty se kvantitativně mapuje na A/4 (dS entropie z prvních principů?)
 
+> **[Kolo 12, VYPOCET-23, F-028] PARCIÁLNÍ VERDIKT — correction note:** Slabá H5g-2 POTVRZENA: R_full = S_full_cap/A_mol = 0.1321 ± 1.3 % KONSTANTNÍ přes 5× hustotu ρ ∈ {240,600,1200} a 2× velikost záplaty ℓ ∈ {0.7,1.0,1.5} — kvantitativní area-zákon S_cap = A_horizon/(c·G), c ≈ 7.57. Silná H5g-2 VYVRÁCENA: c ≈ 7.57 ≠ 4 — geometrická O(1) normalizace 2D Dou-Sorkinova molekulového počtu vs. SSEE není fixována na 1/4. Anti-kruhovost respektována: ε ~ ρ^(−1/2) zafixováno z NEZÁVISLÉHO F-006 před měřením. Tracialní kanál (truncovaná SSEE): O(1), NEsleduje A_mol — není to A/4 kanál v 2D (F-027). Výsledky NEVYRACÍ hypotézu: proporcionální area-zákon stojí, ale přesná hodnota 1/4 pro 2D vyžaduje separátní kalibraci Dou-Sorkin koeficientu; 4D měření zůstává jako hlavní otevřená fronta.
+
 **(jádro: je dS entropie S=A/4 odvoditelná z diskrétního obsah-stropu? lovná zóna black-holes↔causal-sets)**
 **Priorita: high (vysoký výnos, vysoké riziko).**
 

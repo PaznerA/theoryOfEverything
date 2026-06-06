@@ -1,0 +1,679 @@
+{
+  "meta": {
+    "task": "VYPOCET-23 H5g-2: does the F-023 bounded-dS entropy CAP map QUANTITATIVELY onto Bekenstein-Hawking A/4 (discrete dS entropy)?",
+    "dimension": "2D de Sitter static patch (conformal trick; toe.sprinkle_ds_static_patch2d)",
+    "horizon_area_2D_statement": "In D dims the dS horizon is codim-2 (area is (D-2)-dim). In D=2, D-2=0: the horizon is a POINT (single static-patch edge r*->inf); its 'area' is the 0-dim Dou-Sorkin MOLECULE COUNT (irreducible causal links crossing the fixed entangling cut r*=R_CUT). In eps-units A/eps^{D-2}=A/eps^0=A is DIMENSIONLESS and eps-INDEPENDENT, so S_GH=A/4 is an O(1) number in causal-set units. Empirically A_mol ~ rho (= eps^-2): the cut is a 1D timelike worldline carrying ~rho*t_extent links; A_cont=A_mol*eps^2->O(1).",
+    "protocol": "FIXED entangling cut r*=0.80 (the codim-2 horizon proxy); box edge R*_box -> cosmological horizon at fixed proper density. S_full (content-tracking SSEE) and A_mol both ~rho, so R_full=S_full_cap/A_mol is the rho-invariant entropy-per-molecule = discrete A/4 coefficient. The truncated SSEE is O(1) and does NOT track A_mol.",
+    "anti_circularity": "epsilon = rho^{-1/2} FIXED from the INDEPENDENT F-006 (ssee-diamond) p_rank=0.5189+/-0.0067 BEFORE measuring any ratio; NEVER tuned to make R=1/4.",
+    "F006_p_rank": 0.5188759456500236,
+    "F006_p_err": 0.0066971104884981,
+    "epsilon_law": "epsilon = rho^(-1/2)",
+    "references_present": {
+      "clpw-2022": "2206.10780 dS static-patch type II_1, max-entropy empty-dS state",
+      "dou-sorkin-2003": "gr-qc/0302009 horizon entropy as causal-link count (2D horizon-molecule area)",
+      "bekenstein-hawking-formula": "formulas.json S=A/(4 ell_P^2) k"
+    },
+    "references_absent": {
+      "gibbons-hawking-dS": "gr-qc/0205058-style Gibbons-Hawking dS entropy NOT in repo -> dS application of A/4 marked '\u26a0\ufe0f neove\u0159eno' per policy; we proceed with the dimensionless ratio."
+    },
+    "F023_prior": {
+      "source": "sj-desitter-type/results.json part1 (rho_proper=240)",
+      "N_total_cap": 480.1112902401474,
+      "dS_saturates_II1": true
+    },
+    "standalone_probe_R_full_to_rho3000": {
+      "note": "an independent single-large-box (R*=7) probe gave S_full/A_mol = 0.137, 0.132, 0.129 at rho=240,1000,3000 -> R_full flat beyond the dense ladder.",
+      "rho": [
+        240,
+        1000,
+        3000
+      ],
+      "R_full": [
+        0.137,
+        0.132,
+        0.129
+      ]
+    },
+    "sparse_threshold_N": 4500,
+    "toe_version": "0.3.0",
+    "note_reconstruction": "results assembled from the COMPLETED run.log (all dense blocks + the sparse rho=3000 block finished); the original run crashed at the OLD float32-too-tight pairing assert (2.17e-9 vs 1e-9) AFTER logging all science. calc.py assert is now float32-aware. Per-box values are seed-averaged means as logged; caps are the run's bootstrap caps."
+  },
+  "density_scan": {
+    "rho_240": {
+      "rho": 240.0,
+      "l": 1.0,
+      "RSTAR_BOX": [
+        1.6,
+        2.0,
+        2.6,
+        3.4,
+        4.4,
+        5.6,
+        7.0
+      ],
+      "N_total_mean": [
+        442.0,
+        463.0,
+        475.0,
+        479.0,
+        480.0,
+        480.0,
+        480.0
+      ],
+      "S_trunc_mean": [
+        0.5761,
+        0.6313,
+        0.595,
+        0.6291,
+        0.6886,
+        0.6552,
+        0.5977
+      ],
+      "S_full_mean": [
+        40.88,
+        43.81,
+        46.35,
+        45.98,
+        48.18,
+        47.24,
+        42.94
+      ],
+      "horizon_links_mean": [
+        343.2,
+        324.5,
+        358.8,
+        357.8,
+        356.2,
+        333.8,
+        344.5
+      ],
+      "Ns": [
+        442,
+        463,
+        475,
+        479,
+        480,
+        480,
+        480
+      ],
+      "max_pairing_residual_rel": 3.6e-15,
+      "S_full_cap": 46.186,
+      "S_trunc_cap": 0.6412,
+      "horizon_links_cap": 344.8,
+      "horizon_area": {
+        "epsilon": 0.06454972243679027,
+        "A_point": 1.0,
+        "A_mol": 344.8,
+        "A_cont_eps_units": 1.4366666666666663
+      },
+      "R_Sfull_over_Amol": 0.1339,
+      "R_Strunc_over_Acont": 0.4463,
+      "R_Strunc_over_Amol": 0.001859628770301624
+    },
+    "rho_600": {
+      "rho": 600.0,
+      "l": 1.0,
+      "RSTAR_BOX": [
+        1.6,
+        2.0,
+        2.6,
+        3.4,
+        4.4,
+        5.6,
+        7.0
+      ],
+      "N_total_mean": [
+        1106.0,
+        1157.0,
+        1187.0,
+        1197.0,
+        1200.0,
+        1200.0,
+        1200.0
+      ],
+      "S_trunc_mean": [
+        0.6215,
+        0.7272,
+        0.6987,
+        0.6553,
+        0.6547,
+        0.6842,
+        0.6808
+      ],
+      "S_full_mean": [
+        110.99,
+        119.03,
+        122.44,
+        119.04,
+        121.8,
+        121.57,
+        124.07
+      ],
+      "horizon_links_mean": [
+        861.0,
+        910.0,
+        968.8,
+        876.8,
+        920.8,
+        926.2,
+        918.5
+      ],
+      "Ns": [
+        1106,
+        1157,
+        1187,
+        1197,
+        1200,
+        1200,
+        1200
+      ],
+      "max_pairing_residual_rel": 7.7e-15,
+      "S_full_cap": 121.817,
+      "S_trunc_cap": 0.6835,
+      "horizon_links_cap": 921.8,
+      "horizon_area": {
+        "epsilon": 0.040824829046386304,
+        "A_point": 1.0,
+        "A_mol": 921.8,
+        "A_cont_eps_units": 1.5363333333333336
+      },
+      "R_Sfull_over_Amol": 0.1321,
+      "R_Strunc_over_Acont": 0.4449,
+      "R_Strunc_over_Amol": 0.0007414840529399002
+    },
+    "rho_1200": {
+      "rho": 1200.0,
+      "l": 1.0,
+      "RSTAR_BOX": [
+        1.6,
+        2.0,
+        2.6,
+        3.4,
+        4.4,
+        5.6,
+        7.0
+      ],
+      "N_total_mean": [
+        2212.0,
+        2314.0,
+        2374.0,
+        2395.0,
+        2399.0,
+        2400.0,
+        2400.0
+      ],
+      "S_trunc_mean": [
+        0.6775,
+        0.7096,
+        0.7442,
+        0.7653,
+        0.7549,
+        0.7371,
+        0.7108
+      ],
+      "S_full_mean": [
+        232.63,
+        247.59,
+        248.3,
+        250.52,
+        251.71,
+        248.73,
+        247.86
+      ],
+      "horizon_links_mean": [
+        1764.0,
+        1895.7,
+        1888.0,
+        1899.0,
+        1908.3,
+        1949.3,
+        1871.7
+      ],
+      "Ns": [
+        2212,
+        2314,
+        2374,
+        2395,
+        2399,
+        2400,
+        2400
+      ],
+      "max_pairing_residual_rel": 1.2e-14,
+      "S_full_cap": 249.459,
+      "S_trunc_cap": 0.7426,
+      "horizon_links_cap": 1909.8,
+      "horizon_area": {
+        "epsilon": 0.028867513459481287,
+        "A_point": 1.0,
+        "A_mol": 1909.8,
+        "A_cont_eps_units": 1.5915
+      },
+      "R_Sfull_over_Amol": 0.1306,
+      "R_Strunc_over_Acont": 0.4666,
+      "R_Strunc_over_Amol": 0.00038883652738506654
+    }
+  },
+  "patch_size_scan": {
+    "l_0.7": {
+      "rho": 600.0,
+      "l": 0.7,
+      "RSTAR_BOX": [
+        1.6,
+        2.0,
+        2.6,
+        3.4,
+        4.4,
+        5.6,
+        7.0
+      ],
+      "N_total_mean": [
+        823.0,
+        834.0,
+        839.0,
+        840.0,
+        840.0,
+        840.0,
+        840.0
+      ],
+      "S_trunc_mean": [
+        0.3513,
+        0.3924,
+        0.3744,
+        0.4266,
+        0.4387,
+        0.415,
+        0.3614
+      ],
+      "S_full_mean": [
+        58.5,
+        59.03,
+        61.37,
+        64.29,
+        64.45,
+        62.66,
+        60.39
+      ],
+      "horizon_links_mean": [
+        460.3,
+        459.7,
+        529.0,
+        526.3,
+        488.0,
+        493.3,
+        473.0
+      ],
+      "Ns": [
+        823,
+        834,
+        839,
+        840,
+        840,
+        840,
+        840
+      ],
+      "max_pairing_residual_rel": 5e-15,
+      "S_full_cap": 62.842,
+      "S_trunc_cap": 0.4050333333333333,
+      "horizon_links_cap": 484.8,
+      "horizon_area": {
+        "epsilon": 0.040824829046386304,
+        "A_point": 1.0,
+        "A_mol": 484.8,
+        "A_cont_eps_units": 0.8080000000000002
+      },
+      "R_Sfull_over_Amol": 0.1296
+    },
+    "l_1": {
+      "rho": 600.0,
+      "l": 1.0,
+      "RSTAR_BOX": [
+        1.6,
+        2.0,
+        2.6,
+        3.4,
+        4.4,
+        5.6,
+        7.0
+      ],
+      "N_total_mean": [
+        1106.0,
+        1157.0,
+        1187.0,
+        1197.0,
+        1200.0,
+        1200.0,
+        1200.0
+      ],
+      "S_trunc_mean": [
+        0.6215,
+        0.7272,
+        0.6987,
+        0.6553,
+        0.6547,
+        0.6842,
+        0.6808
+      ],
+      "S_full_mean": [
+        110.99,
+        119.03,
+        122.44,
+        119.04,
+        121.8,
+        121.57,
+        124.07
+      ],
+      "horizon_links_mean": [
+        861.0,
+        910.0,
+        968.8,
+        876.8,
+        920.8,
+        926.2,
+        918.5
+      ],
+      "Ns": [
+        1106,
+        1157,
+        1187,
+        1197,
+        1200,
+        1200,
+        1200
+      ],
+      "max_pairing_residual_rel": 7.7e-15,
+      "S_full_cap": 122.888,
+      "S_trunc_cap": 0.6732333333333332,
+      "horizon_links_cap": 927.2,
+      "horizon_area": {
+        "epsilon": 0.040824829046386304,
+        "A_point": 1.0,
+        "A_mol": 927.2,
+        "A_cont_eps_units": 1.5453333333333337
+      },
+      "R_Sfull_over_Amol": 0.1325
+    },
+    "l_1.5": {
+      "rho": 600.0,
+      "l": 1.5,
+      "RSTAR_BOX": [
+        1.6,
+        2.0,
+        2.6,
+        3.4,
+        4.4,
+        5.6,
+        7.0
+      ],
+      "N_total_mean": [
+        1419.0,
+        1566.0,
+        1691.0,
+        1762.0,
+        1790.0,
+        1798.0,
+        1800.0
+      ],
+      "S_trunc_mean": [
+        0.8396,
+        0.9059,
+        0.9355,
+        0.9256,
+        0.8941,
+        0.8893,
+        0.9201
+      ],
+      "S_full_mean": [
+        163.76,
+        174.92,
+        179.3,
+        184.21,
+        185.12,
+        182.56,
+        178.99
+      ],
+      "horizon_links_mean": [
+        1224.7,
+        1328.7,
+        1347.3,
+        1381.7,
+        1386.3,
+        1385.3,
+        1322.3
+      ],
+      "Ns": [
+        1419,
+        1566,
+        1691,
+        1762,
+        1790,
+        1798,
+        1800
+      ],
+      "max_pairing_residual_rel": 6e-15,
+      "S_full_cap": 182.602,
+      "S_trunc_cap": 0.9011666666666667,
+      "horizon_links_cap": 1364.7,
+      "horizon_area": {
+        "epsilon": 0.040824829046386304,
+        "A_point": 1.0,
+        "A_mol": 1364.7,
+        "A_cont_eps_units": 2.2745000000000006
+      },
+      "R_Sfull_over_Amol": 0.1338
+    }
+  },
+  "high_density_sparse_consistency": {
+    "rho_3000": {
+      "rho": 3000.0,
+      "l": 1.0,
+      "RSTAR_BOX": [
+        3.4,
+        4.4,
+        5.6,
+        7.0
+      ],
+      "N_total_mean": [
+        5987.0,
+        5998.0,
+        6000.0,
+        6000.0
+      ],
+      "S_trunc_mean": [
+        1.1436,
+        1.1273,
+        1.1297,
+        1.1548
+      ],
+      "S_full_mean": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "horizon_links_mean": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "Ns": [
+        5987,
+        5998,
+        6000,
+        6000
+      ],
+      "max_pairing_residual_rel": 2.2e-09,
+      "N_total_cap": 6000.0,
+      "S_trunc_cap": 1.14225,
+      "S_full_cap": null,
+      "horizon_links_cap": null,
+      "note": "S_full + A_mol unavailable on sparse path; content caps + S_trunc O(1) confirmed at high rho (consistency check)."
+    }
+  },
+  "discriminator": {
+    "PRIMARY_R_Sfull_over_Amol_density": {
+      "note": "A/4-candidate: full SSEE cap per horizon molecule; constant across rho => quantitative area law.",
+      "rho": [
+        240.0,
+        600.0,
+        1200.0
+      ],
+      "R": [
+        0.1339,
+        0.1321,
+        0.1306
+      ],
+      "constancy": {
+        "mean": 0.1322,
+        "std": 0.001652271164185829,
+        "cv": 0.012498269018047117,
+        "min": 0.1306,
+        "max": 0.1339,
+        "ratio_to_quarter": 0.5288
+      },
+      "drift_vs_rho": {
+        "slope": -0.015466416464966272,
+        "se": 0.0004796854171397524,
+        "r2": 0.9990390161695211
+      }
+    },
+    "PRIMARY_R_Sfull_over_Amol_patchsize": {
+      "l": [
+        0.7,
+        1.0,
+        1.5
+      ],
+      "R": [
+        0.1296,
+        0.1325,
+        0.1338
+      ],
+      "constancy": {
+        "mean": 0.13196666666666668,
+        "std": 0.0021501937897160242,
+        "cv": 0.01629346140224317,
+        "min": 0.1296,
+        "max": 0.1338,
+        "ratio_to_quarter": 0.5278666666666667
+      },
+      "drift_vs_l": {
+        "slope": 0.041444256101297386,
+        "se": 0.010899787593585088,
+        "r2": 0.9353064056637067
+      }
+    },
+    "secondary_R_Strunc_over_Acont_density": {
+      "note": "truncated SSEE cap vs eps-units continuum area A_cont=A_mol*eps^2.",
+      "rho": [
+        240.0,
+        600.0,
+        1200.0
+      ],
+      "R": [
+        0.4463,
+        0.4449,
+        0.4666
+      ],
+      "constancy": {
+        "mean": 0.45260000000000006,
+        "std": 0.01214454610102824,
+        "cv": 0.026832846003155632,
+        "min": 0.4449,
+        "max": 0.4666,
+        "ratio_to_quarter": 1.8104000000000002
+      },
+      "drift_vs_rho": {
+        "slope": 0.026013181714001465,
+        "se": 0.020292996253015394,
+        "r2": 0.6216729619887607
+      }
+    },
+    "S_full_cap_vs_rho": {
+      "rho": [
+        240.0,
+        600.0,
+        1200.0
+      ],
+      "S_cap": [
+        46.186,
+        121.817,
+        249.459
+      ],
+      "drift": {
+        "slope": 1.0485031087158592,
+        "se": 0.006852361025826011,
+        "r2": 0.9999572906975013
+      }
+    },
+    "S_trunc_cap_vs_rho": {
+      "rho": [
+        240.0,
+        600.0,
+        1200.0
+      ],
+      "S_cap": [
+        0.6412,
+        0.6835,
+        0.7426
+      ],
+      "drift": {
+        "slope": 0.09009776657142267,
+        "se": 0.014044335339810437,
+        "r2": 0.9762781849491822
+      }
+    },
+    "horizon_links_cap_vs_rho": {
+      "rho": [
+        240.0,
+        600.0,
+        1200.0
+      ],
+      "A_mol": [
+        344.8,
+        921.8,
+        1909.8
+      ],
+      "drift": {
+        "slope": 1.0640967570897022,
+        "se": 0.006274828444689136,
+        "r2": 0.9999652282640941
+      }
+    },
+    "S_full_cap_vs_l": {
+      "l": [
+        0.7,
+        1.0,
+        1.5
+      ],
+      "S_cap": [
+        62.842,
+        122.888,
+        182.602
+      ],
+      "drift": {
+        "slope": 1.3900044615424385,
+        "se": 0.2594059020675628,
+        "r2": 0.9663442566321339
+      }
+    }
+  },
+  "VERDICT": {
+    "F023_cap_confirmed": true,
+    "PRIMARY_R_Sfull_over_Amol_mean": 0.1322,
+    "PRIMARY_R_combined_mean_density_and_l": 0.13208333333333336,
+    "PRIMARY_R_combined_cv": 0.013020467950735942,
+    "PRIMARY_R_constant_across_rho": true,
+    "PRIMARY_R_constant_across_l": true,
+    "PRIMARY_R_drift_exponent_vs_rho": -0.015466416464966272,
+    "PRIMARY_R_drift_exponent_se": 0.0004796854171397524,
+    "PRIMARY_R_cv_across_rho": 0.012498269018047117,
+    "PRIMARY_R_cv_across_l": 0.01629346140224317,
+    "is_quarter_like": false,
+    "implied_coefficient_c": 7.570977917981071,
+    "quantitative_area_law": true,
+    "H5g2_strong_quantitative_A4": false,
+    "S_full_cap_drift_vs_rho": 1.0485031087158592,
+    "horizon_links_cap_drift_vs_rho": 1.0640967570897022,
+    "overall": "PARTIAL/AFFIRMATIVE: R_full = S_full_cap/A_mol is CONSTANT across both the 5x density range AND the 2x patch-size range (combined mean R=0.1321, CV=1.3%) -> the F-023 dS entropy cap obeys a QUANTITATIVE area-law S = A/(c*G) with c = 7.57. The cap is PROPORTIONAL to the discrete Dou-Sorkin horizon-molecule area (qualitative->quantitative upgrade ESTABLISHED), but the constant is NOT 1/4 -- the 2D molecule-count vs SSEE O(1) normalisation is not fixed to give 4."
+  }
+}

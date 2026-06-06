@@ -110,6 +110,16 @@ The §4.3 de Sitter extension was added in round 10/11 (decision H5g-6: a sectio
 - [ ] **Verify the two new arXiv IDs cited by §4.3:** 1306.3231 (de Sitter SJ vacuum / conformal trick) and 1205.3855 (Anninos, dS$_2$ static patch, tortoise + $\mathrm{sech}^2$ conventions) — confirm existence, authors/year, and that they say what is claimed. (2206.10780 CLPW II$_1$ and 2008.07697 area-law rank are already in the §5/§8 arXiv list.)
 - [ ] **H5g-2 ($A/4$ cap) is cited as OPEN, not tested.** Confirm the §4.3 outlook flags the dS-entropy-cap-vs-horizon-area question as future work and does not present any quantitative $A/4$ match.
 
+### 7b addendum — round-12 results (VYPOCET-23/24; 2026-06-06)
+
+**No text changes to §4.3 are required** by the round-12 results. The findings close or refine two open probes but do not contradict any claim presently in §4.3:
+
+- **F-027 (VYPOCET-24 tracial null, closed):** The VYPOCET-19 Part-3 honest null (tracial IR-accumulation not detected) is CONFIRMED at 6× density (rho∈{1000,3000}, N≤3000). Explanation: κ=√N/(4π)-truncation removes low-ε modes → tracial state falls into the spectral gap; the II₁ identification rests on content-saturation (F-023), not a tracial probe. §4.3 already flags Part-3 as an honest null and references the resolution threshold ρ~10³–10⁴ — this finding confirms F-023's status as 'supported' is correct and the tracial channel is not the upgrade path. **Draft §4.3 wording: no change needed.** Note for future revision: if a new tracial probe bypassing the κ-gap is designed (different cutoff scheme), reopen this item.
+
+- **F-028 (VYPOCET-23 quantitative A/4-like area-law):** The qualitative dS entropy cap (F-023, §4.3) is now upgraded to a QUANTITATIVE area-proportionality: R_full=S_cap/A_mol=0.1321±1.3% (constant over 5× density, 2× patch size). The implied coefficient is c≈7.57≠4. Weak H5g-2 SUPPORTED (proportionality confirmed); strong H5g-2 KILLED (coefficient ≠ 1/4). **Draft §4.3 wording: the §4.3 outlook sentence currently flags H5g-2 as open — this is correct and need not change.** However, when §4.3 is revised for any re-submission, add one sentence: "Subsequent calculation (VYPOCET-23) establishes that the entropy cap is quantitatively proportional to the Dou-Sorkin horizon molecule count with a density- and patch-size-invariant coefficient R=0.132±1.3%, but c=1/R≈7.57≠4 — the proportionality is confirmed while the literal 1/4 coefficient is not obtained [F-028]." Until then §4.3 remains unchanged.
+
+- [ ] **Coordinate bug fix (toe v0.3.0, load-bearing):** The sparse causal_blocks_2d / idelta_operator_2d builders require null coordinates (u,v)=(t−r*,t+r*). Passing (t,r*) directly gives matvec rel error 0.63. The 2D dS `calc.py` of VYPOCET-23/24 uses (u,v) correctly. The existing dense `calc.py` files for VYPOCET-19 and VYPOCET-21/23 did not use sparse builders — verify that no extant `calc.py` passes (t,r*) to idelta_operator_2d. (This is a note for the human re-run gate §8.1.)
+
 ## 8. Human verification gates (must all pass before this leaves the building)
 
 1. [ ] A named human re-runs all four `calc.py` and reproduces: 2D trace $80\times$ / $N^{1.04}\to N^{0.17}$; 2D pile-up $N^{1.14}\to0$; 4D trace $36\times$ / $N^{1.34}\to N^{0.55}$; 4D pile-up $N^{1.27}\to0$, IR edge $\varepsilon\approx2.7$; fixed-fraction $N^{0.83}$ failure.
