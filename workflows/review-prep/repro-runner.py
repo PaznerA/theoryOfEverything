@@ -94,6 +94,9 @@ def main():
         shutil.copytree(src, dst, ignore=shutil.ignore_patterns('plots'))
         orig = json.load(open(os.path.join(src, 'results.json')))
         env = dict(os.environ, OMP_NUM_THREADS='4', MPLBACKEND='Agg', PYTHONHASHSEED='0')
+        # rounds 10-12 calcs import lib/toe; sandbox copies need the repo lib
+        env['PYTHONPATH'] = os.path.join(ROOT, 'lib') + (
+            os.pathsep + env['PYTHONPATH'] if env.get('PYTHONPATH') else '')
         t0 = time.time()
         log(f'{d}: running calc.py ...')
         try:

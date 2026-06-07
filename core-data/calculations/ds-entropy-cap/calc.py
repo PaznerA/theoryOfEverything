@@ -57,9 +57,9 @@ t0 = time.time()
 # --------------------------------------------------------------------------- #
 # ANTI-CIRCULARITY: read epsilon ~ rho^{-1/2} from the INDEPENDENT F-006 result
 # --------------------------------------------------------------------------- #
-F006 = json.load(open(
-    "/Users/pazny/projects/theoryOfEverything/core-data/calculations/"
-    "ssee-diamond/results.json"))
+F006 = json.load(open(os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    "..", "ssee-diamond", "results.json")))
 EPS_EXPONENT = F006["knee_scaling"]["entropy_cutoff_rank"]["eps_exponent"]   # -0.5188...
 P_RANK = F006["knee_scaling"]["entropy_cutoff_rank"]["p_rank_vs_N"]          #  0.5188...
 P_RANK_ERR = F006["knee_scaling"]["entropy_cutoff_rank"]["p_err"]           #  0.0067

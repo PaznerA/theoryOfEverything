@@ -11,7 +11,8 @@ into results.json and regenerates the plots, reusing calc.py's discriminator,
 constancy/drift, verdict and plotting helpers unchanged (NOT recomputed physics).
 """
 import sys, os, re, json
-sys.path.insert(0, "/Users/pazny/projects/theoryOfEverything/lib")
+sys.path.insert(0, os.path.normpath(os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", "lib")))
 import numpy as np
 import importlib.util
 
