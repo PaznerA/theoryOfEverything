@@ -337,6 +337,7 @@ def build(out_dir: str = DEFAULT_OUT, verbose: bool = True) -> int:
         "data/connections.html": "Souvislosti",
         "data/formulas.html": "Vzorce",
         "data/open-problems.html": "Otevřené problémy",
+        "data/graph.html": "Graf konceptů",
         "calculations.html": "Galerie výpočtů",
     }
     for route, title in generated_routes.items():
@@ -470,6 +471,42 @@ def _render_registries(env, out_dir, pages, route_set, asset_map,
     ctx.update(groups=pgroups, pillar_order=pillar_order, total=len(problems))
     _write(out_dir, oppage.route,
            env.get_template("open-problems.html").render(**ctx))
+
+    # --- concept graph (force-directed view + its data payload) ---
+    import json as _json
+
+    payload = datamod.build_graph_payload(REPO_ROOT)
+    payload_json = _json.dumps(payload, ensure_ascii=False)
+
+    # Canonical JSON payload (consumed programmatically + by the test suite).
+    data_route = "assets/graph-data.json"
+    data_path = os.path.join(out_dir, data_route)
+    os.makedirs(os.path.dirname(data_path), exist_ok=True)
+    with open(data_path, "w", encoding="utf-8") as fh:
+        fh.write(payload_json)
+
+    # Browser loader: the SAME payload assigned to a global via a <script src>.
+    # ``fetch()`` cannot read file:// URLs in modern browsers, so the page loads
+    # the data with a plain <script> tag (the KaTeX pattern) -- this keeps the
+    # view working from file:// AND under any subpath with only relative links.
+    js_route = "assets/graph-data.js"
+    js_path = os.path.join(out_dir, js_route)
+    with open(js_path, "w", encoding="utf-8") as fh:
+        fh.write("window.__TOE_GRAPH__ = " + payload_json + ";\n")
+
+    gpage = _page_by_route(pages, "data/graph.html")
+    ctx = common_ctx(gpage, math=False)
+    # Relative hrefs from the graph page to its data files (file://-safe).
+    ctx.update(
+        data_href=sitemap.relpath(gpage.route, data_route),
+        data_js_href=sitemap.relpath(gpage.route, js_route),
+        node_count=payload["nodeCount"],
+        edge_count=payload["edgeCount"],
+        predicted=payload["predicted"],
+        legend=payload["legend"],
+    )
+    _write(out_dir, gpage.route,
+           env.get_template("graph.html").render(**ctx))
 
     # --- calculations gallery ---
     capage = _page_by_route(pages, "calculations.html")

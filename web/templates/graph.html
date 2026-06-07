@@ -1,0 +1,265 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Graf konceptů ({{ node_count }} uzlů, {{ edge_count }} hran)</h1>
+<p class="lead">Interaktivní silově řízený pohled na konceptuální graf
+(<code>core-data/concept-graph.json</code>). Velikost uzlu ~ stupeň, barva podle
+primárního pilíře. Styl hrany podle ratingu <em>explored</em>.
+{%- if predicted.available %}
+Předpovězené kandidátní hrany (link prediction, AUC ≈ {{ '%.2f'|format(predicted.auc) }},
+{{ predicted.count }} hran) jsou zvýrazněny zvlášť — jsou to <strong>návrhy</strong>,
+ne fakta.
+{%- endif %}
+</p>
+
+<div class="graph-controls" id="graph-controls">
+  <div class="gc-row">
+    <input type="search" id="graph-search" placeholder="Hledat uzel…"
+           autocomplete="off" aria-label="Hledat uzel">
+    <label class="gc-inline">Pilíř:
+      <select id="graph-pillar"><option value="">— všechny —</option></select>
+    </label>
+  </div>
+  <div class="gc-row gc-toggles" id="graph-explored-toggles">
+    <span class="gc-label">Hrany:</span>
+    <label><input type="checkbox" data-explored="well" checked> <span class="leg solid"></span> well</label>
+    <label><input type="checkbox" data-explored="partially" checked> <span class="leg dashed"></span> partially</label>
+    <label><input type="checkbox" data-explored="barely" checked> <span class="leg dotted"></span> barely</label>
+    <label><input type="checkbox" data-explored="unrated" checked> <span class="leg faint"></span> bez ratingu</label>
+    {%- if predicted.available %}
+    <label><input type="checkbox" data-explored="predicted"> <span class="leg pred"></span> predikované</label>
+    {%- endif %}
+  </div>
+</div>
+
+<div class="graph-stage">
+  <div id="graph-canvas" class="graph-canvas" role="img"
+       aria-label="Silově řízený graf konceptů"></div>
+  <aside id="graph-panel" class="graph-panel" hidden>
+    <button class="gp-close" id="gp-close" aria-label="Zavřít">×</button>
+    <h2 id="gp-name">—</h2>
+    <p class="gp-meta"><span id="gp-degree"></span> · <span id="gp-pillars"></span></p>
+    <p id="gp-def" class="gp-def"></p>
+    <h3>Nejsilnější vazby</h3>
+    <ul id="gp-links" class="gp-links"></ul>
+  </aside>
+</div>
+
+<p class="muted">Tip: kolečkem zoom, tažením posun. Klik na uzel otevře panel.
+Stránka je samostatná (CDN <code>force-graph</code>), funguje z <code>file://</code>
+i pod libovolnou pod-cestou.</p>
+
+<noscript><p class="muted">Tento pohled vyžaduje JavaScript.</p></noscript>
+
+<!-- Graph data is loaded via a <script src> (not fetch) so the page works from
+     file:// as well as any subpath; the JSON twin lives at {{ data_href }}. -->
+<script src="{{ data_js_href }}"></script>
+<!-- force-graph (canvas renderer) from unpkg CDN — same pattern as KaTeX. -->
+<script defer src="https://unpkg.com/force-graph@1.43.4/dist/force-graph.min.js"
+        crossorigin="anonymous"></script>
+<script>
+(function () {
+  // Relative data path (JSON twin) recorded for reference / external consumers.
+  var DATA_URL = "{{ data_href }}";
+  var EXPLORED_STYLE = {
+    well:      { dash: [],        width: 1.4, color: "rgba(70,153,144,0.55)" },
+    partially: { dash: [4, 3],    width: 1.1, color: "rgba(243,130,49,0.55)" },
+    barely:    { dash: [1, 4],    width: 1.0, color: "rgba(145,30,180,0.55)" },
+    unrated:   { dash: [],        width: 0.5, color: "rgba(120,120,120,0.18)" },
+    predicted: { dash: [6, 4],    width: 1.6, color: "rgba(220,20,60,0.9)" }
+  };
+
+  function whenReady(cb) {
+    if (typeof ForceGraph !== "undefined") return cb();
+    var tries = 0;
+    var t = setInterval(function () {
+      if (typeof ForceGraph !== "undefined") { clearInterval(t); cb(); }
+      else if (++tries > 100) { clearInterval(t); }
+    }, 50);
+  }
+
+  function byId(id) { return document.getElementById(id); }
+
+  var data = window.__TOE_GRAPH__;
+  if (!data) {
+    byId("graph-canvas").textContent =
+      "Data grafu se nenačetla (" + DATA_URL + ").";
+  } else {
+    whenReady(function () { boot(data); });
+  }
+
+  function boot(data) {
+    var el = byId("graph-canvas");
+    var nodes = data.nodes;
+    var links = data.links;
+
+    // Degree extent for node sizing.
+    var maxDeg = 1;
+    nodes.forEach(function (n) { if (n.degree > maxDeg) maxDeg = n.degree; });
+    function radius(n) { return 2 + 5 * Math.sqrt(n.degree / maxDeg); }
+
+    // State.
+    var enabled = { well: true, partially: true, barely: true,
+                    unrated: true, predicted: false };
+    var pillarFilter = "";
+    var searchTerm = "";
+    var selectedId = null;
+
+    function nodeVisible(n) {
+      if (pillarFilter && (n.pillars || []).indexOf(pillarFilter) === -1) {
+        return false;
+      }
+      return true;
+    }
+    function linkVisible(l) {
+      var st = l.explored || "unrated";
+      if (!enabled[st]) return false;
+      var s = typeof l.source === "object" ? l.source : nodeById[l.source];
+      var t = typeof l.target === "object" ? l.target : nodeById[l.target];
+      return s && t && nodeVisible(s) && nodeVisible(t);
+    }
+
+    var nodeById = {};
+    nodes.forEach(function (n) { nodeById[n.id] = n; });
+
+    // Populate pillar dropdown from the legend.
+    var sel = byId("graph-pillar");
+    (data.legend || []).forEach(function (lg) {
+      var o = document.createElement("option");
+      o.value = lg.pillar; o.textContent = lg.pillar;
+      sel.appendChild(o);
+    });
+
+    var Graph = ForceGraph()(el)
+      .graphData({ nodes: nodes, links: links })
+      .nodeId("id")
+      .linkSource("from")
+      .linkTarget("to")
+      .backgroundColor("#0d0f14")
+      .nodeRelSize(1)
+      .nodeVal(function (n) { return radius(n); })
+      .nodeLabel(function (n) {
+        return n.name + " (deg " + n.degree + ")";
+      })
+      .nodeVisibility(nodeVisible)
+      .linkVisibility(linkVisible)
+      .linkColor(function (l) {
+        return (EXPLORED_STYLE[l.explored || "unrated"] || EXPLORED_STYLE.unrated).color;
+      })
+      .linkWidth(function (l) {
+        return (EXPLORED_STYLE[l.explored || "unrated"] || EXPLORED_STYLE.unrated).width;
+      })
+      .linkLineDash(function (l) {
+        return (EXPLORED_STYLE[l.explored || "unrated"] || EXPLORED_STYLE.unrated).dash;
+      })
+      .nodeCanvasObjectMode(function () { return "replace"; })
+      .nodeCanvasObject(function (n, ctx, scale) {
+        var r = radius(n);
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, r, 0, 2 * Math.PI, false);
+        ctx.fillStyle = n.color || "#9aa0a6";
+        ctx.fill();
+        var hit = searchTerm &&
+          (n.name.toLowerCase().indexOf(searchTerm) !== -1 ||
+           n.id.toLowerCase().indexOf(searchTerm) !== -1);
+        if (n.id === selectedId || hit) {
+          ctx.lineWidth = 2 / scale;
+          ctx.strokeStyle = hit ? "#ffd000" : "#ffffff";
+          ctx.stroke();
+        }
+        if (scale > 2.2 || n.id === selectedId || hit) {
+          ctx.font = (11 / scale) + "px sans-serif";
+          ctx.fillStyle = "#e8eaed";
+          ctx.fillText(n.name, n.x + r + 1, n.y + 3 / scale);
+        }
+      })
+      .onNodeClick(function (n) { openPanel(n); })
+      .onBackgroundClick(function () { closePanel(); });
+
+    function sizeCanvas() {
+      Graph.width(el.clientWidth).height(el.clientHeight || 560);
+    }
+    sizeCanvas();
+    window.addEventListener("resize", sizeCanvas);
+
+    // ---- Side panel -----------------------------------------------------
+    function openPanel(n) {
+      selectedId = n.id;
+      byId("gp-name").textContent = n.name;
+      byId("gp-degree").textContent = "stupeň " + n.degree;
+      byId("gp-pillars").textContent =
+        (n.pillars && n.pillars.length) ? n.pillars.join(", ") : "(bez pilíře)";
+      byId("gp-def").textContent = n.definition || "(bez definice)";
+
+      // Top links by neighbor degree (most central neighbors first).
+      var nbrs = [];
+      links.forEach(function (l) {
+        var s = typeof l.source === "object" ? l.source.id : l.from;
+        var t = typeof l.target === "object" ? l.target.id : l.to;
+        var other = null;
+        if (s === n.id) other = t; else if (t === n.id) other = s;
+        if (other && nodeById[other]) {
+          nbrs.push({ node: nodeById[other], predicted: !!l.predicted,
+                      explored: l.explored });
+        }
+      });
+      nbrs.sort(function (a, b) { return b.node.degree - a.node.degree; });
+      var ul = byId("gp-links");
+      ul.innerHTML = "";
+      nbrs.slice(0, 12).forEach(function (x) {
+        var li = document.createElement("li");
+        li.textContent = x.node.name +
+          (x.predicted ? "  ⟂ predikce" : "");
+        li.className = "gp-link-" + (x.explored || "unrated");
+        li.tabIndex = 0;
+        li.addEventListener("click", function () { focusNode(x.node); });
+        ul.appendChild(li);
+      });
+      byId("graph-panel").hidden = false;
+    }
+    function closePanel() {
+      selectedId = null;
+      byId("graph-panel").hidden = true;
+    }
+    function focusNode(n) {
+      openPanel(n);
+      Graph.centerAt(n.x, n.y, 600);
+      Graph.zoom(4, 600);
+    }
+    byId("gp-close").addEventListener("click", closePanel);
+
+    // ---- Controls -------------------------------------------------------
+    byId("graph-search").addEventListener("input", function (e) {
+      searchTerm = e.target.value.trim().toLowerCase();
+      var hit = null;
+      if (searchTerm) {
+        for (var i = 0; i < nodes.length; i++) {
+          if (nodes[i].name.toLowerCase().indexOf(searchTerm) !== -1 ||
+              nodes[i].id.toLowerCase().indexOf(searchTerm) !== -1) {
+            hit = nodes[i]; break;
+          }
+        }
+      }
+      if (hit && hit.x !== undefined) {
+        Graph.centerAt(hit.x, hit.y, 400);
+        Graph.zoom(4, 400);
+      }
+    });
+
+    sel.addEventListener("change", function (e) {
+      pillarFilter = e.target.value;
+      Graph.nodeVisibility(nodeVisible).linkVisibility(linkVisible);
+    });
+
+    Array.prototype.forEach.call(
+      document.querySelectorAll("#graph-explored-toggles input"),
+      function (cb) {
+        cb.addEventListener("change", function () {
+          enabled[cb.getAttribute("data-explored")] = cb.checked;
+          Graph.linkVisibility(linkVisible);
+        });
+      }
+    );
+  }
+})();
+</script>
+{% endblock %}

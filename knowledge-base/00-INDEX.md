@@ -1,7 +1,7 @@
 # Index znalostní báze — Theory of Everything
 
 > Anotovaný rejstřík všech souborů ve `knowledge-base/`, `core-data/` a `verification/`.
-> Generováno: 2026-06-05; aktualizováno: 2026-06-07 (GH Actions výpočetní infrastruktura: 3 drivery, repro.yml + compute.yml, repo veřejné + Pages).
+> Generováno: 2026-06-05; aktualizováno: 2026-06-07 (CAS validační dráha, link prediction `lib/kgraph/`, interaktivní graf konceptů na webu).
 
 ---
 
@@ -27,6 +27,24 @@
 
 ---
 
+## CAS validační dráha (`verification/cas/`)
+
+- [../verification/cas/README.md](../verification/cas/README.md) — **Nezávislá CAS validace** (2026-06-07): 3 Wolfram Language skripty re-derivují publikované exaktní výsledky PŘÍMO z literárních koeficientů (Duff 2003.02688, Vassilevich hep-th/0306138, Chamseddine-Connes hep-th/9606001, Beccaria-Tseytlin 1710.03779, Hořava 0902.3657) — ne přepisem sympy výstupů. Shoda obou drah = nezávislý důkaz. Instalace: `brew install --cask wolfram-engine` + jednorázová aktivace; spuštění: `python3 verification/cas/run_all.py`. Testy gracefully skippují bez WL Engine.
+- [../verification/cas/a4_identity.wl](../verification/cas/a4_identity.wl) — Ověřuje −18/11 (single Weyl), Dirac = 2×Weyl (stejný poměr), třícestnou konzistenci (spektrální α₀/τ₀ = single-Weyl = Dirac; f₀ i π se pokrátí přes `Together+FreeQ`), obsahovou nezávislost SM 45 i 48, plný SM láme identitu (−1698/1991), konformní graviton −398/261, STr(1) = −62/−68. Export `a4_identity_result.json`.
+- [../verification/cas/ds_classifier.wl](../verification/cas/ds_classifier.wl) — Izotropní d_s = D/γ a Hořavova d_s = 1 + D_space/z; validuje ~9 exaktních racionálů vč. Hořava z=2→5/2, z=3→2, IR z=1→4. Export `ds_classifier_result.json`.
+- [../verification/cas/lambda_ledger.wl](../verification/cas/lambda_ledger.wl) — Formální symbolová aritmetika (f₀,f₂,f₄,N,k̂,ĝ,Λ); ověřuje a₀ a a₂ lineární v N, poměr a₀:a₂ nese (f₄/f₂)Λ², intra-a₄ poměr −18/11 cutoff-čistý, Λcc/m_Pl² = π²f₄/(2Nf₂²k̂²) nese 1/N. Export `lambda_ledger_result.json`.
+- [../verification/cas/run_all.py](../verification/cas/run_all.py) — Runner: volá `wolframscript -file` pro každý .wl, sbírá JSONy do `results.json` s overall pass/fail; při chybějícím wolframscript exit 2 + zpráva. Testy: `app/tests/test_cas_validation.py` (3 vždy-běžící guardy + 2 Wolfram-podmíněné).
+
+---
+
+## Predikce vazeb (`lib/kgraph/` + `core-data/link-predictions.json` + `reports/`)
+
+- [../lib/kgraph/__init__.py](../lib/kgraph/__init__.py) — **`lib/kgraph/`** (2026-06-07): infra-knihovna pro strojové hledání nenalezených vazeb v grafu konceptů (numpy+scipy only, žádný networkx/torch). Moduly: `loader.py` (concept-graph.json → řídká sousednost vážená násobností, 1632 unikátních hran), `scores.py` (5 heuristik + spektrální embedding normalizovaného Laplaciánu, eigsh d=32, kosinus; ensemble = rank-průměr), `evaluate.py` (leave-k-out, AUC z Mann-Whitney U + precision@k), `predict.py` (cross-pillar flag, vysvětlení přes Adamic-Adar-vážené sousedy).
+- [../core-data/link-predictions.json](../core-data/link-predictions.json) — **Top-50 kandidátních vazeb** (generated 2026-06-07): leave-10%-out **AUC = 0,903 ± 0,018** (8 seedů), P@50 ≈ 1,0. Pozor: 17/50 jsou hub-artefakty (pilíř↔pilíř); 3 nejzajímavější koncept-koncept: generalized-entropy↔crossed-product-algebra (CLPW), spectral-triple↔SM-from-spectral-geometry (Connes NCG), noncommutative-geometry↔spectral-dimension (mezipřístupový). **Kandidáti jsou NÁVRHY** — do fragmentů/connections.json až po redakčním rozhodnutí s arXiv/DOI oporou.
+- [../reports/2026-06-07-link-prediction.md](../reports/2026-06-07-link-prediction.md) — Detailní report link prediction: metodologie, evaluace, kritické čtení top-50, vizualizace.
+
+---
+
 ## Infrastruktura (`app/` + `lib/` + `web/` + `compute/` + GH Actions)
 
 - [../compute/README.md](../compute/README.md) — **`compute/` — škálované výpočetní drivery** (2026-06-07): 3 drivery nad `lib/toe` v0.3.0 pro F-025/F-028 rozšíření a otevřenou otázku c^{4D} vs. c^{2D}; sdílená infrastruktura `_common.py` (atomický checkpointing, time-budget 5,5 h, host fingerprint); výsledky do `compute/results/` lokálně nebo artefakty GH Actions (90 dní). Testy: 4 smoke testy v `app/tests/test_compute_drivers.py`, každý < 30 s.
@@ -38,7 +56,7 @@
 - [../app/README.md](../app/README.md) — Dockerizované prostředí (research/testing/prezentace): Jupyter Lab nad repem, pytest reprodukční sada (rychlá 6 výpočtů + plná 20 za `FULL_REPRO=1`), plný repro-runner, web služba buildující `web/dist/`. Verze knihoven pinované na stav bitové reprodukce 2026-06-06.
 - [../lib/README.md](../lib/README.md) — **`lib/toe` v0.3.0** (kolo 12): kombinovatelná simulační knihovna distilovaná z 24 ověřených `calc.py`. 8 modulů ve vrstvách A/B/C (`fits`, `causet`, `spectral`, `ncg`, `viz` | `sj` | `entropy`, `vntype`), **64 veřejných funkcí** (+5 sparse z kola 12: sparse eigensolver mašinérie, float64+float32, dense vs. sparse cross-validace). Fyzikální vstupy → `(hodnota, SE/CI)` výstupy s `validated` flagem a `formula-id` docstringy. Testy: **304 passed / 14 skipped / 1 xfailed v 99.4 s** (16 nových sparse testů, ze 288 kolo 11).
 - [../lib/examples/demo_pipeline.py](../lib/examples/demo_pipeline.py) — spustitelná end-to-end ukázka: 2D diamant N≤500, sprinkle → SJ stav → truncovaná SSEE → power-law fit → panel (`demo_output.png`); runtime <1 s.
-- [../web/README.md](../web/README.md) — **`web/` — minimalistický statický site-builder** (krok 4 roadmapy): `web/build.py` builduje 103 stránek do `web/dist/` přímo ze zdrojů repozitáře (markdown + JSON registry jako zdroj pravdy, žádný duplicitní obsah). Spuštění: `python3 web/build.py` nebo `docker compose --profile web up web` (port 8080). Testy: 274 passed, 14 skipped, 1 xfailed (16 webových testů včetně 4 regresních).
+- [../web/README.md](../web/README.md) — **`web/` — minimalistický statický site-builder** (krok 4 roadmapy + rozšíření 2026-06-07): `web/build.py` builduje **111 stránek** do `web/dist/` přímo ze zdrojů repozitáře (markdown + JSON registry jako zdroj pravdy, žádný duplicitní obsah). Spuštění: `python3 web/build.py` nebo `docker compose --profile web up web` (port 8080). Vč. interaktivního grafu konceptů: `web/dist/data/graph.html` (force-graph CDN, canvas; uzel ~ stupeň, barva ~ pilíř, hrana ~ explored; search/pilíř-filtr/rating-toggly/predikce-toggle; klik → boční panel). Ověřeno headless (0 chyb, file:// i http).
 
 ---
 

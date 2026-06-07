@@ -1,0 +1,37 @@
+{
+	"script":"ds_classifier.wl",
+	"description":"Independent CAS re-derivation of the d_s master table limits",
+	"convention":"D = spacetime = 4; D_space = D-1 = 3 for Horava (arXiv:0902.3657)",
+	"sources":{
+		"horava":"arXiv:0902.3657 (d_s = 1 + D_space\/z)",
+		"stelle":"Calcagni-Modesto-Nardelli arXiv:1408.0199 (UV d_s = 2)",
+		"asymptotic_safety":"Lauscher-Reuter hep-th\/0508202; Reuter-Saueressig 1110.5224",
+		"causal_set_dalembertian":"Belenchia et al. arXiv:1507.00330",
+		"multifractional":"Calcagni arXiv:1304.2709"
+	},
+	"exact_values":{
+		"GR":"4",
+		"Stelle":"2",
+		"AsymptoticSafety":"2",
+		"CausalSet_dAlembertian":"2",
+		"Multifractional":"2",
+		"Horava_z2":"5\n-\n2",
+		"Horava_z3":"2",
+		"Horava_IR_z1":"4",
+		"Horava_headline_Dspace3_z3":"2"
+	},
+	"checks":{
+		"GR_ds_is_4":true,
+		"Stelle_ds_is_2":true,
+		"AS_eta_minus2_ds_is_2":true,
+		"CST_dAlembertian_ds_is_2":true,
+		"Multifractional_ds_is_2":true,
+		"Horava_z2_ds_is_5_2":true,
+		"Horava_z3_ds_is_2":true,
+		"Horava_IR_z1_ds_is_4":true,
+		"Horava_headline_Dspace3_z3_ds_is_2":true,
+		"convention_GR_equals_Horava_IR":true,
+		"gamma2_subclass_all_equal_2":true
+	},
+	"overall_pass":true
+}

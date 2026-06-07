@@ -1,0 +1,38 @@
+{
+	"script":"lambda_ledger.wl",
+	"description":"Independent CAS validation of the Lambda-induction ledger (no second identity)",
+	"sources":{
+		"spectral_action":"Chamseddine-Connes hep-th\/9606001 eq.2.24; Marcolli NCG cosmology",
+		"heat_kernel_a0_a2":"Gilkey; Vassilevich hep-th\/0306138 eq.4.26-4.27"
+	},
+	"symbolic_forms":{
+		"ratio_a0_over_a2":"(f4*ghat*Lam^2)\/(f2*khat)",
+		"ratio_a4_alpha0_over_tau0":"-18\/11",
+		"Lambda_cc":"(f4*ghat*Lam^2)\/(2*f2*khat)",
+		"Lambda_cc_over_mPl2":"(f4*ghat*Pi^2)\/(2*f2^2*khat^2*nF)"
+	},
+	"checks":{
+		"a0_linear_in_N":true,
+		"a2_linear_in_N":true,
+		"a0a2_ratio_free_of_N":true,
+		"a0a2_ratio_carries_f4":true,
+		"a0a2_ratio_carries_f2":true,
+		"a0a2_ratio_carries_Lambda":true,
+		"a0a2_ratio_Lambda_power_is_2":true,
+		"a4_ratio_is_minus_18_11":true,
+		"a4_ratio_free_of_f0":true,
+		"a4_ratio_free_of_Lambda":true,
+		"a4_ratio_free_of_pi":true,
+		"a4_ratio_free_of_N":true,
+		"structural_contrast_a4_clean_a0a2_dirty":true,
+		"Lambda_cc_free_of_N":true,
+		"Lambda_cc_carries_f4_and_f2":true,
+		"Lcc_over_mPl2_carries_1_over_N":true,
+		"Lcc_over_mPl2_explicit_1_over_N":true,
+		"Lcc_over_mPl2_matches_target_structure":true,
+		"STr1_noNu_is_minus_62":true,
+		"STr1_withNu_is_minus_68":true,
+		"quartic_divergence_not_cancelled":true
+	},
+	"overall_pass":true
+}

@@ -1,0 +1,87 @@
+{
+  "lane": "independent cross-CAS (Wolfram Language) validation of exact symbolics",
+  "wolframscript": "/opt/homebrew/bin/wolframscript",
+  "scripts": {
+    "a4_identity.wl": {
+      "ran": true,
+      "overall_pass": true,
+      "returncode": 0,
+      "stdout": "a4_identity.wl overall_pass = True",
+      "checks": {
+        "scalar_counting_coeffs": true,
+        "weyl_counting_coeffs": true,
+        "vector_counting_coeffs": true,
+        "single_weyl_is_minus_18_11": true,
+        "dirac_equals_weyl_ratio": true,
+        "spectral_alpha0_over_tau0_is_minus_18_11": true,
+        "spectral_ratio_free_of_f0": true,
+        "spectral_ratio_free_of_pi": true,
+        "three_route_consistency": true,
+        "eleven_fingerprint_ratio_is_12": true,
+        "SM_fermions_noNu_is_minus_18_11": true,
+        "SM_fermions_withNu_is_minus_18_11": true,
+        "content_independent_45_eq_48": true,
+        "full_SM_breaks_identity_minus_1698_1991": true,
+        "conformal_graviton_is_minus_398_261": true,
+        "conformal_graviton_not_minus_18_11": true,
+        "HS_formula_reproduces_vector": true,
+        "HS_formula_reproduces_graviton": true,
+        "STr1_noNu_is_minus_62": true,
+        "STr1_withNu_is_minus_68": true,
+        "nuR_makes_imbalance_worse": true
+      },
+      "result_json": "a4_identity_result.json"
+    },
+    "ds_classifier.wl": {
+      "ran": true,
+      "overall_pass": true,
+      "returncode": 0,
+      "stdout": "ds_classifier.wl overall_pass = True",
+      "checks": {
+        "GR_ds_is_4": true,
+        "Stelle_ds_is_2": true,
+        "AS_eta_minus2_ds_is_2": true,
+        "CST_dAlembertian_ds_is_2": true,
+        "Multifractional_ds_is_2": true,
+        "Horava_z2_ds_is_5_2": true,
+        "Horava_z3_ds_is_2": true,
+        "Horava_IR_z1_ds_is_4": true,
+        "Horava_headline_Dspace3_z3_ds_is_2": true,
+        "convention_GR_equals_Horava_IR": true,
+        "gamma2_subclass_all_equal_2": true
+      },
+      "result_json": "ds_classifier_result.json"
+    },
+    "lambda_ledger.wl": {
+      "ran": true,
+      "overall_pass": true,
+      "returncode": 0,
+      "stdout": "lambda_ledger.wl overall_pass = True",
+      "checks": {
+        "a0_linear_in_N": true,
+        "a2_linear_in_N": true,
+        "a0a2_ratio_free_of_N": true,
+        "a0a2_ratio_carries_f4": true,
+        "a0a2_ratio_carries_f2": true,
+        "a0a2_ratio_carries_Lambda": true,
+        "a0a2_ratio_Lambda_power_is_2": true,
+        "a4_ratio_is_minus_18_11": true,
+        "a4_ratio_free_of_f0": true,
+        "a4_ratio_free_of_Lambda": true,
+        "a4_ratio_free_of_pi": true,
+        "a4_ratio_free_of_N": true,
+        "structural_contrast_a4_clean_a0a2_dirty": true,
+        "Lambda_cc_free_of_N": true,
+        "Lambda_cc_carries_f4_and_f2": true,
+        "Lcc_over_mPl2_carries_1_over_N": true,
+        "Lcc_over_mPl2_explicit_1_over_N": true,
+        "Lcc_over_mPl2_matches_target_structure": true,
+        "STr1_noNu_is_minus_62": true,
+        "STr1_withNu_is_minus_68": true,
+        "quartic_divergence_not_cancelled": true
+      },
+      "result_json": "lambda_ledger_result.json"
+    }
+  },
+  "overall_pass": true
+}

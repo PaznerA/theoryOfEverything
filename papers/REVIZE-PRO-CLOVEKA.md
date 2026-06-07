@@ -56,6 +56,7 @@
 - [ ] **Re-derivovat −18/11 třemi způsoby a ověřit shodu:** (i) CC α₀/τ₀; (ii) single-Weyl c/(−a); (iii) Dirac 2×Weyl c/(−a)
 - [ ] **Ověřit VYPOCET-11 výsledek (graviton):** fyzický Einstein graviton je non-konformní → žádné dobře-definované (a,c) → neobnoví identitu; konformní graviton (4-derivátová konformní gravitace) dává c/(−a) = −398/261 ≈ −1.525 ≠ −18/11 — potvrdit tato čísla ručně nebo přes sympy
 - [ ] **Ověřit VYPOCET-17 výsledek (Λ-člen):** a₀:a₂ poměr nese (f₄/f₂)Λ² — rozměrový a cutoff-tvarový závislý → žádná sesterská identita pro Λ; čísla pro n_B = 28, n_F = 90/96 zkontrolovat
+- [ ] **Nezávislá CAS validace připravena — spustit po instalaci Wolfram Engine:** druhá, na sympy nezávislá dráha ve Wolfram Language (`verification/cas/`) znovu odvozuje −18/11, konformní-graviton −398/261, STr(1) = −62/−68 a Λ-ledger strukturu přímo z publikovaných koeficientů. Spustit `brew install --cask wolfram-engine`, jednorázově interaktivně `! wolframscript -activate` (vyžaduje Wolfram ID), pak `python3 verification/cas/run_all.py`; očekává se `overall_pass = True`. Viz `verification/cas/README.md`. (Symbolický ekvivalent cross-HW reprodukce.)
 
 #### B) Kontrola citací proti PDF (blokující — musí provést člověk)
 - [ ] arXiv:2003.02688 (Duff) — otevřít PDF, potvrdit eq. 14 (konvence g^μν⟨T_μν⟩), eq. 17, Table 1: reálný skalár (1/360, 1/120), Weyl (11/720, 1/40), vektor (31/180, 1/10)

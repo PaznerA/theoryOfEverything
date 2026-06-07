@@ -1,0 +1,45 @@
+{
+	"script":"a4_identity.wl",
+	"description":"Independent CAS re-derivation of the -18\/11 fermionic identity",
+	"sources":{
+		"anomaly_ac":"Duff arXiv:2003.02688 Table 1",
+		"heat_kernel":"Vassilevich hep-th\/0306138 eq.4.28",
+		"spectral_action":"Chamseddine-Connes hep-th\/9606001 eq.2.24",
+		"conformal_graviton":"Beccaria-Tseytlin arXiv:1710.03779 eq.31"
+	},
+	"exact_rationals":{
+		"ratio_single_weyl":"-18\/11",
+		"ratio_dirac":"-18\/11",
+		"ratio_spectral_alpha0_over_tau0":"-18\/11",
+		"ratio_ferm_SM_noNu":"-18\/11",
+		"ratio_ferm_SM_withNu":"-18\/11",
+		"ratio_full_SM_noNu":"-1698\/1991",
+		"ratio_conformal_graviton":"-398\/261",
+		"STr1_noNu":"-62",
+		"STr1_withNu":"-68"
+	},
+	"checks":{
+		"scalar_counting_coeffs":true,
+		"weyl_counting_coeffs":true,
+		"vector_counting_coeffs":true,
+		"single_weyl_is_minus_18_11":true,
+		"dirac_equals_weyl_ratio":true,
+		"spectral_alpha0_over_tau0_is_minus_18_11":true,
+		"spectral_ratio_free_of_f0":true,
+		"spectral_ratio_free_of_pi":true,
+		"three_route_consistency":true,
+		"eleven_fingerprint_ratio_is_12":true,
+		"SM_fermions_noNu_is_minus_18_11":true,
+		"SM_fermions_withNu_is_minus_18_11":true,
+		"content_independent_45_eq_48":true,
+		"full_SM_breaks_identity_minus_1698_1991":true,
+		"conformal_graviton_is_minus_398_261":true,
+		"conformal_graviton_not_minus_18_11":true,
+		"HS_formula_reproduces_vector":true,
+		"HS_formula_reproduces_graviton":true,
+		"STr1_noNu_is_minus_62":true,
+		"STr1_withNu_is_minus_68":true,
+		"nuR_makes_imbalance_worse":true
+	},
+	"overall_pass":true
+}
