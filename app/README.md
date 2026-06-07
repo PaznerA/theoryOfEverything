@@ -33,3 +33,74 @@ docker compose run --rm -e FULL_REPRO=1 test
   v kontejneru (linux) testy tolerují <5% relativní odchylku BLAS.
 - Budoucí složky (krok 3–4 roadmapy): kombinovatelné simulační funkce a site-builder
   přibydou jako další služby/příkazy tady v `app/`.
+
+## Výpočty v GitHub Actions
+
+Repozitář je **veřejný**, takže GitHub Actions běží zdarma. Runnery jsou
+`ubuntu-latest` = **4 vCPU / 16 GB RAM / linux/x86_64**, s **tvrdým limitem 6 h na
+job** (workflowy proto cílí na `timeout-minutes` 350–355 a výpočetní drivery mají
+měkký časový rozpočet `--max-hours`, který se dokončí a ukončí čistě před tím).
+
+Obě workflow se spouští **ručně** (`workflow_dispatch`) — z webového UI
+(záložka *Actions* → vyber workflow → *Run workflow*) nebo přes `gh`.
+
+### 1. `Cross-HW reproduction` (`.github/workflows/repro.yml`)
+
+Přepočítá committed kalkulace na linuxovém runneru a porovná proti
+`core-data/calculations/<dir>/results.json` toleranční metodou (žádné překlopení
+verdiktu, žádné strukturální rozdíly, max. relativní numerická odchylka < 5 %).
+Matice běží paralelně přes všech 24 adresářů (`max-parallel: 20`,
+`fail-fast: false`); vstup `target` umožní pustit jen jeden.
+
+```bash
+# všech 24 kalkulací
+gh workflow run repro.yml -f target=all
+
+# jen jedna kalkulace
+gh workflow run repro.yml -f target=sj-far-zone
+```
+
+Pozn.: čtyři adresáře (`ds-entropy-cap`, `ds-tracial-probe`,
+`modular-flow-codim2`, `sj-desitter-4d`) zatím nemají reprodukční test —
+jejich job se reportuje jako **skipped** (pytest exit 5), ne jako chyba.
+
+### 2. `Scaled computation` (`.github/workflows/compute.yml`)
+
+Spustí jeden výpočetní driver (`compute/drivers/<driver>.py`) ve velkém.
+Vstupy: `driver` (`ds_entropy_cap_2d` | `ds_cap_4d` | `ds4d_saturation`),
+`args` (extra CLI argumenty doslova přidané za příkaz) a `max_hours`
+(měkký časový rozpočet, default `5.5`). Driver průběžně checkpointuje
+(`results.json` se přepisuje po každé buňce), takže i job, který narazí na časový
+strop, nahraje `results.json` se `status: partial-time-budget`.
+
+```bash
+# 2D dS entropy cap, vyšší hustoty a víc seedů
+gh workflow run compute.yml \
+  -f driver=ds_entropy_cap_2d \
+  -f args="--rho 1e4,3e4 --patch-l 2.0,2.5 --seeds 8" \
+  -f max_hours=5.5
+
+# 4D otevřená otázka (dimenzní závislost koeficientu area-law)
+gh workflow run compute.yml -f driver=ds_cap_4d -f args="--n-max 20000"
+```
+
+Job nastavuje `OMP_NUM_THREADS=4`, `MPLBACKEND=Agg`, `PYTHONHASHSEED=0`. Sumář
+ze `summary` bloku `results.json` se vypisuje do *Job summary*.
+
+### Stažení artefaktů
+
+Oba workflowy nahrávají výstupy jako artefakty (`repro-<dir>` s přepočteným
+`results.json`; `<driver>-run` s celým `compute/results/**`, retence 90 dní).
+
+```bash
+gh run list --workflow=compute.yml          # zjisti RUN_ID
+gh run download <RUN_ID>                     # všechny artefakty běhu
+gh run download <RUN_ID> -n ds_cap_4d-run    # jen jeden artefakt
+```
+
+### Smysl cross-HW běhu
+
+Ověřený host je **macOS/arm64** (tam jsou běhy bitově identické). GitHub runner je
+**linux/x86_64** — jiný BLAS a zaokrouhlování. Cílem proto **není** bitová shoda, ale
+**tolerance-based** porovnání (verdikt stabilní, max. rel. odchylka < 5 %): potvrzuje
+přenositelnost výsledků napříč architekturami, ne bit-identitu.

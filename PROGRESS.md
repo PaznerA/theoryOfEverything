@@ -1,6 +1,6 @@
 # Progress tracker — Theory of Everything
 
-> ⏸️ **PAUZA (2026-06-06 noc, tokenový limit; vyhlášena uživatelem)** — kolo 12 stihlo doběhnout celé, stav je čistý a commitnutý. **Lidský krok čeká:** vytvořit GitHub repo + push + zapnout Pages (`gh repo create … --source . --push`; Settings → Pages → Source: GitHub Actions; ⚠️ Pages = veřejné publikování draftů). **Po pauze:** H5g-4 (spektrální triple ↔ SJ modulární K, lovná zóna causal-sets↔NCG), H5g-5 (Kerr-AdS exponent B), případně 4D rozšíření area-zákonu F-028 (c≈7.57 — je c dimenzně závislé?).
+> 🟢 **GH ACTIONS VÝPOČETNÍ INFRASTRUKTURA HOTOVÁ (2026-06-07)** — 3 škálované drivery (`ds_entropy_cap_2d`, `ds4d_saturation`, `ds_cap_4d`) + `repro.yml` (cross-HW matice 24 výpočtů) + `compute.yml` (manuální trigger škálovaných běhů). Repo je veřejné + GitHub Pages běží. **Další kroky:** spustit `compute.yml` pro F-025 (4D dS saturace, driver `ds4d_saturation`) a F-028 rozšíření (2D cap přes 100× hustotní rozsah); otevřená otázka c^{4D} vs. c^{2D} (driver `ds_cap_4d`). H5g-4 (spektrální triple ↔ SJ modulární K), H5g-5 (Kerr-AdS exponent B) jako výzkumné follow-upy.
 
 > 🟢 **KOLO 12 DOKONČENO (2026-06-06)** — `lib/toe` povýšena na **v0.3.0**: sparse eigensolver mašinérie (float64 + float32, dense vs. sparse cross-validace, determinismus equal-seed bit-identikal); VYPOCET-23 A/4 strop dS + VYPOCET-24 tracialní sonda dS; 16 nových sparse testů. **Testy zelené: 304 passed, 14 skipped, 1 xfailed v 99.4 s** (ze 288 kolo 11, +16). **findings.json** rozšířen na **28 nálezů** (F-027 tracialní null uzavřen, F-028 kvantitativní A/4-like area-zákon dS). Web přebuildován po výsledcích (viz Task 4). Předchozí milník: kolo 11 — toe v0.2.0, 5 lib migrací, draft-04 §4.3.
 
@@ -27,6 +27,14 @@
 | 2 | Hledání nenalezených souvislostí (základní research) | ✅ dokončeno | 2026-06-05 | 2026-06-06 |
 
 ## Log
+
+### 2026-06-07 (housekeeping — GH Actions výpočetní infrastruktura, compute/ drivery, web/Pages)
+
+- **3 škálované výpočetní drivery** dokončeny v `compute/drivers/`: `ds_entropy_cap_2d.py` (F-028 rozšíření přes 100× hustotní rozsah), `ds4d_saturation.py` (F-025 dokončení přes řídkou 4D cestu N až ~2×10⁴), `ds_cap_4d.py` (otevřená otázka c^{4D} vs. c^{2D} ≈ 7,57). Sdílená infrastruktura v `_common.py` (argparse, atomický checkpointing, time-budget, host fingerprint, deterministické seedy). Testy: `app/tests/test_compute_drivers.py` — 4 smoke testy driverů, každý < 30 s (8,7 s / 13,0 s / 1,2 s). Plná suite: **308 passed, 14 skipped, 1 xfailed v 144 s (exit 0)**.
+- **GitHub Actions workflowy**: `repro.yml` (cross-HW reprodukce — matice 24 výpočetních adresářů, max-parallel=20, timeout 350 min, artefakty `repro-<dir>`); `compute.yml` (manuální trigger škálovaných driverů — výběr ze 3 driverů, předání args + max_hours, artefakt `<driver>-run` 90 dní, GITHUB_STEP_SUMMARY s fyzikálními výsledky).
+- **Repo veřejné + GitHub Pages running**: web buildovaný z `web/dist/` (103 stránek) publikován přes Pages workflow.
+- **`compute/README.md`** napsán: účel, tabulka 3 driverů, checkpointing, kam padají výsledky, postup začlenění po stažení artefaktu.
+- **`knowledge-base/00-INDEX.md`** aktualizován: nová sekce Infrastruktura → compute/ + GH workflows.
 
 ### 2026-06-06 (kolo 12 — VYPOCET-23: A/4 strop dS entropie + VYPOCET-24: tracialní sonda II₁, toe v0.3.0 sparse; úklid housekeeping)
 

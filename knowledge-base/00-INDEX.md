@@ -1,7 +1,7 @@
 # Index znalostní báze — Theory of Everything
 
 > Anotovaný rejstřík všech souborů ve `knowledge-base/`, `core-data/` a `verification/`.
-> Generováno: 2026-06-05; aktualizováno: 2026-06-06 (kolo 12 — toe v0.3.0 sparse mašinérie; VYPOCET-23 A/4 strop dS; VYPOCET-24 tracialní null uzavřen; 28 nálezů).
+> Generováno: 2026-06-05; aktualizováno: 2026-06-07 (GH Actions výpočetní infrastruktura: 3 drivery, repro.yml + compute.yml, repo veřejné + Pages).
 
 ---
 
@@ -26,6 +26,12 @@
 - [../reports/2026-06-06-day-report.md](../reports/2026-06-06-day-report.md) — Závěrečná denní zpráva (2026-06-06): přehled celého dne výzkumu (kola 3–9), souhrnné statistiky (20 výpočtů, 24 nálezů, 4 drafty), stav všech hypotéz, uzavřené fronty, doporučení a plán pro velké review.
 
 ---
+
+## Infrastruktura (`app/` + `lib/` + `web/` + `compute/` + GH Actions)
+
+- [../compute/README.md](../compute/README.md) — **`compute/` — škálované výpočetní drivery** (2026-06-07): 3 drivery nad `lib/toe` v0.3.0 pro F-025/F-028 rozšíření a otevřenou otázku c^{4D} vs. c^{2D}; sdílená infrastruktura `_common.py` (atomický checkpointing, time-budget 5,5 h, host fingerprint); výsledky do `compute/results/` lokálně nebo artefakty GH Actions (90 dní). Testy: 4 smoke testy v `app/tests/test_compute_drivers.py`, každý < 30 s.
+- [../.github/workflows/repro.yml](../.github/workflows/repro.yml) — **Cross-HW reprodukce** (2026-06-07): `workflow_dispatch` s volbou konkrétního výpočtu nebo `all`; matice 24 výpočetních adresářů, fail-fast=false, max-parallel=20, timeout 350 min. Každý job nahraje `results.json` jako artefakt a vypíše max. rel. odchylku do GITHUB_STEP_SUMMARY. Ošetřuje 4 adresáře bez pytest testů (exit 5 = skipped, ne fail).
+- [../.github/workflows/compute.yml](../.github/workflows/compute.yml) — **Škálované výpočty** (2026-06-07): `workflow_dispatch` s výběrem driveru (`ds_entropy_cap_2d` / `ds4d_saturation` / `ds_cap_4d`), volnými args a `--max-hours`; timeout 355 min; artefakt `<driver>-run` s 90denní retencí; GITHUB_STEP_SUMMARY s fyzikálními výsledky ze `results.json`.
 
 ## Infrastruktura (`app/` + `lib/` + `web/`)
 

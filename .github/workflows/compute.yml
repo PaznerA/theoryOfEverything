@@ -1,0 +1,105 @@
+name: Scaled computation
+
+# Runs a compute driver (compute/drivers/<name>.py) at scale on a GitHub runner.
+# Drivers checkpoint progressively (results.json rewritten after every cell) and
+# honour --max-hours as a graceful time budget, so even a job that hits the time
+# wall uploads a 'partial-time-budget' results.json. The runner is linux/x86_64,
+# 4 vCPU / 16 GB RAM; the hard job limit is 6 h, so we cap at 355 min and let the
+# driver's --max-hours finalize before that.
+on:
+  workflow_dispatch:
+    inputs:
+      driver:
+        description: "Which compute driver to run"
+        type: choice
+        default: ds_entropy_cap_2d
+        options:
+          - ds_entropy_cap_2d
+          - ds_cap_4d
+          - ds4d_saturation
+      args:
+        description: "Extra CLI args appended verbatim (e.g. --rho 1e4,3e4 --patch-l 2.0,2.5 --seeds 8)"
+        type: string
+        default: ""
+      max_hours:
+        description: "Graceful time budget in hours (driver finalizes and exits 0)"
+        type: string
+        default: "5.5"
+
+permissions:
+  contents: read
+
+jobs:
+  compute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    env:
+      OMP_NUM_THREADS: "4"
+      MPLBACKEND: Agg
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: app/requirements-ci.txt
+      - name: Install pinned environment
+        run: pip install -r app/requirements-ci.txt
+
+      - name: Run driver ${{ inputs.driver }}
+        run: |
+          python compute/drivers/${{ inputs.driver }}.py \
+            --max-hours ${{ inputs.max_hours }} ${{ inputs.args }}
+
+      - name: Append results summary to step summary
+        if: always()
+        env:
+          DRIVER: ${{ inputs.driver }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, os
+          from pathlib import Path
+          driver = os.environ["DRIVER"]
+          results = Path("compute/results")
+          print(f"## Výpočet: {driver}\n")
+          if not results.is_dir():
+              print("_Žádný adresář `compute/results/` — driver nevytvořil výstup._")
+              raise SystemExit(0)
+          jsons = sorted(results.glob("*/results.json"), key=lambda p: p.stat().st_mtime)
+          if not jsons:
+              print("_Žádný `results.json` v `compute/results/`._")
+              raise SystemExit(0)
+          for rj in jsons:
+              try:
+                  data = json.loads(rj.read_text())
+              except Exception as e:  # noqa: BLE001
+                  print(f"### {rj.parent.name}\n\n_nečitelný results.json: {e}_\n")
+                  continue
+              status = data.get("status", "?")
+              params = data.get("params", {})
+              cells = data.get("cells", [])
+              summary = data.get("summary", {})
+              host = data.get("host", {})
+              print(f"### {rj.parent.name}\n")
+              print(f"- status: **{status}**")
+              print(f"- buněk (cells): {len(cells)}")
+              if params:
+                  print(f"- params: `{json.dumps(params, ensure_ascii=False)}`")
+              if host:
+                  print(f"- host: `{json.dumps(host, ensure_ascii=False)}`")
+              if summary:
+                  print("\n```json")
+                  print(json.dumps(summary, indent=2, ensure_ascii=False))
+                  print("```")
+              print()
+          PY
+
+      - name: Upload compute results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.driver }}-run
+          path: compute/results/**
+          if-no-files-found: warn
+          retention-days: 90

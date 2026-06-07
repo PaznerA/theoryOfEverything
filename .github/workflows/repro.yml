@@ -1,0 +1,200 @@
+name: Cross-HW reproduction
+
+# Cross-hardware reproduction of the 24 committed calculations.
+# Re-runs each calc.py on GitHub's linux/x86_64 runners and compares against the
+# committed results.json with the repo's tolerance protocol (verdict-stable,
+# no structural diffs, max relative numeric deviation < 5%). This is a portability
+# check vs. the verified host (macOS/arm64), NOT a bit-identity check — BLAS and
+# rounding differ across architectures, so we assert tolerance, not equality.
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Which calculation to reproduce (all = every committed calc)"
+        type: choice
+        default: all
+        options:
+          - all
+          - a4-anomaly-matching
+          - a4-graviton-index
+          - bmv-as-phase
+          - ds-classification
+          - ds-entropy-cap
+          - ds-tracial-probe
+          - lambda-induced
+          - lambda-prefactors
+          - modular-flow-bd-4d
+          - modular-flow-codim2
+          - modular-flow-corner
+          - sj-desitter-4d
+          - sj-desitter-type
+          - sj-eigenvector-superradiance
+          - sj-far-zone
+          - sj-kerr-equatorial
+          - sj-rotating-btz
+          - sj-threshold-scan
+          - sj-vn-type
+          - ssee-4d
+          - ssee-bd-4d
+          - ssee-diamond
+          - ssee-slab-4d
+          - vn-type-slab-4d
+
+permissions:
+  contents: read
+
+jobs:
+  # Build the matrix JSON: either all 24 dirs or just the one the user picked.
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.build.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build matrix from core-data/calculations
+        id: build
+        env:
+          TARGET: ${{ inputs.target }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          from pathlib import Path
+          calc = Path("core-data/calculations")
+          dirs = sorted(p.name for p in calc.iterdir() if p.is_dir())
+          target = os.environ["TARGET"]
+          if target != "all":
+              if target not in dirs:
+                  raise SystemExit(f"target '{target}' not found in {calc}")
+              dirs = [target]
+          print("matrix=" + json.dumps({"dir": dirs}))
+          PY
+
+  matrix:
+    needs: setup
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix: ${{ fromJson(needs.setup.outputs.matrix) }}
+    env:
+      FULL_REPRO: "1"
+      MPLBACKEND: Agg
+      PYTHONHASHSEED: "0"
+      OMP_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: app/requirements-ci.txt
+      - name: Install pinned environment
+        run: pip install -r app/requirements-ci.txt
+
+      - name: Reproduce ${{ matrix.dir }}
+        id: repro
+        run: |
+          set +e
+          # Match the exact parametrized test for this dir regardless of whether it
+          # lives in test_fast_reproduction or test_full_reproduction. The bracketed
+          # param id ('[<dir>]') is collision-free across all 24 dir names.
+          python -m pytest app/tests/test_reproduction.py -k '[${{ matrix.dir }}]' -v
+          code=$?
+          set -e
+          echo "pytest_exit=$code" >> "$GITHUB_OUTPUT"
+          # Exit 5 = "no tests collected": this dir has no parametrized reproduction
+          # test (e.g. ds-entropy-cap, ds-tracial-probe, modular-flow-codim2,
+          # sj-desitter-4d are absent from FAST_CALCS/SLOW_CALCS). Treat as skipped,
+          # not failed.
+          if [ "$code" = "5" ]; then
+            echo "verdict=skipped" >> "$GITHUB_OUTPUT"
+            exit 0
+          elif [ "$code" = "0" ]; then
+            echo "verdict=pass" >> "$GITHUB_OUTPUT"
+            exit 0
+          else
+            echo "verdict=fail" >> "$GITHUB_OUTPUT"
+            exit "$code"
+          fi
+
+      - name: Extract max relative deviation
+        id: maxdev
+        if: always()
+        run: |
+          RESULT=/tmp/qg-repro-test/${{ matrix.dir }}/results.json
+          COMMITTED=core-data/calculations/${{ matrix.dir }}/results.json
+          if [ -f "$RESULT" ] && [ -f "$COMMITTED" ]; then
+            python3 - "$COMMITTED" "$RESULT" <<'PY' >> "$GITHUB_OUTPUT"
+          import importlib.util, json, sys
+          from pathlib import Path
+          repo = Path(".").resolve()
+          spec = importlib.util.spec_from_file_location(
+              "repro_runner", repo / "workflows" / "review-prep" / "repro-runner.py")
+          mod = importlib.util.module_from_spec(spec)
+          try:
+              spec.loader.exec_module(mod)
+              orig = json.loads(Path(sys.argv[1]).read_text())
+              new = json.loads(Path(sys.argv[2]).read_text())
+              nums = [d for d in mod.compare(orig, new) if d[1] == "num"]
+              maxrel = max((d[2] for d in nums), default=0.0)
+              print(f"max_rel={maxrel:.3e}")
+          except Exception as e:  # never let summary extraction fail the job
+              print("max_rel=n/a")
+              print(f"# extraction note: {e}", file=sys.stderr)
+          PY
+          else
+            echo "max_rel=n/a" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Job summary
+        if: always()
+        env:
+          DIR: ${{ matrix.dir }}
+          VERDICT: ${{ steps.repro.outputs.verdict }}
+          PYTEST_EXIT: ${{ steps.repro.outputs.pytest_exit }}
+          MAX_REL: ${{ steps.maxdev.outputs.max_rel }}
+        run: |
+          {
+            echo "## Reprodukce: $DIR"
+            echo ""
+            echo "| pole | hodnota |"
+            echo "|---|---|"
+            echo "| verdikt | ${VERDICT:-unknown} |"
+            echo "| pytest exit | ${PYTEST_EXIT:-?} |"
+            echo "| max. rel. odchylka | ${MAX_REL:-n/a} |"
+            echo "| host | linux/x86_64 (GitHub) vs. macOS/arm64 (ověřený) |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload reproduced results.json
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: repro-${{ matrix.dir }}
+          path: /tmp/qg-repro-test/${{ matrix.dir }}/results.json
+          if-no-files-found: ignore
+          retention-days: 30
+
+  summary:
+    needs: matrix
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Aggregate matrix outcomes
+        env:
+          RESULT: ${{ needs.matrix.result }}
+        run: |
+          {
+            echo "## Souhrn cross-HW reprodukce"
+            echo ""
+            echo "Agregovaný výsledek matrix jobů: **${RESULT}**"
+            echo ""
+            echo "Detaily (verdikt, max. rel. odchylka) jsou v summary jednotlivých"
+            echo "matrix jobů výše. Artefakty \`repro-<dir>\` obsahují přepočtené"
+            echo "results.json z linuxového runneru pro ruční porovnání."
+            echo ""
+            echo "- \`success\` = všechny spuštěné kalkulace prošly (nebo byly přeskočeny"
+            echo "  pro chybějící reprodukční test)."
+            echo "- \`failure\` = aspoň jedna kalkulace překročila toleranci nebo selhala;"
+            echo "  rozklikni červené joby pro konkrétní \`dir\`."
+          } >> "$GITHUB_STEP_SUMMARY"
