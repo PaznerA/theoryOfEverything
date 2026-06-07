@@ -254,6 +254,13 @@ umístění. Nejjednodušší cesta k reprodukci je nyní dockerizované prostř
 `docker compose run --rm -e FULL_REPRO=1 test` (všech 20, ~50 min) — pinované verze
 knihoven odpovídají ověřenému prostředí (viz `app/README.md`).
 
+**✅ Cross-HW reprodukce (2026-06-07):** všech 24 výpočtů nezávisle přepočítáno na
+GitHub Actions (ubuntu/x86_64/OpenBLAS vs ověřený macOS/arm64/Accelerate): **0 verdict
+flipů, 0 strukturálních rozdílů**; většina výpočtů přesně identická, max. core odchylka
+7.05 % (jeden per-size element). Detail: `reports/2026-06-07-cross-hw.md`. Platformové
+artefakty lze vyloučit jako zdroj výsledků; lidská re-derivace tím NENÍ nahrazena.
+Manuální spuštění: workflow „Cross-HW reproduction" na GitHubu (volba `target`).
+
 ---
 
 ## 5. Co v draftech není — a proč je to dobře
