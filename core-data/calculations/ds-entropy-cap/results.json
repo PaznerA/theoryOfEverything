@@ -1,10 +1,9 @@
 {
   "meta": {
-    "task": "VYPOCET-23 H5g-2: does the F-023 bounded-dS entropy CAP map QUANTITATIVELY onto Bekenstein-Hawking A/4 (discrete dS entropy)?",
+    "task": "VYPOCET-23 H5g-2: does the F-023 bounded-dS entropy CAP map QUANTITATIVELY onto Bekenstein-Hawking A/4 (discrete first-principles dS entropy)?",
     "dimension": "2D de Sitter static patch (conformal trick; toe.sprinkle_ds_static_patch2d)",
-    "horizon_area_2D_statement": "In D dims the dS horizon is codim-2 (area is (D-2)-dim). In D=2, D-2=0: the horizon is a POINT (single static-patch edge r*->inf); its 'area' is the 0-dim Dou-Sorkin MOLECULE COUNT (irreducible causal links crossing the fixed entangling cut r*=R_CUT). In eps-units A/eps^{D-2}=A/eps^0=A is DIMENSIONLESS and eps-INDEPENDENT, so S_GH=A/4 is an O(1) number in causal-set units. Empirically A_mol ~ rho (= eps^-2): the cut is a 1D timelike worldline carrying ~rho*t_extent links; A_cont=A_mol*eps^2->O(1).",
-    "protocol": "FIXED entangling cut r*=0.80 (the codim-2 horizon proxy); box edge R*_box -> cosmological horizon at fixed proper density. S_full (content-tracking SSEE) and A_mol both ~rho, so R_full=S_full_cap/A_mol is the rho-invariant entropy-per-molecule = discrete A/4 coefficient. The truncated SSEE is O(1) and does NOT track A_mol.",
-    "anti_circularity": "epsilon = rho^{-1/2} FIXED from the INDEPENDENT F-006 (ssee-diamond) p_rank=0.5189+/-0.0067 BEFORE measuring any ratio; NEVER tuned to make R=1/4.",
+    "horizon_area_2D_statement": "In D dims the dS horizon is codim-2 (area is (D-2)-dim). In D=2, D-2=0: horizon = POINT (single static-patch edge r*->inf); its 'area' is the 0-dim Dou-Sorkin MOLECULE COUNT (causal links crossing the horizon shell). In eps-units A/eps^{D-2}=A/eps^0=A is DIMENSIONLESS and eps-INDEPENDENT, so S_GH=A/4 is an O(1) number in causal-set units. We test rho/l-invariance of R=S_cap/A_horizon.",
+    "anti_circularity": "epsilon = rho^{-1/2} FIXED from the INDEPENDENT F-006 (ssee-diamond) result p_rank=0.5189+/-0.0067 BEFORE measuring any ratio; NEVER tuned to make R=1/4.",
     "F006_p_rank": 0.5188759456500236,
     "F006_p_err": 0.0066971104884981,
     "epsilon_law": "epsilon = rho^(-1/2)",
@@ -21,27 +20,23 @@
       "N_total_cap": 480.1112902401474,
       "dS_saturates_II1": true
     },
-    "standalone_probe_R_full_to_rho3000": {
-      "note": "an independent single-large-box (R*=7) probe gave S_full/A_mol = 0.137, 0.132, 0.129 at rho=240,1000,3000 -> R_full flat beyond the dense ladder.",
-      "rho": [
-        240,
-        1000,
-        3000
-      ],
-      "R_full": [
-        0.137,
-        0.132,
-        0.129
-      ]
-    },
     "sparse_threshold_N": 4500,
-    "toe_version": "0.3.0",
-    "note_reconstruction": "results assembled from the COMPLETED run.log (all dense blocks + the sparse rho=3000 block finished); the original run crashed at the OLD float32-too-tight pairing assert (2.17e-9 vs 1e-9) AFTER logging all science. calc.py assert is now float32-aware. Per-box values are seed-averaged means as logged; caps are the run's bootstrap caps."
+    "toe_version": "0.3.0"
   },
   "density_scan": {
     "rho_240": {
       "rho": 240.0,
       "l": 1.0,
+      "n_seeds": 4,
+      "Ns": [
+        442,
+        463,
+        475,
+        479,
+        480,
+        480,
+        480
+      ],
       "RSTAR_BOX": [
         1.6,
         2.0,
@@ -61,58 +56,114 @@
         480.0
       ],
       "S_trunc_mean": [
-        0.5761,
-        0.6313,
-        0.595,
-        0.6291,
-        0.6886,
-        0.6552,
-        0.5977
+        0.57609983190754,
+        0.6312797607587087,
+        0.5950364894738023,
+        0.6291271132244802,
+        0.6886313849153916,
+        0.6552436322122129,
+        0.5977035204561151
+      ],
+      "S_trunc_std": [
+        0.08460638371159426,
+        0.039242089665563126,
+        0.02534229391014095,
+        0.0488477158476794,
+        0.06281332800101187,
+        0.02310461034184007,
+        0.08226101807520138
       ],
       "S_full_mean": [
-        40.88,
-        43.81,
-        46.35,
-        45.98,
-        48.18,
-        47.24,
-        42.94
+        40.87897313752565,
+        43.80920471030939,
+        46.35140808856477,
+        45.98274796720757,
+        48.17584550692412,
+        47.243273188114266,
+        42.93961764121106
+      ],
+      "n_sub_mean": [
+        318.5,
+        324.0,
+        316.75,
+        319.5,
+        312.75,
+        315.75,
+        320.75
       ],
       "horizon_links_mean": [
-        343.2,
+        343.25,
         324.5,
-        358.8,
-        357.8,
-        356.2,
-        333.8,
+        358.75,
+        357.75,
+        356.25,
+        333.75,
         344.5
       ],
-      "Ns": [
-        442,
-        463,
-        475,
-        479,
-        480,
-        480,
-        480
+      "N_total_cap": 480.04711101254446,
+      "N_total_cap_se": 5.687186190429962e-14,
+      "N_total_cap_ci68": [
+        480.04711101254446,
+        480.04711101254446
       ],
-      "max_pairing_residual_rel": 3.6e-15,
-      "S_full_cap": 46.186,
-      "S_trunc_cap": 0.6412,
-      "horizon_links_cap": 344.8,
+      "N_total_cap_R2": 0.999987910570476,
+      "S_trunc_cap": 0.6412480893329091,
+      "S_trunc_cap_se": 71.24414905298742,
+      "S_trunc_cap_ci68": [
+        0.6285513408026897,
+        0.6552562484596928
+      ],
+      "S_trunc_cap_R2": 0.32543017220861226,
+      "S_full_cap": 46.18627319951543,
+      "S_full_cap_se": 5627.630219594436,
+      "S_full_cap_ci68": [
+        45.45287721905233,
+        46.85598905935625
+      ],
+      "S_full_cap_R2": 0.6006586431162968,
+      "horizon_links_cap": 344.8333333333333,
+      "horizon_links_cap_se": 5.6268515471205856,
+      "aic_N_total": {
+        "sat_R2": 0.999987910570476,
+        "lin_R2": -1233.1648241643177,
+        "AIC_saturating": -37.0948879310867,
+        "AIC_linear": 89.99441398239054,
+        "delta_AIC_lin_minus_sat": 127.08930191347724,
+        "best": "saturating"
+      },
+      "aic_S_full": {
+        "sat_R2": 0.6006586431162968,
+        "lin_R2": -291.97653643774464,
+        "AIC_saturating": 11.868331438031419,
+        "AIC_linear": 56.05454999347839,
+        "delta_AIC_lin_minus_sat": 44.18621855544697,
+        "best": "saturating"
+      },
+      "max_pairing_residual_rel": 3.595226764435492e-15,
       "horizon_area": {
         "epsilon": 0.06454972243679027,
         "A_point": 1.0,
-        "A_mol": 344.8,
-        "A_cont_eps_units": 1.4366666666666663
+        "A_mol": 344.8333333333333,
+        "A_cont_eps_units": 1.4368055555555552
       },
-      "R_Sfull_over_Amol": 0.1339,
-      "R_Strunc_over_Acont": 0.4463,
-      "R_Strunc_over_Amol": 0.001859628770301624
+      "R_Sfull_over_Amol": 0.13393795997926178,
+      "R_Strunc_over_Amol": 0.0018595884659243379,
+      "R_Strunc_over_Acont": 0.44630123182184117,
+      "R_Sfull_over_Apoint": 46.18627319951543
     },
     "rho_600": {
       "rho": 600.0,
       "l": 1.0,
+      "n_seeds": 4,
+      "Ns": [
+        1106,
+        1157,
+        1187,
+        1197,
+        1200,
+        1200,
+        1200
+      ],
       "RSTAR_BOX": [
         1.6,
         2.0,
@@ -132,58 +183,114 @@
         1200.0
       ],
       "S_trunc_mean": [
-        0.6215,
-        0.7272,
-        0.6987,
-        0.6553,
-        0.6547,
-        0.6842,
-        0.6808
+        0.6215395988483192,
+        0.7271601970591939,
+        0.6986536309249689,
+        0.6553245360748771,
+        0.6547329161413334,
+        0.684190407084655,
+        0.6807641608563815
+      ],
+      "S_trunc_std": [
+        0.043971669257252585,
+        0.08976627373283678,
+        0.07210243592611243,
+        0.08461900520600746,
+        0.015746555256137305,
+        0.0686788282370408,
+        0.017000273834416765
       ],
       "S_full_mean": [
-        110.99,
-        119.03,
-        122.44,
-        119.04,
-        121.8,
-        121.57,
-        124.07
+        110.98984750914042,
+        119.02566659677186,
+        122.44205591675467,
+        119.04355949883511,
+        121.8023311061871,
+        121.57178624233731,
+        124.06778909271557
+      ],
+      "n_sub_mean": [
+        806.0,
+        790.75,
+        794.75,
+        809.5,
+        803.0,
+        787.75,
+        799.0
       ],
       "horizon_links_mean": [
         861.0,
         910.0,
-        968.8,
-        876.8,
-        920.8,
-        926.2,
+        968.75,
+        876.75,
+        920.75,
+        926.25,
         918.5
       ],
-      "Ns": [
-        1106,
-        1157,
-        1187,
-        1197,
-        1200,
-        1200,
-        1200
+      "N_total_cap": 1200.0848559677531,
+      "N_total_cap_se": 0.0,
+      "N_total_cap_ci68": [
+        1200.0848559677531,
+        1200.0848559677531
       ],
-      "max_pairing_residual_rel": 7.7e-15,
-      "S_full_cap": 121.817,
-      "S_trunc_cap": 0.6835,
-      "horizon_links_cap": 921.8,
+      "N_total_cap_R2": 0.9999672116106322,
+      "S_trunc_cap": 0.6834709796315794,
+      "S_trunc_cap_se": 0.020133931359792263,
+      "S_trunc_cap_ci68": [
+        0.6599179029461292,
+        0.7019721026080794
+      ],
+      "S_trunc_cap_R2": 0.4661352543281936,
+      "S_full_cap": 121.81708229059494,
+      "S_full_cap_se": 2311.568960685067,
+      "S_full_cap_ci68": [
+        120.77203677871614,
+        123.10791520369142
+      ],
+      "S_full_cap_R2": 0.8773936426863902,
+      "horizon_links_cap": 921.8333333333334,
+      "horizon_links_cap_se": 1.9934789523176142,
+      "aic_N_total": {
+        "sat_R2": 0.9999672116106322,
+        "lin_R2": -1276.5031040965782,
+        "AIC_saturating": -17.4232376509219,
+        "AIC_linear": 102.92345422785917,
+        "delta_AIC_lin_minus_sat": 120.34669187878107,
+        "best": "saturating"
+      },
+      "aic_S_full": {
+        "sat_R2": 0.8773936426863902,
+        "lin_R2": -832.0548526410897,
+        "AIC_saturating": 10.661268094688753,
+        "AIC_linear": 70.42839934026114,
+        "delta_AIC_lin_minus_sat": 59.767131245572386,
+        "best": "saturating"
+      },
+      "max_pairing_residual_rel": 7.652931071860697e-15,
       "horizon_area": {
         "epsilon": 0.040824829046386304,
         "A_point": 1.0,
-        "A_mol": 921.8,
-        "A_cont_eps_units": 1.5363333333333336
+        "A_mol": 921.8333333333334,
+        "A_cont_eps_units": 1.5363888888888892
       },
-      "R_Sfull_over_Amol": 0.1321,
-      "R_Strunc_over_Acont": 0.4449,
-      "R_Strunc_over_Amol": 0.0007414840529399002
+      "R_Sfull_over_Amol": 0.13214653656546188,
+      "R_Strunc_over_Amol": 0.00074142575986069,
+      "R_Strunc_over_Acont": 0.4448554559164139,
+      "R_Sfull_over_Apoint": 121.81708229059494
     },
     "rho_1200": {
       "rho": 1200.0,
       "l": 1.0,
+      "n_seeds": 3,
+      "Ns": [
+        2212,
+        2314,
+        2374,
+        2395,
+        2399,
+        2400,
+        2400
+      ],
       "RSTAR_BOX": [
         1.6,
         2.0,
@@ -203,60 +310,116 @@
         2400.0
       ],
       "S_trunc_mean": [
-        0.6775,
-        0.7096,
-        0.7442,
-        0.7653,
-        0.7549,
-        0.7371,
-        0.7108
+        0.6775421233251988,
+        0.7095625653678272,
+        0.7442265328889791,
+        0.765348606948062,
+        0.7549362935582961,
+        0.7371362708635713,
+        0.7107652280437966
+      ],
+      "S_trunc_std": [
+        0.022032183913112978,
+        0.0550506821332118,
+        0.031827219319464584,
+        0.08038412278658544,
+        0.00988795429724615,
+        0.051159553729188435,
+        0.04570003702303553
       ],
       "S_full_mean": [
-        232.63,
-        247.59,
-        248.3,
-        250.52,
-        251.71,
-        248.73,
-        247.86
+        232.6261835335822,
+        247.58898332256857,
+        248.2976028895267,
+        250.51772051076534,
+        251.71010823671614,
+        248.72897193961626,
+        247.86185216601893
+      ],
+      "n_sub_mean": [
+        1601.6666666666667,
+        1595.0,
+        1606.6666666666667,
+        1602.6666666666667,
+        1589.6666666666667,
+        1598.0,
+        1602.0
       ],
       "horizon_links_mean": [
         1764.0,
-        1895.7,
+        1895.6666666666667,
         1888.0,
         1899.0,
-        1908.3,
-        1949.3,
-        1871.7
+        1908.3333333333333,
+        1949.3333333333333,
+        1871.6666666666667
       ],
-      "Ns": [
-        2212,
-        2314,
-        2374,
-        2395,
-        2399,
-        2400,
-        2400
+      "N_total_cap": 2400.10122045189,
+      "N_total_cap_se": 1.364924685703191e-12,
+      "N_total_cap_ci68": [
+        2400.10122045189,
+        2400.10122045189
       ],
-      "max_pairing_residual_rel": 1.2e-14,
-      "S_full_cap": 249.459,
-      "S_trunc_cap": 0.7426,
-      "horizon_links_cap": 1909.8,
+      "N_total_cap_R2": 0.9999844880469804,
+      "S_trunc_cap": 0.7426452562949171,
+      "S_trunc_cap_se": 0.006184363937456482,
+      "S_trunc_cap_ci68": [
+        0.7364656255098546,
+        0.7490638558161632
+      ],
+      "S_trunc_cap_R2": 0.6683505740889191,
+      "S_full_cap": 249.45914364406121,
+      "S_full_cap_se": 0.8541502705236149,
+      "S_full_cap_ci68": [
+        249.33902547813116,
+        250.3251351489724
+      ],
+      "S_full_cap_R2": 0.9575863934730346,
+      "horizon_links_cap": 1909.7777777777778,
+      "horizon_links_cap_se": 22.432064792706793,
+      "aic_N_total": {
+        "sat_R2": 0.9999844880469804,
+        "lin_R2": -1284.02719956989,
+        "AIC_saturating": -12.960750056728656,
+        "AIC_linear": 112.6662937726194,
+        "delta_AIC_lin_minus_sat": 125.62704382934805,
+        "best": "saturating"
+      },
+      "aic_S_full": {
+        "sat_R2": 0.9575863934730346,
+        "lin_R2": -1651.5387853105333,
+        "AIC_saturating": 8.809044992452913,
+        "AIC_linear": 80.80152370440275,
+        "delta_AIC_lin_minus_sat": 71.99247871194984,
+        "best": "saturating"
+      },
+      "max_pairing_residual_rel": 1.2459707707271556e-14,
       "horizon_area": {
         "epsilon": 0.028867513459481287,
         "A_point": 1.0,
-        "A_mol": 1909.8,
-        "A_cont_eps_units": 1.5915
+        "A_mol": 1909.7777777777778,
+        "A_cont_eps_units": 1.5914814814814815
       },
-      "R_Sfull_over_Amol": 0.1306,
-      "R_Strunc_over_Acont": 0.4666,
-      "R_Strunc_over_Amol": 0.00038883652738506654
+      "R_Sfull_over_Amol": 0.13062207893859384,
+      "R_Strunc_over_Amol": 0.0003888647490490024,
+      "R_Strunc_over_Acont": 0.4666376988588029,
+      "R_Sfull_over_Apoint": 249.45914364406121
     }
   },
   "patch_size_scan": {
     "l_0.7": {
       "rho": 600.0,
       "l": 0.7,
+      "n_seeds": 3,
+      "Ns": [
+        823,
+        834,
+        839,
+        840,
+        840,
+        840,
+        840
+      ],
       "RSTAR_BOX": [
         1.6,
         2.0,
@@ -276,56 +439,114 @@
         840.0
       ],
       "S_trunc_mean": [
-        0.3513,
-        0.3924,
-        0.3744,
-        0.4266,
-        0.4387,
-        0.415,
-        0.3614
+        0.3512523108217351,
+        0.39241549692176453,
+        0.3743881697567332,
+        0.4265510939866912,
+        0.4387193123255077,
+        0.4149776742665099,
+        0.3613773533128348
+      ],
+      "S_trunc_std": [
+        0.03321843930882648,
+        0.06876601396371217,
+        0.045550588461691924,
+        0.017575048070606655,
+        0.025003292764606083,
+        0.03932787270032804,
+        0.043259549001055934
       ],
       "S_full_mean": [
-        58.5,
-        59.03,
-        61.37,
-        64.29,
-        64.45,
-        62.66,
-        60.39
+        58.495239965025974,
+        59.03044790443431,
+        61.37095858317275,
+        64.28912837108106,
+        64.4454538535448,
+        62.66043852863953,
+        60.39094028139177
+      ],
+      "n_sub_mean": [
+        688.6666666666666,
+        693.3333333333334,
+        689.3333333333334,
+        683.6666666666666,
+        681.0,
+        691.0,
+        694.0
       ],
       "horizon_links_mean": [
-        460.3,
-        459.7,
+        460.3333333333333,
+        459.6666666666667,
         529.0,
-        526.3,
+        526.3333333333334,
         488.0,
-        493.3,
+        493.3333333333333,
         473.0
       ],
-      "Ns": [
-        823,
-        834,
-        839,
-        840,
-        840,
-        840,
-        840
+      "N_total_cap": 840.0636654540956,
+      "N_total_cap_se": 1.1374372380859924e-13,
+      "N_total_cap_ci68": [
+        840.0636654540956,
+        840.0636654540956
       ],
-      "max_pairing_residual_rel": 5e-15,
-      "S_full_cap": 62.842,
-      "S_trunc_cap": 0.4050333333333333,
-      "horizon_links_cap": 484.8,
+      "N_total_cap_R2": 0.9997688706102015,
+      "S_trunc_cap": 0.4068777334588421,
+      "S_trunc_cap_se": 0.010217649954781256,
+      "S_trunc_cap_ci68": [
+        0.39550314721018354,
+        0.41552890368818435
+      ],
+      "S_trunc_cap_R2": 0.35947043305384496,
+      "S_full_cap": 62.842383400692675,
+      "S_full_cap_se": 0.5461212173822318,
+      "S_full_cap_ci68": [
+        62.313471966897154,
+        63.349155042679996
+      ],
+      "S_full_cap_R2": 0.5993381451600641,
+      "horizon_links_cap": 484.77777777777777,
+      "horizon_links_cap_se": 6.0868204110232575,
+      "aic_N_total": {
+        "sat_R2": 0.9997688706102015,
+        "lin_R2": -19777.814817306407,
+        "AIC_saturating": -27.757125117221392,
+        "AIC_linear": 98.09717180561086,
+        "delta_AIC_lin_minus_sat": 125.85429692283225,
+        "best": "saturating"
+      },
+      "aic_S_full": {
+        "sat_R2": 0.5993381451600641,
+        "lin_R2": -672.7303709187638,
+        "AIC_saturating": 10.695751700189359,
+        "AIC_linear": 60.68802384952144,
+        "delta_AIC_lin_minus_sat": 49.99227214933208,
+        "best": "saturating"
+      },
+      "max_pairing_residual_rel": 5.0278178727259815e-15,
       "horizon_area": {
         "epsilon": 0.040824829046386304,
         "A_point": 1.0,
-        "A_mol": 484.8,
-        "A_cont_eps_units": 0.8080000000000002
+        "A_mol": 484.77777777777777,
+        "A_cont_eps_units": 0.8079629629629631
       },
-      "R_Sfull_over_Amol": 0.1296
+      "R_Sfull_over_Amol": 0.12963132033147698,
+      "R_Strunc_over_Amol": 0.0008393077243019892,
+      "R_Strunc_over_Acont": 0.5035846345811934,
+      "R_Sfull_over_Apoint": 62.842383400692675
     },
     "l_1": {
       "rho": 600.0,
       "l": 1.0,
+      "n_seeds": 3,
+      "Ns": [
+        1106,
+        1157,
+        1187,
+        1197,
+        1200,
+        1200,
+        1200
+      ],
       "RSTAR_BOX": [
         1.6,
         2.0,
@@ -345,56 +566,114 @@
         1200.0
       ],
       "S_trunc_mean": [
-        0.6215,
-        0.7272,
-        0.6987,
-        0.6553,
-        0.6547,
-        0.6842,
-        0.6808
+        0.6242958939944263,
+        0.762162688293131,
+        0.727295151579353,
+        0.6483080489971428,
+        0.6614363141648357,
+        0.7084885273118515,
+        0.684872022719614
+      ],
+      "S_trunc_std": [
+        0.05342919209859998,
+        0.06881808987705758,
+        0.05362948505575714,
+        0.10220165124698036,
+        0.010115222848900028,
+        0.059437196203788366,
+        0.018228186721211036
       ],
       "S_full_mean": [
-        110.99,
-        119.03,
-        122.44,
-        119.04,
-        121.8,
-        121.57,
-        124.07
+        112.3634390790088,
+        118.13725974462365,
+        125.68530463684272,
+        119.59434053818178,
+        121.17969795123496,
+        122.97251410945596,
+        125.35171434397209
+      ],
+      "n_sub_mean": [
+        802.6666666666666,
+        786.3333333333334,
+        785.3333333333334,
+        810.3333333333334,
+        803.6666666666666,
+        775.0,
+        796.6666666666666
       ],
       "horizon_links_mean": [
-        861.0,
-        910.0,
-        968.8,
-        876.8,
-        920.8,
-        926.2,
-        918.5
+        860.3333333333334,
+        923.0,
+        961.0,
+        875.6666666666666,
+        918.3333333333334,
+        940.6666666666666,
+        922.6666666666666
       ],
-      "Ns": [
-        1106,
-        1157,
-        1187,
-        1197,
-        1200,
-        1200,
-        1200
+      "N_total_cap": 1200.0848559677531,
+      "N_total_cap_se": 0.0,
+      "N_total_cap_ci68": [
+        1200.0848559677531,
+        1200.0848559677531
       ],
-      "max_pairing_residual_rel": 7.7e-15,
-      "S_full_cap": 122.888,
-      "S_trunc_cap": 0.6732333333333332,
-      "horizon_links_cap": 927.2,
+      "N_total_cap_R2": 0.9999672116106322,
+      "S_trunc_cap": 0.6987604546623005,
+      "S_trunc_cap_se": 0.023888877591198013,
+      "S_trunc_cap_ci68": [
+        0.6601460193087368,
+        0.7166291345887037
+      ],
+      "S_trunc_cap_R2": 0.34408140912535745,
+      "S_full_cap": 122.88760848955519,
+      "S_full_cap_se": 5095.224794137858,
+      "S_full_cap_ci68": [
+        122.88760812075174,
+        124.6996262177162
+      ],
+      "S_full_cap_R2": 0.7454268426795901,
+      "horizon_links_cap": 927.2222222222222,
+      "horizon_links_cap_se": 6.837622863229067,
+      "aic_N_total": {
+        "sat_R2": 0.9999672116106322,
+        "lin_R2": -1276.5031040965782,
+        "AIC_saturating": -17.4232376509219,
+        "AIC_linear": 102.92345422785917,
+        "delta_AIC_lin_minus_sat": 120.34669187878107,
+        "best": "saturating"
+      },
+      "aic_S_full": {
+        "sat_R2": 0.7454268426795901,
+        "lin_R2": -727.0908021377279,
+        "AIC_saturating": 16.82846636173891,
+        "AIC_linear": 70.53861594661032,
+        "delta_AIC_lin_minus_sat": 53.71014958487141,
+        "best": "saturating"
+      },
+      "max_pairing_residual_rel": 7.652931071860697e-15,
       "horizon_area": {
         "epsilon": 0.040824829046386304,
         "A_point": 1.0,
-        "A_mol": 927.2,
-        "A_cont_eps_units": 1.5453333333333337
+        "A_mol": 927.2222222222222,
+        "A_cont_eps_units": 1.5453703703703705
       },
-      "R_Sfull_over_Amol": 0.1325
+      "R_Sfull_over_Amol": 0.1325330708695023,
+      "R_Strunc_over_Amol": 0.0007536062422960701,
+      "R_Strunc_over_Acont": 0.452163745377642,
+      "R_Sfull_over_Apoint": 122.88760848955519
     },
     "l_1.5": {
       "rho": 600.0,
       "l": 1.5,
+      "n_seeds": 3,
+      "Ns": [
+        1419,
+        1566,
+        1691,
+        1762,
+        1790,
+        1798,
+        1800
+      ],
       "RSTAR_BOX": [
         1.6,
         2.0,
@@ -414,58 +693,113 @@
         1800.0
       ],
       "S_trunc_mean": [
-        0.8396,
-        0.9059,
-        0.9355,
-        0.9256,
-        0.8941,
-        0.8893,
-        0.9201
+        0.8396442129624697,
+        0.9059392294785762,
+        0.9354508896182012,
+        0.9255746925970746,
+        0.8940637359496441,
+        0.8892734589231259,
+        0.9200656962342935
+      ],
+      "S_trunc_std": [
+        0.03420822651456058,
+        0.008925446073894559,
+        0.02500114890044129,
+        0.04513666598947312,
+        0.0322616135770081,
+        0.06735570141502374,
+        0.06099169174713998
       ],
       "S_full_mean": [
-        163.76,
-        174.92,
-        179.3,
-        184.21,
-        185.12,
-        182.56,
-        178.99
+        163.7576892848607,
+        174.9229592831538,
+        179.29755384117811,
+        184.21323058782698,
+        185.1202078209402,
+        182.56440325287326,
+        178.9918895480272
+      ],
+      "n_sub_mean": [
+        874.0,
+        877.0,
+        881.3333333333334,
+        878.6666666666666,
+        889.6666666666666,
+        887.3333333333334,
+        859.6666666666666
       ],
       "horizon_links_mean": [
-        1224.7,
-        1328.7,
-        1347.3,
-        1381.7,
-        1386.3,
-        1385.3,
-        1322.3
+        1224.6666666666667,
+        1328.6666666666667,
+        1347.3333333333333,
+        1381.6666666666667,
+        1386.3333333333333,
+        1385.3333333333333,
+        1322.3333333333333
       ],
-      "Ns": [
-        1419,
-        1566,
-        1691,
-        1762,
-        1790,
-        1798,
-        1800
+      "N_total_cap": 1801.3750460951924,
+      "N_total_cap_se": 0.0,
+      "N_total_cap_ci68": [
+        1801.3750460951924,
+        1801.3750460951924
       ],
-      "max_pairing_residual_rel": 6e-15,
-      "S_full_cap": 182.602,
-      "S_trunc_cap": 0.9011666666666667,
-      "horizon_links_cap": 1364.7,
+      "N_total_cap_R2": 0.999924544207785,
+      "S_trunc_cap": 0.9126798980322901,
+      "S_trunc_cap_se": 0.012537426377214002,
+      "S_trunc_cap_ci68": [
+        0.9014307973750585,
+        0.9263177339707942
+      ],
+      "S_trunc_cap_R2": 0.7322730312814232,
+      "S_full_cap": 182.60178462155767,
+      "S_full_cap_se": 1.2304736365707019,
+      "S_full_cap_ci68": [
+        181.13121269264082,
+        183.90618068413247
+      ],
+      "S_full_cap_R2": 0.9230169597413743,
+      "horizon_links_cap": 1364.6666666666667,
+      "horizon_links_cap_se": 21.168635079076573,
+      "aic_N_total": {
+        "sat_R2": 0.999924544207785,
+        "lin_R2": -154.92923158603827,
+        "AIC_saturating": 8.240448693014027,
+        "AIC_linear": 108.03000976495184,
+        "delta_AIC_lin_minus_sat": 99.78956107193781,
+        "best": "saturating"
+      },
+      "aic_S_full": {
+        "sat_R2": 0.9230169597413743,
+        "lin_R2": -647.3437861739711,
+        "AIC_saturating": 14.89333429187097,
+        "AIC_linear": 76.16347288547544,
+        "delta_AIC_lin_minus_sat": 61.27013859360447,
+        "best": "saturating"
+      },
+      "max_pairing_residual_rel": 6.027508101096078e-15,
       "horizon_area": {
         "epsilon": 0.040824829046386304,
         "A_point": 1.0,
-        "A_mol": 1364.7,
-        "A_cont_eps_units": 2.2745000000000006
+        "A_mol": 1364.6666666666667,
+        "A_cont_eps_units": 2.274444444444445
       },
-      "R_Sfull_over_Amol": 0.1338
+      "R_Sfull_over_Amol": 0.1338068768599592,
+      "R_Strunc_over_Amol": 0.0006687932814110576,
+      "R_Strunc_over_Acont": 0.4012759688466345,
+      "R_Sfull_over_Apoint": 182.60178462155767
     }
   },
   "high_density_sparse_consistency": {
     "rho_3000": {
       "rho": 3000.0,
       "l": 1.0,
+      "n_seeds": 2,
+      "Ns": [
+        5987,
+        5998,
+        6000,
+        6000
+      ],
       "RSTAR_BOX": [
         3.4,
         4.4,
@@ -479,10 +813,16 @@
         6000.0
       ],
       "S_trunc_mean": [
-        1.1436,
-        1.1273,
-        1.1297,
-        1.1548
+        1.1436471260544019,
+        1.1273112273475587,
+        1.1296812994431864,
+        1.154836126652122
+      ],
+      "S_trunc_std": [
+        0.04080532797154981,
+        0.029082142310636352,
+        0.02111162932283729,
+        0.024302714097838664
       ],
       "S_full_mean": [
         null,
@@ -490,24 +830,69 @@
         null,
         null
       ],
+      "n_sub_mean": [
+        3998.5,
+        3953.0,
+        3986.5,
+        3945.0
+      ],
       "horizon_links_mean": [
         null,
         null,
         null,
         null
       ],
-      "Ns": [
-        5987,
-        5998,
-        6000,
-        6000
+      "N_total_cap": 6000.1118598051025,
+      "N_total_cap_se": 1.8198995809375878e-12,
+      "N_total_cap_ci68": [
+        6000.1118598051025,
+        6000.1118598051025
       ],
-      "max_pairing_residual_rel": 2.2e-09,
-      "N_total_cap": 6000.0,
-      "S_trunc_cap": 1.14225,
+      "N_total_cap_R2": 0.9997990022913495,
+      "S_trunc_cap": 112.5914416565647,
+      "S_trunc_cap_se": 130.95423948664126,
+      "S_trunc_cap_ci68": [
+        1.139185924426477,
+        361.4635801115577
+      ],
+      "S_trunc_cap_R2": 0.18415948196568943,
       "S_full_cap": null,
+      "S_full_cap_se": null,
+      "S_full_cap_ci68": [
+        null,
+        null
+      ],
+      "S_full_cap_R2": 0.0,
       "horizon_links_cap": null,
-      "note": "S_full + A_mol unavailable on sparse path; content caps + S_trunc O(1) confirmed at high rho (consistency check)."
+      "horizon_links_cap_se": null,
+      "aic_N_total": {
+        "sat_R2": 0.9997990022913495,
+        "lin_R2": -1228287.6847264664,
+        "AIC_saturating": -14.553906057161242,
+        "AIC_linear": 73.57949192308907,
+        "delta_AIC_lin_minus_sat": 88.13339798025031,
+        "best": "saturating"
+      },
+      "aic_S_full": {
+        "sat_R2": null,
+        "lin_R2": null,
+        "AIC_saturating": null,
+        "AIC_linear": null,
+        "delta_AIC_lin_minus_sat": null,
+        "best": null,
+        "note": "S_full unavailable (sparse path)"
+      },
+      "max_pairing_residual_rel": 2.171117583043587e-09,
+      "horizon_area": {
+        "epsilon": 0.018257418583505537,
+        "A_point": 1.0,
+        "A_mol": null,
+        "A_cont_eps_units": null
+      },
+      "R_Sfull_over_Amol": null,
+      "R_Strunc_over_Amol": null,
+      "R_Strunc_over_Acont": null,
+      "R_Sfull_over_Apoint": null
     }
   },
   "discriminator": {
@@ -519,22 +904,22 @@
         1200.0
       ],
       "R": [
-        0.1339,
-        0.1321,
-        0.1306
+        0.13393795997926178,
+        0.13214653656546188,
+        0.13062207893859384
       ],
       "constancy": {
-        "mean": 0.1322,
-        "std": 0.001652271164185829,
-        "cv": 0.012498269018047117,
-        "min": 0.1306,
-        "max": 0.1339,
-        "ratio_to_quarter": 0.5288
+        "mean": 0.13223552516110584,
+        "std": 0.00165973070001771,
+        "cv": 0.012551322331844023,
+        "min": 0.13062207893859384,
+        "max": 0.13393795997926178,
+        "ratio_to_quarter": 0.5289421006444234
       },
       "drift_vs_rho": {
-        "slope": -0.015466416464966272,
-        "se": 0.0004796854171397524,
-        "r2": 0.9990390161695211
+        "slope": -0.015529863056926297,
+        "se": 0.0005751433004279411,
+        "r2": 0.998630312089012
       }
     },
     "PRIMARY_R_Sfull_over_Amol_patchsize": {
@@ -544,48 +929,48 @@
         1.5
       ],
       "R": [
-        0.1296,
-        0.1325,
-        0.1338
+        0.12963132033147698,
+        0.1325330708695023,
+        0.1338068768599592
       ],
       "constancy": {
-        "mean": 0.13196666666666668,
-        "std": 0.0021501937897160242,
-        "cv": 0.01629346140224317,
-        "min": 0.1296,
-        "max": 0.1338,
-        "ratio_to_quarter": 0.5278666666666667
+        "mean": 0.1319904226869795,
+        "std": 0.0021400159738034943,
+        "cv": 0.016213418596882797,
+        "min": 0.12963132033147698,
+        "max": 0.1338068768599592,
+        "ratio_to_quarter": 0.527961690747918
       },
       "drift_vs_l": {
-        "slope": 0.041444256101297386,
-        "se": 0.010899787593585088,
-        "r2": 0.9353064056637067
+        "slope": 0.04118921514051677,
+        "se": 0.01104647874064875,
+        "r2": 0.9329009711932236
       }
     },
     "secondary_R_Strunc_over_Acont_density": {
-      "note": "truncated SSEE cap vs eps-units continuum area A_cont=A_mol*eps^2.",
+      "note": "truncated SSEE cap vs eps-units continuum area A_cont=A_mol*eps^2; eps FIXED from F-006.",
       "rho": [
         240.0,
         600.0,
         1200.0
       ],
       "R": [
-        0.4463,
-        0.4449,
-        0.4666
+        0.44630123182184117,
+        0.4448554559164139,
+        0.4666376988588029
       ],
       "constancy": {
-        "mean": 0.45260000000000006,
-        "std": 0.01214454610102824,
-        "cv": 0.026832846003155632,
-        "min": 0.4449,
-        "max": 0.4666,
-        "ratio_to_quarter": 1.8104000000000002
+        "mean": 0.452598128865686,
+        "std": 0.012180094875898963,
+        "cv": 0.026911500731178574,
+        "min": 0.4448554559164139,
+        "max": 0.4666376988588029,
+        "ratio_to_quarter": 1.810392515462744
       },
       "drift_vs_rho": {
-        "slope": 0.026013181714001465,
-        "se": 0.020292996253015394,
-        "r2": 0.6216729619887607
+        "slope": 0.026053259030996766,
+        "se": 0.02039801304193463,
+        "r2": 0.619967608362288
       }
     },
     "S_full_cap_vs_rho": {
@@ -595,14 +980,14 @@
         1200.0
       ],
       "S_cap": [
-        46.186,
-        121.817,
-        249.459
+        46.18627319951543,
+        121.81708229059494,
+        249.45914364406121
       ],
       "drift": {
-        "slope": 1.0485031087158592,
-        "se": 0.006852361025826011,
-        "r2": 0.9999572906975013
+        "slope": 1.0484996656497643,
+        "se": 0.006850792790774643,
+        "r2": 0.99995730996302
       }
     },
     "S_trunc_cap_vs_rho": {
@@ -612,14 +997,14 @@
         1200.0
       ],
       "S_cap": [
-        0.6412,
-        0.6835,
-        0.7426
+        0.6412480893329091,
+        0.6834709796315794,
+        0.7426452562949171
       ],
       "drift": {
-        "slope": 0.09009776657142267,
-        "se": 0.014044335339810437,
-        "r2": 0.9762781849491822
+        "slope": 0.09008278773767543,
+        "se": 0.01412236355158822,
+        "r2": 0.9760124174339853
       }
     },
     "horizon_links_cap_vs_rho": {
@@ -629,14 +1014,14 @@
         1200.0
       ],
       "A_mol": [
-        344.8,
-        921.8,
-        1909.8
+        344.8333333333333,
+        921.8333333333334,
+        1909.7777777777778
       ],
       "drift": {
-        "slope": 1.0640967570897022,
-        "se": 0.006274828444689136,
-        "r2": 0.9999652282640941
+        "slope": 1.064029528706669,
+        "se": 0.006275649490345487,
+        "r2": 0.9999652147691371
       }
     },
     "S_full_cap_vs_l": {
@@ -646,34 +1031,32 @@
         1.5
       ],
       "S_cap": [
-        62.842,
-        122.888,
-        182.602
+        62.842383400692675,
+        122.88760848955519,
+        182.60178462155767
       ],
       "drift": {
-        "slope": 1.3900044615424385,
-        "se": 0.2594059020675628,
-        "r2": 0.9663442566321339
+        "slope": 1.3899952376318605,
+        "se": 0.2593970060060234,
+        "r2": 0.9663460556730297
       }
     }
   },
   "VERDICT": {
     "F023_cap_confirmed": true,
-    "PRIMARY_R_Sfull_over_Amol_mean": 0.1322,
-    "PRIMARY_R_combined_mean_density_and_l": 0.13208333333333336,
-    "PRIMARY_R_combined_cv": 0.013020467950735942,
+    "PRIMARY_R_Sfull_over_Amol_mean": 0.13223552516110584,
     "PRIMARY_R_constant_across_rho": true,
     "PRIMARY_R_constant_across_l": true,
-    "PRIMARY_R_drift_exponent_vs_rho": -0.015466416464966272,
-    "PRIMARY_R_drift_exponent_se": 0.0004796854171397524,
-    "PRIMARY_R_cv_across_rho": 0.012498269018047117,
-    "PRIMARY_R_cv_across_l": 0.01629346140224317,
+    "PRIMARY_R_drift_exponent_vs_rho": -0.015529863056926297,
+    "PRIMARY_R_drift_exponent_se": 0.0005751433004279411,
+    "PRIMARY_R_cv_across_rho": 0.012551322331844023,
     "is_quarter_like": false,
-    "implied_coefficient_c": 7.570977917981071,
+    "implied_coefficient_c": 7.562264367171189,
     "quantitative_area_law": true,
     "H5g2_strong_quantitative_A4": false,
-    "S_full_cap_drift_vs_rho": 1.0485031087158592,
-    "horizon_links_cap_drift_vs_rho": 1.0640967570897022,
-    "overall": "PARTIAL/AFFIRMATIVE: R_full = S_full_cap/A_mol is CONSTANT across both the 5x density range AND the 2x patch-size range (combined mean R=0.1321, CV=1.3%) -> the F-023 dS entropy cap obeys a QUANTITATIVE area-law S = A/(c*G) with c = 7.57. The cap is PROPORTIONAL to the discrete Dou-Sorkin horizon-molecule area (qualitative->quantitative upgrade ESTABLISHED), but the constant is NOT 1/4 -- the 2D molecule-count vs SSEE O(1) normalisation is not fixed to give 4."
-  }
+    "S_full_cap_drift_vs_rho": 1.0484996656497643,
+    "horizon_links_cap_drift_vs_rho": 1.064029528706669,
+    "overall": "PARTIAL/AFFIRMATIVE: R_full = S_full_cap/A_mol is CONSTANT across (rho, l) -> a QUANTITATIVE area-law (entropy cap PROPORTIONAL to the discrete horizon area), R = 0.1322 i.e. S = A/(c*G) with c = 7.56. The constant is NOT exactly 1/4 (the geometric O(1) normalisation of the 2D molecule count vs the SSEE is not fixed to give 4); the QUALITATIVE-to-QUANTITATIVE upgrade is established, the literal 4 is not."
+  },
+  "runtime_s": 963.1076922416687
 }
