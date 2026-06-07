@@ -83,7 +83,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 # --- DOGFOODING: build ON TOP of the toe library --------------------------
-sys.path.insert(0, "/Users/pazny/projects/theoryOfEverything/lib")
+sys.path.insert(0, os.path.normpath(os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", "lib")))
 from toe.causet import (                      # noqa: E402  (A2: geometry/causal)
     sprinkle_ds_static_patch4d, causal_matrix, link_matrix,
     green_retarded_4d, pauli_jordan, causal_diagnostics,

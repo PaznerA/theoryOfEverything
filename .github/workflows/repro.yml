@@ -82,6 +82,9 @@ jobs:
       MPLBACKEND: Agg
       PYTHONHASHSEED: "0"
       OMP_NUM_THREADS: "4"
+      # 4-vCPU runners are ~1.5-2x slower than the local reference host;
+      # ssee-4d alone needs ~30+ min there (local: 26 min).
+      REPRO_CALC_TIMEOUT: "9000"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

@@ -37,7 +37,8 @@ References (repo-present only):
   policy; we proceed with the dimensionless ratio.
 """
 import sys, os, json, time
-sys.path.insert(0, "/Users/pazny/projects/theoryOfEverything/lib")
+sys.path.insert(0, os.path.normpath(os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", "lib")))
 import numpy as np
 from scipy.optimize import curve_fit
 

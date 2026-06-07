@@ -106,7 +106,11 @@ def _prepare(name: str) -> Path:
     return dst
 
 
-def _run_and_compare(name: str, timeout: int = 1800):
+def _run_and_compare(name: str, timeout: int | None = None):
+    if timeout is None:
+        # Slower hosts (e.g. 4-vCPU CI runners) need more headroom than the
+        # local reference machine — ssee-4d alone runs ~26 min there.
+        timeout = int(os.environ.get("REPRO_CALC_TIMEOUT", "1800"))
     dst = _prepare(name)
     orig = json.loads((CALC / name / "results.json").read_text())
     env = dict(

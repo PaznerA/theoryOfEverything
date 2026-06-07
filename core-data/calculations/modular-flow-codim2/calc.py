@@ -72,7 +72,8 @@ for _v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS",
 
 import numpy as np
 
-sys.path.insert(0, '/Users/pazny/projects/theoryOfEverything/lib')
+sys.path.insert(0, os.path.normpath(os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', 'lib')))
 
 # ---- toe library (DOGFOODING) --------------------------------------------
 # v0.2.0 lifted the VYPOCET-22 region builder, smeared-BD inverse, the SJ

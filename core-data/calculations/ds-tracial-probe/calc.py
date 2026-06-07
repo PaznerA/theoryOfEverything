@@ -89,7 +89,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 import sys
-sys.path.insert(0, "/Users/pazny/projects/theoryOfEverything/lib")
+sys.path.insert(0, os.path.normpath(os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", "lib")))
 from toe import causet, sj, entropy, vntype
 from toe import fits
 
