@@ -4417,13 +4417,13 @@
   },
   {
     "id": "sorkin-johnston-2017",
-    "authors": "N. Surya, N. X, Y. K. Yazdi",
+    "authors": "A. Belenchia, D. M. T. Benincasa, M. Letizia, S. Liberati",
     "title": "On the Entanglement Entropy of Quantum Fields in Causal Sets",
     "year": 2017,
     "arxiv": "1712.04227",
-    "doi": null,
+    "doi": "10.1088/1361-6382/aaa770",
     "url": "https://arxiv.org/abs/1712.04227",
-    "significance": "Computes SSEE for the Sorkin-Johnston state on causal sets, exhibiting truncation-dependent area vs volume law in a discrete background.",
+    "significance": "Computes SSEE for the Sorkin-Johnston state on causal sets, exhibiting truncation-dependent area vs volume law in a discrete background. [Authors corrected 2026-06-07: previous entry 'N. Surya, N. X, Y. K. Yazdi' was a placeholder; actual authors Belenchia–Benincasa–Letizia–Liberati confirmed via arXiv.]",
     "pillars": [
       "von-neumann-algebras"
     ]
@@ -6679,14 +6679,14 @@
     ]
   },
   {
-    "id": "kudler-flam-gsl-2024",
-    "authors": "J. Kudler-Flam, S. Leutheusser, G. Satishchandran",
-    "title": "Generalized Second Law for Subregions and Gravitational Algebras",
+    "id": "faulkner-speranza-gsl-2024",
+    "authors": "T. Faulkner, A. J. Speranza",
+    "title": "Gravitational algebras and the generalized second law",
     "year": 2024,
-    "arxiv": null,
+    "arxiv": "2405.00847",
     "doi": "10.1007/JHEP11(2024)099",
-    "url": null,
-    "significance": "Derives a generalized second law from the monotonicity of relative entropy on the type II gravitational algebra, tying GSL to modular theory. [unverified arXiv ID removed 2026-06-06: ID 2403.08696 belongs to Iliesiu–Levine–Lin–Maxfield–Mezei (JT gravity), not Kudler-Flam–Leutheusser–Satishchandran; correct arXiv ID not found on arXiv]",
+    "url": "https://arxiv.org/abs/2405.00847",
+    "significance": "Derives the generalized second law for arbitrary cuts of Killing horizons from crossed-product gravitational algebras using monotonicity of relative entropy; Lorentzian, algebraic derivation. [Corrected 2026-06-07: DOI 10.1007/JHEP11(2024)099 belongs to Faulkner–Speranza (arXiv:2405.00847), NOT to Kudler-Flam–Leutheusser–Satishchandran. Previous entry misattributed both authors and arXiv ID.]",
     "pillars": [
       "von-neumann-algebras"
     ]
@@ -6806,6 +6806,19 @@
     "significance": "Stationary giant quantum vortex in superfluid 4He simulates rotating black-hole ringdown and bound states.",
     "pillars": [
       "emergent-gravity"
+    ]
+  },
+  {
+    "id": "ali-ahmad-klinger-lin-2024",
+    "authors": "S. Ali Ahmad, M. S. Klinger, S. Lin",
+    "title": "Semifinite von Neumann algebras in gauge theory and gravity",
+    "year": 2024,
+    "arxiv": "2407.01695",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2407.01695",
+    "significance": "Studies semifinite conditions for crossed products of type III algebras with locally compact groups; derives a sufficient condition for semifiniteness implying centrality of the modular flow. [Added 2026-06-07: this is the correct Ali Ahmad–Klinger–Lin paper; previous entry mistakenly pointed to van der Heijden–Verlinde JHEP paper.]",
+    "pillars": [
+      "von-neumann-algebras"
     ]
   },
   {
@@ -7017,14 +7030,14 @@
     ]
   },
   {
-    "id": "ahmad-jefferson-2024",
-    "authors": "M. Ali Ahmad, M. S. Klinger, S. Lin",
+    "id": "van-der-heijden-verlinde-2024",
+    "authors": "J. van der Heijden, E. Verlinde",
     "title": "An operator algebraic approach to black hole information",
     "year": 2025,
-    "arxiv": null,
+    "arxiv": "2408.00071",
     "doi": "10.1007/JHEP02(2025)207",
-    "url": null,
-    "significance": "Operator-algebraic account of the black-hole information problem in terms of type transitions and crossed products. [unverified arXiv ID removed 2026-06-06: ID 2408.00071 belongs to van der Heijden & Verlinde, not Ali Ahmad–Klinger–Lin; correct arXiv ID not found]",
+    "url": "https://arxiv.org/abs/2408.00071",
+    "significance": "Operator-algebraic account of the black-hole information problem using Jones index theory of type II_1 subfactors; information recovery via Jones basic construction. [Corrected 2026-06-07: JHEP02(2025)207 belongs to van der Heijden–Verlinde (arXiv:2408.00071). Previous entry misidentified authors as Ali Ahmad–Klinger–Lin. Separate Ali Ahmad–Klinger–Lin paper is arXiv:2407.01695.]",
     "pillars": [
       "von-neumann-algebras"
     ]
@@ -7338,7 +7351,7 @@
     "arxiv": "2510.07017",
     "doi": null,
     "url": "https://arxiv.org/abs/2510.07017",
-    "significance": "Pedagogical synthesis of modular theory, type III/II algebras, crossed products and emergent spacetime as of 2025.",
+    "significance": "Pedagogical synthesis of modular theory, type III/II algebras, crossed products and emergent spacetime as of 2025. [Author corrected 2026-06-07: paper is by Hong Liu, not S. Leutheusser — confirmed via arXiv:2510.07017.]",
     "pillars": [
       "entanglement-spacetime",
       "von-neumann-algebras"

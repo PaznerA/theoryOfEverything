@@ -106,13 +106,13 @@ jobs:
           code=$?
           set -e
           echo "pytest_exit=$code" >> "$GITHUB_OUTPUT"
-          # Exit 5 = "no tests collected": this dir has no parametrized reproduction
-          # test (e.g. ds-entropy-cap, ds-tracial-probe, modular-flow-codim2,
-          # sj-desitter-4d are absent from FAST_CALCS/SLOW_CALCS). Treat as skipped,
-          # not failed.
+          # Exit 5 = "no tests collected". All 24 calc dirs are covered by
+          # FAST_CALCS/SLOW_CALCS since commit 91fd7d7, so exit 5 now means a
+          # naming mismatch between the matrix and the test lists — FAIL it
+          # loudly instead of masking it as skipped.
           if [ "$code" = "5" ]; then
-            echo "verdict=skipped" >> "$GITHUB_OUTPUT"
-            exit 0
+            echo "verdict=fail-no-test-collected" >> "$GITHUB_OUTPUT"
+            exit 5
           elif [ "$code" = "0" ]; then
             echo "verdict=pass" >> "$GITHUB_OUTPUT"
             exit 0

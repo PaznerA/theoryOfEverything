@@ -218,13 +218,13 @@ Obor se soustředí na **rozšíření zkříženého součinu za horizonty a KM
 
 2. **Obecné podoblasti.** Konstrukce typu II a renormalizované $S_{\text{gen}}$ pro *libovolné* oblasti (ne jen horizonty): [Jensen–Sorce–Speranza 2306.01837](https://arxiv.org/abs/2306.01837), [Ali Ahmad–Jefferson 2306.07323](https://arxiv.org/abs/2306.07323). Reprodukují heuristické vzorce pro entropii rozdílů s žádoucími vlastnostmi (unitární invariance, konkavita).
 
-3. **Generalizovaný druhý zákon z modulární teorie.** Kudler-Flam–Leutheusser–Satishchandran (JHEP 11 (2024) 099) odvozují GSL z *monotonie relativní entropie* (data processing) na gravitační algebře typu II — algebraický důkaz, ne replica/Euklid. (⚠️ neověřeno — arXiv:2403.08696 patří jinému článku; správné arXiv ID nebylo nalezeno)
+3. **Generalizovaný druhý zákon z modulární teorie.** [Faulkner–Speranza (JHEP 11 (2024) 099, arXiv:2405.00847)](https://arxiv.org/abs/2405.00847) odvozují GSL z *monotonie relativní entropie* (data processing) na zkřížené produktové gravitační algebře pro libovolné řezy Killingova horizontu — algebraický důkaz, ne replica/Euklid. (⚠️ opraveno 2026-06-07: původně chybně přiřazeno Kudler-Flam–Leutheusser–Satishchandran)
 
-4. **Algebraické ER=EPR a informační paradox.** [Engelhardt–Liu 2311.04281](https://arxiv.org/abs/2311.04281) (JHEP 07 (2024) 013) a operátorově-algebraické přístupy k informaci (Ali Ahmad–Klinger–Lin, JHEP 02 (2025) 207, ⚠️ neověřeno — arXiv:2408.00071 patří van der Heijden & Verlinde, správné arXiv ID nebylo nalezeno) recastují Page křivku a přenos informace jako *přechod typu algebry* (III$_1$ → II) a přenos vysoce-komplexních podalgeber.
+4. **Algebraické ER=EPR a informační paradox.** [Engelhardt–Liu 2311.04281](https://arxiv.org/abs/2311.04281) (JHEP 07 (2024) 013) a operátorově-algebraické přístupy k informaci: [van der Heijden–Verlinde, arXiv:2408.00071](https://arxiv.org/abs/2408.00071) (JHEP 02 (2025) 207) používají Jonesovu indexovou teorii podfaktorů typu II$_1$ pro obnovu informace; [Ali Ahmad–Klinger–Lin, arXiv:2407.01695](https://arxiv.org/abs/2407.01695) studují semifinitní podmínky zkřížených součinů. Oba recastují Page křivku a přenos informace jako *přechod typu algebry* (III$_1$ → II) a přenos vysoce-komplexních podalgeber. (⚠️ opraveno 2026-06-07: původní přiřazení JHEP 02 (2025) 207 Ali Ahmad–Klinger–Lin bylo chybné)
 
 5. **De Sitter, kovariantní pozorovatelé a přechody.** Pokračuje upřesňování dS algebry: kovariantní (ne jen statické) pozorovatele, Janusovy deformace a *přechody v gravitačních algebrách*, coarse-grained algebry s rozlišením omezeným vlastnostmi pozorovatele. Status maximálně-entropického II$_1$ stavu a role více pozorovatelů zůstávají předmětem diskuse.
 
-6. **Emergentní geometrie z modulárních dat.** Program rekonstrukce bulkové geometrie (kauzalita, radiální směr) z toků, inkluzí a kocyklů: modulární Berryho fáze, modulární chaos, spektrálně-funkcionální analýzy radiálního směru. Pedagogickou syntézu podává [Leutheusser 2025 (2510.07017)](https://arxiv.org/abs/2510.07017).
+6. **Emergentní geometrie z modulárních dat.** Program rekonstrukce bulkové geometrie (kauzalita, radiální směr) z toků, inkluzí a kocyklů: modulární Berryho fáze, modulární chaos, spektrálně-funkcionální analýzy radiálního směru. Pedagogickou syntézu podává [Liu 2025 (2510.07017)](https://arxiv.org/abs/2510.07017).
 
 7. **Mosty k diskrétnosti (causal sets, LQG).** Truncation v Sorkinově SSEE a area gap v LQG jsou kandidáti na *fyzikální* UV cutoff, jenž by hrál roli, kterou algebraicky hraje stopa zkříženého součinu. Explicitní korespondence (truncation ↔ regularizace zkříženého součinu; area gap ↔ aditivní konstanta v $S_{\text{gen}}$) je dosud nezpracovaná — slibné bílé místo.
 
@@ -355,8 +355,8 @@ graph TD
 - K. Jensen, J. Sorce, A. J. Speranza, *Generalized entropy for general subregions in quantum gravity* (2023). [arXiv:2306.01837](https://arxiv.org/abs/2306.01837)
 - N. Engelhardt, H. Liu, *Algebraic ER=EPR and Complexity Transfer* (2023). [arXiv:2311.04281](https://arxiv.org/abs/2311.04281)
 - J. De Vuyst, S. Eccles, P. A. Höhn, J. Kirklin, *Crossed products and quantum reference frames: on the observer-dependence of gravitational entropy* (2024). [arXiv:2412.15502](https://arxiv.org/abs/2412.15502)
-- J. Kudler-Flam, S. Leutheusser, G. Satishchandran, *Generalized Second Law for Subregions and Gravitational Algebras* (2024). (⚠️ neověřeno — arXiv:2403.08696 patří jinému článku; správné arXiv ID nebylo nalezeno)
+- T. Faulkner, A. J. Speranza, *Gravitational algebras and the generalized second law* (2024). [arXiv:2405.00847](https://arxiv.org/abs/2405.00847) (⚠️ opraveno 2026-06-07: původní přiřazení Kudler-Flam–Leutheusser–Satishchandran bylo chybné; DOI 10.1007/JHEP11(2024)099 patří Faulkner–Speranza)
 - R. D. Sorkin, Y. K. Yazdi, *Entanglement Entropy in Causal Set Theory* (2016). [arXiv:1611.10281](https://arxiv.org/abs/1611.10281)
 - M. Saravani, R. D. Sorkin, Y. K. Yazdi, *Spacetime entanglement entropy in 1+1 dimensions* (2014). [arXiv:1311.7146](https://arxiv.org/abs/1311.7146)
-- S. Leutheusser, *Lectures on entanglement, von Neumann algebras, and emergence of spacetime* (2025). [arXiv:2510.07017](https://arxiv.org/abs/2510.07017)
+- H. Liu, *Lectures on entanglement, von Neumann algebras, and emergence of spacetime* (2025). [arXiv:2510.07017](https://arxiv.org/abs/2510.07017)
 - H.-J. Borchers, *On revolutionizing quantum field theory with Tomita's modular theory*, J. Math. Phys. **41** (2000) 3604. [DOI](https://doi.org/10.1063/1.533334)
