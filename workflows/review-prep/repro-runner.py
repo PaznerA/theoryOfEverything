@@ -43,6 +43,11 @@ def compare(a, b, path=''):
             diffs.append((path, 'verdict-flip', f'{a!r}->{b!r}'))
     elif isinstance(a, (int, float)) and isinstance(b, (int, float)):
         if a != b:
+            # Noise floor: machine-precision residuals (pairing, traces, ...)
+            # are "equal" whenever both sides sit below the floor — comparing
+            # 4e-16 vs 7e-16 relatively would report a meaningless 43% dev.
+            if abs(a) < 1e-10 and abs(b) < 1e-10:
+                return diffs
             denom = max(abs(a), abs(b), 1e-300)
             rel = abs(a - b) / denom
             if rel > 1e-9:
