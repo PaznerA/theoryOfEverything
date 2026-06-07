@@ -72,6 +72,9 @@ SLOW_CALCS = [
 DIAGNOSTIC_PAT = re.compile(
     r"(_std(\[|$)|_sem(\[|$)|_err$|knee_std|pile_below_eps0_(number|trunc)"
     r"|pile_trunc|retard"
+    # float32 invariant residuals (~1e-7 scale, above the 1e-10 noise floor)
+    # and derived significance-distance ratios (raw exponent+SE stay core):
+    r"|hermiticity|_sigma(\[|$)"
     # documented-pathological probe output (VYPOCET-06 honest negative):
     # the imposed-rank section is ill-conditioned by construction; its values
     # flip sign between CPU microarchitectures (eigenvector sign ambiguity).

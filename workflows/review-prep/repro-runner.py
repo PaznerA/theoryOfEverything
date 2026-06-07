@@ -54,6 +54,15 @@ def compare(a, b, path=''):
                 diffs.append((path, 'num', rel))
     else:
         if a != b:
+            if isinstance(a, str) and isinstance(b, str):
+                # Verdict/prose strings embed measured numbers; if the strings
+                # match after stripping numerics, the CONCLUSION is identical
+                # and only embedded decimals drifted (cross-platform) — not a
+                # structural change. Real wording changes still flag below.
+                import re as _re
+                if _re.sub(r'[-+0-9.eE]+', '#', a) == _re.sub(r'[-+0-9.eE]+', '#', b):
+                    diffs.append((path, 'num-in-string', None))
+                    return diffs
             diffs.append((path, 'value-change', f'{a!r}->{b!r}'[:200]))
     return diffs
 

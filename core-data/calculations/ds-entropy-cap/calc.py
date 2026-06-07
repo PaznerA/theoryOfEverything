@@ -339,7 +339,10 @@ def measure_caps(rho, l, n_seeds, tag, boxes=None):
     # the dense float64 path pairs to ~1e-13; the sparse float32 eigsh path pairs
     # to ~1e-9 (its intrinsic precision), so a float32-aware threshold is used.
     max_pair = max(pair)
-    pair_tol = 1e-12 if max(Ns) <= SPARSE_THRESHOLD else 5e-9
+    # float32 sparse-path tolerance: 5e-9 held on the macOS/Accelerate host but
+    # OpenBLAS/x86_64 reaches ~2.4e-8 (cross-HW run 2026-06-07); float32 eps is
+    # 1.2e-7, so 1e-7 still asserts a machine-level invariant on any BLAS.
+    pair_tol = 1e-12 if max(Ns) <= SPARSE_THRESHOLD else 1e-7
     assert max_pair < pair_tol, f"pairing invariant VIOLATED: {max_pair:.2e}"
 
     # --- caps with SE/CI (toe.fits bootstrap) ---
