@@ -22,9 +22,8 @@ UV magnitude cut kappa = sqrt(N)/(4 pi) the volume-law (type-III_1) SSEE turns
 into a saturating area/log-law (type-II) trend, so the fitted exponent ``a`` is
 small (|a| well below the untruncated ~1 volume-law slope).
 
-Run (host):
+Run (host, from the repo root):
 
-    cd /Users/pazny/projects/theoryOfEverything
     MPLBACKEND=Agg PYTHONPATH=lib python3 lib/examples/demo_pipeline.py
 
 Runtime target: < 60 s on the verified host (N grid peaks at ~500).

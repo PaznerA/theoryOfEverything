@@ -338,9 +338,9 @@ def test_formula_math_has_no_escaped_entities(built_site):
 def test_no_absolute_machine_paths_in_artifact(built_site):
     """Minor regression: the dev machine path must not leak into the artifact.
 
-    Absolute ``/Users/.../theoryOfEverything`` paths (in command examples and
-    file references) are stripped to repo-relative at build time so the public
-    output never carries the author's local filesystem layout.
+    Absolute on-disk repo-root paths (in command examples and file references)
+    are stripped to repo-relative at build time so the public output never
+    carries the author's local filesystem layout.
     """
     needle = os.path.join(REPO_ROOT, "")  # repo root with trailing sep
     leakers = {}

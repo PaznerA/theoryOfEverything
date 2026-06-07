@@ -1,7 +1,8 @@
 """pytest conftest for the toe library test-suite.
 
-Single responsibility: put /Users/pazny/projects/theoryOfEverything/lib on
-sys.path so that `import toe` (and `import toe.fits`, etc.) resolve to the
+Single responsibility: put the in-repo lib/ directory (resolved __file__-
+relative, two levels up from app/tests/) on sys.path so that `import toe`
+(and `import toe.fits`, etc.) resolve to the
 composable library under lib/toe/ WITHOUT requiring an editable install.
 
 The toe package deliberately ships no setup.py / pyproject; it is imported by

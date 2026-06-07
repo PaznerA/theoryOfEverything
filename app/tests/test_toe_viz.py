@@ -7,8 +7,7 @@ Validation targets from ARCHITECTURE.md §A5:
   - Uses a synthetic FitResult (no stochastic modules needed).
   - Total runtime < 5 s.
 
-Run with:
-    cd /Users/pazny/projects/theoryOfEverything
+Run with (from the repo root):
     MPLBACKEND=Agg python3 -m pytest app/tests/test_toe_viz.py -v
 """
 

@@ -46,6 +46,8 @@ python3 compute/drivers/ds_cap_4d.py --rho 30 --patch-l 0.8 --seeds 2 --max-hour
 
 Každý driver má `--help` s popisem parametrů a příklady smoke invokací v epilogu.
 
+> **Pozor na defaulty.** Spuštění driveru BEZ argumentů NENÍ smoke — `--rho` bez hodnoty spadne na plný grid, `--seeds` má default 4 a `--max-hours` default 5,5 h, takže výchozí běh je TĚŽKÝ produkční běh. Smoke je vždy explicitní tiny invokace z `--help` epilogu (`SMOKE (< 30 s)`), nikdy ne holé `python3 driver.py`. Plný cílový běh i smoke se proto VŽDY spouští s explicitními argumenty; default se nepoužívá jako orientační.
+
 ---
 
 ## Checkpointing a time-budget chování

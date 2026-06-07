@@ -199,7 +199,7 @@ def render(
 
     ``repo_root`` (if given) is stripped from any absolute on-disk paths that
     survive into the rendered prose / code blocks, so the *public artifact*
-    never leaks the developer machine path (``/Users/.../theoryOfEverything``).
+    never leaks the developer machine path (the absolute repo-root prefix).
     The source markdown stays untouched — it remains the single source of
     truth; only the built HTML is sanitised.
     """
