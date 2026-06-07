@@ -300,7 +300,10 @@ def main(argv=None):
 
             # ASSERT +/- pairing invariant per region (path-aware tolerance)
             max_pair = max(pair_per_box) if pair_per_box else 0.0
-            pair_tol = 5e-9 if use_sparse else 1e-12
+            # float32 sparse-path residual grows ~sqrt(N)*eps32 and is BLAS-dependent
+            # (OpenBLAS reached 6.5e-8 at rho=1200, cross-HW run 2026-06-07);
+            # 1e-6 still asserts a machine-level invariant ~1e9x below signal.
+            pair_tol = 1e-6 if use_sparse else 1e-12
             assert max_pair < pair_tol, (
                 f"pairing invariant VIOLATED at rho={rho} l={l}: "
                 f"{max_pair:.2e} >= {pair_tol:.0e}")

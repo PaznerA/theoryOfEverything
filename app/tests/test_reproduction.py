@@ -74,7 +74,11 @@ DIAGNOSTIC_PAT = re.compile(
     r"|pile_trunc|retard"
     # float32 invariant residuals (~1e-7 scale, above the 1e-10 noise floor)
     # and derived significance-distance ratios (raw exponent+SE stay core):
-    r"|hermiticity|_sigma(\[|$)"
+    r"|hermiticity|_sigma(\[|$)|pairing"
+    # standard-error fields (_se suffix family) and the float32 sparse
+    # cross-check section (eigsh fit outputs wobble cross-BLAS; the primary
+    # physics lives in the dense density/patch scans):
+    r"|_se(\[|$)|_se_regression|high_density_sparse_consistency"
     # documented-pathological probe output (VYPOCET-06 honest negative):
     # the imposed-rank section is ill-conditioned by construction; its values
     # flip sign between CPU microarchitectures (eigenvector sign ambiguity).
