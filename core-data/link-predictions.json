@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-07",
+  "generated": "2026-06-08",
   "source": "core-data/concept-graph.json",
   "nodeCount": 626,
   "edgeCount": 1632,
@@ -10,10 +10,10 @@
     "aucMean": 0.9034,
     "aucStd": 0.0176,
     "aucMin": 0.8763,
-    "aucMax": 0.9307,
+    "aucMax": 0.9308,
     "precisionAt50Mean": 0.9975,
     "componentAucMean": {
-      "spectral": 0.9297,
+      "spectral": 0.9295,
       "resource_allocation": 0.8585,
       "adamic_adar": 0.8585,
       "jaccard": 0.8558,

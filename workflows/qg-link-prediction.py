@@ -33,7 +33,7 @@ if LIB not in sys.path:
 from kgraph import load_graph, leave_k_out, predict_links  # noqa: E402
 from kgraph.scores import spectral_embedding  # noqa: E402
 
-GENERATED_DATE = "2026-06-07"
+GENERATED_DATE = "2026-06-08"
 TOP_N = 50
 DIM = 32
 N_SEEDS = 8

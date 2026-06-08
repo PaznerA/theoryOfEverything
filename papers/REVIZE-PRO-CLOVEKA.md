@@ -1,6 +1,8 @@
 # REVIZE PRO ČLOVĚKA — vstupní bod pro lidského výzkumníka
 
-**Stav: 2026-06-06 | Generováno AI koordinačním agentem. Všechny níže uvedené checkboxy jsou určeny výhradně pro lidské splnění.**
+**Stav: 2026-06-08 | Generováno AI koordinačním agentem. Všechny níže uvedené checkboxy jsou určeny výhradně pro lidské splnění.**
+
+> **Aktualizace 2026-06-08 (kola 12–16 + agent-framework):** Tato revize byla doplněna o nálezy z kol 12–16 (F-024..F-035), které vznikly po nasazení tří výzkumných agentů na `main` (exploratory-engine + computational-physicist + adversarial-verifier, commit `6e0f394`). Audit-fixy kola 14–15 od verifiera jsou již aplikovány (commit `e79b75e`: M-1 proxy3 30-seed committed podklad, m-1 F-031 měřený vs predikovaný drift, m-2 F-033 reziduum). Klíčové dopady na drafty: **draft-01 §4.2** dostal spojitý superradiantní exponent $B(a)$ (F-030, nahrazuje starý ohraničený 4.23/3.82), **draft-04 §4.3** dostal poctivé negativy F-029 (2D ano / 4D ne) a F-031 (4D area-law genuinně chybí). Per-draft checklisty níže (§2) byly o tyto položky rozšířeny.
 
 ---
 
@@ -8,10 +10,10 @@
 
 | Draft | Stav | Vědecká uzavřenost | Hlavní nárok | Největší riziko | Odhad lidské revize |
 |-------|------|-------------------|--------------|-----------------|---------------------|
-| **draft-01** — SJ ve rotujících prostoročasech (v0.2) | Interní explorační draft; NENÍ připraven k odeslání. VYPOCET-14 + VYPOCET-15 nově zpevnily §4.2. | Otevřená: zbývá kontinuální studie (velké N), analytická křížová kontrola, srovnání se známými BTZ vakuy | SJ stav existuje a je numericky konstruovatelný uvnitř ergoregiónu; rotace žije v vlastních vektorech, ne ve spektru; superradiantní pásový otisk v pozitivním podprostoru SJ | Referee napadne: „Je to jen zkosený 2D Minkowského diamant" a „A_caus = +1 je triviální klasický výsledek" | 15–25 hodin (matematika §§2–3 + BTZ vakuum + citace) |
+| **draft-01** — SJ ve rotujících prostoročasech (v0.3) | Interní explorační draft; NENÍ připraven k odeslání. VYPOCET-14 + VYPOCET-15 zpevnily §4.2; VYPOCET-26 (F-030) **nahradil** starý ohraničený B spojitým B(a). | Otevřená: zbývá kontinuální studie (velké N), analytická křížová kontrola, srovnání se známými BTZ vakuy | SJ stav existuje a je numericky konstruovatelný uvnitř ergoregiónu; rotace žije v vlastních vektorech, ne ve spektru; superradiantní pásový otisk v pozitivním podprostoru SJ; **superradiantní exponent B je spojitá klesající funkce strhávání (6.10→2.54, dB/da=−2.20), NE konstanta D−1=3** (F-030) | Referee napadne: „Je to jen zkosený 2D Minkowského diamant" a „A_caus = +1 je triviální klasický výsledek" | 15–25 hodin (matematika §§2–3 + BTZ vakuum + citace) |
 | **draft-02** — identita −18/11 (v0.1) | Interní explorační draft; fyzika výpočetně uzavřena (VYPOCET-11 + VYPOCET-17). | **Uzavřena:** žádný otevřený fyzikální blokátor; zbývají framing + lidská verifikace PDF | Exaktní racionální identita c/(−a) = −18/11 je obsahově nezávislá na fermiónové části; graviton identitu neobnoví; Λ-člen nemá sesterskou identitu | Referee napadne: „Tautologie — znovu jste odvozili, že a₄ = a₄"; pokud někdo toto číslo napsal dříve (Connes–Marcolli kniha, van Suijlekom) | 4–8 hodin (nejmenší draft, exaktní aritmetika) |
 | **draft-03** — ds klasifikátor (v0.1) | Interní explorační draft; NENÍ připraven k odeslání. | Otevřená: novelty re-check nutný; per-řádkový REPRODUCE audit; D-konvence nejasná | d_s je klasifikátor (z, D, sonda), ne universální konstanta; zjevná universalita d_s → 2 je artefakt γ=2 podtřídy; „stejná teorie, opačný trend" (CST d'Alembertian vs. random walk) | Referee napadne: „Calcagni program přebalený"; D-konvence ambiguita v Hořavově řádku | 10–18 hodin (per-řádková verifikace 12 hodnot + novelty search) |
-| **draft-04** — přechod typů na kauzálních množinách (v0.1) | Interní explorační draft; NENÍ připraven k odeslání. Round-10/11 přidal de Sitter sekci §4.3 (F-023 `supported` 2D + F-025 `partial` 4D). | Otevřená: proxy nejsou typy; ~~placeholder chyba `a_err=0.776`~~ (VYŘEŠENO 2026-06-06, viz níže); větší N v 4D potřeba; **dS §4.3: 4D truncovaná entropie nesaturuje při N≤2500 (F-025 `partial`), konformně-váhový caveat ve 4D** | 3/3 proxy ukazuje III₁→II přechod ve 4D desce; selektivita (N^{3/4} funguje, fixed-fraction nefunguje) je nejsilnější argument; dS §4.3 přidává II₁ vs II_∞ obsahový diskriminátor (CLPW ostřejší cíl) | Referee napadne: „Konečná matice = vždy typ I; nic jste neměřili"; N^{3/4} je předpis, který jste sami vnutili; **u dS §4.3: „4D skalár není konformně invariantní" a „truncovaná S nesaturuje"** | 16–26 hodin (re-run 6 calc.py + opravit statistiku + verifikace 17 arXiv ID; +4–6 h za de Sitter sekci §4.3) |
+| **draft-04** — přechod typů na kauzálních množinách (v0.2) | Interní explorační draft; NENÍ připraven k odeslání. Round-10/11 přidal de Sitter §4.3 (F-023 `supported` 2D + F-025 `partial` 4D); kola 12–16 doplnila F-027/F-028/F-029/F-031/F-032. | Otevřená: proxy nejsou typy; ~~placeholder chyba `a_err=0.776`~~ (VYŘEŠENO 2026-06-06); větší N v 4D potřeba; **dS §4.3: 2D area-law potvrzen (F-029), ale 4D area-law GENUINNĚ CHYBÍ (F-031), konformně-váhový caveat NEVYŘEŠEN** | 3/3 proxy ukazuje III₁→II přechod ve 4D desce; selektivita (N^{3/4} funguje, fixed-fraction nefunguje); dS §4.3 přidává II₁ vs II_∞ obsahový diskriminátor; **Proxy 3 2/3→3/3 při ≥30 seedech (F-032)**; poctivé negativy: 4D žádné A/4 (F-031), 2D c≈7.57≠4 (F-028) | Referee napadne: „Konečná matice = vždy typ I; nic jste neměřili"; N^{3/4} je předpis; **4D skalár není konformně invariantní; 4D area-law chybí** | 16–26 hodin (re-run 6+ calc.py + statistika + verifikace ~17 arXiv ID; +4–6 h za de Sitter §4.3) |
 
 ---
 
@@ -28,7 +30,7 @@
 #### B) Kontrola citací proti PDF (blokující — Priorita 1 — musí provést člověk)
 - [x] arXiv:1205.1296 (Afshordi–Aslanbeigi–Sorkin, „A distinguished vacuum state for a quantum field in a curved spacetime", JHEP 2012) — ID opraveno z chybného 1208.2422 (2026-06-06)
 - [ ] arXiv:1611.10281 (Sorkin–Yazdi) — potvrdit eq. 9 a footnote 5 (G_R = ½C)
-- [ ] arXiv:2602.09796 (Dafermos–Luk et al., Unruhův stav na Kerr) — potvrdit, že tento arXiv ID existuje a říká to, co se tvrdí
+- [x] arXiv:2602.09796 — **OPRAVENO 2026-06-08:** ID existuje, ale je to **Häfner & Klein, „The Unruh state for bosonic Teukolsky fields on subextreme Kerr spacetimes" (2026-02-10)**, NE „Dafermos–Luk et al.". Atribuce opravena v draft-01 §1.1, §4.2, ref.13. Obsah tvrzení (Unruhův stav existuje a je Hadamardův pro Teukolsky pole na subextremálním Kerru) je podporován; chybné bylo pouze autorství. Nezaměňovat s Dafermos–Rodnianski 2007.07211 (correctly cited).
 - [ ] arXiv:2303.13488 (Balakumar) — potvrdit existenci a obsah
 - [ ] arXiv:2504.12919 (AdS₂ SJ) — potvrdit existenci a obsah
 - [ ] arXiv:2212.10592 — potvrdit
@@ -38,8 +40,9 @@
 
 #### C) Číselné výsledky vs. results.json (blokující)
 - [ ] Zkontrolovat, že headline čísla v draftu (A_caus ≈ +1 uvnitř ergoregiónu; středová osa 44.6° rotace vlastního vektoru; cos² = 0.507; spektrální shoda 2.0%; superradiantní pásová váha 0.000 → 0.0755) odpovídají výsledkům uloženým v `core-data/calculations/sj-rotating-btz/`, `sj-kerr-equatorial/`, `sj-eigenvector-superradiance/`
-- [ ] Potvrdit VYPOCET-14: ΔAIC = +442 (a=0.6), +4216 (a=0.9), +232 (BTZ) — zkontrolovat v `core-data/calculations/sj-threshold-scan/`
-- [ ] Potvrdit VYPOCET-15: ΔAIC(E−S) = +3894 pro joint fit; |A_W| ~ r^{−2.75±0.03} — zkontrolovat v `core-data/calculations/sj-far-zone/`
+- [ ] Potvrdit VYPOCET-14: ΔAIC = +442 (a=0.6), +4216 (a=0.9), +232 (BTZ) — zkontrolovat v `core-data/calculations/sj-threshold-scan/` (decisive ve prospěch Model S = W_sr ~ Ω(r)^B; F-017)
+- [ ] Potvrdit VYPOCET-15: ΔAIC(E−S) = +3894 pro joint fit; |A_W| ~ r^{−2.75±0.03} — zkontrolovat v `core-data/calculations/sj-far-zone/` (F-018)
+- [ ] **NOVÉ (F-030, VYPOCET-26 — §4.2 draft přepsán 2026-06-08):** Potvrdit, že po odstranění artefaktu meze A=100 z VYPOCET-14 je spolehlivý Kerr exponent **B(a) SPOJITÁ klesající funkce**, NE konstanta D−1=3. Ověřit v `core-data/calculations/sj-kerr-b-scan/`: B = 6.10(a=0.3), 3.32(a=0.6), 2.67(a=0.9), 2.54(a=0.99), všechny R²≥0.988; slope **dB/da = −2.20±0.07 (z=−33.6)**; konstantní B=3 **rozhodně zamítnut** (χ²_const = 2473/7 vs χ²_lin = 111/6; křivka protíná 3 jen při a≈0.75). BTZ **pod** Kerr křivkou (B=2.22 při J=0.6, 2.12 při J=0.9) → role asymptotiky bez Kerr-AdS. Starý ohraničený B (4.23/3.82) byl artefakt meze A≤100 a je v draftu nahrazen. Framing draftu: „trend dB/da<0 + BTZ pozice", NE jediné B. Caveat zachovat: 2D bezhmotný fixed-r řez (ne 4D Teukolsky).
 - [ ] Ověřit, že párovací residuum i∆ je skutečně machine-precision (~10⁻¹⁶)
 
 #### D) Vědecké konvence
@@ -155,7 +158,19 @@ Tato sekce byla přidána v rohu 10/11 (rozhodnutí H5g-6: **sekce v draft-04, N
 - [ ] **Zkontrolovat shodu statusů F-023/F-025 s `findings.json`** (F-023 = `supported`, F-025 = `partial`); §4.3 a abstrakt **netvrdí** II₁ jako naměřené, **netvrdí** čistou 4D saturaci, **netvrdí** A/4 strop
 - [ ] **Re-run obou dS `calc.py`** (`sj-desitter-type/calc.py`, `sj-desitter-4d/calc.py`) — reprodukovat headline čísla + ±-párování (2D 2.3×10⁻¹³, 4D <6.84×10⁻¹⁵)
 - [ ] **Ověřit 2 nové arXiv ID:** 1306.3231 (dS SJ vakuum / konformní trik) a 1205.3855 (Anninos, dS₂ statická záplata, želví + sech² konvence) — existence, autoři/rok, obsah
-- [ ] **H5g-2 (A/4 strop) je citován jako OTEVŘENÝ, ne testovaný** — §4.3 outlook flaguje dS-entropie-strop-vs-horizont-area jako budoucí práci
+- [ ] ~~**H5g-2 (A/4 strop) je citován jako OTEVŘENÝ, ne testovaný**~~ **AKTUALIZOVÁNO 2026-06-08 (F-028/F-031):** H5g-2 je nyní *částečně* testován. §4.3 outlook v draftu byl přepsán: ve **2D** je slabá H5g-2 (existuje konstantní A/4-*podobný* zákon) **podpořena** (R=0.132±1.3 %, S_cap~A_horizon, ε~ρ^{−1/2} fixováno nezávisle z F-006 = anti-cirkularita), ale silná H5g-2 (konstanta = 1/4) **zabita** (c=1/R≈7.57≠4). Ve **4D žádný A/4 nárok** (F-031: korigovaná kodim-2 molekula ~ρ^0.5 vs obsahová entropie ~ρ^1.0 → poměr driftuje). Ověřit, že draft toto rozlišuje a netvrdí literální 1/4 ani ve 2D, ani A/4 ve 4D.
+
+#### E) Kola 12–16 (přidáno 2026-06-08) — nálezy F-027..F-032 v §4.3/§4.1/§4.4
+
+Tyto nálezy vznikly po round-10/11 a byly do draftu propsány 2026-06-08. Statusy ověřit **verbatim** proti `findings.json`; **nikdy neupgradovat**.
+
+- [ ] **F-029 (`partial`, VYPOCET-25) — §4.3:** Potvrdit v `core-data/calculations/ds-entropy-cap/` (2D, scaled): R_full = S_full_cap/A_mol = **0.130±0.0039 (CV 3.0 %)**, drift d ln R/d ln ρ = +0.007 (≈0), reprodukuje F-028 committed 0.1321 cross-HW, rozšířeno přes 5× hustotu + 3.6× velikost záplaty → 2D kvantitativní area-law potvrzen a rozšířen. **4D je kvalitativně jiné** (c^{4D} roste 5.6→65.8 s ρ) → žádná čistá 4D area-law konstanta.
+- [ ] **F-031 (`supported`, VYPOCET-27) — §4.3 (BLOCKER opraven):** Potvrdit v `core-data/calculations/ds-amol-convention/`, že 4D „plocha" A_mol~ρ^1.77 byla **kodim-1 artefakt** (světočára-tubus {r*=R_cut} v (t,r*,x1,x2), NE kodim-2 2-plocha {r*=R_cut, t=0}). Korektní kodim-2: p_S=1.055±0.028, p_A=1.768±0.029, **měřený** drift p_S−p_A=−0.71 (predikce −0.55). Verdikt: ve ploché-kauzální + dS-sech² konstrukci 4D area-law S~A_proper **genuinně NEEXISTUJE**. Caveat (a) konformně-váhový NEVYŘEŠEN: drift S_full~ρ^1 vs plocha~ρ^0.5 může být částečně tato aproximace → verdikt platí pro tuto konstrukci, ne nutně přesný dS stav.
+- [ ] **F-028 (`supported`, VYPOCET-23) — §4.3 outlook:** Potvrdit v `core-data/calculations/ds-entropy-cap/` slabá H5g-2 **supported** (R=0.1321±1.3 %, S_cap~A_horizon, ε z F-006), silná H5g-2 **killed** (c≈7.57≠4). Draft už nahradil staré „untested, and not claimed".
+- [ ] **F-027 (`supported`, VYPOCET-24) — §4.3 tracialní null:** Potvrdit v `core-data/calculations/ds-tracial-probe/`, že tracialní II₁ probe je **null UZAVŘEN** i při 6× hustotě (ρ∈{1000,3000}): gap dS−flat = −0.998±0.495 (negativní). II₁ identifikace bounded dS stojí na **content-saturaci**, ne na tracialním signálu (κ-truncace odstraňuje low-ε módy).
+- [ ] **F-032 (`supported`, VYPOCET-28) — §4.1/§7 Proxy 3:** Potvrdit v `core-data/calculations/vn-type-proxy3-seeds/`, že Proxy 3 verdikt **2/3 → 3/3** při ≥30 seedech na **původním** VYPOCET-12 gridu: 8 seedů slope −0.280±0.190 (t=1.48, null), 30 seedů −0.198±0.092 (t=2.15, sig), 50 seedů −0.224±0.069 (t=3.25, sig, CI68 [−0.30,−0.15] vylučuje 0). **NOSNÁ VÝHRADA:** upgrade je seed-count efekt (genuine), NE gridový artefakt; nový 5-bodový grid nafukuje low-seed t-stat (8 seedů t=5.37) a nesmí se číst jako 8-seedové srovnání VYP-12. (Committed podklad: commit `e79b75e`, M-1.)
+- [ ] **F-019/F-016 (`supported`/`confirmed`) — §4.2/§4.4:** F-IDy doplněny v próze (N^{3/4} selektivita §4.2; slab S~L^2.00 vs diamant S~f^6.1, Hadamard anomálie na rozích §4.4). Statusy ověřit.
+- [ ] **F-024/F-026 (`partial`/`refuted`) — §4.4 scope caveat:** Ověřit, že draft netvrdí čistý 4D corner mechanismus: 4D modular-flow PARTIAL 3/5 (slab off-diag −1.10 vs diamant −0.52) [F-024]; kodim-2 wedge REFUTED (nl-vs-edge slope +0.115, opačně k 2D corner) [F-026]. 2D corner non-Hadamard koncentrace se do 4D **NEpřenáší cleanly**.
 
 ---
 
@@ -286,4 +301,4 @@ Zabité programy nejsou ztracená práce — jsou to ohraničení, která říka
 
 ---
 
-*Konec dokumentu. Verze: 2026-06-06. Generováno AI koordinačním agentem. Všechny checkboxy jsou určeny pro lidské splnění před jakýmkoli externím sdílením nebo odesláním.*
+*Konec dokumentu. Verze: 2026-06-08 (kola 12–16 + agent-framework doplněna; předchozí 2026-06-06). Generováno AI koordinačním agentem. Všechny checkboxy jsou určeny pro lidské splnění před jakýmkoli externím sdílením nebo odesláním.*

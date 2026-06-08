@@ -1,7 +1,7 @@
 # Index znalostní báze — Theory of Everything
 
 > Anotovaný rejstřík všech souborů ve `knowledge-base/`, `core-data/` a `verification/`.
-> Generováno: 2026-06-05; aktualizováno: 2026-06-08 (kolo 16: VYPOCET-30 KMS/tepelná osa H6g-1 F-034, VYPOCET-31 Lambda shot-noise H6g-4 F-035).
+> Generováno: 2026-06-05; aktualizováno: 2026-06-08 (kolo 17: hon na data-aktivované vazby + revize tezí/papírů; propagace F-024..F-035 do 4 draftů; 5 hran connections.json anotováno/upgradováno; link prediction refresh AUC 0.9034, barely 114->113, partially 112->113; web 121 stránek).
 
 ---
 
@@ -40,7 +40,7 @@
 ## Predikce vazeb (`lib/kgraph/` + `core-data/link-predictions.json` + `reports/`)
 
 - [../lib/kgraph/__init__.py](../lib/kgraph/__init__.py) — **`lib/kgraph/`** (2026-06-07): infra-knihovna pro strojové hledání nenalezených vazeb v grafu konceptů (numpy+scipy only, žádný networkx/torch). Moduly: `loader.py` (concept-graph.json → řídká sousednost vážená násobností, 1632 unikátních hran), `scores.py` (5 heuristik + spektrální embedding normalizovaného Laplaciánu, eigsh d=32, kosinus; ensemble = rank-průměr), `evaluate.py` (leave-k-out, AUC z Mann-Whitney U + precision@k), `predict.py` (cross-pillar flag, vysvětlení přes Adamic-Adar-vážené sousedy).
-- [../core-data/link-predictions.json](../core-data/link-predictions.json) — **Top-50 kandidátních vazeb** (generated 2026-06-07): leave-10%-out **AUC = 0,903 ± 0,018** (8 seedů), P@50 ≈ 1,0. Pozor: 17/50 jsou hub-artefakty (pilíř↔pilíř); 3 nejzajímavější koncept-koncept: generalized-entropy↔crossed-product-algebra (CLPW), spectral-triple↔SM-from-spectral-geometry (Connes NCG), noncommutative-geometry↔spectral-dimension (mezipřístupový). **Kandidáti jsou NÁVRHY** — do fragmentů/connections.json až po redakčním rozhodnutí s arXiv/DOI oporou.
+- [../core-data/link-predictions.json](../core-data/link-predictions.json) — **Top-50 kandidátních vazeb** (generated 2026-06-07, refreshed kolo 17 2026-06-08): leave-10%-out **AUC = 0,9034 ± 0,018** (8 seedů), P@50 ≈ 0,9975. Pozor: 17/50 jsou hub-artefakty (pilíř↔pilíř); 3 nejzajímavější koncept-koncept: generalized-entropy↔crossed-product-algebra (CLPW), spectral-triple↔SM-from-spectral-geometry (Connes NCG), noncommutative-geometry↔spectral-dimension (mezipřístupový). Kolo 17: topologie grafu nezměněna (0 nových/odebraných hran), AUC identické; posun registru: barely 114->113, partially 112->113 (upgrade idx 212 semiclassical-gravity<->causal-sets). **Kandidáti jsou NÁVRHY** — do fragmentů/connections.json až po redakčním rozhodnutí s arXiv/DOI oporou.
 - [../reports/2026-06-07-link-prediction.md](../reports/2026-06-07-link-prediction.md) — Detailní report link prediction: metodologie, evaluace, kritické čtení top-50, vizualizace.
 
 ---
@@ -56,7 +56,7 @@
 - [../app/README.md](../app/README.md) — Dockerizované prostředí (research/testing/prezentace): Jupyter Lab nad repem, pytest reprodukční sada (rychlá 6 výpočtů + plná 20 za `FULL_REPRO=1`), plný repro-runner, web služba buildující `web/dist/`. Verze knihoven pinované na stav bitové reprodukce 2026-06-06.
 - [../lib/README.md](../lib/README.md) — **`lib/toe` v0.3.0** (kolo 12): kombinovatelná simulační knihovna distilovaná z 24 ověřených `calc.py`. 8 modulů ve vrstvách A/B/C (`fits`, `causet`, `spectral`, `ncg`, `viz` | `sj` | `entropy`, `vntype`), **64 veřejných funkcí** (+5 sparse z kola 12: sparse eigensolver mašinérie, float64+float32, dense vs. sparse cross-validace). Fyzikální vstupy → `(hodnota, SE/CI)` výstupy s `validated` flagem a `formula-id` docstringy. Testy: **304 passed / 14 skipped / 1 xfailed v 99.4 s** (16 nových sparse testů, ze 288 kolo 11).
 - [../lib/examples/demo_pipeline.py](../lib/examples/demo_pipeline.py) — spustitelná end-to-end ukázka: 2D diamant N≤500, sprinkle → SJ stav → truncovaná SSEE → power-law fit → panel (`demo_output.png`); runtime <1 s.
-- [../web/README.md](../web/README.md) — **`web/` — minimalistický statický site-builder** (krok 4 roadmapy + rozšíření 2026-06-07): `web/build.py` builduje **111 stránek** do `web/dist/` přímo ze zdrojů repozitáře (markdown + JSON registry jako zdroj pravdy, žádný duplicitní obsah). Spuštění: `python3 web/build.py` nebo `docker compose --profile web up web` (port 8080). Vč. interaktivního grafu konceptů: `web/dist/data/graph.html` (force-graph CDN, canvas; uzel ~ stupeň, barva ~ pilíř, hrana ~ explored; search/pilíř-filtr/rating-toggly/predikce-toggle; klik → boční panel). Ověřeno headless (0 chyb, file:// i http).
+- [../web/README.md](../web/README.md) — **`web/` — minimalistický statický site-builder** (krok 4 roadmapy + rozšíření 2026-06-07): `web/build.py` builduje **121 stránek** do `web/dist/` přímo ze zdrojů repozitáře (markdown + JSON registry jako zdroj pravdy, žádný duplicitní obsah). Spuštění: `python3 web/build.py` nebo `docker compose --profile web up web` (port 8080). Vč. interaktivního grafu konceptů: `web/dist/data/graph.html` (force-graph CDN, canvas; uzel ~ stupeň, barva ~ pilíř, hrana ~ explored; search/pilíř-filtr/rating-toggly/predikce-toggle; klik → boční panel). Ověřeno headless (0 chyb, file:// i http).
 
 ---
 

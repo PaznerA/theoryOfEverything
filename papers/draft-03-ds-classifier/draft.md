@@ -1,4 +1,4 @@
-DRAFT v0.1 — generated 2026-06-06, internal research draft, NOT submitted, requires human review.
+DRAFT v0.2 — generated 2026-06-06, revised 2026-06-08, internal research draft, NOT submitted, requires human review. (v0.2: F-IDs attached — [F-001] to the master $D/\gamma$ limit and §5 table, [F-002] to the §4 probe-axis resolution; illustrative-only caveat on the random-walk $d_s=8$ row kept verbatim.)
 
 # The UV spectral dimension is a fingerprint, not a constant: a $(z, D, \text{probe})$ classification across quantum-gravity approaches
 
@@ -56,7 +56,7 @@ $$
 \boxed{\,d_s^{\rm UV}=\frac{D}{\gamma},\qquad \gamma=\tfrac12\,(\text{UV momentum power})\,}.
 $$
 
-A symbolic check (sympy, `calc.py::symbolic_master()`) returns exactly $D/\gamma$. The special cases that populate the table:
+A symbolic check (sympy, `calc.py::symbolic_master()`) returns exactly $D/\gamma$ [F-001]. The special cases that populate the table:
 
 | approach | UV $F(k)$ | $\gamma$ | $d_s^{\rm UV}=D/\gamma$ |
 |---|---|---|---|
@@ -131,7 +131,7 @@ The contradiction dissolves once the diffusion probe is named:
 - **Random walk on the discrete causal order** (Eichhorn–Mizera, 1311.2530): $d_s$ *increases* at short scales — the opposite of CDT/AS. The cause is the Lorentzian non-locality of causal sets, baked into the causal structure; the causal spectral dimension (meeting probability of two random walkers) shows the same upward trend.
 - **Non-local d'Alembertian / continuum-reconstructed propagator** (Belenchia et al., 1507.00330): heat-kernel analysis with the causal-set-derived propagator gives a *universal* drop $d_s\to 2$ in the UV in all dimensions, because the regularized propagator behaves as $(k^2)^{D/2}$ at high momentum, improving the UV and reducing the effective dimension.
 
-Both results are correct and do not contradict each other: they measure different aspects of the *same* discrete structure with different probes. We corrected both database edges to carry the full probe-resolved statement with both citations.
+Both results are correct and do not contradict each other: they measure different aspects of the *same* discrete structure with different probes [F-002]. We corrected both database edges to carry the full probe-resolved statement with both citations.
 
 ### 4.3 Why this forces the probe to be a classification axis
 
@@ -143,7 +143,7 @@ This is the strongest single result in the note, and it is not a numerical corre
 
 ### 5.1 The centerpiece ($D=4$)
 
-Each row is computed by the *same* engine; the "validation" column records agreement with the published value. No number here is a new discovery; the assembly and its reading are the contribution.
+Each row is computed by the *same* engine; the "validation" column records agreement with the published value (12/12 internal checks). No number here is a new discovery; the assembly and its reading are the contribution [F-001] (the random-walk $d_s=8=D+4$ row is *illustrative only*, not a quantitative value from Eichhorn–Mizera 1311.2530; see §5.1†).
 
 **Table convention.** $D$ denotes the *spacetime* dimension throughout. For isotropic rows (GR, Stelle, AS, CST, multifractional) $D=4$ enters the master formula $d_s^{\rm UV}=D/\gamma$ directly. For the anisotropic Hořava rows, the applicable formula is $d_s=1+D_{\rm space}/z$ where $D_{\rm space}=D-1=3$ is the number of *spatial* dimensions; this is Hořava's original convention (0902.3657) and is made explicit in §2.3. Every Hořava entry in the table was computed with $D_{\rm space}=3$ (i.e., $3{+}1$ spacetime).
 
