@@ -2,23 +2,23 @@
   "generated": "2026-06-08",
   "source": "core-data/concept-graph.json",
   "nodeCount": 626,
-  "edgeCount": 1632,
+  "edgeCount": 1638,
   "method": "Ensemble (rank-average) of five classical link-prediction heuristics (common neighbors, Jaccard, Adamic-Adar, resource allocation, preferential attachment) and a normalized-Laplacian spectral embedding (d=32, cosine similarity). Implemented directly on the sparse adjacency (numpy + scipy only; no networkx/torch). Edges are undirected and weighted by multiplicity.",
   "evaluation": {
     "leaveKOutFraction": 0.1,
     "seeds": 8,
-    "aucMean": 0.9034,
-    "aucStd": 0.0176,
-    "aucMin": 0.8763,
-    "aucMax": 0.9308,
+    "aucMean": 0.9057,
+    "aucStd": 0.0108,
+    "aucMin": 0.8878,
+    "aucMax": 0.9242,
     "precisionAt50Mean": 0.9975,
     "componentAucMean": {
-      "spectral": 0.9295,
-      "resource_allocation": 0.8585,
-      "adamic_adar": 0.8585,
-      "jaccard": 0.8558,
-      "common_neighbors": 0.8551,
-      "preferential_attachment": 0.6166
+      "spectral": 0.9309,
+      "resource_allocation": 0.8637,
+      "adamic_adar": 0.8637,
+      "jaccard": 0.8622,
+      "common_neighbors": 0.8611,
+      "preferential_attachment": 0.616
     }
   },
   "candidatePolicy": "Candidates are PROPOSALS for a human/research editor. They are NOT facts and MUST NOT be written into knowledge-base fragments or connections.json without an explicit editorial/research decision (provenance policy). High-degree pillar-node pairs are flagged via node type and are largely hub artifacts, not novel physics.",
@@ -29,7 +29,7 @@
     {
       "from": "conceptual-problems",
       "to": "emergent-gravity",
-      "score": 0.9798,
+      "score": 0.9784,
       "crossPillar": true,
       "pillarsFrom": [
         "conceptual-problems"
@@ -46,79 +46,34 @@
         "supergravity-uv",
         "entanglement-spacetime",
         "experimental-tests",
-        "noncommutative-geometry",
         "semiclassical-gravity",
         "string-theory",
         "quantum-cosmology",
+        "noncommutative-geometry",
         "swampland",
         "asymptotic-safety",
         "black-holes-information"
       ],
       "nCommon": 15,
-      "spectralCosine": 0.9658,
+      "spectralCosine": 0.9589,
       "components": {
         "common_neighbors": 15.0,
         "jaccard": 0.4688,
-        "adamic_adar": 4.6373,
-        "resource_allocation": 0.5935,
+        "adamic_adar": 4.6308,
+        "resource_allocation": 0.5909,
         "preferential_attachment": 510.0,
-        "spectral": 0.9658
+        "spectral": 0.9589
       },
-      "explanation": "15 shared neighbors: Causal Set Theory, Twistor Theory & the Amplitudes Program, Loop Quantum Gravity & Spin Foams, Group Field Theory & Tensor Models (+11 more); high spectral similarity (cos=0.97); cross-pillar bridge [conceptual-problems] <-> [emergent-gravity]",
+      "explanation": "15 shared neighbors: Causal Set Theory, Twistor Theory & the Amplitudes Program, Loop Quantum Gravity & Spin Foams, Group Field Theory & Tensor Models (+11 more); high spectral similarity (cos=0.96); cross-pillar bridge [conceptual-problems] <-> [emergent-gravity]",
       "typeFrom": "pillar",
       "typeTo": "pillar",
       "nameFrom": "Conceptual Problems of Quantum Gravity",
       "nameTo": "Emergent & Entropic Gravity"
     },
     {
-      "from": "causal-sets",
-      "to": "supergravity-uv",
-      "score": 0.9631,
-      "crossPillar": true,
-      "pillarsFrom": [
-        "causal-sets"
-      ],
-      "pillarsTo": [
-        "supergravity-uv"
-      ],
-      "commonNeighbors": [
-        "conceptual-problems",
-        "spectral-dimension",
-        "twistors-amplitudes",
-        "loop-quantum-gravity",
-        "causal-dynamical-triangulations",
-        "holography-adscft",
-        "entanglement-spacetime",
-        "experimental-tests",
-        "noncommutative-geometry",
-        "semiclassical-gravity",
-        "string-theory",
-        "quantum-cosmology",
-        "emergent-gravity",
-        "swampland",
-        "asymptotic-safety",
-        "black-holes-information"
-      ],
-      "nCommon": 16,
-      "spectralCosine": 0.8536,
-      "components": {
-        "common_neighbors": 16.0,
-        "jaccard": 0.5714,
-        "adamic_adar": 4.98,
-        "resource_allocation": 0.6486,
-        "preferential_attachment": 480.0,
-        "spectral": 0.8536
-      },
-      "explanation": "16 shared neighbors: Conceptual Problems of Quantum Gravity, Spectral Dimension, Twistor Theory & the Amplitudes Program, Loop Quantum Gravity & Spin Foams (+12 more); high spectral similarity (cos=0.85); cross-pillar bridge [causal-sets] <-> [supergravity-uv]",
-      "typeFrom": "pillar",
-      "typeTo": "pillar",
-      "nameFrom": "Causal Set Theory",
-      "nameTo": "Supergravity & UV Behavior of Perturbative Gravity"
-    },
-    {
       "from": "experimental-tests",
       "to": "von-neumann-algebras",
-      "score": 0.963,
+      "score": 0.9628,
       "crossPillar": true,
       "pillarsFrom": [
         "experimental-tests"
@@ -132,20 +87,20 @@
         "loop-quantum-gravity",
         "holography-adscft",
         "entanglement-spacetime",
-        "noncommutative-geometry",
         "semiclassical-gravity",
         "quantum-cosmology",
+        "noncommutative-geometry",
         "black-holes-information"
       ],
       "nCommon": 9,
-      "spectralCosine": 0.9463,
+      "spectralCosine": 0.9467,
       "components": {
         "common_neighbors": 9.0,
         "jaccard": 0.3462,
-        "adamic_adar": 2.8287,
-        "resource_allocation": 0.3765,
+        "adamic_adar": 2.8223,
+        "resource_allocation": 0.3739,
         "preferential_attachment": 250.0,
-        "spectral": 0.9463
+        "spectral": 0.9467
       },
       "explanation": "9 shared neighbors: Conceptual Problems of Quantum Gravity, Causal Set Theory, Loop Quantum Gravity & Spin Foams, Holographic Principle & AdS/CFT (+5 more); high spectral similarity (cos=0.95); cross-pillar bridge [experimental-tests] <-> [von-neumann-algebras]",
       "typeFrom": "pillar",
@@ -154,9 +109,54 @@
       "nameTo": "Von Neumann Algebras & Modular Theory in Quantum Gravity"
     },
     {
+      "from": "causal-sets",
+      "to": "supergravity-uv",
+      "score": 0.9623,
+      "crossPillar": true,
+      "pillarsFrom": [
+        "causal-sets"
+      ],
+      "pillarsTo": [
+        "supergravity-uv"
+      ],
+      "commonNeighbors": [
+        "conceptual-problems",
+        "twistors-amplitudes",
+        "spectral-dimension",
+        "loop-quantum-gravity",
+        "causal-dynamical-triangulations",
+        "holography-adscft",
+        "entanglement-spacetime",
+        "experimental-tests",
+        "semiclassical-gravity",
+        "string-theory",
+        "quantum-cosmology",
+        "noncommutative-geometry",
+        "emergent-gravity",
+        "swampland",
+        "asymptotic-safety",
+        "black-holes-information"
+      ],
+      "nCommon": 16,
+      "spectralCosine": 0.8476,
+      "components": {
+        "common_neighbors": 16.0,
+        "jaccard": 0.5714,
+        "adamic_adar": 4.9677,
+        "resource_allocation": 0.6434,
+        "preferential_attachment": 480.0,
+        "spectral": 0.8476
+      },
+      "explanation": "16 shared neighbors: Conceptual Problems of Quantum Gravity, Twistor Theory & the Amplitudes Program, Spectral Dimension, Loop Quantum Gravity & Spin Foams (+12 more); high spectral similarity (cos=0.85); cross-pillar bridge [causal-sets] <-> [supergravity-uv]",
+      "typeFrom": "pillar",
+      "typeTo": "pillar",
+      "nameFrom": "Causal Set Theory",
+      "nameTo": "Supergravity & UV Behavior of Perturbative Gravity"
+    },
+    {
       "from": "twistors-amplitudes",
       "to": "von-neumann-algebras",
-      "score": 0.9613,
+      "score": 0.9609,
       "crossPillar": true,
       "pillarsFrom": [
         "twistors-amplitudes"
@@ -170,20 +170,20 @@
         "loop-quantum-gravity",
         "holography-adscft",
         "entanglement-spacetime",
-        "noncommutative-geometry",
         "semiclassical-gravity",
         "quantum-cosmology",
+        "noncommutative-geometry",
         "black-holes-information"
       ],
       "nCommon": 9,
-      "spectralCosine": 0.957,
+      "spectralCosine": 0.9573,
       "components": {
         "common_neighbors": 9.0,
         "jaccard": 0.4286,
-        "adamic_adar": 2.8287,
-        "resource_allocation": 0.3765,
+        "adamic_adar": 2.8223,
+        "resource_allocation": 0.3739,
         "preferential_attachment": 200.0,
-        "spectral": 0.957
+        "spectral": 0.9573
       },
       "explanation": "9 shared neighbors: Conceptual Problems of Quantum Gravity, Causal Set Theory, Loop Quantum Gravity & Spin Foams, Holographic Principle & AdS/CFT (+5 more); high spectral similarity (cos=0.96); cross-pillar bridge [twistors-amplitudes] <-> [von-neumann-algebras]",
       "typeFrom": "pillar",
@@ -194,7 +194,7 @@
     {
       "from": "causal-dynamical-triangulations",
       "to": "conceptual-problems",
-      "score": 0.9551,
+      "score": 0.9558,
       "crossPillar": true,
       "pillarsFrom": [
         "causal-dynamical-triangulations"
@@ -210,23 +210,23 @@
         "supergravity-uv",
         "entanglement-spacetime",
         "experimental-tests",
-        "noncommutative-geometry",
         "semiclassical-gravity",
         "string-theory",
         "quantum-cosmology",
+        "noncommutative-geometry",
         "swampland",
         "asymptotic-safety",
         "black-holes-information"
       ],
       "nCommon": 14,
-      "spectralCosine": 0.8125,
+      "spectralCosine": 0.8142,
       "components": {
         "common_neighbors": 14.0,
         "jaccard": 0.56,
-        "adamic_adar": 4.3035,
-        "resource_allocation": 0.5435,
+        "adamic_adar": 4.297,
+        "resource_allocation": 0.5409,
         "preferential_attachment": 374.0,
-        "spectral": 0.8125
+        "spectral": 0.8142
       },
       "explanation": "14 shared neighbors: Causal Set Theory, Loop Quantum Gravity & Spin Foams, Group Field Theory & Tensor Models, Holographic Principle & AdS/CFT (+10 more); high spectral similarity (cos=0.81); cross-pillar bridge [causal-dynamical-triangulations] <-> [conceptual-problems]",
       "typeFrom": "pillar",
@@ -235,46 +235,9 @@
       "nameTo": "Conceptual Problems of Quantum Gravity"
     },
     {
-      "from": "emergent-gravity",
-      "to": "von-neumann-algebras",
-      "score": 0.9511,
-      "crossPillar": true,
-      "pillarsFrom": [
-        "emergent-gravity"
-      ],
-      "pillarsTo": [
-        "von-neumann-algebras"
-      ],
-      "commonNeighbors": [
-        "causal-sets",
-        "loop-quantum-gravity",
-        "holography-adscft",
-        "entanglement-spacetime",
-        "noncommutative-geometry",
-        "semiclassical-gravity",
-        "quantum-cosmology",
-        "black-holes-information"
-      ],
-      "nCommon": 8,
-      "spectralCosine": 0.9411,
-      "components": {
-        "common_neighbors": 8.0,
-        "jaccard": 0.25,
-        "adamic_adar": 2.4758,
-        "resource_allocation": 0.3176,
-        "preferential_attachment": 300.0,
-        "spectral": 0.9411
-      },
-      "explanation": "8 shared neighbors: Causal Set Theory, Loop Quantum Gravity & Spin Foams, Holographic Principle & AdS/CFT, Entanglement & Emergence of Spacetime (It from Qubit) (+4 more); high spectral similarity (cos=0.94); cross-pillar bridge [emergent-gravity] <-> [von-neumann-algebras]",
-      "typeFrom": "pillar",
-      "typeTo": "pillar",
-      "nameFrom": "Emergent & Entropic Gravity",
-      "nameTo": "Von Neumann Algebras & Modular Theory in Quantum Gravity"
-    },
-    {
       "from": "causal-dynamical-triangulations",
       "to": "twistors-amplitudes",
-      "score": 0.951,
+      "score": 0.9516,
       "crossPillar": true,
       "pillarsFrom": [
         "causal-dynamical-triangulations"
@@ -289,24 +252,24 @@
         "supergravity-uv",
         "entanglement-spacetime",
         "experimental-tests",
-        "noncommutative-geometry",
         "semiclassical-gravity",
         "string-theory",
         "quantum-cosmology",
+        "noncommutative-geometry",
         "emergent-gravity",
         "swampland",
         "asymptotic-safety",
         "black-holes-information"
       ],
       "nCommon": 14,
-      "spectralCosine": 0.7859,
+      "spectralCosine": 0.7869,
       "components": {
         "common_neighbors": 14.0,
         "jaccard": 0.5,
-        "adamic_adar": 4.2786,
-        "resource_allocation": 0.5333,
+        "adamic_adar": 4.2721,
+        "resource_allocation": 0.5308,
         "preferential_attachment": 440.0,
-        "spectral": 0.7859
+        "spectral": 0.7869
       },
       "explanation": "14 shared neighbors: Causal Set Theory, Loop Quantum Gravity & Spin Foams, Holographic Principle & AdS/CFT, Supergravity & UV Behavior of Perturbative Gravity (+10 more); high spectral similarity (cos=0.79); cross-pillar bridge [causal-dynamical-triangulations] <-> [twistors-amplitudes]",
       "typeFrom": "pillar",
@@ -315,9 +278,46 @@
       "nameTo": "Twistor Theory & the Amplitudes Program"
     },
     {
+      "from": "emergent-gravity",
+      "to": "von-neumann-algebras",
+      "score": 0.95,
+      "crossPillar": true,
+      "pillarsFrom": [
+        "emergent-gravity"
+      ],
+      "pillarsTo": [
+        "von-neumann-algebras"
+      ],
+      "commonNeighbors": [
+        "causal-sets",
+        "loop-quantum-gravity",
+        "holography-adscft",
+        "entanglement-spacetime",
+        "semiclassical-gravity",
+        "quantum-cosmology",
+        "noncommutative-geometry",
+        "black-holes-information"
+      ],
+      "nCommon": 8,
+      "spectralCosine": 0.9345,
+      "components": {
+        "common_neighbors": 8.0,
+        "jaccard": 0.25,
+        "adamic_adar": 2.4693,
+        "resource_allocation": 0.3151,
+        "preferential_attachment": 300.0,
+        "spectral": 0.9345
+      },
+      "explanation": "8 shared neighbors: Causal Set Theory, Loop Quantum Gravity & Spin Foams, Holographic Principle & AdS/CFT, Entanglement & Emergence of Spacetime (It from Qubit) (+4 more); high spectral similarity (cos=0.93); cross-pillar bridge [emergent-gravity] <-> [von-neumann-algebras]",
+      "typeFrom": "pillar",
+      "typeTo": "pillar",
+      "nameFrom": "Emergent & Entropic Gravity",
+      "nameTo": "Von Neumann Algebras & Modular Theory in Quantum Gravity"
+    },
+    {
       "from": "string-theory",
       "to": "von-neumann-algebras",
-      "score": 0.9463,
+      "score": 0.9458,
       "crossPillar": true,
       "pillarsFrom": [
         "string-theory"
@@ -331,20 +331,20 @@
         "loop-quantum-gravity",
         "holography-adscft",
         "entanglement-spacetime",
-        "noncommutative-geometry",
         "semiclassical-gravity",
         "quantum-cosmology",
+        "noncommutative-geometry",
         "black-holes-information"
       ],
       "nCommon": 9,
-      "spectralCosine": 0.8424,
+      "spectralCosine": 0.842,
       "components": {
         "common_neighbors": 9.0,
         "jaccard": 0.3214,
-        "adamic_adar": 2.8287,
-        "resource_allocation": 0.3765,
+        "adamic_adar": 2.8223,
+        "resource_allocation": 0.3739,
         "preferential_attachment": 270.0,
-        "spectral": 0.8424
+        "spectral": 0.842
       },
       "explanation": "9 shared neighbors: Conceptual Problems of Quantum Gravity, Causal Set Theory, Loop Quantum Gravity & Spin Foams, Holographic Principle & AdS/CFT (+5 more); high spectral similarity (cos=0.84); cross-pillar bridge [string-theory] <-> [von-neumann-algebras]",
       "typeFrom": "pillar",
@@ -353,51 +353,9 @@
       "nameTo": "Von Neumann Algebras & Modular Theory in Quantum Gravity"
     },
     {
-      "from": "group-field-theory",
-      "to": "twistors-amplitudes",
-      "score": 0.9432,
-      "crossPillar": true,
-      "pillarsFrom": [
-        "group-field-theory"
-      ],
-      "pillarsTo": [
-        "twistors-amplitudes"
-      ],
-      "commonNeighbors": [
-        "conceptual-problems",
-        "causal-sets",
-        "loop-quantum-gravity",
-        "holography-adscft",
-        "entanglement-spacetime",
-        "experimental-tests",
-        "noncommutative-geometry",
-        "string-theory",
-        "quantum-cosmology",
-        "emergent-gravity",
-        "swampland",
-        "asymptotic-safety",
-        "black-holes-information"
-      ],
-      "nCommon": 13,
-      "spectralCosine": 0.7281,
-      "components": {
-        "common_neighbors": 13.0,
-        "jaccard": 0.4333,
-        "adamic_adar": 4.0134,
-        "resource_allocation": 0.5134,
-        "preferential_attachment": 460.0,
-        "spectral": 0.7281
-      },
-      "explanation": "13 shared neighbors: Conceptual Problems of Quantum Gravity, Causal Set Theory, Loop Quantum Gravity & Spin Foams, Holographic Principle & AdS/CFT (+9 more); high spectral similarity (cos=0.73); cross-pillar bridge [group-field-theory] <-> [twistors-amplitudes]",
-      "typeFrom": "pillar",
-      "typeTo": "pillar",
-      "nameFrom": "Group Field Theory & Tensor Models",
-      "nameTo": "Twistor Theory & the Amplitudes Program"
-    },
-    {
       "from": "generalized-entropy",
       "to": "crossed-product",
-      "score": 0.9431,
+      "score": 0.9446,
       "crossPillar": false,
       "pillarsFrom": [
         "black-holes-information",
@@ -418,25 +376,67 @@
         "von-neumann-algebra-type"
       ],
       "nCommon": 6,
-      "spectralCosine": 0.8672,
+      "spectralCosine": 0.8762,
       "components": {
         "common_neighbors": 6.0,
         "jaccard": 0.2,
         "adamic_adar": 3.2898,
         "resource_allocation": 0.9671,
         "preferential_attachment": 275.0,
-        "spectral": 0.8672
+        "spectral": 0.8762
       },
-      "explanation": "6 shared neighbors: QES / area operator from large-N algebra, Quantum reference frames as crossed products, Type II factor, Observer (CLPW) crossed-product algebra (+2 more); high spectral similarity (cos=0.87)",
+      "explanation": "6 shared neighbors: QES / area operator from large-N algebra, Quantum reference frames as crossed products, Type II factor, Observer (CLPW) crossed-product algebra (+2 more); high spectral similarity (cos=0.88)",
       "typeFrom": "concept",
       "typeTo": "concept",
       "nameFrom": "Generalized entropy",
       "nameTo": "Crossed product algebra"
     },
     {
+      "from": "group-field-theory",
+      "to": "twistors-amplitudes",
+      "score": 0.944,
+      "crossPillar": true,
+      "pillarsFrom": [
+        "group-field-theory"
+      ],
+      "pillarsTo": [
+        "twistors-amplitudes"
+      ],
+      "commonNeighbors": [
+        "conceptual-problems",
+        "causal-sets",
+        "loop-quantum-gravity",
+        "holography-adscft",
+        "entanglement-spacetime",
+        "experimental-tests",
+        "string-theory",
+        "quantum-cosmology",
+        "noncommutative-geometry",
+        "emergent-gravity",
+        "swampland",
+        "asymptotic-safety",
+        "black-holes-information"
+      ],
+      "nCommon": 13,
+      "spectralCosine": 0.7284,
+      "components": {
+        "common_neighbors": 13.0,
+        "jaccard": 0.4333,
+        "adamic_adar": 4.007,
+        "resource_allocation": 0.5109,
+        "preferential_attachment": 460.0,
+        "spectral": 0.7284
+      },
+      "explanation": "13 shared neighbors: Conceptual Problems of Quantum Gravity, Causal Set Theory, Loop Quantum Gravity & Spin Foams, Holographic Principle & AdS/CFT (+9 more); high spectral similarity (cos=0.73); cross-pillar bridge [group-field-theory] <-> [twistors-amplitudes]",
+      "typeFrom": "pillar",
+      "typeTo": "pillar",
+      "nameFrom": "Group Field Theory & Tensor Models",
+      "nameTo": "Twistor Theory & the Amplitudes Program"
+    },
+    {
       "from": "supergravity-uv",
       "to": "von-neumann-algebras",
-      "score": 0.9401,
+      "score": 0.9393,
       "crossPillar": true,
       "pillarsFrom": [
         "supergravity-uv"
@@ -449,22 +449,22 @@
         "loop-quantum-gravity",
         "holography-adscft",
         "entanglement-spacetime",
-        "noncommutative-geometry",
         "semiclassical-gravity",
         "quantum-cosmology",
+        "noncommutative-geometry",
         "black-holes-information"
       ],
       "nCommon": 8,
-      "spectralCosine": 0.8586,
+      "spectralCosine": 0.8538,
       "components": {
         "common_neighbors": 8.0,
         "jaccard": 0.3077,
-        "adamic_adar": 2.4949,
-        "resource_allocation": 0.3265,
+        "adamic_adar": 2.4885,
+        "resource_allocation": 0.3239,
         "preferential_attachment": 240.0,
-        "spectral": 0.8586
+        "spectral": 0.8538
       },
-      "explanation": "8 shared neighbors: Conceptual Problems of Quantum Gravity, Loop Quantum Gravity & Spin Foams, Holographic Principle & AdS/CFT, Entanglement & Emergence of Spacetime (It from Qubit) (+4 more); high spectral similarity (cos=0.86); cross-pillar bridge [supergravity-uv] <-> [von-neumann-algebras]",
+      "explanation": "8 shared neighbors: Conceptual Problems of Quantum Gravity, Loop Quantum Gravity & Spin Foams, Holographic Principle & AdS/CFT, Entanglement & Emergence of Spacetime (It from Qubit) (+4 more); high spectral similarity (cos=0.85); cross-pillar bridge [supergravity-uv] <-> [von-neumann-algebras]",
       "typeFrom": "pillar",
       "typeTo": "pillar",
       "nameFrom": "Supergravity & UV Behavior of Perturbative Gravity",
@@ -473,7 +473,7 @@
     {
       "from": "group-field-theory",
       "to": "supergravity-uv",
-      "score": 0.9362,
+      "score": 0.9369,
       "crossPillar": true,
       "pillarsFrom": [
         "group-field-theory"
@@ -489,23 +489,23 @@
         "holography-adscft",
         "entanglement-spacetime",
         "experimental-tests",
-        "noncommutative-geometry",
         "string-theory",
         "quantum-cosmology",
+        "noncommutative-geometry",
         "emergent-gravity",
         "swampland",
         "asymptotic-safety",
         "black-holes-information"
       ],
       "nCommon": 14,
-      "spectralCosine": 0.643,
+      "spectralCosine": 0.6404,
       "components": {
         "common_neighbors": 14.0,
         "jaccard": 0.4242,
-        "adamic_adar": 4.3428,
-        "resource_allocation": 0.5615,
+        "adamic_adar": 4.3305,
+        "resource_allocation": 0.5563,
         "preferential_attachment": 552.0,
-        "spectral": 0.643
+        "spectral": 0.6404
       },
       "explanation": "14 shared neighbors: Conceptual Problems of Quantum Gravity, Spectral Dimension, Loop Quantum Gravity & Spin Foams, Causal Dynamical Triangulations (+10 more); high spectral similarity (cos=0.64); cross-pillar bridge [group-field-theory] <-> [supergravity-uv]",
       "typeFrom": "pillar",
@@ -516,7 +516,7 @@
     {
       "from": "causal-dynamical-triangulations",
       "to": "von-neumann-algebras",
-      "score": 0.9277,
+      "score": 0.9286,
       "crossPillar": true,
       "pillarsFrom": [
         "causal-dynamical-triangulations"
@@ -529,20 +529,20 @@
         "loop-quantum-gravity",
         "holography-adscft",
         "entanglement-spacetime",
-        "noncommutative-geometry",
         "semiclassical-gravity",
         "quantum-cosmology",
+        "noncommutative-geometry",
         "black-holes-information"
       ],
       "nCommon": 8,
-      "spectralCosine": 0.7772,
+      "spectralCosine": 0.7806,
       "components": {
         "common_neighbors": 8.0,
         "jaccard": 0.3333,
-        "adamic_adar": 2.4758,
-        "resource_allocation": 0.3176,
+        "adamic_adar": 2.4693,
+        "resource_allocation": 0.3151,
         "preferential_attachment": 220.0,
-        "spectral": 0.7772
+        "spectral": 0.7806
       },
       "explanation": "8 shared neighbors: Causal Set Theory, Loop Quantum Gravity & Spin Foams, Holographic Principle & AdS/CFT, Entanglement & Emergence of Spacetime (It from Qubit) (+4 more); high spectral similarity (cos=0.78); cross-pillar bridge [causal-dynamical-triangulations] <-> [von-neumann-algebras]",
       "typeFrom": "pillar",
@@ -553,7 +553,7 @@
     {
       "from": "crossed-product",
       "to": "de-sitter-static-patch-algebra",
-      "score": 0.9267,
+      "score": 0.9266,
       "crossPillar": false,
       "pillarsFrom": [
         "von-neumann-algebras"
@@ -569,14 +569,14 @@
         "thermal-time-hypothesis"
       ],
       "nCommon": 5,
-      "spectralCosine": 0.9954,
+      "spectralCosine": 0.9959,
       "components": {
         "common_neighbors": 5.0,
         "jaccard": 0.4167,
         "adamic_adar": 2.7324,
         "resource_allocation": 0.8012,
         "preferential_attachment": 66.0,
-        "spectral": 0.9954
+        "spectral": 0.9959
       },
       "explanation": "5 shared neighbors: Quantum reference frames as crossed products, Type II factor, Observer (CLPW) crossed-product algebra, Type II trace and renormalized entropy (+1 more); high spectral similarity (cos=1.00)",
       "typeFrom": "concept",
@@ -587,7 +587,7 @@
     {
       "from": "asymptotic-safety",
       "to": "von-neumann-algebras",
-      "score": 0.9257,
+      "score": 0.9263,
       "crossPillar": true,
       "pillarsFrom": [
         "asymptotic-safety"
@@ -601,20 +601,20 @@
         "loop-quantum-gravity",
         "holography-adscft",
         "entanglement-spacetime",
-        "noncommutative-geometry",
         "semiclassical-gravity",
         "quantum-cosmology",
+        "noncommutative-geometry",
         "black-holes-information"
       ],
       "nCommon": 9,
-      "spectralCosine": 0.6594,
+      "spectralCosine": 0.6608,
       "components": {
         "common_neighbors": 9.0,
         "jaccard": 0.2647,
-        "adamic_adar": 2.8287,
-        "resource_allocation": 0.3765,
+        "adamic_adar": 2.8223,
+        "resource_allocation": 0.3739,
         "preferential_attachment": 330.0,
-        "spectral": 0.6594
+        "spectral": 0.6608
       },
       "explanation": "9 shared neighbors: Conceptual Problems of Quantum Gravity, Causal Set Theory, Loop Quantum Gravity & Spin Foams, Holographic Principle & AdS/CFT (+5 more); high spectral similarity (cos=0.66); cross-pillar bridge [asymptotic-safety] <-> [von-neumann-algebras]",
       "typeFrom": "pillar",
@@ -625,7 +625,7 @@
     {
       "from": "modular-hamiltonian",
       "to": "type-iii1-local-qft",
-      "score": 0.9249,
+      "score": 0.9261,
       "crossPillar": false,
       "pillarsFrom": [
         "emergent-gravity",
@@ -642,16 +642,16 @@
         "tomita-takesaki"
       ],
       "nCommon": 4,
-      "spectralCosine": 0.9137,
+      "spectralCosine": 0.9216,
       "components": {
         "common_neighbors": 4.0,
         "jaccard": 0.1429,
         "adamic_adar": 2.2165,
         "resource_allocation": 0.6548,
         "preferential_attachment": 247.0,
-        "spectral": 0.9137
+        "spectral": 0.9216
       },
-      "explanation": "4 shared neighbors: Reeh-Schlieder theorem, Araki relative entropy, Bisognano-Wichmann theorem, Tomita-Takesaki modular theory; high spectral similarity (cos=0.91)",
+      "explanation": "4 shared neighbors: Reeh-Schlieder theorem, Araki relative entropy, Bisognano-Wichmann theorem, Tomita-Takesaki modular theory; high spectral similarity (cos=0.92)",
       "typeFrom": "concept",
       "typeTo": "concept",
       "nameFrom": "Modular Hamiltonian",
@@ -660,7 +660,7 @@
     {
       "from": "problem-of-time",
       "to": "relational-observables",
-      "score": 0.9242,
+      "score": 0.9245,
       "crossPillar": false,
       "pillarsFrom": [
         "conceptual-problems",
@@ -677,14 +677,14 @@
         "background-independence"
       ],
       "nCommon": 4,
-      "spectralCosine": 0.961,
+      "spectralCosine": 0.9624,
       "components": {
         "common_neighbors": 4.0,
         "jaccard": 0.25,
         "adamic_adar": 1.9536,
         "resource_allocation": 0.5159,
         "preferential_attachment": 99.0,
-        "spectral": 0.961
+        "spectral": 0.9624
       },
       "explanation": "4 shared neighbors: Page-Wootters relational time, Deparametrization, Diffeomorphism invariance, Background Independence; high spectral similarity (cos=0.96)",
       "typeFrom": "concept",
@@ -695,7 +695,7 @@
     {
       "from": "group-field-theory",
       "to": "von-neumann-algebras",
-      "score": 0.9229,
+      "score": 0.9233,
       "crossPillar": true,
       "pillarsFrom": [
         "group-field-theory"
@@ -709,19 +709,19 @@
         "loop-quantum-gravity",
         "holography-adscft",
         "entanglement-spacetime",
-        "noncommutative-geometry",
         "quantum-cosmology",
+        "noncommutative-geometry",
         "black-holes-information"
       ],
       "nCommon": 8,
-      "spectralCosine": 0.7015,
+      "spectralCosine": 0.7013,
       "components": {
         "common_neighbors": 8.0,
         "jaccard": 0.32,
-        "adamic_adar": 2.5253,
-        "resource_allocation": 0.3394,
+        "adamic_adar": 2.5189,
+        "resource_allocation": 0.3369,
         "preferential_attachment": 230.0,
-        "spectral": 0.7015
+        "spectral": 0.7013
       },
       "explanation": "8 shared neighbors: Conceptual Problems of Quantum Gravity, Causal Set Theory, Loop Quantum Gravity & Spin Foams, Holographic Principle & AdS/CFT (+4 more); high spectral similarity (cos=0.70); cross-pillar bridge [group-field-theory] <-> [von-neumann-algebras]",
       "typeFrom": "pillar",
@@ -732,7 +732,7 @@
     {
       "from": "modular-flow",
       "to": "bisognano-wichmann",
-      "score": 0.9165,
+      "score": 0.916,
       "crossPillar": false,
       "pillarsFrom": [
         "von-neumann-algebras"
@@ -764,42 +764,9 @@
       "nameTo": "Bisognano-Wichmann theorem"
     },
     {
-      "from": "connes-classification",
-      "to": "crossed-product",
-      "score": 0.9149,
-      "crossPillar": false,
-      "pillarsFrom": [
-        "von-neumann-algebras"
-      ],
-      "pillarsTo": [
-        "von-neumann-algebras"
-      ],
-      "commonNeighbors": [
-        "type-iii-factor",
-        "von-neumann-algebra-type",
-        "type-iii1-local-qft",
-        "tomita-takesaki"
-      ],
-      "nCommon": 4,
-      "spectralCosine": 0.9935,
-      "components": {
-        "common_neighbors": 4.0,
-        "jaccard": 0.3077,
-        "adamic_adar": 1.7439,
-        "resource_allocation": 0.4059,
-        "preferential_attachment": 66.0,
-        "spectral": 0.9935
-      },
-      "explanation": "4 shared neighbors: Type III factor, von Neumann algebra type (II vs III), Type III_1 of local QFT algebras, Tomita-Takesaki modular theory; high spectral similarity (cos=0.99)",
-      "typeFrom": "concept",
-      "typeTo": "concept",
-      "nameFrom": "Connes classification of type III factors",
-      "nameTo": "Crossed product algebra"
-    },
-    {
       "from": "swampland",
       "to": "von-neumann-algebras",
-      "score": 0.9148,
+      "score": 0.9159,
       "crossPillar": true,
       "pillarsFrom": [
         "string-theory",
@@ -814,19 +781,19 @@
         "loop-quantum-gravity",
         "holography-adscft",
         "entanglement-spacetime",
-        "noncommutative-geometry",
         "quantum-cosmology",
+        "noncommutative-geometry",
         "black-holes-information"
       ],
       "nCommon": 8,
-      "spectralCosine": 0.6166,
+      "spectralCosine": 0.6162,
       "components": {
         "common_neighbors": 8.0,
         "jaccard": 0.25,
-        "adamic_adar": 2.5253,
-        "resource_allocation": 0.3394,
+        "adamic_adar": 2.5189,
+        "resource_allocation": 0.3369,
         "preferential_attachment": 300.0,
-        "spectral": 0.6166
+        "spectral": 0.6162
       },
       "explanation": "8 shared neighbors: Conceptual Problems of Quantum Gravity, Causal Set Theory, Loop Quantum Gravity & Spin Foams, Holographic Principle & AdS/CFT (+4 more); high spectral similarity (cos=0.62); cross-pillar bridge [string-theory/swampland] <-> [von-neumann-algebras]",
       "typeFrom": "pillar",
@@ -835,9 +802,42 @@
       "nameTo": "Von Neumann Algebras & Modular Theory in Quantum Gravity"
     },
     {
+      "from": "connes-classification",
+      "to": "crossed-product",
+      "score": 0.9152,
+      "crossPillar": false,
+      "pillarsFrom": [
+        "von-neumann-algebras"
+      ],
+      "pillarsTo": [
+        "von-neumann-algebras"
+      ],
+      "commonNeighbors": [
+        "type-iii-factor",
+        "von-neumann-algebra-type",
+        "type-iii1-local-qft",
+        "tomita-takesaki"
+      ],
+      "nCommon": 4,
+      "spectralCosine": 0.9946,
+      "components": {
+        "common_neighbors": 4.0,
+        "jaccard": 0.3077,
+        "adamic_adar": 1.7439,
+        "resource_allocation": 0.4059,
+        "preferential_attachment": 66.0,
+        "spectral": 0.9946
+      },
+      "explanation": "4 shared neighbors: Type III factor, von Neumann algebra type (II vs III), Type III_1 of local QFT algebras, Tomita-Takesaki modular theory; high spectral similarity (cos=0.99)",
+      "typeFrom": "concept",
+      "typeTo": "concept",
+      "nameFrom": "Connes classification of type III factors",
+      "nameTo": "Crossed product algebra"
+    },
+    {
       "from": "group-field-theory",
       "to": "semiclassical-gravity",
-      "score": 0.9122,
+      "score": 0.9127,
       "crossPillar": true,
       "pillarsFrom": [
         "group-field-theory"
@@ -854,22 +854,22 @@
         "holography-adscft",
         "entanglement-spacetime",
         "experimental-tests",
-        "noncommutative-geometry",
         "string-theory",
         "quantum-cosmology",
+        "noncommutative-geometry",
         "emergent-gravity",
         "asymptotic-safety",
         "black-holes-information"
       ],
       "nCommon": 13,
-      "spectralCosine": 0.4416,
+      "spectralCosine": 0.4371,
       "components": {
         "common_neighbors": 13.0,
         "jaccard": 0.3514,
-        "adamic_adar": 4.0429,
-        "resource_allocation": 0.5256,
+        "adamic_adar": 4.0365,
+        "resource_allocation": 0.523,
         "preferential_attachment": 621.0,
-        "spectral": 0.4416
+        "spectral": 0.4371
       },
       "explanation": "13 shared neighbors: Conceptual Problems of Quantum Gravity, Causal Set Theory, Loop Quantum Gravity & Spin Foams, Causal Dynamical Triangulations (+9 more); high spectral similarity (cos=0.44); cross-pillar bridge [group-field-theory] <-> [conceptual-problems/semiclassical-gravity]",
       "typeFrom": "pillar",
@@ -880,7 +880,7 @@
     {
       "from": "generalized-entropy",
       "to": "modular-hamiltonian",
-      "score": 0.9097,
+      "score": 0.9106,
       "crossPillar": false,
       "pillarsFrom": [
         "black-holes-information",
@@ -901,14 +901,14 @@
         "entanglement-entropy"
       ],
       "nCommon": 4,
-      "spectralCosine": 0.9598,
+      "spectralCosine": 0.9592,
       "components": {
         "common_neighbors": 4.0,
         "jaccard": 0.1,
-        "adamic_adar": 2.1958,
-        "resource_allocation": 0.6429,
+        "adamic_adar": 2.1723,
+        "resource_allocation": 0.631,
         "preferential_attachment": 475.0,
-        "spectral": 0.9598
+        "spectral": 0.9592
       },
       "explanation": "4 shared neighbors: von Neumann algebra crossed product / type II, Observer (CLPW) crossed-product algebra, JLMS relation, Entanglement entropy; high spectral similarity (cos=0.96)",
       "typeFrom": "concept",
@@ -919,7 +919,7 @@
     {
       "from": "renormalized-stress-energy-tensor",
       "to": "algebraic-qft",
-      "score": 0.9088,
+      "score": 0.9083,
       "crossPillar": false,
       "pillarsFrom": [
         "semiclassical-gravity"
@@ -934,14 +934,14 @@
         "qft-in-curved-spacetime"
       ],
       "nCommon": 4,
-      "spectralCosine": 0.9648,
+      "spectralCosine": 0.9626,
       "components": {
         "common_neighbors": 4.0,
         "jaccard": 0.3333,
         "adamic_adar": 2.8595,
         "resource_allocation": 0.9583,
         "preferential_attachment": 63.0,
-        "spectral": 0.9648
+        "spectral": 0.9626
       },
       "explanation": "4 shared neighbors: Microlocal Spectrum Condition, Wald Axioms for the Stress-Energy Tensor, Hadamard State, QFT in Curved Spacetime (QFTCS); high spectral similarity (cos=0.96)",
       "typeFrom": "concept",
@@ -952,7 +952,7 @@
     {
       "from": "type-iii1-local-qft",
       "to": "trace-and-entropy",
-      "score": 0.9074,
+      "score": 0.9083,
       "crossPillar": false,
       "pillarsFrom": [
         "von-neumann-algebras"
@@ -966,14 +966,14 @@
         "crossed-product"
       ],
       "nCommon": 3,
-      "spectralCosine": 0.9926,
+      "spectralCosine": 0.9937,
       "components": {
         "common_neighbors": 3.0,
         "jaccard": 0.1765,
         "adamic_adar": 1.3922,
         "resource_allocation": 0.3485,
         "preferential_attachment": 91.0,
-        "spectral": 0.9926
+        "spectral": 0.9937
       },
       "explanation": "3 shared neighbors: Spacetime entanglement entropy / SJ state link, von Neumann algebra type (II vs III), Crossed product algebra; high spectral similarity (cos=0.99)",
       "typeFrom": "concept",
@@ -984,7 +984,7 @@
     {
       "from": "semiclassical-gravity",
       "to": "swampland",
-      "score": 0.9057,
+      "score": 0.907,
       "crossPillar": true,
       "pillarsFrom": [
         "conceptual-problems",
@@ -1004,22 +1004,22 @@
         "supergravity-uv",
         "entanglement-spacetime",
         "experimental-tests",
-        "noncommutative-geometry",
         "string-theory",
         "quantum-cosmology",
+        "noncommutative-geometry",
         "emergent-gravity",
         "asymptotic-safety",
         "black-holes-information"
       ],
       "nCommon": 15,
-      "spectralCosine": 0.3715,
+      "spectralCosine": 0.3708,
       "components": {
         "common_neighbors": 15.0,
         "jaccard": 0.3571,
-        "adamic_adar": 4.6914,
-        "resource_allocation": 0.6172,
+        "adamic_adar": 4.685,
+        "resource_allocation": 0.6147,
         "preferential_attachment": 810.0,
-        "spectral": 0.3715
+        "spectral": 0.3708
       },
       "explanation": "15 shared neighbors: Conceptual Problems of Quantum Gravity, Causal Set Theory, Twistor Theory & the Amplitudes Program, Loop Quantum Gravity & Spin Foams (+11 more); high spectral similarity (cos=0.37); cross-pillar bridge [conceptual-problems/semiclassical-gravity] <-> [string-theory/swampland]",
       "typeFrom": "pillar",
@@ -1030,7 +1030,7 @@
     {
       "from": "modular-hamiltonian",
       "to": "subregion-subalgebra-duality",
-      "score": 0.9053,
+      "score": 0.9044,
       "crossPillar": false,
       "pillarsFrom": [
         "emergent-gravity",
@@ -1047,14 +1047,14 @@
         "entanglement-wedge-reconstruction"
       ],
       "nCommon": 3,
-      "spectralCosine": 0.9714,
+      "spectralCosine": 0.9661,
       "components": {
         "common_neighbors": 3.0,
         "jaccard": 0.125,
         "adamic_adar": 1.6695,
         "resource_allocation": 0.4929,
         "preferential_attachment": 152.0,
-        "spectral": 0.9714
+        "spectral": 0.9661
       },
       "explanation": "3 shared neighbors: von Neumann algebra crossed product / type II, JLMS relation, Entanglement wedge reconstruction; high spectral similarity (cos=0.97)",
       "typeFrom": "concept",
@@ -1065,7 +1065,7 @@
     {
       "from": "spectral-triple",
       "to": "standard-model-from-geometry",
-      "score": 0.9014,
+      "score": 0.9012,
       "crossPillar": false,
       "pillarsFrom": [
         "noncommutative-geometry"
@@ -1079,14 +1079,14 @@
         "spectral-action"
       ],
       "nCommon": 3,
-      "spectralCosine": 0.9461,
+      "spectralCosine": 0.9455,
       "components": {
         "common_neighbors": 3.0,
         "jaccard": 0.1875,
-        "adamic_adar": 2.1125,
-        "resource_allocation": 0.7083,
+        "adamic_adar": 2.0659,
+        "resource_allocation": 0.6833,
         "preferential_attachment": 88.0,
-        "spectral": 0.9461
+        "spectral": 0.9455
       },
       "explanation": "3 shared neighbors: Quanta of geometry (volume quantization), Almost-commutative geometry, Spectral action principle; high spectral similarity (cos=0.95)",
       "typeFrom": "concept",
@@ -1097,7 +1097,7 @@
     {
       "from": "type-ii-factor",
       "to": "type-iii1-local-qft",
-      "score": 0.9006,
+      "score": 0.9002,
       "crossPillar": false,
       "pillarsFrom": [
         "von-neumann-algebras"
@@ -1111,14 +1111,14 @@
         "crossed-product"
       ],
       "nCommon": 3,
-      "spectralCosine": 0.9936,
+      "spectralCosine": 0.9943,
       "components": {
         "common_neighbors": 3.0,
         "jaccard": 0.1875,
         "adamic_adar": 1.3922,
         "resource_allocation": 0.3485,
         "preferential_attachment": 78.0,
-        "spectral": 0.9936
+        "spectral": 0.9943
       },
       "explanation": "3 shared neighbors: Type III factor, von Neumann algebra type (II vs III), Crossed product algebra; high spectral similarity (cos=0.99)",
       "typeFrom": "concept",
@@ -1129,7 +1129,7 @@
     {
       "from": "type-ii-factor",
       "to": "tomita-takesaki",
-      "score": 0.9005,
+      "score": 0.9002,
       "crossPillar": false,
       "pillarsFrom": [
         "von-neumann-algebras"
@@ -1143,14 +1143,14 @@
         "crossed-product"
       ],
       "nCommon": 3,
-      "spectralCosine": 0.9883,
+      "spectralCosine": 0.9885,
       "components": {
         "common_neighbors": 3.0,
         "jaccard": 0.1765,
         "adamic_adar": 1.3922,
         "resource_allocation": 0.3485,
         "preferential_attachment": 84.0,
-        "spectral": 0.9883
+        "spectral": 0.9885
       },
       "explanation": "3 shared neighbors: Type III factor, von Neumann algebra type (II vs III), Crossed product algebra; high spectral similarity (cos=0.99)",
       "typeFrom": "concept",
@@ -1193,7 +1193,7 @@
     {
       "from": "type-iii1-local-qft",
       "to": "half-sided-modular-inclusion",
-      "score": 0.8986,
+      "score": 0.8981,
       "crossPillar": false,
       "pillarsFrom": [
         "von-neumann-algebras"
@@ -1207,14 +1207,14 @@
         "tomita-takesaki"
       ],
       "nCommon": 3,
-      "spectralCosine": 0.995,
+      "spectralCosine": 0.9946,
       "components": {
         "common_neighbors": 3.0,
         "jaccard": 0.2,
         "adamic_adar": 1.4951,
         "resource_allocation": 0.4048,
         "preferential_attachment": 65.0,
-        "spectral": 0.995
+        "spectral": 0.9946
       },
       "explanation": "3 shared neighbors: Bisognano-Wichmann theorem, Emergent time from modular inclusions (Leutheusser-Liu), Tomita-Takesaki modular theory; high spectral similarity (cos=0.99)",
       "typeFrom": "concept",
@@ -1224,8 +1224,40 @@
     },
     {
       "from": "eprl-fk-model",
+      "to": "spin-foam-renormalization",
+      "score": 0.8979,
+      "crossPillar": false,
+      "pillarsFrom": [
+        "loop-quantum-gravity"
+      ],
+      "pillarsTo": [
+        "loop-quantum-gravity"
+      ],
+      "commonNeighbors": [
+        "numerical-spin-foam",
+        "spin-foam-partition-function",
+        "flatness-problem"
+      ],
+      "nCommon": 3,
+      "spectralCosine": 0.9895,
+      "components": {
+        "common_neighbors": 3.0,
+        "jaccard": 0.25,
+        "adamic_adar": 1.9008,
+        "resource_allocation": 0.6167,
+        "preferential_attachment": 50.0,
+        "spectral": 0.9895
+      },
+      "explanation": "3 shared neighbors: Numerical spin foams (sl2cfoam-next), Spin foam partition function / transition amplitude, Flatness problem of spin foams; high spectral similarity (cos=0.99)",
+      "typeFrom": "concept",
+      "typeTo": "concept",
+      "nameFrom": "EPRL-FK spin foam model",
+      "nameTo": "Spin foam coarse-graining and renormalization"
+    },
+    {
+      "from": "eprl-fk-model",
       "to": "effective-spin-foam",
-      "score": 0.898,
+      "score": 0.8977,
       "crossPillar": false,
       "pillarsFrom": [
         "loop-quantum-gravity"
@@ -1240,52 +1272,20 @@
         "regge-action"
       ],
       "nCommon": 4,
-      "spectralCosine": 0.9873,
+      "spectralCosine": 0.9878,
       "components": {
         "common_neighbors": 4.0,
         "jaccard": 0.4,
         "adamic_adar": 2.3178,
         "resource_allocation": 0.7076,
         "preferential_attachment": 40.0,
-        "spectral": 0.9873
+        "spectral": 0.9878
       },
       "explanation": "4 shared neighbors: Numerical spin foams (sl2cfoam-next), Spin foam partition function / transition amplitude, Flatness problem of spin foams, CDT Regge action; high spectral similarity (cos=0.99)",
       "typeFrom": "concept",
       "typeTo": "concept",
       "nameFrom": "EPRL-FK spin foam model",
       "nameTo": "Effective spin foam models"
-    },
-    {
-      "from": "eprl-fk-model",
-      "to": "spin-foam-renormalization",
-      "score": 0.8978,
-      "crossPillar": false,
-      "pillarsFrom": [
-        "loop-quantum-gravity"
-      ],
-      "pillarsTo": [
-        "loop-quantum-gravity"
-      ],
-      "commonNeighbors": [
-        "numerical-spin-foam",
-        "spin-foam-partition-function",
-        "flatness-problem"
-      ],
-      "nCommon": 3,
-      "spectralCosine": 0.9885,
-      "components": {
-        "common_neighbors": 3.0,
-        "jaccard": 0.25,
-        "adamic_adar": 1.9008,
-        "resource_allocation": 0.6167,
-        "preferential_attachment": 50.0,
-        "spectral": 0.9885
-      },
-      "explanation": "3 shared neighbors: Numerical spin foams (sl2cfoam-next), Spin foam partition function / transition amplitude, Flatness problem of spin foams; high spectral similarity (cos=0.99)",
-      "typeFrom": "concept",
-      "typeTo": "concept",
-      "nameFrom": "EPRL-FK spin foam model",
-      "nameTo": "Spin foam coarse-graining and renormalization"
     },
     {
       "from": "swampland",
@@ -1306,14 +1306,14 @@
         "weak-gravity-conjecture"
       ],
       "nCommon": 4,
-      "spectralCosine": 0.843,
+      "spectralCosine": 0.8376,
       "components": {
         "common_neighbors": 4.0,
         "jaccard": 0.1143,
         "adamic_adar": 1.9296,
         "resource_allocation": 0.504,
         "preferential_attachment": 270.0,
-        "spectral": 0.843
+        "spectral": 0.8376
       },
       "explanation": "4 shared neighbors: Trans-Planckian Censorship Conjecture (TCC), Emergent String Conjecture, Species scale, Weak Gravity Conjecture; high spectral similarity (cos=0.84)",
       "typeFrom": "pillar",
@@ -1322,43 +1322,41 @@
       "nameTo": "Swampland Distance Conjecture (SDC)"
     },
     {
-      "from": "diffeomorphism-invariance",
-      "to": "deparametrization",
-      "score": 0.897,
+      "from": "d-brane",
+      "to": "m-theory",
+      "score": 0.8972,
       "crossPillar": false,
       "pillarsFrom": [
-        "causal-dynamical-triangulations",
-        "conceptual-problems",
-        "loop-quantum-gravity"
+        "string-theory"
       ],
       "pillarsTo": [
-        "conceptual-problems"
+        "string-theory"
       ],
       "commonNeighbors": [
-        "partial-complete-observables",
-        "relational-observables",
-        "problem-of-time"
+        "s-duality",
+        "bfss-matrix-model",
+        "string-dualities"
       ],
       "nCommon": 3,
-      "spectralCosine": 0.9424,
+      "spectralCosine": 0.9565,
       "components": {
         "common_neighbors": 3.0,
         "jaccard": 0.2,
-        "adamic_adar": 1.7824,
-        "resource_allocation": 0.5354,
-        "preferential_attachment": 80.0,
-        "spectral": 0.9424
+        "adamic_adar": 1.7236,
+        "resource_allocation": 0.525,
+        "preferential_attachment": 77.0,
+        "spectral": 0.9565
       },
-      "explanation": "3 shared neighbors: Partial vs complete observables, Relational / dressed observables, Problem of time; high spectral similarity (cos=0.94)",
+      "explanation": "3 shared neighbors: S-duality, BFSS matrix model, String dualities (T/S/U); high spectral similarity (cos=0.96)",
       "typeFrom": "concept",
       "typeTo": "concept",
-      "nameFrom": "Diffeomorphism invariance",
-      "nameTo": "Deparametrization"
+      "nameFrom": "D-brane",
+      "nameTo": "M-theory"
     },
     {
       "from": "qft-in-curved-spacetime",
       "to": "kms-condition",
-      "score": 0.8965,
+      "score": 0.8969,
       "crossPillar": false,
       "pillarsFrom": [
         "semiclassical-gravity"
@@ -1375,97 +1373,91 @@
         "hawking-radiation"
       ],
       "nCommon": 5,
-      "spectralCosine": 0.791,
+      "spectralCosine": 0.798,
       "components": {
         "common_neighbors": 5.0,
         "jaccard": 0.3846,
         "adamic_adar": 2.76,
         "resource_allocation": 0.7963,
         "preferential_attachment": 80.0,
-        "spectral": 0.791
+        "spectral": 0.798
       },
-      "explanation": "5 shared neighbors: Unruh-DeWitt Detector, Hadamard State, Algebraic / Locally Covariant QFT, Unruh temperature (+1 more); high spectral similarity (cos=0.79)",
+      "explanation": "5 shared neighbors: Unruh-DeWitt Detector, Hadamard State, Algebraic / Locally Covariant QFT, Unruh temperature (+1 more); high spectral similarity (cos=0.80)",
       "typeFrom": "concept",
       "typeTo": "concept",
       "nameFrom": "QFT in Curved Spacetime (QFTCS)",
       "nameTo": "KMS Condition"
     },
     {
-      "from": "d-brane",
-      "to": "m-theory",
-      "score": 0.8964,
+      "from": "diffeomorphism-invariance",
+      "to": "deparametrization",
+      "score": 0.8968,
       "crossPillar": false,
       "pillarsFrom": [
-        "string-theory"
+        "causal-dynamical-triangulations",
+        "conceptual-problems",
+        "loop-quantum-gravity"
       ],
       "pillarsTo": [
-        "string-theory"
+        "conceptual-problems"
       ],
       "commonNeighbors": [
-        "s-duality",
-        "bfss-matrix-model",
-        "string-dualities"
+        "partial-complete-observables",
+        "relational-observables",
+        "problem-of-time"
       ],
       "nCommon": 3,
-      "spectralCosine": 0.9502,
+      "spectralCosine": 0.9426,
       "components": {
         "common_neighbors": 3.0,
         "jaccard": 0.2,
-        "adamic_adar": 1.7236,
-        "resource_allocation": 0.525,
-        "preferential_attachment": 77.0,
-        "spectral": 0.9502
+        "adamic_adar": 1.7824,
+        "resource_allocation": 0.5354,
+        "preferential_attachment": 80.0,
+        "spectral": 0.9426
       },
-      "explanation": "3 shared neighbors: S-duality, BFSS matrix model, String dualities (T/S/U); high spectral similarity (cos=0.95)",
+      "explanation": "3 shared neighbors: Partial vs complete observables, Relational / dressed observables, Problem of time; high spectral similarity (cos=0.94)",
       "typeFrom": "concept",
       "typeTo": "concept",
-      "nameFrom": "D-brane",
-      "nameTo": "M-theory"
+      "nameFrom": "Diffeomorphism invariance",
+      "nameTo": "Deparametrization"
     },
     {
-      "from": "noncommutative-geometry",
-      "to": "spectral-dimension",
-      "score": 0.8962,
+      "from": "tomita-takesaki",
+      "to": "modular-flow-corner-nonlocality",
+      "score": 0.896,
       "crossPillar": false,
       "pillarsFrom": [
-        "noncommutative-geometry"
+        "von-neumann-algebras"
       ],
       "pillarsTo": [
-        "asymptotic-safety",
-        "causal-dynamical-triangulations",
-        "experimental-tests",
-        "noncommutative-geometry",
-        "supergravity-uv"
+        "von-neumann-algebras"
       ],
       "commonNeighbors": [
-        "minimal-length",
-        "causal-sets",
-        "causal-dynamical-triangulations",
-        "group-field-theory",
-        "supergravity-uv",
-        "experimental-tests",
-        "asymptotic-safety"
+        "bisognano-wichmann",
+        "modular-flow",
+        "modular-hamiltonian"
       ],
-      "nCommon": 7,
-      "spectralCosine": 0.5095,
+      "nCommon": 3,
+      "spectralCosine": 0.9969,
       "components": {
-        "common_neighbors": 7.0,
-        "jaccard": 0.1795,
-        "adamic_adar": 2.3685,
-        "resource_allocation": 0.3759,
-        "preferential_attachment": 513.0,
-        "spectral": 0.5095
+        "common_neighbors": 3.0,
+        "jaccard": 0.1875,
+        "adamic_adar": 1.3786,
+        "resource_allocation": 0.3443,
+        "preferential_attachment": 70.0,
+        "spectral": 0.9969
       },
-      "explanation": "7 shared neighbors: Minimal Length, Causal Set Theory, Causal Dynamical Triangulations, Group Field Theory & Tensor Models (+3 more); high spectral similarity (cos=0.51)",
-      "typeFrom": "pillar",
+      "explanation": "3 shared neighbors: Bisognano-Wichmann theorem, Modular flow (modular automorphism group), Modular Hamiltonian; high spectral similarity (cos=1.00)",
+      "typeFrom": "concept",
       "typeTo": "concept",
-      "nameFrom": "Noncommutative Geometry",
-      "nameTo": "Spectral Dimension"
+      "nameFrom": "Tomita-Takesaki modular theory",
+      "nameTo": "Corner non-geometricity of modular flow (dimensionally constrained)"
     },
     {
       "from": "trace-and-entropy",
       "to": "qrf-crossed-product",
-      "score": 0.8958,
+      "score": 0.8957,
       "crossPillar": false,
       "pillarsFrom": [
         "von-neumann-algebras"
@@ -1480,14 +1472,14 @@
         "generalized-entropy"
       ],
       "nCommon": 4,
-      "spectralCosine": 0.9977,
+      "spectralCosine": 0.9979,
       "components": {
         "common_neighbors": 4.0,
         "jaccard": 0.5,
         "adamic_adar": 1.8439,
         "resource_allocation": 0.4642,
         "preferential_attachment": 35.0,
-        "spectral": 0.9977
+        "spectral": 0.9979
       },
       "explanation": "4 shared neighbors: Observer (CLPW) crossed-product algebra, de Sitter static-patch observer algebra, Crossed product algebra, Generalized entropy; high spectral similarity (cos=1.00)",
       "typeFrom": "concept",
@@ -1496,41 +1488,9 @@
       "nameTo": "Quantum reference frames as crossed products"
     },
     {
-      "from": "tomita-takesaki",
-      "to": "modular-flow-corner-nonlocality",
-      "score": 0.8956,
-      "crossPillar": false,
-      "pillarsFrom": [
-        "von-neumann-algebras"
-      ],
-      "pillarsTo": [
-        "von-neumann-algebras"
-      ],
-      "commonNeighbors": [
-        "bisognano-wichmann",
-        "modular-flow",
-        "modular-hamiltonian"
-      ],
-      "nCommon": 3,
-      "spectralCosine": 0.9965,
-      "components": {
-        "common_neighbors": 3.0,
-        "jaccard": 0.1875,
-        "adamic_adar": 1.3786,
-        "resource_allocation": 0.3443,
-        "preferential_attachment": 70.0,
-        "spectral": 0.9965
-      },
-      "explanation": "3 shared neighbors: Bisognano-Wichmann theorem, Modular flow (modular automorphism group), Modular Hamiltonian; high spectral similarity (cos=1.00)",
-      "typeFrom": "concept",
-      "typeTo": "concept",
-      "nameFrom": "Tomita-Takesaki modular theory",
-      "nameTo": "Corner non-geometricity of modular flow (dimensionally constrained)"
-    },
-    {
       "from": "diosi-penrose-model",
       "to": "post-quantum-classical-gravity",
-      "score": 0.895,
+      "score": 0.8952,
       "crossPillar": false,
       "pillarsFrom": [
         "conceptual-problems",
@@ -1548,14 +1508,14 @@
         "gravitationally-induced-entanglement"
       ],
       "nCommon": 4,
-      "spectralCosine": 0.7394,
+      "spectralCosine": 0.7399,
       "components": {
         "common_neighbors": 4.0,
         "jaccard": 0.25,
         "adamic_adar": 2.9534,
         "resource_allocation": 0.9111,
         "preferential_attachment": 99.0,
-        "spectral": 0.7394
+        "spectral": 0.7399
       },
       "explanation": "4 shared neighbors: measurement-problem, Gravitationally Induced Decoherence, Does gravity need quantizing?, Gravitationally Induced Entanglement (GIE / QGEM); high spectral similarity (cos=0.74)",
       "typeFrom": "concept",
@@ -1566,7 +1526,7 @@
     {
       "from": "type-ii-factor",
       "to": "crossed-product-observer",
-      "score": 0.8947,
+      "score": 0.8946,
       "crossPillar": false,
       "pillarsFrom": [
         "von-neumann-algebras"
@@ -1581,14 +1541,14 @@
         "generalized-entropy"
       ],
       "nCommon": 4,
-      "spectralCosine": 0.9935,
+      "spectralCosine": 0.9943,
       "components": {
         "common_neighbors": 4.0,
         "jaccard": 0.5,
         "adamic_adar": 1.7997,
         "resource_allocation": 0.4404,
         "preferential_attachment": 36.0,
-        "spectral": 0.9935
+        "spectral": 0.9943
       },
       "explanation": "4 shared neighbors: de Sitter static-patch observer algebra, Type II trace and renormalized entropy, Crossed product algebra, Generalized entropy; high spectral similarity (cos=0.99)",
       "typeFrom": "concept",
@@ -1597,9 +1557,44 @@
       "nameTo": "Observer (CLPW) crossed-product algebra"
     },
     {
+      "from": "hawking-radiation",
+      "to": "four-laws-black-hole-mechanics",
+      "score": 0.8914,
+      "crossPillar": false,
+      "pillarsFrom": [
+        "black-holes-information",
+        "emergent-gravity",
+        "semiclassical-gravity"
+      ],
+      "pillarsTo": [
+        "black-holes-information"
+      ],
+      "commonNeighbors": [
+        "hawking-temperature",
+        "wald-entropy",
+        "generalized-second-law",
+        "bekenstein-hawking-entropy"
+      ],
+      "nCommon": 4,
+      "spectralCosine": 0.895,
+      "components": {
+        "common_neighbors": 4.0,
+        "jaccard": 0.25,
+        "adamic_adar": 2.9596,
+        "resource_allocation": 0.9167,
+        "preferential_attachment": 64.0,
+        "spectral": 0.895
+      },
+      "explanation": "4 shared neighbors: hawking-temperature, Wald Entropy, Generalized second law (GSL), Bekenstein-Hawking entropy; high spectral similarity (cos=0.90)",
+      "typeFrom": "concept",
+      "typeTo": "concept",
+      "nameFrom": "Hawking radiation",
+      "nameTo": "Four laws of black hole mechanics"
+    },
+    {
       "from": "spin-foam-partition-function",
       "to": "flatness-problem",
-      "score": 0.8915,
+      "score": 0.8912,
       "crossPillar": false,
       "pillarsFrom": [
         "loop-quantum-gravity"
@@ -1630,106 +1625,9 @@
       "nameTo": "Flatness problem of spin foams"
     },
     {
-      "from": "eprl-fk-model",
-      "to": "semiclassical-limit-problem",
-      "score": 0.8909,
-      "crossPillar": false,
-      "pillarsFrom": [
-        "loop-quantum-gravity"
-      ],
-      "pillarsTo": [
-        "loop-quantum-gravity"
-      ],
-      "commonNeighbors": [
-        "graviton-propagator",
-        "flatness-problem",
-        "regge-action"
-      ],
-      "nCommon": 3,
-      "spectralCosine": 0.9518,
-      "components": {
-        "common_neighbors": 3.0,
-        "jaccard": 0.2308,
-        "adamic_adar": 1.8854,
-        "resource_allocation": 0.5909,
-        "preferential_attachment": 60.0,
-        "spectral": 0.9518
-      },
-      "explanation": "3 shared neighbors: Graviton propagator from spin foams, Flatness problem of spin foams, CDT Regge action; high spectral similarity (cos=0.95)",
-      "typeFrom": "concept",
-      "typeTo": "concept",
-      "nameFrom": "EPRL-FK spin foam model",
-      "nameTo": "Semiclassical limit problem"
-    },
-    {
-      "from": "tensor-model",
-      "to": "large-n-expansion",
-      "score": 0.8906,
-      "crossPillar": false,
-      "pillarsFrom": [
-        "group-field-theory"
-      ],
-      "pillarsTo": [
-        "group-field-theory"
-      ],
-      "commonNeighbors": [
-        "double-scaling-limit",
-        "matrix-model",
-        "gurau-degree",
-        "melonic-dominance"
-      ],
-      "nCommon": 4,
-      "spectralCosine": 0.9904,
-      "components": {
-        "common_neighbors": 4.0,
-        "jaccard": 0.5,
-        "adamic_adar": 2.5221,
-        "resource_allocation": 0.8167,
-        "preferential_attachment": 32.0,
-        "spectral": 0.9904
-      },
-      "explanation": "4 shared neighbors: Double Scaling Limit, Matrix Model of 2D Gravity, Gurau Degree, Melonic Dominance; high spectral similarity (cos=0.99)",
-      "typeFrom": "concept",
-      "typeTo": "concept",
-      "nameFrom": "Tensor Model",
-      "nameTo": "1/N Expansion"
-    },
-    {
-      "from": "spectral-triple",
-      "to": "inner-fluctuations",
-      "score": 0.8897,
-      "crossPillar": false,
-      "pillarsFrom": [
-        "noncommutative-geometry"
-      ],
-      "pillarsTo": [
-        "noncommutative-geometry"
-      ],
-      "commonNeighbors": [
-        "dirac-operator",
-        "first-order-condition",
-        "spectral-action"
-      ],
-      "nCommon": 3,
-      "spectralCosine": 0.9667,
-      "components": {
-        "common_neighbors": 3.0,
-        "jaccard": 0.2308,
-        "adamic_adar": 1.8236,
-        "resource_allocation": 0.575,
-        "preferential_attachment": 55.0,
-        "spectral": 0.9667
-      },
-      "explanation": "3 shared neighbors: Dirac operator (spectral geometry), First-order condition, Spectral action principle; high spectral similarity (cos=0.97)",
-      "typeFrom": "concept",
-      "typeTo": "concept",
-      "nameFrom": "Spectral triple",
-      "nameTo": "Inner fluctuations of the metric"
-    },
-    {
       "from": "modular-hamiltonian",
       "to": "crossed-product",
-      "score": 0.8897,
+      "score": 0.891,
       "crossPillar": false,
       "pillarsFrom": [
         "emergent-gravity",
@@ -1745,14 +1643,14 @@
         "tomita-takesaki"
       ],
       "nCommon": 3,
-      "spectralCosine": 0.9284,
+      "spectralCosine": 0.933,
       "components": {
         "common_neighbors": 3.0,
         "jaccard": 0.1111,
         "adamic_adar": 1.4179,
         "resource_allocation": 0.3631,
         "preferential_attachment": 209.0,
-        "spectral": 0.9284
+        "spectral": 0.933
       },
       "explanation": "3 shared neighbors: Observer (CLPW) crossed-product algebra, Connes-Rovelli thermal time hypothesis, Tomita-Takesaki modular theory; high spectral similarity (cos=0.93)",
       "typeFrom": "concept",
@@ -1761,9 +1659,106 @@
       "nameTo": "Crossed product algebra"
     },
     {
+      "from": "eprl-fk-model",
+      "to": "semiclassical-limit-problem",
+      "score": 0.8905,
+      "crossPillar": false,
+      "pillarsFrom": [
+        "loop-quantum-gravity"
+      ],
+      "pillarsTo": [
+        "loop-quantum-gravity"
+      ],
+      "commonNeighbors": [
+        "graviton-propagator",
+        "flatness-problem",
+        "regge-action"
+      ],
+      "nCommon": 3,
+      "spectralCosine": 0.9512,
+      "components": {
+        "common_neighbors": 3.0,
+        "jaccard": 0.2308,
+        "adamic_adar": 1.8854,
+        "resource_allocation": 0.5909,
+        "preferential_attachment": 60.0,
+        "spectral": 0.9512
+      },
+      "explanation": "3 shared neighbors: Graviton propagator from spin foams, Flatness problem of spin foams, CDT Regge action; high spectral similarity (cos=0.95)",
+      "typeFrom": "concept",
+      "typeTo": "concept",
+      "nameFrom": "EPRL-FK spin foam model",
+      "nameTo": "Semiclassical limit problem"
+    },
+    {
+      "from": "qft-in-curved-spacetime",
+      "to": "trace-anomaly",
+      "score": 0.8901,
+      "crossPillar": false,
+      "pillarsFrom": [
+        "semiclassical-gravity"
+      ],
+      "pillarsTo": [
+        "semiclassical-gravity"
+      ],
+      "commonNeighbors": [
+        "cosmological-particle-production",
+        "renormalized-stress-energy-tensor",
+        "hawking-radiation"
+      ],
+      "nCommon": 3,
+      "spectralCosine": 0.9366,
+      "components": {
+        "common_neighbors": 3.0,
+        "jaccard": 0.2143,
+        "adamic_adar": 1.5371,
+        "resource_allocation": 0.4236,
+        "preferential_attachment": 72.0,
+        "spectral": 0.9366
+      },
+      "explanation": "3 shared neighbors: Cosmological / Gravitational Particle Production (GPP), Renormalized Stress-Energy Tensor, Hawking radiation; high spectral similarity (cos=0.94)",
+      "typeFrom": "concept",
+      "typeTo": "concept",
+      "nameFrom": "QFT in Curved Spacetime (QFTCS)",
+      "nameTo": "Trace (Conformal) Anomaly"
+    },
+    {
+      "from": "tensor-model",
+      "to": "large-n-expansion",
+      "score": 0.8899,
+      "crossPillar": false,
+      "pillarsFrom": [
+        "group-field-theory"
+      ],
+      "pillarsTo": [
+        "group-field-theory"
+      ],
+      "commonNeighbors": [
+        "double-scaling-limit",
+        "matrix-model",
+        "gurau-degree",
+        "melonic-dominance"
+      ],
+      "nCommon": 4,
+      "spectralCosine": 0.99,
+      "components": {
+        "common_neighbors": 4.0,
+        "jaccard": 0.5,
+        "adamic_adar": 2.5221,
+        "resource_allocation": 0.8167,
+        "preferential_attachment": 32.0,
+        "spectral": 0.99
+      },
+      "explanation": "4 shared neighbors: Double Scaling Limit, Matrix Model of 2D Gravity, Gurau Degree, Melonic Dominance; high spectral similarity (cos=0.99)",
+      "typeFrom": "concept",
+      "typeTo": "concept",
+      "nameFrom": "Tensor Model",
+      "nameTo": "1/N Expansion"
+    },
+    {
       "from": "semiclassical-gravity",
       "to": "gravitationally-induced-collapse",
-      "score": 0.889,
+      "score": 0.8892,
       "crossPillar": false,
       "pillarsFrom": [
         "conceptual-problems",
@@ -1779,14 +1774,14 @@
         "diosi-penrose-model"
       ],
       "nCommon": 4,
-      "spectralCosine": 0.7917,
+      "spectralCosine": 0.793,
       "components": {
         "common_neighbors": 4.0,
         "jaccard": 0.1429,
         "adamic_adar": 2.3405,
         "resource_allocation": 0.702,
         "preferential_attachment": 135.0,
-        "spectral": 0.7917
+        "spectral": 0.793
       },
       "explanation": "4 shared neighbors: Schroedinger-Newton equation, Measurement problem in quantum gravity, Does gravity need quantizing?, Diosi-Penrose model; high spectral similarity (cos=0.79)",
       "typeFrom": "pillar",
@@ -1797,7 +1792,7 @@
     {
       "from": "distance-conjecture",
       "to": "dark-energy",
-      "score": 0.8888,
+      "score": 0.8889,
       "crossPillar": false,
       "pillarsFrom": [
         "swampland"
@@ -1811,14 +1806,14 @@
         "de-sitter-conjecture"
       ],
       "nCommon": 3,
-      "spectralCosine": 0.9793,
+      "spectralCosine": 0.9794,
       "components": {
         "common_neighbors": 3.0,
         "jaccard": 0.2727,
         "adamic_adar": 1.6603,
         "resource_allocation": 0.4917,
         "preferential_attachment": 45.0,
-        "spectral": 0.9793
+        "spectral": 0.9794
       },
       "explanation": "3 shared neighbors: Dark Dimension Scenario, Trans-Planckian Censorship Conjecture (TCC), de Sitter Conjecture; high spectral similarity (cos=0.98)",
       "typeFrom": "concept",

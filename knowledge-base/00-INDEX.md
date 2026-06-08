@@ -1,7 +1,7 @@
 # Index znalostní báze — Theory of Everything
 
 > Anotovaný rejstřík všech souborů ve `knowledge-base/`, `core-data/` a `verification/`.
-> Generováno: 2026-06-05; aktualizováno: 2026-06-08 (kolo 18: VYPOCET-32/33/34, F-036/037/038, adversariální audit; 38 nálezů; testy 356 passed).
+> Generováno: 2026-06-05; aktualizováno: 2026-06-08 (kolo 19: VYPOCET-35/36, F-039 confirmed, +6 hran, adversariální audit; 39 nálezů; testy 356 passed).
 
 ---
 
@@ -101,13 +101,19 @@
 ## Datové registry (`core-data/`)
 
 - [../core-data/_digest.md](../core-data/_digest.md) — Strojově generovaný souhrn celé báze (aktualizováno 2026-06-06, velké review část 1) — levný vstupní bod pro agenty.
-- [../core-data/concept-graph.json](../core-data/concept-graph.json) — Graf konceptů (**625 uzlů, 2476 hran**, po velké review část 1): top huby holographic-principle, generalized-entropy, bekenstein-hawking-entropy, spectral-dimension, modular-hamiltonian, page-curve.
-- [../core-data/connections.json](../core-data/connections.json) — Matice meziobjevových vazeb (**292 hran, 115 hodnoceno jako „barely explored"**) — základ pro hledání bílých míst.
+- [../core-data/concept-graph.json](../core-data/concept-graph.json) — Graf konceptů (**626 uzlů, 2487 hran**, kolo 19: +6 hran spectral-action/NCG/trace-anomaly/EE/a-theorem): top huby holographic-principle, generalized-entropy, bekenstein-hawking-entropy, spectral-dimension, modular-hamiltonian, page-curve.
+- [../core-data/connections.json](../core-data/connections.json) — Matice meziobjevových vazeb (**298 hran, 114 hodnoceno jako „barely explored"**) — základ pro hledání bílých míst. Kolo 19: +6 hran; link-prediction AUC 0.9057.
 - [../core-data/references.json](../core-data/references.json) — Registr referencí: **587 unikátních** z 665 syrových; duplikáty odfiltrovány.
 - [../core-data/references.bib](../core-data/references.bib) — BibTeX export téhož registru pro LaTeX/Pandoc workflow.
 - [../core-data/formulas.json](../core-data/formulas.json) — Registr vzorců: **247 unikátních** z 249 syrových záznamů napříč 19 pilíři.
 - [../core-data/open-problems.json](../core-data/open-problems.json) — Registr otevřených problémů: **153 problémů** (+9 fuzzy duplicit k posouzení).
 - [../core-data/connections.json](../core-data/connections.json) — Viz výše.
+
+### Kolo 19 (VYPOCET-35–36)
+
+- [LOV-18-11-overlaps.md](LOV-18-11-overlaps.md) — **LOV na překryvy -18/11** (2026-06-08): brainstorm LOV dokument + výsledky kola 19. H-B (EE-koeficient vs anomálie): c_EE = 7.562 NEODPOVÍDÁ trace-anomálním racionálům — no-match-geometric, F-039 confirmed. H-E (index-náboj diskrétní): H-E vyvrácena — eta(iDelta)=0 strukturálně (chybí gamma5), eta(D_K)~N^1.02 extenzivní, VYPOCET-36 dokumentuje. +6 hran nakreslenýchrozhodnutím T3. Podmíněná NCG<->EE hrana nepřidána (H-B oslabuje). Data: `core-data/calculations/amol-anomaly-ee-coeff/` + `core-data/calculations/index-charge-discrete/`.
+- [vypocty/VYPOCET-35-ee-coeff-vs-anomaly.md](vypocty/VYPOCET-35-ee-coeff-vs-anomaly.md) — H-B: c_EE vs trace-anomálnímu racionálu (F-039, confirmed/negativní): c_EE = 7.5623 (CV 1.26 %; z F-029 dS path), 60 srovnání (6 kanálů × 10 pre-registrovaných kandidátů), n_matches=0, no-match-geometric. Přímý skalár c/(-a)=-3: residual 152 %; -18/11: residual 362 %; kontrola 8: 5.47 % (NAD prahem); Bekenstein 4: 10.26 %. Anti-cirkularita strukturálně ověřena. Scope: 2D, finite-N, massless scalar. Runtime 233 s. Data: `core-data/calculations/amol-anomaly-ee-coeff/`. (F-039)
+- [vypocty/VYPOCET-36-index-charge-discrete.md](vypocty/VYPOCET-36-index-charge-discrete.md) — H-E: index-náboj diskrétní (dokumentovaný negativní výsledek; F-040 NEPŘIDÁN): H-E vyvrácena v přímé formě. Probe A eta(D_K)~N^1.02 (slope 1.019, CV=0.42) — extenzivní. Probe B eta(iDelta)=0 na 48/48 bězích (±-párované spektrum, chybí gamma5 gradování). Probe C n_rel~N^2.00, n_link~N^1.20. Žádný proxy N-nezávislý sudě-celočíselný. Skutečný most vyžaduje euklidizaci + gamma5-gradování + saturující invariant (NCG↔NCG, ne causal-set↔Rohlin). Data: `core-data/calculations/index-charge-discrete/`.
 
 ### Kolo 18 (VYPOCET-32–34)
 
@@ -146,7 +152,7 @@
 
 ### Registr nálezů
 
-- [../core-data/findings.json](../core-data/findings.json) — Registr **38 originálních nálezů** (kola 1–18, aktualizováno 2026-06-08): F-001–F-035 viz předchozí kola; **F-036 (VYPOCET-32, kolo 18)** H6g-1b NCG/Unruh — informovany-negativ-tautologie; zákonný exponent 0,720 (BW +1 nečteno), 2*pi off 52 %; rho-invariantní boostová diagonála strukturálně solidní; hrana barely bez propagace; **F-037 (VYPOCET-33, kolo 18)** H6g-2 konformní 4D — supported (negativ); xi=1/6≡xi=0, F-031 stojí silněji, caveat (a) vyřešen; **F-038 (VYPOCET-34, kolo 18)** H6g-6 molekulová fluktuace — refuted-direction; Var~rho^0,656, CI95 vylučuje plochu i objem, super-Poisson, druhý negativ k F-031. Každý nález rozlišuje reprodukci literatury od projektového přínosu.
+- [../core-data/findings.json](../core-data/findings.json) — Registr **39 originálních nálezů** (kola 1–19, aktualizováno 2026-06-08): F-001–F-038 viz předchozí kola; **F-039 (VYPOCET-35, kolo 19)** H-B EE-koeficient vs trace-anomálie — confirmed/negativní; c_EE=7.562 (CV 1.3 %) NEODPOVÍDÁ žádnému pre-registrovanému racionálu; přímý skalár -3 off 152 %, -18/11 off 362 %; c_EE je geometrický, ne anomální; scope 2D/finite-N/massless-scalar; anti-cirkularita ověřena; F-040 NEPŘIDÁN (H-E čistě negativní výsledek, VYPOCET-36 dokumentuje). Každý nález rozlišuje reprodukci literatury od projektového přínosu.
 
 ### Fragmenty pilířů (`core-data/fragments/`)
 

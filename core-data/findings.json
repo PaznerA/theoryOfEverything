@@ -697,5 +697,29 @@
    "gr-qc/0302009",
    "0909.0944"
   ]
+ },
+ {
+  "id": "F-039",
+  "statement": "The universal discrete SSEE coefficient c_EE = 7.562 +/- 1.3% (CV; from the F-029 de Sitter static-patch area-law S_cap = A_horizon/(c_EE*G), c_EE = 1/R_full, R_full = 0.1322) does NOT match any pre-registered trace-anomaly rational built from the free-field central charges (a,c). The DIRECT scalar target |c/(-a)| = 3 misses by 152%; the secondary index-protected NCG/Weyl-fermion ratio |-18/11| = 1.636 misses by 362%. The nearest candidates across all six channels are the geometric/round-number controls 8 (5.5%, still above the 5% match threshold) and the Bekenstein quarter 4 (10.3%, diamond 1/c_log channel) -- non-anomaly constants. A fresh 2D causal-diamond SSEE confirms the area law is logarithmic S = 0.227*ln(N) - 0.045 (r2=0.98, the 2D CFT S=(c/3)lnL form), with c_log = 0.227 and 1/c_log = 4.41 likewise matching no anomaly rational. Conclusion: the discrete SSEE universal coefficient is a GEOMETRIC (kappa-cutoff-driven) quantity, NOT a conformal-anomaly charge. This cleanly separates geometric from anomalous coefficients and means the index-protected -18/11 NCG core does NOT touch flagship line B via this entanglement-entropy channel. Pre-registration verified (candidates written to results.json before any c_EE was read; kappa = sqrt(N)/(4pi) from Sorkin-Yazdi 1712.04227; F-029 c_EE from a prior independent run). Scope: 2D, finite-N, massless scalar; not a 4D continuum statement.",
+  "status": "confirmed",
+  "evidence": [
+   "core-data/calculations/amol-anomaly-ee-coeff/calc.py",
+   "core-data/calculations/amol-anomaly-ee-coeff/results.json",
+   "core-data/calculations/amol-anomaly-ee-coeff/c_EE_vs_rationals.png",
+   "knowledge-base/vypocty/VYPOCET-35-ee-coeff-vs-anomaly.md"
+  ],
+  "date": "2026-06-08",
+  "relatedHypotheses": [
+   "H-B"
+  ],
+  "caveats": "Scope: 2D, finite-N, massless scalar; not a 4D continuum statement. The c_EE = 7.562 is derived from F-029 de Sitter static-patch path (kappa=sqrt(N)/(4pi) from Sorkin-Yazdi 1712.04227). Anti-circularity verified: candidates pre-registered in results.json BEFORE any c_EE value was read (STAGE 0 build_preregistration before STAGE 1 read_f029_cEE). Best-match control 8 at residual 5.47% is still ABOVE the 5% threshold. The power-law exponent p=0.152 in this run vs F-006 ~0.52 is explained by the different observable (logarithmic S vs area-law S) and is not a contradiction.",
+  "implications": "The universal discrete SSEE coefficient is a GEOMETRIC (kappa-cutoff-driven) constant, not a conformal-anomaly charge. This cleanly separates the two classes of coefficients and means the index-protected NCG core -18/11 does not reach the entanglement-entropy line B through the discrete SSEE channel. The conditional edge noncommutative-geometry <-> entanglement-entropy (LOV proposal #5) is WEAKENED by this test, not confirmed; it must NOT be added as a positive bridge. The trace-anomaly <-> entanglement-entropy bridge (LOV proposal #6) survives only as continuum-CFT shared-math (CHM a = sphere EE; Solodukhin log coeff), NOT as a property of the discrete c_EE.",
+  "noveltyStatus": "First systematic pre-registered comparison of the universal discrete SSEE coefficient c_EE against all pre-registered trace-anomaly rationals built from free-field central charges (a,c), covering 6 channels x 10 candidates (60 comparisons total). The clean separation of geometric from anomalous SSEE coefficients -- and the sharp negative showing that the index-protected -18/11 NCG core does not reach line B via entanglement entropy -- is project-original. Anti-circularity structural: candidates written before c_EE read, kappa from independent literature source.",
+  "refs": [
+   "1712.04227",
+   "hep-th/9606001",
+   "hep-th/0306138",
+   "2003.02688"
+  ]
  }
 ]

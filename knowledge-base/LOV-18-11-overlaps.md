@@ -187,3 +187,49 @@ Ověřeno v `core-data/concept-graph.json` + `connections.json`:
 ---
 
 *Zdroje (repo-present): findings.json F-003/F-014/F-020/F-015/F-019/F-023/F-029; papers/draft-02-a4-fermionic-identity/draft.md; lib/toe/ncg.py, entropy.py, vntype.py, spectral.py, spectraltriple.py; core-data/concept-graph.json, connections.json, link-predictions.json. Externí konvence (citovat v originále): Duff arXiv:2003.02688; Chamseddine–Connes hep-th/9606001; Vassilevich hep-th/0306138; Solodukhin (EE log-koef.); Casini–Huerta–Myers (sférická EE = a); Komargodski–Schwimmer (a-věta). Žádné arXiv ID nevymyšleno; nepotvrzené reference neuvedeny.*
+
+---
+
+## Výsledky kola 19 (2026-06-08)
+
+### H-B — EE-koeficient vs trace-anomálie (VYPOCET-35, F-039)
+
+**Verdikt: no-match-geometric (ostrý NEGATIV)**
+
+Univerzální diskrétní SSEE koeficient `c_EE = 7.562 +/- 1.3% (CV)` z F-029 de Sitter static-patch area-law neodpovídá **žádnému** pre-registrovanému trace-anomálnímu racionálu ze 6 kanálů × 10 kandidátů (60 srovnání, `matches_within_5pct=[]`). Klíčová čísla:
+
+- Přímý skalární cíl `|c/(-a)| = 3`: residual **152 %**.
+- Sekundární indexem chráněné NCG/Weyl-fermionové jádro `|-18/11| = 1.636`: residual **362 %**.
+- Nejbližší kandidát: geometrická/kontrolní konstanta 8 (residual 5.47 %, stále **NAD** prahem 5 %).
+- Čerstvý 2D diamant: c_log = 0.227, 1/c_log = 4.41 — taktéž žádná shoda s anomálními racionály.
+
+**Závěr:** c_EE je GEOMETRICKÝ (kappa-cutoff řízený) koeficient, NIKOLI konformně-anomální náboj. Indexem chráněné NCG jádro -18/11 se přes tento kanál entanglement-entropy NEDOTÝKÁ vlajkové linie B. Anti-cirkularita ověřena strukturálně. Scope: 2D, finite-N, massless scalar; ne 4D kontinuální tvrzení. **F-039 zapsáno, status: confirmed (negativní/diskriminační).**
+
+### H-E — index-náboj diskrétní (VYPOCET-36, F-040 NEPŘIDÁN)
+
+**Verdikt: refuted (čistý negativní výsledek, VYPOCET-36 dokumentuje)**
+
+H-E v přímé formě VYVRÁCENA — a je to cenný, ostrý výsledek:
+
+- **Probe B** `eta(iDelta) = 0.000` na 48/48 bězích (CV = 0): strukturálně nula kvůli ±-párovanému Pauli-Jordanovu spektru. NENÍ to Rohlinův `ind=0`, je to ABSENCE chirálního gradování γ5.
+- **Probe A** `eta(D_K)~N^1.02` (slope 1.019, eta/N~0.21, CV=0.42): extenzivní objemový mode-count, pravý opak N-nezávislého topologického náboje.
+- **Probe C**: n_rel~N^2.00, n_link~N^1.20, n_mol~N^0.32 — všechny extenzivní.
+
+Indexová ochrana -18/11 (Atiyah-Singer Â, Rohlin σ=16 => ind=-2) je vlastnost HLADKÉHO gradovaného Riemannského spinového sektoru, ne Lorentzovského causal setu. Skutečný most by vyžadoval: euklidizaci, chirální gradování (γ5, even spectral triple), saturující/kvantovaný invariant (Regge/CDT Euler χ nebo APS spektrální flow). Most existuje jen na úrovni NCG↔NCG gradovaných spektrálních triplů, NE causal-set↔Rohlin. **F-040 NEPŘIDÁN** (čistě negativní/analogický výsledek, ne nový finding).
+
+### Hrany nakresleně v kole 19 (+6)
+
+Pipeline dodržen: fragmenty → consolidate → link-prediction.
+
+| Hrana | Typ | Explored | Zdůvodnění |
+|---|---|---|---|
+| spectral-action ↔ trace-anomaly | shared-math | well | F-003/F-014, hep-th/9606001, hep-th/0306138 — dokázaná identita |
+| spectral-action ↔ central-charge | shared-math | well | táž evidence; (a,c) = a4 koeficienty E4/W² |
+| noncommutative-geometry ↔ trace-anomaly | shared-math | partially | pilíř-level umbrella nad #1/#2 |
+| noncommutative-geometry ↔ spectral-dimension | shared-math | barely | link-pred score 0.896, týž Tr(e^{-σD²}) heat-kernel |
+| trace-anomaly ↔ entanglement-entropy | shared-math | partially | CHM + Solodukhin kontinuální CFT; H-B negativní pro diskrétní c_EE |
+| a-theorem ↔ entanglement-entropy | shared-math | well | CHM a-věta přes EE monotonii; uzavírá a-theorem ostrov |
+
+**Podmíněná hrana NCG↔entanglement-entropy (LOV návrh #5) NEPŘIDÁNA** — H-B test (VYPOCET-35) ji měl potvrdit, ale výsledek byl no-match-geometric → hrana zůstává podržena a je tímto testem OSLABENA, ne potvrzena.
+
+Link prediction po kole 19: edges 1638 (+6), AUC mean 0.9057 (bylo 0.9034), std 0.0108 (utaženo), P@50 0.9975 (beze změny). Všech 6 nových hran vypadlo z kandidátní listiny. Nový top kandidát: conceptual-problems↔emergent-gravity (score 0.978).

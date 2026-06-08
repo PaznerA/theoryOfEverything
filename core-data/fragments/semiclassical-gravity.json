@@ -6,217 +6,400 @@
       "id": "qft-in-curved-spacetime",
       "name": "QFT in Curved Spacetime (QFTCS)",
       "definition": "Quantum field theory of matter fields propagating on a fixed classical globally hyperbolic spacetime (M,g). Gravity is treated classically and unquantized; there is no preferred vacuum and no observer-independent notion of particle. The foundational regime in which Unruh, Hawking and cosmological particle-production effects arise.",
-      "relatedTo": ["bogoliubov-transformation", "hadamard-state", "renormalized-stress-energy-tensor", "unruh-temperature", "hawking-radiation", "algebraic-qft"]
+      "relatedTo": [
+        "bogoliubov-transformation",
+        "hadamard-state",
+        "renormalized-stress-energy-tensor",
+        "unruh-temperature",
+        "hawking-radiation",
+        "algebraic-qft"
+      ]
     },
     {
       "id": "bogoliubov-transformation",
       "name": "Bogoliubov Transformation",
       "definition": "Linear transformation relating two complete mode bases of a quantum field, with coefficients alpha (mixing positive frequencies) and beta (mixing positive and negative frequencies). Nonzero beta means the 'in' vacuum contains 'out' particles; the particle number is sum |beta_ji|^2. The universal mechanism behind particle creation in Unruh, Hawking and cosmological contexts.",
-      "relatedTo": ["qft-in-curved-spacetime", "unruh-temperature", "hawking-radiation", "cosmological-particle-production", "vacuum-ambiguity"]
+      "relatedTo": [
+        "qft-in-curved-spacetime",
+        "unruh-temperature",
+        "hawking-radiation",
+        "cosmological-particle-production",
+        "vacuum-ambiguity"
+      ]
     },
     {
       "id": "unruh-temperature",
       "name": "Unruh Effect / Unruh Temperature",
       "definition": "A uniformly accelerated (Rindler) observer with proper acceleration a perceives the Minkowski vacuum as a thermal bath at temperature T_U = hbar a / (2 pi c k_B). Bogoliubov coefficients between Rindler and Minkowski modes yield an exact Bose-Einstein distribution; equivalent to the KMS condition at inverse temperature 2pi/a. Demonstrates the observer-dependence of the particle concept.",
-      "relatedTo": ["bogoliubov-transformation", "unruh-dewitt-detector", "kms-condition", "hawking-radiation", "local-rindler-horizon"]
+      "relatedTo": [
+        "bogoliubov-transformation",
+        "unruh-dewitt-detector",
+        "kms-condition",
+        "hawking-radiation",
+        "local-rindler-horizon"
+      ]
     },
     {
       "id": "unruh-dewitt-detector",
       "name": "Unruh-DeWitt Detector",
       "definition": "An idealized pointlike two-level system linearly coupled to the quantum field; its response (excitation rate) is the Fourier transform of the field's Wightman function pulled back along the detector trajectory. Operationalizes the otherwise observer-dependent notion of a 'particle' as a detector click.",
-      "relatedTo": ["unruh-temperature", "kms-condition", "qft-in-curved-spacetime"]
+      "relatedTo": [
+        "unruh-temperature",
+        "kms-condition",
+        "qft-in-curved-spacetime"
+      ]
     },
     {
       "id": "kms-condition",
       "name": "KMS Condition",
       "definition": "Kubo-Martin-Schwinger condition characterizing thermal equilibrium states in terms of analyticity of correlation functions under imaginary-time translation. In QFTCS, the Minkowski vacuum is a KMS state at temperature 2pi/a with respect to boost (Rindler) time, and the Hartle-Hawking state is KMS at the Hawking temperature with respect to horizon Killing time.",
-      "relatedTo": ["unruh-temperature", "hawking-radiation", "hadamard-state", "algebraic-qft"]
+      "relatedTo": [
+        "unruh-temperature",
+        "hawking-radiation",
+        "hadamard-state",
+        "algebraic-qft"
+      ]
     },
     {
       "id": "hawking-radiation",
       "name": "Hawking Radiation",
       "definition": "Quantum emission of (nearly) thermal radiation by a black hole at the Hawking temperature T_H = hbar kappa / (2 pi c k_B), with kappa the surface gravity. Derived via Bogoliubov mixing of in/out modes across the collapse; spectrum modified by greybody factors. Leads to evaporation (lifetime ~ M^3) and the information paradox.",
-      "relatedTo": ["bogoliubov-transformation", "unruh-temperature", "bekenstein-hawking-entropy", "trans-planckian-problem", "information-paradox", "page-curve"]
+      "relatedTo": [
+        "bogoliubov-transformation",
+        "unruh-temperature",
+        "bekenstein-hawking-entropy",
+        "trans-planckian-problem",
+        "information-paradox",
+        "page-curve"
+      ]
     },
     {
       "id": "trans-planckian-problem",
       "name": "Trans-Planckian Problem",
       "definition": "In the standard derivation of Hawking radiation, the emitted modes traced back to the horizon have arbitrarily high (trans-Planckian) frequencies, though these do not appear in the final answer. Raises the question of whether the result is robust against unknown UV/Planck-scale physics. Robust for monotonic dispersion and invariant cutoffs; modified by non-monotonic dispersion after the scrambling time.",
-      "relatedTo": ["hawking-radiation", "lorentz-violation", "analogue-hawking-radiation"]
+      "relatedTo": [
+        "hawking-radiation",
+        "lorentz-violation",
+        "analogue-hawking-radiation"
+      ]
     },
     {
       "id": "cosmological-particle-production",
       "name": "Cosmological / Gravitational Particle Production (GPP)",
       "definition": "Creation of particles by a time-dependent FLRW metric, which mixes positive and negative frequencies between adiabatic-vacuum in/out states. Conformally coupled massless fields are not produced in FLRW (conformal triviality); massive and minimally coupled fields are. A generic source of dark matter, dark radiation and cosmological relics during inflation and reheating.",
-      "relatedTo": ["bogoliubov-transformation", "adiabatic-vacuum", "trace-anomaly", "qft-in-curved-spacetime"]
+      "relatedTo": [
+        "bogoliubov-transformation",
+        "adiabatic-vacuum",
+        "trace-anomaly",
+        "qft-in-curved-spacetime"
+      ]
     },
     {
       "id": "adiabatic-vacuum",
       "name": "Adiabatic Vacuum",
       "definition": "An approximate vacuum state defined in slowly varying (adiabatic) cosmological backgrounds via a WKB expansion of mode functions; provides a physically motivated notion of 'no particles' and an order-by-order regularization (adiabatic subtraction) of the stress-energy tensor in FLRW.",
-      "relatedTo": ["cosmological-particle-production", "hadamard-state", "renormalized-stress-energy-tensor"]
+      "relatedTo": [
+        "cosmological-particle-production",
+        "hadamard-state",
+        "renormalized-stress-energy-tensor"
+      ]
     },
     {
       "id": "hadamard-state",
       "name": "Hadamard State",
       "definition": "A physically admissible state whose two-point function has the same short-distance singular structure as the Minkowski vacuum (Hadamard parametrix). Equivalently (Radzikowski) it satisfies the microlocal spectrum condition on its wavefront set. Ensures finiteness of the renormalized stress-energy tensor and serves as the curved-space replacement for a vacuum.",
-      "relatedTo": ["microlocal-spectrum-condition", "renormalized-stress-energy-tensor", "algebraic-qft", "qft-in-curved-spacetime", "kms-condition"]
+      "relatedTo": [
+        "microlocal-spectrum-condition",
+        "renormalized-stress-energy-tensor",
+        "algebraic-qft",
+        "qft-in-curved-spacetime",
+        "kms-condition"
+      ]
     },
     {
       "id": "microlocal-spectrum-condition",
       "name": "Microlocal Spectrum Condition",
       "definition": "A constraint on the wavefront set of the n-point distributions of a state, requiring singularities to propagate only along future-directed null geodesics (microlocal positive-frequency). Radzikowski proved its equivalence to the geometric Hadamard form, replacing the global spectrum condition unavailable in generic curved spacetime.",
-      "relatedTo": ["hadamard-state", "algebraic-qft", "renormalized-stress-energy-tensor"]
+      "relatedTo": [
+        "hadamard-state",
+        "algebraic-qft",
+        "renormalized-stress-energy-tensor"
+      ]
     },
     {
       "id": "renormalized-stress-energy-tensor",
       "name": "Renormalized Stress-Energy Tensor",
       "definition": "The expectation value <T_ab> obtained by subtracting the universal Hadamard parametrix (point-splitting/Hadamard renormalization). Satisfies Wald's axioms (local covariance, causality, conservation). For massless fields the ambiguity is two-parameter; for massive fields it is infinite-parameter (local curvature counterterms). Sources the semiclassical Einstein equation.",
-      "relatedTo": ["hadamard-state", "trace-anomaly", "semiclassical-einstein-equation", "wald-axioms", "quantum-energy-inequalities"]
+      "relatedTo": [
+        "hadamard-state",
+        "trace-anomaly",
+        "semiclassical-einstein-equation",
+        "wald-axioms",
+        "quantum-energy-inequalities"
+      ]
     },
     {
       "id": "wald-axioms",
       "name": "Wald Axioms for the Stress-Energy Tensor",
       "definition": "A set of axioms (local covariance, conservation, causality/locality, agreement with normal-ordering in Minkowski) that any acceptable renormalized <T_ab> must satisfy. They determine <T_ab> up to local curvature terms, fixing the renormalization ambiguity to a finite (massless) or infinite (massive) number of parameters.",
-      "relatedTo": ["renormalized-stress-energy-tensor", "trace-anomaly", "algebraic-qft"]
+      "relatedTo": [
+        "renormalized-stress-energy-tensor",
+        "trace-anomaly",
+        "algebraic-qft"
+      ]
     },
     {
       "id": "trace-anomaly",
       "name": "Trace (Conformal) Anomaly",
       "definition": "The quantum non-vanishing of the trace of the stress tensor for a classically conformal field: <T^a_a> = (1/(4pi)^2)(c C_abcd C^abcd - a E_4 + b box R), with C the Weyl tensor and E_4 the Euler/Gauss-Bonnet density. The a,c coefficients are model dependent. Fixes <T_ab> in conformally flat spacetimes and gives an anomaly route to Hawking flux.",
-      "relatedTo": ["renormalized-stress-energy-tensor", "hawking-radiation", "cosmological-particle-production", "a-theorem", "central-charge"]
+      "relatedTo": [
+        "renormalized-stress-energy-tensor",
+        "hawking-radiation",
+        "cosmological-particle-production",
+        "a-theorem",
+        "central-charge"
+      ]
     },
     {
       "id": "semiclassical-einstein-equation",
       "name": "Semiclassical Einstein Equation",
       "definition": "G_ab + Lambda g_ab = 8 pi G_N (<T_ab>_omega + alpha H1_ab + beta H2_ab): the classical metric is sourced by the renormalized expectation value of the quantum stress tensor, with higher-derivative counterterms. The system is fourth order (16 free data vs 4 constraints), produces runaway solutions, and requires a Hadamard state on the metric it itself generates.",
-      "relatedTo": ["renormalized-stress-energy-tensor", "stochastic-gravity", "noise-kernel", "order-reduction", "validity-of-semiclassical-gravity"]
+      "relatedTo": [
+        "renormalized-stress-energy-tensor",
+        "stochastic-gravity",
+        "noise-kernel",
+        "order-reduction",
+        "validity-of-semiclassical-gravity"
+      ]
     },
     {
       "id": "order-reduction",
       "name": "Order Reduction (Parker-Simon)",
       "definition": "A prescription to tame the fourth-order semiclassical Einstein equation by perturbatively re-expressing higher derivatives via the lower-order equations, reducing it to an effective second-order system and removing spurious runaway (Horowitz) solutions that grow on the Planck timescale.",
-      "relatedTo": ["semiclassical-einstein-equation", "validity-of-semiclassical-gravity"]
+      "relatedTo": [
+        "semiclassical-einstein-equation",
+        "validity-of-semiclassical-gravity"
+      ]
     },
     {
       "id": "validity-of-semiclassical-gravity",
       "name": "Validity Criterion of Semiclassical Gravity",
       "definition": "The question of when replacing T_ab by <T_ab> is justified. A stability/fluctuation criterion (via the noise kernel and Einstein-Langevin equation, Hu-Verdaguer) requires induced metric fluctuations to remain small; semiclassicality is expected to fail near the Page time and in the near-horizon region of an evaporating black hole, and for macroscopic 'cat states'.",
-      "relatedTo": ["semiclassical-einstein-equation", "stochastic-gravity", "noise-kernel", "page-time", "gravitationally-induced-decoherence"]
+      "relatedTo": [
+        "semiclassical-einstein-equation",
+        "stochastic-gravity",
+        "noise-kernel",
+        "page-time",
+        "gravitationally-induced-decoherence"
+      ]
     },
     {
       "id": "stochastic-gravity",
       "name": "Stochastic Gravity (Hu-Verdaguer)",
       "definition": "Extension of semiclassical gravity that incorporates fluctuations of the stress tensor via the noise kernel, leading to the Einstein-Langevin equation with a Gaussian stochastic source. Captures the second moment <T T> and, to leading order in large N, reproduces the quantum correlation functions of gravitons coupled to N matter fields.",
-      "relatedTo": ["noise-kernel", "semiclassical-einstein-equation", "validity-of-semiclassical-gravity", "post-quantum-classical-gravity"]
+      "relatedTo": [
+        "noise-kernel",
+        "semiclassical-einstein-equation",
+        "validity-of-semiclassical-gravity",
+        "post-quantum-classical-gravity"
+      ]
     },
     {
       "id": "noise-kernel",
       "name": "Noise Kernel",
       "definition": "The symmetrized two-point connected correlation function of the stress-tensor fluctuation operator, N_abcd(x,x') = (1/2)<{t_ab(x), t_cd(x')}>, which acts as the source covariance of the stochastic force in the Einstein-Langevin equation. Its magnitude provides a quantitative validity criterion for semiclassical gravity.",
-      "relatedTo": ["stochastic-gravity", "semiclassical-einstein-equation", "validity-of-semiclassical-gravity"]
+      "relatedTo": [
+        "stochastic-gravity",
+        "semiclassical-einstein-equation",
+        "validity-of-semiclassical-gravity"
+      ]
     },
     {
       "id": "algebraic-qft",
       "name": "Algebraic / Locally Covariant QFT",
       "definition": "Formulation of QFTCS in terms of *-algebras of observables on globally hyperbolic spacetimes, with locally covariant QFT realized as a functor from the category of such spacetimes (with causal isometric embeddings) to the category of unital algebras. Encodes general covariance and causality without a preferred vacuum.",
-      "relatedTo": ["hadamard-state", "microlocal-spectrum-condition", "qft-in-curved-spacetime", "relative-entropy", "modular-theory"]
+      "relatedTo": [
+        "hadamard-state",
+        "microlocal-spectrum-condition",
+        "qft-in-curved-spacetime",
+        "relative-entropy",
+        "modular-theory"
+      ]
     },
     {
       "id": "modular-theory",
       "name": "Tomita-Takesaki Modular Theory",
       "definition": "Operator-algebraic framework associating a modular Hamiltonian and modular flow to a state on a von Neumann algebra of a spacetime region. In QFTCS it underlies the geometric action of boosts on the Rindler wedge (Bisognano-Wichmann), the definition of relative entropy, and rigorous proofs of energy conditions.",
-      "relatedTo": ["algebraic-qft", "relative-entropy", "quantum-null-energy-condition", "unruh-temperature"]
+      "relatedTo": [
+        "algebraic-qft",
+        "relative-entropy",
+        "quantum-null-energy-condition",
+        "unruh-temperature"
+      ]
     },
     {
       "id": "relative-entropy",
       "name": "Relative Entropy in QFT",
       "definition": "Araki's relative entropy S(omega||vacuum) between a state and the vacuum, well-defined in QFT via modular theory. Equals modular energy minus vacuum-subtracted entanglement entropy; its positivity and monotonicity yield rigorous, model-independent proofs of the Bekenstein bound and the quantum null energy condition.",
-      "relatedTo": ["modular-theory", "quantum-null-energy-condition", "bekenstein-bound", "entanglement-entropy"]
+      "relatedTo": [
+        "modular-theory",
+        "quantum-null-energy-condition",
+        "bekenstein-bound",
+        "entanglement-entropy"
+      ]
     },
     {
       "id": "quantum-energy-inequalities",
       "name": "Quantum Energy Inequalities (QEI)",
       "definition": "State-independent lower bounds on weighted time-averages of the renormalized energy density (or null-projected stress tensor) of a quantum field, preventing arbitrarily large or persistent negative energy. The basis for proving ANEC, QNEC, and semiclassical singularity theorems in curved spacetime.",
-      "relatedTo": ["renormalized-stress-energy-tensor", "averaged-null-energy-condition", "quantum-null-energy-condition", "semiclassical-singularity-theorem"]
+      "relatedTo": [
+        "renormalized-stress-energy-tensor",
+        "averaged-null-energy-condition",
+        "quantum-null-energy-condition",
+        "semiclassical-singularity-theorem"
+      ]
     },
     {
       "id": "averaged-null-energy-condition",
       "name": "Averaged Null Energy Condition (ANEC)",
       "definition": "The condition that the integral of T_ab k^a k^b along a complete achronal null geodesic is non-negative. Violated pointwise by quantum fields but provable as an averaged statement from null-projected quantum inequalities; used to forbid traversable wormholes, superluminal travel and closed timelike curves.",
-      "relatedTo": ["quantum-energy-inequalities", "quantum-null-energy-condition", "renormalized-stress-energy-tensor"]
+      "relatedTo": [
+        "quantum-energy-inequalities",
+        "quantum-null-energy-condition",
+        "renormalized-stress-energy-tensor"
+      ]
     },
     {
       "id": "quantum-null-energy-condition",
       "name": "Quantum Null Energy Condition (QNEC)",
       "definition": "A local bound stating that the null energy density at a point is bounded below by the second variation of the entanglement entropy of a region whose boundary passes through that point. Proven from relative entropy/modular flow and implied by the quantum focusing conjecture; the semiclassical replacement of the classical null energy condition.",
-      "relatedTo": ["quantum-energy-inequalities", "quantum-focusing-conjecture", "relative-entropy", "generalized-entropy"]
+      "relatedTo": [
+        "quantum-energy-inequalities",
+        "quantum-focusing-conjecture",
+        "relative-entropy",
+        "generalized-entropy"
+      ]
     },
     {
       "id": "semiclassical-singularity-theorem",
       "name": "Semiclassical Singularity Theorem",
       "definition": "A Penrose-Hawking-type singularity theorem (geodesic incompleteness) derived not from a pointwise energy condition but from a quantum energy inequality satisfied by the quantized field (Fewster-Kontou 2022). Brings singularity theorems within the scope of QFT, predicting incompleteness on physically plausible timescales.",
-      "relatedTo": ["quantum-energy-inequalities", "averaged-null-energy-condition", "semiclassical-einstein-equation"]
+      "relatedTo": [
+        "quantum-energy-inequalities",
+        "averaged-null-energy-condition",
+        "semiclassical-einstein-equation"
+      ]
     },
     {
       "id": "wald-entropy",
       "name": "Wald Entropy",
       "definition": "Black-hole entropy expressed as the Noether charge of diffeomorphism invariance: S_W = -2 pi integral over the horizon cross-section of (dL/dR_abcd) eps_ab eps_cd. For the Einstein-Hilbert Lagrangian it reduces to A/4G; for higher-curvature (Lovelock, Gauss-Bonnet, f(R)) theories it gives the correct corrections and satisfies the first law.",
-      "relatedTo": ["bekenstein-hawking-entropy", "generalized-entropy", "hawking-radiation", "four-laws-black-hole-mechanics"]
+      "relatedTo": [
+        "bekenstein-hawking-entropy",
+        "generalized-entropy",
+        "hawking-radiation",
+        "four-laws-black-hole-mechanics"
+      ]
     },
     {
       "id": "bekenstein-hawking-entropy",
       "name": "Bekenstein-Hawking Entropy",
       "definition": "The entropy S_BH = A c^3 / (4 G hbar k_B) = A/4 (Planck units) assigned to a black-hole horizon of area A, derived from Hawking radiation and the first law. The semiclassical area law that any microscopic theory of gravity must reproduce.",
-      "relatedTo": ["wald-entropy", "hawking-radiation", "generalized-entropy", "generalized-second-law"]
+      "relatedTo": [
+        "wald-entropy",
+        "hawking-radiation",
+        "generalized-entropy",
+        "generalized-second-law"
+      ]
     },
     {
       "id": "generalized-entropy",
       "name": "Generalized Entropy",
       "definition": "S_gen = A/4G hbar + S_out^vN: the sum of the horizon (or surface) area in Planck units and the von Neumann entropy of quantum fields outside it. The central object of the generalized second law, the quantum focusing conjecture, and the island/quantum-extremal-surface prescription for the Page curve.",
-      "relatedTo": ["bekenstein-hawking-entropy", "wald-entropy", "generalized-second-law", "quantum-focusing-conjecture", "page-curve", "quantum-extremal-surface"]
+      "relatedTo": [
+        "bekenstein-hawking-entropy",
+        "wald-entropy",
+        "generalized-second-law",
+        "quantum-focusing-conjecture",
+        "page-curve",
+        "quantum-extremal-surface"
+      ]
     },
     {
       "id": "generalized-second-law",
       "name": "Generalized Second Law (GSL)",
       "definition": "The statement that the generalized entropy S_matter + A/4G never decreases, extending the ordinary second law of thermodynamics to systems containing black holes. A cornerstone semiclassical result linking horizon area, Hawking radiation and quantum-field entropy.",
-      "relatedTo": ["generalized-entropy", "bekenstein-hawking-entropy", "hawking-radiation", "quantum-focusing-conjecture"]
+      "relatedTo": [
+        "generalized-entropy",
+        "bekenstein-hawking-entropy",
+        "hawking-radiation",
+        "quantum-focusing-conjecture"
+      ]
     },
     {
       "id": "quantum-focusing-conjecture",
       "name": "Quantum Focusing Conjecture (QFC)",
       "definition": "Bousso-Wall conjecture that the quantum expansion (the derivative of generalized entropy per unit area along a null congruence) is non-increasing. Unifies the Bousso bound with classical focusing at the semiclassical level and implies the quantum null energy condition.",
-      "relatedTo": ["generalized-entropy", "quantum-null-energy-condition", "covariant-entropy-bound", "averaged-null-energy-condition"]
+      "relatedTo": [
+        "generalized-entropy",
+        "quantum-null-energy-condition",
+        "covariant-entropy-bound",
+        "averaged-null-energy-condition"
+      ]
     },
     {
       "id": "gravitationally-induced-decoherence",
       "name": "Gravitationally Induced Decoherence",
       "definition": "Loss of quantum coherence of spatial superpositions of matter due to coupling to the gravitational field (quantized or classical/stochastic). Includes Diosi-Penrose decoherence and decoherence by emission of soft gravitons; a key potentially observable discriminator between semiclassical and quantized-gravity scenarios.",
-      "relatedTo": ["diosi-penrose-model", "gravitationally-induced-entanglement", "validity-of-semiclassical-gravity", "spacetime-superposition"]
+      "relatedTo": [
+        "diosi-penrose-model",
+        "gravitationally-induced-entanglement",
+        "validity-of-semiclassical-gravity",
+        "spacetime-superposition"
+      ]
     },
     {
       "id": "diosi-penrose-model",
       "name": "Diosi-Penrose Model",
       "definition": "A gravity-related objective wavefunction-collapse model in which a superposition of distinct mass distributions decoheres on a timescale tau ~ hbar/E_G, where E_G is the gravitational self-energy of the difference of the two mass distributions. Provides a testable prediction distinguishing classical-gravity collapse from unitary quantum gravity.",
-      "relatedTo": ["gravitationally-induced-decoherence", "spacetime-superposition", "gravitationally-induced-entanglement", "measurement-problem"]
+      "relatedTo": [
+        "gravitationally-induced-decoherence",
+        "spacetime-superposition",
+        "gravitationally-induced-entanglement",
+        "measurement-problem"
+      ]
     },
     {
       "id": "gravitationally-induced-entanglement",
       "name": "Gravitationally Induced Entanglement (GIE)",
       "definition": "Generation of entanglement between two spatially superposed masses via their mutual gravitational interaction (Bose et al., Marletto-Vedral 2017). Argued to witness the quantum nature of gravity, but recent work shows classical/post-quantum gravity models can also produce it, weakening theory-independent no-go claims.",
-      "relatedTo": ["gravitationally-induced-decoherence", "diosi-penrose-model", "spacetime-superposition", "post-quantum-classical-gravity"]
+      "relatedTo": [
+        "gravitationally-induced-decoherence",
+        "diosi-penrose-model",
+        "spacetime-superposition",
+        "post-quantum-classical-gravity"
+      ]
     },
     {
       "id": "spacetime-superposition",
       "name": "Spacetime Superposition",
       "definition": "A quantum superposition of distinct gravitational fields / spacetime geometries sourced by a mass in superposition of locations. Central to Penrose's collapse argument and to debates over whether GIE experiments genuinely probe quantized geometry or only the Newtonian potential.",
-      "relatedTo": ["gravitationally-induced-decoherence", "gravitationally-induced-entanglement", "diosi-penrose-model"]
+      "relatedTo": [
+        "gravitationally-induced-decoherence",
+        "gravitationally-induced-entanglement",
+        "diosi-penrose-model"
+      ]
     },
     {
       "id": "post-quantum-classical-gravity",
       "name": "Post-Quantum Classical Gravity (Oppenheim)",
       "definition": "A consistent framework coupling a fundamentally classical, stochastically fluctuating spacetime metric to quantum matter, evading no-go theorems by abandoning reversibility. Predicts unavoidable metric diffusion and gravitational decoherence, experimentally constrained by mass-localization (diffusion) measurements.",
-      "relatedTo": ["stochastic-gravity", "gravitationally-induced-decoherence", "validity-of-semiclassical-gravity", "measurement-problem"]
+      "relatedTo": [
+        "stochastic-gravity",
+        "gravitationally-induced-decoherence",
+        "validity-of-semiclassical-gravity",
+        "measurement-problem"
+      ]
     }
   ],
   "formulas": [
@@ -849,6 +1032,20 @@
       "type": "shared-structure",
       "description": "The Page curve is computed within semiclassical gravity once quantum extremal surfaces / islands and replica wormholes are included, showing that the semiclassical gravitational path integral itself encodes unitary information return; the relation to the alternative semiclassical 'final singularity' resolution is open.",
       "explored": "well"
+    },
+    {
+      "from": "trace-anomaly",
+      "to": "entanglement-entropy",
+      "type": "shared-math",
+      "explored": "partially",
+      "description": "The trace-anomaly charges (a,c) govern the universal terms of entanglement entropy in d=4: the universal logarithmic coefficient is controlled by c (and a, via the geometry of the entangling surface), and the spherical/Renyi entanglement entropy of a CFT is set by a. This is the bridge from the anomaly cluster to the entanglement-entropy line. Established literature (convention note, no repo computation yet): Casini-Huerta-Myers (spherical EE = a), Solodukhin (log coefficient ~ c). Repo anchor: F-029 extracts a dimensionless c_EE coefficient (c^2D_EE ~ 7.70, CV 3%), whose relation to the anomalous (a,c) is the H-B test target."
+    },
+    {
+      "from": "a-theorem",
+      "to": "entanglement-entropy",
+      "type": "shared-math",
+      "explored": "well",
+      "description": "The 4D a-theorem (monotonic decrease of the a-charge under RG flow) was PROVEN via entanglement entropy: the spherical entanglement entropy of a CFT equals the a-charge (Casini-Huerta-Myers), and strong subadditivity / entanglement monotonicity of EE yields the a-theorem (Casini-Huerta). This closes the a-theorem island, which previously carried a single edge. Established literature (convention note, no invented arXiv IDs): Casini-Huerta-Myers, Casini-Huerta; original a-theorem proof Komargodski-Schwimmer."
     }
   ]
 }

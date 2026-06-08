@@ -6,205 +6,361 @@
       "id": "spectral-triple",
       "name": "Spectral triple",
       "definition": "A triple (A, H, D) of a *-algebra A represented as bounded operators on a Hilbert space H together with a self-adjoint Dirac operator D with compact resolvent such that [D, a] is bounded for all a in A. It is the noncommutative generalization of a smooth compact Riemannian spin manifold; all geometric information is encoded in D.",
-      "relatedTo": ["dirac-operator", "real-structure-j", "connes-distance-formula", "reconstruction-theorem", "ko-dimension", "almost-commutative-geometry"]
+      "relatedTo": [
+        "dirac-operator",
+        "real-structure-j",
+        "connes-distance-formula",
+        "reconstruction-theorem",
+        "ko-dimension",
+        "almost-commutative-geometry"
+      ]
     },
     {
       "id": "dirac-operator",
       "name": "Dirac operator (spectral geometry)",
       "definition": "Self-adjoint unbounded operator D with compact resolvent that encodes the metric, dimension and differential structure of a noncommutative space; its spectrum determines the geometry and the spectral action depends only on it.",
-      "relatedTo": ["spectral-triple", "spectral-action", "inner-fluctuations", "connes-distance-formula"]
+      "relatedTo": [
+        "spectral-triple",
+        "spectral-action",
+        "inner-fluctuations",
+        "connes-distance-formula"
+      ]
     },
     {
       "id": "real-structure-j",
       "name": "Real structure (charge conjugation J)",
       "definition": "Antiunitary operator J on H satisfying J^2 = epsilon, JD = epsilon' DJ, J gamma = epsilon'' gamma J, with signs fixed by the KO-dimension mod 8. It makes the spectral triple 'real', encodes charge conjugation, and the choice KO-dim 6 mod 8 resolves fermion doubling in the Standard Model.",
-      "relatedTo": ["spectral-triple", "ko-dimension", "fermion-doubling", "first-order-condition"]
+      "relatedTo": [
+        "spectral-triple",
+        "ko-dimension",
+        "fermion-doubling",
+        "first-order-condition"
+      ]
     },
     {
       "id": "ko-dimension",
       "name": "KO-dimension",
       "definition": "The dimension modulo 8 (from Bott periodicity of real Clifford algebras) determining the sign table (epsilon, epsilon', epsilon'') of the real structure J. The finite Standard Model space has KO-dimension 6 mod 8; total spacetime is 4 + 6 = 10 = 2 mod 8.",
-      "relatedTo": ["real-structure-j", "spectral-triple", "fermion-doubling"]
+      "relatedTo": [
+        "real-structure-j",
+        "spectral-triple",
+        "fermion-doubling"
+      ]
     },
     {
       "id": "connes-distance-formula",
       "name": "Connes distance formula",
       "definition": "Metric reconstructed from the Dirac operator as d(phi, psi) = sup{ |phi(a) - psi(a)| : ||[D, a]|| <= 1 }. Recovers geodesic distance for pure states on a manifold and the order-1 Wasserstein (optimal transport) distance for mixed states. The metric is derived, not postulated.",
-      "relatedTo": ["spectral-triple", "dirac-operator"]
+      "relatedTo": [
+        "spectral-triple",
+        "dirac-operator"
+      ]
     },
     {
       "id": "reconstruction-theorem",
       "name": "Reconstruction theorem",
       "definition": "Connes' theorem (2008): a commutative spectral triple satisfying seven axioms (dimension, regularity, finiteness, reality, first-order, orientability, Poincare duality) necessarily arises from a compact oriented Riemannian spin manifold. Establishes the equivalence geometry = algebra + Dirac operator.",
-      "relatedTo": ["spectral-triple", "first-order-condition"]
+      "relatedTo": [
+        "spectral-triple",
+        "first-order-condition"
+      ]
     },
     {
       "id": "first-order-condition",
       "name": "First-order condition",
       "definition": "Axiom [[D, a], J b* J^{-1}] = 0 stating that D acts as a first-order differential operator. Relaxing it (post-2013) yields Pati-Salam extensions and inner fluctuations beyond the Standard Model.",
-      "relatedTo": ["spectral-triple", "reconstruction-theorem", "pati-salam-spectral", "inner-fluctuations"]
+      "relatedTo": [
+        "spectral-triple",
+        "reconstruction-theorem",
+        "pati-salam-spectral",
+        "inner-fluctuations"
+      ]
     },
     {
       "id": "spectral-action",
       "name": "Spectral action principle",
       "definition": "Action principle S = Tr f(D/Lambda) + <psi, D psi> asserting that all physics depends only on the spectrum of the Dirac operator. Its heat-kernel expansion yields gravity (cosmological constant, Einstein-Hilbert, Weyl) plus Yang-Mills and Higgs sectors of the Standard Model from a single functional.",
-      "relatedTo": ["spectral-triple", "dirac-operator", "heat-kernel-expansion", "standard-model-from-geometry", "inner-fluctuations", "almost-commutative-geometry"]
+      "relatedTo": [
+        "spectral-triple",
+        "dirac-operator",
+        "heat-kernel-expansion",
+        "standard-model-from-geometry",
+        "inner-fluctuations",
+        "almost-commutative-geometry"
+      ]
     },
     {
       "id": "heat-kernel-expansion",
       "name": "Heat-kernel (Seeley-DeWitt) expansion",
       "definition": "Asymptotic expansion Tr f(D/Lambda) ~ f_4 Lambda^4 a_0 + f_2 Lambda^2 a_2 + f_0 a_4 + O(Lambda^-2) in terms of Seeley-DeWitt coefficients a_k of D^2; produces the cosmological constant (Lambda^4), the Einstein-Hilbert term (Lambda^2, Newton constant), and the Weyl-squared term (Lambda^0).",
-      "relatedTo": ["spectral-action", "cosmological-constant-problem"]
+      "relatedTo": [
+        "spectral-action",
+        "cosmological-constant-problem"
+      ]
     },
     {
       "id": "almost-commutative-geometry",
       "name": "Almost-commutative geometry",
       "definition": "Product of a continuous 4-manifold M with a finite noncommutative space F: A = C^infinity(M) tensor A_F. The continuous factor encodes gravity; the finite factor encodes internal gauge degrees of freedom of particle physics.",
-      "relatedTo": ["spectral-triple", "finite-sm-algebra", "spectral-action", "standard-model-from-geometry"]
+      "relatedTo": [
+        "spectral-triple",
+        "finite-sm-algebra",
+        "spectral-action",
+        "standard-model-from-geometry"
+      ]
     },
     {
       "id": "finite-sm-algebra",
       "name": "Finite Standard Model algebra",
       "definition": "The finite algebra A_F = C + H + M_3(C) (complex numbers, quaternions, 3x3 matrices) whose unitary group, after unimodular reduction, yields the gauge group U(1) x SU(2) x SU(3) of the Standard Model.",
-      "relatedTo": ["almost-commutative-geometry", "standard-model-from-geometry", "quanta-of-geometry"]
+      "relatedTo": [
+        "almost-commutative-geometry",
+        "standard-model-from-geometry",
+        "quanta-of-geometry"
+      ]
     },
     {
       "id": "inner-fluctuations",
       "name": "Inner fluctuations of the metric",
       "definition": "Fluctuations D -> D_A = D + A + epsilon' J A J^{-1} with A = sum a_i [D, b_i], generated by inner automorphisms of the algebra. The continuous part gives gauge fields; the discrete part gives the Higgs field.",
-      "relatedTo": ["spectral-action", "higgs-as-connection", "standard-model-from-geometry", "dirac-operator"]
+      "relatedTo": [
+        "spectral-action",
+        "higgs-as-connection",
+        "standard-model-from-geometry",
+        "dirac-operator"
+      ]
     },
     {
       "id": "higgs-as-connection",
       "name": "Higgs field as a connection",
       "definition": "In almost-commutative geometry the Higgs field arises from off-diagonal components of the finite Dirac operator, interpreted as parallel transport in the discrete internal direction; its quartic potential is fixed by the spectral action.",
-      "relatedTo": ["inner-fluctuations", "standard-model-from-geometry", "spectral-action"]
+      "relatedTo": [
+        "inner-fluctuations",
+        "standard-model-from-geometry",
+        "spectral-action"
+      ]
     },
     {
       "id": "standard-model-from-geometry",
       "name": "Standard Model from spectral geometry",
       "definition": "Derivation of the full Standard Model (gauge group, fermion representations, hypercharges, Higgs, neutrino mixing) minimally coupled to gravity from the spectral action on an almost-commutative geometry with finite algebra C + H + M_3(C).",
-      "relatedTo": ["spectral-action", "almost-commutative-geometry", "finite-sm-algebra", "higgs-as-connection", "pati-salam-spectral", "fermion-doubling"]
+      "relatedTo": [
+        "spectral-action",
+        "almost-commutative-geometry",
+        "finite-sm-algebra",
+        "higgs-as-connection",
+        "pati-salam-spectral",
+        "fermion-doubling"
+      ]
     },
     {
       "id": "fermion-doubling",
       "name": "Fermion doubling problem",
       "definition": "Spurious multiplication of fermionic degrees of freedom in the noncommutative Standard Model, resolved by choosing KO-dimension 6 mod 8 for the finite space and using the real structure J to enforce correct charge-conjugate pairing.",
-      "relatedTo": ["real-structure-j", "ko-dimension", "standard-model-from-geometry", "wick-rotation-problem"]
+      "relatedTo": [
+        "real-structure-j",
+        "ko-dimension",
+        "standard-model-from-geometry",
+        "wick-rotation-problem"
+      ]
     },
     {
       "id": "quanta-of-geometry",
       "name": "Quanta of geometry (volume quantization)",
       "definition": "A higher-degree Heisenberg relation involving D and Feynman-slashed coordinates Y (Y^2=1) implies quantization of the volume in Planck units; in dimension 4 the two-sided version forces the algebras M_2(H) and M_4(C) underlying the Standard Model.",
-      "relatedTo": ["finite-sm-algebra", "spectral-triple", "standard-model-from-geometry"]
+      "relatedTo": [
+        "finite-sm-algebra",
+        "spectral-triple",
+        "standard-model-from-geometry"
+      ]
     },
     {
       "id": "noncommutative-spacetime",
       "name": "Noncommutative spacetime",
       "definition": "Spacetime whose coordinates are operators with nonzero commutators: canonical/Moyal [x^mu, x^nu] = i theta^{mu nu} or Lie-algebra type kappa-Minkowski [x^0, x^i] = (i/kappa) x^i, implying minimal length and modified dispersion relations.",
-      "relatedTo": ["moyal-product", "kappa-minkowski", "minimal-length", "dfr-quantum-spacetime"]
+      "relatedTo": [
+        "moyal-product",
+        "kappa-minkowski",
+        "minimal-length",
+        "dfr-quantum-spacetime"
+      ]
     },
     {
       "id": "moyal-product",
       "name": "Moyal star product",
       "definition": "Noncommutative product (f star g)(x) = exp((i/2) theta^{mu nu} d_mu^x d_nu^y) f(x) g(y)|_{y=x} replacing pointwise multiplication; encodes canonical noncommutativity at the level of the function algebra. Appears in D-brane effective theories.",
-      "relatedTo": ["noncommutative-spacetime", "seiberg-witten-map", "noncommutative-qft"]
+      "relatedTo": [
+        "noncommutative-spacetime",
+        "seiberg-witten-map",
+        "noncommutative-qft"
+      ]
     },
     {
       "id": "kappa-minkowski",
       "name": "kappa-Minkowski spacetime",
       "definition": "Lie-algebra noncommutative spacetime with [x^0, x^i] = (i/kappa) x^i, [x^i, x^j] = 0, where kappa is a Planck-energy scale. It is dual to the momentum sector of the kappa-Poincare Hopf algebra and underlies many DSR models.",
-      "relatedTo": ["noncommutative-spacetime", "kappa-poincare", "doubly-special-relativity"]
+      "relatedTo": [
+        "noncommutative-spacetime",
+        "kappa-poincare",
+        "doubly-special-relativity"
+      ]
     },
     {
       "id": "kappa-poincare",
       "name": "kappa-Poincare Hopf algebra",
       "definition": "Quantum (Hopf-algebra) deformation of the Poincare algebra that is the symmetry of kappa-Minkowski spacetime; its bicrossproduct basis yields deformed boosts and an energy-dependent speed of light, reducing to ordinary Poincare as kappa -> infinity.",
-      "relatedTo": ["kappa-minkowski", "doubly-special-relativity", "noncommutative-spacetime"]
+      "relatedTo": [
+        "kappa-minkowski",
+        "doubly-special-relativity",
+        "noncommutative-spacetime"
+      ]
     },
     {
       "id": "doubly-special-relativity",
       "name": "Doubly/deformed special relativity (DSR)",
       "definition": "Relativistic framework with two observer-independent scales: the speed of light c and a Planck length/energy scale. Realized via kappa-Poincare; predicts deformed dispersion relations and energy-dependent photon velocity testable with gamma-ray bursts.",
-      "relatedTo": ["kappa-poincare", "kappa-minkowski", "minimal-length", "lorentz-invariance-violation", "relative-locality"]
+      "relatedTo": [
+        "kappa-poincare",
+        "kappa-minkowski",
+        "minimal-length",
+        "lorentz-invariance-violation",
+        "relative-locality"
+      ]
     },
     {
       "id": "relative-locality",
       "name": "Relative locality",
       "definition": "Principle that locality of events becomes observer-dependent when momentum space is curved/noncommutative; a refinement of DSR in which coincidence of events at a distance is not absolute.",
-      "relatedTo": ["doubly-special-relativity", "kappa-poincare"]
+      "relatedTo": [
+        "doubly-special-relativity",
+        "kappa-poincare"
+      ]
     },
     {
       "id": "minimal-length",
       "name": "Minimal length",
       "definition": "A fundamental, observer-independent minimal measurable length, typically of order the Planck length, predicted by string theory, LQG, noncommutative geometry, DSR and black-hole physics. Implemented via the generalized uncertainty principle.",
-      "relatedTo": ["generalized-uncertainty-principle", "noncommutative-spacetime", "doubly-special-relativity", "dfr-quantum-spacetime"]
+      "relatedTo": [
+        "generalized-uncertainty-principle",
+        "noncommutative-spacetime",
+        "doubly-special-relativity",
+        "dfr-quantum-spacetime"
+      ]
     },
     {
       "id": "generalized-uncertainty-principle",
       "name": "Generalized uncertainty principle (GUP)",
       "definition": "Modified commutator [x, p] = i hbar (1 + beta p^2) leading to Delta x Delta p >= (hbar/2)(1 + beta (Delta p)^2 + ...) and a minimal position uncertainty Delta x_min = hbar sqrt(beta). A model-independent phenomenological signature of quantum gravity.",
-      "relatedTo": ["minimal-length", "noncommutative-spacetime", "doubly-special-relativity"]
+      "relatedTo": [
+        "minimal-length",
+        "noncommutative-spacetime",
+        "doubly-special-relativity"
+      ]
     },
     {
       "id": "dfr-quantum-spacetime",
       "name": "Doplicher-Fredenhagen-Roberts quantum spacetime",
       "definition": "Model deriving spacetime noncommutativity [x^mu, x^nu] = i ell_P^2 Q^{mu nu} from the requirement that localizing an event better than the Planck length would create a black hole, combining the Heisenberg principle with classical gravity.",
-      "relatedTo": ["noncommutative-spacetime", "minimal-length", "spacetime-uncertainty"]
+      "relatedTo": [
+        "noncommutative-spacetime",
+        "minimal-length",
+        "spacetime-uncertainty"
+      ]
     },
     {
       "id": "fuzzy-spaces",
       "name": "Fuzzy spaces",
       "definition": "Finite matrix approximations of manifolds (e.g. fuzzy sphere S^2_N) whose function algebra is M_N(C); spherical harmonics are truncated at a maximal spin. They are finite spectral triples with matrix Dirac operators and converge to the continuum as N -> infinity.",
-      "relatedTo": ["fuzzy-sphere", "random-ncg", "matrix-models", "spectral-triple"]
+      "relatedTo": [
+        "fuzzy-sphere",
+        "random-ncg",
+        "matrix-models",
+        "spectral-triple"
+      ]
     },
     {
       "id": "fuzzy-sphere",
       "name": "Fuzzy sphere",
       "definition": "Canonical noncommutative geometry approximating S^2: algebra M_N(C) generated by truncated spherical harmonics with [x_i, x_j] = i (theta) epsilon_{ijk} x_k; recovers the round 2-sphere as N -> infinity.",
-      "relatedTo": ["fuzzy-spaces", "noncommutative-spacetime", "matrix-models"]
+      "relatedTo": [
+        "fuzzy-spaces",
+        "noncommutative-spacetime",
+        "matrix-models"
+      ]
     },
     {
       "id": "random-ncg",
       "name": "Random noncommutative geometry (Dirac ensembles)",
       "definition": "Path-integral quantization over fluctuating finite Dirac operators on finite real spectral triples (fuzzy geometries), a noncommutative analogue of integration over metrics. Reduces to multimatrix integrals; studied by Barrett-Glaser numerically and analytically.",
-      "relatedTo": ["fuzzy-spaces", "matrix-models", "spectral-action", "liouville-quantum-gravity", "spectral-triple"]
+      "relatedTo": [
+        "fuzzy-spaces",
+        "matrix-models",
+        "spectral-action",
+        "liouville-quantum-gravity",
+        "spectral-triple"
+      ]
     },
     {
       "id": "matrix-models",
       "name": "Matrix models (IKKT/BFSS, multimatrix)",
       "definition": "Models whose dynamical variables are large matrices; fuzzy spaces and noncommutative gauge theories emerge from them, and effective Riemannian geometry/gravity emerges from matrix fluctuations. Multimatrix integrals arise from Dirac ensembles.",
-      "relatedTo": ["random-ncg", "fuzzy-spaces", "emergent-geometry", "noncommutative-qft"]
+      "relatedTo": [
+        "random-ncg",
+        "fuzzy-spaces",
+        "emergent-geometry",
+        "noncommutative-qft"
+      ]
     },
     {
       "id": "pati-salam-spectral",
       "name": "Spectral Pati-Salam model",
       "definition": "Beyond-Standard-Model unification SU(2)_L x SU(2)_R x SU(4) obtained by relaxing the first-order condition in the spectral framework, exhibiting grand unification of the Pati-Salam gauge couplings.",
-      "relatedTo": ["first-order-condition", "standard-model-from-geometry", "grand-unification"]
+      "relatedTo": [
+        "first-order-condition",
+        "standard-model-from-geometry",
+        "grand-unification"
+      ]
     },
     {
       "id": "seiberg-witten-map",
       "name": "Seiberg-Witten map",
       "definition": "Explicit field redefinition mapping a commutative gauge theory to an equivalent noncommutative (Moyal) one; underlies the equivalence of commutative and noncommutative descriptions of D-branes in a constant B-field.",
-      "relatedTo": ["moyal-product", "noncommutative-qft", "string-theory"]
+      "relatedTo": [
+        "moyal-product",
+        "noncommutative-qft",
+        "string-theory"
+      ]
     },
     {
       "id": "noncommutative-qft",
       "name": "Noncommutative quantum field theory",
       "definition": "QFT on noncommutative spacetime (Moyal or kappa-Minkowski) using star products; exhibits UV/IR mixing, modified propagators and, for kappa-Minkowski, nontrivial coproducts requiring braided/Hopf-algebraic treatment.",
-      "relatedTo": ["moyal-product", "kappa-minkowski", "seiberg-witten-map", "spectral-dimension"]
+      "relatedTo": [
+        "moyal-product",
+        "kappa-minkowski",
+        "seiberg-witten-map",
+        "spectral-dimension"
+      ]
     },
     {
       "id": "spectral-dimension",
       "name": "Spectral dimension",
       "definition": "Effective dimension probed by diffusion/heat-kernel return probability. In several deformed noncommutative models (and in asymptotic safety, CDT, LQG) it runs from 4 in the IR toward 2 in the UV ('dimensional reduction'), depending on the choice of deformed Laplacian.",
-      "relatedTo": ["noncommutative-qft", "heat-kernel-expansion", "dimensional-reduction"]
+      "relatedTo": [
+        "noncommutative-qft",
+        "heat-kernel-expansion",
+        "dimensional-reduction"
+      ]
     },
     {
       "id": "dimensional-reduction",
       "name": "UV dimensional reduction",
       "definition": "Phenomenon, shared across many quantum-gravity approaches, in which the effective (spectral) dimension of spacetime drops to about 2 at short distances. In NCG it is sensitive to the deformed Laplacian/star product chosen.",
-      "relatedTo": ["spectral-dimension", "asymptotic-safety", "causal-dynamical-triangulations"]
+      "relatedTo": [
+        "spectral-dimension",
+        "asymptotic-safety",
+        "causal-dynamical-triangulations"
+      ]
     }
   ],
   "formulas": [
@@ -315,38 +471,312 @@
     }
   ],
   "references": [
-    { "id": "snyder-1947", "authors": "H. S. Snyder", "title": "Quantized Space-Time", "year": 1947, "doi": "10.1103/PhysRev.71.38", "url": "https://doi.org/10.1103/PhysRev.71.38", "significance": "First model of noncommutative spacetime; anticipated NCG by decades." },
-    { "id": "dfr-1995", "authors": "S. Doplicher, K. Fredenhagen, J. E. Roberts", "title": "The quantum structure of spacetime at the Planck scale and quantum fields", "year": 1995, "arxiv": "hep-th/0303037", "doi": "10.1007/BF02104515", "url": "https://arxiv.org/abs/hep-th/0303037", "significance": "Derives spacetime noncommutativity from quantum mechanics plus classical gravity (black-hole localization bound)." },
-    { "id": "connes-1994", "authors": "A. Connes", "title": "Noncommutative Geometry", "year": 1994, "url": "https://www.alainconnes.org/docs/book94bigpdf.pdf", "significance": "Founding monograph; axioms of the spectral triple." },
-    { "id": "connes-1995", "authors": "A. Connes", "title": "Noncommutative geometry and reality", "year": 1995, "doi": "10.1063/1.531241", "url": "https://doi.org/10.1063/1.531241", "significance": "Introduces real structure J and KO-dimension, central to the SM construction." },
-    { "id": "chamseddine-connes-1996", "authors": "A. H. Chamseddine, A. Connes", "title": "The Spectral Action Principle", "year": 1996, "arxiv": "hep-th/9606001", "doi": "10.1007/s002200050126", "url": "https://arxiv.org/abs/hep-th/9606001", "significance": "Foundational: physics depends only on the spectrum of D; yields gravity plus gauge theory." },
-    { "id": "kempf-mangano-mann-1995", "authors": "A. Kempf, G. Mangano, R. B. Mann", "title": "Hilbert space representation of the minimal length uncertainty relation", "year": 1995, "arxiv": "hep-th/9412167", "doi": "10.1103/PhysRevD.52.1108", "url": "https://arxiv.org/abs/hep-th/9412167", "significance": "Canonical formalism for GUP and minimal length." },
-    { "id": "seiberg-witten-1999", "authors": "N. Seiberg, E. Witten", "title": "String Theory and Noncommutative Geometry", "year": 1999, "arxiv": "hep-th/9908142", "doi": "10.1088/1126-6708/1999/09/032", "url": "https://arxiv.org/abs/hep-th/9908142", "significance": "Establishes the string-theory bridge to Moyal NCG and the Seiberg-Witten map." },
-    { "id": "amelino-camelia-2002", "authors": "G. Amelino-Camelia", "title": "Doubly-Special Relativity: facts, myths and some key open issues", "year": 2010, "arxiv": "1003.3942", "doi": "10.3390/sym2010230", "url": "https://arxiv.org/abs/1003.3942", "significance": "Authoritative review of DSR and its relation to kappa-Poincare." },
-    { "id": "chamseddine-connes-marcolli-2007", "authors": "A. H. Chamseddine, A. Connes, M. Marcolli", "title": "Gravity and the standard model with neutrino mixing", "year": 2007, "arxiv": "hep-th/0610241", "doi": "10.4310/ATMP.2007.v11.n6.a3", "url": "https://arxiv.org/abs/hep-th/0610241", "significance": "Full Standard Model with neutrino mixing coupled to gravity from NCG." },
-    { "id": "connes-2008", "authors": "A. Connes", "title": "On the spectral characterization of manifolds", "year": 2008, "arxiv": "0810.2088", "doi": "10.4171/JNCG/108", "url": "https://arxiv.org/abs/0810.2088", "significance": "Reconstruction theorem: commutative spectral triples are exactly Riemannian spin manifolds." },
-    { "id": "aastrup-grimstrup-nest-2009", "authors": "J. Aastrup, J. M. Grimstrup, R. Nest", "title": "On Spectral Triples in Quantum Gravity I", "year": 2009, "arxiv": "0802.1783", "doi": "10.1088/0264-9381/26/6/065011", "url": "https://arxiv.org/abs/0802.1783", "significance": "Builds a spectral triple over the space of connections, bridging NCG and loop quantum gravity." },
-    { "id": "chamseddine-connes-2012", "authors": "A. H. Chamseddine, A. Connes", "title": "Resilience of the Spectral Standard Model", "year": 2012, "arxiv": "1208.1030", "doi": "10.1007/JHEP09(2012)104", "url": "https://arxiv.org/abs/1208.1030", "significance": "Sigma scalar field restores consistency of the Higgs-mass prediction with 125 GeV." },
-    { "id": "chamseddine-connes-suijlekom-2013", "authors": "A. H. Chamseddine, A. Connes, W. D. van Suijlekom", "title": "Inner Fluctuations in NCG without the first order condition", "year": 2013, "arxiv": "1304.7583", "doi": "10.1016/j.geomphys.2013.06.006", "url": "https://arxiv.org/abs/1304.7583", "significance": "Relaxes the first-order condition, enabling Pati-Salam and beyond-SM models." },
-    { "id": "chamseddine-connes-mukhanov-2014", "authors": "A. H. Chamseddine, A. Connes, V. Mukhanov", "title": "Quanta of Geometry: Noncommutative Aspects", "year": 2014, "arxiv": "1409.2471", "doi": "10.1103/PhysRevLett.114.091302", "url": "https://arxiv.org/abs/1409.2471", "significance": "Volume quantization from higher Heisenberg relation; forces SM algebras." },
-    { "id": "chamseddine-connes-mukhanov-2014b", "authors": "A. H. Chamseddine, A. Connes, V. Mukhanov", "title": "Geometry and the Quantum: Basics", "year": 2014, "arxiv": "1411.0977", "doi": "10.1007/JHEP12(2014)098", "url": "https://arxiv.org/abs/1411.0977", "significance": "Detailed derivation of M_2(H) and M_4(C) from the quantization condition." },
-    { "id": "chamseddine-connes-suijlekom-2015", "authors": "A. H. Chamseddine, A. Connes, W. D. van Suijlekom", "title": "Grand Unification in the Spectral Pati-Salam Model", "year": 2015, "arxiv": "1507.08161", "doi": "10.1007/JHEP11(2015)011", "url": "https://arxiv.org/abs/1507.08161", "significance": "Pati-Salam unification with gauge-coupling unification from spectral geometry." },
-    { "id": "barrett-glaser-2016", "authors": "J. W. Barrett, L. Glaser", "title": "Monte Carlo simulations of random non-commutative geometries", "year": 2016, "arxiv": "1510.01377", "doi": "10.1088/1751-8113/49/24/245001", "url": "https://arxiv.org/abs/1510.01377", "significance": "Launches random NCG / Dirac ensembles as a path-integral approach to quantum gravity." },
-    { "id": "dandrea-kurkov-lizzi-2016", "authors": "F. D'Andrea, M. A. Kurkov, F. Lizzi", "title": "Wick Rotation and Fermion Doubling in Noncommutative Geometry", "year": 2016, "arxiv": "1605.03231", "doi": "10.1103/PhysRevD.94.025030", "url": "https://arxiv.org/abs/1605.03231", "significance": "Analyses the Euclidean-to-Lorentzian problem and fermion doubling." },
-    { "id": "lizzi-2018", "authors": "F. Lizzi", "title": "Noncommutative Geometry and Particle Physics", "year": 2018, "arxiv": "1805.00411", "url": "https://arxiv.org/abs/1805.00411", "significance": "Pedagogical review of the spectral Standard Model and Higgs predictions." },
-    { "id": "marcolli-pierpaoli-2010", "authors": "M. Marcolli, E. Pierpaoli, K. Teh", "title": "The coupling of topology and inflation in Noncommutative Cosmology", "year": 2010, "arxiv": "1012.0780", "doi": "10.1007/s00220-011-1352-4", "url": "https://arxiv.org/abs/1012.0780", "significance": "Spectral cosmology: inflation, cosmic topology and variable cosmological constant." },
-    { "id": "hessam-khalkhali-pagliaroli-2022", "authors": "H. Hessam, M. Khalkhali, N. Pagliaroli", "title": "Double scaling limits of Dirac ensembles and Liouville quantum gravity", "year": 2022, "arxiv": "2204.14206", "doi": "10.1088/1751-8121/accfd6", "url": "https://arxiv.org/abs/2204.14206", "significance": "Connects Dirac ensembles to Liouville quantum gravity and 2D gravity." },
-    { "id": "khalkhali-pagliaroli-2023", "authors": "M. Khalkhali, N. Pagliaroli", "title": "Coloured combinatorial maps and quartic bi-tracial 2-matrix ensembles from noncommutative geometry", "year": 2023, "arxiv": "2312.10530", "url": "https://arxiv.org/abs/2312.10530", "significance": "Links random NCG to multimatrix models and map enumeration." },
-    { "id": "vansuijlekom-2024", "authors": "W. D. van Suijlekom", "title": "Noncommutative Geometry and Particle Physics (2nd ed.)", "year": 2024, "doi": "10.1007/978-3-031-59120-4", "url": "https://link.springer.com/book/10.1007/978-3-031-59120-4", "significance": "Standard Open-Access textbook; includes BSM models and noncommutative quantum theory." },
-    { "id": "chamseddine-2025", "authors": "A. H. Chamseddine", "title": "Hearing the Shape of the Universe: A Personal Journey in Noncommutative Geometry", "year": 2025, "arxiv": "2511.05909", "url": "https://arxiv.org/abs/2511.05909", "significance": "94-page 2025 survey of the entire NCG-to-physics program; current state and outlook." },
-    { "id": "dabrowski-2025", "authors": "L. Dabrowski et al.", "title": "Spectral torsion of the internal noncommutative geometry of the Standard Model", "year": 2025, "arxiv": "2511.08159", "url": "https://arxiv.org/abs/2511.08159", "significance": "Computes spectral torsion functional linking Yukawa and Majorana data to geometry." },
-    { "id": "darcangelo-gnutzmann-2026", "authors": "M. D'Arcangelo, S. Gnutzmann", "title": "Symmetry Breaking and Phase Transitions in Random Non-Commutative Geometries and Related Random-Matrix Ensembles", "year": 2026, "arxiv": "2601.14141", "url": "https://arxiv.org/abs/2601.14141", "significance": "Maps phase transitions and symmetry breaking in the large-N limit of Dirac ensembles." },
-    { "id": "bootstrap-ncg-2025", "authors": "M. Khalkhali, N. Pagliaroli", "title": "Bootstrapping Noncommutative Geometry with Dirac Ensembles", "year": 2025, "arxiv": "2512.08694", "url": "https://arxiv.org/abs/2512.08694", "significance": "Applies bootstrap methods to constrain Dirac ensemble observables." },
-    { "id": "schwinger-dyson-fuzzy-2026", "authors": "J. Gamble, M. Khalkhali, N. Pagliaroli", "title": "The Schwinger-Dyson equations for random fuzzy geometries coupled to matter", "year": 2026, "arxiv": "2606.01343", "url": "https://arxiv.org/abs/2606.01343", "significance": "Derives Schwinger-Dyson equations for matter-coupled fuzzy geometries." },
-    { "id": "carlip-2017", "authors": "S. Carlip", "title": "Dimension and Dimensional Reduction in Quantum Gravity", "year": 2017, "arxiv": "1705.05417", "doi": "10.1088/1361-6382/aa8535", "url": "https://arxiv.org/abs/1705.05417", "significance": "Reviews UV dimensional reduction shared by NCG, asymptotic safety, CDT, LQG." },
-    { "id": "steinacker-2010", "authors": "H. Steinacker", "title": "Emergent Geometry and Gravity from Matrix Models: an Introduction", "year": 2010, "arxiv": "1003.4134", "doi": "10.1088/0264-9381/27/13/133001", "url": "https://arxiv.org/abs/1003.4134", "significance": "Shows effective Riemannian geometry and gravity emerging from fuzzy/matrix models." },
-    { "id": "generalized-entropy-vn-2023", "authors": "J. Kudler-Flam, S. Leutheusser, G. Satishchandran", "title": "Generalized Black Hole Entropy is von Neumann Entropy", "year": 2023, "arxiv": "2309.15897", "url": "https://arxiv.org/abs/2309.15897", "significance": "Uses Connes' von Neumann algebra classification (type II/III) to identify generalized entropy holographically." },
-    { "id": "gup-bounds-2025", "authors": "E. Valero, H. Gisbert, V. Ilisie", "title": "The Generalized Uncertainty Principle. New Bounds and Trends", "year": 2025, "arxiv": "2505.06598", "url": "https://arxiv.org/abs/2505.06598", "significance": "Recent effective-field-theory bounds on the GUP/minimal-length parameter from experimental data." }
+    {
+      "id": "snyder-1947",
+      "authors": "H. S. Snyder",
+      "title": "Quantized Space-Time",
+      "year": 1947,
+      "doi": "10.1103/PhysRev.71.38",
+      "url": "https://doi.org/10.1103/PhysRev.71.38",
+      "significance": "First model of noncommutative spacetime; anticipated NCG by decades."
+    },
+    {
+      "id": "dfr-1995",
+      "authors": "S. Doplicher, K. Fredenhagen, J. E. Roberts",
+      "title": "The quantum structure of spacetime at the Planck scale and quantum fields",
+      "year": 1995,
+      "arxiv": "hep-th/0303037",
+      "doi": "10.1007/BF02104515",
+      "url": "https://arxiv.org/abs/hep-th/0303037",
+      "significance": "Derives spacetime noncommutativity from quantum mechanics plus classical gravity (black-hole localization bound)."
+    },
+    {
+      "id": "connes-1994",
+      "authors": "A. Connes",
+      "title": "Noncommutative Geometry",
+      "year": 1994,
+      "url": "https://www.alainconnes.org/docs/book94bigpdf.pdf",
+      "significance": "Founding monograph; axioms of the spectral triple."
+    },
+    {
+      "id": "connes-1995",
+      "authors": "A. Connes",
+      "title": "Noncommutative geometry and reality",
+      "year": 1995,
+      "doi": "10.1063/1.531241",
+      "url": "https://doi.org/10.1063/1.531241",
+      "significance": "Introduces real structure J and KO-dimension, central to the SM construction."
+    },
+    {
+      "id": "chamseddine-connes-1996",
+      "authors": "A. H. Chamseddine, A. Connes",
+      "title": "The Spectral Action Principle",
+      "year": 1996,
+      "arxiv": "hep-th/9606001",
+      "doi": "10.1007/s002200050126",
+      "url": "https://arxiv.org/abs/hep-th/9606001",
+      "significance": "Foundational: physics depends only on the spectrum of D; yields gravity plus gauge theory."
+    },
+    {
+      "id": "kempf-mangano-mann-1995",
+      "authors": "A. Kempf, G. Mangano, R. B. Mann",
+      "title": "Hilbert space representation of the minimal length uncertainty relation",
+      "year": 1995,
+      "arxiv": "hep-th/9412167",
+      "doi": "10.1103/PhysRevD.52.1108",
+      "url": "https://arxiv.org/abs/hep-th/9412167",
+      "significance": "Canonical formalism for GUP and minimal length."
+    },
+    {
+      "id": "seiberg-witten-1999",
+      "authors": "N. Seiberg, E. Witten",
+      "title": "String Theory and Noncommutative Geometry",
+      "year": 1999,
+      "arxiv": "hep-th/9908142",
+      "doi": "10.1088/1126-6708/1999/09/032",
+      "url": "https://arxiv.org/abs/hep-th/9908142",
+      "significance": "Establishes the string-theory bridge to Moyal NCG and the Seiberg-Witten map."
+    },
+    {
+      "id": "amelino-camelia-2002",
+      "authors": "G. Amelino-Camelia",
+      "title": "Doubly-Special Relativity: facts, myths and some key open issues",
+      "year": 2010,
+      "arxiv": "1003.3942",
+      "doi": "10.3390/sym2010230",
+      "url": "https://arxiv.org/abs/1003.3942",
+      "significance": "Authoritative review of DSR and its relation to kappa-Poincare."
+    },
+    {
+      "id": "chamseddine-connes-marcolli-2007",
+      "authors": "A. H. Chamseddine, A. Connes, M. Marcolli",
+      "title": "Gravity and the standard model with neutrino mixing",
+      "year": 2007,
+      "arxiv": "hep-th/0610241",
+      "doi": "10.4310/ATMP.2007.v11.n6.a3",
+      "url": "https://arxiv.org/abs/hep-th/0610241",
+      "significance": "Full Standard Model with neutrino mixing coupled to gravity from NCG."
+    },
+    {
+      "id": "connes-2008",
+      "authors": "A. Connes",
+      "title": "On the spectral characterization of manifolds",
+      "year": 2008,
+      "arxiv": "0810.2088",
+      "doi": "10.4171/JNCG/108",
+      "url": "https://arxiv.org/abs/0810.2088",
+      "significance": "Reconstruction theorem: commutative spectral triples are exactly Riemannian spin manifolds."
+    },
+    {
+      "id": "aastrup-grimstrup-nest-2009",
+      "authors": "J. Aastrup, J. M. Grimstrup, R. Nest",
+      "title": "On Spectral Triples in Quantum Gravity I",
+      "year": 2009,
+      "arxiv": "0802.1783",
+      "doi": "10.1088/0264-9381/26/6/065011",
+      "url": "https://arxiv.org/abs/0802.1783",
+      "significance": "Builds a spectral triple over the space of connections, bridging NCG and loop quantum gravity."
+    },
+    {
+      "id": "chamseddine-connes-2012",
+      "authors": "A. H. Chamseddine, A. Connes",
+      "title": "Resilience of the Spectral Standard Model",
+      "year": 2012,
+      "arxiv": "1208.1030",
+      "doi": "10.1007/JHEP09(2012)104",
+      "url": "https://arxiv.org/abs/1208.1030",
+      "significance": "Sigma scalar field restores consistency of the Higgs-mass prediction with 125 GeV."
+    },
+    {
+      "id": "chamseddine-connes-suijlekom-2013",
+      "authors": "A. H. Chamseddine, A. Connes, W. D. van Suijlekom",
+      "title": "Inner Fluctuations in NCG without the first order condition",
+      "year": 2013,
+      "arxiv": "1304.7583",
+      "doi": "10.1016/j.geomphys.2013.06.006",
+      "url": "https://arxiv.org/abs/1304.7583",
+      "significance": "Relaxes the first-order condition, enabling Pati-Salam and beyond-SM models."
+    },
+    {
+      "id": "chamseddine-connes-mukhanov-2014",
+      "authors": "A. H. Chamseddine, A. Connes, V. Mukhanov",
+      "title": "Quanta of Geometry: Noncommutative Aspects",
+      "year": 2014,
+      "arxiv": "1409.2471",
+      "doi": "10.1103/PhysRevLett.114.091302",
+      "url": "https://arxiv.org/abs/1409.2471",
+      "significance": "Volume quantization from higher Heisenberg relation; forces SM algebras."
+    },
+    {
+      "id": "chamseddine-connes-mukhanov-2014b",
+      "authors": "A. H. Chamseddine, A. Connes, V. Mukhanov",
+      "title": "Geometry and the Quantum: Basics",
+      "year": 2014,
+      "arxiv": "1411.0977",
+      "doi": "10.1007/JHEP12(2014)098",
+      "url": "https://arxiv.org/abs/1411.0977",
+      "significance": "Detailed derivation of M_2(H) and M_4(C) from the quantization condition."
+    },
+    {
+      "id": "chamseddine-connes-suijlekom-2015",
+      "authors": "A. H. Chamseddine, A. Connes, W. D. van Suijlekom",
+      "title": "Grand Unification in the Spectral Pati-Salam Model",
+      "year": 2015,
+      "arxiv": "1507.08161",
+      "doi": "10.1007/JHEP11(2015)011",
+      "url": "https://arxiv.org/abs/1507.08161",
+      "significance": "Pati-Salam unification with gauge-coupling unification from spectral geometry."
+    },
+    {
+      "id": "barrett-glaser-2016",
+      "authors": "J. W. Barrett, L. Glaser",
+      "title": "Monte Carlo simulations of random non-commutative geometries",
+      "year": 2016,
+      "arxiv": "1510.01377",
+      "doi": "10.1088/1751-8113/49/24/245001",
+      "url": "https://arxiv.org/abs/1510.01377",
+      "significance": "Launches random NCG / Dirac ensembles as a path-integral approach to quantum gravity."
+    },
+    {
+      "id": "dandrea-kurkov-lizzi-2016",
+      "authors": "F. D'Andrea, M. A. Kurkov, F. Lizzi",
+      "title": "Wick Rotation and Fermion Doubling in Noncommutative Geometry",
+      "year": 2016,
+      "arxiv": "1605.03231",
+      "doi": "10.1103/PhysRevD.94.025030",
+      "url": "https://arxiv.org/abs/1605.03231",
+      "significance": "Analyses the Euclidean-to-Lorentzian problem and fermion doubling."
+    },
+    {
+      "id": "lizzi-2018",
+      "authors": "F. Lizzi",
+      "title": "Noncommutative Geometry and Particle Physics",
+      "year": 2018,
+      "arxiv": "1805.00411",
+      "url": "https://arxiv.org/abs/1805.00411",
+      "significance": "Pedagogical review of the spectral Standard Model and Higgs predictions."
+    },
+    {
+      "id": "marcolli-pierpaoli-2010",
+      "authors": "M. Marcolli, E. Pierpaoli, K. Teh",
+      "title": "The coupling of topology and inflation in Noncommutative Cosmology",
+      "year": 2010,
+      "arxiv": "1012.0780",
+      "doi": "10.1007/s00220-011-1352-4",
+      "url": "https://arxiv.org/abs/1012.0780",
+      "significance": "Spectral cosmology: inflation, cosmic topology and variable cosmological constant."
+    },
+    {
+      "id": "hessam-khalkhali-pagliaroli-2022",
+      "authors": "H. Hessam, M. Khalkhali, N. Pagliaroli",
+      "title": "Double scaling limits of Dirac ensembles and Liouville quantum gravity",
+      "year": 2022,
+      "arxiv": "2204.14206",
+      "doi": "10.1088/1751-8121/accfd6",
+      "url": "https://arxiv.org/abs/2204.14206",
+      "significance": "Connects Dirac ensembles to Liouville quantum gravity and 2D gravity."
+    },
+    {
+      "id": "khalkhali-pagliaroli-2023",
+      "authors": "M. Khalkhali, N. Pagliaroli",
+      "title": "Coloured combinatorial maps and quartic bi-tracial 2-matrix ensembles from noncommutative geometry",
+      "year": 2023,
+      "arxiv": "2312.10530",
+      "url": "https://arxiv.org/abs/2312.10530",
+      "significance": "Links random NCG to multimatrix models and map enumeration."
+    },
+    {
+      "id": "vansuijlekom-2024",
+      "authors": "W. D. van Suijlekom",
+      "title": "Noncommutative Geometry and Particle Physics (2nd ed.)",
+      "year": 2024,
+      "doi": "10.1007/978-3-031-59120-4",
+      "url": "https://link.springer.com/book/10.1007/978-3-031-59120-4",
+      "significance": "Standard Open-Access textbook; includes BSM models and noncommutative quantum theory."
+    },
+    {
+      "id": "chamseddine-2025",
+      "authors": "A. H. Chamseddine",
+      "title": "Hearing the Shape of the Universe: A Personal Journey in Noncommutative Geometry",
+      "year": 2025,
+      "arxiv": "2511.05909",
+      "url": "https://arxiv.org/abs/2511.05909",
+      "significance": "94-page 2025 survey of the entire NCG-to-physics program; current state and outlook."
+    },
+    {
+      "id": "dabrowski-2025",
+      "authors": "L. Dabrowski et al.",
+      "title": "Spectral torsion of the internal noncommutative geometry of the Standard Model",
+      "year": 2025,
+      "arxiv": "2511.08159",
+      "url": "https://arxiv.org/abs/2511.08159",
+      "significance": "Computes spectral torsion functional linking Yukawa and Majorana data to geometry."
+    },
+    {
+      "id": "darcangelo-gnutzmann-2026",
+      "authors": "M. D'Arcangelo, S. Gnutzmann",
+      "title": "Symmetry Breaking and Phase Transitions in Random Non-Commutative Geometries and Related Random-Matrix Ensembles",
+      "year": 2026,
+      "arxiv": "2601.14141",
+      "url": "https://arxiv.org/abs/2601.14141",
+      "significance": "Maps phase transitions and symmetry breaking in the large-N limit of Dirac ensembles."
+    },
+    {
+      "id": "bootstrap-ncg-2025",
+      "authors": "M. Khalkhali, N. Pagliaroli",
+      "title": "Bootstrapping Noncommutative Geometry with Dirac Ensembles",
+      "year": 2025,
+      "arxiv": "2512.08694",
+      "url": "https://arxiv.org/abs/2512.08694",
+      "significance": "Applies bootstrap methods to constrain Dirac ensemble observables."
+    },
+    {
+      "id": "schwinger-dyson-fuzzy-2026",
+      "authors": "J. Gamble, M. Khalkhali, N. Pagliaroli",
+      "title": "The Schwinger-Dyson equations for random fuzzy geometries coupled to matter",
+      "year": 2026,
+      "arxiv": "2606.01343",
+      "url": "https://arxiv.org/abs/2606.01343",
+      "significance": "Derives Schwinger-Dyson equations for matter-coupled fuzzy geometries."
+    },
+    {
+      "id": "carlip-2017",
+      "authors": "S. Carlip",
+      "title": "Dimension and Dimensional Reduction in Quantum Gravity",
+      "year": 2017,
+      "arxiv": "1705.05417",
+      "doi": "10.1088/1361-6382/aa8535",
+      "url": "https://arxiv.org/abs/1705.05417",
+      "significance": "Reviews UV dimensional reduction shared by NCG, asymptotic safety, CDT, LQG."
+    },
+    {
+      "id": "steinacker-2010",
+      "authors": "H. Steinacker",
+      "title": "Emergent Geometry and Gravity from Matrix Models: an Introduction",
+      "year": 2010,
+      "arxiv": "1003.4134",
+      "doi": "10.1088/0264-9381/27/13/133001",
+      "url": "https://arxiv.org/abs/1003.4134",
+      "significance": "Shows effective Riemannian geometry and gravity emerging from fuzzy/matrix models."
+    },
+    {
+      "id": "generalized-entropy-vn-2023",
+      "authors": "J. Kudler-Flam, S. Leutheusser, G. Satishchandran",
+      "title": "Generalized Black Hole Entropy is von Neumann Entropy",
+      "year": 2023,
+      "arxiv": "2309.15897",
+      "url": "https://arxiv.org/abs/2309.15897",
+      "significance": "Uses Connes' von Neumann algebra classification (type II/III) to identify generalized entropy holographically."
+    },
+    {
+      "id": "gup-bounds-2025",
+      "authors": "E. Valero, H. Gisbert, V. Ilisie",
+      "title": "The Generalized Uncertainty Principle. New Bounds and Trends",
+      "year": 2025,
+      "arxiv": "2505.06598",
+      "url": "https://arxiv.org/abs/2505.06598",
+      "significance": "Recent effective-field-theory bounds on the GUP/minimal-length parameter from experimental data."
+    }
   ],
   "openProblems": [
     {
@@ -497,6 +927,34 @@
       "type": "shared-structure",
       "description": "Random NCG / Dirac ensembles realize a path integral over finite (fuzzy) geometries that is conceptually parallel to CDT's sum over triangulations, and both exhibit phase transitions and a dynamically reduced spectral dimension near 2 in the UV (Carlip's dimensional-reduction survey). Double-scaling limits of Dirac ensembles connect to Liouville quantum gravity / 2D gravity, the same minimal-model universality classes that appear in dynamical triangulations; an explicit map between the two discrete path integrals is missing.",
       "explored": "barely"
+    },
+    {
+      "from": "spectral-action",
+      "to": "trace-anomaly",
+      "type": "shared-math",
+      "explored": "well",
+      "description": "The Lambda^0 term of the spectral action Tr f(D/Lambda) IS the conformal/trace anomaly: in d=4 the integrated Seeley-DeWitt coefficient a4(D^2) equals (1/16pi^2) int sqrt(g)(c W^2 - a E_4), so the C^2 (Weyl-squared) and Euler (Gauss-Bonnet) coefficients of the spectral action are literally the conformal-anomaly charges. The coefficient ratio is alpha_0/tau_0 = (-3 f_0/10pi^2)/(11 f_0/60pi^2) = -18/11 exactly, identical to c/(-a) = (1/40)/(-11/720) = -18/11 for a single Weyl fermion. Proven, scheme-independent, index-protected (Atiyah-Singer A-hat sector). Evidence: F-003 (exact, zero mismatch, sympy), F-014 (index protection, Duff Table 1 cross-check), draft-02 sec.2 (Gilkey/Vassilevich heat-kernel steps 1-5). Convention refs: Chamseddine-Connes hep-th/9606001, Vassilevich hep-th/0306138, Duff arXiv:2003.02688."
+    },
+    {
+      "from": "spectral-action",
+      "to": "central-charge",
+      "type": "shared-math",
+      "explored": "well",
+      "description": "The conformal central charges (a,c) ARE the a4(D^2) coefficients of the Euler density E_4 and Weyl-squared W^2 read off from the spectral action's Lambda^0 term; they are not an independent input. For one Weyl fermion (a,c)=(11/720,1/40), and content-independence makes c/(-a)=-18/11 hold for 1, 45 (SM without nu_R) or 48 (with nu_R) fermions with zero residue. Evidence: F-003, F-014; lib/toe/ncg.py (central_charges, a4_ratio, spectral_action_ratio). Convention refs: Chamseddine-Connes hep-th/9606001, Duff arXiv:2003.02688."
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "trace-anomaly",
+      "type": "shared-math",
+      "explored": "partially",
+      "description": "Pillar-level umbrella over the spectral-action<->trace-anomaly and spectral-action<->central-charge identities: the NCG spectral-action cluster and the trace-anomaly cluster share one heat-kernel coefficient a4(D^2) of a single Dirac operator. The -18/11 fermionic ratio is the literal shared-math bridge that the project graph previously left undrawn (LOV-18-11-overlaps sec.1.4). Evidence: F-003, F-014, draft-02 sec.2."
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "spectral-dimension",
+      "type": "shared-math",
+      "explored": "barely",
+      "description": "Spectral dimension and the spectral action live off the same Dirac spectrum: spectral dimension reads the UV/IR scaling exponent of the return probability Tr e^{-sigma D^2}, while the spectral action reads the same Seeley-DeWitt coefficients a_0,a_2,a_4 of the same heat kernel. The existing heat-kernel-expansion -> spectral-dimension edge puts this bridge one node away; ML link-prediction ranks it the top NCG-touching candidate (link-predictions.json score ~0.896, ~7 shared neighbours). Quantitative -18/11<->d_s relation remains open (d_s is probe-dependent, F-001/F-002). Evidence: link-predictions.json (0.896), F-001/F-002."
     }
   ]
 }

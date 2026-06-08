@@ -1901,6 +1901,46 @@
       ]
     },
     {
+      "from": "spectral-action",
+      "to": "trace-anomaly",
+      "type": "shared-math",
+      "description": "The Lambda^0 term of the spectral action Tr f(D/Lambda) IS the conformal/trace anomaly: in d=4 the integrated Seeley-DeWitt coefficient a4(D^2) equals (1/16pi^2) int sqrt(g)(c W^2 - a E_4), so the C^2 (Weyl-squared) and Euler (Gauss-Bonnet) coefficients of the spectral action are literally the conformal-anomaly charges. The coefficient ratio is alpha_0/tau_0 = (-3 f_0/10pi^2)/(11 f_0/60pi^2) = -18/11 exactly, identical to c/(-a) = (1/40)/(-11/720) = -18/11 for a single Weyl fermion. Proven, scheme-independent, index-protected (Atiyah-Singer A-hat sector). Evidence: F-003 (exact, zero mismatch, sympy), F-014 (index protection, Duff Table 1 cross-check), draft-02 sec.2 (Gilkey/Vassilevich heat-kernel steps 1-5). Convention refs: Chamseddine-Connes hep-th/9606001, Vassilevich hep-th/0306138, Duff arXiv:2003.02688.",
+      "explored": "well",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
+      "from": "spectral-action",
+      "to": "central-charge",
+      "type": "shared-math",
+      "description": "The conformal central charges (a,c) ARE the a4(D^2) coefficients of the Euler density E_4 and Weyl-squared W^2 read off from the spectral action's Lambda^0 term; they are not an independent input. For one Weyl fermion (a,c)=(11/720,1/40), and content-independence makes c/(-a)=-18/11 hold for 1, 45 (SM without nu_R) or 48 (with nu_R) fermions with zero residue. Evidence: F-003, F-014; lib/toe/ncg.py (central_charges, a4_ratio, spectral_action_ratio). Convention refs: Chamseddine-Connes hep-th/9606001, Duff arXiv:2003.02688.",
+      "explored": "well",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "trace-anomaly",
+      "type": "shared-math",
+      "description": "Pillar-level umbrella over the spectral-action<->trace-anomaly and spectral-action<->central-charge identities: the NCG spectral-action cluster and the trace-anomaly cluster share one heat-kernel coefficient a4(D^2) of a single Dirac operator. The -18/11 fermionic ratio is the literal shared-math bridge that the project graph previously left undrawn (LOV-18-11-overlaps sec.1.4). Evidence: F-003, F-014, draft-02 sec.2.",
+      "explored": "partially",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
+      "from": "noncommutative-geometry",
+      "to": "spectral-dimension",
+      "type": "shared-math",
+      "description": "Spectral dimension and the spectral action live off the same Dirac spectrum: spectral dimension reads the UV/IR scaling exponent of the return probability Tr e^{-sigma D^2}, while the spectral action reads the same Seeley-DeWitt coefficients a_0,a_2,a_4 of the same heat kernel. The existing heat-kernel-expansion -> spectral-dimension edge puts this bridge one node away; ML link-prediction ranks it the top NCG-touching candidate (link-predictions.json score ~0.896, ~7 shared neighbours). Quantitative -18/11<->d_s relation remains open (d_s is probe-dependent, F-001/F-002). Evidence: link-predictions.json (0.896), F-001/F-002.",
+      "explored": "barely",
+      "sourcePillars": [
+        "noncommutative-geometry"
+      ]
+    },
+    {
       "from": "quantum-cosmology",
       "to": "loop-quantum-gravity",
       "type": "limit",
@@ -2175,6 +2215,26 @@
       "to": "page-curve",
       "type": "shared-structure",
       "description": "The Page curve is computed within semiclassical gravity once quantum extremal surfaces / islands and replica wormholes are included, showing that the semiclassical gravitational path integral itself encodes unitary information return; the relation to the alternative semiclassical 'final singularity' resolution is open.",
+      "explored": "well",
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "trace-anomaly",
+      "to": "entanglement-entropy",
+      "type": "shared-math",
+      "description": "The trace-anomaly charges (a,c) govern the universal terms of entanglement entropy in d=4: the universal logarithmic coefficient is controlled by c (and a, via the geometry of the entangling surface), and the spherical/Renyi entanglement entropy of a CFT is set by a. This is the bridge from the anomaly cluster to the entanglement-entropy line. Established literature (convention note, no repo computation yet): Casini-Huerta-Myers (spherical EE = a), Solodukhin (log coefficient ~ c). Repo anchor: F-029 extracts a dimensionless c_EE coefficient (c^2D_EE ~ 7.70, CV 3%), whose relation to the anomalous (a,c) is the H-B test target.",
+      "explored": "partially",
+      "sourcePillars": [
+        "semiclassical-gravity"
+      ]
+    },
+    {
+      "from": "a-theorem",
+      "to": "entanglement-entropy",
+      "type": "shared-math",
+      "description": "The 4D a-theorem (monotonic decrease of the a-charge under RG flow) was PROVEN via entanglement entropy: the spherical entanglement entropy of a CFT equals the a-charge (Casini-Huerta-Myers), and strong subadditivity / entanglement monotonicity of EE yields the a-theorem (Casini-Huerta). This closes the a-theorem island, which previously carried a single edge. Established literature (convention note, no invented arXiv IDs): Casini-Huerta-Myers, Casini-Huerta; original a-theorem proof Komargodski-Schwimmer.",
       "explored": "well",
       "sourcePillars": [
         "semiclassical-gravity"

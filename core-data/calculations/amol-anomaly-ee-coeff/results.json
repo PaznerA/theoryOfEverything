@@ -1,0 +1,844 @@
+{
+  "schema_version": "1.0",
+  "task": "VYPOCET-35 / amol-anomaly-ee-coeff -- H-B: does the universal SSEE coefficient c_EE match an anomaly rational from (a,c)?",
+  "lov_ref": "LOV-18-11-overlaps.md H-B (flagship) + 3.1",
+  "findings_ref": [
+    "F-003",
+    "F-014",
+    "F-029"
+  ],
+  "status": "complete",
+  "toe_version": "0.3.0",
+  "match_tolerance_frac": 0.05,
+  "preregistration": {
+    "scalar_a": "1/360",
+    "scalar_c": "1/120",
+    "scalar_ratio_c_over_minus_a": "-3",
+    "scalar_ratio_float": -3.0,
+    "weyl_a": "11/720",
+    "weyl_c": "1/40",
+    "weyl_ratio_c_over_minus_a": "-18/11",
+    "weyl_ratio_float": -1.6363636363636365,
+    "spectral_action_ratio": "-18/11",
+    "a4_ratio_fermion": "-18/11",
+    "DIRECT_scalar_target": -3.0,
+    "SECONDARY_fermion_target": -1.6363636363636365,
+    "match_tolerance_frac": 0.05,
+    "candidates": [
+      {
+        "name": "3 (= |c/(-a)| scalar = 360*c_scalar = c_s/a_s)",
+        "value": 3.0,
+        "rational": "3",
+        "justification": "DIRECT scalar anomaly magnitude |c/(-a)|=3; also 360*c_scalar=3 and c_scalar/a_scalar=3. Our field is a massless scalar -> this is the PRIMARY target.",
+        "tier": "primary-scalar"
+      },
+      {
+        "name": "18/11 (= |c/(-a)| Weyl = NCG spectral-action ratio)",
+        "value": 1.6363636363636365,
+        "rational": "18/11",
+        "justification": "SECONDARY: index-protected NCG fermionic core |alpha0/tau0|=|c_Weyl/(-a_Weyl)|=18/11 (F-003/F-014). Match would mean the index core touches line B.",
+        "tier": "secondary-fermion"
+      },
+      {
+        "name": "8",
+        "value": 8.0,
+        "rational": "8",
+        "justification": "Pre-registered round-number control (LOV 3.1 list). No anomaly derivation -- a-priori null candidate near the observed c_EE~7.6 to test for accidental match.",
+        "tier": "control"
+      },
+      {
+        "name": "12 (= a0/a2 per-mode ratio, lambda_induction_ledger)",
+        "value": 12.0,
+        "rational": "12",
+        "justification": "Pre-registered (LOV 3.1). 12 = ratio_a0_over_a2 per-mode (toe.ncg.lambda_induction_ledger) and the 11<->12 imprint (a_Weyl=11/720, c_Weyl=18/720).",
+        "tier": "control"
+      },
+      {
+        "name": "1/120 (= c_scalar)",
+        "value": 0.008333333333333333,
+        "rational": "1/120",
+        "justification": "Raw scalar c-charge. Compared against c_EE, 1/c_EE.",
+        "tier": "ac-built"
+      },
+      {
+        "name": "1/360 (= a_scalar)",
+        "value": 0.002777777777777778,
+        "rational": "1/360",
+        "justification": "Raw scalar a-charge (CHM: sphere-EE coefficient). Compared against c_EE, 1/c_EE.",
+        "tier": "ac-built"
+      },
+      {
+        "name": "120 (= 1/c_scalar)",
+        "value": 120.0,
+        "rational": "120",
+        "justification": "Inverse scalar c-charge; an (a,c)-built rational on the same order channel as 1/c_EE.",
+        "tier": "ac-built"
+      },
+      {
+        "name": "360 (= 1/a_scalar)",
+        "value": 360.0,
+        "rational": "360",
+        "justification": "Inverse scalar a-charge; (a,c)-built rational.",
+        "tier": "ac-built"
+      },
+      {
+        "name": "2*pi (= 6.283, A/4-adjacent geometric control)",
+        "value": 6.283185307179586,
+        "rational": "2*pi",
+        "justification": "GEOMETRIC (non-anomaly) control: if c_EE is a kappa-cutoff geometric coefficient it should sit near geometric constants, NOT anomaly rationals. Registered to make the geometric/anomalous discrimination sharp.",
+        "tier": "geometric-control"
+      },
+      {
+        "name": "4 (= Bekenstein A/4 quarter)",
+        "value": 4.0,
+        "rational": "4",
+        "justification": "GEOMETRIC control: the Bekenstein-Hawking 1/4 gives c=4 if S=A/(4G). F-029 found c_EE~7.6 != 4 already.",
+        "tier": "geometric-control"
+      }
+    ],
+    "anti_circularity": "Candidates computed from toe.ncg ONLY (exact sympy). Written to results.json at stage 'preregistered' BEFORE any c_EE is read or measured. kappa=sqrt(N)/(4pi) is Sorkin-Yazdi 1712.04227 (not tuned)."
+  },
+  "_written_at": "2026-06-08T21:09:38",
+  "cEE_channel_dS_F029": {
+    "available": true,
+    "source": "ds-entropy-cap/results.json PRIMARY_R_Sfull_over_Amol_density",
+    "R_full_mean": 0.13223552516110584,
+    "R_full_cv": 0.012551322331844023,
+    "R_full_per_rho": [
+      0.13393795997926178,
+      0.13214653656546188,
+      0.13062207893859384
+    ],
+    "c_EE": 7.562264367171189,
+    "c_EE_cv": 0.012551322331844023,
+    "rho_grid": [
+      240.0,
+      600.0,
+      1200.0
+    ],
+    "note": "c_EE = 1/R_full; R_full = S_full_cap/A_mol (dS static patch, 2D). Independently measured in VYPOCET-23/25 (F-029), BEFORE this test."
+  },
+  "cEE_channel_diamond_2d": {
+    "Ns": [
+      400,
+      600,
+      800,
+      1000,
+      1200,
+      1400,
+      1600,
+      1800
+    ],
+    "n_seeds": 8,
+    "seed_base": 20260608,
+    "frac": 0.5,
+    "kappa_prescription": "sqrt(N)/(4 pi) (Sorkin-Yazdi)",
+    "powerlaw_exponent_trunc": 0.1521823483628281,
+    "powerlaw_exponent_trunc_se": 0.007896066978086968,
+    "powerlaw_exponent_trunc_r2": 0.9841040908633332,
+    "powerlaw_exponent_trunc_ci68": [
+      0.14417380060205004,
+      0.16032094954573023
+    ],
+    "S_trunc_mean": [
+      1.3276629953432157,
+      1.3974439550155502,
+      1.470935138443336,
+      1.487157392362377,
+      1.5721877327513203,
+      1.6161947448782175,
+      1.6334642821952663,
+      1.6515557230485123
+    ],
+    "S_trunc_std": [
+      0.06043653404752611,
+      0.09012102448528904,
+      0.07363596617682334,
+      0.03825661317432937,
+      0.04119576143529587,
+      0.0746986347059849,
+      0.05837553018712213,
+      0.05533471123606308
+    ],
+    "S_full_mean": [
+      27.56657676881558,
+      42.52089104546336,
+      59.04962732284234,
+      73.99457558098766,
+      91.05762892469379,
+      108.53290472228973,
+      122.52711421914114,
+      138.2161578785136
+    ],
+    "S_full_std": [
+      1.8981311528913234,
+      2.8330354113235057,
+      1.9775226316363343,
+      2.4333000985303626,
+      2.4930198331331184,
+      2.2591193328806605,
+      3.472190791351336,
+      3.671015341907148
+    ],
+    "c_log_2d_area": 0.2267362858628846,
+    "c_log_intercept": -0.044575407395582356,
+    "c_log_r2": 0.9804790861150888,
+    "c_log_cv_across_seeds": 0.13890404023225147,
+    "note_c_log": "S_trunc = c_log*ln(N)+b. In 1+1 CFT the universal EE coeff is c/3 (Cardy); here c_log is the DISCRETE-SSEE analogue (not normalized to Cardy). The inverse 1/c_log is the candidate 'c_EE-like' coefficient on this channel.",
+    "inverse_c_log": 4.410410077038728,
+    "full_over_trunc_ratio_per_N": [
+      20.763233490355216,
+      30.427618147298226,
+      40.14427677982694,
+      49.755712449134855,
+      57.917783625841814,
+      67.1533582609612,
+      75.01058673561747,
+      83.68846170287752
+    ],
+    "full_over_trunc_ratio_mean": 53.107628898989155,
+    "full_over_trunc_ratio_cv": 0.3867640996958283,
+    "note_full_trunc": "full/trunc grows with N (full SSEE is volume-law, trunc is area-law) -> NOT a constant universal coefficient; reported for completeness per LOV 3.1."
+  },
+  "comparison": {
+    "all_comparisons_sorted_by_residual": [
+      {
+        "channel": "c_EE_dS_(1/R_full)",
+        "channel_value": 7.562264367171189,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "8",
+        "candidate_value": 8.0,
+        "candidate_tier": "control",
+        "residual_frac": 0.054716954103601334,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "inverse_c_log_diamond",
+        "channel_value": 4.410410077038728,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "4 (= Bekenstein A/4 quarter)",
+        "candidate_value": 4.0,
+        "candidate_tier": "geometric-control",
+        "residual_frac": 0.102602519259682,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_EE_dS_(1/R_full)",
+        "channel_value": 7.562264367171189,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "2*pi (= 6.283, A/4-adjacent geometric control)",
+        "candidate_value": 6.283185307179586,
+        "candidate_tier": "geometric-control",
+        "residual_frac": 0.20357175500299857,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "inverse_c_log_diamond",
+        "channel_value": 4.410410077038728,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "2*pi (= 6.283, A/4-adjacent geometric control)",
+        "candidate_value": 6.283185307179586,
+        "candidate_tier": "geometric-control",
+        "residual_frac": 0.2980614351769795,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_EE_dS_(1/R_full)",
+        "channel_value": 7.562264367171189,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "12 (= a0/a2 per-mode ratio, lambda_induction_ledger)",
+        "candidate_value": 12.0,
+        "candidate_tier": "control",
+        "residual_frac": 0.3698113027357342,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "inverse_c_log_diamond",
+        "channel_value": 4.410410077038728,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "8",
+        "candidate_value": 8.0,
+        "candidate_tier": "control",
+        "residual_frac": 0.448698740370159,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "inverse_c_log_diamond",
+        "channel_value": 4.410410077038728,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "3 (= |c/(-a)| scalar = 360*c_scalar = c_s/a_s)",
+        "candidate_value": 3.0,
+        "candidate_tier": "primary-scalar",
+        "residual_frac": 0.47013669234624267,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "full_over_trunc_ratio",
+        "channel_value": 53.107628898989155,
+        "channel_cv": 0.3867640996958283,
+        "candidate": "120 (= 1/c_scalar)",
+        "candidate_value": 120.0,
+        "candidate_tier": "ac-built",
+        "residual_frac": 0.557436425841757,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "inverse_c_log_diamond",
+        "channel_value": 4.410410077038728,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "12 (= a0/a2 per-mode ratio, lambda_induction_ledger)",
+        "candidate_value": 12.0,
+        "candidate_tier": "control",
+        "residual_frac": 0.6324658269134393,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "full_over_trunc_ratio",
+        "channel_value": 53.107628898989155,
+        "channel_cv": 0.3867640996958283,
+        "candidate": "360 (= 1/a_scalar)",
+        "candidate_value": 360.0,
+        "candidate_tier": "ac-built",
+        "residual_frac": 0.852478808613919,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_log_diamond_2d",
+        "channel_value": 0.2267362858628846,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "18/11 (= |c/(-a)| Weyl = NCG spectral-action ratio)",
+        "candidate_value": 1.6363636363636365,
+        "candidate_tier": "secondary-fermion",
+        "residual_frac": 0.8614389364171261,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_EE_dS_(1/R_full)",
+        "channel_value": 7.562264367171189,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "4 (= Bekenstein A/4 quarter)",
+        "candidate_value": 4.0,
+        "candidate_tier": "geometric-control",
+        "residual_frac": 0.8905660917927973,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "powerlaw_exponent_trunc",
+        "channel_value": 0.1521823483628281,
+        "channel_cv": null,
+        "candidate": "18/11 (= |c/(-a)| Weyl = NCG spectral-action ratio)",
+        "candidate_value": 1.6363636363636365,
+        "candidate_tier": "secondary-fermion",
+        "residual_frac": 0.9069996760004939,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "R_full_dS",
+        "channel_value": 0.13223552516110584,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "18/11 (= |c/(-a)| Weyl = NCG spectral-action ratio)",
+        "candidate_value": 1.6363636363636365,
+        "candidate_tier": "secondary-fermion",
+        "residual_frac": 0.9191894012904354,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_log_diamond_2d",
+        "channel_value": 0.2267362858628846,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "3 (= |c/(-a)| scalar = 360*c_scalar = c_s/a_s)",
+        "candidate_value": 3.0,
+        "candidate_tier": "primary-scalar",
+        "residual_frac": 0.9244212380457051,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_EE_dS_(1/R_full)",
+        "channel_value": 7.562264367171189,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "120 (= 1/c_scalar)",
+        "candidate_value": 120.0,
+        "candidate_tier": "ac-built",
+        "residual_frac": 0.9369811302735733,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_log_diamond_2d",
+        "channel_value": 0.2267362858628846,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "4 (= Bekenstein A/4 quarter)",
+        "candidate_value": 4.0,
+        "candidate_tier": "geometric-control",
+        "residual_frac": 0.9433159285342788,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "powerlaw_exponent_trunc",
+        "channel_value": 0.1521823483628281,
+        "channel_cv": null,
+        "candidate": "3 (= |c/(-a)| scalar = 360*c_scalar = c_s/a_s)",
+        "candidate_value": 3.0,
+        "candidate_tier": "primary-scalar",
+        "residual_frac": 0.9492725505457239,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "R_full_dS",
+        "channel_value": 0.13223552516110584,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "3 (= |c/(-a)| scalar = 360*c_scalar = c_s/a_s)",
+        "candidate_value": 3.0,
+        "candidate_tier": "primary-scalar",
+        "residual_frac": 0.9559214916129647,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "powerlaw_exponent_trunc",
+        "channel_value": 0.1521823483628281,
+        "channel_cv": null,
+        "candidate": "4 (= Bekenstein A/4 quarter)",
+        "candidate_value": 4.0,
+        "candidate_tier": "geometric-control",
+        "residual_frac": 0.961954412909293,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "inverse_c_log_diamond",
+        "channel_value": 4.410410077038728,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "120 (= 1/c_scalar)",
+        "candidate_value": 120.0,
+        "candidate_tier": "ac-built",
+        "residual_frac": 0.9632465826913439,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_log_diamond_2d",
+        "channel_value": 0.2267362858628846,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "2*pi (= 6.283, A/4-adjacent geometric control)",
+        "candidate_value": 6.283185307179586,
+        "candidate_tier": "geometric-control",
+        "residual_frac": 0.9639137993266249,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "R_full_dS",
+        "channel_value": 0.13223552516110584,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "4 (= Bekenstein A/4 quarter)",
+        "candidate_value": 4.0,
+        "candidate_tier": "geometric-control",
+        "residual_frac": 0.9669411187097235,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_log_diamond_2d",
+        "channel_value": 0.2267362858628846,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "8",
+        "candidate_value": 8.0,
+        "candidate_tier": "control",
+        "residual_frac": 0.9716579642671395,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "powerlaw_exponent_trunc",
+        "channel_value": 0.1521823483628281,
+        "channel_cv": null,
+        "candidate": "2*pi (= 6.283, A/4-adjacent geometric control)",
+        "candidate_value": 6.283185307179586,
+        "candidate_tier": "geometric-control",
+        "residual_frac": 0.975779427006723,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "R_full_dS",
+        "channel_value": 0.13223552516110584,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "2*pi (= 6.283, A/4-adjacent geometric control)",
+        "candidate_value": 6.283185307179586,
+        "candidate_tier": "geometric-control",
+        "residual_frac": 0.9789540625182572,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_EE_dS_(1/R_full)",
+        "channel_value": 7.562264367171189,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "360 (= 1/a_scalar)",
+        "candidate_value": 360.0,
+        "candidate_tier": "ac-built",
+        "residual_frac": 0.9789937100911912,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "powerlaw_exponent_trunc",
+        "channel_value": 0.1521823483628281,
+        "channel_cv": null,
+        "candidate": "8",
+        "candidate_value": 8.0,
+        "candidate_tier": "control",
+        "residual_frac": 0.9809772064546465,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_log_diamond_2d",
+        "channel_value": 0.2267362858628846,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "12 (= a0/a2 per-mode ratio, lambda_induction_ledger)",
+        "candidate_value": 12.0,
+        "candidate_tier": "control",
+        "residual_frac": 0.9811053095114263,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "R_full_dS",
+        "channel_value": 0.13223552516110584,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "8",
+        "candidate_value": 8.0,
+        "candidate_tier": "control",
+        "residual_frac": 0.9834705593548617,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "powerlaw_exponent_trunc",
+        "channel_value": 0.1521823483628281,
+        "channel_cv": null,
+        "candidate": "12 (= a0/a2 per-mode ratio, lambda_induction_ledger)",
+        "candidate_value": 12.0,
+        "candidate_tier": "control",
+        "residual_frac": 0.987318137636431,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "inverse_c_log_diamond",
+        "channel_value": 4.410410077038728,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "360 (= 1/a_scalar)",
+        "candidate_value": 360.0,
+        "candidate_tier": "ac-built",
+        "residual_frac": 0.9877488608971147,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "R_full_dS",
+        "channel_value": 0.13223552516110584,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "12 (= a0/a2 per-mode ratio, lambda_induction_ledger)",
+        "candidate_value": 12.0,
+        "candidate_tier": "control",
+        "residual_frac": 0.9889803729032413,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_log_diamond_2d",
+        "channel_value": 0.2267362858628846,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "120 (= 1/c_scalar)",
+        "candidate_value": 120.0,
+        "candidate_tier": "ac-built",
+        "residual_frac": 0.9981105309511427,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "powerlaw_exponent_trunc",
+        "channel_value": 0.1521823483628281,
+        "channel_cv": null,
+        "candidate": "120 (= 1/c_scalar)",
+        "candidate_value": 120.0,
+        "candidate_tier": "ac-built",
+        "residual_frac": 0.9987318137636431,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "R_full_dS",
+        "channel_value": 0.13223552516110584,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "120 (= 1/c_scalar)",
+        "candidate_value": 120.0,
+        "candidate_tier": "ac-built",
+        "residual_frac": 0.9988980372903241,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_log_diamond_2d",
+        "channel_value": 0.2267362858628846,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "360 (= 1/a_scalar)",
+        "candidate_value": 360.0,
+        "candidate_tier": "ac-built",
+        "residual_frac": 0.9993701769837142,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "powerlaw_exponent_trunc",
+        "channel_value": 0.1521823483628281,
+        "channel_cv": null,
+        "candidate": "360 (= 1/a_scalar)",
+        "candidate_value": 360.0,
+        "candidate_tier": "ac-built",
+        "residual_frac": 0.9995772712545477,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "R_full_dS",
+        "channel_value": 0.13223552516110584,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "360 (= 1/a_scalar)",
+        "candidate_value": 360.0,
+        "candidate_tier": "ac-built",
+        "residual_frac": 0.9996326790967748,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_EE_dS_(1/R_full)",
+        "channel_value": 7.562264367171189,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "3 (= |c/(-a)| scalar = 360*c_scalar = c_s/a_s)",
+        "candidate_value": 3.0,
+        "candidate_tier": "primary-scalar",
+        "residual_frac": 1.5207547890570632,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "inverse_c_log_diamond",
+        "channel_value": 4.410410077038728,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "18/11 (= |c/(-a)| Weyl = NCG spectral-action ratio)",
+        "candidate_value": 1.6363636363636365,
+        "candidate_tier": "secondary-fermion",
+        "residual_frac": 1.695250602634778,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "full_over_trunc_ratio",
+        "channel_value": 53.107628898989155,
+        "channel_cv": 0.3867640996958283,
+        "candidate": "12 (= a0/a2 per-mode ratio, lambda_induction_ledger)",
+        "candidate_value": 12.0,
+        "candidate_tier": "control",
+        "residual_frac": 3.4256357415824294,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_EE_dS_(1/R_full)",
+        "channel_value": 7.562264367171189,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "18/11 (= |c/(-a)| Weyl = NCG spectral-action ratio)",
+        "candidate_value": 1.6363636363636365,
+        "candidate_tier": "secondary-fermion",
+        "residual_frac": 3.6213837799379487,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "full_over_trunc_ratio",
+        "channel_value": 53.107628898989155,
+        "channel_cv": 0.3867640996958283,
+        "candidate": "8",
+        "candidate_value": 8.0,
+        "candidate_tier": "control",
+        "residual_frac": 5.638453612373644,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "full_over_trunc_ratio",
+        "channel_value": 53.107628898989155,
+        "channel_cv": 0.3867640996958283,
+        "candidate": "2*pi (= 6.283, A/4-adjacent geometric control)",
+        "candidate_value": 6.283185307179586,
+        "candidate_tier": "geometric-control",
+        "residual_frac": 7.4523416551641155,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "full_over_trunc_ratio",
+        "channel_value": 53.107628898989155,
+        "channel_cv": 0.3867640996958283,
+        "candidate": "4 (= Bekenstein A/4 quarter)",
+        "candidate_value": 4.0,
+        "candidate_tier": "geometric-control",
+        "residual_frac": 12.276907224747289,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "R_full_dS",
+        "channel_value": 0.13223552516110584,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "1/120 (= c_scalar)",
+        "candidate_value": 0.008333333333333333,
+        "candidate_tier": "ac-built",
+        "residual_frac": 14.868263019332701,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "full_over_trunc_ratio",
+        "channel_value": 53.107628898989155,
+        "channel_cv": 0.3867640996958283,
+        "candidate": "3 (= |c/(-a)| scalar = 360*c_scalar = c_s/a_s)",
+        "candidate_value": 3.0,
+        "candidate_tier": "primary-scalar",
+        "residual_frac": 16.70254296632972,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "powerlaw_exponent_trunc",
+        "channel_value": 0.1521823483628281,
+        "channel_cv": null,
+        "candidate": "1/120 (= c_scalar)",
+        "candidate_value": 0.008333333333333333,
+        "candidate_tier": "ac-built",
+        "residual_frac": 17.26188180353937,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_log_diamond_2d",
+        "channel_value": 0.2267362858628846,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "1/120 (= c_scalar)",
+        "candidate_value": 0.008333333333333333,
+        "candidate_tier": "ac-built",
+        "residual_frac": 26.20835430354615,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "full_over_trunc_ratio",
+        "channel_value": 53.107628898989155,
+        "channel_cv": 0.3867640996958283,
+        "candidate": "18/11 (= |c/(-a)| Weyl = NCG spectral-action ratio)",
+        "candidate_value": 1.6363636363636365,
+        "candidate_tier": "secondary-fermion",
+        "residual_frac": 31.454662104937817,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "R_full_dS",
+        "channel_value": 0.13223552516110584,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "1/360 (= a_scalar)",
+        "candidate_value": 0.002777777777777778,
+        "candidate_tier": "ac-built",
+        "residual_frac": 46.604789057998104,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "powerlaw_exponent_trunc",
+        "channel_value": 0.1521823483628281,
+        "channel_cv": null,
+        "candidate": "1/360 (= a_scalar)",
+        "candidate_value": 0.002777777777777778,
+        "candidate_tier": "ac-built",
+        "residual_frac": 53.785645410618116,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_log_diamond_2d",
+        "channel_value": 0.2267362858628846,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "1/360 (= a_scalar)",
+        "candidate_value": 0.002777777777777778,
+        "candidate_tier": "ac-built",
+        "residual_frac": 80.62506291063846,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "inverse_c_log_diamond",
+        "channel_value": 4.410410077038728,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "1/120 (= c_scalar)",
+        "candidate_value": 0.008333333333333333,
+        "candidate_tier": "ac-built",
+        "residual_frac": 528.2492092446473,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_EE_dS_(1/R_full)",
+        "channel_value": 7.562264367171189,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "1/120 (= c_scalar)",
+        "candidate_value": 0.008333333333333333,
+        "candidate_tier": "ac-built",
+        "residual_frac": 906.4717240605427,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "inverse_c_log_diamond",
+        "channel_value": 4.410410077038728,
+        "channel_cv": 0.13890404023225147,
+        "candidate": "1/360 (= a_scalar)",
+        "candidate_value": 0.002777777777777778,
+        "candidate_tier": "ac-built",
+        "residual_frac": 1586.747627733942,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "c_EE_dS_(1/R_full)",
+        "channel_value": 7.562264367171189,
+        "channel_cv": 0.012551322331844023,
+        "candidate": "1/360 (= a_scalar)",
+        "candidate_value": 0.002777777777777778,
+        "candidate_tier": "ac-built",
+        "residual_frac": 2721.415172181628,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "full_over_trunc_ratio",
+        "channel_value": 53.107628898989155,
+        "channel_cv": 0.3867640996958283,
+        "candidate": "1/120 (= c_scalar)",
+        "candidate_value": 0.008333333333333333,
+        "candidate_tier": "ac-built",
+        "residual_frac": 6371.915467878699,
+        "match_within_5pct": false
+      },
+      {
+        "channel": "full_over_trunc_ratio",
+        "channel_value": 53.107628898989155,
+        "channel_cv": 0.3867640996958283,
+        "candidate": "1/360 (= a_scalar)",
+        "candidate_value": 0.002777777777777778,
+        "candidate_tier": "ac-built",
+        "residual_frac": 19117.746403636094,
+        "match_within_5pct": false
+      }
+    ],
+    "n_comparisons": 60,
+    "matches_within_5pct": [],
+    "n_matches": 0,
+    "best_match": {
+      "channel": "c_EE_dS_(1/R_full)",
+      "channel_value": 7.562264367171189,
+      "channel_cv": 0.012551322331844023,
+      "candidate": "8",
+      "candidate_value": 8.0,
+      "candidate_tier": "control",
+      "residual_frac": 0.054716954103601334,
+      "match_within_5pct": false
+    }
+  },
+  "verdict": {
+    "correspondence": "no-match-geometric",
+    "summary": "NO MATCH anywhere within 5% -> c_EE is not any pre-registered anomaly rational; geometric coefficient.",
+    "dS_c_EE": 7.562264367171189,
+    "dS_c_EE_cv": 0.012551322331844023,
+    "best_match": {
+      "channel": "c_EE_dS_(1/R_full)",
+      "channel_value": 7.562264367171189,
+      "channel_cv": 0.012551322331844023,
+      "candidate": "8",
+      "candidate_value": 8.0,
+      "candidate_tier": "control",
+      "residual_frac": 0.054716954103601334,
+      "match_within_5pct": false
+    },
+    "n_matches_within_5pct": 0,
+    "dS_anomaly_matches": [],
+    "DIRECT_scalar_target_c_over_minus_a": -3.0,
+    "SECONDARY_fermion_target": -1.6363636363636365,
+    "residual_dS_vs_scalar3": 1.5207547890570632,
+    "residual_dS_vs_18_11": 3.6213837799379487
+  },
+  "runtime_s": 233.2696089744568,
+  "plot": "core-data/calculations/amol-anomaly-ee-coeff/c_EE_vs_rationals.png"
+}
