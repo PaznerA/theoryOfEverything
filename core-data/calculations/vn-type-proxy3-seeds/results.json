@@ -1,0 +1,321 @@
+{
+  "meta": {
+    "task": "VYPOCET-28: proxy3 (central-sequences self-averaging) at high seed count -- decide the 2D diamond 2/3 vs 3/3 verdict",
+    "follow_up_to": "VYPOCET-12 (sj-vn-type), F-015 (2D diamond 2/3)",
+    "builder": "toe.causet.sprinkle_diamond2d",
+    "dimension": "2D massless scalar, causal diamond",
+    "conventions": {
+      "frac": 0.5,
+      "seed_base": 7000000,
+      "seed_scheme": "seed_base + 1000*N + s",
+      "kappa": "sqrt(N)/(4 pi) (Sorkin-Yazdi 1712.04227)",
+      "SSEE": "W_O v = mu iDelta_O v ; S = sum mu ln|mu|",
+      "proxy3_factor_like": "self_avg(cv<0.05) AND slope<0 AND |slope|/se>2"
+    },
+    "Ns": [
+      300,
+      500,
+      800,
+      1200,
+      1700
+    ],
+    "n_seeds_hi": 50,
+    "n_seeds_lo": 8,
+    "toe_version": "0.3.0"
+  },
+  "status": "complete",
+  "full_battery_hi_seed": {
+    "n_seeds": 50,
+    "proxy1": {
+      "fit_full": {
+        "value": 1.0907924449699626,
+        "se_regression": 0.008061296937717946,
+        "ci68_bootstrap": [
+          1.0853192477632314,
+          1.0966959149058884
+        ],
+        "r2": 0.9998361766901285,
+        "intercept": -3.0209666525330916,
+        "n_boot_used": 1000,
+        "boot_std": 0.005682054950864591
+      },
+      "fit_trunc": {
+        "value": 0.1456656599735026,
+        "se_regression": 0.010933432213366935,
+        "ci68_bootstrap": [
+          0.1387267609730938,
+          0.15271073192589749
+        ],
+        "r2": 0.9833796131931953,
+        "intercept": -0.6354175080058087,
+        "n_boot_used": 1000,
+        "boot_std": 0.007333613726215787
+      },
+      "entropy_full_divergent": true,
+      "entropy_trunc_saturates": true,
+      "III_to_II": true
+    },
+    "proxy2": {
+      "exponent_full": 1.1980723165592453,
+      "exponent_trunc": 2.66970225569099e-14,
+      "fit_full": {
+        "value": 1.1980723165592453,
+        "se_regression": 0.03643881935837508,
+        "ci68_bootstrap": [
+          1.1821000076420716,
+          1.2148278131279078
+        ],
+        "r2": 0.9972325471723362,
+        "intercept": -5.625446536915213,
+        "n_boot_used": 1000,
+        "boot_std": 0.016565572122695455
+      },
+      "fit_trunc": {
+        "value": 2.66970225569099e-14,
+        "se_regression": 1.5108215055646546e-14,
+        "ci68_bootstrap": [
+          9.549812584809199e-16,
+          9.549812584809199e-16
+        ],
+        "r2": 1.0,
+        "intercept": -20.723265836946588,
+        "n_boot_used": 1000,
+        "boot_std": 1.9731390793579918e-31
+      },
+      "full_pileup_grows": true,
+      "trunc_pileup_saturates": true,
+      "III_to_II": true
+    },
+    "proxy3": {
+      "cv_powerlaw": {
+        "value": -0.3774358382020463,
+        "se_regression": 0.08626222610718609,
+        "ci68_bootstrap": [
+          -0.3774358382020463,
+          -0.3774358382020463
+        ],
+        "r2": 0.8645264279854653,
+        "intercept": -0.32873297269522694,
+        "n_boot_used": 0,
+        "boot_std": 0.0
+      },
+      "cv_trunc": [
+        0.08563338771700654,
+        0.07143018546651113,
+        0.04894645883481794,
+        0.05557525542817515,
+        0.04307097227250959
+      ],
+      "trunc_is_self_averaging": true,
+      "trunc_trend_decreasing": true,
+      "trunc_trend_significant": true,
+      "factor_like": true
+    },
+    "verdict": {
+      "n_passing": 3,
+      "overall": "ALL three proxies consistent with III_1 -> II"
+    }
+  },
+  "proxy3_seed_comparison": {
+    "description": "proxy3 = central-sequences / self-averaging. The TRUNCATED SSEE CV should shrink with N for a type-II factor. Compared at the VYPOCET-12 reference seed count (8) vs the high count, both subsampled from the SAME deterministic seed stream so the 8-seed row is bit-identical to VYPOCET-12's CV(S_trunc).",
+    "low_seed": {
+      "n_seeds": 8,
+      "Ns": [
+        300,
+        500,
+        800,
+        1200,
+        1700
+      ],
+      "cv_trunc": [
+        0.10194607475647177,
+        0.0537313575043329,
+        0.04094545658945345,
+        0.03371109585352827,
+        0.032452617917024244
+      ],
+      "cv_full": [
+        0.11145801896290511,
+        0.060642887815122316,
+        0.023634836849378147,
+        0.025539719141420152,
+        0.027653579023258035
+      ],
+      "cv_trunc_largest_N": 0.032452617917024244,
+      "cv_slope_powerlaw": -0.6491126145622721,
+      "cv_slope_se": 0.1208911589630219,
+      "cv_slope_t_stat": 5.369396903216241,
+      "cv_slope_ci68_bootstrap": [
+        -0.826832192327609,
+        -0.4099318372151412
+      ],
+      "cv_slope_boot_std": 0.22616374680225684,
+      "cv_slope_intercept": 1.2571127462864864,
+      "trunc_is_self_averaging": true,
+      "trunc_trend_decreasing": true,
+      "trunc_trend_significant": true,
+      "factor_like": true
+    },
+    "high_seed": {
+      "n_seeds": 50,
+      "Ns": [
+        300,
+        500,
+        800,
+        1200,
+        1700
+      ],
+      "cv_trunc": [
+        0.08563338771700654,
+        0.07143018546651113,
+        0.04894645883481794,
+        0.05557525542817515,
+        0.04307097227250959
+      ],
+      "cv_full": [
+        0.07978735989679646,
+        0.05875946745643296,
+        0.051342305903981304,
+        0.03571384085774852,
+        0.02993546017838394
+      ],
+      "cv_trunc_largest_N": 0.04307097227250959,
+      "cv_slope_powerlaw": -0.3774358382020463,
+      "cv_slope_se": 0.08626222610718609,
+      "cv_slope_t_stat": 4.375447461013343,
+      "cv_slope_ci68_bootstrap": [
+        -0.45143789285576763,
+        -0.30673347455440664
+      ],
+      "cv_slope_boot_std": 0.07249629512356973,
+      "cv_slope_intercept": -0.32873297269522694,
+      "trunc_is_self_averaging": true,
+      "trunc_trend_decreasing": true,
+      "trunc_trend_significant": true,
+      "factor_like": true
+    },
+    "decision": {
+      "factor_like_low": true,
+      "factor_like_high": true,
+      "significant_low": true,
+      "significant_high": true,
+      "crossed_significance": false
+    }
+  },
+  "proxy3_vyp12_grid_crosscheck": {
+    "description": "SAME proxy3 on VYPOCET-12's EXACT 7-point grid [400..1800] to separate the seed-count effect from the N-grid choice. The 8-seed row here is the genuine VYPOCET-12 comparison; on THIS grid proxy3 was nonsignificant at 8 seeds and the high-seed run is the honest decider. The new 5-point grid (300..1700) is more log-uniform and starts lower, so it sharpens the fit and inflates the 8-seed t-stat -- which is why this cross-check is reported alongside.",
+    "Ns": [
+      400,
+      600,
+      800,
+      1000,
+      1200,
+      1500,
+      1800
+    ],
+    "low_seed": {
+      "n_seeds": 8,
+      "Ns": [
+        400,
+        600,
+        800,
+        1000,
+        1200,
+        1500,
+        1800
+      ],
+      "cv_trunc": [
+        0.07627142633551115,
+        0.045589493726073224,
+        0.04094545658945345,
+        0.05527536656396089,
+        0.03371109585352827,
+        0.03951142800944198,
+        0.05186260006006033
+      ],
+      "cv_full": [
+        0.058692377665123974,
+        0.04085975821402883,
+        0.023634836849378147,
+        0.03632786573885931,
+        0.025539719141420152,
+        0.02818837726096504,
+        0.03516111594230368
+      ],
+      "cv_trunc_largest_N": 0.05186260006006033,
+      "cv_slope_powerlaw": -0.28026449606082493,
+      "cv_slope_se": 0.18995018734640068,
+      "cv_slope_t_stat": 1.475463119969045,
+      "cv_slope_ci68_bootstrap": [
+        -0.48953815937852385,
+        -0.17514039349447413
+      ],
+      "cv_slope_boot_std": 0.19636841660315218,
+      "cv_slope_intercept": -1.1305394435106997,
+      "trunc_is_self_averaging": false,
+      "trunc_trend_decreasing": true,
+      "trunc_trend_significant": false,
+      "factor_like": false
+    },
+    "high_seed": {
+      "n_seeds": 50,
+      "Ns": [
+        400,
+        600,
+        800,
+        1000,
+        1200,
+        1500,
+        1800
+      ],
+      "cv_trunc": [
+        0.07188242627486813,
+        0.05654691332923464,
+        0.04894645883481794,
+        0.05075259016351067,
+        0.05557525542817515,
+        0.04917477588160317,
+        0.04756008057583342
+      ],
+      "cv_full": [
+        0.07453365173147486,
+        0.05525882144658748,
+        0.051342305903981304,
+        0.04265205955950739,
+        0.03571384085774852,
+        0.03390056172430065,
+        0.03291653045401422
+      ],
+      "cv_trunc_largest_N": 0.04756008057583342,
+      "cv_slope_powerlaw": -0.2241827806762481,
+      "cv_slope_se": 0.06905898338052903,
+      "cv_slope_t_stat": 3.246250809122912,
+      "cv_slope_ci68_bootstrap": [
+        -0.29650985791457546,
+        -0.1499910689359341
+      ],
+      "cv_slope_boot_std": 0.07429780179928787,
+      "cv_slope_intercept": -1.388228608891395,
+      "trunc_is_self_averaging": true,
+      "trunc_trend_decreasing": true,
+      "trunc_trend_significant": true,
+      "factor_like": true
+    }
+  },
+  "VERDICT": {
+    "n_seeds_hi": 50,
+    "proxy1_III_to_II": true,
+    "proxy2_III_to_II": true,
+    "proxy3_factor_like_newgrid_hi": true,
+    "proxy3_factor_like_vyp12grid_hi": true,
+    "proxy3_factor_like_robust": true,
+    "n_proxies_passing_hi": 3,
+    "proxy3_sig_newgrid_8seed": true,
+    "proxy3_sig_newgrid_hiseed": true,
+    "proxy3_sig_vyp12grid_8seed": false,
+    "proxy3_sig_vyp12grid_hiseed": true,
+    "genuine_seed_count_upgrade_on_original_grid": true,
+    "twoD_verdict": "3/3 -- proxy3 (self-averaging) is SIGNIFICANT at high seed on BOTH the new grid and VYPOCET-12's original grid; the 2D diamond now passes all three proxies. CAVEAT: on the original grid proxy3 was nonsignificant at 8 seeds (the genuine seed-count upgrade); the new 5-point grid inflates the low-seed t-stat, so the headline is the high-seed multi-grid agreement, NOT the new-grid 8-seed number."
+  },
+  "runtime_s": 1068.179498910904
+}

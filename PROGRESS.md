@@ -1,5 +1,7 @@
 # Progress tracker — Theory of Everything
 
+> 🟢 **SCALED FRONTA + KOLO 14 (B(a) SPOJITÝ EXPONENT / 4D A_mol KONVENCE VYŘEŠENA / proxy3 DOROZHODNUTA, 2026-06-08)** — Tři výzkumné stopy kola 14: (1) H5g-5 uzavřena — Kerr B(a) je SPOJITÁ funkce strhávání (6.10→2.54, dB/da=-2.20, z=-33.6), konstantní model B=3 zamítnut (chi2/dof~350); BTZ pod Kerr křivkou (F-030). (2) 4D A_mol konvence VYŘEŠENA — rho^1.77 byl kodim-1 artefakt, kodim-2 primitiv dává rho^0.494, ale R'=S_full/A_codim2 driftuje rho^+0.55 — 4D area-zákon genuinně nepřítomný v této konstrukci (F-031). (3) proxy3 dorozhodnuta — 2D-diamant 3/3 při >=30 seedech (VYPOCET-12 8-seedový null reprodukován, upgrade genuinní seed-count efekt; F-032). **Testy: 335 passed, 19 skipped, 1 xfailed.** findings.json = 32 nálezů (F-001..F-032). Web: python3 web/build.py.
+
 > 🟢 **VYPOCET-25 ŠKÁLOVANÁ KAMPAŇ VYHODNOCENA + VÝPOČETNÍ FRONTA PRÁZDNÁ (2026-06-08, kolo 13)** — 2D scaled run (rho 240–1200, ℓ 0.7–2.5, n=10 buněk): R = 0.130 ± 0.0039 (CV 3.0 %), nulový drift, cross-HW potvrzení F-028 — **2D kvantitativní area-zákon publikovatelně silný**. 4D kampaň: c^{4D} roste 5.6 → 65.8, R^{4D} ~ rho^{−0.72} — **žádná čistá 4D area-konstanta**, konvenční otázka A_mol ~ rho^{1.77} otevřena. F-025 4D saturace: rho=120 čistá (AIC favorizuje saturující model), rho≥600 compute-bound. Driver `ds4d` budget/checkpoint fix: sub-cell vynucení --max-hours (BudgetExceeded) + jemný checkpoint po každém seedu/boxu. F-029 zapsán. BRAINSTORM-05 H5g-1/H5g-2 status notes doplněny. Testy: viz kolo 13 log.
 
 > 🟢 **CAS VALIDACE + LINK PREDICTION + GRAF NA WEBU (2026-06-07, housekeeping)** — nezávislá CAS validační dráha `verification/cas/` (3 Wolfram Language skripty přímo z literárních koeficientů: Duff/Vassilevich/Chamseddine-Connes/Beccaria-Tseytlin/Hořava) připravena k aktivaci po `brew install --cask wolfram-engine`; testy gracefully skippují bez WL (`3 passed, 2 skipped`). Link prediction `lib/kgraph/` (leave-10%-out **AUC = 0,903 ± 0,018**, P@50 ≈ 1,0); top-50 v `core-data/link-predictions.json`. Interaktivní graf konceptů na `/data/graph.html` (force-graph, search/filtr/toggle/boční panel). Web: **111 stránek** (`python3 web/build.py`). Report [`reports/2026-06-07-link-prediction.md`](reports/2026-06-07-link-prediction.md).
@@ -37,6 +39,39 @@
 | 2 | Hledání nenalezených souvislostí (základní research) | ✅ dokončeno | 2026-06-05 | 2026-06-06 |
 
 ## Log
+
+### 2026-06-08 (kolo 14 — VYPOCET-26/27/28: B(a) Kerr exponent + 4D A_mol konvence + proxy3 hi-seed; F-030..F-032)
+
+- **VYPOCET-26 — H5g-5 uzavřena: B(a) v W_sr~Omega^B je SPOJITÁ funkce strhávání, ne konstanta D-1=3 (F-030):**
+  - **Neomezený fit (oprava artefaktu meze A=100):** váhovaná log-log regrese log W_sr = log A + B log Omega, near-zone body s W_sr>0, N=1600, 5 seedů, bootstrap CI přes seedy.
+  - **Kerr B(a) monotónně klesá:** 6.10(a=0.3), 3.70(a=0.5), 3.32(a=0.6), 3.13(a=0.7), 2.83(a=0.8), 2.67(a=0.9), 2.55(a=0.95), 2.54(a=0.99); vše R2>=0.988, corr_loglog>=0.995.
+  - **Starý omezený B (F-017):** a=0.6: 4.23, a=0.9: 3.82 — nadhodnocen o +0.91/+1.15 vlivem meze A<=100.
+  - **Trend dB/da = -2.20 +/- 0.07 (z=-33.6)**; robustní -2.13 (z=-32) bez pákového a=0.3. Konstantní model B=3 zamítnut: chi2=2473 (dof 7) vs chi2_linear=111 (dof 6); B=3 protnutí jen při a~0.75.
+  - **BTZ kontrast (Omega~r^-2 vs Kerr r^-3):** B(J=0.6)=2.22+/-0.02, B(J=0.9)=2.12+/-0.03, gap -1.10/-0.55 pod Kerr křivkou — nelze vysvětlit spinem, evidence role asymptotiky. Wall-clock 12.6 min (8-spinový grid).
+  - **Implikace pro draft-01 §4.2:** predikce se mění z „porovnej jediné B" na „trend dB/da<0 + BTZ pod Kerr křivkou"; §4.2 uvádět neomezené B s CI.
+
+- **VYPOCET-27 + VYPOCET-28 — viz předchozí log záznam (kolo 14, VYPOCET-27: 4D A_mol) + níže proxy3.**
+
+- **VYPOCET-28 — proxy3 dorozhodnuta (F-032):**
+  - Na VYPOCET-12 původním 7-bodovém gridu [400..1800]: 8 seedů t=1.48 (NEsig, reprodukuje VYPOCET-12 null), 30 seedů t=2.15 (sig), 50 seedů slope=-0.224+/-0.069 (t=3.25, sig; CI [-0.30,-0.15] vylučuje 0; factor_like=True).
+  - Na 5-bodovém gridu [300..1700]: 50 seedů slope=-0.377+/-0.086 (t=4.38, CI [-0.45,-0.31], factor_like=True).
+  - **2D diamant upgradován ze 2/3 (F-015) na 3/3**, robustní napříč oběma gridy při vysokém počtu seedů.
+  - Klíčová výhrada: upgrade je genuinní seed-count efekt na původním gridu; nový grid 8-seedový t=5.37 NESMÍ být čten jako VYPOCET-12 8-seedové srovnání. Runtime ~17.8 min.
+  - proxy1 (a_full=1.091, a_trunc=0.146) a proxy2 (exp_full=1.198->0.000) re-potvrzeny. n_passing=3/3.
+
+- **findings.json** rozšířen na **32 nálezů** (F-030: H5g-5 B(a) spojitý exponent; F-031: 4D A_mol konvence rozhodnuta; F-032: proxy3 hi-seed 3/3).
+- **Testy: 335 passed, 19 skipped, 1 xfailed v 153 s** (ze 334+VYPOCET-27 kola, +1 bez regrese z kola 14 calc dirs).
+
+### 2026-06-08 (kolo 14 — VYPOCET-27: 4D A_mol konvence ROZHODNUTA + lib horizon_molecules_codim2 + F-030)
+
+- **VYPOCET-27 — 4D A_mol konvenční otázka VYPOCET-25 vyřešena (F-030):**
+  - **Diagnóza ρ^1.77 (Stage A/A2):** re-analýza staged dat potvrzuje p_A = 1.768 ± 0.029, p_S = 1.055 ± 0.028, drift −0.713 (přesně F-029). Příčina: `ds_cap_4d.horizon_link_count_4d` počítá linky přes **kodim-1 SVĚTOČÁRU-TUBUS** `{r*=R_CUT}` (t, x₁, x₂ se mění) přes celý časový rozsah, NE kodim-2 entanglement 2-plochu. raw ~ ρ^1.72 = (n_sub ~ ρ^1.0) × (4D link-multiplicita L/N ~ ρ^0.655). Straddling linky mají ρ-NEZÁVISLOU normálovou separaci (|Δt| ≈ 0.65 konst.) ⇒ jsou to dlouhé near-null linky, NElokalizují na žádnou 2-plochu.
+  - **Korigovaná kodim-2 molekula (lib `toe.causet.horizon_molecules_codim2`, k_tube=1.5):** straddling link s OBĚMA konci do k·ε od E₀ = {r*=R_CUT, t=0} v normálové (t,r*) rovině + krátký vlastní interval. Měřeno **A_mol^codim-2 ~ ρ^(0.494 ± 0.006)** — přesně vlastní-plošný cíl ρ^0.5. Konvenční otázka VYŘEŠENA: ρ^1.77 byl kodim-1 artefakt.
+  - **Test ρ-invariance (Stage B, ρ∈{120,240,480}, ℓ=1.0, 4 seedy):** R' = S_full/A_codim2 driftuje **ρ^+0.55** (CV 0.35); R'' = S_trunc/A_codim2 (CV 1.73, S_trunc kolabuje na 0); R_raw (CV 0.46). **ŽÁDNÝ poměr není ρ-invariantní.**
+  - **VERDIKT (b) — 4D area-zákon GENUINNĚ NEPŘÍTOMNÝ v této konstrukci (poctivý negativ):** i se správnou kodim-2 plochou (~ρ^0.5) S_full sám škáluje objemově (~ρ^0.997), takže poměr nutně driftuje. Žádný 4D A/4 (ani „entropie-na-molekulu konstanta") claim NELZE udělat v ploché-kauzální + dS-sech² konstrukci. Posiluje VYPOCET-25/F-029 a rozhoduje jeho „oslabený" 4D claim. Konformní caveat (b z VYPOCET-25) zůstává neotestovaný (repo nemá přesný zakřivený 4D dS propagátor).
+- **Knihovní změny:** `lib/toe.causet.horizon_molecules_codim2` (nový composable primitiv + docstring Formula/Evidence/Conventions); test `app/tests/test_toe_horizon_molecules_codim2.py` (5 testů, zelené).
+- **Nový výpočet:** `core-data/calculations/ds-amol-convention/{calc.py,results.json}` (pevné schéma + status + atomický zápis, dvě fáze: exponent re-analýza + korigovaný kodim-2 confirmatory run, runtime ~10 min, dense N≤1920), figura `plots/A_mol_raw_vs_corrected_vs_rho.png`.
+- **Testy:** `334 passed, 19 skipped, 1 xfailed` (jediný fail `test_every_results_json_has_a_writeup` na `vn-type-proxy3-seeds` — sirotčí dir z paralelní stopy, NE z VYPOCET-27; můj vlastní web-build abs-path regres opraven relativní cestou plotu).
 
 ### 2026-06-08 (kolo 13 — VYPOCET-25 škálovaná dS entropie + ds4d driver budget/checkpoint fix + F-029)
 

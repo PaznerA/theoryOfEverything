@@ -50,6 +50,7 @@ __all__ = [
     # causal structure
     "causal_matrix",
     "link_matrix",
+    "horizon_molecules_codim2",
     # Green functions + Pauli-Jordan
     "green_retarded_2d",
     "green_retarded_4d",
@@ -427,6 +428,103 @@ def link_matrix(C):
     C = np.asarray(C, dtype=np.float64)
     C2 = C @ C
     return ((C > 0) & (C2 == 0)).astype(np.float64)
+
+
+def horizon_molecules_codim2(coords, C_or_L, *, r_index=1, r_cut, eps,
+                             k_tube=1.5, return_diagnostics=False):
+    r"""Count Dou-Sorkin horizon "molecules" on the CODIM-2 entangling 2-surface
+    ``E_0 = {x[r_index] = r_cut, t = 0}`` (swept by the two transverse spatial
+    directions), as the discrete avatar of the proper horizon AREA.
+
+    THE CONVENTION FIX (VYPOCET-27). The bounding surface of the observer region
+    ``O = {x[r_index] <= r_cut}`` is, at a FIXED time, a codimension-2 2-surface
+    -- the entangling surface whose proper AREA enters the Bekenstein-Hawking
+    ``S = A/4``. Naively counting EVERY irreducible causal link that crosses the
+    cut ``{x[r_index] = r_cut}`` instead counts links piercing the codim-1
+    WORLDTUBE ``{x[r_index] = r_cut}`` over the WHOLE time + transverse extent,
+    which in 4D scales as ``rho^{~1.77}`` (worldtube 3-volume ``~ rho^1`` times the
+    4D per-element link multiplicity ``~ rho^{~0.77}``), NOT as the proper area
+    ``rho^{(D-2)/D} = rho^{0.5}``. This routine restricts to molecules that sit ON
+    the codim-2 2-surface: a molecule is a straddling LINK ``(p, q)`` (exactly one
+    endpoint in ``O``) whose BOTH endpoints lie within proper distance
+    ``k_tube * eps`` of ``E_0`` in the surface-NORMAL ``(t, r)`` plane AND whose
+    proper interval is ``<= k_tube * eps`` (a genuine nearest causal pair, not a
+    long near-null link). The transverse directions are unrestricted, so the count
+    samples the 2-AREA: for FIXED proper area ``<n_molecule> ~ A / eps^2 ~
+    rho^{0.5}``.
+
+    Formula: horizon-molecule, dou-sorkin-link-count.
+    Evidence: VYPOCET-27 (core-data/calculations/ds-amol-convention/calc.py);
+    diagnoses + fixes the ``A_mol ~ rho^{1.77}`` codim-1-worldtube artefact of
+    VYPOCET-25 / ``compute/drivers/ds_cap_4d.py:horizon_link_count_4d``. Measured
+    exponent of this codim-2 count on ``sprinkle_ds_static_patch4d`` is
+    ``p ~ 0.5-0.6`` (k_tube=1.5), consistent with the proper-area ``rho^{0.5}``
+    target (residual ``+0.0-0.1`` tilt from the 4D near-null link multiplicity).
+    Conventions: Dou-Sorkin gr-qc/0302009 (horizon entropy as causal-link count /
+    "molecules"); the codim-2 restriction is the 2-surface localisation of that
+    molecule count. The surface-normal plane is ``(coords[:, 0], coords[:,
+    r_index])`` = (time, radial); ``eps`` is the discreteness scale (4D
+    ``eps = rho^{-1/4}``, FIXED from F-006 per the anti-circularity protocol).
+
+    Args:
+        coords: (N, dim) coordinates; column 0 is time, column ``r_index`` is the
+            radial coordinate whose level set ``= r_cut`` bounds the observer
+            region. The remaining columns are the transverse directions that
+            sweep the codim-2 surface.
+        C_or_L: either the (N, N) causal matrix (``C[x, y] = 1`` iff ``y < x``) or
+            an already-computed link matrix. If a causal matrix is passed the link
+            matrix is computed internally; a matrix that is already 0/1 with an
+            all-zero ``C @ C`` on its support (a link matrix) is used as-is.
+        r_index: column index of the radial coordinate (default 1, the tortoise
+            ``r*`` of ``sprinkle_ds_static_patch4d``).
+        r_cut: radial level defining the observer region ``O = {x[r_index] <=
+            r_cut}`` and its codim-2 bounding surface.
+        eps: discreteness scale (one lattice spacing); the molecule tube radius is
+            ``k_tube * eps``.
+        k_tube: tube radius in units of ``eps`` (default 1.5 -- one nearest causal
+            layer in the surface-normal plane; ``k_tube ~ 1`` is proper-area but
+            low-count/noisy, ``k_tube >~ 2`` crosses over to the codim-1 worldtube
+            count).
+        return_diagnostics: if True, also return a dict with the raw worldtube
+            straddling-link count and the molecule/raw ratio for the convention
+            audit.
+
+    Returns:
+        int molecule count, or ``(int, dict)`` if ``return_diagnostics``.
+    """
+    coords = np.asarray(coords, dtype=np.float64)
+    M = np.asarray(C_or_L, dtype=np.float64)
+    # Use as link matrix if it already is one (transitive-reduced), else reduce.
+    C2 = M @ M
+    is_link = bool(np.all((M <= 0) | (C2 == 0)))
+    L = M if is_link else ((M > 0) & (C2 == 0)).astype(np.float64)
+
+    t = coords[:, 0]
+    r = coords[:, r_index]
+    obs = r <= r_cut
+    a, b = np.nonzero(L)                 # L[a, b] = 1 => b precedes a (b < a)
+    straddle = obs[a] ^ obs[b]           # exactly one endpoint inside O
+
+    radius = float(k_tube) * float(eps)
+    # proper distance of each endpoint to E_0 in the surface-NORMAL (t, r) plane
+    da = np.sqrt(t[a] ** 2 + (r[a] - r_cut) ** 2)
+    db = np.sqrt(t[b] ** 2 + (r[b] - r_cut) ** 2)
+    near = (da <= radius) & (db <= radius)
+    # genuine nearest pair: small proper interval tau^2 = dt^2 - |dx|^2 <= radius^2
+    d = coords[a] - coords[b]
+    tau2 = d[:, 0] ** 2 - np.einsum("ij,ij->i", d[:, 1:], d[:, 1:])
+    short = tau2 <= radius ** 2
+    sel = straddle & near & short
+    n_mol = int(np.count_nonzero(sel))
+    if not return_diagnostics:
+        return n_mol
+    n_raw = int(np.count_nonzero(straddle))   # codim-1 worldtube link count
+    return n_mol, {
+        "n_raw_worldtube_links": n_raw,
+        "mol_over_raw": (n_mol / n_raw) if n_raw else float("nan"),
+        "tube_radius_eps_units": float(k_tube),
+        "eps": float(eps),
+    }
 
 
 # ===========================================================================
