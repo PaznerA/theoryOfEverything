@@ -1,7 +1,7 @@
 # Index znalostní báze — Theory of Everything
 
 > Anotovaný rejstřík všech souborů ve `knowledge-base/`, `core-data/` a `verification/`.
-> Generováno: 2026-06-05; aktualizováno: 2026-06-08 (kolo 14: VYPOCET-26/27/28, B(a) exponent, 4D A_mol konvence, proxy3 hi-seed; F-030..F-032).
+> Generováno: 2026-06-05; aktualizováno: 2026-06-08 (kolo 15: VYPOCET-29, spektrální triple vs. modulární K, H5g-4, F-033).
 
 ---
 
@@ -109,6 +109,10 @@
 - [../core-data/open-problems.json](../core-data/open-problems.json) — Registr otevřených problémů: **153 problémů** (+9 fuzzy duplicit k posouzení).
 - [../core-data/connections.json](../core-data/connections.json) — Viz výše.
 
+### Kolo 15 (VYPOCET-29)
+
+- [vypocty/VYPOCET-29-spectral-triple-modular.md](vypocty/VYPOCET-29-spectral-triple-modular.md) — Spektrální triple vs. SJ modulární Hamiltonián (H5g-4, F-033): surogátní D_K=sgn(K)sqrt(|K|), 2D slab T=0.30, N=1200, 5 seedů. Funkcionální kalkul exaktní (scale=1.0, R^2=1.0). BW boostová diagonála lineární (R^2=0.955, PASS). Off-diag spad log-log R^2=0.765 (pod prahem 0.8). Weylova dimenze 1.54 (pod [1.7,2.3]). **KLÍČOVÝ TEST — Connesova vzdálenost:** Pearson korelace s kauzální vzdáleností = 0.098, R^2=0.0095 — plochost fyzikální (optimalizátor ověřen na 1D řetězci). VERDIKT: **no-match na metrické úrovni**, boostová osa solidní (Connes-Rovelli tepelný čas). Hrana causal-sets <-> NCG instancována jako informovaný negativ. Data: `core-data/calculations/spectral-triple-modular/`. Knihovna: `lib/toe/spectraltriple.py`, test `app/tests/test_toe_spectraltriple.py`. Runtime 327.6 s. (F-033)
+
 ### Kolo 14 (VYPOCET-26–28)
 
 - [vypocty/VYPOCET-26-kerr-b-exponent.md](vypocty/VYPOCET-26-kerr-b-exponent.md) — H5g-5 uzavřena: B(a) v W_sr~Omega^B je SPOJITÁ funkce strhávání, ne dimenzní konstanta D-1=3. Neomezený log-log fit (oprava artefaktu meze A=100): Kerr B(a) 6.10(a=0.3)→2.54(a=0.99), trend dB/da=-2.20 (z=-33.6), chi2_const=2473/7. Konstantní model B=3 zamítnut; BTZ pod Kerr křivkou při srovnatelném rotačním parametru (gap -1.10/-0.55) — role asymptotiky potvrzena. Implikace pro draft-01 §4.2 uzavřena. N=1600, 5 seedů, 8 spinů, wall-clock 12.6 min. Data: `core-data/calculations/sj-kerr-b-scan/`. (F-030)
@@ -131,7 +135,7 @@
 
 ### Registr nálezů
 
-- [../core-data/findings.json](../core-data/findings.json) — Registr **32 originálních nálezů** (kola 1–14, aktualizováno 2026-06-08): F-001–F-029 viz předchozí kola; **F-030 (VYPOCET-26, kolo 14)** H5g-5 uzavřena — B(a) v W_sr~Omega^B SPOJITÁ funkce strhávání, ne konstanta D-1=3; Kerr B(a) 6.10→2.54, dB/da=-2.20 (z=-33.6), chi2_const=2473/7; BTZ pod Kerr křivkou (role asymptotiky); draft-01 §4.2 uzavřena; **F-031 (VYPOCET-27, kolo 14)** 4D A_mol konvence ROZHODNUTA — rho^1.77 byl kodim-1 artefakt; kodim-2 primitiv dává rho^0.494 ale S_full objemové (rho^0.997) — R' driftuje rho^+0.55; 4D area-zákon genuinně nepřítomný; **F-032 (VYPOCET-28, kolo 14)** proxy3 2D diamant DOROZHODNUTA — při >=30 seedech sig (t=3.25, CI [-0.30,-0.15]), při 8 seedech genuinní null (reprodukuje VYPOCET-12); 2D diamant verdikt 2/3 → 3/3. Každý nález rozlišuje reprodukci literatury od projektového přínosu.
+- [../core-data/findings.json](../core-data/findings.json) — Registr **33 originálních nálezů** (kola 1–15, aktualizováno 2026-06-08): F-001–F-032 viz předchozí kola; **F-033 (VYPOCET-29, kolo 15)** H5g-4 spektrální triple vs. modulární K — surogátní D_K reprodukuje BW boostovou strukturu (R^2=0.955) ale Connesova vzdálenost NEsleduje kauzální vzdálenost (korelace 0.10, R^2=0.01); korespondence SJ modulární Hamiltonián <-> NCG spektrální triple selhává na metrické úrovni; informovaný negativ, hrana causal-sets <-> NCG instancována; **F-030 (VYPOCET-26, kolo 14)** H5g-5 uzavřena; **F-031 (VYPOCET-27, kolo 14)** 4D A_mol konvence ROZHODNUTA; **F-032 (VYPOCET-28, kolo 14)** proxy3 2D diamant dorozhodnuta. Každý nález rozlišuje reprodukci literatury od projektového přínosu.
 
 ### Fragmenty pilířů (`core-data/fragments/`)
 
@@ -147,7 +151,7 @@ Osmnáct strojově zpracovatelných JSON fragmentů (koncepty, vzorce, reference
 
 ## Výpočty (`knowledge-base/vypocty/` + `core-data/calculations/`)
 
-Dvacet osm výpočtů dokončeno: čtyři v prvním deep-dive kole, tři v rozhodujícím kole, tři v kolech 3–4, dva v kole 5, dva v kole 6, dva v kole 7, dva v kole 8, dva v kole 9, dva v kole 10, dva v kolech 12–13, tři v kole 14. Každý má writeup v `knowledge-base/vypocty/` a strojová data (calc.py + results.json + plots) v odpovídajícím podadresáři `core-data/calculations/`.
+Dvacet devět výpočtů dokončeno: čtyři v prvním deep-dive kole, tři v rozhodujícím kole, tři v kolech 3–4, dva v kole 5, dva v kole 6, dva v kole 7, dva v kole 8, dva v kole 9, dva v kole 10, dva v kolech 12–13, tři v kole 14, jeden v kole 15. Každý má writeup v `knowledge-base/vypocty/` a strojová data (calc.py + results.json + plots) v odpovídajícím podadresáři `core-data/calculations/`.
 
 ### Kolo 1 (VYPOCET-01–04)
 

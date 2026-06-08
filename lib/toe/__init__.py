@@ -29,6 +29,9 @@ layers; ``fits`` is the leaf):
     Layer C (depends on A + B)
       toe.entropy   SSEE via the generalized eigenproblem; scaling driver.
       toe.vntype    von Neumann type proxies for the SSEE truncation transition.
+      toe.spectraltriple  Finite spectral-triple Dirac D_K = sgn(K) sqrt(|K|)
+                    from a one-particle modular kernel, and the Connes spectral
+                    distance d_D(x,y) = sup{|a(x)-a(y)| : ||[D,a]|| <= 1}.
 
 Import convention: the package lives under ``lib/`` and is imported by path
 (``sys.path`` shim in app/tests/conftest.py); there is no setup.py / pyproject.
@@ -150,6 +153,16 @@ from toe.vntype import (
     saturation_discriminator,
 )
 
+# ---------------------------------------------------------------------------
+# Layer C3 -- spectraltriple (finite spectral-triple Dirac + Connes distance)
+# ---------------------------------------------------------------------------
+from toe.spectraltriple import (
+    dirac_from_kernel,
+    connes_commutator_norm,
+    connes_distance,
+    ConnesDistance,
+)
+
 __all__ = [
     "__version__",
     # fits (A1)
@@ -224,4 +237,9 @@ __all__ = [
     "trace_scaling",
     "type_proxies",
     "saturation_discriminator",
+    # spectraltriple (C3)
+    "dirac_from_kernel",
+    "connes_commutator_norm",
+    "connes_distance",
+    "ConnesDistance",
 ]

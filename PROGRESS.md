@@ -1,5 +1,7 @@
 # Progress tracker — Theory of Everything
 
+> 🟢 **KOLO 15 — H5g-4 SPEKTRÁLNÍ TRIPLE (GO-LIMITED / NO-MATCH METRICKY / 2026-06-08)** — Surogátní spektrální triple z SJ modulárního Hamiltoniánu (D_K=sgn(K)sqrt(|K|)) na 2D slabu (N=1200, 5 seedů): (1) BW boostová struktura reprodukována (lineární diagonála R^2=0.96, robustní) — PASS; (2) Connesova vzdálenost NEsleduje kauzální/geodetickou vzdálenost (korelace 0.10, R^2=0.01, plochá ~2.0–2.5) — NO-MATCH; Weylova dimenze 1.54 pod pásmem [1.7,2.3]; off-diag R^2=0.765 těsně pod prahem. Optimalizátor ověřen (1D řetězec). VERDIKT: korespondence SJ modulární Hamiltonián <-> NCG spektrální triple selhává na METRICKÉ úrovni; boostová/tepelně-časová osa solidní. Hrana causal-sets <-> NCG (connections.json idx 61) INSTANCOVÁNA — zůstává barely, nyní informovaný negativ (F-033). **Testy: 339 passed, 19 skipped, 1 xfailed.** findings.json = 33 nálezů (F-001..F-033). VYPOCET-29 writeup existuje.
+
 > 🟢 **SCALED FRONTA + KOLO 14 (B(a) SPOJITÝ EXPONENT / 4D A_mol KONVENCE VYŘEŠENA / proxy3 DOROZHODNUTA, 2026-06-08)** — Tři výzkumné stopy kola 14: (1) H5g-5 uzavřena — Kerr B(a) je SPOJITÁ funkce strhávání (6.10→2.54, dB/da=-2.20, z=-33.6), konstantní model B=3 zamítnut (chi2/dof~350); BTZ pod Kerr křivkou (F-030). (2) 4D A_mol konvence VYŘEŠENA — rho^1.77 byl kodim-1 artefakt, kodim-2 primitiv dává rho^0.494, ale R'=S_full/A_codim2 driftuje rho^+0.55 — 4D area-zákon genuinně nepřítomný v této konstrukci (F-031). (3) proxy3 dorozhodnuta — 2D-diamant 3/3 při >=30 seedech (VYPOCET-12 8-seedový null reprodukován, upgrade genuinní seed-count efekt; F-032). **Testy: 335 passed, 19 skipped, 1 xfailed.** findings.json = 32 nálezů (F-001..F-032). Web: python3 web/build.py.
 
 > 🟢 **VYPOCET-25 ŠKÁLOVANÁ KAMPAŇ VYHODNOCENA + VÝPOČETNÍ FRONTA PRÁZDNÁ (2026-06-08, kolo 13)** — 2D scaled run (rho 240–1200, ℓ 0.7–2.5, n=10 buněk): R = 0.130 ± 0.0039 (CV 3.0 %), nulový drift, cross-HW potvrzení F-028 — **2D kvantitativní area-zákon publikovatelně silný**. 4D kampaň: c^{4D} roste 5.6 → 65.8, R^{4D} ~ rho^{−0.72} — **žádná čistá 4D area-konstanta**, konvenční otázka A_mol ~ rho^{1.77} otevřena. F-025 4D saturace: rho=120 čistá (AIC favorizuje saturující model), rho≥600 compute-bound. Driver `ds4d` budget/checkpoint fix: sub-cell vynucení --max-hours (BudgetExceeded) + jemný checkpoint po každém seedu/boxu. F-029 zapsán. BRAINSTORM-05 H5g-1/H5g-2 status notes doplněny. Testy: viz kolo 13 log.
@@ -39,6 +41,23 @@
 | 2 | Hledání nenalezených souvislostí (základní research) | ✅ dokončeno | 2026-06-05 | 2026-06-06 |
 
 ## Log
+
+### 2026-06-08 (kolo 15 — VYPOCET-29: spektrální triple vs. modulární K, H5g-4; F-033)
+
+- **VYPOCET-29 — H5g-4 spektrální triple vs. SJ modulární Hamiltonián (F-033):**
+  - **Setup:** 2D slab T=0.30, L=1.0, řez O={x>0} (Rindlerova geometrie), netruncovaný modulární kernel K(x,y) z entropy.modular_kernel; kandidátní Dirac D_K=sgn(K)sqrt(|K|) (symetrický funkcionální kalkul). N=1200, 5 seedů; runtime 327.6 s (<25 min cap).
+  - **Funkcionální kalkul:** scale=1.0000, R^2=1.0000 — triviální sanity, exaktní.
+  - **BW boostová struktura (diagonála):** R^2=0.955 (rozsah 0.947–0.968), sklon~27 — PASS. Modulární tok je generátor BW boostu.
+  - **Off-diag spad:** sklon -0.503 (lokální), log-log R^2=0.765 — těsně pod předregistrovaným prahem 0.8.
+  - **Weylova dimenze:** 1.54 (1.46–1.65), counting R^2=0.997 — pod cílovým pásmem [1.7,2.3].
+  - **KLÍČOVÝ TEST — Connesova vzdálenost:** contiguous 220-bodový patch (z n_sub=614), 14 párů: Pearson korelace s kauzální/geodetickou vzdáleností = 0.098, R^2=0.0095, sklon 0.27; d_D shlukuje ~2.0–2.5 NEZÁVISLE na separaci. VERDIKT: **no-match**.
+  - **Optimalizátor ověřen nezávisle:** 1D Diracův řetězec D=i(S-S^T): sousední d=1.0 přesně, monotónní — plochost je fyzikální vlastnost D_K, ne selhání solveru.
+  - **Fyzikální výklad:** D_K je dominován diagonální boostovou (časově-energetickou) složkou; Connes čte metriku z off-diagonálního komutátoru [D,a], který u modulárního boostového generátoru nedává distance-aditivní metriku. Modulární tok je generátor boostu, NE Diracova prostorová metrika.
+  - **Hrana connections.json idx 61** (causal-sets -> noncommutative-geometry, barely, shared-math): INSTANCOVÁNA a ANOTOVÁNA přesně dle poc.edgeUpdate — rating PONECHÁN barely (informovaný negativ, nikoli neprozkoumaná zóna).
+  - **F-033** zapsáno: status 'negative', evidence paths ověřeny na disku, refs všechny ověřené.
+- **Testy: 339 passed, 19 skipped, 1 xfailed v 153 s** (ze 335 kola 14, +4 nové spectraltriple testy bez regrese).
+- **findings.json** rozšířen na **33 nálezů** (F-033: H5g-4 spektrální triple vs. modulární K — no-match na metrické úrovni, boostová osa solidní).
+- **BRAINSTORM-05 H5g-4** anotován stavovým note. **00-INDEX.md** rozšířen o VYPOCET-29 a calc dir.
 
 ### 2026-06-08 (kolo 14 — VYPOCET-26/27/28: B(a) Kerr exponent + 4D A_mol konvence + proxy3 hi-seed; F-030..F-032)
 

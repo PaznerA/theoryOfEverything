@@ -544,5 +544,38 @@
   "caveats": "Status 'supported': upgrade je seed-count efekt (genuine), ne artefakt; nový 5-bodový grid nafukuje LOW-seed t-stat (8 seedů t=5.37 vs původní grid 8 seedů t=1.48) — tato čísla nejsou kompatibilní. Proxy3 na původním gridu byl při 8 seedech genuinní null; signifikance přišla teprve při >=30 seedech. 'Měříme N-trendy, ne typ': na konečné kauzální množině je každá algebra triviálně typ I_n; CV self-averaging je signatura faktoriality (triviální centrum), ne přímé měření typu II. 2D bezhmotný skalár. toe-library pipeline reprodukuje VYPOCET-12 proxy1/2 exponenty v rámci seed/pipeline noise (a_full 1.09 vs 1.04) a 8-seedový proxy3 verdikt (oba nesig), ale per-N CV hodnoty nejsou bit-identické s commitnutým inline calc (různé local-cut/floor zpracování). Pro F-019 (4D slab, proxy3 mezi jeho 3 procházejícími nepatří): nezměněno; >=30-seedový 4D re-run je levný volitelný follow-up. Pro F-023 (2D dS, proxy3 nesig při 5 seedech): zůstává 2/3 do analogického >=30-seedového dS re-runu.",
   "implications": "F-015 status zůstává 'supported', verdikt se upgraduje ze 2/3 na 3/3 s podmínkou >=30 seedů. BRAINSTORM-05 #6 (proxy3 byla při 8 seedech genuinní null) je přesně reprodukován a zpřesněn: >=30 seedů ji rozliší. Celkový 2D-diamant výsledek (III->II typ-přechod) je nyní podpořen všemi třemi nezávislými proxy. Doporučení: future multi-proxy runs v 2D / 4D slab / 2D dS mají od počátku používat >=30 seedů pro proxy3.",
   "noveltyStatus": "Systematická seed-count analýza proxy3 (CV self-averaging) s bootstrap CI přes dva nezávislé gridy, demonstrace že 8-seedová nesignifikance je genuinní statistický limit (ne vědecký výsledek), a upgrade 2D-diamant verdiktu na 3/3 jsou project-original. toe-library pipeline reprodukce VYPOCET-12 základní linie (proxy1/2 exponenty + 8-seedový proxy3 null) je nový validační datový bod pro toe.sj + toe.vntype._ssee_mu pipeline."
+ },
+ {
+  "id": "F-033",
+  "statement": "Surogátní spektrální triple ze SJ modulárního Hamiltoniánu NEsjednocuje kauzální množiny a NCG pod jedním Diracem na metrické úrovni; boostová (Bisognano-Wichmannova) osa korespondence však stojí. Setup: 2D slab T=0.30<L=1.0, řez O={x>0} (Rindlerova geometrie, modulární tok = BW boost), netruncovaný jednočásticový modulární kernel K(x,y) ze SSEE W_O=μiΔ_O (entropy.modular_kernel); kandidátní Dirac D_K=sgn(K)sqrt(|K|) (symetrický funkcionální kalkul, D_K^2=|K| na 1e-16). N=1200, 5 seedů. VÝSLEDKY: (1) Funkcionální kalkul exaktní: scale=1.0000, R^2=1.0000 (trivial sanity pass). (2) Diagonální BW boostová váha LINEÁRNÍ: R^2=0.955 (rozsah 0.947–0.968 přes 5 seedů), sklon~27 — PASS. (3) Off-diagonální spad |K(x,y)| vs |x-y|: sklon -0.503 (negativní=lokální), log-log R^2=0.765 — TĚSNĚ pod předregistrovaným prahem 0.8. (4) Weylova dimenze z counting N(Lambda)~Lambda^d: d=1.54 (1.46–1.65), counting R^2=0.997 — POD cílovým pásmem [1.7,2.3]. (5) KLÍČOVÝ TEST — Connesova vzdálenost d_D(x,y)=sup{|a_i-a_j|:||[D,a]||_op<=1} na contiguous 220-bodovém near-cut patch (z n_sub=614), 14 párů: Pearsonova korelace s kauzální/geodetickou vzdáleností = 0.098, lineární fit R^2=0.0095, sklon 0.27; d_D shlukuje kolem 2.0–2.5 NEZÁVISLE na separaci (0.0–0.36). VERDIKT: no-match. Optimalizátor nezávisle ověřen na kanonickém 1D Diracově řetězci D=i(S-S^T): sousední d_D=1.0 přesně, monotónní v separaci — plochost na slabu je fyzikální vlastnost modulárního Diraca, ne selhání solveru.",
+  "status": "negative",
+  "evidence": [
+   "knowledge-base/vypocty/VYPOCET-29-spectral-triple-modular.md",
+   "core-data/calculations/spectral-triple-modular/results.json",
+   "core-data/calculations/spectral-triple-modular/plots/spec_K_vs_D.png",
+   "core-data/calculations/spectral-triple-modular/plots/connes_vs_causal.png"
+  ],
+  "date": "2026-06-08",
+  "relatedHypotheses": [
+   "H5g-4"
+  ],
+  "caveats": "D_K je SUROGÁT (odmocnina-modulu modulárního kernelu), NIKOLI from-first-principles causal-set Dirac známé KO-dimenze/reálné struktury. Testuje, zda modulární data SAMA nesou metrický+lokalitní obsah, ne existenci plného axiomatického triplu. Off-diag R^2 (0.765) a Weylova dimenze (1.54) jsou hraniční/mírně pod prahy, nevyladěny pro PASS. 5 seedů, N=1200, 2D slab. Optimalizátor ověřen nezávisle (1D řetězec, sousední d=1.0 přesně), takže plochost je fyzikální, ne solverový artefakt. Finální K závisí na iDelta jádru (restrikce na image pro iDelta s jádrem). cvxpy (Frobeniova relaxace) chybí — výpočet použil přímou SDP formulaci.",
+  "implications": "Hrana causal-sets <-> noncommutative-geometry (connections.json index 61) byla touto prací POPRVÉ instancována jako konkrétní datová hrana. Korespondence SJ modulární Hamiltonián <-> NCG spektrální triple selhává na METRICKÉ úrovni: Connesova vzdálenost D_K nereproduuje kauzální/geodetickou vzdálenost (korelace 0.10, R^2=0.01). Modulární tok je generátor boostu (Bisognano-Wichmann / Tomita-Takesaki / tepelný čas Connes-Rovelli), NIKOLI Diracova prostorová metrika — korespondence selhává přesně tam, kde by musela ztotožnit dva různé geometrické obsahy. Boostová/tepelně-časová osa korespondence (Connes-Rovelli gr-qc/9406019) je solidní (lineární diagonála R^2=0.96). Hrana zůstává barely — jediné instancování dalo na klíčové (metrické) ose negativní výsledek; je to nyní INFORMOVANÝ negativ, ne neprozkoumaná zóna.",
+  "noveltyStatus": "První přímý numerický test korespondence SJ modulárního Hamiltoniánu K a NCG spektrálního triple (Connesova vzdálenost vs. kauzální vzdálenost) na sprinkledém slabu je project-original. Identifikace, že D_K věrně reprodukuje BW boostovou strukturu (lineární diagonála, R^2=0.96, robustní přes 5 seedů) ale jeho Connesova vzdálenost nesleduje kauzální vzdálenost (R^2=0.01), je nový projekt-originální výsledek. Nezávislé ověření optimalizátoru (1D Diracův řetězec) jako kontrola física vs. solveru je nový validační datový bod.",
+  "refs": [
+   "1611.10281",
+   "1712.04227",
+   "2008.07697",
+   "2206.10780",
+   "1001.2725",
+   "1305.2588",
+   "0905.2562",
+   "gr-qc/9406019",
+   "1611.09947",
+   "1403.1622",
+   "1806.08253",
+   "2206.14762",
+   "1408.3260"
+  ]
  }
 ]

@@ -217,6 +217,8 @@ objekt/observable/diskriminátor/N-proveditelnost — maticové ops strop ~N 250
 
 ### H5g-4 — Spektrální triple ↔ Pauli-Jordan: NCG Diracův operátor rekonstruuje SJ modulární Hamiltonián (lovná zóna)
 
+> **[Kolo 15, VYPOCET-29, F-033] GO-LIMITED / NO-MATCH NA METRICKÉ ÚROVNI.** Surogátní D_K=sgn(K)sqrt(|K|) na 2D slabu (N=1200, 5 seedů) reprodukuje BW boostovou strukturu (lineární diagonála R^2=0.955, robustní) ale jeho Connesova vzdálenost NEsleduje kauzální vzdálenost (korelace 0.10, R^2=0.01). Hrana causal-sets <-> NCG (connections.json idx 61) INSTANCOVÁNA — zůstává barely jako **informovaný negativ**: korespondence SJ modulární Hamiltonián <-> NCG spektrální triple selhává na METRICKÉ úrovni; boostová/tepelně-časová osa (Connes-Rovelli) solidní.
+
 **(jádro: nedotčená barely hrana `causal-sets↔noncommutative-geometry`, shared-math; spojí dvě vlajkové linie přes třetí pilíř)**
 **Priorita: medium (vysoká novost, střední proveditelnost).**
 
