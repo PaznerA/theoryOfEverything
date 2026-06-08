@@ -51,6 +51,41 @@ komentářem u každého zdroje; nic se nečte z `core-data/`.
   $2$; CST d'Alembertian $2$; multifrakcionální $2$; **Hořava $z{=}2 \to 5/2$**, **$z{=}3
   \to 2$**, IR $z{=}1 \to 4$; headline $D_{\rm space}{=}3, z{=}3 \to 2$.
 
+### `heat-kernel-perturbative-gravity-counterterms.wl` — Dávka B1 (kolo 20)
+
+Osm vzorců z oblasti heat-kernel / perturbativní gravitace / power counting:
+
+- **'t Hooft–Veltman 1974:** koeficienty 1-smyčkového kontratermů R² = 1/120 a Ric² = 7/20; on-shell gravitace 1-smyčkově konečná.
+- **Goroff–Sagnotti 1985/86:** 2-smyčkový neodstranitelný Weyl³ člen s koeficientem 209/2880 — neperturbativní nerenormalizovatelnost.
+- **Power counting:** D=(d−2)L+2 (počet divergentních momentů); při d=4 lineárně rostoucí s L.
+- **Kvantová korekce:** 41/(10π) G ħ/r²c³ — přesně jedna mocnina ħ a π⁻¹.
+- **N=8 kritická dimenze:** D_c(L)=4+6/L klesá s počtem smyček.
+- **Weinberg 2+ε:** g*=3/38 ε exaktní racionál (AS dráha).
+- **N=8 spinový obsah:** Cremmer–Julia–Scherk: Binomial[8,4−2s] → {1,8,28,56,70}, součet 2⁸=256.
+- **Stelle propagátor:** parciální zlomek → negativní reziduum = spin-2 ghost.
+
+### `causal-set-combinatorial-operators.wl` — Dávka B2 (kolo 20)
+
+Šest vzorců kombinatoriky kauzálních množin:
+
+- **Benincasa–Dowker 4D akce:** váhy vrstev {1,−1,9,−16,8} z koeficientů vrstev (arXiv:1001.2725); cross-lock s d'Alembertiánem.
+- **Diskrétní d'Alembertián 4D:** váhy vrstev (1,−9,16,−8) ověřeny; prefaktor 4/√6.
+- **Myrheim–Meyer:** ⚠️ **MISMATCH** — viz `formula-coverage.json`. Správná normalizace je /2, registr má /4.
+- **KR počítání:** log₂(#posetů)=n²/4 (Loomis–Carlip arXiv:1709.00064).
+- **Poissonův sprinkle:** normalizace, střední hodnota a rozptyl (Bombelli et al. 1987).
+- **Číslo–objem:** ⟨n⟩=ρV jako střední hodnota Poissonova sprinklingu (Surya arXiv:1903.11544).
+
+### `b4-swampland-inflation-scaling.wl` — Dávka B4 (kolo 20)
+
+Sedm vzorců swampland / inflace / algebraických identit:
+
+- **Slow-roll spektrální index:** n_s−1=−6ε+2η a r=16ε (Planck 2018 arXiv:1807.06211).
+- **WGC KK rate:** γ(d=4,n=1)=√(3/2) (Etheredge et al. arXiv:2206.04063).
+- **Univerzální pattern:** součin gradientů=1/(d−2) (Castellano–Ruiz–Valenzuela arXiv:2311.01536).
+- **Species scale:** Λ_sp=M_Pl/√N (Palti arXiv:1903.06239; Dvali et al. arXiv:2403.18005).
+- **w(1+∞) algebra:** strukturní konstanty — Jacobiho identita symbolicky + 8 trojicemi.
+- **BCJ Jacobi:** color-Jacobi ↔ kinematický Jacobi (arXiv:0805.3993).
+
 ### `lambda_ledger.wl` — Λ-indukční účetnictví (VYPOCET-17)
 
 Formální symbolová aritmetika ($f_0,f_2,f_4,N,\hat k,\hat g,\Lambda$):
@@ -66,6 +101,10 @@ Formální symbolová aritmetika ($f_0,f_2,f_4,N,\hat k,\hat g,\Lambda$):
 
 Každý skript exportuje `*_result.json` (každý check jako `True/False` + exaktní racionály
 jako řetězce).
+
+### `formula-coverage.json` — Registr pokrytí CAS (kolo 20)
+
+Oddělený registr stavu CAS ověření pro všechny záznamy `core-data/formulas.json`. Protože `formulas.json` je **generovaný** z `core-data/fragments/` skriptem `workflows/consolidate.py`, nelze do něj přímo zapisovat — stav se vede zde. Obsahuje: `cas_verification` (verified | definitional | numerical | already_validated | mismatch), odkaz na WL skript, poznámku. Pole `mismatch_blocker` v `meta` upozorňuje na aktivní chybu v registru (`myrheim-meyer`, jmenovatel 4→2).
 
 ## Instalace a spuštění
 

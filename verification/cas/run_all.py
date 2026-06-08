@@ -33,10 +33,32 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 # (.wl script, the JSON it exports) -- the export name is fixed inside each .wl.
+# Round 20 (2026-06-08): added B1–B4 scripts from CAS formula-registry revision.
 SCRIPTS = [
     ("a4_identity.wl", "a4_identity_result.json"),
     ("ds_classifier.wl", "ds_classifier_result.json"),
     ("lambda_ledger.wl", "lambda_ledger_result.json"),
+    (
+        "cft-central-charges-bh-entropy.wl",
+        "cft-central-charges-bh-entropy_result.json",
+    ),
+    # B1: heat-kernel / perturbative-gravity counterterms & power counting
+    (
+        "heat-kernel-perturbative-gravity-counterterms.wl",
+        "heat-kernel-perturbative-gravity-counterterms_result.json",
+    ),
+    # B2: causal-set combinatorial operators & dimension estimators
+    (
+        "causal-set-combinatorial-operators.wl",
+        "causal-set-combinatorial-operators_result.json",
+    ),
+    # B3: CFT central charges & microscopic black-hole entropy (moved from original list above)
+    # Note: cft-central-charges-bh-entropy.wl already included above; no duplicate needed.
+    # B4: swampland / inflation exact scaling relations & algebraic identities
+    (
+        "b4-swampland-inflation-scaling.wl",
+        "b4-swampland-inflation-scaling_result.json",
+    ),
 ]
 
 WOLFRAM = "wolframscript"

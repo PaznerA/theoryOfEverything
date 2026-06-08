@@ -1,7 +1,7 @@
 # Index znalostní báze — Theory of Everything
 
 > Anotovaný rejstřík všech souborů ve `knowledge-base/`, `core-data/` a `verification/`.
-> Generováno: 2026-06-05; aktualizováno: 2026-06-08 (kolo 19: VYPOCET-35/36, F-039 confirmed, +6 hran, adversariální audit; 39 nálezů; testy 356 passed).
+> Generováno: 2026-06-05; aktualizováno: 2026-06-08 (kolo 20: CAS revize vzorců — triáž 247, B1–B4 validace, 33 verified, 1 mismatch BLOCKER `myrheim-meyer`; 7 WL skriptů aktivních, formula-coverage.json nový).
 
 ---
 
@@ -33,7 +33,17 @@
 - [../verification/cas/a4_identity.wl](../verification/cas/a4_identity.wl) — Ověřuje −18/11 (single Weyl), Dirac = 2×Weyl (stejný poměr), třícestnou konzistenci (spektrální α₀/τ₀ = single-Weyl = Dirac; f₀ i π se pokrátí přes `Together+FreeQ`), obsahovou nezávislost SM 45 i 48, plný SM láme identitu (−1698/1991), konformní graviton −398/261, STr(1) = −62/−68. Export `a4_identity_result.json`.
 - [../verification/cas/ds_classifier.wl](../verification/cas/ds_classifier.wl) — Izotropní d_s = D/γ a Hořavova d_s = 1 + D_space/z; validuje ~9 exaktních racionálů vč. Hořava z=2→5/2, z=3→2, IR z=1→4. Export `ds_classifier_result.json`.
 - [../verification/cas/lambda_ledger.wl](../verification/cas/lambda_ledger.wl) — Formální symbolová aritmetika (f₀,f₂,f₄,N,k̂,ĝ,Λ); ověřuje a₀ a a₂ lineární v N, poměr a₀:a₂ nese (f₄/f₂)Λ², intra-a₄ poměr −18/11 cutoff-čistý, Λcc/m_Pl² = π²f₄/(2Nf₂²k̂²) nese 1/N. Export `lambda_ledger_result.json`.
-- [../verification/cas/run_all.py](../verification/cas/run_all.py) — Runner: volá `wolframscript -file` pro každý .wl, sbírá JSONy do `results.json` s overall pass/fail; při chybějícím wolframscript exit 2 + zpráva. Testy: `app/tests/test_cas_validation.py` (3 vždy-běžící guardy + 2 Wolfram-podmíněné).
+- [../verification/cas/run_all.py](../verification/cas/run_all.py) — Runner: volá `wolframscript -file` pro každý .wl, sbírá JSONy do `results.json` s overall pass/fail; při chybějícím wolframscript exit 2 + zpráva. **Kolo 20:** rozšířen o B1–B4 skripty (celkem 7 .wl skriptů v dráze). Testy: `app/tests/test_cas_validation.py` (3 vždy-běžící guardy + 2 Wolfram-podmíněné).
+- [../verification/cas/heat-kernel-perturbative-gravity-counterterms.wl](../verification/cas/heat-kernel-perturbative-gravity-counterterms.wl) — **Dávka B1** (kolo 20): 8 vzorců heat-kernel / perturbativní gravitace: 'tHooft–Veltman (1/120, 7/20), Goroff–Sagnotti (209/2880), D=(d−2)L+2, 41/(10π), D_c(L)=4+6/L, g*=3/38ε, N=8 spin obsah, Stelle parciální zlomek. Všechny **verified**. Export `heat-kernel-perturbative-gravity-counterterms_result.json`.
+- [../verification/cas/causal-set-combinatorial-operators.wl](../verification/cas/causal-set-combinatorial-operators.wl) — **Dávka B2** (kolo 20): 6 vzorců kauzálně-množinové kombinatoriky: BD akce, diskrétní d'Alembertián, KR počítání n²/4, Poissonův sprinkle, číslo–objem. **5 verified, 1 mismatch** (`myrheim-meyer`: BLOCKER — jmenovatel 4→2). Export `causal-set-combinatorial-operators_result.json`.
+- [../verification/cas/b4-swampland-inflation-scaling.wl](../verification/cas/b4-swampland-inflation-scaling.wl) — **Dávka B4** (kolo 20): 7 vzorců swampland/inflace: slow-roll, WGC KK rate √(3/2), universální pattern 1/(d−2), species scale, w(1+∞) algebra, BCJ Jacobi. Všechny **verified**. Export `b4-swampland-inflation-scaling_result.json`.
+- [../verification/cas/formula-coverage.json](../verification/cas/formula-coverage.json) — **Registr CAS pokrytí** (kolo 20): stav `cas_verification` pro 37 vzorců (verified/already_validated/mismatch). `meta.mismatch_blocker` obsahuje detail `myrheim-meyer`. Zbývající kategorie: definitional 158, numerical 36.
+
+---
+
+## Denní zprávy a reviewové reporty — kolo 20
+
+- [../reports/2026-06-08-cas-formula-revision.md](../reports/2026-06-08-cas-formula-revision.md) — **CAS revize registru vzorců** (kolo 20, 2026-06-08): triáž 247 vzorců (34 CAS-checkable, 158 definitional, 36 numerical, 19 already-validated); validace B1–B4 (33 verified, 1 mismatch = BLOCKER `myrheim-meyer` jmenovatel 4→2); aktualizace run_all.py + formula-coverage.json.
 
 ---
 
