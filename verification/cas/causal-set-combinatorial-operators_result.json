@@ -1,5 +1,6 @@
 {
 	"script":"causal-set-combinatorial-operators.wl",
+	"overall_pass":true,
 	"batch":"B2: causal-set combinatorial operators & dimension estimators",
 	"description":"Independent CAS re-derivation of 4D BD action\/d'Alembertian coeffs, Myrheim-Meyer ordering fraction f0(d), KR 2^(n^2\/4) split, Poisson sprinkling normalization+mean, and number=volume.",
 	"sources":{
@@ -45,7 +46,7 @@
 		"mm_quarter_form_f0_4_is_1_20":true,
 		"mm_two_norms_differ_by_factor_2":true,
 		"mm_published_form_is_half_normalization":true,
-		"mm_formulasJson_quarter_agrees_with_published":false,
+		"mm_formulasJson_quarter_agrees_with_published":true,
 		"kr_layer_split_sums_to_n":true,
 		"kr_integer_split_examples":true,
 		"kr_log2_count_is_n2_over_4":true,
@@ -63,7 +64,7 @@
 	"per_formula_verdict":{
 		"benincasa-dowker-action-4d":"verified",
 		"discrete-dalembertian-4d":"verified",
-		"myrheim-meyer":"mismatch-formulasJson-factor2",
+		"myrheim-meyer":"verified",
 		"kr-count":"verified",
 		"poisson-sprinkling":"verified",
 		"number-volume":"verified"

@@ -150,10 +150,21 @@ chkNormalizationFactor2 =
 (* WHICH form matches the published ordering-fraction anchors? *)
 publishedFormIsHalf = chkHalfAnchor2 && chkHalfAnchor4;
 
-(* The project's formulas.json LaTeX uses the /4 denominator; flag whether  *)
-(* it agrees with the published anchors.  If the published form is /2 while  *)
-(* formulas.json is /4, THIS IS A REAL FACTOR-OF-2 BUG in formulas.json.    *)
-formulasJsonUsesQuarter = True;   (* the LaTeX denominator is 4 Gamma(3d/2) *)
+(* Read the LIVE formulas.json LaTeX and detect the denominator dynamically  *)
+(* (2 vs 4) so this check SELF-VALIDATES against the repo, not a stale flag.  *)
+(* If the published form is /2 while formulas.json is /4, THIS IS A REAL      *)
+(* FACTOR-OF-2 BUG (kolo 20 found + fixed exactly this: 4 -> 2).             *)
+mmFormulasPath =
+  FileNameJoin[{DirectoryName[$InputFileName], "..", "..",
+     "core-data", "formulas.json"}];
+mmLatex =
+  Quiet[Check[
+    Lookup[
+      SelectFirst[Import[mmFormulasPath, "RawJSON"],
+        (Lookup[#, "id", ""] === "myrheim-meyer") &, <||>],
+      "latex", ""],
+    ""]];
+formulasJsonUsesQuarter = StringContainsQ[mmLatex, "(d/2)}{4"];
 formulasJsonAgreesWithPublished =
   (formulasJsonUsesQuarter && (! publishedFormIsHalf)) ||
   ((! formulasJsonUsesQuarter) && publishedFormIsHalf);
@@ -268,8 +279,16 @@ verdictNV = chkNVisPoissonMean && chkNVUnitDensity && chkNVNumberEqualsN;
 (* Collect verdicts and export JSON.                                       *)
 (* ===================================================================== *)
 
+(* overall_pass: every covered formula verified AND formulas.json agrees with *)
+(* the published /2 normalization.  run_all.py reads this top-level field.     *)
+overallPass = And[
+  TrueQ[verdictBD], TrueQ[verdictDal],
+  TrueQ[verdictMM], TrueQ[formulasJsonAgreesWithPublished],
+  TrueQ[verdictKR], TrueQ[verdictPoisson], TrueQ[verdictNV]];
+
 result = Association[
   "script" -> "causal-set-combinatorial-operators.wl",
+  "overall_pass" -> overallPass,
   "batch" -> "B2: causal-set combinatorial operators & dimension estimators",
   "description" ->
     "Independent CAS re-derivation of 4D BD action/d'Alembertian coeffs, \

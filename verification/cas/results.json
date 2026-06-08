@@ -168,9 +168,9 @@
     },
     "causal-set-combinatorial-operators.wl": {
       "ran": true,
-      "overall_pass": false,
+      "overall_pass": true,
       "returncode": 0,
-      "stdout": "causal-set-combinatorial-operators.wl\n  BD action        = verified\n  d'Alembertian    = verified\n  Myrheim-Meyer    = mismatch-formulasJson-factor2\n  KR count         = verified\n  Poisson          = verified\n  number=volume    = verified\n  formulas.json MM /4 agrees with published = False  (False => factor-of-2 bug in formulas.json LaTeX)",
+      "stdout": "causal-set-combinatorial-operators.wl\n  BD action        = verified\n  d'Alembertian    = verified\n  Myrheim-Meyer    = verified\n  KR count         = verified\n  Poisson          = verified\n  number=volume    = verified\n  formulas.json MM /4 agrees with published = True  (False => factor-of-2 bug in formulas.json LaTeX)",
       "checks": {
         "bd_action_weights_match_published": true,
         "bd_action_expr_coeff_vector": true,
@@ -187,7 +187,7 @@
         "mm_quarter_form_f0_4_is_1_20": true,
         "mm_two_norms_differ_by_factor_2": true,
         "mm_published_form_is_half_normalization": true,
-        "mm_formulasJson_quarter_agrees_with_published": false,
+        "mm_formulasJson_quarter_agrees_with_published": true,
         "kr_layer_split_sums_to_n": true,
         "kr_integer_split_examples": true,
         "kr_log2_count_is_n2_over_4": true,
@@ -241,5 +241,5 @@
       "result_json": "b4-swampland-inflation-scaling_result.json"
     }
   },
-  "overall_pass": false
+  "overall_pass": true
 }

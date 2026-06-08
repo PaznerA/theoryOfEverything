@@ -472,7 +472,7 @@
   {
     "id": "myrheim-meyer",
     "name": "Myrheim-Meyer Dimension",
-    "latex": "\\frac{\\langle R \\rangle}{\\binom{N}{2}} = f_0(d) = \\frac{\\Gamma(d+1)\\,\\Gamma(d/2)}{4\\,\\Gamma(3d/2)}",
+    "latex": "\\frac{\\langle R \\rangle}{\\binom{N}{2}} = f_0(d) = \\frac{\\Gamma(d+1)\\,\\Gamma(d/2)}{2\\,\\Gamma(3d/2)}",
     "meaning": "Ordering fraction (fraction of related pairs) is a function of the Minkowski dimension d only; inverting gives a combinatorial dimension estimator. KR posets yield d_MM ~ 2.38.",
     "source": "meyer-1988",
     "pillars": [
