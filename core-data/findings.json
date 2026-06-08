@@ -623,5 +623,79 @@
   "refs": [
    "astro-ph/0209274"
   ]
+ },
+ {
+  "id": "F-036",
+  "statement": "SJ modulární tok na 2D Rindlerově slabu (řez x>0, horizont x=0) nese rho-invariantní monotónní boostovou diagonálu |K(x,x)| vs. proper vzdálenost (sklon 29,2, R2=0,969, CV 1,7 %), čistě selhávající na interval (R2=0,038) i shuffle (R2=0,065) kontrolách — Connes-Rovelliho framing modulárního toku jako tepelného času (gr-qc/9406019) drží KVALITATIVNĚ. ALE z normalizace proper vzdálenosti fixované NEZÁVISLE z geometrie (hustota sprinkling eps_disc=rho^-1/2 + proper okno, fixováno PŘED sklonem, NIKDY laděno) se NEobnovuje ani Unruhuv zákonný tvar (log-log exponent p_E=0,720+-0,040, ne BW +1; T_local~1/x nečteno), ani absolutní koeficient 2*pi (nejlepší routa boost-quantum eps_k*<x>_k=9,58, off o 52 %; F-034 unruh_ratio 0,79, off o 87 %). dS static patch potvrzuje (p_E=0,62, Gibbons-Hawkingova 2*pi=2,55, nečtena). PŘÍČINA: surogátní Dirac v jednotkách eps=ln[mu/(mu-1)] (Casini-Huerta 0905.2562) nese log-kompresi (sub-lineární exponent) a nefixuje boostové rapidity (zděděno z F-033/F-034). ZÁVĚR: most NCG<->semiklasika je most STRUKTURY (boostová geometrie), NE absolutní Unruhovy/Gibbons-Hawkingovy TEPLOTY — absolutní 2*pi vyžaduje non-surogátní Dirac z geometrického Killingova boostu xi=x d_t+t d_x, který tento surogát ze své podstaty nevydá.",
+  "status": "informovany-negativ-tautologie",
+  "evidence": [
+   "core-data/calculations/ncg-kms-unruh/calc.py",
+   "core-data/calculations/ncg-kms-unruh/results.json",
+   "core-data/calculations/ncg-kms-unruh/plots/beta_vs_proper_distance.png",
+   "core-data/calculations/ncg-kms-unruh/plots/unruh_law.png",
+   "knowledge-base/vypocty/VYPOCET-32-ncg-kms-unruh.md"
+  ],
+  "date": "2026-06-08",
+  "relatedHypotheses": [
+   "H6g-1"
+  ],
+  "caveats": "Surogátní Dirac v jednotkách eps=ln[mu/(mu-1)] (Casini-Huerta 0905.2562) nese log-kompresi — sub-lineární exponent p_E=0,72 je stabilní vlastnost surogátu, ne diskretizační artefakt (testováno 4 okna, rho-invariantní). beta_KMS=1 je Tomita-Takesaki tautologie (proto neměřena jako důkaz). 2D, bezhmotný, N<=1500 dense = TREND (rho-invariance), ne N->inf. REFERENČNÍ CAVEAT: 1712.04227 připsán v kódu/writeupech jako zdroj 'BW modular flow = boost / Unruh 1/2pi' — skutečný obsah je Belenchia et al. o EE na causetech (belenchia2017entanglement); BW/Unruh-2pi tvrzení odkazovat na bisognano1976duality/unruh1976notes.",
+  "implications": "Most NCG<->semiklasika (Connes-Rovelliho tepelný čas <-> Unruh) je most struktury (boostová geometrie), NE teploty. Hrana noncommutative-geometry <-> semiclassical-gravity zůstává barely, anotována informovaným negativem: vlajkový netautologický test (zákonný exponent 0,72 != BW +1; koeficient 9,58 != 2*pi, off 52 %) selhal kvantitativně z geometrie-fixované normalizace; kvalitativní pozitiv (rho-invariantní boostová diagonála, kontroly selhávají) potvrzuje Connes-Rovelliho tepelný čas strukturálně. Příští krok: non-surogátní Dirac z geometrického boostového Killingova vektoru.",
+  "noveltyStatus": "Vlajkový netautologický test hrany noncommutative-geometry <-> semiclassical-gravity (přímý sdílený-matematika most modulárního toku a Unruhovy teploty) na diskrétním SJ causetovém surogátním Diraci. Antikruhovost strukturální: proper-distance okno fixní z box-geometrie, eps_disc fixní z F-006, nevstupuje do sklonu. per-seed boost_quantum leží nad 2*pi (7.71-13.75), unruh_2pi_recovered=false explicitně v results.json.",
+  "refs": [
+   "gr-qc/9406019",
+   "0905.2562",
+   "1611.10281",
+   "bisognano1976duality",
+   "unruh1976notes"
+  ]
+ },
+ {
+  "id": "F-037",
+  "statement": "Konformně-vazany 4D dS skalár (xi=1/6, konformně invariantní operator -Box + xi R, na dS R=12/l^2 => konstantní m_eff^2 = xi R = 2/l^2) NEOBNOVI diskrétní 4D dS entropicko-plošný zákon — rozhoduje jediny nevyřešený caveat (a) F-031/VYPOCET-27. R' drift (d ln R'/d ln rho): konformní xi=1/6 = +0,386 +/-0,053, non-konformní xi=0 = +0,386 +/-0,053 (IDENTICKY). CV(R'): konformní 0,275, bezhmotný 0,276. S_full conf/massless = 1,0001 (max odchylka +/-0,05 % na 3 hustotách). p_S: massless 0,981, conformal 0,980 (obojí objemové ~rho^1); p_A_codim2 = 0,594 (~rho^0.5). SJ well-defined: max pairing_residual_rel = 8,4e-15, max SJ-Wightman min eig = -1,0e-15 (PSD na strojovou přesnost). VERDIKT: 4D area-zákon absence NENI konformně-vážový artefakt, ale robustní fyzika nezávislá na konformní vazbě — objemovost S_full pochází z ploché kauzální struktury (BD link-Green samplující 4-objem), ne z hmotného členu propagátoru, který je navíc malá perturbace vůči škále operátoru. Masivní SJ stav je dobře definovaný (pairing 8e-15, Wightman PSD na 1e-15 — H6g-2 blokátor odstraněn). F-031 STOJI SILNEJI.",
+  "status": "supported",
+  "evidence": [
+   "core-data/calculations/ds-conformal-4d/calc.py",
+   "core-data/calculations/ds-conformal-4d/results.json",
+   "core-data/calculations/ds-conformal-4d/plots/R_conformal_vs_nonconformal.png",
+   "knowledge-base/vypocty/VYPOCET-33-ds-conformal-4d.md"
+  ],
+  "date": "2026-06-08",
+  "relatedHypotheses": [
+   "H6g-2",
+   "H5g-2"
+  ],
+  "caveats": "(a) VYRESENA xi=0->xi=1/6 cast caveatu (a) F-031 — non-konformnost 4D bezhmotneho skalaru NENI pricinou driftu. (b) ZUSTAVA rezidualni caveat (BRAINSTORM-06 sec.4 riziko 3): plocha kauzalni struktura (BD link Green) NENI presny zakrivenou 4D dS Wightmanuv stav; repo nema zakriveny 4D dS propagator. Verdikt plati pro tuto plochu-kauzalni konstrukci. (c) Jen rho in {120,240,480} (afternoon-budget; repo nema genericky 4D sparse S_full primitiv — stejny limit jako F-031). (d) R' exponent +0.39 vs F-031 +0.50: nizsi kvuli BD-inverze baseline + 3-bod A_codim2 0.59 vs 0.494 (tilt 4D near-null link-multiplicitou); kvalitativni zaver identicky. dS Gibbons-Hawking primar NENI v repu => A/4 aplikace neovereno.",
+  "implications": "Xi-cast caveatu (a) F-031 je vyresena: 4D area-zakon absence je robustni fyzika, ne konformne-vahovy artefakt. F-031 stoji silneji. H6g-2 blokator H6g-2 (masivni SJ well-definedness) odstranen. Rezidualni caveat (plocha kauzalita vs zakriveny dS propagator) zustat pro dalsi kolo.",
+  "noveltyStatus": "Prvni primy test konformni vazby (xi=1/6 vs xi=0) na SJ stavu v 4D dS statice zaplati, implementovany pres novy lib primitiv bd_dalembertian_inverse_massive (G_R = (B_sharp - m2 I)^-1). Masivni SJ well-definedness overena (pairing 8e-15, Wightman PSD 1e-15). Verdikt conf=massless je interni a fit-imunni (per-cell pomer, ne extrapolace).",
+  "refs": [
+   "gr-qc/0302009",
+   "0909.0944",
+   "1001.2725",
+   "2206.10780"
+  ]
+ },
+ {
+  "id": "F-038",
+  "statement": "4D de Sitterwv horizontový area-zákon je nepritomný i na ose VARIANCE (order-by-disorder), nejen na ose střední hodnoty (F-031). Na fixní kodim-2 entanglement 2-ploše E_0={r*=R_CUT, t=0} v dS statické záplatě (sprinkle_ds_static_patch4d, l=1, near-horizon box R*_box=4.3, k_tube=1.5 zděděno beze změny z F-031) přes 5 hustot rho∈{120,240,480,960,1920} (N≤7677) × 200 nezávislých sprinklingů, čistě kombinatoricky (žádný eigh): střední hodnota <N_mol>~rho^0.540 reprodukuje vlastní-plošný cíl (F-031), ALE fluktuace Var(N_mol)~rho^0.656 s bootstrap CI95 [0,575, 0,745] VYLUCUJE jak plochu rho^0.5, tak objem rho^1.0; poměr Var/A_proper driftuje (CV 0,66). Molekulový počet je genuinně super-Poissonovský (Fano roste 3,72->5,30, slope rho^0,115, CI68 [0,073, 0,160] vylučuje 0): clustering near-null straddling linků na 2-ploše zvedá varianci nad plošné škálování, aniž dosáhne objemového. Order-by-disorder fluktuace tedy v této konstrukci NEKODUJE plochu — druhý nezávislý negativ ke F-031.",
+  "status": "refuted-direction",
+  "evidence": [
+   "core-data/calculations/ds-molecule-fluctuation/results.json",
+   "core-data/calculations/ds-molecule-fluctuation/calc.py",
+   "core-data/calculations/ds-molecule-fluctuation/plots/var_molecule_vs_A.png",
+   "core-data/calculations/ds-molecule-fluctuation/plots/fluctuation_vs_mean_arealaw.png",
+   "knowledge-base/vypocty/VYPOCET-34-ds-molecule-fluctuation.md"
+  ],
+  "date": "2026-06-08",
+  "relatedHypotheses": [
+   "H6g-6"
+  ],
+  "caveats": "4D bezhmotný skalár není konformně invariantní (řízená VYPOCET-21 aproximace — plochá kauzální struktura + dS sech² míra), ale zde žádný eigh/SSEE → fluktuace je čistě geometrická, takže tento caveat se dotýká jen interpretace 'dS horizont'. k_tube=1.5 zděděno beze změny; variance exponent může být na k_tube ještě citlivější než mean — netestováno přes k_tube (hlavní reziduální nejistota). dS Gibbons-Hawking primár není v repu → A/4 aplikace neoveřeno, postupováno přes bezrozměrné exponenty. MINOR OPRAVA: VYPOCET-34 ř.85 odkazuje na F-034 místo F-038/H6g-6 — záměna ID v próze, fyzikální závěr a čísla nezměněny.",
+  "implications": "Sorkinova order-by-disorder varianta horizontové entropie nenachází area-zákon ve 4D ani na ose variance. Kontrast s F-035: tam jsou atomy přesně Poissonovské (Fano=1, variance čistá a area/objem-kóduje), tady jsou molekuly korelované (super-Poisson, variance nekóduje plochu). Druhý nezávislý negativ posiluje F-031 na obou osách (mean i variance). Hrana black-holes-information <-> causal-sets: order-by-disorder fluktuační osa uzavřena negativem ve 4D.",
+  "noveltyStatus": "Přímé numerické měření super-Poissonovského chování (Fano roste 3,72->5,30, slope rho^0,115, CI68 vylučuje 0) kodim-2 Dou-Sorkinova molekulového počtu ve 4D dS statické záplatě. Bootstrap CI95 [0.575,0.745] vylučuje plochu rho^0.5 i objem rho^1.0. Bit-identická reprodukce (FULL_REPRO passed). Kontrast Poisson (atomy) vs. super-Poisson (molekuly) je project-original poznatek o korelační struktuře near-null linků.",
+  "refs": [
+   "gr-qc/0302009",
+   "0909.0944"
+  ]
  }
 ]

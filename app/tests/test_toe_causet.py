@@ -133,6 +133,44 @@ def test_bd_dalembertian_inverse_2d_limit():
     assert np.array_equal(G_R, 0.5 * C)
 
 
+def test_bd_massive_m0_recovers_massless():
+    """The massive BD inverse with m2=0 recovers the massless dim=4 inverse
+    bit-for-bit (VYPOCET-33 / H6g-2 conformal-coupling primitive)."""
+    rng = np.random.default_rng(1)
+    coords = cs.sprinkle_box4d(250, rng, half=1.0)
+    coords = coords[np.argsort(coords[:, 0])]
+    C = cs.causal_matrix(coords)
+    rho = 250 / ((2.0 / 3.0) * np.pi)
+    G0 = cs.bd_dalembertian_inverse(C, rho, 4)
+    Gm0 = cs.bd_dalembertian_inverse_massive(C, rho, 0.0)
+    assert np.array_equal(G0, Gm0)
+
+
+def test_bd_massive_conformal_sj_well_defined():
+    """The conformally-coupled scalar (m2 = xi R = 2/l^2) gives a well-defined
+    SJ state: iDelta keeps its exact +/- pairing and the SJ Wightman is PSD to
+    machine precision -- the H6g-2 'massive SJ well-definedness' blocker is
+    resolved. The conformal Green function genuinely differs from massless."""
+    from toe import sj as sj_mod
+    rng = np.random.default_rng(2)
+    coords = cs.sprinkle_ds_static_patch4d(
+        700, rng, l=1.0, rstar_box=2.8, t_extent=0.5, x_perp_half=1.0)
+    coords = coords[np.argsort(coords[:, 0])]
+    C = cs.causal_matrix(coords)
+    Vbox = (2.0 * 0.5) * (1.0 * np.tanh(2.8 / 1.0)) * (2.0 * 1.0) ** 2
+    rho = 700 / Vbox
+    m2 = 2.0 / 1.0 ** 2                       # xi R = (1/6)(12/l^2) = 2/l^2
+    G0 = cs.bd_dalembertian_inverse_massive(C, rho, 0.0)
+    Gc = cs.bd_dalembertian_inverse_massive(C, rho, m2)
+    assert not np.allclose(G0, Gc)            # conformal mass genuinely changes G_R
+    iD = cs.pauli_jordan(Gc)
+    diag = cs.causal_diagnostics(iD)
+    assert diag["pairing_residual_rel"] < 1e-12   # exact +/- pairing survives
+    W = sj_mod.wightman(iD)
+    wmin = float(np.linalg.eigvalsh((W + W.conj().T) / 2).min().real)
+    assert wmin > -1e-9 * diag["max_abs_eig"]     # SJ Wightman PSD => well-defined
+
+
 # ---------------------------------------------------------------------------
 # MIGRATION 1: sprinkle_wedge_box4d -- codim-2 wedge (VYPOCET-22)
 # ---------------------------------------------------------------------------

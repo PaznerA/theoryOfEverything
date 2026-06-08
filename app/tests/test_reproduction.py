@@ -65,6 +65,10 @@ SLOW_CALCS = [
     "ds-tracial-probe",
     # round 13 (H6g-4 Lambda shot-noise; lib/toe counting primitives, ~26 s)
     "lambda-shot-noise",
+    # round 16 (H6g-2 conformally-coupled 4D dS area-law; massive BD inverse)
+    "ds-conformal-4d",
+    # round 17 (H6g-6 codim-2 molecule FLUCTUATION; pure counting, no eigh, ~9 min)
+    "ds-molecule-fluctuation",
 ]
 
 # Fields that amplify ulp-level eigh differences across BLAS implementations
@@ -196,6 +200,8 @@ def test_full_reproduction(name):
         "modular-flow-bd-4d": "modular-flow-corner",
         "modular-flow-codim2": "modular-flow-bd-4d",   # F-024 tip baseline
         "ds-entropy-cap": "ssee-diamond",              # F-006 epsilon (anti-circularity)
+        "ds-conformal-4d": "ssee-diamond",             # F-006 epsilon (anti-circularity)
+        "ds-molecule-fluctuation": "ssee-diamond",     # F-006 epsilon (anti-circularity)
     }
     if name in deps and not (TMP / deps[name] / "results.json").exists():
         _prepare(deps[name])  # committed results.json suffices as input

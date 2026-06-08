@@ -1,0 +1,232 @@
+{
+  "meta": {
+    "calc": "ds-molecule-fluctuation",
+    "vypocet": "VYPOCET-34",
+    "hypothesis": "H6g-6 (BRAINSTORM-06)",
+    "question": "Is the 4D dS horizon entropy-AREA relation carried by the FLUCTUATION Var(N_mol^codim-2) across sprinklings (order-by-disorder), where the MEAN count failed (F-031)?",
+    "anti_circularity": {
+      "epsilon_law": "eps = rho^{-1/4} (4D) FIXED from F-006 rho^{-1/d}",
+      "F006_p_rank": 0.5188759456500236,
+      "F006_p_err": 0.0066971104884981,
+      "k_tube": 1.5,
+      "k_tube_note": "k_tube=1.5 inherited UNCHANGED from VYPOCET-27 primitive; not re-tuned to make Var/A constant (k_tube sensitivity caveat carried from F-031)."
+    },
+    "geometry": {
+      "l": 1.0,
+      "T_HALF": 0.5,
+      "XPERP": 1.0,
+      "R_CUT": 1.0,
+      "DIM": 4,
+      "RSTAR_BOX": 4.3,
+      "k_tube_codim2": 1.5,
+      "dense_N_wall": 8000,
+      "A_proper_codim2": 4.0
+    },
+    "seed_scheme": {
+      "SEED0": 34000000,
+      "STRIDE": 100000,
+      "formula": "default_rng(SEED0 + STRIDE*int(rho) + s)"
+    },
+    "rho_grid": [
+      120.0,
+      240.0,
+      480.0,
+      960.0,
+      1920.0
+    ],
+    "n_seeds_per_rho": 200,
+    "references_repo_present_only": [
+      "dou-sorkin-2003 (gr-qc/0302009)",
+      "johnston-2009 (0909.0944)",
+      "F-006 (ssee-diamond)",
+      "F-031 (VYPOCET-27 ds-amol-convention)",
+      "F-035 (VYPOCET-31 lambda-shot-noise)"
+    ],
+    "conformal_weight_caveat": "4D massless scalar NOT conformally invariant; VYPOCET-21 controlled approximation (flat order in (t,r*,x1,x2) + dS sech^2 measure). No eigh/SSEE here -> the fluctuation is purely GEOMETRIC (count of near-null straddling links on the codim-2 surface). dS A/4 'WARN neove\u0159eno' (no GH primary in repo).",
+    "toe_version": "0.3.1"
+  },
+  "distribution": {
+    "cells": [
+      {
+        "rho": 120.0,
+        "N": 480,
+        "eps": 0.3021375397356768,
+        "path": "dense",
+        "n_seeds": 200,
+        "mean_Nmol": 85.93,
+        "var_Nmol": 319.2815075376884,
+        "var_Nmol_SE": 32.00827170974111,
+        "std_Nmol": 17.868450059747442,
+        "fano_Nmol": 3.7155999946199043,
+        "S_fluc_gaussian": 4.301975124408865,
+        "min_Nmol": 46,
+        "max_Nmol": 147,
+        "A_proper_codim2": 4.0,
+        "var_over_A": 79.8203768844221,
+        "mean_over_A": 21.4825
+      },
+      {
+        "rho": 240.0,
+        "N": 960,
+        "eps": 0.25406637407730737,
+        "path": "dense",
+        "n_seeds": 200,
+        "mean_Nmol": 125.66,
+        "var_Nmol": 612.3863316582915,
+        "var_Nmol_SE": 61.392306263576664,
+        "std_Nmol": 24.74644078768281,
+        "fano_Nmol": 4.873359316077443,
+        "S_fluc_gaussian": 4.627620205319947,
+        "min_Nmol": 69,
+        "max_Nmol": 189,
+        "A_proper_codim2": 4.0,
+        "var_over_A": 153.09658291457288,
+        "mean_over_A": 31.415
+      },
+      {
+        "rho": 480.0,
+        "N": 1919,
+        "eps": 0.21364350319811704,
+        "path": "dense",
+        "n_seeds": 200,
+        "mean_Nmol": 180.895,
+        "var_Nmol": 842.3557537688441,
+        "var_Nmol_SE": 84.44695732875876,
+        "std_Nmol": 29.02336565198537,
+        "fano_Nmol": 4.6566005349448245,
+        "S_fluc_gaussian": 4.787039750916792,
+        "min_Nmol": 104,
+        "max_Nmol": 274,
+        "A_proper_codim2": 4.0,
+        "var_over_A": 210.58893844221103,
+        "mean_over_A": 45.22375
+      },
+      {
+        "rho": 960.0,
+        "N": 3839,
+        "eps": 0.1796520559815421,
+        "path": "dense",
+        "n_seeds": 200,
+        "mean_Nmol": 263.14,
+        "var_Nmol": 1407.9401005025125,
+        "var_Nmol_SE": 141.14732054315738,
+        "std_Nmol": 37.52252790661248,
+        "fano_Nmol": 5.350536218372397,
+        "S_fluc_gaussian": 5.043880029982824,
+        "min_Nmol": 179,
+        "max_Nmol": 388,
+        "A_proper_codim2": 4.0,
+        "var_over_A": 351.9850251256281,
+        "mean_over_A": 65.785
+      },
+      {
+        "rho": 1920.0,
+        "N": 7677,
+        "eps": 0.1510687698678384,
+        "path": "dense",
+        "n_seeds": 200,
+        "mean_Nmol": 386.365,
+        "var_Nmol": 2046.1625879396984,
+        "var_Nmol_SE": 205.12972574633025,
+        "std_Nmol": 45.234528713580055,
+        "fano_Nmol": 5.295931536085562,
+        "S_fluc_gaussian": 5.230799238004915,
+        "min_Nmol": 273,
+        "max_Nmol": 494,
+        "A_proper_codim2": 4.0,
+        "var_over_A": 511.5406469849246,
+        "mean_over_A": 96.59125
+      }
+    ],
+    "verdict": {
+      "p_mean_Nmol": {
+        "p": 0.5403766303049901,
+        "se": 0.0026051254635070537
+      },
+      "q_var_Nmol": {
+        "p": 0.6561111739697307,
+        "se": 0.04045079501862804
+      },
+      "q_std_sqrtvar": {
+        "p": 0.32805558698486537,
+        "se": 0.02022539750931402
+      },
+      "fano_slope": {
+        "p": 0.1157345436647401,
+        "se": 0.03994640470258074
+      },
+      "p_S_fluc": {
+        "p": 0.06883279292383983,
+        "se": 0.00519144867444818
+      },
+      "bootstrap": {
+        "q_var": {
+          "value": 0.6562538611303237,
+          "ci68": [
+            0.6144623214416625,
+            0.7006245016173083
+          ],
+          "ci95": [
+            0.5751193806284821,
+            0.7445853829308969
+          ],
+          "boot_std": 0.04363724516028273,
+          "n_boot": 2000
+        },
+        "q_std_sqrtvar": {
+          "value": 0.32812693056516185,
+          "ci68": [
+            0.30723116072083123,
+            0.35031225080865414
+          ],
+          "ci95": [
+            0.28755969031424106,
+            0.37229269146544847
+          ],
+          "boot_std": 0.021818622580141365,
+          "n_boot": 2000
+        },
+        "p_mean": {
+          "value": 0.5403649456121642,
+          "ci68": [
+            0.5349791869038385,
+            0.5460697148358721
+          ],
+          "ci95": [
+            0.5301619049635848,
+            0.5510773552002541
+          ],
+          "boot_std": 0.0054644199533935844,
+          "n_boot": 2000
+        },
+        "fano_slope": {
+          "value": 0.11526525454164813,
+          "ci68": [
+            0.07306128553003367,
+            0.16038054319704587
+          ],
+          "ci95": [
+            0.03671998332259656,
+            0.20218159222538656
+          ],
+          "boot_std": 0.04305806832823033,
+          "n_boot": 2000
+        }
+      },
+      "cv_var_over_A": 0.6572076974826853,
+      "cv_mean_over_A": 0.5741661109438684,
+      "cv_fano": 0.13836591848645594,
+      "var_area_invariant": false,
+      "area_target_q": 0.5,
+      "volumetric_q": 1.0,
+      "correspondence": "negative",
+      "correspondence_text": "Var(N_mol) ~ rho^0.66 (CI [0.61,0.70]) EXCLUDES the proper-area target rho^0.5; Var/A_proper drifts (CV=0.66). The MEAN already failed (F-031: <N_mol> ~ rho^0.54 area but S_full ~ rho^1) and now the FLUCTUATION also fails to give a clean area-law -> the 4D dS area-law is ABSENT on BOTH the mean and the variance axes. A second independent negative strengthening F-031. The molecule count is super-Poisson with a growing Fano (~rho^0.12): the variance exponent 0.66 sits ABOVE the area 0.5 but BELOW the volumetric 1.0, i.e. clustering of near-null straddling links on the codim-2 surface lifts Var above area scaling without reaching a volume law. Unlike F-035 (Fano=1, Poisson), the count is NOT Poisson here, so the variance carries no clean area signal."
+    }
+  },
+  "plots": {
+    "var_molecule_vs_A": "plots/var_molecule_vs_A.png",
+    "fluctuation_vs_mean_arealaw": "plots/fluctuation_vs_mean_arealaw.png"
+  },
+  "status": "complete",
+  "runtime_s": 491.48907685279846
+}

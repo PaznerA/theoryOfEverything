@@ -39,7 +39,7 @@ Import convention: the package lives under ``lib/`` and is imported by path
 
 from __future__ import annotations
 
-__version__ = "0.3.0"
+__version__ = "0.3.1"
 
 # ---------------------------------------------------------------------------
 # Layer A1 -- fits (result carriers + fit primitives, the dependency root)
@@ -73,9 +73,12 @@ from toe.causet import (
     fano_factor,
     causal_matrix,
     link_matrix,
+    horizon_molecules_codim2,
+    molecule_count_fluctuation,
     green_retarded_2d,
     green_retarded_4d,
     bd_dalembertian_inverse,
+    bd_dalembertian_inverse_massive,
     bd_smeared_dalembertian_inverse,
     pauli_jordan,
     causal_diagnostics,
@@ -193,9 +196,12 @@ __all__ = [
     "fano_factor",
     "causal_matrix",
     "link_matrix",
+    "horizon_molecules_codim2",
+    "molecule_count_fluctuation",
     "green_retarded_2d",
     "green_retarded_4d",
     "bd_dalembertian_inverse",
+    "bd_dalembertian_inverse_massive",
     "bd_smeared_dalembertian_inverse",
     "pauli_jordan",
     "causal_diagnostics",

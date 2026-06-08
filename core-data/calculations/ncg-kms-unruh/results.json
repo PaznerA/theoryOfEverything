@@ -1,0 +1,861 @@
+{
+  "schema": "ncg-kms-unruh/v1",
+  "status": "complete",
+  "calc": "NCG<->semiclassical: Unruh temperature law T=1/(2pi x) from the SJ modular flow on a 2D Rindler causal set (geometry-fixed)",
+  "config": {
+    "Ns": [
+      600,
+      1000,
+      1400
+    ],
+    "n_seeds": 5,
+    "T_extent": 0.3,
+    "X_extent": 1.0,
+    "rindler_cut": "x>0 (half-line horizon at x=0)",
+    "interval_cut": "0<x<0.5 (BW does not apply)",
+    "shuffle": "Haar-orthogonal conjugation of K (spectrum preserved)",
+    "kappa": null,
+    "two_pi": 6.283185307179586,
+    "wall_cap_s": 1500,
+    "x_lo_frac": 0.06,
+    "x_hi_frac": 0.9,
+    "n_bins": 12,
+    "proper_distance_scale": "GEOMETRY-FIXED: eps_disc=rho^-1/2, x in [x_lo,x_hi] proper, fixed BEFORE slope",
+    "ds_stretch": true,
+    "ds_skipped": false,
+    "lib_unruh_primitive": true
+  },
+  "references_verified": [
+    "gr-qc/9406019",
+    "1712.04227",
+    "1611.10281",
+    "0905.2562",
+    "2008.07697",
+    "1205.3855"
+  ],
+  "per_seed": [
+    {
+      "N": 600,
+      "seed": 1600,
+      "rho": 1000.0,
+      "eps_disc": 0.03162277660168379,
+      "x_lo": 0.06,
+      "x_hi": 0.9,
+      "rindler": {
+        "n_sub": 305,
+        "n_modes": 89,
+        "S": 14.078333236987286,
+        "law_exponent": 0.7355085915015697,
+        "law_r2": 0.9916902230948064,
+        "boost_slope": 29.01873189871781,
+        "boost_r2": 0.9871399513370872,
+        "boost_quantum_2pi": 8.243484002375698,
+        "boost_quantum_nmodes": 298,
+        "unruh_ratio_f034": 0.8307203471277221
+      },
+      "interval_control": {
+        "n_sub": 154,
+        "n_modes": 74,
+        "law_exponent": 0.049057170546424764,
+        "law_r2": 0.016890282946972923,
+        "boost_slope": -0.24450512273317163,
+        "boost_r2": 0.0007090103736766551
+      },
+      "shuffle_control": {
+        "law_exponent": -0.001192321779040482,
+        "law_r2": 0.00977505920914068,
+        "boost_slope": -0.043703847920767626,
+        "boost_r2": 0.006021338699298662
+      }
+    },
+    {
+      "N": 600,
+      "seed": 1617,
+      "rho": 1000.0,
+      "eps_disc": 0.03162277660168379,
+      "x_lo": 0.06,
+      "x_hi": 0.9,
+      "rindler": {
+        "n_sub": 304,
+        "n_modes": 80,
+        "S": 14.35148452299151,
+        "law_exponent": 0.7565533756472688,
+        "law_r2": 0.9811328673753498,
+        "boost_slope": 29.442831062507718,
+        "boost_r2": 0.9493948977483398,
+        "boost_quantum_2pi": 10.053064100635277,
+        "boost_quantum_nmodes": 302,
+        "unruh_ratio_f034": 0.788245276126255
+      },
+      "interval_control": {
+        "n_sub": 149,
+        "n_modes": 73,
+        "law_exponent": 0.07563306305348025,
+        "law_r2": 0.08495758693173605,
+        "boost_slope": 0.7499385126064051,
+        "boost_r2": 0.013866916360892434
+      },
+      "shuffle_control": {
+        "law_exponent": -0.002850774335891666,
+        "law_r2": 0.053439286004801745,
+        "boost_slope": -0.15403588837964083,
+        "boost_r2": 0.057622398881019055
+      }
+    },
+    {
+      "N": 600,
+      "seed": 1634,
+      "rho": 1000.0,
+      "eps_disc": 0.03162277660168379,
+      "x_lo": 0.06,
+      "x_hi": 0.9,
+      "rindler": {
+        "n_sub": 297,
+        "n_modes": 83,
+        "S": 14.266499361469537,
+        "law_exponent": 0.7417688701490639,
+        "law_r2": 0.977392563263341,
+        "boost_slope": 29.58855710524429,
+        "boost_r2": 0.979293961592552,
+        "boost_quantum_2pi": 9.408353706275609,
+        "boost_quantum_nmodes": 294,
+        "unruh_ratio_f034": 0.8360440522298689
+      },
+      "interval_control": {
+        "n_sub": 144,
+        "n_modes": 70,
+        "law_exponent": 0.06336582821465643,
+        "law_r2": 0.08617098850165528,
+        "boost_slope": 0.392877895899234,
+        "boost_r2": 0.005209762401795048
+      },
+      "shuffle_control": {
+        "law_exponent": -0.002412688477036443,
+        "law_r2": 0.012766464020261492,
+        "boost_slope": -0.25825951344393017,
+        "boost_r2": 0.06026677357781962
+      }
+    },
+    {
+      "N": 600,
+      "seed": 1651,
+      "rho": 1000.0,
+      "eps_disc": 0.03162277660168379,
+      "x_lo": 0.06,
+      "x_hi": 0.9,
+      "rindler": {
+        "n_sub": 299,
+        "n_modes": 77,
+        "S": 13.781429505480547,
+        "law_exponent": 0.6919041360577778,
+        "law_r2": 0.9877178789794788,
+        "boost_slope": 29.809586495990352,
+        "boost_r2": 0.9853858249250512,
+        "boost_quantum_2pi": 10.166795531068537,
+        "boost_quantum_nmodes": 296,
+        "unruh_ratio_f034": 0.7908301408005937
+      },
+      "interval_control": {
+        "n_sub": 149,
+        "n_modes": 72,
+        "law_exponent": 0.059693708366170474,
+        "law_r2": 0.08339477970820097,
+        "boost_slope": 0.45705915556724036,
+        "boost_r2": 0.007424082632376594
+      },
+      "shuffle_control": {
+        "law_exponent": -0.004492183577084953,
+        "law_r2": 0.08535785911431093,
+        "boost_slope": -0.23457527910852052,
+        "boost_r2": 0.08494113762643118
+      }
+    },
+    {
+      "N": 600,
+      "seed": 1668,
+      "rho": 1000.0,
+      "eps_disc": 0.03162277660168379,
+      "x_lo": 0.06,
+      "x_hi": 0.9,
+      "rindler": {
+        "n_sub": 321,
+        "n_modes": 68,
+        "S": 9.767991951261191,
+        "law_exponent": 0.7509341321010419,
+        "law_r2": 0.9773598757377473,
+        "boost_slope": 31.19770936403794,
+        "boost_r2": 0.9418245630281851,
+        "boost_quantum_2pi": 13.746786170718675,
+        "boost_quantum_nmodes": 314,
+        "unruh_ratio_f034": 0.775016614193771
+      },
+      "interval_control": {
+        "n_sub": 142,
+        "n_modes": 69,
+        "law_exponent": 0.020919087086440333,
+        "law_r2": 0.0035369674305391063,
+        "boost_slope": -1.0290987264743825,
+        "boost_r2": 0.013914807989571343
+      },
+      "shuffle_control": {
+        "law_exponent": 0.0013687653633521492,
+        "law_r2": 0.011381585302237096,
+        "boost_slope": 0.21170088717008512,
+        "boost_r2": 0.07982342278680576
+      }
+    },
+    {
+      "N": 1000,
+      "seed": 2000,
+      "rho": 1666.6666666666667,
+      "eps_disc": 0.024494897427831782,
+      "x_lo": 0.06,
+      "x_hi": 0.9,
+      "rindler": {
+        "n_sub": 499,
+        "n_modes": 145,
+        "S": 24.96054650598361,
+        "law_exponent": 0.7267034469465236,
+        "law_r2": 0.9916086203229841,
+        "boost_slope": 29.50938407181484,
+        "boost_r2": 0.9858462994593864,
+        "boost_quantum_2pi": 7.709438599284579,
+        "boost_quantum_nmodes": 494,
+        "unruh_ratio_f034": 0.8238463537343675
+      },
+      "interval_control": {
+        "n_sub": 265,
+        "n_modes": 130,
+        "law_exponent": 0.05072625430786122,
+        "law_r2": 0.034467440614819655,
+        "boost_slope": -0.3064940890670392,
+        "boost_r2": 0.0018964114034060175
+      },
+      "shuffle_control": {
+        "law_exponent": -0.000712433696786498,
+        "law_r2": 0.008504167490878678,
+        "boost_slope": -0.020076361700443728,
+        "boost_r2": 0.0029776884582831675
+      }
+    },
+    {
+      "N": 1000,
+      "seed": 2017,
+      "rho": 1666.6666666666667,
+      "eps_disc": 0.024494897427831782,
+      "x_lo": 0.06,
+      "x_hi": 0.9,
+      "rindler": {
+        "n_sub": 526,
+        "n_modes": 131,
+        "S": 21.166097980824322,
+        "law_exponent": 0.6412141180897135,
+        "law_r2": 0.9926715742624153,
+        "boost_slope": 28.606162932765574,
+        "boost_r2": 0.9685231714175824,
+        "boost_quantum_2pi": 9.973475287829046,
+        "boost_quantum_nmodes": 518,
+        "unruh_ratio_f034": 0.7275495232537716
+      },
+      "interval_control": {
+        "n_sub": 264,
+        "n_modes": 130,
+        "law_exponent": -0.1147889354838945,
+        "law_r2": 0.1367865673146199,
+        "boost_slope": -4.176616439529558,
+        "boost_r2": 0.2831958329643588
+      },
+      "shuffle_control": {
+        "law_exponent": 0.002324206972924931,
+        "law_r2": 0.06284057100539486,
+        "boost_slope": 0.10796226056931374,
+        "boost_r2": 0.04799988469004468
+      }
+    },
+    {
+      "N": 1000,
+      "seed": 2034,
+      "rho": 1666.6666666666667,
+      "eps_disc": 0.024494897427831782,
+      "x_lo": 0.06,
+      "x_hi": 0.9,
+      "rindler": {
+        "n_sub": 501,
+        "n_modes": 136,
+        "S": 24.74781204490765,
+        "law_exponent": 0.7345756380053278,
+        "law_r2": 0.9904522472968222,
+        "boost_slope": 28.529431003637605,
+        "boost_r2": 0.961262515371347,
+        "boost_quantum_2pi": 9.111234377702882,
+        "boost_quantum_nmodes": 498,
+        "unruh_ratio_f034": 0.7760784381768242
+      },
+      "interval_control": {
+        "n_sub": 249,
+        "n_modes": 121,
+        "law_exponent": 0.1214873408928242,
+        "law_r2": 0.20224852686029093,
+        "boost_slope": 1.3723221629325544,
+        "boost_r2": 0.044869303071713995
+      },
+      "shuffle_control": {
+        "law_exponent": 0.0008526151213913004,
+        "law_r2": 0.014862459289362584,
+        "boost_slope": 0.061390116220593705,
+        "boost_r2": 0.030166850701924597
+      }
+    },
+    {
+      "N": 1000,
+      "seed": 2051,
+      "rho": 1666.6666666666667,
+      "eps_disc": 0.024494897427831782,
+      "x_lo": 0.06,
+      "x_hi": 0.9,
+      "rindler": {
+        "n_sub": 490,
+        "n_modes": 139,
+        "S": 26.565189840176867,
+        "law_exponent": 0.7870236122704303,
+        "law_r2": 0.990462881697861,
+        "boost_slope": 30.39715056495172,
+        "boost_r2": 0.9655059396579739,
+        "boost_quantum_2pi": 8.759634487463213,
+        "boost_quantum_nmodes": 486,
+        "unruh_ratio_f034": 0.8312335793950564
+      },
+      "interval_control": {
+        "n_sub": 253,
+        "n_modes": 125,
+        "law_exponent": 0.12057408022090088,
+        "law_r2": 0.13327146947266244,
+        "boost_slope": 1.2944660697978876,
+        "boost_r2": 0.02479988577846226
+      },
+      "shuffle_control": {
+        "law_exponent": -0.0030481556534477593,
+        "law_r2": 0.17946569125156042,
+        "boost_slope": -0.1682839116281244,
+        "boost_r2": 0.22798087063034
+      }
+    },
+    {
+      "N": 1000,
+      "seed": 2068,
+      "rho": 1666.6666666666667,
+      "eps_disc": 0.024494897427831782,
+      "x_lo": 0.06,
+      "x_hi": 0.9,
+      "rindler": {
+        "n_sub": 487,
+        "n_modes": 140,
+        "S": 25.412036898119258,
+        "law_exponent": 0.753842513987554,
+        "law_r2": 0.9932307777663288,
+        "boost_slope": 29.072346898661667,
+        "boost_r2": 0.9867035528661896,
+        "boost_quantum_2pi": 8.894160832959464,
+        "boost_quantum_nmodes": 482,
+        "unruh_ratio_f034": 0.8369178753261145
+      },
+      "interval_control": {
+        "n_sub": 247,
+        "n_modes": 123,
+        "law_exponent": 0.0894458991881951,
+        "law_r2": 0.07973853610268289,
+        "boost_slope": 0.6653902195591983,
+        "boost_r2": 0.007266392072002303
+      },
+      "shuffle_control": {
+        "law_exponent": 0.0009901591047983746,
+        "law_r2": 0.021181975998964875,
+        "boost_slope": 0.03121834945816508,
+        "boost_r2": 0.009162591486562177
+      }
+    },
+    {
+      "N": 1400,
+      "seed": 2400,
+      "rho": 2333.3333333333335,
+      "eps_disc": 0.020701966780270625,
+      "x_lo": 0.06,
+      "x_hi": 0.9,
+      "rindler": {
+        "n_sub": 707,
+        "n_modes": 177,
+        "S": 33.76455097957674,
+        "law_exponent": 0.716744974434453,
+        "law_r2": 0.9956189230555041,
+        "boost_slope": 29.210525943841315,
+        "boost_r2": 0.9775762496481382,
+        "boost_quantum_2pi": 10.708488908813962,
+        "boost_quantum_nmodes": 700,
+        "unruh_ratio_f034": 0.7879950926954659
+      },
+      "interval_control": {
+        "n_sub": 330,
+        "n_modes": 162,
+        "law_exponent": 0.08460018907794985,
+        "law_r2": 0.13875850620086916,
+        "boost_slope": 0.8322999183967785,
+        "boost_r2": 0.021561410341199183
+      },
+      "shuffle_control": {
+        "law_exponent": 0.0010201429149960378,
+        "law_r2": 0.026198027463357088,
+        "boost_slope": 0.038313144461188435,
+        "boost_r2": 0.013147288791553025
+      }
+    },
+    {
+      "N": 1400,
+      "seed": 2417,
+      "rho": 2333.3333333333335,
+      "eps_disc": 0.020701966780270625,
+      "x_lo": 0.06,
+      "x_hi": 0.9,
+      "rindler": {
+        "n_sub": 712,
+        "n_modes": 191,
+        "S": 34.75001988691672,
+        "law_exponent": 0.7300533957638812,
+        "law_r2": 0.9874096507412478,
+        "boost_slope": 29.24229066685549,
+        "boost_r2": 0.9492319629874532,
+        "boost_quantum_2pi": 8.950775206916397,
+        "boost_quantum_nmodes": 706,
+        "unruh_ratio_f034": 0.764349434843073
+      },
+      "interval_control": {
+        "n_sub": 379,
+        "n_modes": 186,
+        "law_exponent": 0.01783284087927307,
+        "law_r2": 0.003072349503850491,
+        "boost_slope": -1.2000096741548238,
+        "boost_r2": 0.020829590120419628
+      },
+      "shuffle_control": {
+        "law_exponent": 0.0012929862939198163,
+        "law_r2": 0.04848980400889835,
+        "boost_slope": 0.05410981112046697,
+        "boost_r2": 0.03320700424705059
+      }
+    },
+    {
+      "N": 1400,
+      "seed": 2434,
+      "rho": 2333.3333333333335,
+      "eps_disc": 0.020701966780270625,
+      "x_lo": 0.06,
+      "x_hi": 0.9,
+      "rindler": {
+        "n_sub": 723,
+        "n_modes": 194,
+        "S": 34.875875967569165,
+        "law_exponent": 0.6742845875420836,
+        "law_r2": 0.9899806641295653,
+        "boost_slope": 28.364618602880313,
+        "boost_r2": 0.9687652606843146,
+        "boost_quantum_2pi": 8.793520877991204,
+        "boost_quantum_nmodes": 712,
+        "unruh_ratio_f034": 0.7625343443863961
+      },
+      "interval_control": {
+        "n_sub": 377,
+        "n_modes": 186,
+        "law_exponent": 0.018747324240192265,
+        "law_r2": 0.004933840951728774,
+        "boost_slope": -0.9463184857914513,
+        "boost_r2": 0.017969881492375106
+      },
+      "shuffle_control": {
+        "law_exponent": -0.004459464106243642,
+        "law_r2": 0.30471912402375456,
+        "boost_slope": -0.18770650349862494,
+        "boost_r2": 0.21490789654705977
+      }
+    },
+    {
+      "N": 1400,
+      "seed": 2451,
+      "rho": 2333.3333333333335,
+      "eps_disc": 0.020701966780270625,
+      "x_lo": 0.06,
+      "x_hi": 0.9,
+      "rindler": {
+        "n_sub": 735,
+        "n_modes": 178,
+        "S": 31.224802265680857,
+        "law_exponent": 0.6619925099449855,
+        "law_r2": 0.9875383880049615,
+        "boost_slope": 27.767940119109323,
+        "boost_r2": 0.9438354685044432,
+        "boost_quantum_2pi": 11.008664454046944,
+        "boost_quantum_nmodes": 726,
+        "unruh_ratio_f034": 0.7185491068494331
+      },
+      "interval_control": {
+        "n_sub": 356,
+        "n_modes": 174,
+        "law_exponent": -0.018540671617745263,
+        "law_r2": 0.004797943600022836,
+        "boost_slope": -1.8716363582481008,
+        "boost_r2": 0.07834155661147102
+      },
+      "shuffle_control": {
+        "law_exponent": -0.0019031875915106894,
+        "law_r2": 0.1374049164375526,
+        "boost_slope": -0.09191918279948699,
+        "boost_r2": 0.10930195172887303
+      }
+    },
+    {
+      "N": 1400,
+      "seed": 2468,
+      "rho": 2333.3333333333335,
+      "eps_disc": 0.020701966780270625,
+      "x_lo": 0.06,
+      "x_hi": 0.9,
+      "rindler": {
+        "n_sub": 683,
+        "n_modes": 197,
+        "S": 33.039285493278825,
+        "law_exponent": 0.6923126716146132,
+        "law_r2": 0.9887800869144684,
+        "boost_slope": 28.295420836594324,
+        "boost_r2": 0.9815288020827502,
+        "boost_quantum_2pi": 8.127894587434081,
+        "boost_quantum_nmodes": 674,
+        "unruh_ratio_f034": 0.7973715993167487
+      },
+      "interval_control": {
+        "n_sub": 342,
+        "n_modes": 168,
+        "law_exponent": 0.010455926080136829,
+        "law_r2": 0.0013793615686793492,
+        "boost_slope": -1.1585897749077327,
+        "boost_r2": 0.027409314327785816
+      },
+      "shuffle_control": {
+        "law_exponent": -0.000478548710523712,
+        "law_r2": 0.015466676078676245,
+        "boost_slope": -0.002056400495562,
+        "boost_r2": 0.0001251694775907808
+      }
+    }
+  ],
+  "per_rho": {
+    "600": {
+      "law_exponent_mean": 0.7353338210913444,
+      "boost_slope_mean": 29.81148318529962,
+      "boost_r2_mean": 0.9686078397262431,
+      "boost_quantum_2pi_mean": 10.323696702214761,
+      "n_seeds": 5
+    },
+    "1000": {
+      "law_exponent_mean": 0.7286718658599098,
+      "boost_slope_mean": 29.222895094366283,
+      "boost_r2_mean": 0.973568295754496,
+      "boost_quantum_2pi_mean": 8.889588717047836,
+      "n_seeds": 5
+    },
+    "1400": {
+      "law_exponent_mean": 0.6950776278600033,
+      "boost_slope_mean": 28.576159233856153,
+      "boost_r2_mean": 0.9641875487814199,
+      "boost_quantum_2pi_mean": 9.517868807040518,
+      "n_seeds": 5
+    }
+  },
+  "aggregate": {
+    "rindler": {
+      "law_exponent_mean": 0.7196944382704193,
+      "law_exponent_sd": 0.039848418041809164,
+      "law_r2_mean": 0.988203148176192,
+      "law_r2_sd": 0.005499305204058242,
+      "boost_slope_mean": 29.20351250450735,
+      "boost_slope_sd": 0.8669059877375879,
+      "boost_r2_mean": 0.9687878947540528,
+      "boost_r2_sd": 0.016365978155187883,
+      "boost_quantum_2pi_mean": 9.577051408767705,
+      "boost_quantum_2pi_sd": 1.4928502053952675,
+      "unruh_ratio_f034_mean": 0.7898187852303642,
+      "unruh_ratio_f034_sd": 0.03753362830491212,
+      "n_sub_mean": 505.93333333333334,
+      "n_sub_sd": 172.53300581407052,
+      "n_modes_mean": 135.0,
+      "n_modes_sd": 46.23696727573233,
+      "S_mean": 23.783463762748273,
+      "S_sd": 8.757558798605862
+    },
+    "interval_control": {
+      "law_exponent_mean": 0.043280607003524395,
+      "law_exponent_sd": 0.05938508039550246,
+      "law_r2_mean": 0.06762700984728873,
+      "law_r2_sd": 0.06410354784999685,
+      "boost_slope_mean": -0.34459431574313076,
+      "boost_slope_sd": 1.4559397638667637,
+      "boost_r2_mean": 0.03795094386276708,
+      "boost_r2_sd": 0.07063966949506625
+    },
+    "shuffle_control": {
+      "law_exponent_mean": -0.0009133921437455492,
+      "law_exponent_sd": 0.0022082174847350843,
+      "law_r2_mean": 0.06612357777994347,
+      "law_r2_sd": 0.08317550977797708,
+      "boost_slope_mean": -0.043728154665019205,
+      "boost_slope_sd": 0.13540948315400891,
+      "boost_r2_mean": 0.06517681788871041,
+      "boost_r2_sd": 0.07148686730165972
+    },
+    "law_exp_cv": 0.024479703130422432,
+    "boost_slope_cv": 0.017275493509312186
+  },
+  "ds_per_seed": [
+    {
+      "N": 600,
+      "seed": 2600,
+      "l": 1.0,
+      "rstar_box": 2.5,
+      "r0": 0.6,
+      "n_sub": 286,
+      "n_modes": 136,
+      "law_exponent": 0.560298085835544,
+      "law_r2": 0.9873696884024632,
+      "boost_slope": 7.768706009072396,
+      "boost_r2": 0.9720008244244577,
+      "boost_quantum_2pi": 2.4342491873943604
+    },
+    {
+      "N": 600,
+      "seed": 2617,
+      "l": 1.0,
+      "rstar_box": 2.5,
+      "r0": 0.6,
+      "n_sub": 273,
+      "n_modes": 131,
+      "law_exponent": 0.6617162048851088,
+      "law_r2": 0.9941157481041475,
+      "boost_slope": 7.9984387632979494,
+      "boost_r2": 0.9781016712356785,
+      "boost_quantum_2pi": 2.1932622466935623
+    },
+    {
+      "N": 600,
+      "seed": 2634,
+      "l": 1.0,
+      "rstar_box": 2.5,
+      "r0": 0.6,
+      "n_sub": 273,
+      "n_modes": 132,
+      "law_exponent": 0.6172572070901382,
+      "law_r2": 0.9901648965656527,
+      "boost_slope": 8.29722857004686,
+      "boost_r2": 0.9977757224883316,
+      "boost_quantum_2pi": 2.2595123768860796
+    },
+    {
+      "N": 600,
+      "seed": 2651,
+      "l": 1.0,
+      "rstar_box": 2.5,
+      "r0": 0.6,
+      "n_sub": 263,
+      "n_modes": 124,
+      "law_exponent": 0.7006809838865913,
+      "law_r2": 0.9886994563226024,
+      "boost_slope": 9.998899058759763,
+      "boost_r2": 0.9959700587211268,
+      "boost_quantum_2pi": 2.5060909329589114
+    },
+    {
+      "N": 600,
+      "seed": 2668,
+      "l": 1.0,
+      "rstar_box": 2.5,
+      "r0": 0.6,
+      "n_sub": 284,
+      "n_modes": 138,
+      "law_exponent": 0.6708136482910592,
+      "law_r2": 0.9906360863643427,
+      "boost_slope": 9.532579720513366,
+      "boost_r2": 0.9886860615673952,
+      "boost_quantum_2pi": 2.6499007228446856
+    },
+    {
+      "N": 1000,
+      "seed": 3000,
+      "l": 1.0,
+      "rstar_box": 2.5,
+      "r0": 0.6,
+      "n_sub": 458,
+      "n_modes": 223,
+      "law_exponent": 0.6191736085164082,
+      "law_r2": 0.9940434079694375,
+      "boost_slope": 7.532597792518077,
+      "boost_r2": 0.9706305275666867,
+      "boost_quantum_2pi": 2.2876370127960115
+    },
+    {
+      "N": 1000,
+      "seed": 3017,
+      "l": 1.0,
+      "rstar_box": 2.5,
+      "r0": 0.6,
+      "n_sub": 478,
+      "n_modes": 231,
+      "law_exponent": 0.5813947999426006,
+      "law_r2": 0.9859989593101952,
+      "boost_slope": 8.031621663816178,
+      "boost_r2": 0.963001803666245,
+      "boost_quantum_2pi": 2.172337326189548
+    },
+    {
+      "N": 1000,
+      "seed": 3034,
+      "l": 1.0,
+      "rstar_box": 2.5,
+      "r0": 0.6,
+      "n_sub": 485,
+      "n_modes": 227,
+      "law_exponent": 0.5761491089693542,
+      "law_r2": 0.9895920066246404,
+      "boost_slope": 8.139049936898205,
+      "boost_r2": 0.9651843192962135,
+      "boost_quantum_2pi": 3.029109155264919
+    },
+    {
+      "N": 1000,
+      "seed": 3051,
+      "l": 1.0,
+      "rstar_box": 2.5,
+      "r0": 0.6,
+      "n_sub": 446,
+      "n_modes": 213,
+      "law_exponent": 0.6307390586776958,
+      "law_r2": 0.9948880732529141,
+      "boost_slope": 7.8109361870860265,
+      "boost_r2": 0.969636531709014,
+      "boost_quantum_2pi": 3.089777348976355
+    },
+    {
+      "N": 1000,
+      "seed": 3068,
+      "l": 1.0,
+      "rstar_box": 2.5,
+      "r0": 0.6,
+      "n_sub": 435,
+      "n_modes": 206,
+      "law_exponent": 0.6200448535735079,
+      "law_r2": 0.9924927903942907,
+      "boost_slope": 7.756696183763374,
+      "boost_r2": 0.9797950473891978,
+      "boost_quantum_2pi": 2.2816169331095293
+    },
+    {
+      "N": 1400,
+      "seed": 3400,
+      "l": 1.0,
+      "rstar_box": 2.5,
+      "r0": 0.6,
+      "n_sub": 642,
+      "n_modes": 310,
+      "law_exponent": 0.6041898231717335,
+      "law_r2": 0.9944406080949775,
+      "boost_slope": 7.983457846377437,
+      "boost_r2": 0.9880748784000882,
+      "boost_quantum_2pi": 2.714458696194767
+    },
+    {
+      "N": 1400,
+      "seed": 3417,
+      "l": 1.0,
+      "rstar_box": 2.5,
+      "r0": 0.6,
+      "n_sub": 641,
+      "n_modes": 311,
+      "law_exponent": 0.5937232835976798,
+      "law_r2": 0.9967636889983406,
+      "boost_slope": 7.4161711042743335,
+      "boost_r2": 0.9836540685642462,
+      "boost_quantum_2pi": 2.407689649235337
+    },
+    {
+      "N": 1400,
+      "seed": 3434,
+      "l": 1.0,
+      "rstar_box": 2.5,
+      "r0": 0.6,
+      "n_sub": 667,
+      "n_modes": 318,
+      "law_exponent": 0.6203443839149697,
+      "law_r2": 0.9899754096782193,
+      "boost_slope": 8.612672934382637,
+      "boost_r2": 0.9938669817462099,
+      "boost_quantum_2pi": 2.750758108828764
+    },
+    {
+      "N": 1400,
+      "seed": 3451,
+      "l": 1.0,
+      "rstar_box": 2.5,
+      "r0": 0.6,
+      "n_sub": 626,
+      "n_modes": 300,
+      "law_exponent": 0.5826176437820879,
+      "law_r2": 0.9963726361592039,
+      "boost_slope": 7.0370759447619555,
+      "boost_r2": 0.9779092833317802,
+      "boost_quantum_2pi": 2.916673894842175
+    },
+    {
+      "N": 1400,
+      "seed": 3468,
+      "l": 1.0,
+      "rstar_box": 2.5,
+      "r0": 0.6,
+      "n_sub": 671,
+      "n_modes": 322,
+      "law_exponent": 0.6290928903320124,
+      "law_r2": 0.9908990921710698,
+      "boost_slope": 8.762272916819464,
+      "boost_r2": 0.9949246445508723,
+      "boost_quantum_2pi": 2.6189610303780846
+    }
+  ],
+  "ds_aggregate": {
+    "law_exponent_mean": 0.6178823722977661,
+    "law_exponent_sd": 0.038065927569627775,
+    "law_r2_mean": 0.9917635032274998,
+    "boost_slope_mean": 8.178560308825867,
+    "boost_r2_mean": 0.9812808283105028,
+    "boost_quantum_2pi_mean": 2.554135641506206,
+    "n_seeds": 15
+  },
+  "verdict": {
+    "law_exponent_dev_from_1": 0.28030556172958065,
+    "law_exponent_unruh": false,
+    "law_monotone_loglinear": true,
+    "law_exponent_rho_invariant": true,
+    "boost_geometry": true,
+    "boost_slope_cv": 0.017275493509312186,
+    "boost_rho_invariant": true,
+    "twopi_coefficient_routes": {
+      "boost_quantum": 0.5242350719505802,
+      "unruh_ratio_f034": 0.8742964361837514
+    },
+    "twopi_best_route": "boost_quantum",
+    "twopi_best_rel_err": 0.5242350719505802,
+    "unruh_2pi_recovered": false,
+    "interval_law_fails": true,
+    "shuffle_law_fails": true,
+    "correspondence": "tautology",
+    "law_recovered": false,
+    "boost_shape_qualitative": true,
+    "control_clean": true
+  },
+  "skipped": [],
+  "caveat": "The SJ modular kernel is a SURROGATE Dirac in modular-energy units eps=ln[mu/(mu-1)] (Casini-Huerta 0905.2562) lifted to the site basis; beta_KMS=1 is a Tomita-Takesaki TAUTOLOGY (F-034). The proper-distance scale is GEOMETRY-FIXED (sprinkling density + slab proper length, fixed BEFORE the slope), NEVER tuned to 2*pi. The Unruh LAW SHAPE (exponent ~+1, T~1/x) is the recoverable geometric content; the absolute 2*pi coefficient requires the boost-rapidity normalisation the surrogate does NOT carry -- reported via geometry-fixed routes, NOT claimed if off. 2D massless, finite N<=1500 dense: a TREND (rho-invariance), not the N->inf value; discrete corrections O(1/sqrt N).",
+  "elapsed_s": 53.678321838378906
+}

@@ -1,0 +1,367 @@
+{
+  "meta": {
+    "calc": "ds-conformal-4d",
+    "vypocet": "VYPOCET-33",
+    "hypothesis": "H6g-2",
+    "question": "Does a CONFORMALLY-COUPLED 4D scalar (xi = 1/6, m_eff^2 = xi R = 2/l^2) make the dS entropy-area law REAPPEAR -- is the F-031 4D absence a conformal-weight artefact or robust physics?",
+    "conformal_setup": {
+      "xi": 0.16666666666666666,
+      "R_desitter": 12.0,
+      "m2_eff": 2.0,
+      "operator": "(-Box + xi R); retarded G_R = (B_sharp - m2 I)^{-1}",
+      "baseline": "xi = 0 massless = (B_sharp)^{-1} (F-031 channel)",
+      "note": "conformally-coupled 4D scalar is the 4D analogue of the 2D massless conformal scalar (F-028); on dS R=12/l^2 const so m_eff^2 = xi R = 2/l^2 const."
+    },
+    "anti_circularity": {
+      "epsilon_law": "eps = rho^{-1/4} (4D) FIXED from F-006 rho^{-1/d}",
+      "F006_p_rank": 0.5188759456500236,
+      "F006_p_err": 0.0066971104884981,
+      "k_tube": 1.5,
+      "k_tube_source": "VYPOCET-27 (clean rho^0.5)"
+    },
+    "geometry": {
+      "l": 1.0,
+      "T_HALF": 0.5,
+      "XPERP": 1.0,
+      "R_CUT": 1.0,
+      "DIM": 4,
+      "alpha_rank": 2.0,
+      "k_tube_codim2": 1.5,
+      "dense_N_max": 2500,
+      "RSTAR_BOX": [
+        1.6,
+        2.2,
+        2.8,
+        3.5,
+        4.3,
+        5.2
+      ]
+    },
+    "references_repo_present_only": [
+      "dou-sorkin-2003 (gr-qc/0302009)",
+      "johnston-2009 (0909.0944)",
+      "benincasa-dowker-2010 (1001.2725)",
+      "clpw-2022 (2206.10780)",
+      "F-006 (ssee-diamond)",
+      "F-031 (ds-amol-convention / VYPOCET-27)"
+    ],
+    "conformal_weight_caveat_status": "H6g-2 REMOVES the xi=0 -> xi=1/6 part of F-031 caveat (a). The RESIDUAL caveat (flat causal order vs exact curved 4D dS propagator) STAYS: this is still the VYPOCET-21 flat-order BD construction, not the exact dS Wightman state. dS A/4 'WARN neove\u0159eno' (no Gibbons-Hawking primary in repo).",
+    "toe_version": "0.3.1"
+  },
+  "run": {
+    "cells": [
+      {
+        "rho": 120.0,
+        "l": 1.0,
+        "path": "dense",
+        "eps": 0.3021375397356768,
+        "n_seeds": 4,
+        "RSTAR_BOX": [
+          1.6,
+          2.2,
+          2.8,
+          3.5,
+          4.3,
+          5.2
+        ],
+        "m2_conformal": 2.0,
+        "xi_conformal": 0.16666666666666666,
+        "N_total_mean": [
+          442.0,
+          468.0,
+          476.0,
+          479.0,
+          480.0,
+          480.0
+        ],
+        "n_sub_mean": [
+          360.25,
+          365.5,
+          361.5,
+          367.5,
+          364.75,
+          373.5
+        ],
+        "S_full_m0_mean": [
+          34.563479172012904,
+          37.781518753890495,
+          37.896285263908084,
+          30.576448479843457,
+          32.59209967219229,
+          27.78397391047872
+        ],
+        "S_full_conf_mean": [
+          34.58548367283454,
+          37.826881169323165,
+          38.03156646407082,
+          30.591163299784615,
+          32.5977677016587,
+          27.795794044464067
+        ],
+        "S_trunc_m0_mean": [
+          16.677682530748346,
+          16.162058931815668,
+          16.33169469722219,
+          14.863735362516596,
+          14.966930411694102,
+          11.12166825276542
+        ],
+        "S_trunc_conf_mean": [
+          16.74534860029722,
+          16.19934485542712,
+          16.373030645778755,
+          14.916615554215458,
+          14.956817462406523,
+          11.11744257432393
+        ],
+        "A_mol_codim2_mean": [
+          87.75,
+          113.75,
+          93.25,
+          67.0,
+          85.25,
+          69.0
+        ],
+        "A_mol_raw_mean": [
+          364.75,
+          367.0,
+          340.0,
+          278.0,
+          316.0,
+          288.75
+        ],
+        "S_full_m0_plateau": 30.317507354171493,
+        "S_full_conf_plateau": 30.32824168196912,
+        "S_trunc_m0_plateau": 13.65077800899204,
+        "S_trunc_conf_plateau": 13.66362519698197,
+        "A_mol_codim2_plateau": 73.75,
+        "A_mol_raw_plateau": 294.25,
+        "R_prime_m0": 0.41108484548029145,
+        "R_prime_conf": 0.4112303956877169,
+        "S_full_conf_over_m0": 1.0003540636659944,
+        "pairing_residual_rel_max": 5.760542379905392e-15,
+        "sj_wightman_min_eig_rel": -1.0163403105873156e-15
+      },
+      {
+        "rho": 240.0,
+        "l": 1.0,
+        "path": "dense",
+        "eps": 0.25406637407730737,
+        "n_seeds": 4,
+        "RSTAR_BOX": [
+          1.6,
+          2.2,
+          2.8,
+          3.5,
+          4.3,
+          5.2
+        ],
+        "m2_conformal": 2.0,
+        "xi_conformal": 0.16666666666666666,
+        "N_total_mean": [
+          885.0,
+          937.0,
+          953.0,
+          958.0,
+          960.0,
+          960.0
+        ],
+        "n_sub_mean": [
+          733.75,
+          727.75,
+          740.5,
+          736.0,
+          736.25,
+          738.25
+        ],
+        "S_full_m0_mean": [
+          63.00457436460873,
+          65.10361683891139,
+          61.69223642190346,
+          61.34589936555632,
+          61.862015039625945,
+          66.45835572333357
+        ],
+        "S_full_conf_mean": [
+          63.95578619101063,
+          65.22926501725556,
+          61.752151952125345,
+          61.37252865869608,
+          61.90558972164834,
+          66.48000972292667
+        ],
+        "S_trunc_m0_mean": [
+          1.1284131888814557e-09,
+          0.5356106721077389,
+          0.3003836413252492,
+          1.0727653020202166,
+          0.5361011777872202,
+          0.18750913428522892
+        ],
+        "S_trunc_conf_mean": [
+          2.624081280345674e-09,
+          0.528857642758746,
+          0.27876121104000656,
+          0.8974066383421346,
+          0.5273001444789848,
+          0.20229283891899727
+        ],
+        "A_mol_codim2_mean": [
+          115.0,
+          111.75,
+          129.25,
+          111.5,
+          138.0,
+          126.75
+        ],
+        "A_mol_raw_mean": [
+          1003.75,
+          1053.0,
+          1068.75,
+          1056.0,
+          1051.75,
+          1191.75
+        ],
+        "S_full_m0_plateau": 63.22209004283861,
+        "S_full_conf_plateau": 63.25270936775703,
+        "S_trunc_m0_plateau": 0.5987918713642219,
+        "S_trunc_conf_plateau": 0.5423332072467056,
+        "A_mol_codim2_plateau": 125.41666666666667,
+        "A_mol_raw_plateau": 1099.8333333333333,
+        "R_prime_m0": 0.5040963990126667,
+        "R_prime_conf": 0.5043405398093583,
+        "S_full_conf_over_m0": 1.0004843137089847,
+        "pairing_residual_rel_max": 6.981267717691129e-15,
+        "sj_wightman_min_eig_rel": -8.692297886180884e-16
+      },
+      {
+        "rho": 480.0,
+        "l": 1.0,
+        "path": "dense",
+        "eps": 0.21364350319811704,
+        "n_seeds": 4,
+        "RSTAR_BOX": [
+          1.6,
+          2.2,
+          2.8,
+          3.5,
+          4.3,
+          5.2
+        ],
+        "m2_conformal": 2.0,
+        "xi_conformal": 0.16666666666666666,
+        "N_total_mean": [
+          1770.0,
+          1873.0,
+          1906.0,
+          1917.0,
+          1919.0,
+          1920.0
+        ],
+        "n_sub_mean": [
+          1439.5,
+          1463.5,
+          1455.25,
+          1457.5,
+          1450.25,
+          1460.75
+        ],
+        "S_full_m0_mean": [
+          126.11127282424393,
+          120.50789745764254,
+          121.07556774224054,
+          117.92900433068743,
+          116.4808427833323,
+          119.77219991562393
+        ],
+        "S_full_conf_mean": [
+          126.19074781147512,
+          121.09065019141572,
+          121.14036485216249,
+          117.89998673220794,
+          116.29406691963385,
+          119.79884943122416
+        ],
+        "S_trunc_m0_mean": [
+          4.8611947994802734e-12,
+          8.759489349681852e-10,
+          4.330626989007192e-09,
+          4.857067815687274e-09,
+          0.09906128275573765,
+          0.007251156276623626
+        ],
+        "S_trunc_conf_mean": [
+          9.046763343574944e-12,
+          9.566211586792678e-11,
+          3.752486977062943e-09,
+          1.1902127966637452e-08,
+          0.09824880955171925,
+          0.00931936633168991
+        ],
+        "A_mol_codim2_mean": [
+          208.5,
+          181.5,
+          190.25,
+          159.0,
+          171.75,
+          173.5
+        ],
+        "A_mol_raw_mean": [
+          3627.75,
+          3636.75,
+          3660.5,
+          3584.25,
+          3527.25,
+          3453.25
+        ],
+        "S_full_m0_plateau": 118.06068234321454,
+        "S_full_conf_plateau": 117.99763436102198,
+        "S_trunc_m0_plateau": 0.035437481296476364,
+        "S_trunc_conf_plateau": 0.03585606259517904,
+        "A_mol_codim2_plateau": 168.08333333333334,
+        "A_mol_raw_plateau": 3521.5833333333335,
+        "R_prime_m0": 0.7023937472080191,
+        "R_prime_conf": 0.7020186476610132,
+        "S_full_conf_over_m0": 0.9994659696950652,
+        "pairing_residual_rel_max": 8.425874358671858e-15,
+        "sj_wightman_min_eig_rel": -1.0354950352922038e-15
+      }
+    ],
+    "verdict": {
+      "p_R_prime_massless": {
+        "p": 0.38642190676373794,
+        "se": 0.05320770392999682
+      },
+      "p_R_prime_conformal": {
+        "p": 0.38578122468707327,
+        "se": 0.05272936090032961
+      },
+      "cv_R_prime_massless": 0.2759533101640015,
+      "cv_R_prime_conformal": 0.2753998364792227,
+      "p_A_mol_codim2": {
+        "p": 0.5942308618213002,
+        "se": 0.09917911420654016,
+        "n": 3
+      },
+      "p_S_full_massless": {
+        "p": 0.9806527685850385,
+        "se": 0.045971410276544084,
+        "n": 3
+      },
+      "p_S_full_conformal": {
+        "p": 0.9800120865083738,
+        "se": 0.04644975330621006,
+        "n": 3
+      },
+      "S_full_conf_over_m0_mean": 1.0001014490233482,
+      "R_prime_conformal_invariant": false,
+      "max_pairing_residual_rel": 8.425874358671858e-15,
+      "max_sj_wightman_min_eig_rel": -1.0354950352922038e-15,
+      "correspondence": "negative",
+      "outcome": "NEGATIVE: conformal (xi=1/6) R' drifts essentially IDENTICALLY to the massless baseline (~rho^{+0.5}); S_full stays volumetric (rho^1) for both couplings (conf/massless ratio ~ 1.0001). The 4D area-law absence is ROBUST physics, NOT a conformal-weight artefact -- F-031 stands stronger."
+    }
+  },
+  "plot": "core-data/calculations/ds-conformal-4d/plots/R_conformal_vs_nonconformal.png",
+  "status": "complete",
+  "runtime_s": 1026.7000660896301
+}

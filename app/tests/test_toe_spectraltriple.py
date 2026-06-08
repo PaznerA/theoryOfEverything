@@ -30,6 +30,8 @@ from toe.spectraltriple import (
     ConnesDistance,
     kms_temperature,
     KMSFit,
+    unruh_proper_law,
+    UnruhLawFit,
 )
 
 
@@ -141,3 +143,49 @@ def test_kms_temperature_degenerate_returns_nan():
     assert kf.n_modes == 1
     assert np.isnan(kf.beta)
     assert kf.ts == [] and kf.g_re == []
+
+
+def test_unruh_proper_law_recovers_bw_linear_exponent():
+    """A constructed BW kernel with diagonal |K(x,x)| = c * x (energy density
+    LINEAR in proper distance, the Bisognano-Wichmann form) is recovered with the
+    Unruh law exponent p_E = +1 (the T_local ~ 1/x law shape) and a positive
+    boost slope c, to a few percent on a clean window."""
+    rng = np.random.default_rng(3)
+    n = 800
+    x = rng.uniform(0.02, 1.0, size=n)            # proper distances to horizon
+    c = 6.283185307179586                          # 2*pi (the BW continuum slope)
+    K = np.diag(c * x)                             # |K(x,x)| = 2*pi * x  (exact)
+    fit = unruh_proper_law(K, x, x_lo=0.06, x_hi=0.9, n_bins=12)
+    assert isinstance(fit, UnruhLawFit)
+    assert abs(fit.law_exponent - 1.0) < 0.05      # BW: energy density ~ x^1
+    assert fit.law_r2 > 0.99
+    assert abs(fit.boost_slope - c) / c < 0.05     # linear slope = the input c
+    assert fit.boost_r2 > 0.99
+
+
+def test_unruh_proper_law_window_is_anti_circular():
+    """The window bounds are caller-supplied (geometry-fixed), NEVER fitted to a
+    target: a sub-window of the same linear kernel returns the SAME exponent +1
+    and slope c (the result does not depend on a tuned window) -- the
+    anti-circularity guard."""
+    rng = np.random.default_rng(5)
+    x = rng.uniform(0.02, 1.0, size=900)
+    c = 4.0
+    K = np.diag(c * x)
+    f_wide = unruh_proper_law(K, x, x_lo=0.06, x_hi=0.9, n_bins=12)
+    f_narrow = unruh_proper_law(K, x, x_lo=0.10, x_hi=0.6, n_bins=10)
+    assert abs(f_wide.law_exponent - 1.0) < 0.06
+    assert abs(f_narrow.law_exponent - 1.0) < 0.06
+    assert abs(f_wide.boost_slope - c) / c < 0.06
+    assert abs(f_narrow.boost_slope - c) / c < 0.06
+
+
+def test_unruh_proper_law_degenerate_window_returns_nan():
+    """A window with too few populated bins -> NaN exponent/slope, profile of
+    NaNs (clean partial output, no crash)."""
+    x = np.array([0.5, 0.5, 0.5])                  # all in one bin
+    K = np.diag([1.0, 1.0, 1.0])
+    fit = unruh_proper_law(K, x, x_lo=0.06, x_hi=0.9, n_bins=12)
+    assert np.isnan(fit.law_exponent)
+    assert np.isnan(fit.boost_slope)
+    assert len(fit.prof) == 12

@@ -53,6 +53,8 @@ __all__ = [
     "ConnesDistance",
     "kms_temperature",
     "KMSFit",
+    "unruh_proper_law",
+    "UnruhLawFit",
 ]
 
 
@@ -424,3 +426,114 @@ def kms_temperature(eps, occ, *, n_t=9, t_span=2.0, betas=None):
     return KMSFit(beta=beta, resid_beta1=resid_b1, resid_min=resid_min,
                   ts=ts.tolist(), g_re=np.real(Gc).tolist(),
                   g_im=np.imag(Gc).tolist(), n_modes=int(eps.size))
+
+
+# ===========================================================================
+# UNRUH TEMPERATURE LAW from the modular-kernel boost diagonal
+# ===========================================================================
+
+@dataclass
+class UnruhLawFit:
+    """Carrier for the Unruh-law fit of a one-particle modular kernel diagonal.
+
+    On the 2D Rindler half-line (cut x>0, horizon at x=0) Bisognano-Wichmann
+    gives the modular Hamiltonian ``K = 2*pi K_boost``, ``K_boost = integral x
+    T_00 dx``, so the modular energy density along the diagonal grows LINEARLY in
+    the proper distance to the horizon, ``|K(x,x)| ~ 2*pi x rho_E``: the Unruh /
+    Tolman local inverse temperature is ``beta_local(x) = 2*pi x`` and the local
+    temperature obeys the Unruh law ``T_local(x) = 1/(2*pi x)`` (exponent -1).
+
+    ``law_exponent`` is the log-log slope ``p_E`` of ``|K(x,x)|`` vs the PROPER
+    distance ``x`` (BW: ``p_E = +1``, the energy density linear in proper distance
+    => ``T ~ 1/x``); ``law_r2`` is the log-log R^2. ``boost_slope`` /
+    ``boost_r2`` are the LINEAR fit of ``|K(x,x)|`` vs proper distance.
+    ``centers`` / ``prof`` / ``counts`` are the binned diagonal profile.
+
+    HONEST CAVEAT: the SJ modular kernel is a SURROGATE in modular-energy units
+    ``eps = ln[mu/(mu-1)]`` (Casini-Huerta 0905.2562); its log-compression makes
+    the measured exponent SUB-linear (``p_E ~ 0.7 < 1``) and does NOT carry the
+    boost-rapidity normalisation, so the ABSOLUTE ``2*pi`` is NOT recovered from
+    this diagonal alone (F-034 / F-036). ``law_exponent`` measures the LAW SHAPE,
+    not the absolute Unruh temperature.
+    """
+
+    law_exponent: float
+    law_r2: float
+    boost_slope: float
+    boost_r2: float
+    centers: list
+    prof: list
+    counts: list
+    n_bins: int = 0
+
+
+def unruh_proper_law(K, x_proper, *, x_lo, x_hi, n_bins=12, min_count=6):
+    """Unruh temperature-law fit of a modular-kernel diagonal vs PROPER distance.
+
+    Bins ``|K(x,x)|`` (the modular energy density) against the proper distance
+    ``x`` to the horizon on the GEOMETRY-FIXED window ``[x_lo, x_hi]`` (fixed by
+    the caller from the sprinkling geometry BEFORE any slope -- anti-circular),
+    then returns the log-log exponent ``p_E`` (BW: ``+1`` => Unruh ``T ~ 1/x``)
+    and the linear boost slope. The window bounds must be supplied by the caller
+    (the proper-distance scale is the load-bearing anti-circularity convention --
+    it is NEVER fitted to give ``2*pi``).
+
+    Formula: modular-flow-def, modular-spectrum, bisognano-wichmann boost.
+    Evidence: F-036 (core-data/calculations/ncg-kms-unruh/calc.py).
+    Conventions: Bisognano-Wichmann modular flow = boost ``K = 2*pi K_boost``
+    (1712.04227, context 2008.07697); Unruh local temperature ``1/(2*pi x)``
+    (unruh1976notes); Connes-Rovelli modular-flow-as-thermal-time gr-qc/9406019;
+    Casini-Huerta single-mode modular energies 0905.2562; Sorkin-Yazdi SJ state
+    1611.10281.
+
+    Args:
+        K: (n, n) site-basis one-particle modular kernel (Hermitian); only the
+            real diagonal is used.
+        x_proper: (n,) proper distances of the kept sites to the horizon.
+        x_lo: lower proper-distance window bound (GEOMETRY-FIXED, NOT tuned).
+        x_hi: upper proper-distance window bound (GEOMETRY-FIXED, NOT tuned).
+        n_bins: number of proper-distance bins.
+        min_count: minimum sites per bin to keep the bin.
+
+    Returns:
+        :class:`UnruhLawFit` with the log-log ``law_exponent`` (BW: +1), its
+        ``law_r2``, the linear ``boost_slope`` + ``boost_r2`` and the binned
+        ``centers`` / ``prof`` / ``counts``. NaN fields on a degenerate window.
+    """
+    K = np.asarray(K)
+    diag = np.abs(np.real(np.diag(K)))
+    xp = np.abs(np.asarray(x_proper, dtype=float))
+    bins = np.linspace(float(x_lo), float(x_hi), int(n_bins) + 1)
+    centers = 0.5 * (bins[:-1] + bins[1:])
+    idx = np.digitize(xp, bins)
+    prof = np.full(int(n_bins), np.nan)
+    cnt = np.zeros(int(n_bins), dtype=int)
+    for b in range(1, int(n_bins) + 1):
+        msk = idx == b
+        cnt[b - 1] = int(msk.sum())
+        if msk.sum() >= min_count:
+            prof[b - 1] = float(np.mean(diag[msk]))
+    g = np.isfinite(prof) & (centers > 0) & (prof > 0)
+    if g.sum() >= 3:
+        lp = np.polyfit(np.log(centers[g]), np.log(prof[g]), 1)
+        law_exp = float(lp[0])
+        pred = lp[0] * np.log(centers[g]) + lp[1]
+        ss = float(np.sum((np.log(prof[g]) - np.mean(np.log(prof[g]))) ** 2))
+        law_r2 = float(1.0 - np.sum((np.log(prof[g]) - pred) ** 2) / ss) if ss > 0 else 0.0
+    else:
+        law_exp = float("nan")
+        law_r2 = float("nan")
+    if g.sum() >= 2:
+        A = np.vstack([centers[g], np.ones(int(g.sum()))]).T
+        coef, *_ = np.linalg.lstsq(A, prof[g], rcond=None)
+        boost_slope = float(coef[0])
+        pred_lin = A @ coef
+        ss = float(np.sum((prof[g] - prof[g].mean()) ** 2))
+        boost_r2 = float(1.0 - np.sum((prof[g] - pred_lin) ** 2) / ss) if ss > 0 else 0.0
+    else:
+        boost_slope = float("nan")
+        boost_r2 = float("nan")
+    return UnruhLawFit(law_exponent=law_exp, law_r2=law_r2,
+                       boost_slope=boost_slope, boost_r2=boost_r2,
+                       centers=centers.tolist(), prof=prof.tolist(),
+                       counts=cnt.tolist(), n_bins=int(n_bins))

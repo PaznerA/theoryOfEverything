@@ -57,10 +57,12 @@ __all__ = [
     "causal_matrix",
     "link_matrix",
     "horizon_molecules_codim2",
+    "molecule_count_fluctuation",
     # Green functions + Pauli-Jordan
     "green_retarded_2d",
     "green_retarded_4d",
     "bd_dalembertian_inverse",
+    "bd_dalembertian_inverse_massive",
     "bd_smeared_dalembertian_inverse",
     "pauli_jordan",
     "causal_diagnostics",
@@ -677,6 +679,88 @@ def horizon_molecules_codim2(coords, C_or_L, *, r_index=1, r_cut, eps,
     }
 
 
+def molecule_count_fluctuation(make_coords, n_seeds, *, r_index=1, r_cut, eps,
+                               k_tube=1.5, seed0=0, stride=1):
+    r"""Across-sprinkling DISTRIBUTION of the codim-2 Dou-Sorkin molecule count
+    on a FIXED entangling 2-surface -- the Sorkin "order-by-disorder" /
+    horizon-entropy-FLUCTUATION observable (as opposed to the MEAN count).
+
+    Draws ``n_seeds`` INDEPENDENT sprinklings of the SAME fixed geometry, counts
+    the codim-2 molecules per seed via :func:`horizon_molecules_codim2`, and
+    returns the across-seed mean, (sample) variance, std, Fano factor
+    ``Var/mean`` and the Gaussian order-by-disorder entropy
+    ``S_fluc = 0.5 ln(2 pi e Var)`` (the log number of distinguishable Gaussian
+    configurations of the fluctuating count, up to the additive constant). This
+    is the discrete avatar of "horizon entropy from the FLUCTUATION of the
+    causal-link count across the horizon" rather than its mean.
+
+    Pure combinatorics on the causal/link matrix -- NO eigh, NO SSEE -- so many
+    seeds are cheap; the cost is ``O(n_seeds * N^2)`` (the causal matrix).
+
+    Formula: horizon-molecule, dou-sorkin-link-count (fluctuation / order-by-
+    disorder counting).
+    Evidence: VYPOCET-34 (core-data/calculations/ds-molecule-fluctuation/
+    calc.py), H6g-6; builds on VYPOCET-27 :func:`horizon_molecules_codim2`
+    (F-031, the MEAN-count area-law that FAILED) and mirrors the variance-axis
+    framing of VYPOCET-31 / F-035 (Lambda shot-noise survives on the variance
+    axis where the mean prefactor was refuted).
+    Conventions: Dou-Sorkin gr-qc/0302009 (horizon entropy as causal-link
+    count), Sorkin spacetime-entropy / order-by-disorder counting of links
+    across the horizon (the FLUCTUATION, not the mean). ``eps`` is fixed from the
+    F-006 ``rho^{-1/d}`` law (4D ``eps = rho^{-1/4}``) per the anti-circularity
+    protocol; ``k_tube`` is inherited unchanged from the mean-count primitive
+    (no re-tuning). Seeds: ``np.random.default_rng(seed0 + stride * i)`` for
+    ``i = 0 .. n_seeds - 1`` (explicit, non-overlapping streams).
+
+    Args:
+        make_coords: callable ``rng -> coords`` returning the ``(N, dim)``
+            sprinkled coordinates for one seed (e.g.
+            ``lambda rng: sprinkle_ds_static_patch4d(N, rng, ...)``). The SAME
+            fixed geometry must be produced every call -- only the rng varies.
+        n_seeds: number of independent sprinklings (>= 2 for a variance; many
+            more, e.g. >= 50, for a stable variance estimate).
+        r_index: radial column index passed to
+            :func:`horizon_molecules_codim2` (default 1).
+        r_cut: radial level defining the observer region and codim-2 surface.
+        eps: discreteness scale (4D ``eps = rho^{-1/4}``, FIXED from F-006).
+        k_tube: molecule tube radius in ``eps`` units (default 1.5; inherited
+            from the mean-count primitive, NOT re-tuned).
+        seed0: base seed for the per-seed rng stream.
+        stride: stride between consecutive per-seed seeds (use a large value,
+            e.g. 1, when ``seed0`` already encodes a non-overlapping block).
+
+    Returns:
+        ``(counts, stats)`` where ``counts`` is an ``(n_seeds,)`` int array of
+        per-seed molecule counts and ``stats`` is a dict with keys ``mean``,
+        ``var`` (ddof=1), ``var_se`` (normal-approx SE ``var*sqrt(2/(n-1))``),
+        ``std``, ``fano`` (``var/mean``), ``s_fluc`` (Gaussian order-by-disorder
+        entropy), ``n_seeds``, ``min``, ``max``.
+    """
+    n_seeds = int(n_seeds)
+    if n_seeds < 2:
+        raise ValueError(f"need n_seeds >= 2 for a variance; got {n_seeds}.")
+    counts = np.empty(n_seeds, dtype=np.int64)
+    for i in range(n_seeds):
+        rng = np.random.default_rng(int(seed0) + int(stride) * i)
+        coords = make_coords(rng)
+        Cm = causal_matrix(coords)
+        counts[i] = horizon_molecules_codim2(
+            coords, Cm, r_index=r_index, r_cut=r_cut, eps=eps, k_tube=k_tube)
+    mean = float(counts.mean())
+    var = float(counts.var(ddof=1))
+    std = math.sqrt(var) if var > 0 else 0.0
+    var_se = var * math.sqrt(2.0 / (n_seeds - 1))
+    fano = var / mean if mean > 0 else float("nan")
+    s_fluc = (0.5 * math.log(2.0 * math.pi * math.e * var)
+              if var > 0 else float("nan"))
+    stats = {
+        "mean": mean, "var": var, "var_se": var_se, "std": std,
+        "fano": fano, "s_fluc": s_fluc, "n_seeds": n_seeds,
+        "min": int(counts.min()), "max": int(counts.max()),
+    }
+    return counts, stats
+
+
 # ===========================================================================
 # RETARDED GREEN FUNCTIONS + PAULI-JORDAN
 # ===========================================================================
@@ -827,6 +911,56 @@ def bd_dalembertian_inverse(C, rho, dim):
         B = _bd_sharp_matrix(C, rho)
         return np.linalg.inv(B)
     raise ValueError(f"bd_dalembertian_inverse supports dim in {{2, 4}}, got {dim}")
+
+
+def bd_dalembertian_inverse_massive(C, rho, m2):
+    r"""Retarded Green function of the MASSIVE/conformally-coupled 4D scalar from
+    the discrete Benincasa-Dowker d'Alembertian: ``G_R = (B - m2 I)^{-1}``.
+
+    The continuum Klein-Gordon field obeys ``(Box - m^2) phi = 0``; its retarded
+    propagator solves ``(Box - m^2) G_R = delta``. The SHARP BD operator ``B``
+    (layer coefficients ``(1, -9, 16, -8)``, prefactor ``4 sqrt(rho)/sqrt6``) is
+    the discrete realisation of the d'Alembertian ``Box``, so the massive
+    retarded Green function is the inverse of ``B - m2 I``. ``m2 = 0`` recovers
+    :func:`bd_dalembertian_inverse` (``dim=4``) bit-for-bit.
+
+    The CONFORMALLY-COUPLED 4D scalar is the special case ``m2 = xi R`` with
+    conformal coupling ``xi = 1/6``; on de Sitter ``R = 12/l^2`` is constant, so
+    the conformal "mass" is the constant ``m_eff^2 = xi R = 2/l^2`` (= 2 in
+    ``l = 1`` units). The operator ``-Box + xi R`` is then conformally invariant
+    in 4D, the 4D analogue of the 2D massless conformal scalar.
+
+    Like :func:`bd_dalembertian_inverse`, this does NOT re-sort the points; pass a
+    causal matrix built from time-ordered coordinates
+    (``coords[np.argsort(coords[:, 0])]``) for a strictly retarded ``G_R``. The
+    Pauli-Jordan operator ``iDelta = i(G_R - G_R^T)`` keeps its exact ``+/-``
+    paired spectrum and the SJ positive part is well-defined for the
+    ``O(1/l^2)`` conformal mass (verified: ``W >= 0`` to machine precision,
+    pairing residual ``~1e-15``).
+
+    Formula: pauli-jordan.
+    Evidence: VYPOCET-33 (core-data/calculations/ds-conformal-4d/calc.py;
+    H6g-2 conformal-coupling test of the F-031 4D dS area-law absence);
+    builds on VYPOCET-09 (ssee-bd-4d) sharp BD operator and VYPOCET-27 / F-031.
+    Conventions: Benincasa-Dowker 1001.2725 eqs.2-3 sharp operator
+    ``B ~ Box``; massive Klein-Gordon retarded Green function
+    ``(Box - m^2) G_R = delta`` => ``G_R = (B - m2 I)^{-1}``; conformal coupling
+    ``xi = 1/6``, dS ``R = 12/l^2`` => ``m2 = xi R = 2/l^2``.
+
+    Args:
+        C: (N, N) causal matrix (time-ordered for strict retardedness in 4D).
+        rho: sprinkling density N / volume.
+        m2: scalar mass-squared ``m^2`` (set ``m2 = xi R = 2/l^2`` for the
+            conformally-coupled scalar on de Sitter; ``m2 = 0`` -> massless).
+
+    Returns:
+        np.ndarray (N, N) -- the retarded Green function G_R = (B - m2 I)^{-1}.
+    """
+    C = np.asarray(C, dtype=np.float64)
+    B = _bd_sharp_matrix(C, rho)
+    if m2 != 0.0:
+        B = B - float(m2) * np.eye(B.shape[0])
+    return np.linalg.inv(B)
 
 
 def bd_smeared_dalembertian_inverse(C, rho, eps):

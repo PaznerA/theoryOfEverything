@@ -1,7 +1,7 @@
 # Index znalostní báze — Theory of Everything
 
 > Anotovaný rejstřík všech souborů ve `knowledge-base/`, `core-data/` a `verification/`.
-> Generováno: 2026-06-05; aktualizováno: 2026-06-08 (kolo 17: hon na data-aktivované vazby + revize tezí/papírů; propagace F-024..F-035 do 4 draftů; 5 hran connections.json anotováno/upgradováno; link prediction refresh AUC 0.9034, barely 114->113, partially 112->113; web 121 stránek).
+> Generováno: 2026-06-05; aktualizováno: 2026-06-08 (kolo 18: VYPOCET-32/33/34, F-036/037/038, adversariální audit; 38 nálezů; testy 356 passed).
 
 ---
 
@@ -109,6 +109,12 @@
 - [../core-data/open-problems.json](../core-data/open-problems.json) — Registr otevřených problémů: **153 problémů** (+9 fuzzy duplicit k posouzení).
 - [../core-data/connections.json](../core-data/connections.json) — Viz výše.
 
+### Kolo 18 (VYPOCET-32–34)
+
+- [vypocty/VYPOCET-32-ncg-kms-unruh.md](vypocty/VYPOCET-32-ncg-kms-unruh.md) — NCG<->semiklasika KMS/Unruh netautologický test (H6g-1b, F-036): SJ modulární tok na 2D Rindlerově slabu + dS static patch (N∈{600,1000,1400}, 5 seedů, 15 Rindler + 15 dS). Zákonný exponent p_E=0,720+-0,040 (BW +1 nečteno, deficit 28 %); boost slope 29,20 (R2=0,969, CV 1,7 %); 2*pi best route 9,58 (off 52 %); dS: p_E=0,62, Gibbons-Hawkingova 2*pi=2,55. Kontroly selhávají (interval R2=0,038, shuffle R2=0,065). VERDIKT: informovany-negativ-tautologie — most struktury, NE teploty; hrana barely, edge NEPROPAGOVÁNA. Data: `core-data/calculations/ncg-kms-unruh/`. Knihovna: `lib/toe/spectraltriple.py`. (F-036)
+- [vypocty/VYPOCET-33-ds-conformal-4d.md](vypocty/VYPOCET-33-ds-conformal-4d.md) — Konformně-vázaný 4D dS area-zákon (H6g-2, F-037): xi=1/6 vs xi=0 na 4D dS statické záplatě (rho∈{120,240,480}, 4 seedy, wall 1027 s). R' drift +0,386 identický pro oba; S_full conf/massless=1,0001; masivní SJ PSD (pairing 8,4e-15, Wightman 1e-15 — H6g-2 blokátor odstraněn). VERDIKT: supported (negativ) — 4D area-zákon absence je robustní fyzika; caveat (a) F-031 (xi-část) VYŘEŠEN. Data: `core-data/calculations/ds-conformal-4d/`. Knihovna: `lib/toe/causet.py` (primitiv bd_dalembertian_inverse_massive). (F-037)
+- [vypocty/VYPOCET-34-ds-molecule-fluctuation.md](vypocty/VYPOCET-34-ds-molecule-fluctuation.md) — Molekulová fluktuace order-by-disorder 4D dS (H6g-6, F-038): Var(N_mol) vs. A_proper, 5 hustot × 200 seedů, N≤7677, čistě kombinatoricky. Var~rho^0,656, CI95 [0,575, 0,745] vylučuje plochu rho^0.5 i objem rho^1.0; super-Poisson (Fano 3,72->5,30); bit-identická reprodukce. VERDIKT: refuted-direction — druhý nezávislý negativ k F-031 (ani mean, ani variance 4D area-zákon). Data: `core-data/calculations/ds-molecule-fluctuation/`. Knihovna: `lib/toe/causet.py`. (F-038)
+
 ### Kolo 16 (VYPOCET-30–31)
 
 - [vypocty/VYPOCET-30-modular-kms-thermal.md](vypocty/VYPOCET-30-modular-kms-thermal.md) — KMS/tepelná osa causal-sets<->NCG (H6g-1, F-034): SJ modulární tok na 2D Rindlerově slabu (N=300/600/1200, 15 seedů). beta_KMS=1.00000, KMS reziduum 1.9e-16 (strojová přesnost), occ R2=1.000 přes 8 řádů; rho-invariantní boostová diagonála R2=0.953 CV=2.7 %; non-Rindler kontroly selhávají (interval R2=0.053, shuffle R2=0.088); absolutní Unruhova 2pi NEobnovena (ratio=0.786). VERDIKT: partial — tepelná osa má kvalitativní datovou oporu, kvantitativní Unruh chybí. Data: `core-data/calculations/modular-kms-thermal/`. Knihovna: `lib/toe/spectraltriple.py`. (F-034)
@@ -140,7 +146,7 @@
 
 ### Registr nálezů
 
-- [../core-data/findings.json](../core-data/findings.json) — Registr **35 originálních nálezů** (kola 1–16, aktualizováno 2026-06-08): F-001–F-033 viz předchozí kola; **F-034 (VYPOCET-30, kolo 16)** H6g-1 KMS/tepelná osa — SJ modulární tok na Rindlerově slabu je pravý jednoteplotní KMS tok (beta_KMS=1 strojová přesnost), rho-invariantní boost diagonála R2=0.953, non-Rindler kontroly selhávají; absolutní Unruhova 2pi NEobnovena; partial; **F-035 (VYPOCET-31, kolo 16)** H6g-4 Lambda shot-noise — Fanův faktor F=0.9986, delta_Lambda~V^{-0.484}, boost-invariantní Var(N), mřížkový kontrast 5.13x; supported; F-005-vyvrácený mean-prefaktor nevzkříšen. Každý nález rozlišuje reprodukci literatury od projektového přínosu.
+- [../core-data/findings.json](../core-data/findings.json) — Registr **38 originálních nálezů** (kola 1–18, aktualizováno 2026-06-08): F-001–F-035 viz předchozí kola; **F-036 (VYPOCET-32, kolo 18)** H6g-1b NCG/Unruh — informovany-negativ-tautologie; zákonný exponent 0,720 (BW +1 nečteno), 2*pi off 52 %; rho-invariantní boostová diagonála strukturálně solidní; hrana barely bez propagace; **F-037 (VYPOCET-33, kolo 18)** H6g-2 konformní 4D — supported (negativ); xi=1/6≡xi=0, F-031 stojí silněji, caveat (a) vyřešen; **F-038 (VYPOCET-34, kolo 18)** H6g-6 molekulová fluktuace — refuted-direction; Var~rho^0,656, CI95 vylučuje plochu i objem, super-Poisson, druhý negativ k F-031. Každý nález rozlišuje reprodukci literatury od projektového přínosu.
 
 ### Fragmenty pilířů (`core-data/fragments/`)
 

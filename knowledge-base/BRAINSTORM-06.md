@@ -130,6 +130,8 @@ rešerši/novou mašinérii před compute.
 
 > **STATUS (kolo 16, VYPOCET-30, F-034): PARTIAL — tepelná/KMS osa má kvalitativní datovou oporu. beta_KMS=1 strojová přesnost (1.9e-16), rho-invariantní boost diagonála R2=0.953 CV=2.7 %, non-Rindler kontroly selhávají (R2=0.05/0.09). Absolutní Unruhova 2pi NEobnovena (ratio=0.786). Verdikt: partial (kvalitativní pozitiv na tepelné ose, kvantitativní Unruh chybí).**
 
+> **STATUS (kolo 18, VYPOCET-32, F-036): INFORMOVANY-NEGATIV-TAUTOLOGIE — netautologický flagship test (H6g-1b) selhal kvantitativně na obou nezávislých invariantech: zákonný exponent p_E=0,720 (BW +1 nečteno, deficit 28 %), koeficient 9,58 (off 52 % od 2*pi). Rho-invariantní boostová diagonála strukturálně solidní (sklon 29,2, R2=0,969, CV 1,7 %). Most NCG<->semiklasika je most struktury, NE teploty. Hrana zůstává barely. Edge do connections.json NEPROPAGOVÁNA (audit). Příští krok: non-surogátní Dirac z geometrického Killingova boostu.**
+
 **(jádro: F-033 otvor — D_K dělá boost/KMS, ne vzdálenost; testuj termodynamiku, ne geometrii)**
 **Priorita: high (nejvyšší ROI generace — instancuje barely hranu na ose, kde F-033 předpověděl PASS).**
 
@@ -180,6 +182,8 @@ rešerši/novou mašinérii před compute.
 ---
 
 ### H6g-2 — Konformně-vázaný 4D skalár obnoví dS area-zákon (rozhodne caveat F-031)
+
+> **STATUS (kolo 18, VYPOCET-33, F-037): UZAVRENA NEGATIVEM — konformní vazba xi=1/6 NEOBNOVI 4D dS area-zákon. R' drift +0,386 identický pro xi=1/6 i xi=0 (CV 0,275 vs 0,276), S_full conf/massless=1,0001. Caveat (a) F-031 (xi-část) VYRESEN: 4D absence area-zákona je robustní fyzika, ne konformně-vážový artefakt. H6g-2 blokátor (masivní SJ well-definedness) odstraněn (pairing 8,4e-15, Wightman PSD 1e-15). F-031 stojí silněji. Korespondence: negative.**
 
 **(jádro: F-031 nevyřešený konformní caveat — je 4D nepřítomnost area-zákona artefakt non-konformního skaláru?)**
 **Priorita: high (rozhoduje, zda F-031 negativ je fyzika nebo aproximace — přímý draft-04/05 dopad).**
@@ -368,6 +372,8 @@ rešerši/novou mašinérii před compute.
 ---
 
 ### H6g-6 — 4D Dou-Sorkin horizontová entropie z FLUKTUACE molekul (order-by-disorder), ne z mean count
+
+> **STATUS (kolo 18, VYPOCET-34, F-038): UZAVRENA NEGATIVEM (refuted-direction) — Var(N_mol)~rho^0,656, bootstrap CI95 [0,575, 0,745] vylučuje plochu rho^0.5 i objem rho^1.0; super-Poisson (Fano 3,72->5,30, CI68 vylučuje 0). Paralela k F-035 (Poisson atomy) NEDRZI — molekuly jsou korelované (near-null clustering). Druhý nezávislý negativ k F-031: ani mean, ani variance 4D area-zákon nedají. Korespondence: negative.**
 
 **(jádro: black-holes-information↔causal-sets, 2D vyřešena F-028, 4D mean-count zabit F-031 → zkus FLUKTUACI)**
 **Priorita: medium (otvor po F-031 negativu: mean-count selhal, ale Sorkin order-by-disorder je o VARIANCI).**
