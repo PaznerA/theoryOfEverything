@@ -83,6 +83,7 @@ def test_key_pages_exist(built_site):
         "data/connections.html",
         "data/formulas.html",
         "data/open-problems.html",
+        "data/graph.html",
         "calculations.html",
         "static/style.css",
     ):
@@ -333,6 +334,78 @@ def test_formula_math_has_no_escaped_entities(built_site):
     # At least one formula legitimately needs a raw comparison operator.
     assert any("<" in m or ">" in m for m in maths), \
         "expected at least one formula with a raw < or > operator"
+
+
+# --------------------------------------------------------------------------
+# Concept-graph (force-directed) view
+# --------------------------------------------------------------------------
+
+
+def test_graph_page_and_data_exist(built_site):
+    """The interactive graph page and its JSON data payload must be emitted."""
+    assert os.path.isfile(os.path.join(built_site, "data", "graph.html"))
+    assert os.path.isfile(
+        os.path.join(built_site, "assets", "graph-data.json")
+    )
+
+
+def test_graph_data_node_count_matches_concept_graph(built_site):
+    """graph-data.json node count must equal concept-graph.json node count."""
+    with open(os.path.join(REPO_ROOT, "core-data", "concept-graph.json"),
+              encoding="utf-8") as fh:
+        cg = json.load(fh)
+    n_nodes = len(cg.get("nodes", []))
+
+    with open(os.path.join(built_site, "assets", "graph-data.json"),
+              encoding="utf-8") as fh:
+        payload = json.load(fh)
+    assert payload["nodeCount"] == n_nodes
+    assert len(payload["nodes"]) == n_nodes
+
+
+def test_graph_data_includes_predicted_edges(built_site):
+    """The top predicted candidate edges are present and marked predicted."""
+    pred_path = os.path.join(REPO_ROOT, "core-data", "link-predictions.json")
+    if not os.path.isfile(pred_path):
+        pytest.skip("link-predictions.json not generated")
+    with open(pred_path, encoding="utf-8") as fh:
+        preds = json.load(fh)
+    n_pred = len(preds.get("candidates", []))
+
+    with open(os.path.join(built_site, "assets", "graph-data.json"),
+              encoding="utf-8") as fh:
+        payload = json.load(fh)
+    predicted = [l for l in payload["links"] if l.get("predicted")]
+    assert predicted, "no predicted edges in payload"
+    assert len(predicted) == n_pred, (
+        f"{len(predicted)} predicted edges, registry has {n_pred}"
+    )
+    # Predicted edges carry the distinct 'predicted' explored sentinel.
+    for l in predicted:
+        assert l.get("explored") == "predicted"
+
+
+def test_graph_page_references_cdn_and_data_file(built_site):
+    """The page loads the force-graph CDN lib and points at its data file."""
+    html = _read(os.path.join(built_site, "data", "graph.html"))
+    assert "unpkg.com/force-graph" in html, "force-graph CDN not referenced"
+    assert "graph-data.json" in html, "graph data file not referenced"
+    # The data href must be RELATIVE (file:// + subpath safe), never absolute.
+    m = re.search(r'DATA_URL = "([^"]+)"', html)
+    assert m, "DATA_URL not found in page"
+    href = m.group(1)
+    assert not href.startswith("/"), f"data href is absolute: {href}"
+    assert not href.startswith("http"), f"data href is absolute: {href}"
+    # And it must resolve to the real file on disk from the page's directory.
+    page_dir = os.path.join(built_site, "data")
+    assert os.path.exists(os.path.normpath(os.path.join(page_dir, href)))
+
+
+def test_graph_page_in_sidebar(built_site):
+    """The graph page is wired into the Data section of the sidebar."""
+    html = _read(os.path.join(built_site, "index.html"))
+    sidebar = _sidebar_of(html)
+    assert "data/graph.html" in sidebar, "graph page missing from sidebar"
 
 
 def test_no_absolute_machine_paths_in_artifact(built_site):

@@ -97,6 +97,7 @@ objekt/observable/diskriminátor/N-proveditelnost — maticové ops strop ~N 250
 
 ### H5g-1 — 4D dS statická záplata: truncovaná area-law entropie sama oddělí II₁ od II_∞
 > **[Kolo 10, VYPOCET-21, F-025] PARCIÁLNÍ:** reálný 4D-specifický separační signál potvrzen (flat/dS slope ratio 2.96, exponent 0.27 vs 0.52, N_total strop R²=1.000), ale plná saturace truncované S nedosažena při N≤2500 (dense eigh). Výsledek jde do draft-04 jako dS sekce. Plná saturace vyžaduje sparse solver + rho>~10³.
+> **[Kolo 13, F-029] STATUS: SUPPORTED (rho=120 čistý), vyšší-rho compute-bound.** ds4d_saturation driver dokončil rho=120 (cap_dS=43.6 vs cap_flat=145.6, AIC favorizuje saturující model); rho=600 a rho=2000 nedoběhly (výpočetní limit). Driver budget/checkpoint fix aplikován (sub-cell BudgetExceeded + begin_cell/update_live). Čistá 4D saturace existuje při nižší hustotě; škálování přes rozsah hustot vyžaduje GH Actions s jemným checkpointingem nebo multi-job split.
 
 **(jádro: přímý spektrální diskriminátor typu místo obsah-saturace; nejostřejší pokračování F-023)**
 **Priorita: high.**
@@ -135,6 +136,7 @@ objekt/observable/diskriminátor/N-proveditelnost — maticové ops strop ~N 250
 ### H5g-2 — Saturovaný obsah-strop dS záplaty se kvantitativně mapuje na A/4 (dS entropie z prvních principů?)
 
 > **[Kolo 12, VYPOCET-23, F-028] PARCIÁLNÍ VERDIKT — correction note:** Slabá H5g-2 POTVRZENA: R_full = S_full_cap/A_mol = 0.1321 ± 1.3 % KONSTANTNÍ přes 5× hustotu ρ ∈ {240,600,1200} a 2× velikost záplaty ℓ ∈ {0.7,1.0,1.5} — kvantitativní area-zákon S_cap = A_horizon/(c·G), c ≈ 7.57. Silná H5g-2 VYVRÁCENA: c ≈ 7.57 ≠ 4 — geometrická O(1) normalizace 2D Dou-Sorkinova molekulového počtu vs. SSEE není fixována na 1/4. Anti-kruhovost respektována: ε ~ ρ^(−1/2) zafixováno z NEZÁVISLÉHO F-006 před měřením. Tracialní kanál (truncovaná SSEE): O(1), NEsleduje A_mol — není to A/4 kanál v 2D (F-027). Výsledky NEVYRACÍ hypotézu: proporcionální area-zákon stojí, ale přesná hodnota 1/4 pro 2D vyžaduje separátní kalibraci Dou-Sorkin koeficientu; 4D měření zůstává jako hlavní otevřená fronta.
+> **[Kolo 13, F-029] STATUS 2D: CONFIRMED (rozšíření F-028).** Škálovaná kampaň ds_entropy_cap_2d (rho 240–1200, ℓ 0.7–2.5, n=10 buněk): R = 0.130 ± 0.0039 (CV 3.0 %), drift rho^{+0.007} ≈ nula, cross-HW reprodukce v rámci CV. 2D kvantitativní area-zákon je publikovatelně silný přes rozšířený rozsah parametrů. **STATUS 4D: CHYBÍ KONSTANTA — konvenční otázka otevřena.** c^{4D} roste 5.6 → 65.8 přes rho 60 → 1920; R^{4D} driftuje jako rho^{−0.72} — žádná čistá 4D area-konstantní neexistuje v testovaném rozsahu. Hlavní příčina: A_mol ~ rho^{1.77} (ne rho^{0.5}), S_full ~ rho^{1.05}. 4D A/4 claim oslaben, nikoli podpořen; pro 4D draft nutno nejprve vyřešit konvenční otázku diskretizace A_mol.
 
 **(jádro: je dS entropie S=A/4 odvoditelná z diskrétního obsah-stropu? lovná zóna black-holes↔causal-sets)**
 **Priorita: high (vysoký výnos, vysoké riziko).**

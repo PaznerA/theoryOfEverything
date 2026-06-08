@@ -54,11 +54,14 @@ Každý driver má `--help` s popisem parametrů a příklady smoke invokací v 
 
 Drivery sdílejí infrastrukturu z `_common.py`:
 
-- **Progresivní checkpointing**: `results.json` se přepisuje atomicky (temp soubor + `rename`) po každé dokončené buňce výpočtů (kombinaci parametrů a seedu). Přerušený běh → zachována veškerá hotová práce.
-- **Time-budget** (`--max-hours`, výchozí 5,5 h): po vypršení budgetu driver dokončí aktuální buňku, zapíše `"status": "partial-time-budget"` a ukončí se s exit kódem 0. Plně dokončený běh zapíše `"status": "complete"`.
+- **Jemný (sub-cell) checkpointing**: `results.json` se přepisuje atomicky (temp soubor + `rename`) nejen po každé dokončené buňce `(ρ, ℓ)`, ale **po každém dokončeném boxu (a seedu) UVNITŘ buňky**. Přerušený nebo time-outnutý běh tak zachová veškeré hotové boxy/seedy, ne jen kompletní buňky. Rozpracovaná buňka je označena `"cell_status": "partial"` a nese počítadla `completed_boxes` / `completed_seeds`; dokončená buňka má `"cell_status": "complete"`. Summary tuto částečnost toleruje (`n_partial_cells`) a do fyzikálního verdiktu (R_full / H5g-1) počítá **jen kompletní buňky** — cap fit přes nedokončený box-sweep je nespolehlivý.
+- **Time-budget vynucený UVNITŘ buňky** (`--max-hours`, výchozí 5,5 h): wall-clock budget se kontroluje nejen mezi buňkami, ale i **na začátku každého boxu/seedu** (`TimeBudget.check()` vyhodí `BudgetExceeded`). Při vypršení driver dofinalizuje aktuální **částečný** checkpoint, zapíše `"status": "partial-time-budget"` a ukončí se s exit kódem 0. Budget tedy **nikdy nemůže být tiše překročen** o víc než jeden box/seed sub-krok. Plně dokončený běh zapíše `"status": "complete"`.
+- **Zpětná kompatibilita schématu**: pole se jen **přidávají**, nepřejmenovávají — starší commitnuté `results.json` (bez `cell_status`) se čtou beze změny (chybějící `cell_status` se interpretuje jako `complete`). CLI kontrakt zůstává beze změny.
 - **Host fingerprint**: každý `results.json` obsahuje blok `host` s `platform`, `machine`, `python`, `numpy`, `scipy`, `toe` — klíčové pro cross-HW srovnání.
 - **Deterministické seedy**: výsledky jsou reprodukovatelné pro stejné parametry na stejném HW; cross-HW srovnání tolerance-based (rel. odchylka fyzikálních výsledků).
 - **iDelta ±-párování**: každá buňka zaznamenává `pairing_residual_rel_max` — invariant ověřující správnost Pauli-Jordanova operátoru (ne fudgováno).
+
+> **⚠️ Těžké 4D buňky při ρ ≥ 600.** Jediná 4D-řídká buňka (`ds4d_saturation`, případně `ds_cap_4d`) při ρ ≥ 600 a N až ~2×10⁴ může sama o sobě běžet déle než celý budget. Díky jemnému checkpointingu výše už takový běh **vždy** zanechá artefakt (částečné boxy) a respektuje `--max-hours` uvnitř buňky — historicky (bug 2026-06-08) tyto buňky nikdy nedokončily, takže 6h cloud a 5h lokální joby neprodukovaly ŽÁDNÝ artefakt a budget se nevynucoval. Pro plný produkční zásah těchto hustot použij buď **GH Actions s tímto jemným checkpointingem**, nebo **multi-job split — jedno ρ na job** (`--rho 600` zvlášť, `--rho 2000` zvlášť), aby každý job zůstal pod rozumným budgetem a artefakty se slévaly po stažení.
 
 ---
 

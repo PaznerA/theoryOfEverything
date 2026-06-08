@@ -1,0 +1,373 @@
+{
+  "driver": "ds_cap_4d",
+  "params": {
+    "rho": [
+      960.0,
+      1920.0
+    ],
+    "patch_l": [
+      0.8,
+      1.0
+    ],
+    "seeds": 3,
+    "max_hours": 5.5,
+    "n_max_cap": 12000,
+    "RSTAR_BOX": [
+      1.6,
+      2.2,
+      2.8,
+      3.5,
+      4.3,
+      5.2
+    ],
+    "R_CUT": 1.0,
+    "T_HALF": 0.5,
+    "XPERP": 1.0,
+    "alpha_rank": 2.0,
+    "DIM": 4,
+    "DENSE_N_MAX": 3000,
+    "c_2D_reference": 7.570977917981071,
+    "anti_circularity": {
+      "epsilon_law": "epsilon = rho^(-1/4) (4D) FIXED from F-006 rho^(-1/d) lifted to d=4, BEFORE the ratio",
+      "F006_p_rank": 0.5188759456500236,
+      "F006_p_err": 0.0066971104884981
+    },
+    "horizon_area_4D_convention": "codim-2 SURFACE molecule count: irreducible causal links PIERCING the FIXED codim-2 entangling surface E={r*=R_CUT}. A/eps^{D-2}=A/eps^2 with eps=rho^(-1/4). dS A/4 application '\u26a0\ufe0f neove\u0159eno' (Gibbons-Hawking dS primary absent; 4D conformal-weight caveat). We report the dimensionless ratio R^4D = S_full_cap / A_mol and c^4D = 1/R^4D vs the committed 2D c ~ 7.57.",
+    "conformal_weight_caveat": "4D massless scalar is NOT conformally invariant; this is the VYPOCET-21 controlled approximation (flat causal order + dS proper measure + Johnston 0909.0944 link Green), not the exact dS state.",
+    "toe_version": "0.3.0"
+  },
+  "host": {
+    "platform": "Linux-6.17.0-1015-azure-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "python": "3.13.13",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "toe": "0.3.0",
+    "thread_env": {
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null,
+      "VECLIB_MAXIMUM_THREADS": null,
+      "NUMEXPR_NUM_THREADS": null
+    }
+  },
+  "cells": [
+    {
+      "rho": 960.0,
+      "l": 0.8,
+      "path": "dense",
+      "Ns": [
+        2961,
+        3047,
+        3066,
+        3071,
+        3072,
+        3072
+      ],
+      "n_max_per_box": [
+        803,
+        820,
+        824,
+        825,
+        825,
+        825
+      ],
+      "RSTAR_BOX": [
+        1.6,
+        2.2,
+        2.8,
+        3.5,
+        4.3,
+        5.2
+      ],
+      "n_seeds": 3,
+      "N_total_mean": [
+        2961.0,
+        3047.0,
+        3066.0,
+        3071.0,
+        3072.0,
+        3072.0
+      ],
+      "S_full_mean": [
+        144.21350766158065,
+        137.73937584218228,
+        143.1031538199073,
+        138.3802407263245,
+        139.5576166946555,
+        144.27262310820825
+      ],
+      "S_trunc_mean": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "n_sub_mean": [
+        2602.6666666666665,
+        2626.0,
+        2599.0,
+        2614.3333333333335,
+        2618.6666666666665,
+        2601.0
+      ],
+      "horizon_links_mean": [
+        6055.0,
+        5638.0,
+        5812.666666666667,
+        5587.333333333333,
+        5655.666666666667,
+        5915.333333333333
+      ],
+      "N_total_cap": 3071.9908024546003,
+      "N_total_cap_se": 9.099497904687939e-13,
+      "N_total_cap_ci68": [
+        3071.9908024546003,
+        3071.9908024546003
+      ],
+      "N_total_cap_R2": 0.9999861717065699,
+      "S_full_cap": 140.59876517792318,
+      "S_full_cap_se": 27117.104890734747,
+      "S_full_cap_ci68": [
+        139.22775899344026,
+        30059.33001297597
+      ],
+      "S_full_cap_R2": 0.25123848885062694,
+      "S_trunc_cap": 0.0,
+      "S_trunc_cap_se": 0.0,
+      "S_trunc_cap_ci68": [
+        0.0,
+        0.0
+      ],
+      "S_trunc_cap_R2": 0.0,
+      "horizon_links_cap_Amol": 5719.444444444444,
+      "epsilon": 0.1796520559815421,
+      "A_cont_eps_units": 184.59427569076553,
+      "R_Sfull_over_Amol": 0.024582591289000654,
+      "R_Strunc_over_Acont": 0.0,
+      "implied_coefficient_c_4D": 40.67919399723513,
+      "pairing_residual_rel_max": 9.0963455651631e-15,
+      "pairing_tol": 1e-12
+    },
+    {
+      "rho": 960.0,
+      "l": 1.0,
+      "path": "dense",
+      "Ns": [
+        3539,
+        3747,
+        3812,
+        3833,
+        3839,
+        3840
+      ],
+      "n_max_per_box": [
+        918,
+        958,
+        970,
+        974,
+        975,
+        976
+      ],
+      "RSTAR_BOX": [
+        1.6,
+        2.2,
+        2.8,
+        3.5,
+        4.3,
+        5.2
+      ],
+      "n_seeds": 3,
+      "N_total_mean": [
+        3539.0,
+        3747.0,
+        3812.0,
+        3833.0,
+        3839.0,
+        3840.0
+      ],
+      "S_full_mean": [
+        223.41143624621213,
+        210.15642741952877,
+        222.22084124771985,
+        216.10818809030664,
+        218.87361172634846,
+        219.99081876295364
+      ],
+      "S_trunc_mean": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "n_sub_mean": [
+        2908.6666666666665,
+        2940.3333333333335,
+        2925.0,
+        2926.6666666666665,
+        2924.6666666666665,
+        2915.6666666666665
+      ],
+      "horizon_links_mean": [
+        11609.0,
+        10510.333333333334,
+        11351.666666666666,
+        11225.0,
+        11653.666666666666,
+        10876.0
+      ],
+      "N_total_cap": 3840.4441213845225,
+      "N_total_cap_se": 4.549748952343969e-13,
+      "N_total_cap_ci68": [
+        3840.4441213845225,
+        3840.4441213845225
+      ],
+      "N_total_cap_R2": 0.9999963965643823,
+      "S_full_cap": 217.4699801704129,
+      "S_full_cap_se": 2584.980953497419,
+      "S_full_cap_ci68": [
+        217.00137365344833,
+        218.24931756341292
+      ],
+      "S_full_cap_R2": 0.2543516496047624,
+      "S_trunc_cap": 0.0,
+      "S_trunc_cap_se": 0.0,
+      "S_trunc_cap_ci68": [
+        0.0,
+        0.0
+      ],
+      "S_trunc_cap_R2": 0.0,
+      "horizon_links_cap_Amol": 11251.555555555555,
+      "epsilon": 0.1796520559815421,
+      "A_cont_eps_units": 363.14239404661834,
+      "R_Sfull_over_Amol": 0.019327992391508494,
+      "R_Strunc_over_Acont": 0.0,
+      "implied_coefficient_c_4D": 51.7384309629249,
+      "pairing_residual_rel_max": 9.447380627128931e-15,
+      "pairing_tol": 1e-12
+    },
+    {
+      "rho": 1920.0,
+      "l": 0.8,
+      "path": "dense",
+      "Ns": [
+        5923,
+        6094,
+        6133,
+        6142,
+        6144,
+        6144
+      ],
+      "n_max_per_box": [
+        1350,
+        1379,
+        1386,
+        1388,
+        1388,
+        1388
+      ],
+      "RSTAR_BOX": [
+        1.6,
+        2.2,
+        2.8,
+        3.5,
+        4.3,
+        5.2
+      ],
+      "n_seeds": 3,
+      "N_total_mean": [
+        5923.0,
+        6094.0,
+        6133.0,
+        6142.0,
+        6144.0,
+        6144.0
+      ],
+      "S_full_mean": [
+        277.9437147542057,
+        284.4767869826964,
+        287.01003087395605,
+        296.606487784821,
+        289.1037897422631,
+        290.991628284467
+      ],
+      "S_trunc_mean": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "n_sub_mean": [
+        5220.0,
+        5202.0,
+        5197.0,
+        5179.0,
+        5217.333333333333,
+        5225.0
+      ],
+      "horizon_links_mean": [
+        17603.0,
+        18255.333333333332,
+        18715.666666666668,
+        19541.0,
+        19105.0,
+        19052.333333333332
+      ],
+      "N_total_cap": 6144.1461030988585,
+      "N_total_cap_se": 9.099497904687939e-13,
+      "N_total_cap_ci68": [
+        6144.1461030988585,
+        6144.1461030988585
+      ],
+      "N_total_cap_R2": 0.9999975615980995,
+      "S_full_cap": 292.07953742108185,
+      "S_full_cap_se": 3.2737095327194887,
+      "S_full_cap_ci68": [
+        289.93865743110194,
+        295.7691223213498
+      ],
+      "S_full_cap_R2": 0.7700361472849461,
+      "S_trunc_cap": 0.0,
+      "S_trunc_cap_se": 0.0,
+      "S_trunc_cap_ci68": [
+        0.0,
+        0.0
+      ],
+      "S_trunc_cap_R2": 0.0,
+      "horizon_links_cap_Amol": 19232.777777777777,
+      "epsilon": 0.1510687698678384,
+      "A_cont_eps_units": 438.92609301554035,
+      "R_Sfull_over_Amol": 0.015186549795139875,
+      "R_Strunc_over_Acont": 0.0,
+      "implied_coefficient_c_4D": 65.8477411584314,
+      "pairing_residual_rel_max": 1.0429821689233592e-14,
+      "pairing_tol": 1e-12
+    }
+  ],
+  "summary": {
+    "n_cells": 3,
+    "n_measured_cells": 3,
+    "n_skipped_cells": 0,
+    "c_2D_reference": 7.570977917981071,
+    "R_full_4D_mean": 0.01969904449188301,
+    "R_full_4D_std": 0.004708997630545447,
+    "R_full_4D_cv": 0.23904700720310518,
+    "implied_c_4D_mean": 50.76388351790616,
+    "R_full_4D_constant": false,
+    "R_full_4D_drift_vs_rho": -0.5213702523685666,
+    "R_full_4D_drift_se": 0.3004633643577581,
+    "c_4D_minus_c_2D": 43.19290559992509,
+    "c_is_dimension_dependent": true,
+    "verdict": "PRELIMINARY (needs the full multi-cell scan): c^4D=50.764 vs c^2D=7.571 -> DIFFERENT (dimension-dependent). Dimension-dependence is decided by R_full constancy across the FULL (rho, l) scan."
+  },
+  "status": "partial-time-budget",
+  "runtime_s": 19872.641619205475,
+  "n_cells": 3
+}

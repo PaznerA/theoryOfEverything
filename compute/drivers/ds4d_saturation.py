@@ -331,6 +331,139 @@ SMOKE_INVOCATION = (
 )
 
 
+def _build_cell(rho, l, boxes, n_seeds, n_x, use_sparse, St, Nt, nsub, Ns,
+                pair_max, pair_tol, completed_boxes, completed_seeds,
+                cell_status):
+    """Assemble the (rho, l) cell dict from the accumulated arrays.
+
+    Used for BOTH the live partial cell (after each box) and the final complete
+    cell. The discriminator drops not-yet-measured boxes (recorded as 0.0) via
+    :func:`discriminate`'s ``_measured`` filter, so a partial sweep does not
+    corrupt the slope/cap fit -- it just runs over fewer points (NaN if <3)."""
+    disc = discriminate(boxes, St["dS"].mean(0), St["flat"].mean(0))
+    return {
+        "rho": rho, "l": l,
+        "path": "sparse" if use_sparse else "dense",
+        "cell_status": cell_status,
+        "completed_boxes": int(completed_boxes),
+        "completed_seeds": int(completed_seeds),
+        "n_boxes_planned": int(2 * n_x),   # dS + flat box-steps in a full cell
+        "Ns_dS": list(Ns["dS"]), "Ns_flat": list(Ns["flat"]),
+        "RSTAR_BOX": boxes.tolist(), "n_seeds": n_seeds,
+        "N_total_dS_mean": Nt["dS"].mean(0).tolist(),
+        "N_total_flat_mean": Nt["flat"].mean(0).tolist(),
+        "n_sub_dS_mean": nsub["dS"].mean(0).tolist(),
+        "n_sub_flat_mean": nsub["flat"].mean(0).tolist(),
+        "S_trunc_dS_std": St["dS"].std(0, ddof=1).tolist()
+        if n_seeds > 1 else [0.0] * n_x,
+        "S_trunc_flat_std": St["flat"].std(0, ddof=1).tolist()
+        if n_seeds > 1 else [0.0] * n_x,
+        "discriminator": disc,
+        "truncated_S_separates_types": disc["truncated_S_separates_types"],
+        "max_N_reached": int(max(max(Ns["dS"], default=0),
+                                 max(Ns["flat"], default=0))),
+        "pairing_residual_rel_max": pair_max, "pairing_tol": pair_tol,
+    }
+
+
+def _run_cell(ck, budget, rho, l, n_seeds, n_hard, boxes, n_x):
+    """Compute ONE (rho, l) cell with mid-cell budget enforcement + per-box
+    partial checkpoints.
+
+    A LIVE partial cell is registered on the checkpointer BEFORE any heavy box
+    is run, so a kill/timeout mid-cell still leaves whatever boxes finished. The
+    wall-clock budget is checked at the TOP of every box (before its eigensolve);
+    on exceed a final partial checkpoint is written and :exc:`cm.BudgetExceeded`
+    is re-raised for ``main`` to finalize and exit 0."""
+    # decide dense/sparse from the largest planned N (flat control grows
+    # fastest); skip a cell only if even the smallest box busts the cap.
+    N_flat_max = int(round(rho * volume_flat_4d(boxes.max())))
+    N_flat_min = int(round(rho * volume_flat_4d(boxes.min())))
+    if N_flat_min > n_hard:
+        note = (f"skipped: N_min={N_flat_min} > hard cap {n_hard}.")
+        print(f"   rho={rho:g} l={l:g} {note}")
+        ck.add_cell({"rho": rho, "l": l, "note": note,
+                     "truncated_S_separates_types": None})
+        _update_summary(ck)
+        ck.write()
+        return
+    use_sparse = N_flat_max > DENSE_N_MAX
+    pair_tol = 1e-6 if use_sparse else 1e-12
+
+    St = {"dS": np.zeros((n_seeds, n_x)), "flat": np.zeros((n_seeds, n_x))}
+    Nt = {"dS": np.zeros((n_seeds, n_x)), "flat": np.zeros((n_seeds, n_x))}
+    nsub = {"dS": np.zeros((n_seeds, n_x)), "flat": np.zeros((n_seeds, n_x))}
+    pair_max = 0.0
+    Ns = {"dS": [], "flat": []}
+    completed_boxes = 0
+    completed_seeds = 0
+
+    # Register the LIVE partial cell up front (empty arrays) so even a trip on
+    # the FIRST box leaves a valid (if minimal) partial cell in results.json.
+    ck.begin_cell(_build_cell(
+        rho, l, boxes, n_seeds, n_x, use_sparse, St, Nt, nsub, Ns,
+        pair_max, pair_tol, completed_boxes, completed_seeds, "partial"))
+    ck.write()
+
+    for measure in ("dS", "flat"):
+        for j, Rbox in enumerate(boxes):
+            # MID-CELL budget guard: never start a new (heavy) box past budget.
+            budget.check()
+            Vbox = (proper_volume_ds_4d(Rbox, l) if measure == "dS"
+                    else volume_flat_4d(Rbox))
+            N = int(round(rho * Vbox))
+            if N > n_hard:               # per-box guard
+                Ns[measure].append(N)
+                continue
+            nmax = E.n_max_area_law(N, DIM, alpha=ALPHA_RANK)
+            for s in range(n_seeds):
+                budget.check()           # also between seeds (heavy each)
+                seed = 25_000_000 + 1000000 * int(round(rho)) \
+                    + 10000 * j + 100 * int(round(10 * l)) + s \
+                    + (500 if measure == "flat" else 0)
+                res = run_seed(measure, rho, l, Rbox, nmax, seed,
+                               use_sparse and N > DENSE_N_MAX)
+                St[measure][s, j] = res["S_trunc"]
+                Nt[measure][s, j] = res["N_total"]
+                nsub[measure][s, j] = res["n_sub"]
+                pair_max = max(pair_max, res["pairing_rel"])
+                completed_seeds += 1
+            Ns[measure].append(N)
+            completed_boxes += 1
+            print(f"   [{measure:4s}] rho={rho:g} l={l:g} R*={Rbox:.1f} "
+                  f"N={N:5d} nmax={nmax:4d} "
+                  f"S_trunc={St[measure][:, j].mean():.4f} "
+                  f"pair={pair_max:.1e} "
+                  f"[{'sparse' if (use_sparse and N>DENSE_N_MAX) else 'dense'}]")
+            # FINER CHECKPOINT: persist the partial cell after every finished box
+            # so a kill/timeout keeps this box's work.
+            ck.update_live(_build_cell(
+                rho, l, boxes, n_seeds, n_x, use_sparse, St, Nt, nsub, Ns,
+                pair_max, pair_tol, completed_boxes, completed_seeds, "partial"))
+            _update_summary(ck)
+            ck.write()
+
+    # ASSERT +/- pairing invariant (path-aware tolerance)
+    # float32 sparse-path residual grows ~sqrt(N)*eps32 and is BLAS-dependent
+    # (OpenBLAS reached 6.5e-8 at rho=1200, cross-HW run 2026-06-07);
+    # 1e-6 still asserts a machine-level invariant ~1e9x below signal.
+    assert pair_max < pair_tol, (
+        f"pairing invariant VIOLATED at rho={rho} l={l}: "
+        f"{pair_max:.2e} >= {pair_tol:.0e}")
+
+    cell = _build_cell(
+        rho, l, boxes, n_seeds, n_x, use_sparse, St, Nt, nsub, Ns,
+        pair_max, pair_tol, completed_boxes, completed_seeds, "complete")
+    ck.complete_cell(cell)
+    _update_summary(ck)
+    ck.write()
+    disc = cell["discriminator"]
+    print(f"   => rho={rho:g}: dS_saturates={disc['dS_truncS_saturates']} "
+          f"flat_grows={disc['flat_truncS_grows']} "
+          f"separates={disc['truncated_S_separates_types']} "
+          f"(max N={cell['max_N_reached']})")
+
+
 def main(argv=None):
     p = cm.make_argparser(
         "ds4d_saturation",
@@ -376,97 +509,24 @@ def main(argv=None):
     boxes = RSTAR_BOX
     n_x = len(boxes)
     stopped = False
-    for rho in rho_list:
-        for l in l_list:
-            if budget.exceeded():
-                print(f"[time-budget] {budget.elapsed:.1f}s exhausted; "
-                      f"stopping before (rho={rho}, l={l}).")
-                stopped = True
+    try:
+        for rho in rho_list:
+            for l in l_list:
+                if budget.exceeded():
+                    print(f"[time-budget] {budget.elapsed:.1f}s exhausted; "
+                          f"stopping before (rho={rho}, l={l}).")
+                    stopped = True
+                    break
+                _run_cell(ck, budget, rho, l, n_seeds, n_hard, boxes, n_x)
+            if stopped:
                 break
-
-            # decide dense/sparse from the largest planned N (flat control grows
-            # fastest); skip a cell only if even the smallest box busts the cap.
-            N_flat_max = int(round(rho * volume_flat_4d(boxes.max())))
-            N_flat_min = int(round(rho * volume_flat_4d(boxes.min())))
-            if N_flat_min > n_hard:
-                note = (f"skipped: N_min={N_flat_min} > hard cap {n_hard}.")
-                print(f"   rho={rho:g} l={l:g} {note}")
-                ck.add_cell({"rho": rho, "l": l, "note": note,
-                             "truncated_S_separates_types": None})
-                _update_summary(ck)
-                ck.write()
-                continue
-            use_sparse = N_flat_max > DENSE_N_MAX
-
-            St = {"dS": np.zeros((n_seeds, n_x)), "flat": np.zeros((n_seeds, n_x))}
-            Nt = {"dS": np.zeros((n_seeds, n_x)), "flat": np.zeros((n_seeds, n_x))}
-            nsub = {"dS": np.zeros((n_seeds, n_x)), "flat": np.zeros((n_seeds, n_x))}
-            pair_max = 0.0
-            Ns = {"dS": [], "flat": []}
-            for measure in ("dS", "flat"):
-                for j, Rbox in enumerate(boxes):
-                    Vbox = (proper_volume_ds_4d(Rbox, l) if measure == "dS"
-                            else volume_flat_4d(Rbox))
-                    N = int(round(rho * Vbox))
-                    if N > n_hard:               # per-box guard
-                        Ns[measure].append(N)
-                        continue
-                    nmax = E.n_max_area_law(N, DIM, alpha=ALPHA_RANK)
-                    for s in range(n_seeds):
-                        seed = 25_000_000 + 1000000 * int(round(rho)) \
-                            + 10000 * j + 100 * int(round(10 * l)) + s \
-                            + (500 if measure == "flat" else 0)
-                        res = run_seed(measure, rho, l, Rbox, nmax, seed,
-                                       use_sparse and N > DENSE_N_MAX)
-                        St[measure][s, j] = res["S_trunc"]
-                        Nt[measure][s, j] = res["N_total"]
-                        nsub[measure][s, j] = res["n_sub"]
-                        pair_max = max(pair_max, res["pairing_rel"])
-                    Ns[measure].append(N)
-                    print(f"   [{measure:4s}] rho={rho:g} l={l:g} R*={Rbox:.1f} "
-                          f"N={N:5d} nmax={nmax:4d} "
-                          f"S_trunc={St[measure][:, j].mean():.4f} "
-                          f"pair={pair_max:.1e} "
-                          f"[{'sparse' if (use_sparse and N>DENSE_N_MAX) else 'dense'}]")
-
-            # ASSERT +/- pairing invariant (path-aware tolerance)
-            # float32 sparse-path residual grows ~sqrt(N)*eps32 and is BLAS-dependent
-            # (OpenBLAS reached 6.5e-8 at rho=1200, cross-HW run 2026-06-07);
-            # 1e-6 still asserts a machine-level invariant ~1e9x below signal.
-            pair_tol = 1e-6 if use_sparse else 1e-12
-            assert pair_max < pair_tol, (
-                f"pairing invariant VIOLATED at rho={rho} l={l}: "
-                f"{pair_max:.2e} >= {pair_tol:.0e}")
-
-            disc = discriminate(boxes, St["dS"].mean(0), St["flat"].mean(0))
-            cell = {
-                "rho": rho, "l": l,
-                "path": "sparse" if use_sparse else "dense",
-                "Ns_dS": Ns["dS"], "Ns_flat": Ns["flat"],
-                "RSTAR_BOX": boxes.tolist(), "n_seeds": n_seeds,
-                "N_total_dS_mean": Nt["dS"].mean(0).tolist(),
-                "N_total_flat_mean": Nt["flat"].mean(0).tolist(),
-                "n_sub_dS_mean": nsub["dS"].mean(0).tolist(),
-                "n_sub_flat_mean": nsub["flat"].mean(0).tolist(),
-                "S_trunc_dS_std": St["dS"].std(0, ddof=1).tolist()
-                if n_seeds > 1 else [0.0] * n_x,
-                "S_trunc_flat_std": St["flat"].std(0, ddof=1).tolist()
-                if n_seeds > 1 else [0.0] * n_x,
-                "discriminator": disc,
-                "truncated_S_separates_types": disc["truncated_S_separates_types"],
-                "max_N_reached": int(max(max(Ns["dS"], default=0),
-                                         max(Ns["flat"], default=0))),
-                "pairing_residual_rel_max": pair_max, "pairing_tol": pair_tol,
-            }
-            ck.add_cell(cell)
-            _update_summary(ck)
-            ck.write()
-            print(f"   => rho={rho:g}: dS_saturates={disc['dS_truncS_saturates']} "
-                  f"flat_grows={disc['flat_truncS_grows']} "
-                  f"separates={disc['truncated_S_separates_types']} "
-                  f"(max N={cell['max_N_reached']})")
-        if stopped:
-            break
+    except cm.BudgetExceeded as exc:
+        # Mid-cell trip: the live partial cell is already on ck.cells with all
+        # finished boxes/seeds; finalize it and the summary, then exit 0.
+        print(f"[time-budget] MID-CELL {exc.elapsed:.1f}s >= "
+              f"{exc.max_seconds:.1f}s; finalizing partial checkpoint and "
+              f"exiting (status partial-time-budget).")
+        stopped = True
 
     _update_summary(ck)
     status = "partial-time-budget" if stopped else "complete"
@@ -482,14 +542,26 @@ def main(argv=None):
 
 def _update_summary(ck):
     """F-025 verdict: does the truncated 4D area-law SSEE alone separate II_1
-    (dS caps) from II_inf (flat grows), now that N reaches ~2e4?"""
-    measured = [c for c in ck.cells
-                if c.get("truncated_S_separates_types") is not None]
+    (dS caps) from II_inf (flat grows), now that N reaches ~2e4?
+
+    PARTIAL CELLS (from a mid-cell time-budget trip) are tolerated: only cells
+    with cell_status 'complete' feed the H5g-1 clean-saturation verdict, because
+    a half-finished sweep (<3 measured boxes) gives an UNRELIABLE slope; partial
+    cells are still surfaced via n_partial_cells so the run is honest about them.
+    """
+    has_signal = [c for c in ck.cells
+                  if c.get("truncated_S_separates_types") is not None]
+    # the verdict counts ONLY fully-finished cells (status defaulting 'complete'
+    # for the backward-compatible committed schema that never wrote the field).
+    measured = [c for c in has_signal
+                if c.get("cell_status", "complete") == "complete"]
+    n_partial = int(sum(c.get("cell_status") == "partial" for c in ck.cells))
     n_sep = int(sum(bool(c["truncated_S_separates_types"]) for c in measured))
-    max_N = max((c.get("max_N_reached", 0) for c in measured), default=0)
+    max_N = max((c.get("max_N_reached", 0) for c in has_signal), default=0)
     summary = {
         "n_cells": len(ck.cells),
         "n_measured_cells": len(measured),
+        "n_partial_cells": n_partial,
         "n_cells_separating": n_sep,
         "max_N_reached": int(max_N),
         "dense_wall_lifted": bool(max_N > 2500),
@@ -507,7 +579,9 @@ def _update_summary(ck):
                 if summary["H5g1_4D_clean_saturation"]
                 else "Separation partial -> needs higher rho / more seeds."))
     else:
-        summary["note"] = "no measured cell (all skipped / sub too small)"
+        summary["note"] = (
+            "no COMPLETE cell (all skipped / sub too small / partial from a "
+            "time-budget trip); %d partial cell(s) present" % n_partial)
     ck.summary = summary
 
 

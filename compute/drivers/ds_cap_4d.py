@@ -134,6 +134,19 @@ def epsilon_of_rho_4d(rho):
     return float(rho) ** (-0.25)
 
 
+def _is_finite_num(v):
+    """True iff ``v`` is a finite real number. None-safe: a reloaded committed
+    results.json serialises a skipped cell's NaN cap as JSON ``null`` (None), on
+    which ``np.isfinite`` raises -- so reading back an existing artifact (the
+    backward-compat contract) stays robust."""
+    if v is None:
+        return False
+    try:
+        return bool(np.isfinite(v))
+    except TypeError:
+        return False
+
+
 # --------------------------------------------------------------------------- #
 # geometry / protocol constants (mirror VYPOCET-21 / sj-desitter-4d)
 # --------------------------------------------------------------------------- #
@@ -249,6 +262,178 @@ SMOKE_INVOCATION = (
 )
 
 
+def _cap_provisional(per_seed_curves, x, completed_boxes):
+    """Cheap single saturating-fit cap over the MEASURED boxes only (NO 1000x
+    bootstrap). Used for the LIVE partial checkpoints so per-box checkpointing is
+    O(1) fits, not O(1000) -- the full bootstrap cap_with_se is reserved for the
+    final COMPLETE cell. SE/CI are reported 0/NaN on a partial cell (a partial
+    sweep has no meaningful bootstrap SE)."""
+    per = np.asarray(per_seed_curves, float)
+    nb = max(int(completed_boxes), 0)
+    xm = np.asarray(x, float)[:nb]
+    ym = per.mean(0)[:nb]
+    if xm.size == 0:
+        return float("nan"), 0.0, (float("nan"), float("nan")), 0.0
+    cap0, _, _, r2, _ = cm.saturating_fit(xm, ym)
+    return cap0, 0.0, (float("nan"), float("nan")), r2
+
+
+def _build_cell(rho, l, boxes, n_seeds, Ns, nmaxes, Ntot, Strunc, Sfull, nsub,
+                hlink, max_pair, pair_tol, completed_boxes, completed_seeds,
+                n_x, cell_status):
+    """Assemble the (rho, l) cell dict from the accumulated arrays.
+
+    Used for BOTH the live partial cell (after each box) and the final complete
+    cell. For a PARTIAL cell the caps use the CHEAP single-fit
+    :func:`_cap_provisional` over the measured boxes (no 1000x bootstrap -- that
+    would make per-box checkpointing pathologically slow on the mostly-zero
+    partial curves); the COMPLETE cell uses the full bootstrap
+    :func:`cap_with_se`. Only COMPLETE cells feed the R_full verdict."""
+    if cell_status == "complete":
+        Sf_cap, Sf_se, Sf_ci, Sf_r2 = cap_with_se(Sfull, boxes)
+        St_cap, St_se, St_ci, St_r2 = cap_with_se(Strunc, boxes)
+        Nt_cap, Nt_se, Nt_ci, Nt_r2 = cap_with_se(Ntot, boxes)
+    else:
+        Sf_cap, Sf_se, Sf_ci, Sf_r2 = _cap_provisional(Sfull, boxes, completed_boxes)
+        St_cap, St_se, St_ci, St_r2 = _cap_provisional(Strunc, boxes, completed_boxes)
+        Nt_cap, Nt_se, Nt_ci, Nt_r2 = _cap_provisional(Ntot, boxes, completed_boxes)
+    # plateau A_mol over the last 3 MEASURED boxes (unmeasured ones are 0.0)
+    measured_hlink = hlink[:, :completed_boxes] if completed_boxes else hlink[:, :0]
+    if measured_hlink.size:
+        A_mol = float(np.nanmean(measured_hlink[:, -3:]))
+    else:
+        A_mol = float("nan")
+    eps = epsilon_of_rho_4d(rho)
+    A_cont = A_mol * eps ** 2 if np.isfinite(A_mol) else float("nan")
+    R_full = (Sf_cap / A_mol) if (np.isfinite(A_mol) and A_mol > 0) \
+        else float("nan")
+    R_trunc_cont = (St_cap / A_cont) if (np.isfinite(A_cont) and A_cont > 0) \
+        else float("nan")
+    implied_c = (1.0 / R_full) if (np.isfinite(R_full) and R_full) \
+        else float("nan")
+    return {
+        "rho": rho, "l": l, "path": "dense",
+        "cell_status": cell_status,
+        "completed_boxes": int(completed_boxes),
+        "completed_seeds": int(completed_seeds),
+        "n_boxes_planned": int(n_x),
+        "Ns": list(Ns),
+        "n_max_per_box": list(nmaxes), "RSTAR_BOX": boxes.tolist(),
+        "n_seeds": n_seeds,
+        "N_total_mean": Ntot.mean(0).tolist(),
+        "S_full_mean": Sfull.mean(0).tolist(),
+        "S_trunc_mean": Strunc.mean(0).tolist(),
+        "n_sub_mean": nsub.mean(0).tolist(),
+        "horizon_links_mean": hlink.mean(0).tolist(),
+        "N_total_cap": Nt_cap, "N_total_cap_se": Nt_se,
+        "N_total_cap_ci68": list(Nt_ci), "N_total_cap_R2": Nt_r2,
+        "S_full_cap": Sf_cap, "S_full_cap_se": Sf_se,
+        "S_full_cap_ci68": list(Sf_ci), "S_full_cap_R2": Sf_r2,
+        "S_trunc_cap": St_cap, "S_trunc_cap_se": St_se,
+        "S_trunc_cap_ci68": list(St_ci), "S_trunc_cap_R2": St_r2,
+        "horizon_links_cap_Amol": A_mol,
+        "epsilon": eps, "A_cont_eps_units": A_cont,
+        "R_Sfull_over_Amol": R_full,
+        "R_Strunc_over_Acont": R_trunc_cont,
+        "implied_coefficient_c_4D": implied_c,
+        "pairing_residual_rel_max": max_pair, "pairing_tol": pair_tol,
+    }
+
+
+def _run_cell(ck, budget, rho, l, n_seeds, n_cap, boxes, n_x):
+    """Compute ONE (rho, l) cell with mid-cell budget enforcement + per-box
+    partial checkpoints.
+
+    A LIVE partial cell is registered BEFORE any heavy box; the wall-clock
+    budget is checked at the TOP of every box/seed (before its dense eigh); on
+    exceed a final partial checkpoint is written and :exc:`cm.BudgetExceeded`
+    propagates to ``main`` to finalize and exit 0."""
+    # MEMORY GUARD: the 4D dS proper volume caps N; if the largest box would
+    # still exceed the dense wall, record a SKIP note (no silent mis-measure --
+    # there is no generic-4D sparse top-k toe primitive).
+    Vmax = proper_volume_ds_4d(boxes.max(), l)
+    N_max_cell = int(round(rho * Vmax))
+    if N_max_cell > n_cap:
+        note = (f"skipped: N_max={N_max_cell} > n_max cap {n_cap} "
+                f"(4D dense eigh wall; no 4D sparse primitive).")
+        print(f"   rho={rho:g} l={l:g} {note}")
+        ck.add_cell({"rho": rho, "l": l, "path": "skipped",
+                     "N_max_planned": N_max_cell, "note": note,
+                     "R_Sfull_over_Amol": float("nan")})
+        _update_summary(ck)
+        ck.write()
+        return
+
+    Strunc = np.zeros((n_seeds, n_x))
+    Sfull = np.zeros((n_seeds, n_x))
+    Ntot = np.zeros((n_seeds, n_x))
+    nsub = np.zeros((n_seeds, n_x))
+    hlink = np.zeros((n_seeds, n_x))
+    pair_per_box = []
+    Ns = []
+    nmaxes = []
+    max_pair = 0.0
+    pair_tol = 1e-12
+    completed_boxes = 0
+    completed_seeds = 0
+
+    # Register the LIVE partial cell up front so even a trip on the FIRST box
+    # leaves a valid (minimal) partial cell in results.json.
+    ck.begin_cell(_build_cell(
+        rho, l, boxes, n_seeds, Ns, nmaxes, Ntot, Strunc, Sfull, nsub, hlink,
+        max_pair, pair_tol, completed_boxes, completed_seeds, n_x, "partial"))
+    ck.write()
+
+    for j, Rbox in enumerate(boxes):
+        budget.check()               # MID-CELL guard: never start a box past budget
+        Vbox = proper_volume_ds_4d(Rbox, l)
+        N = int(round(rho * Vbox))
+        nmax = E.n_max_area_law(N, DIM, alpha=ALPHA_RANK)
+        pair_box = 0.0
+        for s in range(n_seeds):
+            budget.check()           # also between seeds (each is a dense eigh)
+            seed = 24_000_000 + 100000 * int(round(rho)) + 1000 * j \
+                + 10 * int(round(10 * l)) + s
+            res = run_seed(rho, l, Rbox, nmax, seed)
+            Ntot[s, j] = res["N_total"]
+            Strunc[s, j] = res["S_trunc"]
+            Sfull[s, j] = res["S_full"]
+            nsub[s, j] = res["n_sub"]
+            hlink[s, j] = res["horizon_links"]
+            pair_box = max(pair_box, res["pairing_rel"])
+            completed_seeds += 1
+        Ns.append(N)
+        nmaxes.append(int(nmax))
+        pair_per_box.append(pair_box)
+        max_pair = max(max_pair, pair_box)
+        completed_boxes += 1
+        # ASSERT +/- pairing invariant per region (dense float64 -> ~1e-12)
+        assert pair_box < pair_tol, (
+            f"pairing invariant VIOLATED at rho={rho} l={l}: "
+            f"{pair_box:.2e} >= {pair_tol:.0e}")
+        print(f"   rho={rho:g} l={l:g} R*={Rbox:.1f} N={N:5d} "
+              f"nmax={nmax:4d} S_trunc={Strunc[:, j].mean():.4f} "
+              f"S_full={Sfull[:, j].mean():.2f} "
+              f"hlinks={hlink[:, j].mean():.1f} pair={pair_box:.1e}")
+        # FINER CHECKPOINT: persist the partial cell after every finished box.
+        ck.update_live(_build_cell(
+            rho, l, boxes, n_seeds, Ns, nmaxes, Ntot, Strunc, Sfull, nsub,
+            hlink, max_pair, pair_tol, completed_boxes, completed_seeds, n_x,
+            "partial"))
+        _update_summary(ck)
+        ck.write()
+
+    cell = _build_cell(
+        rho, l, boxes, n_seeds, Ns, nmaxes, Ntot, Strunc, Sfull, nsub, hlink,
+        max_pair, pair_tol, completed_boxes, completed_seeds, n_x, "complete")
+    ck.complete_cell(cell)
+    _update_summary(ck)
+    ck.write()
+    print(f"   => R_full^4D={cell['R_Sfull_over_Amol']:.4f} "
+          f"c^4D={cell['implied_coefficient_c_4D']:.2f} "
+          f"(2D c={C_2D_REFERENCE:.2f}; pair={max_pair:.1e})")
+
+
 def main(argv=None):
     p = cm.make_argparser(
         "ds_cap_4d",
@@ -300,110 +485,24 @@ def main(argv=None):
     boxes = RSTAR_BOX
     n_x = len(boxes)
     stopped = False
-    for rho in rho_list:
-        for l in l_list:
-            if budget.exceeded():
-                print(f"[time-budget] {budget.elapsed:.1f}s exhausted; "
-                      f"stopping before (rho={rho}, l={l}).")
-                stopped = True
+    try:
+        for rho in rho_list:
+            for l in l_list:
+                if budget.exceeded():
+                    print(f"[time-budget] {budget.elapsed:.1f}s exhausted; "
+                          f"stopping before (rho={rho}, l={l}).")
+                    stopped = True
+                    break
+                _run_cell(ck, budget, rho, l, n_seeds, n_cap, boxes, n_x)
+            if stopped:
                 break
-
-            # MEMORY GUARD: the 4D dS proper volume caps N; if the largest box
-            # would still exceed the dense wall, record a SKIP note (no silent
-            # mis-measure -- there is no generic-4D sparse top-k toe primitive).
-            Vmax = proper_volume_ds_4d(boxes.max(), l)
-            N_max_cell = int(round(rho * Vmax))
-            if N_max_cell > n_cap:
-                note = (f"skipped: N_max={N_max_cell} > n_max cap {n_cap} "
-                        f"(4D dense eigh wall; no 4D sparse primitive).")
-                print(f"   rho={rho:g} l={l:g} {note}")
-                ck.add_cell({"rho": rho, "l": l, "path": "skipped",
-                             "N_max_planned": N_max_cell, "note": note,
-                             "R_Sfull_over_Amol": float("nan")})
-                _update_summary(ck)
-                ck.write()
-                continue
-
-            Strunc = np.zeros((n_seeds, n_x))
-            Sfull = np.zeros((n_seeds, n_x))
-            Ntot = np.zeros((n_seeds, n_x))
-            nsub = np.zeros((n_seeds, n_x))
-            hlink = np.zeros((n_seeds, n_x))
-            pair_per_box = []
-            Ns = []
-            nmaxes = []
-            for j, Rbox in enumerate(boxes):
-                Vbox = proper_volume_ds_4d(Rbox, l)
-                N = int(round(rho * Vbox))
-                nmax = E.n_max_area_law(N, DIM, alpha=ALPHA_RANK)
-                pair_box = 0.0
-                for s in range(n_seeds):
-                    seed = 24_000_000 + 100000 * int(round(rho)) + 1000 * j \
-                        + 10 * int(round(10 * l)) + s
-                    res = run_seed(rho, l, Rbox, nmax, seed)
-                    Ntot[s, j] = res["N_total"]
-                    Strunc[s, j] = res["S_trunc"]
-                    Sfull[s, j] = res["S_full"]
-                    nsub[s, j] = res["n_sub"]
-                    hlink[s, j] = res["horizon_links"]
-                    pair_box = max(pair_box, res["pairing_rel"])
-                Ns.append(N)
-                nmaxes.append(int(nmax))
-                pair_per_box.append(pair_box)
-                print(f"   rho={rho:g} l={l:g} R*={Rbox:.1f} N={N:5d} "
-                      f"nmax={nmax:4d} S_trunc={Strunc[:, j].mean():.4f} "
-                      f"S_full={Sfull[:, j].mean():.2f} "
-                      f"hlinks={hlink[:, j].mean():.1f} pair={pair_box:.1e}")
-
-            # ASSERT +/- pairing invariant per region (dense float64 -> ~1e-12)
-            max_pair = max(pair_per_box) if pair_per_box else 0.0
-            pair_tol = 1e-12
-            assert max_pair < pair_tol, (
-                f"pairing invariant VIOLATED at rho={rho} l={l}: "
-                f"{max_pair:.2e} >= {pair_tol:.0e}")
-
-            Sf_cap, Sf_se, Sf_ci, Sf_r2 = cap_with_se(Sfull, boxes)
-            St_cap, St_se, St_ci, St_r2 = cap_with_se(Strunc, boxes)
-            Nt_cap, Nt_se, Nt_ci, Nt_r2 = cap_with_se(Ntot, boxes)
-            A_mol = float(np.nanmean(hlink[:, -3:]))   # plateau, last 3 boxes
-            eps = epsilon_of_rho_4d(rho)
-            A_cont = A_mol * eps ** 2 if np.isfinite(A_mol) else float("nan")
-            R_full = (Sf_cap / A_mol) if (np.isfinite(A_mol) and A_mol > 0) \
-                else float("nan")
-            R_trunc_cont = (St_cap / A_cont) if (np.isfinite(A_cont) and A_cont > 0) \
-                else float("nan")
-            implied_c = (1.0 / R_full) if (np.isfinite(R_full) and R_full) \
-                else float("nan")
-
-            cell = {
-                "rho": rho, "l": l, "path": "dense", "Ns": Ns,
-                "n_max_per_box": nmaxes, "RSTAR_BOX": boxes.tolist(),
-                "n_seeds": n_seeds,
-                "N_total_mean": Ntot.mean(0).tolist(),
-                "S_full_mean": Sfull.mean(0).tolist(),
-                "S_trunc_mean": Strunc.mean(0).tolist(),
-                "n_sub_mean": nsub.mean(0).tolist(),
-                "horizon_links_mean": hlink.mean(0).tolist(),
-                "N_total_cap": Nt_cap, "N_total_cap_se": Nt_se,
-                "N_total_cap_ci68": list(Nt_ci), "N_total_cap_R2": Nt_r2,
-                "S_full_cap": Sf_cap, "S_full_cap_se": Sf_se,
-                "S_full_cap_ci68": list(Sf_ci), "S_full_cap_R2": Sf_r2,
-                "S_trunc_cap": St_cap, "S_trunc_cap_se": St_se,
-                "S_trunc_cap_ci68": list(St_ci), "S_trunc_cap_R2": St_r2,
-                "horizon_links_cap_Amol": A_mol,
-                "epsilon": eps, "A_cont_eps_units": A_cont,
-                "R_Sfull_over_Amol": R_full,
-                "R_Strunc_over_Acont": R_trunc_cont,
-                "implied_coefficient_c_4D": implied_c,
-                "pairing_residual_rel_max": max_pair, "pairing_tol": pair_tol,
-            }
-            ck.add_cell(cell)
-            _update_summary(ck)
-            ck.write()
-            print(f"   => R_full^4D={R_full:.4f} c^4D={implied_c:.2f} "
-                  f"(2D c={C_2D_REFERENCE:.2f}; pair={max_pair:.1e})")
-        if stopped:
-            break
+    except cm.BudgetExceeded as exc:
+        # Mid-cell trip: the live partial cell (with all finished boxes/seeds) is
+        # already on ck.cells; finalize it + the summary, then exit 0.
+        print(f"[time-budget] MID-CELL {exc.elapsed:.1f}s >= "
+              f"{exc.max_seconds:.1f}s; finalizing partial checkpoint and "
+              f"exiting (status partial-time-budget).")
+        stopped = True
 
     _update_summary(ck)
     status = "partial-time-budget" if stopped else "complete"
@@ -419,14 +518,23 @@ def main(argv=None):
 
 def _update_summary(ck):
     """Cross-cell R_full^4D constancy + the c^4D vs c^2D dimension-dependence
-    verdict (THE open question)."""
+    verdict (THE open question).
+
+    PARTIAL CELLS (from a mid-cell time-budget trip) are tolerated: only cells
+    with cell_status 'complete' (default for the backward-compatible committed
+    schema that never wrote the field) feed the R_full verdict, because a cap fit
+    over a HALF-finished sweep is unreliable. Partial cells are surfaced via
+    n_partial_cells so the run stays honest about them."""
     measured = [c for c in ck.cells
-                if np.isfinite(c.get("R_Sfull_over_Amol", np.nan))]
+                if _is_finite_num(c.get("R_Sfull_over_Amol"))
+                and c.get("cell_status", "complete") == "complete"]
     R = np.array([c["R_Sfull_over_Amol"] for c in measured], float)
     rho_vals = np.array([c["rho"] for c in measured], float)
     summary = {
         "n_cells": len(ck.cells),
         "n_measured_cells": len(measured),
+        "n_partial_cells": int(sum(c.get("cell_status") == "partial"
+                                   for c in ck.cells)),
         "n_skipped_cells": int(sum(c.get("path") == "skipped" for c in ck.cells)),
         "c_2D_reference": C_2D_REFERENCE,
     }

@@ -1,0 +1,181 @@
+{
+  "driver": "ds4d_saturation",
+  "params": {
+    "rho": [
+      120.0,
+      600.0,
+      2000.0
+    ],
+    "patch_l": [
+      1.0
+    ],
+    "seeds": 4,
+    "max_hours": 5.5,
+    "n_hard_cap": 22000,
+    "RSTAR_BOX": [
+      1.6,
+      2.2,
+      2.8,
+      3.5,
+      4.3,
+      5.2
+    ],
+    "CUT_FRAC": 0.5,
+    "T_HALF": 0.5,
+    "XPERP": 1.0,
+    "XPERP_INT": 0.7,
+    "alpha_rank": 2.0,
+    "DIM": 4,
+    "DENSE_N_MAX": 3000,
+    "area_law_rank": "n_max = 2 N^(3/4) (F-019 / 2008.07697)",
+    "discriminator": "dS truncated-S SATURATES (II_1) vs flat GROWS (II_inf)",
+    "conformal_weight_caveat": "4D massless scalar NOT conformally invariant; VYPOCET-21 controlled approximation (flat causal order + dS sech^2 proper measure + Johnston 0909.0944 link Green), not the exact dS Wightman state.",
+    "sparse_path": "iDelta = i a (L - L^T), L sparse irreducible-link matrix (CSR, blockwise lightcone + transitive reduction); top-k via eigsh (sj_state_sparse) -> ssee_sparse. Bit-identical to dense on top-k.",
+    "toe_version": "0.3.0"
+  },
+  "host": {
+    "platform": "Linux-6.17.0-1015-azure-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "python": "3.13.13",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "toe": "0.3.0",
+    "thread_env": {
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null,
+      "VECLIB_MAXIMUM_THREADS": null,
+      "NUMEXPR_NUM_THREADS": null
+    }
+  },
+  "cells": [
+    {
+      "rho": 120.0,
+      "l": 1.0,
+      "path": "dense",
+      "Ns_dS": [
+        442,
+        468,
+        476,
+        479,
+        480,
+        480
+      ],
+      "Ns_flat": [
+        768,
+        1056,
+        1344,
+        1680,
+        2064,
+        2496
+      ],
+      "RSTAR_BOX": [
+        1.6,
+        2.2,
+        2.8,
+        3.5,
+        4.3,
+        5.2
+      ],
+      "n_seeds": 4,
+      "N_total_dS_mean": [
+        442.0,
+        468.0,
+        476.0,
+        479.0,
+        480.0,
+        480.0
+      ],
+      "N_total_flat_mean": [
+        768.0,
+        1056.0,
+        1344.0,
+        1680.0,
+        2064.0,
+        2496.0
+      ],
+      "n_sub_dS_mean": [
+        116.0,
+        138.25,
+        149.25,
+        165.25,
+        165.5,
+        175.0
+      ],
+      "n_sub_flat_mean": [
+        135.25,
+        178.75,
+        221.0,
+        287.5,
+        366.25,
+        444.25
+      ],
+      "S_trunc_dS_std": [
+        3.560303392969058,
+        2.26339032886257,
+        1.425557853575249,
+        1.1314592923133473,
+        3.2595572297217132,
+        4.12592892620426
+      ],
+      "S_trunc_flat_std": [
+        3.003584830147388,
+        4.42648283295466,
+        2.461128427665247,
+        4.750318970405216,
+        1.2703407539983924,
+        3.3668659185808685
+      ],
+      "discriminator": {
+        "S_trunc_dS_mean": [
+          32.80741522113457,
+          38.098927339023135,
+          38.23560061262401,
+          38.29548378815986,
+          42.3042532970869,
+          42.383094923064235
+        ],
+        "S_trunc_flat_mean": [
+          41.47159866644385,
+          49.68321579601054,
+          53.44525978621524,
+          66.66873805662905,
+          74.6025854457903,
+          80.57060163464027
+        ],
+        "cap_dS": 43.5860420065123,
+        "cap_flat": 145.6066190048926,
+        "sat_R2_dS": 0.8764656543521114,
+        "sat_R2_flat": 0.9847781426806259,
+        "full_slope_dS": 2.3828202364059745,
+        "full_slope_flat": 11.270495679108569,
+        "late_slope_dS": 2.356431336372957,
+        "late_slope_flat": 8.14549782578641,
+        "AIC_best_dS": "saturating",
+        "AIC_best_flat": "linear",
+        "n_measured_dS": 6,
+        "n_measured_flat": 6,
+        "flat_truncS_grows": true,
+        "dS_truncS_saturates": true,
+        "truncated_S_separates_types": true
+      },
+      "truncated_S_separates_types": true,
+      "max_N_reached": 2496,
+      "pairing_residual_rel_max": 8.573811726835412e-15,
+      "pairing_tol": 1e-12
+    }
+  ],
+  "summary": {
+    "n_cells": 1,
+    "n_measured_cells": 1,
+    "n_cells_separating": 1,
+    "max_N_reached": 2496,
+    "dense_wall_lifted": false,
+    "H5g1_4D_clean_saturation": true,
+    "verdict": "F-025: 4D truncated area-law SSEE separates II_1 (dS caps) from II_inf (flat grows) in 1/1 cells; max N reached = 2496 (dense wall at 2500 NOT yet lifted). Clean saturation REACHED -> strong H5g-1 supported."
+  },
+  "status": "partial-time-budget",
+  "runtime_s": 181.35958075523376,
+  "n_cells": 1
+}

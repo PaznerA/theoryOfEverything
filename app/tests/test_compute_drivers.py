@@ -136,3 +136,80 @@ def test_driver_smoke_runtime_under_budget(tmp_path):
     elapsed = time.time() - t0
     assert elapsed < 90.0, (
         f"three driver smokes took {elapsed:.1f}s (budget < 90 s)")
+
+
+# --------------------------------------------------------------------------- #
+# REGRESSION GUARD (bug 2026-06-08): the per-cell drivers must enforce
+# --max-hours MID-CELL and write a partial checkpoint. Before the fix a single
+# heavy (rho>=600, N~2e4) cell never completed, so (i) --max-hours was NEVER
+# honoured (5h+ runs past a 1.5h budget) and (ii) NO results.json was EVER
+# written. Here an ABSURDLY small budget (~1 s) on a NON-TRIVIAL config must:
+#   (a) exit 0;
+#   (b) write a results.json with status 'partial-time-budget';
+#   (c) carry a PARTIAL cell (cell_status='partial') so finished sub-steps
+#       survive a timeout; and
+#   (d) actually STOP near the budget -- the wall clock must NOT run a large
+#       multiple over the budget (the precise regression for the bug).
+# Configs are sized so ONE box/seed sub-step is heavy enough that the ~1 s
+# budget trips MID-cell, while the whole test stays < 30 s.
+# --------------------------------------------------------------------------- #
+_MICRO_HOURS = 0.0003                       # ~1.08 s wall-clock budget
+_MICRO_SECONDS = _MICRO_HOURS * 3600.0
+
+# (driver, argv) -- a NON-TRIVIAL cell (rho=200, 2 seeds) whose first box/seed
+# sub-step exceeds the ~1 s micro-budget, forcing a MID-cell trip.
+_BUDGET_CASES = {
+    "ds4d_saturation": [
+        "--rho", "200", "--patch-l", "1.0", "--seeds", "2",
+        "--max-hours", str(_MICRO_HOURS), "--n-max", "3000",
+    ],
+    "ds_cap_4d": [
+        "--rho", "200", "--patch-l", "1.0", "--seeds", "2",
+        "--max-hours", str(_MICRO_HOURS),
+    ],
+}
+
+
+@pytest.mark.parametrize("name", sorted(_BUDGET_CASES))
+def test_max_hours_enforced_mid_cell(name, tmp_path):
+    """--max-hours is honoured WITHIN a heavy cell, leaving a partial artifact."""
+    import time
+
+    out_dir = str(tmp_path / f"budget_{name}")
+    os.makedirs(out_dir, exist_ok=True)
+
+    t0 = time.time()
+    data, results_path = _run_driver(name, _BUDGET_CASES[name], out_dir)
+    wall = time.time() - t0
+
+    # (a) exit 0 already asserted in _run_driver; (b) the artifact exists and is
+    #     a PARTIAL terminal status (NOT 'complete' -- the budget tripped).
+    assert data["status"] == "partial-time-budget", (
+        f"{name}: expected status 'partial-time-budget' under a ~1 s budget, "
+        f"got {data['status']!r} (budget NOT enforced mid-cell?)")
+
+    # (c) at least one cell, and a PARTIAL cell is present (finished sub-steps
+    #     survived the timeout instead of the whole cell being lost).
+    assert data.get("n_cells", 0) >= 1 and data["cells"], (
+        f"{name}: no cell written -- a timed-out run produced ZERO artifacts "
+        "(this is the exact bug)")
+    partial = [c for c in data["cells"] if c.get("cell_status") == "partial"]
+    assert partial, (
+        f"{name}: no cell marked 'partial' (cell_status) -- partial-cell "
+        "checkpointing not engaged")
+    # the partial cell records its sub-step progress counters (the finer
+    # granularity), and the run as a whole reports >= 1 partial cell.
+    p0 = partial[0]
+    assert "completed_boxes" in p0 and "completed_seeds" in p0, (
+        f"{name}: partial cell missing completed_boxes/completed_seeds counts")
+    assert data["summary"].get("n_partial_cells", 0) >= 1
+
+    # (d) THE regression guard: the run must STOP near the budget. Wall clock
+    #     includes interpreter start + import + one heavy sub-step, so allow a
+    #     generous fixed overhead, but it must NOT run a LARGE multiple over the
+    #     ~1 s budget (the bug ran 5h+ past a 1.5h budget == ~3x, and unbounded
+    #     in the worst case). 30 s is ~28x the budget yet still catches a driver
+    #     that ignores the budget and grinds the full grid.
+    assert wall < 30.0, (
+        f"{name}: wall clock {wall:.1f}s ran far past the ~{_MICRO_SECONDS:.1f}s "
+        "budget -- --max-hours NOT enforced mid-cell (the regression)")

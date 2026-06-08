@@ -14,11 +14,23 @@ SAME CLI contract and writes the SAME ``results.json`` shape:
                                     versions, recorded once per run.
   - :func:`make_run_dir`         -- ``<out>/<name>--<paramslug>--<runstamp>/``.
   - :class:`Checkpointer`        -- progressive checkpoint writer: rewrites
-                                    ``results.json`` after EVERY cell.
+                                    ``results.json`` after every cell AND after
+                                    every (box / seed) SUB-STEP inside a cell, so
+                                    a run killed MID-CELL keeps the finished boxes.
   - :class:`TimeBudget`          -- graceful wall-clock budget (``--max-hours``):
-                                    finish the current cell, finalize, exit 0.
+                                    checked BOTH between cells and INSIDE the
+                                    box/seed loop (:exc:`BudgetExceeded`); on
+                                    exceed the driver finalizes the partial
+                                    checkpoint and exits 0.
 
 NEVER fudge numbers: the helpers only structure I/O; all physics stays in toe.
+
+BUG HISTORY (2026-06-08): the per-cell drivers (ds4d_saturation, ds_cap_4d)
+checkpointed only AFTER a full (rho, l) cell and only checked --max-hours BETWEEN
+cells. A single heavy 4D-sparse cell (rho>=600, N up to ~2e4) never returned, so
+(i) the budget was NEVER enforced and (ii) NO checkpoint was ever written -> 6h
+cloud jobs / 5h local jobs produced ZERO artifacts. The fix is the finer
+checkpoint granularity (partial cells) + the mid-cell budget guard below.
 """
 
 from __future__ import annotations
@@ -215,10 +227,19 @@ def json_safe(obj):
 class Checkpointer:
     """Holds the live results dict and rewrites ``results.json`` on demand.
 
-    The driver mutates ``self.cells`` / ``self.summary`` and calls
-    :meth:`write` after EVERY (rho, l, seed) cell so a killed run still leaves a
-    valid, up-to-date ``results.json`` with ``status='partial-time-budget'``.
-    An atomic temp-file rename avoids a truncated file if interrupted mid-write.
+    The driver mutates ``self.cells`` / ``self.summary`` and calls :meth:`write`
+    after every completed cell AND after every (box / seed) SUB-STEP inside the
+    cell (via a LIVE partial cell, see :meth:`begin_cell`), so a run killed
+    mid-cell still leaves a valid, up-to-date ``results.json`` keeping whatever
+    boxes/seeds finished. An atomic temp-file rename avoids a truncated file if
+    interrupted mid-write.
+
+    PARTIAL CELLS: a cell carries an optional ``cell_status`` field
+    ('complete' | 'partial'). A partial cell additionally records
+    ``completed_boxes`` / ``completed_seeds`` counts so a downstream summary can
+    tell a finished cell from a half-finished one. Cells without ``cell_status``
+    are treated as 'complete' (backward-compatible with the committed schema,
+    which never wrote the field).
     """
 
     def __init__(self, path: str, driver: str, params: dict, host: dict):
@@ -230,9 +251,52 @@ class Checkpointer:
         self.summary: dict = {}
         self.status: str = "partial-time-budget"
         self._t0 = time.time()
+        self._live = None     # the in-progress partial cell, or None
 
     def add_cell(self, cell: dict) -> None:
+        """Append a fully-finished cell (defaults its status to 'complete')."""
+        cell.setdefault("cell_status", "complete")
         self.cells.append(cell)
+
+    # -- live (in-progress) partial cell ----------------------------------- #
+    def begin_cell(self, partial: dict) -> dict:
+        """Register a LIVE partial cell and append it so a checkpoint written
+        mid-cell already contains whatever boxes/seeds finished so far.
+
+        ``partial`` is mutated in place by the driver as boxes/seeds complete;
+        call :meth:`write` after each sub-step to persist it. Returns the same
+        dict for convenience. The cell starts marked 'partial'; the driver calls
+        :meth:`complete_cell` once the full cell is computed.
+        """
+        partial.setdefault("cell_status", "partial")
+        partial.setdefault("completed_boxes", 0)
+        partial.setdefault("completed_seeds", 0)
+        self._live = partial
+        self.cells.append(partial)
+        return partial
+
+    def update_live(self, partial: dict) -> dict:
+        """Replace the live partial cell in place with a freshly-rebuilt partial
+        (called after each finished box/seed sub-step). Keeps it marked
+        'partial' and preserves cell ORDER. No-op-safe if there is no live cell
+        (then it just registers ``partial`` as the live cell)."""
+        partial.setdefault("cell_status", "partial")
+        if self._live is not None and self.cells and self.cells[-1] is self._live:
+            self.cells[-1] = partial
+        else:                       # defensive: re-register
+            self.cells.append(partial)
+        self._live = partial
+        return partial
+
+    def complete_cell(self, cell: dict) -> None:
+        """Replace the live partial cell with its finished form (status
+        'complete') in place, preserving cell ORDER, and clear the live slot."""
+        cell["cell_status"] = "complete"
+        if self._live is not None and self.cells and self.cells[-1] is self._live:
+            self.cells[-1] = cell
+        else:                       # defensive: no live cell -> just append
+            self.cells.append(cell)
+        self._live = None
 
     def _payload(self) -> dict:
         return {
@@ -265,13 +329,35 @@ class Checkpointer:
 # --------------------------------------------------------------------------- #
 # (7) graceful wall-clock budget
 # --------------------------------------------------------------------------- #
-class TimeBudget:
-    """Wall-clock budget for ``--max-hours``.
+class BudgetExceeded(Exception):
+    """Raised by :meth:`TimeBudget.check` when the wall-clock budget is spent.
 
-    Pattern: check :meth:`exceeded` at the TOP of each (rho, l) cell loop; if
-    true, stop launching new cells, finalize what completed as
-    ``status='partial-time-budget'`` and exit 0. The current cell always
-    finishes (we never kill mid-cell), so the checkpoint is always consistent.
+    The driver catches it AROUND the box/seed loop, finalizes the live partial
+    checkpoint as ``status='partial-time-budget'`` and exits 0. Carries the
+    ``elapsed`` / ``max_seconds`` at the moment of the trip for the log line.
+    """
+
+    def __init__(self, elapsed: float, max_seconds: float):
+        self.elapsed = elapsed
+        self.max_seconds = max_seconds
+        super().__init__(
+            f"wall-clock budget exceeded: {elapsed:.1f}s >= {max_seconds:.1f}s")
+
+
+class TimeBudget:
+    """Wall-clock budget for ``--max-hours`` -- enforced BETWEEN and WITHIN cells.
+
+    Pattern:
+      * :meth:`exceeded` at the TOP of each (rho, l) cell loop stops LAUNCHING a
+        new cell;
+      * :meth:`check` INSIDE the box/seed loop raises :exc:`BudgetExceeded` the
+        moment the budget is spent, so a single heavy cell can NO LONGER run past
+        the budget (the bug fixed 2026-06-08). The driver catches it, finalizes
+        the partial checkpoint and exits 0.
+
+    The budget is therefore NEVER silently exceeded by more than one box/seed
+    sub-step; the checkpoint stays consistent because a sub-step is the atomic
+    unit of work and the partial cell is written after each one.
     """
 
     def __init__(self, max_hours: float):
@@ -288,6 +374,17 @@ class TimeBudget:
 
     def exceeded(self) -> bool:
         return self.elapsed >= self.max_seconds
+
+    def check(self) -> None:
+        """Raise :exc:`BudgetExceeded` if the wall-clock budget is spent.
+
+        Call this at the TOP of every box/seed sub-step (before launching the
+        next heavy eigensolve), so the budget is honoured MID-CELL, not only
+        between cells.
+        """
+        el = self.elapsed
+        if el >= self.max_seconds:
+            raise BudgetExceeded(el, self.max_seconds)
 
 
 # --------------------------------------------------------------------------- #
