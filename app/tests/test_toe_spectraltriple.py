@@ -28,6 +28,8 @@ from toe.spectraltriple import (
     connes_commutator_norm,
     connes_distance,
     ConnesDistance,
+    kms_temperature,
+    KMSFit,
 )
 
 
@@ -101,3 +103,41 @@ def test_connes_distance_carrier_unit_commutator():
     assert abs(c.commutator_norm - 1.0) < 0.1
     scalar = connes_distance(D, 0, 3, seed=5, n_random=16, n_iter=50)
     assert abs(c.value - scalar) < 1e-9
+
+
+def test_kms_temperature_sj_modular_flow_is_beta1():
+    """KMS fit of an SJ modular flow: for occupations n_k = mu_k - 1 and modular
+    energies eps_k = ln[mu_k/(mu_k-1)] the detailed-balance n/(n+1) = e^{-eps}
+    holds, so the KMS inverse-temperature is beta = 1 (Tomita-Takesaki /
+    Casini-Huerta) and the residual at beta=1 is machine-zero."""
+    rng = np.random.default_rng(0)
+    mu = 1.0 + rng.uniform(0.05, 5.0, size=40)          # mu > 1 (occupied modes)
+    eps = np.log(mu / (mu - 1.0))
+    occ = mu - 1.0
+    kf = kms_temperature(eps, occ)
+    assert isinstance(kf, KMSFit)
+    # KMS condition is satisfied at beta=1 to machine precision
+    assert kf.resid_beta1 < 1e-9
+    # the minimising beta is 1 (on the default grid spacing ~0.01)
+    assert abs(kf.beta - 1.0) < 0.02
+    assert kf.n_modes == 40
+    assert len(kf.ts) == len(kf.g_re) == len(kf.g_im)
+
+
+def test_kms_temperature_scales_with_beta():
+    """A thermal spectrum at inverse-temperature b (n/(n+1) = e^{-b*eps}) is
+    recovered as beta = b: rescaling the occupation law shifts the KMS minimum."""
+    rng = np.random.default_rng(1)
+    eps = rng.uniform(0.2, 3.0, size=50)
+    b_true = 0.7
+    occ = 1.0 / (np.exp(b_true * eps) - 1.0)            # Bose law at beta=b_true
+    kf = kms_temperature(eps, occ, betas=np.linspace(0.3, 1.5, 241))
+    assert abs(kf.beta - b_true) < 0.02
+
+
+def test_kms_temperature_degenerate_returns_nan():
+    """Fewer than two modes -> NaN beta, empty curves (clean partial output)."""
+    kf = kms_temperature(np.array([1.0]), np.array([0.5]))
+    assert kf.n_modes == 1
+    assert np.isnan(kf.beta)
+    assert kf.ts == [] and kf.g_re == []

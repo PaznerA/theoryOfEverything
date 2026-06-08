@@ -577,5 +577,51 @@
    "2206.14762",
    "1408.3260"
   ]
+ },
+ {
+  "id": "F-034",
+  "statement": "SJ modulární tok na 2D Rindlerově slabu (řez x>0) reprodukuje TEPELNĚ-ČASOVÝ (KMS / Connes-Rovelli) obsah, který F-033 předpověděl jako solidní osu — KVALITATIVNĚ, ne kvantitativně. Setup: N=300/600/1200, 5 seedů každý = 15 seedů, Rindlerův slab, runtime 9.9 s, stěnový limit 25 min. KMS: beta_KMS = 1.00000 (sd=0 přes všechny seedy), KMS reziduum při beta=1 = 1.9e-16 (strojová přesnost) — jediné konzistentní inverzní teplota. beta_occ = 1.00000, occ R2 = 1.000000 (Bose-Einsteinovo rozdělení přes 8 řádů). BW boostová diagonála: sklon = 27.84 +/- 1.35, R2 = 0.953, rho-INVARIANTNÍ (skalony 27.95/28.68/26.88, CV = 2.7 %). ABSOLUTNÍ Unruhova 2*pi NENÍ obnovena: unruh_ratio = 0.786 +/- 0.039 vs 2*pi = 6.283 (surogát není 2pi-normalizován). Kontrolní kontrast: interval cut boost R2 = 0.053, shuffle K boost R2 = 0.088 (obě << 0.95) — geometrie kolabuje; obsazenostní tautologie beta_occ=1 přežívá na obou (spektrum zachováno). Lib primitiv kms_temperature self-test: tepelné spektrum při beta_true=0.7 obnoveno jako beta=0.70 (scan kalibrován, není degenerován na 1).",
+  "status": "partial",
+  "evidence": [
+   "core-data/calculations/modular-kms-thermal/results.json",
+   "knowledge-base/vypocty/VYPOCET-30-modular-kms-thermal.md",
+   "core-data/calculations/modular-kms-thermal/plots/thermal_occupation_fit.png",
+   "core-data/calculations/modular-kms-thermal/plots/kms_twopoint.png"
+  ],
+  "date": "2026-06-08",
+  "relatedHypotheses": [
+   "H6g-1"
+  ],
+  "caveats": "beta_occ=1 a beta_KMS=1 jsou TAUTOLOGIE SJ/Casini-Huerta konstrukce (KMS na beta=1 z Tomity-Takesakiho), NIKOLI geometrický důkaz — jediný netriviální invariant je rho-invariantní boostová diagonála (CV 2.7 %). Absolutní Unruhova 2pi NENÍ obnovena (unruh_ratio=0.786 vs 6.283): eps=ln[mu/(mu-1)] + site-basis lift nefixují normalizaci boostového generátoru, tento surogátní kaveat dědí F-033. Konečné N měří TREND, ne hodnotu N->inf. Doporučení pro hranu causal-sets<->noncommutative-geometry: ponechat rating barely, anotovat kvalitativní pozitiv na tepelné ose (vedle F-033 informovaného negativu na metrice).",
+  "implications": "Tepelná osa korespondence causal-sets <-> NCG (Connes-Rovelli tepelný čas, gr-qc/9406019) má KVALITATIVNÍ datovou oporu: SJ modulární tok na 2D Rindlerově slabu je pravý jednoteplotní KMS tok (beta_KMS=1 na strojovou přesnost, reziduum 1.9e-16) s rho-invariantní geometrickou boostovou strukturou, která čistě selhává na obou non-Rindler kontrolách (interval R2=0.05, shuffle R2=0.09). Doplňuje F-033 metrický negativ: metrická osa selhává, tepelně-časová osa stojí. Kvantitativní Unruhova teplota 1/(2pi) chybí — surogát D_K nefixuje normalizaci boostového rapidity.",
+  "noveltyStatus": "První přímý numerický KMS test SJ modulárního toku na sprinklovaném Rindlerově slabu kauzální množiny. Identifikace, že beta_KMS=1 (strojová přesnost) a rho-invariantní boostová diagonála jsou robustní zatímco non-Rindler kontroly selhávají, je project-original. Viz VYPOCET-30.",
+  "refs": [
+   "gr-qc/9406019",
+   "1611.10281",
+   "1712.04227",
+   "astro-ph/0209274"
+  ]
+ },
+ {
+  "id": "F-035",
+  "statement": "Poissonův shot-noise počtu prostoročasových atomů přežívá negativ F-005 ve své VARIANCE/boost-kovariantní formě, kterou F-005 netestoval. Na 4D Minkowského boxu (čistý Poissonův bodový proces N ~ Poisson(rho V), 800–16000 seedů, žádný eigh) platí: (1) Fanův faktor F = Var(N)/<N> = 0.9986 +/- 0.0112 při 16000 seedech (0.13 sigma od 1) — přesný Poisson; (2) delta_Lambda := sqrt(Var(N))/V ~ V^{-0.484 +/- 0.006} (R^2=0.999), konzistentní s V^{-1/2} (Var(N)~V^{1.03}), tj. delta_Lambda ~ H^2 pro V~H^{-4}; (3) Var(N) v boostnutém regionu téhož vlastního 4-objemu je boost-invariantní (max z-skóre vs seedová chyba = 0.70 pro rapiditu eta in [0,2]), zatímco jediná rigidní 4D mřížka má boost-ZÁVISLÝ počet (per-realizační rozptyl napříč eta 64.5 % vs Poisson 12.6 %, poměr 5.13x). F-005 vyvrátil SILNOU formu (jediný sdílený MEAN-prefaktor kappa, kappa_Sorkin/kappa_EDT=139.6); tento výsledek je o ROZPTYLU/distribuci + Lorentz-kovarianci a F-005-vyvrácený mean-prefaktor NEVZKŘÍSÍ. Box size constraint: e^{eta_max}*inner_half = 1.33 < big_half = 1.40 (posunutý region zůstává uvnitř nosiče). Reprodukce: 0 numerických diff při re-runu (bit-identické, deterministické seedy). Wall-clock 26 s.",
+  "status": "supported",
+  "evidence": [
+   "core-data/calculations/lambda-shot-noise/results.json",
+   "knowledge-base/vypocty/VYPOCET-31-lambda-shot-noise.md",
+   "core-data/calculations/lambda-shot-noise/fano_vs_V.png",
+   "core-data/calculations/lambda-shot-noise/deltaLambda_vs_V_loglog.png",
+   "core-data/calculations/lambda-shot-noise/boost_invariance.png"
+  ],
+  "date": "2026-06-08",
+  "relatedHypotheses": [
+   "H6g-4"
+  ],
+  "caveats": "Testuje fluktuaci počtu atomů + boost-kovarianci, NIKOLI plný řetězec delta_N -> delta_Lambda (Sorkinova Lambda<->V konjugace je sama hypotéza) — nutná, ne postačující podmínka pro everpresent-Lambda. Var/<N>=1 je triviálně Poissonovské; netriviální je až boost-invariance + mřížkový kontrast (pořadí 5x). Nevolí NEVZKŘÍSÍ F-005-vyvrácený naivní mean-prefaktor (mismatch 139.6x stojí beze změny); pozitiv je výlučně na ose variance/distribuce + Lorentz-kovariance. 4D, čisté počítání, bit-identická reprodukce.",
+  "implications": "Korespondence přežívá: Sorkinův everpresent-Lambda mechanismus (astro-ph/0209274) stojí na Poissonově fluktuaci delta_N~sqrt(N) = delta_Lambda~1/sqrt(V). Tato distribuce je přesná (Fano=1 na 0.13 sigma při 16000 seedech) a Lorentz-kovariantní (boost-invariantní Var(N), kontrast 5.13x s rigidní mřížkou). F-005 (metrický negativ prefaktoru) a F-035 (pozitiv variance/boost) jsou komplementární: shot-noise mechanismus žije, ale sdílený prefaktor s EDT/CosMIn neexistuje. Odkaz na hrany causal-sets<->cosmological-constant-fluctuation a causal-sets<->experimental-tests (přesná Lorentz-invariance Poissonova sprinklingu).",
+  "noveltyStatus": "Přímé numerické ověření Poissonovy distribuce Fanovu faktorem (F=0.9986 při 16000 seedech), mocninný zákon V^{-0.484} pro delta_Lambda a boost-invariance Var(N) na 4D Minkowského boxu s mřížkovým kontrastem 5.13x jsou project-original. Sorkin (astro-ph/0209274) a F-005/VYPOCET-03 jsou jediné repo-přítomné reference; žádná vymyšlená arXiv ID.",
+  "refs": [
+   "astro-ph/0209274"
+  ]
  }
 ]

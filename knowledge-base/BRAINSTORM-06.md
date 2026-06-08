@@ -128,6 +128,8 @@ rešerši/novou mašinérii před compute.
 
 ### H6g-1 — Modulární Dirac reprodukuje KMS / tepelný čas, ne metriku (správná osa causal-sets↔NCG)
 
+> **STATUS (kolo 16, VYPOCET-30, F-034): PARTIAL — tepelná/KMS osa má kvalitativní datovou oporu. beta_KMS=1 strojová přesnost (1.9e-16), rho-invariantní boost diagonála R2=0.953 CV=2.7 %, non-Rindler kontroly selhávají (R2=0.05/0.09). Absolutní Unruhova 2pi NEobnovena (ratio=0.786). Verdikt: partial (kvalitativní pozitiv na tepelné ose, kvantitativní Unruh chybí).**
+
 **(jádro: F-033 otvor — D_K dělá boost/KMS, ne vzdálenost; testuj termodynamiku, ne geometrii)**
 **Priorita: high (nejvyšší ROI generace — instancuje barely hranu na ose, kde F-033 předpověděl PASS).**
 
@@ -277,6 +279,8 @@ rešerši/novou mašinérii před compute.
 ---
 
 ### H6g-4 — Λ shot-noise jako Lorentz-invariantní fluktuační spektrum sprinklingu (přerámováno PROTI F-005)
+
+> **STATUS (kolo 16, VYPOCET-31, F-035): SURVIVES — Poissonův shot-noise přežívá F-005 na variance/boost-kovariantní ose. Fanův faktor F=0.9986 +/-0.0112 při 16000 seedech (0.13 sigma od 1), delta_Lambda~V^{-0.484±0.006} (R2=0.999), boost-invariantní Var(N) max z=0.70, mřížkový kontrast 5.13x. Mean-prefaktor (F-005) nevzkříšen. Verdikt: korespondence survives (supported).**
 
 **(jádro: standing directive — δΛ~1/√V jako VARIANCE, ne mean; F-005 zabil prefaktor, ne distribuci)**
 **Priorita: medium (vysoká novost, čistě geometrický test; opatrné přerámování po F-005 negativu).**

@@ -34,6 +34,7 @@ Only numpy / scipy are used.
 
 from __future__ import annotations
 
+import math
 from math import comb
 
 import numpy as np
@@ -47,6 +48,11 @@ __all__ = [
     "sprinkle_wedge_box4d",
     "sprinkle_ds_static_patch2d",
     "sprinkle_ds_static_patch4d",
+    # Poisson shot-noise counting primitives (H6g-4 / VYPOCET-31)
+    "poisson_count_box4d",
+    "lattice_count_box4d",
+    "boost_coords",
+    "fano_factor",
     # causal structure
     "causal_matrix",
     "link_matrix",
@@ -228,6 +234,150 @@ def sprinkle_wedge_box4d(N, rng, *, t_half=0.5, x_half=0.5, yz_half=0.5):
     x = (rng.random(N) * 2.0 - 1.0) * x_half
     yz = (rng.random((N, 2)) * 2.0 - 1.0) * yz_half
     return np.column_stack([t, x, yz])
+
+
+# ===========================================================================
+# POISSON SHOT-NOISE primitives  (counting only -- NO matrix; H6g-4 / VYPOCET-31)
+# ===========================================================================
+
+def poisson_count_box4d(rho, rng, *, half=1.0):
+    """Draw one realisation of a TRUE Poisson sprinkling of intensity ``rho``
+    into the 4D Minkowski box ``[-half, half]^4`` and return ``(count, coords)``.
+
+    Unlike :func:`sprinkle_box4d` (which fixes the *number* of points ``N`` and
+    only randomises positions), this is the genuine Poisson point process: the
+    number of atoms is itself random, ``count ~ Poisson(rho * Vol)`` with
+    ``Vol = (2 half)^4``. This is the object whose counting fluctuation
+    ``delta_N = sqrt(Var(N))`` underlies the Sorkin everpresent-Lambda shot
+    noise (H6g-4): a region of proper 4-volume ``V`` holds ``<N> = rho V``
+    elements and ``Var(N) = rho V`` (Fano factor 1), so ``delta_N / <N> =
+    1/sqrt(<N>) ~ V^{-1/2}``.
+
+    Lorentz invariance is BY CONSTRUCTION: a boost is unimodular
+    (``det Lambda = 1``), so it preserves the 4-volume measure; the number of
+    Poisson atoms inside a region of fixed proper 4-volume is a Lorentz scalar
+    whose distribution does not depend on the boost rapidity. A regular lattice
+    has no such property (see :func:`lattice_count_box4d`).
+
+    Formula: shot-noise count statistic (N ~ Poisson(rho V), Var(N)=<N>).
+    Evidence: VYPOCET-31 (lambda-shot-noise/calc.py); Sorkin everpresent
+    Lambda (astro-ph/0209274), reframed as the VARIANCE statement F-005 did
+    NOT refute.
+    Conventions: box 4-volume ``(2 half)^4``; ``rho = <N> / Vol``.
+
+    Args:
+        rho: Poisson intensity (mean number density, atoms per unit 4-volume).
+        rng: numpy.random.Generator (REQUIRED, explicit seed source).
+        half: box half-extent (box = ``[-half, half]^4``).
+
+    Returns:
+        ``(count, coords)`` where ``count`` is an int drawn from
+        ``Poisson(rho * (2 half)^4)`` and ``coords`` is ``(count, 4)`` uniform
+        in the box (columns ``t, x, y, z``).
+    """
+    half = float(half)
+    vol = (2.0 * half) ** 4
+    mean = float(rho) * vol
+    count = int(rng.poisson(mean))
+    coords = (rng.random((count, 4)) * 2.0 - 1.0) * half
+    return count, coords
+
+
+def lattice_count_box4d(rho, *, half=1.0):
+    """Deterministic REGULAR 4D cubic lattice of intensity ``rho`` in the box
+    ``[-half, half]^4`` -- the non-Poisson control for the boost test.
+
+    Places one point per cell of a uniform cubic grid with spacing ``a`` chosen
+    so the density matches ``rho`` (``a = rho^{-1/4}``). A regular lattice is
+    NOT Lorentz invariant: a boost contracts the lattice along the boost axis,
+    so the count inside a fixed proper 4-volume changes with rapidity -- exactly
+    the property a covariant Lambda fluctuation must NOT have, and the
+    discriminator against Poisson sprinkling.
+
+    Formula: regular-lattice count control (non-covariant discreteness).
+    Evidence: VYPOCET-31 (lambda-shot-noise/calc.py) -- boost control vs
+    :func:`poisson_count_box4d`.
+    Conventions: spacing ``a = rho^{-1/4}``; cell-centred grid in
+    ``[-half, half]^4``.
+
+    Args:
+        rho: target number density (atoms per unit 4-volume).
+        half: box half-extent.
+
+    Returns:
+        np.ndarray ``(M, 4)`` -- the lattice coordinates (columns t, x, y, z).
+    """
+    half = float(half)
+    a = float(rho) ** (-0.25)
+    n = max(int(round(2.0 * half / a)), 1)
+    # cell-centred grid on [-half, half]
+    edges = (np.arange(n) + 0.5) / n * (2.0 * half) - half
+    g = np.array(np.meshgrid(edges, edges, edges, edges, indexing="ij"))
+    return g.reshape(4, -1).T.copy()
+
+
+def boost_coords(coords, eta, *, axis=1):
+    """Apply a Lorentz boost of rapidity ``eta`` along ``axis`` to ``(N, dim)``
+    coordinates whose column 0 is time.
+
+    The boost matrix is ``diag(cosh, ...)`` mixing the time column 0 with the
+    spatial column ``axis``: ``t' = cosh(eta) t - sinh(eta) x``, ``x' =
+    -sinh(eta) t + cosh(eta) x``. ``det = 1`` (unimodular), so the Lebesgue
+    4-volume measure -- and hence the Poisson counting distribution in a fixed
+    proper region -- is preserved.
+
+    Formula: Lorentz boost (unimodular, preserves 4-volume).
+    Evidence: VYPOCET-31 (lambda-shot-noise/calc.py).
+    Conventions: signature ``(+,-,-,-)`` implied; boost mixes columns ``0`` and
+    ``axis``.
+
+    Args:
+        coords: (N, dim) array, column 0 = time.
+        eta: boost rapidity.
+        axis: spatial column index to boost into (default 1).
+
+    Returns:
+        np.ndarray (N, dim) -- boosted coordinates.
+    """
+    coords = np.asarray(coords, dtype=float)
+    out = coords.copy()
+    ch, sh = np.cosh(eta), np.sinh(eta)
+    t = coords[:, 0]
+    x = coords[:, axis]
+    out[:, 0] = ch * t - sh * x
+    out[:, axis] = -sh * t + ch * x
+    return out
+
+
+def fano_factor(counts):
+    """Fano factor ``F = Var(N) / <N>`` of an array of integer counts, with the
+    standard error of the variance-to-mean ratio.
+
+    For a Poisson process ``F = 1`` exactly (``Var(N) = <N>``). Returns
+    ``(F, se_F)`` where ``se_F`` uses the large-sample variance of the sample
+    Fano factor for a Poisson sample, ``Var(F_hat) ~ 2 F^2 / (n - 1)`` (so
+    ``se_F ~ F sqrt(2/(n-1))``) -- the leading-order delta-method/normal
+    approximation; the calc also reports a bootstrap CI for robustness.
+
+    Formula: Fano factor F = Var(N)/<N> (Poisson => 1).
+    Evidence: VYPOCET-31 (lambda-shot-noise/calc.py).
+    Conventions: sample variance with ddof=1; se via Poisson large-n form.
+
+    Args:
+        counts: 1-D array-like of integer counts (>= 2 samples).
+
+    Returns:
+        ``(F, se_F)`` as plain floats.
+    """
+    c = np.asarray(counts, dtype=float)
+    n = c.size
+    if n < 2:
+        raise ValueError(f"Need >= 2 counts for a Fano factor; got {n}.")
+    mean = float(c.mean())
+    var = float(c.var(ddof=1))
+    F = var / mean if mean > 0 else float("nan")
+    se_F = F * math.sqrt(2.0 / (n - 1))
+    return F, se_F
 
 
 def sprinkle_ds_static_patch2d(N, rng, *, l=1.0, rstar_box, t_extent):

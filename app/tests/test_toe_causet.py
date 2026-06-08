@@ -306,5 +306,88 @@ def test_causal_matrix_tilted_cone_metric():
     assert np.array_equal(C_metric, C_flat)
 
 
+# ---------------------------------------------------------------------------
+# Poisson shot-noise counting primitives (H6g-4 / VYPOCET-31)
+# ---------------------------------------------------------------------------
+def test_poisson_count_box4d_mean_and_fano():
+    """True Poisson sprinkling: <N> = rho * Vol and Fano = Var(N)/<N> -> 1.
+
+    The count itself is drawn from Poisson(rho * (2 half)^4), so the mean tracks
+    the intensity and the Fano factor converges to 1 (delta_N = sqrt(N)).
+    """
+    rho, half = 1000.0, 0.5
+    vol = (2.0 * half) ** 4
+    counts = np.empty(4000, dtype=np.int64)
+    for s in range(4000):
+        rng = np.random.default_rng(12345 + s)
+        n, coords = cs.poisson_count_box4d(rho, rng, half=half)
+        counts[s] = n
+        assert coords.shape == (n, 4)
+        assert np.all(np.abs(coords) <= half)
+    mean = counts.mean()
+    # mean tracks rho*Vol within ~5 sigma of the Poisson SE
+    assert abs(mean - rho * vol) < 5.0 * math.sqrt(rho * vol / counts.size)
+    F, seF = cs.fano_factor(counts)
+    assert validate_against(F, 1.0, rtol=0.0, atol=4.0 * seF)
+
+
+def test_fano_factor_matches_definition():
+    rng = np.random.default_rng(7)
+    c = rng.integers(0, 50, size=500)
+    F, seF = cs.fano_factor(c)
+    assert math.isclose(F, c.var(ddof=1) / c.mean(), rel_tol=1e-12)
+    assert seF > 0.0
+
+
+def test_boost_coords_unimodular_and_preserves_interval():
+    """A boost has det = 1 (preserves 4-volume) and preserves the Minkowski
+    interval t^2 - x^2 along the boost axis."""
+    rng = np.random.default_rng(3)
+    coords = rng.normal(size=(200, 4))
+    eta = 1.3
+    bc = cs.boost_coords(coords, eta, axis=1)
+    # interval t^2 - x^2 invariant; transverse coords untouched
+    s0 = coords[:, 0] ** 2 - coords[:, 1] ** 2
+    s1 = bc[:, 0] ** 2 - bc[:, 1] ** 2
+    assert np.allclose(s0, s1, atol=1e-12)
+    assert np.allclose(coords[:, 2:], bc[:, 2:], atol=1e-15)
+    # composing +eta then -eta is the identity (det=1, invertible)
+    back = cs.boost_coords(bc, -eta, axis=1)
+    assert np.allclose(back, coords, atol=1e-12)
+
+
+def test_poisson_count_boost_invariant_vs_lattice():
+    """Lorentz discriminator: the Poisson count distribution in a fixed proper
+    region is boost-invariant (Var flat across rapidity), while a single rigid
+    lattice's count is boost-DEPENDENT. Tiny-N smoke version of VYPOCET-31."""
+    rho, big_half, inner_half = 4000.0, 1.0, 0.15
+    etas = [0.0, 0.5, 1.0]
+    assert big_half >= math.exp(max(etas)) * inner_half  # boosted region stays inside
+
+    def count_inner(coords, eta):
+        bc = cs.boost_coords(coords, -eta, axis=1)
+        return int(np.count_nonzero(np.max(np.abs(bc), axis=1) <= inner_half))
+
+    # Poisson: Var(N) across seeds is flat in eta
+    nseed = 200
+    counts = np.zeros((nseed, len(etas)), dtype=np.int64)
+    for s in range(nseed):
+        rng = np.random.default_rng(900 + s)
+        _, coords = cs.poisson_count_box4d(rho, rng, half=big_half)
+        for j, eta in enumerate(etas):
+            counts[s, j] = count_inner(coords, eta)
+    var0 = counts[:, 0].var(ddof=1)
+    for j in range(1, len(etas)):
+        vj = counts[:, j].var(ddof=1)
+        se = var0 * math.sqrt(2.0 / (nseed - 1))
+        assert abs(vj - var0) < 6.0 * se  # boost-invariant within seed error
+
+    # Lattice: a single rigid grid's count varies across eta (non-covariant)
+    lat = cs.lattice_count_box4d(rho, half=big_half)
+    lat_counts = np.array([count_inner(lat, eta) for eta in etas], dtype=float)
+    frac_spread = (lat_counts.max() - lat_counts.min()) / lat_counts.mean()
+    assert frac_spread > 0.05  # rigid lattice count is boost-dependent
+
+
 if __name__ == "__main__":  # pragma: no cover
     raise SystemExit(pytest.main([__file__, "-v"]))

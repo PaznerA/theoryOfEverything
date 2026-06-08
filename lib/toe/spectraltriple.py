@@ -51,6 +51,8 @@ __all__ = [
     "connes_commutator_norm",
     "connes_distance",
     "ConnesDistance",
+    "kms_temperature",
+    "KMSFit",
 ]
 
 
@@ -312,3 +314,113 @@ def connes_distance(D, i, j, *, n_iter=60, seed=0, n_random=24,
         return ConnesDistance(value=dist, a=best_a, commutator_norm=best_cn_norm,
                               i=i, j=j, n_iter=int(n_iter))
     return dist
+
+
+# ===========================================================================
+# KMS INVERSE-TEMPERATURE of a one-particle modular flow
+# ===========================================================================
+
+@dataclass
+class KMSFit:
+    """Carrier for a KMS (thermal-time) fit of a one-particle modular flow.
+
+    ``beta`` is the imaginary-modular-time period minimising the KMS residual of
+    the modular two-point function; ``resid_beta1`` is the KMS residual evaluated
+    at ``beta = 1`` (the Tomita-Takesaki / Casini-Huerta value, machine precision
+    for a genuine SJ modular flow); ``resid_min`` is the residual at the best
+    ``beta``. ``ts`` is the real-modular-time grid and ``g_re`` / ``g_im`` the
+    real / imaginary parts of the modular two-point ``G(t)`` on that grid (for
+    plotting). ``n_modes`` is the number of modular modes used.
+    """
+
+    beta: float
+    resid_beta1: float
+    resid_min: float
+    ts: list
+    g_re: list
+    g_im: list
+    n_modes: int = 0
+
+
+def kms_temperature(eps, occ, *, n_t=9, t_span=2.0, betas=None):
+    """KMS inverse-temperature ``beta`` of a one-particle modular flow from its
+    modular energies ``eps`` and occupations ``occ``.
+
+    For a one-particle modular flow ``sigma_t = e^{iKt}`` with mode modular
+    energies ``eps_k`` and occupations ``n_k``, the (real-field) modular two-point
+    function is
+
+        ``G(t) = sum_k [ (n_k + 1) e^{-i eps_k t} + n_k e^{+i eps_k t} ]``,
+
+    and the Kubo-Martin-Schwinger condition at inverse-temperature ``beta`` is the
+    analyticity / periodicity ``G(t) = G(-t - i*beta)``. The analytic continuation
+    ``t -> -t - i*beta`` reweights the two branches by ``e^{-/+ beta eps_k}``, so
+    the scale-invariant residual
+
+        ``R(beta) = || G(t) - G_cont(-t - i*beta) || / || G(t) ||``
+
+    over a real-time grid has a single sharp minimum at the KMS inverse-
+    temperature. For a SORKIN-JOHNSTON modular flow the SSEE eigenvalues give
+    ``eps_k = ln[mu_k/(mu_k-1)]`` and ``n_k = mu_k - 1`` with ``n_k/(n_k+1) =
+    e^{-eps_k}`` exactly, so ``beta = 1`` to machine precision (KMS at beta=1 in
+    modular-energy units, the Tomita-Takesaki/Casini-Huerta value); the Unruh
+    ``2*pi`` is the conversion to boost-rapidity time, NOT recoverable from the
+    spectrum alone.
+
+    Formula: modular-flow-def, modular-spectrum.
+    Evidence: H6g-1 (core-data/calculations/modular-kms-thermal/calc.py).
+    Conventions: Casini-Huerta 0905.2562 single-mode ``eps = ln[mu/(mu-1)]``,
+    occupation ``n = mu - 1``; KMS condition (Kubo-Martin-Schwinger / Tomita-
+    Takesaki). Modular flow as thermal time: Connes-Rovelli gr-qc/9406019.
+    Bisognano-Wichmann boost / Unruh ``1/2pi`` (1712.04227).
+
+    Args:
+        eps: 1-D array of modular energies ``eps_k > 0`` (e.g.
+            ``ln[mu_k/(mu_k-1)]``), PAIRED with ``occ`` mode by mode.
+        occ: 1-D array of occupations ``n_k >= 0`` (e.g. ``mu_k - 1``).
+        n_t: number of real-modular-time samples for the residual (odd, centred).
+        t_span: half-width of the real-modular-time grid ``[-t_span, t_span]``.
+        betas: optional 1-D grid of candidate ``beta`` (default a fine grid on
+            ``[0.2, 2.0]`` around the SJ value 1).
+
+    Returns:
+        :class:`KMSFit` with ``beta``, ``resid_beta1``, ``resid_min``, the
+        time grid ``ts`` and the two-point ``g_re`` / ``g_im``.
+    """
+    eps = np.asarray(eps, dtype=float)
+    occ = np.asarray(occ, dtype=float)
+    m = np.isfinite(eps) & np.isfinite(occ) & (eps > 0.0) & (occ >= 0.0)
+    eps = eps[m]
+    occ = occ[m]
+    if eps.size < 2:
+        return KMSFit(beta=float("nan"), resid_beta1=float("nan"),
+                      resid_min=float("nan"), ts=[], g_re=[], g_im=[],
+                      n_modes=int(eps.size))
+    ts = np.linspace(-float(t_span), float(t_span), int(n_t))
+
+    def G(t):
+        return np.sum((occ + 1.0) * np.exp(-1j * eps * t)
+                      + occ * np.exp(+1j * eps * t))
+
+    def resid(beta):
+        num = 0.0
+        den = 0.0
+        for t in ts:
+            lhs = G(t)
+            rhs = np.sum((occ + 1.0) * np.exp(+1j * eps * t) * np.exp(-eps * beta)
+                         + occ * np.exp(-1j * eps * t) * np.exp(+eps * beta))
+            num += abs(lhs - rhs) ** 2
+            den += abs(lhs) ** 2
+        return float(np.sqrt(num / den)) if den > 0 else float("inf")
+
+    if betas is None:
+        betas = np.linspace(0.2, 2.0, 181)
+    betas = np.asarray(betas, dtype=float)
+    rr = np.array([resid(b) for b in betas])
+    beta = float(betas[int(np.argmin(rr))])
+    resid_min = float(np.min(rr))
+    resid_b1 = resid(1.0)
+    Gc = np.array([G(t) for t in ts])
+    return KMSFit(beta=beta, resid_beta1=resid_b1, resid_min=resid_min,
+                  ts=ts.tolist(), g_re=np.real(Gc).tolist(),
+                  g_im=np.imag(Gc).tolist(), n_modes=int(eps.size))

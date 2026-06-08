@@ -1,5 +1,7 @@
 # Progress tracker — Theory of Everything
 
+> 🟢 **KOLO 16 — H6g-1 TEPELNÁ/KMS OSA + H6g-4 LAMBDA SHOT-NOISE (PRVNÍ VÝPOČTY 6. GENERACE / 2026-06-08)** — H6g-1 (modular-kms-thermal): SJ modulární tok na 2D Rindlerově slabu je pravý jednoteplotní KMS tok (beta_KMS=1 na strojovou přesnost, reziduum 1.9e-16), occ R2=1.000 přes 8 řádů, rho-invariantní boostová diagonála R2=0.953 CV=2.7 %; non-Rindler kontroly selhávají (R2=0.05/0.09); absolutní Unruhova 2pi NEobnovena (ratio=0.786). VERDIKT F-034: partial — tepelná osa má kvalitativní datovou oporu, kvantitativní Unruh chybí. H6g-4 (lambda-shot-noise): Fanův faktor F=0.9986 +/-0.0112 při 16000 seedech (0.13 sigma od 1), delta_Lambda~V^{-0.484±0.006} (R2=0.999), boost-invariantní Var(N) (max z=0.70), mřížkový kontrast 5.13x; bit-identická reprodukce, 26 s. VERDIKT F-035: supported — Poissonův shot-noise přežívá F-005 na variance/boost-kovariantní ose, mean-prefaktor nevzkříšen. **Testy: 346 passed, 20 skipped, 1 xfailed.** findings.json = 35 nálezů (F-001..F-035). VYPOCET-30 + VYPOCET-31 writeup existují.
+
 > 🟢 **KOLO 15 — H5g-4 SPEKTRÁLNÍ TRIPLE (GO-LIMITED / NO-MATCH METRICKY / 2026-06-08)** — Surogátní spektrální triple z SJ modulárního Hamiltoniánu (D_K=sgn(K)sqrt(|K|)) na 2D slabu (N=1200, 5 seedů): (1) BW boostová struktura reprodukována (lineární diagonála R^2=0.96, robustní) — PASS; (2) Connesova vzdálenost NEsleduje kauzální/geodetickou vzdálenost (korelace 0.10, R^2=0.01, plochá ~2.0–2.5) — NO-MATCH; Weylova dimenze 1.54 pod pásmem [1.7,2.3]; off-diag R^2=0.765 těsně pod prahem. Optimalizátor ověřen (1D řetězec). VERDIKT: korespondence SJ modulární Hamiltonián <-> NCG spektrální triple selhává na METRICKÉ úrovni; boostová/tepelně-časová osa solidní. Hrana causal-sets <-> NCG (connections.json idx 61) INSTANCOVÁNA — zůstává barely, nyní informovaný negativ (F-033). **Testy: 339 passed, 19 skipped, 1 xfailed.** findings.json = 33 nálezů (F-001..F-033). VYPOCET-29 writeup existuje.
 
 > 🟢 **SCALED FRONTA + KOLO 14 (B(a) SPOJITÝ EXPONENT / 4D A_mol KONVENCE VYŘEŠENA / proxy3 DOROZHODNUTA, 2026-06-08)** — Tři výzkumné stopy kola 14: (1) H5g-5 uzavřena — Kerr B(a) je SPOJITÁ funkce strhávání (6.10→2.54, dB/da=-2.20, z=-33.6), konstantní model B=3 zamítnut (chi2/dof~350); BTZ pod Kerr křivkou (F-030). (2) 4D A_mol konvence VYŘEŠENA — rho^1.77 byl kodim-1 artefakt, kodim-2 primitiv dává rho^0.494, ale R'=S_full/A_codim2 driftuje rho^+0.55 — 4D area-zákon genuinně nepřítomný v této konstrukci (F-031). (3) proxy3 dorozhodnuta — 2D-diamant 3/3 při >=30 seedech (VYPOCET-12 8-seedový null reprodukován, upgrade genuinní seed-count efekt; F-032). **Testy: 335 passed, 19 skipped, 1 xfailed.** findings.json = 32 nálezů (F-001..F-032). Web: python3 web/build.py.
@@ -41,6 +43,30 @@
 | 2 | Hledání nenalezených souvislostí (základní research) | ✅ dokončeno | 2026-06-05 | 2026-06-06 |
 
 ## Log
+
+### 2026-06-08 (kolo 16 — první výpočty 6. generace: H6g-1 tepelná/KMS osa + H6g-4 Lambda shot-noise; F-034, F-035)
+
+- **VYPOCET-30 — H6g-1 KMS/tepelná osa causal-sets<->NCG (F-034, partial):**
+  - **Setup:** 2D Rindlerův slab, N=300/600/1200, 5 seedů každý = 15 seedů, runtime 9.9 s (wall cap 25 min).
+  - **KMS test:** beta_KMS = 1.00000 (sd=0 přes všechny seedy), KMS reziduum při beta=1 = 1.9e-16 — strojová přesnost; beta_occ = 1.00000, occ R2 = 1.000000 (Bose-Einstein přes 8 řádů).
+  - **Boostová diagonála:** sklon = 27.84 +/- 1.35, R2 = 0.953, rho-INVARIANTNÍ (CV = 2.7 %).
+  - **Absolutní Unruhova 2pi NENÍ obnovena:** unruh_ratio = 0.786 +/- 0.039 vs 2*pi = 6.283.
+  - **Kontroly selhávají:** interval cut boost R2 = 0.053, shuffle K boost R2 = 0.088 (geometrie kolabuje).
+  - **Lib self-test:** kms_temperature na beta_true=0.7 → beta=0.70 (scan kalibrován).
+  - **F-034** zapsáno: status 'partial', evidence paths ověřeny na disku.
+  - **Hrana causal-sets<->NCG** (connections.json): anotována tepelně-časovým pozitivem (vedle F-033 metrického negativu), rating ponechán barely.
+
+- **VYPOCET-31 — H6g-4 Lambda shot-noise, Poissonova distribuce + boost-invariance (F-035, supported):**
+  - **Setup:** 4D Minkowského box, N ~ Poisson(rho V), 800–16000 seedů, čisté počítání, wall-clock 26 s.
+  - **Fanův faktor:** pooled F = 0.9796 +/- 0.0173 (1.18 sigma od 1); při 16000 seedech F = 0.9986 +/- 0.0112 (0.13 sigma od 1) → Poisson potvrzen.
+  - **delta_Lambda škálování:** p = -0.4840 +/- 0.0061 (R^2 = 0.99936; 2.62 sigma od -1/2), cross-check Var(N)~V^q s q=1.0320+/-0.0122 → V^{-1/2} potvrzeno.
+  - **Boost-invariance:** Var(N) plochá přes rapiditu eta in [0,2], max z-skóre = 0.70; mřížka vs Poisson rozptyl 64.5 % vs 12.6 %, poměr 5.13x.
+  - **Reprodukce:** 0 numerických diff při re-runu (bit-identické, deterministické seedy).
+  - **F-035** zapsáno: status 'supported', evidence paths ověřeny na disku. Mean-prefaktor F-005 nevzkříšen; pozitiv výlučně na ose variance/distribuce + Lorentz-kovariance.
+
+- **findings.json** rozšířen na **35 nálezů** (F-034: H6g-1 tepelná/KMS osa partial; F-035: H6g-4 Lambda shot-noise supported).
+- **Testy: 346 passed, 20 skipped, 1 xfailed v 155 s** (ze 339 kola 15, +7 nových).
+- **BRAINSTORM-06 H6g-1 + H6g-4** anotovány stavovým note. **00-INDEX.md** rozšířen o VYPOCET-30, VYPOCET-31 a calc dirs.
 
 ### 2026-06-08 (kolo 15 — VYPOCET-29: spektrální triple vs. modulární K, H5g-4; F-033)
 

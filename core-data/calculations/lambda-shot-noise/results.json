@@ -1,0 +1,369 @@
+{
+  "calculation": "VYPOCET-31: Lambda shot-noise (Lorentz-invariant counting fluctuation)",
+  "hypothesis": "H6g-4",
+  "reframed_against": "F-005",
+  "date": "2026-06-08",
+  "status": "complete",
+  "convention": "N ~ Poisson(rho*V); Fano F=Var(N)/<N>; delta_Lambda ~ sqrt(Var(N))/V",
+  "f005_reframing": {
+    "f005_refuted": "STRONG form: single shared MEAN prefactor kappa in <Lambda> l_P^2 = kappa/sqrt(V/l_P^4) across Sorkin/EDT/CosMIn (kappa_Sorkin/kappa_EDT = 139.6, ~2.1 orders mismatch).",
+    "f005_did_not_refute": "the VARIANCE / fluctuation spectrum delta_Lambda ~ sqrt(Var(N))/V, nor its boost-covariance. F-005 compared three finished mean-prefactor numbers; it never measured a distribution.",
+    "this_calc_tests": "the variance statistic (Fano=1), its V^{-1/2} scaling, and the Lorentz/boost invariance of Var(N) -- distinct from the mean.",
+    "scope_caveat": "tests the COUNT fluctuation + boost covariance, NOT the full delta_N -> delta_Lambda chain (Sorkin Lambda<->V conjugacy is a separate hypothesis). Necessary, not sufficient, for everpresent-Lambda."
+  },
+  "config": {
+    "seed0": 20260608,
+    "n_seeds": 800,
+    "n_seeds_boost": 250,
+    "half": 0.5,
+    "rho_fano": [
+      50.0,
+      100.0,
+      200.0,
+      500.0,
+      1000.0,
+      2000.0,
+      5000.0,
+      10000.0
+    ],
+    "rho_scaling": 20000.0,
+    "v_fracs": [
+      0.04,
+      0.08,
+      0.16,
+      0.32,
+      0.64,
+      1.0
+    ],
+    "rho_boost": 10000.0,
+    "big_half": 1.4,
+    "inner_half": 0.18,
+    "etas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "wall_cap_s": 900
+  },
+  "host": {
+    "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+    "python": "3.13.13",
+    "numpy": "2.4.4"
+  },
+  "wall_clock_s": 26.32,
+  "poisson_check": {
+    "per_rho": [
+      {
+        "rho": 50.0,
+        "mean_N": 50.05875,
+        "var_N": 49.930211201501876,
+        "fano": 0.99743224114669,
+        "fano_se": 0.04990281106699057,
+        "fano_ci68": [
+          0.9455890178541634,
+          1.0476288295102467
+        ],
+        "expected_var_poisson": 50.05875
+      },
+      {
+        "rho": 100.0,
+        "mean_N": 99.78875,
+        "var_N": 94.3395478723404,
+        "fano": 0.9453926206344945,
+        "fano_se": 0.04729920227705167,
+        "fano_ci68": [
+          0.8957623045627788,
+          0.9897179492976446
+        ],
+        "expected_var_poisson": 99.78875
+      },
+      {
+        "rho": 200.0,
+        "mean_N": 200.82875,
+        "var_N": 203.59641896120152,
+        "fano": 1.0137812387977394,
+        "fano_se": 0.050720772335193655,
+        "fano_ci68": [
+          0.9635184146699737,
+          1.0558001033849471
+        ],
+        "expected_var_poisson": 200.82875
+      },
+      {
+        "rho": 500.0,
+        "mean_N": 500.72125,
+        "var_N": 544.3539909261577,
+        "fano": 1.087139782715748,
+        "fano_se": 0.05439099413700879,
+        "fano_ci68": [
+          1.0317267576607012,
+          1.1433088910979796
+        ],
+        "expected_var_poisson": 500.72125
+      },
+      {
+        "rho": 1000.0,
+        "mean_N": 999.70375,
+        "var_N": 977.4302737797246,
+        "fano": 0.9777199233070043,
+        "fano_se": 0.04891657858696225,
+        "fano_ci68": [
+          0.9248221576653649,
+          1.0240514847524564
+        ],
+        "expected_var_poisson": 999.70375
+      },
+      {
+        "rho": 2000.0,
+        "mean_N": 1997.84875,
+        "var_N": 1902.6842287234044,
+        "fano": 0.9523665035821177,
+        "fano_se": 0.04764811456280098,
+        "fano_ci68": [
+          0.9063223052440231,
+          0.9953997977978598
+        ],
+        "expected_var_poisson": 1997.84875
+      },
+      {
+        "rho": 5000.0,
+        "mean_N": 5002.72375,
+        "var_N": 4679.92984824781,
+        "fano": 0.935476368897605,
+        "fano_se": 0.04680307951652228,
+        "fano_ci68": [
+          0.8853117745364433,
+          0.9819485919537458
+        ],
+        "expected_var_poisson": 5002.72375
+      },
+      {
+        "rho": 10000.0,
+        "mean_N": 10006.8175,
+        "var_N": 9605.068028785983,
+        "fano": 0.9598524234888849,
+        "fano_se": 0.04802264471267919,
+        "fano_ci68": [
+          0.9140907113122962,
+          1.0005415362548316
+        ],
+        "expected_var_poisson": 10006.8175
+      }
+    ],
+    "fano_pooled": 0.9796063904433359,
+    "fano_pooled_se": 0.01734536741097546,
+    "fano_pooled_sigma_from_1": 1.1757381134377052,
+    "fano_convergence_highN": {
+      "rho": 1000.0,
+      "n_seeds": 16000,
+      "fano": 0.9985709906225645,
+      "fano_se": 0.01116471197965785,
+      "sigma_from_1": 0.12799339383220715
+    },
+    "verdict": "Fano consistent with 1 (Poisson); converges to 1 at high seed count"
+  },
+  "deltaLambda_scaling": {
+    "rho": 20000.0,
+    "V": [
+      0.04,
+      0.08,
+      0.16,
+      0.32,
+      0.64,
+      1.0
+    ],
+    "mean_N": [
+      799.635,
+      1600.44375,
+      3201.04875,
+      6403.63625,
+      12800.27625,
+      19998.1525
+    ],
+    "var_N": [
+      742.942953692115,
+      1507.9692975594494,
+      3025.1127643929913,
+      5977.883790675845,
+      13387.311575406758,
+      20259.343423028786
+    ],
+    "deltaLambda": [
+      681.4244976940379,
+      485.4072545231107,
+      343.75640700807486,
+      241.61492378021435,
+      180.78679750163008,
+      142.33532036367075
+    ],
+    "fit_deltaLambda_vs_V": {
+      "exponent_p": -0.4840061708762476,
+      "se": 0.006106391583110201,
+      "r2": 0.9993637158972941,
+      "expected": -0.5,
+      "sigma_from_minus_half": 2.61919480696097
+    },
+    "fit_Var_vs_V": {
+      "exponent_q": 1.0319876582475063,
+      "se": 0.012212783166220521,
+      "r2": 0.9994401172912416,
+      "expected": 1.0
+    },
+    "fit_Var_vs_meanN_slope": 1.0319155207955881,
+    "dimensional_note": "Planck units rho~1 (1 atom/l_P^4); delta_Lambda := delta_N/V = sqrt(rho) V^{-1/2}; for V~H^{-4}, V^{-1/2}~H^2 => delta_Lambda~H^2."
+  },
+  "boost_invariance": {
+    "n_seeds_used": 250,
+    "n_lattice_phases": 120,
+    "inner_half": 0.18,
+    "inner_4volume": 0.016796159999999997,
+    "etas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "poisson": [
+      {
+        "eta": 0.0,
+        "mean_N": 168.868,
+        "var_N": 162.57286746987953,
+        "var_se": 14.570128774622013,
+        "fano": 0.9627215782142238,
+        "fano_se": 0.08628117094193105,
+        "var_over_var0": 1.0
+      },
+      {
+        "eta": 0.25,
+        "mean_N": 168.168,
+        "var_N": 174.30097991967872,
+        "var_se": 15.621227345596543,
+        "fano": 1.0364693634917388,
+        "fano_se": 0.09289060549924208,
+        "var_over_var0": 1.0721406507268016
+      },
+      {
+        "eta": 0.5,
+        "mean_N": 167.864,
+        "var_N": 164.07781526104415,
+        "var_se": 14.705005420753718,
+        "fano": 0.9774449272091941,
+        "fano_se": 0.08760070903084471,
+        "var_over_var0": 1.0092570661672278
+      },
+      {
+        "eta": 0.75,
+        "mean_N": 167.752,
+        "var_N": 160.55672289156624,
+        "var_se": 14.389437576936624,
+        "fano": 0.9571076523175058,
+        "fano_se": 0.08577803887248213,
+        "var_over_var0": 0.9875985174544157
+      },
+      {
+        "eta": 1.0,
+        "mean_N": 167.652,
+        "var_N": 148.83824899598395,
+        "var_se": 13.339202833846334,
+        "fano": 0.88778093309942,
+        "fano_se": 0.07956482972971593,
+        "var_over_var0": 0.915517154321952
+      },
+      {
+        "eta": 1.5,
+        "mean_N": 168.728,
+        "var_N": 150.0943935742972,
+        "var_se": 13.451781202859591,
+        "fano": 0.8895642310363258,
+        "fano_se": 0.07972465271241044,
+        "var_over_var0": 0.9232438100540099
+      },
+      {
+        "eta": 2.0,
+        "mean_N": 168.06,
+        "var_N": 159.51847389558233,
+        "var_se": 14.2963874769597,
+        "fano": 0.949175734235287,
+        "fano_se": 0.08506716337593538,
+        "var_over_var0": 0.9812121566050184
+      }
+    ],
+    "lattice": [
+      {
+        "eta": 0.0,
+        "mean_N": 168.7,
+        "var_over_phase": 1966.6991596638668,
+        "mean_shift_frac": 0.0
+      },
+      {
+        "eta": 0.25,
+        "mean_N": 166.725,
+        "var_over_phase": 1137.7472689075623,
+        "mean_shift_frac": -0.011707172495554205
+      },
+      {
+        "eta": 0.5,
+        "mean_N": 167.36666666666667,
+        "var_over_phase": 1271.9820728291313,
+        "mean_shift_frac": -0.007903576368306547
+      },
+      {
+        "eta": 0.75,
+        "mean_N": 167.35833333333332,
+        "var_over_phase": 1196.4503501400548,
+        "mean_shift_frac": -0.007952973720608587
+      },
+      {
+        "eta": 1.0,
+        "mean_N": 166.91666666666666,
+        "var_over_phase": 1421.7913165266134,
+        "mean_shift_frac": -0.010571033392610146
+      },
+      {
+        "eta": 1.5,
+        "mean_N": 167.99166666666667,
+        "var_over_phase": 1515.4705182072832,
+        "mean_shift_frac": -0.0041987749456628
+      },
+      {
+        "eta": 2.0,
+        "mean_N": 177.20833333333334,
+        "var_over_phase": 13330.082282913152,
+        "mean_shift_frac": 0.05043469670025699
+      }
+    ],
+    "poisson_var_residual_max": 0.084482845678048,
+    "poisson_var_zscore_max": 0.6952807040443473,
+    "poisson_meanshift_max_frac": 0.007200890636473507,
+    "lattice_meanshift_max_frac": 0.05043469670025699,
+    "poisson_perrealization_frac_spread": 0.12577398077840643,
+    "lattice_perphase_frac_spread": 0.6454590882091832,
+    "lattice_over_poisson_spread_ratio": 5.131896789896302,
+    "verdict": "Var(N) boost-invariant for Poisson (Var(eta) z<seed-error); a SINGLE rigid lattice's count is boost-DEPENDENT (per-realization across-eta spread >> Poisson). Poisson covariant, lattice not."
+  },
+  "verdict": {
+    "poisson_fano_eq_1": true,
+    "deltaLambda_scaling_minus_half": true,
+    "boost_invariance_poisson_vs_lattice": true,
+    "correspondence": "survives",
+    "summary": "Shot-noise Lambda FLUCTUATION (variance, not mean) survives in the form F-005 did NOT refute: Fano=1 (Poisson), delta_Lambda~V^{-1/2}, and Var(N) is boost-invariant (Lorentz-covariant) while a lattice is not. Does NOT resurrect the F-005-refuted naive MEAN prefactor; tests the count fluctuation spectrum + boost covariance, a necessary not sufficient condition for everpresent-Lambda.",
+    "budget_hit": false
+  },
+  "files": {
+    "script": "calc.py",
+    "results_json": "results.json",
+    "plots": [
+      "fano_vs_V.png",
+      "deltaLambda_vs_V_loglog.png",
+      "boost_invariance.png"
+    ],
+    "writeup": "VYPOCET-31-lambda-shot-noise.md"
+  }
+}

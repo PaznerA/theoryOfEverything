@@ -63,6 +63,8 @@ SLOW_CALCS = [
     "modular-flow-codim2",
     "ds-entropy-cap",
     "ds-tracial-probe",
+    # round 13 (H6g-4 Lambda shot-noise; lib/toe counting primitives, ~26 s)
+    "lambda-shot-noise",
 ]
 
 # Fields that amplify ulp-level eigh differences across BLAS implementations

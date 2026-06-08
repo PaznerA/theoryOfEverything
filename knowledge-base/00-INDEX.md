@@ -1,7 +1,7 @@
 # Index znalostní báze — Theory of Everything
 
 > Anotovaný rejstřík všech souborů ve `knowledge-base/`, `core-data/` a `verification/`.
-> Generováno: 2026-06-05; aktualizováno: 2026-06-08 (kolo 15: VYPOCET-29, spektrální triple vs. modulární K, H5g-4, F-033).
+> Generováno: 2026-06-05; aktualizováno: 2026-06-08 (kolo 16: VYPOCET-30 KMS/tepelná osa H6g-1 F-034, VYPOCET-31 Lambda shot-noise H6g-4 F-035).
 
 ---
 
@@ -109,6 +109,11 @@
 - [../core-data/open-problems.json](../core-data/open-problems.json) — Registr otevřených problémů: **153 problémů** (+9 fuzzy duplicit k posouzení).
 - [../core-data/connections.json](../core-data/connections.json) — Viz výše.
 
+### Kolo 16 (VYPOCET-30–31)
+
+- [vypocty/VYPOCET-30-modular-kms-thermal.md](vypocty/VYPOCET-30-modular-kms-thermal.md) — KMS/tepelná osa causal-sets<->NCG (H6g-1, F-034): SJ modulární tok na 2D Rindlerově slabu (N=300/600/1200, 15 seedů). beta_KMS=1.00000, KMS reziduum 1.9e-16 (strojová přesnost), occ R2=1.000 přes 8 řádů; rho-invariantní boostová diagonála R2=0.953 CV=2.7 %; non-Rindler kontroly selhávají (interval R2=0.053, shuffle R2=0.088); absolutní Unruhova 2pi NEobnovena (ratio=0.786). VERDIKT: partial — tepelná osa má kvalitativní datovou oporu, kvantitativní Unruh chybí. Data: `core-data/calculations/modular-kms-thermal/`. Knihovna: `lib/toe/spectraltriple.py`. (F-034)
+- [vypocty/VYPOCET-31-lambda-shot-noise.md](vypocty/VYPOCET-31-lambda-shot-noise.md) — Poissonův shot-noise Lambda fluktuace + boost-invariance (H6g-4, F-035): 4D Minkowského box, 800–16000 seedů. Fanův faktor F=0.9986 +/-0.0112 při 16000 seedech (0.13 sigma od 1); delta_Lambda~V^{-0.484±0.006} (R2=0.999); boost-invariantní Var(N) max z=0.70; mřížkový kontrast 5.13x; bit-identická reprodukce. VERDIKT: supported — shot-noise přežívá F-005 na variance/boost-kovariantní ose, mean-prefaktor nevzkříšen. Data: `core-data/calculations/lambda-shot-noise/`. Knihovna: `lib/toe/causet.py`. (F-035)
+
 ### Kolo 15 (VYPOCET-29)
 
 - [vypocty/VYPOCET-29-spectral-triple-modular.md](vypocty/VYPOCET-29-spectral-triple-modular.md) — Spektrální triple vs. SJ modulární Hamiltonián (H5g-4, F-033): surogátní D_K=sgn(K)sqrt(|K|), 2D slab T=0.30, N=1200, 5 seedů. Funkcionální kalkul exaktní (scale=1.0, R^2=1.0). BW boostová diagonála lineární (R^2=0.955, PASS). Off-diag spad log-log R^2=0.765 (pod prahem 0.8). Weylova dimenze 1.54 (pod [1.7,2.3]). **KLÍČOVÝ TEST — Connesova vzdálenost:** Pearson korelace s kauzální vzdáleností = 0.098, R^2=0.0095 — plochost fyzikální (optimalizátor ověřen na 1D řetězci). VERDIKT: **no-match na metrické úrovni**, boostová osa solidní (Connes-Rovelli tepelný čas). Hrana causal-sets <-> NCG instancována jako informovaný negativ. Data: `core-data/calculations/spectral-triple-modular/`. Knihovna: `lib/toe/spectraltriple.py`, test `app/tests/test_toe_spectraltriple.py`. Runtime 327.6 s. (F-033)
@@ -135,7 +140,7 @@
 
 ### Registr nálezů
 
-- [../core-data/findings.json](../core-data/findings.json) — Registr **33 originálních nálezů** (kola 1–15, aktualizováno 2026-06-08): F-001–F-032 viz předchozí kola; **F-033 (VYPOCET-29, kolo 15)** H5g-4 spektrální triple vs. modulární K — surogátní D_K reprodukuje BW boostovou strukturu (R^2=0.955) ale Connesova vzdálenost NEsleduje kauzální vzdálenost (korelace 0.10, R^2=0.01); korespondence SJ modulární Hamiltonián <-> NCG spektrální triple selhává na metrické úrovni; informovaný negativ, hrana causal-sets <-> NCG instancována; **F-030 (VYPOCET-26, kolo 14)** H5g-5 uzavřena; **F-031 (VYPOCET-27, kolo 14)** 4D A_mol konvence ROZHODNUTA; **F-032 (VYPOCET-28, kolo 14)** proxy3 2D diamant dorozhodnuta. Každý nález rozlišuje reprodukci literatury od projektového přínosu.
+- [../core-data/findings.json](../core-data/findings.json) — Registr **35 originálních nálezů** (kola 1–16, aktualizováno 2026-06-08): F-001–F-033 viz předchozí kola; **F-034 (VYPOCET-30, kolo 16)** H6g-1 KMS/tepelná osa — SJ modulární tok na Rindlerově slabu je pravý jednoteplotní KMS tok (beta_KMS=1 strojová přesnost), rho-invariantní boost diagonála R2=0.953, non-Rindler kontroly selhávají; absolutní Unruhova 2pi NEobnovena; partial; **F-035 (VYPOCET-31, kolo 16)** H6g-4 Lambda shot-noise — Fanův faktor F=0.9986, delta_Lambda~V^{-0.484}, boost-invariantní Var(N), mřížkový kontrast 5.13x; supported; F-005-vyvrácený mean-prefaktor nevzkříšen. Každý nález rozlišuje reprodukci literatury od projektového přínosu.
 
 ### Fragmenty pilířů (`core-data/fragments/`)
 
@@ -151,7 +156,7 @@ Osmnáct strojově zpracovatelných JSON fragmentů (koncepty, vzorce, reference
 
 ## Výpočty (`knowledge-base/vypocty/` + `core-data/calculations/`)
 
-Dvacet devět výpočtů dokončeno: čtyři v prvním deep-dive kole, tři v rozhodujícím kole, tři v kolech 3–4, dva v kole 5, dva v kole 6, dva v kole 7, dva v kole 8, dva v kole 9, dva v kole 10, dva v kolech 12–13, tři v kole 14, jeden v kole 15. Každý má writeup v `knowledge-base/vypocty/` a strojová data (calc.py + results.json + plots) v odpovídajícím podadresáři `core-data/calculations/`.
+Třicet jedna výpočtů dokončeno: čtyři v prvním deep-dive kole, tři v rozhodujícím kole, tři v kolech 3–4, dva v kole 5, dva v kole 6, dva v kole 7, dva v kole 8, dva v kole 9, dva v kole 10, dva v kolech 12–13, tři v kole 14, jeden v kole 15, dva v kole 16. Každý má writeup v `knowledge-base/vypocty/` a strojová data (calc.py + results.json + plots) v odpovídajícím podadresáři `core-data/calculations/`.
 
 ### Kolo 1 (VYPOCET-01–04)
 
