@@ -86,6 +86,7 @@ NS = [300, 500, 800, 1200, 1700]
 # fit and shrinks its residual SE -- a confound we record explicitly).
 NS_VYP12 = [400, 600, 800, 1000, 1200, 1500, 1800]
 N_SEEDS_HI = 50          # high-seed run (cap fits well under 20 min)
+N_SEEDS_MID = 30         # mid point (audit M-1): backs the 8 -> 30 -> 50 headline
 N_SEEDS_LO = 8           # VYPOCET-12 reference; first 8 seeds are identical
 # (eps0 for proxy2 pile-up is fixed at 0.5 inside toe.vntype.type_proxies)
 
@@ -280,6 +281,7 @@ def run(n_seeds_hi=N_SEEDS_HI):
             },
             "Ns": NS,
             "n_seeds_hi": int(n_seeds_hi),
+            "n_seeds_mid": N_SEEDS_MID,
             "n_seeds_lo": N_SEEDS_LO,
             "toe_version": getattr(toe, "__version__", None),
         },
@@ -327,18 +329,20 @@ def run(n_seeds_hi=N_SEEDS_HI):
         causet.sprinkle_diamond2d, NS,
         frac=FRAC, n_seeds=n_seeds_hi, seed_base=SEED_BASE)
 
-    # subsample the FIRST 8 seeds (== VYPOCET-12's exact seed subset)
+    # subsample the FIRST 8 / 30 seeds (== VYPOCET-12's exact seed subset prefix)
     p3_lo = proxy3_summary(NS, S_full[:, :N_SEEDS_LO], S_trunc[:, :N_SEEDS_LO])
+    p3_mid = proxy3_summary(NS, S_full[:, :N_SEEDS_MID], S_trunc[:, :N_SEEDS_MID])
     p3_hi = proxy3_summary(NS, S_full, S_trunc)
 
     results["proxy3_seed_comparison"] = {
         "description": (
             "proxy3 = central-sequences / self-averaging. The TRUNCATED SSEE "
             "CV should shrink with N for a type-II factor. Compared at the "
-            "VYPOCET-12 reference seed count (8) vs the high count, both "
-            "subsampled from the SAME deterministic seed stream so the 8-seed "
-            "row is bit-identical to VYPOCET-12's CV(S_trunc)."),
+            "VYPOCET-12 reference seed count (8) vs the mid (30) vs the high "
+            "count, all subsampled from the SAME deterministic seed stream so "
+            "the 8-seed row is bit-identical to VYPOCET-12's CV(S_trunc)."),
         "low_seed": p3_lo,
+        "mid_seed": p3_mid,
         "high_seed": p3_hi,
         "decision": {
             "factor_like_low": p3_lo["factor_like"],
@@ -358,18 +362,23 @@ def run(n_seeds_hi=N_SEEDS_HI):
         frac=FRAC, n_seeds=n_seeds_hi, seed_base=SEED_BASE)
     p3_vyp12_lo = proxy3_summary(
         NS_VYP12, Sf12[:, :N_SEEDS_LO], St12[:, :N_SEEDS_LO])
+    p3_vyp12_mid = proxy3_summary(
+        NS_VYP12, Sf12[:, :N_SEEDS_MID], St12[:, :N_SEEDS_MID])
     p3_vyp12_hi = proxy3_summary(NS_VYP12, Sf12, St12)
     results["proxy3_vyp12_grid_crosscheck"] = {
         "description": (
             "SAME proxy3 on VYPOCET-12's EXACT 7-point grid [400..1800] to "
             "separate the seed-count effect from the N-grid choice. The 8-seed "
             "row here is the genuine VYPOCET-12 comparison; on THIS grid proxy3 "
-            "was nonsignificant at 8 seeds and the high-seed run is the honest "
-            "decider. The new 5-point grid (300..1700) is more log-uniform and "
-            "starts lower, so it sharpens the fit and inflates the 8-seed "
-            "t-stat -- which is why this cross-check is reported alongside."),
+            "was nonsignificant at 8 seeds, crosses significance at the mid (30) "
+            "seed count, and the high-seed run is the honest decider. The new "
+            "5-point grid (300..1700) is more log-uniform and starts lower, so "
+            "it sharpens the fit and inflates the 8-seed t-stat -- which is why "
+            "this cross-check is reported alongside. The mid_seed (30) row is the "
+            "committed raw backing for the headline 8 -> 30 -> 50 upgrade."),
         "Ns": NS_VYP12,
         "low_seed": p3_vyp12_lo,
+        "mid_seed": p3_vyp12_mid,
         "high_seed": p3_vyp12_hi,
     }
     atomic_write_json(os.path.join(OUTDIR, "results.json"), results)
@@ -423,6 +432,7 @@ def run(n_seeds_hi=N_SEEDS_HI):
         "proxy3_sig_newgrid_8seed": bool(p3_lo["trunc_trend_significant"]),
         "proxy3_sig_newgrid_hiseed": bool(p3_hi["trunc_trend_significant"]),
         "proxy3_sig_vyp12grid_8seed": bool(p3_vyp12_lo["trunc_trend_significant"]),
+        "proxy3_sig_vyp12grid_30seed": bool(p3_vyp12_mid["trunc_trend_significant"]),
         "proxy3_sig_vyp12grid_hiseed": bool(p3_vyp12_hi["trunc_trend_significant"]),
         "genuine_seed_count_upgrade_on_original_grid": genuine_seed_upgrade,
         "twoD_verdict": verdict_2d,

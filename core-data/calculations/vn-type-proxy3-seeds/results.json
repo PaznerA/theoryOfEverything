@@ -20,6 +20,7 @@
       1700
     ],
     "n_seeds_hi": 50,
+    "n_seeds_mid": 30,
     "n_seeds_lo": 8,
     "toe_version": "0.3.0"
   },
@@ -117,7 +118,7 @@
     }
   },
   "proxy3_seed_comparison": {
-    "description": "proxy3 = central-sequences / self-averaging. The TRUNCATED SSEE CV should shrink with N for a type-II factor. Compared at the VYPOCET-12 reference seed count (8) vs the high count, both subsampled from the SAME deterministic seed stream so the 8-seed row is bit-identical to VYPOCET-12's CV(S_trunc).",
+    "description": "proxy3 = central-sequences / self-averaging. The TRUNCATED SSEE CV should shrink with N for a type-II factor. Compared at the VYPOCET-12 reference seed count (8) vs the mid (30) vs the high count, all subsampled from the SAME deterministic seed stream so the 8-seed row is bit-identical to VYPOCET-12's CV(S_trunc).",
     "low_seed": {
       "n_seeds": 8,
       "Ns": [
@@ -151,6 +152,44 @@
       ],
       "cv_slope_boot_std": 0.22616374680225684,
       "cv_slope_intercept": 1.2571127462864864,
+      "trunc_is_self_averaging": true,
+      "trunc_trend_decreasing": true,
+      "trunc_trend_significant": true,
+      "factor_like": true
+    },
+    "mid_seed": {
+      "n_seeds": 30,
+      "Ns": [
+        300,
+        500,
+        800,
+        1200,
+        1700
+      ],
+      "cv_trunc": [
+        0.08364290689170417,
+        0.06403684691044875,
+        0.04804770790021556,
+        0.048457747365581574,
+        0.046750008213767395
+      ],
+      "cv_full": [
+        0.0890486891315117,
+        0.06126450624785763,
+        0.05009278486150746,
+        0.04054804912291168,
+        0.029044538884449928
+      ],
+      "cv_trunc_largest_N": 0.046750008213767395,
+      "cv_slope_powerlaw": -0.3413018750343741,
+      "cv_slope_se": 0.07740892814287167,
+      "cv_slope_t_stat": 4.409076358794711,
+      "cv_slope_ci68_bootstrap": [
+        -0.4513302088430731,
+        -0.24446762925950413
+      ],
+      "cv_slope_boot_std": 0.10575081135857181,
+      "cv_slope_intercept": -0.6094459383072672,
       "trunc_is_self_averaging": true,
       "trunc_trend_decreasing": true,
       "trunc_trend_significant": true,
@@ -203,7 +242,7 @@
     }
   },
   "proxy3_vyp12_grid_crosscheck": {
-    "description": "SAME proxy3 on VYPOCET-12's EXACT 7-point grid [400..1800] to separate the seed-count effect from the N-grid choice. The 8-seed row here is the genuine VYPOCET-12 comparison; on THIS grid proxy3 was nonsignificant at 8 seeds and the high-seed run is the honest decider. The new 5-point grid (300..1700) is more log-uniform and starts lower, so it sharpens the fit and inflates the 8-seed t-stat -- which is why this cross-check is reported alongside.",
+    "description": "SAME proxy3 on VYPOCET-12's EXACT 7-point grid [400..1800] to separate the seed-count effect from the N-grid choice. The 8-seed row here is the genuine VYPOCET-12 comparison; on THIS grid proxy3 was nonsignificant at 8 seeds, crosses significance at the mid (30) seed count, and the high-seed run is the honest decider. The new 5-point grid (300..1700) is more log-uniform and starts lower, so it sharpens the fit and inflates the 8-seed t-stat -- which is why this cross-check is reported alongside. The mid_seed (30) row is the committed raw backing for the headline 8 -> 30 -> 50 upgrade.",
     "Ns": [
       400,
       600,
@@ -256,6 +295,50 @@
       "trunc_trend_decreasing": true,
       "trunc_trend_significant": false,
       "factor_like": false
+    },
+    "mid_seed": {
+      "n_seeds": 30,
+      "Ns": [
+        400,
+        600,
+        800,
+        1000,
+        1200,
+        1500,
+        1800
+      ],
+      "cv_trunc": [
+        0.06734277258047705,
+        0.05548497615059576,
+        0.04804770790021556,
+        0.044505972352992335,
+        0.048457747365581574,
+        0.056161972120771696,
+        0.04455443702301139
+      ],
+      "cv_full": [
+        0.08408679320710132,
+        0.046813954247703536,
+        0.05009278486150746,
+        0.04073310492573735,
+        0.04054804912291168,
+        0.03273163189871905,
+        0.03367519036122625
+      ],
+      "cv_trunc_largest_N": 0.04455443702301139,
+      "cv_slope_powerlaw": -0.19798407797814196,
+      "cv_slope_se": 0.0922506136980164,
+      "cv_slope_t_stat": 2.1461545895645253,
+      "cv_slope_ci68_bootstrap": [
+        -0.2945808118454242,
+        -0.11161864330460748
+      ],
+      "cv_slope_boot_std": 0.09346778633215863,
+      "cv_slope_intercept": -1.610788410840039,
+      "trunc_is_self_averaging": true,
+      "trunc_trend_decreasing": true,
+      "trunc_trend_significant": true,
+      "factor_like": true
     },
     "high_seed": {
       "n_seeds": 50,
@@ -313,9 +396,10 @@
     "proxy3_sig_newgrid_8seed": true,
     "proxy3_sig_newgrid_hiseed": true,
     "proxy3_sig_vyp12grid_8seed": false,
+    "proxy3_sig_vyp12grid_30seed": true,
     "proxy3_sig_vyp12grid_hiseed": true,
     "genuine_seed_count_upgrade_on_original_grid": true,
     "twoD_verdict": "3/3 -- proxy3 (self-averaging) is SIGNIFICANT at high seed on BOTH the new grid and VYPOCET-12's original grid; the 2D diamond now passes all three proxies. CAVEAT: on the original grid proxy3 was nonsignificant at 8 seeds (the genuine seed-count upgrade); the new 5-point grid inflates the low-seed t-stat, so the headline is the high-seed multi-grid agreement, NOT the new-grid 8-seed number."
   },
-  "runtime_s": 1068.179498910904
+  "runtime_s": 909.4005870819092
 }

@@ -45,7 +45,7 @@ Tento výpočet **instancuje** přesně tuto datovou hranu: vezme SJ jednočást
 
 ### (1) Spektrum: funkcionální kalkul exaktní (konzistenční kontrola)
 
-Z konstrukce $\mathrm{spec}(D_K)=\mathrm{sgn}(\lambda_K)\sqrt{|\lambda_K|}$ a $D_K^2=|K|$: best-fit škála $\mathrm{spec}(D_K)^2 / |K| = 1{,}0000$, match $R^2=1{,}0000$, rel. reziduum $\sim10^{-16}$. To je triviální (z definice), slouží jako sanity check symetrického funkcionálního kalkulu, **ne** jako volný test.
+Z konstrukce $\mathrm{spec}(D_K)=\mathrm{sgn}(\lambda_K)\sqrt{|\lambda_K|}$ a $D_K^2=|K|$: best-fit škála $\mathrm{spec}(D_K)^2 / |K| = 1{,}0000$, match $R^2=1{,}0000$, rel. reziduum $\sim10^{-15}$ (raw `spec_rel_resid_mean`$=1{,}8\times10^{-15}$). To je triviální (z definice), slouží jako sanity check symetrického funkcionálního kalkulu, **ne** jako volný test.
 
 ### (2) Lokalita $K$ na slabu — boost ANO, off-diagonála hraničně lokální
 
