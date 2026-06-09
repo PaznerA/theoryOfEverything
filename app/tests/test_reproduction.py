@@ -30,7 +30,7 @@ import pytest
 REPO = Path(__file__).resolve().parents[2]
 CALC = REPO / "core-data" / "calculations"
 TMP = Path("/tmp/qg-repro-test")
-TIMING_FIELDS = ("runtime_s", "timing_s")
+TIMING_FIELDS = ("runtime_s", "timing_s", "elapsed_s", "wall_clock")
 
 # Sub-second calculations, safe to run on every test invocation.
 FAST_CALCS = [
@@ -69,6 +69,10 @@ SLOW_CALCS = [
     "ds-conformal-4d",
     # round 17 (H6g-6 codim-2 molecule FLUCTUATION; pure counting, no eigh, ~9 min)
     "ds-molecule-fluctuation",
+    # rounds 14-19 numerical-coverage backfill (lib/toe-based, deterministic seeds)
+    "modular-kms-thermal",     # F-034, ~10 s
+    "ncg-kms-unruh",           # F-036, ~54 s
+    "index-charge-discrete",   # H-E probe, ~56 s
 ]
 
 # Fields that amplify ulp-level eigh differences across BLAS implementations
