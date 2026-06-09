@@ -77,7 +77,14 @@ SLOW_CALCS = [
     "ncg-kms-unruh",           # F-036, ~54 s
     "index-charge-discrete",   # H-E probe, ~56 s
     "amol-anomaly-ee-coeff",   # F-039 (H-B), ~4 min
-    "spectral-triple-modular", # F-033, ~5.5 min
+    "spectral-triple-modular", # F-033, ~5.5 min (Connes pass now deterministic)
+    "sj-kerr-b-scan",          # F-030, ~12.6 min
+    "vn-type-proxy3-seeds",    # F-032, ~15 min
+    # ds-amol-convention is intentionally EXCLUDED: it re-analyses staged cloud
+    # artifacts in compute/results-archive/ (resolved __file__-relative 3 levels
+    # above the calc dir), which are absent from the isolated /tmp sandbox. The
+    # underlying scaled GH-Actions runs were cross-HW verified separately
+    # (reports/2026-06-07-cross-hw.md); this calc is a re-analysis, not a fresh run.
 ]
 
 # Fields that amplify ulp-level eigh differences across BLAS implementations
