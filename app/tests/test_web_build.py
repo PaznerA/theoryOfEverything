@@ -386,9 +386,9 @@ def test_graph_data_includes_predicted_edges(built_site):
 
 
 def test_graph_page_references_cdn_and_data_file(built_site):
-    """The page loads the force-graph CDN lib and points at its data file."""
+    """The page loads the 3D force-graph CDN lib and points at its data file."""
     html = _read(os.path.join(built_site, "data", "graph.html"))
-    assert "unpkg.com/force-graph" in html, "force-graph CDN not referenced"
+    assert "unpkg.com/3d-force-graph" in html, "3d-force-graph CDN not referenced"
     assert "graph-data.json" in html, "graph data file not referenced"
     # The data href must be RELATIVE (file:// + subpath safe), never absolute.
     m = re.search(r'DATA_URL = "([^"]+)"', html)
@@ -439,6 +439,45 @@ def test_graph_modal_and_payload_maps(built_site):
         if slug is not None:
             assert slug in payload["references"], \
                 f"refSlug {slug} not in references map"
+
+
+def test_graph_payload_has_derivation_depth_axis(built_site):
+    """The 3D view's Z axis: every node carries a depth in [0,1] + a band index,
+    and the payload exposes the depth-band labels and their provenance."""
+    with open(os.path.join(built_site, "assets", "graph-data.json"),
+              encoding="utf-8") as fh:
+        payload = json.load(fh)
+
+    bands = payload.get("depthBands")
+    assert isinstance(bands, list) and bands, "depthBands metadata missing"
+    n_bands = len(bands)
+    assert payload.get("depthSource") in ("override", "provisional-heuristic")
+
+    layers_seen = set()
+    for n in payload["nodes"]:
+        d = n.get("depth")
+        assert isinstance(d, (int, float)) and 0.0 <= d <= 1.0, \
+            f"node {n['id']} depth out of range: {d!r}"
+        lay = n.get("layer")
+        assert isinstance(lay, int) and 0 <= lay < n_bands, \
+            f"node {n['id']} layer out of range: {lay!r}"
+        layers_seen.add(lay)
+    # A meaningful stratification actually uses several distinct bands.
+    assert len(layers_seen) >= 3, f"depth collapsed into {len(layers_seen)} band(s)"
+
+
+def test_graph_page_is_3d_with_depth_controls(built_site):
+    """The graph page is the 3D app: Three.js force-graph + depth-mode control."""
+    html = _read(os.path.join(built_site, "data", "graph.html"))
+    assert "ForceGraph3D" in html, "3D graph constructor not used"
+    assert 'id="g3d-depthmode"' in html, "depth-mode control missing"
+    assert 'id="g3d-fs"' in html, "fullscreen control missing"
+    # The node-click modal must live INSIDE the stage so it shows in fullscreen:
+    # the stage opens before the modal, and the muted help <p> closes after both.
+    assert 'id="graph-modal"' in html
+    assert html.index('class="g3d-stage"') < html.index('id="graph-modal"') \
+        < html.index('<p class="muted"'), \
+        "modal must be nested inside the 3D stage (for fullscreen rendering)"
 
 
 def test_formulas_page_is_a_tree_with_reference_links(built_site):

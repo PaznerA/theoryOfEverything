@@ -213,6 +213,33 @@ def load_link_predictions(repo_root: str) -> dict | None:
         return json.load(fh)
 
 
+def load_concept_depth(repo_root: str) -> dict | None:
+    """Curated derivation-depth overrides, or None if not yet authored.
+
+    The 3D concept-graph view positions nodes on a Z (depth) axis running from
+    *synthesis* (front, near the viewer — the aspirational "TOE" apex) back to
+    *foundational structures* (far — basic mathematical primitives/axioms).
+    Until a curated ``core-data/concept-depth.json`` exists we derive a
+    provisional depth heuristically (see :func:`provisional_depths`); this loader
+    is the clean swap-point for the eventual authoritative data.
+
+    Expected shape (all keys optional, depth a float in ``[0, 1]`` where
+    ``0`` = front/synthesis, ``1`` = far/foundational)::
+
+        {"meta": {...}, "depths": {"holographic-principle": 0.12, ...}}
+    """
+    path = os.path.join(repo_root, CORE, "concept-depth.json")
+    if not os.path.isfile(path):
+        return None
+    with open(path, encoding="utf-8") as fh:
+        data = json.load(fh)
+    if isinstance(data, dict) and isinstance(data.get("depths"), dict):
+        return data["depths"]
+    if isinstance(data, dict):
+        return {k: v for k, v in data.items() if isinstance(v, (int, float))}
+    return None
+
+
 # --------------------------------------------------------------------------
 # Force-directed graph payload (web/dist/assets/graph-data.json)
 # --------------------------------------------------------------------------
@@ -246,6 +273,100 @@ DEFAULT_PILLAR_COLOR = "#9aa0a6"
 def _primary_pillar(pillars: list[str]) -> str:
     """The pillar used for node coloring: first listed (deterministic)."""
     return pillars[0] if pillars else "_none"
+
+
+# --------------------------------------------------------------------------
+# Derivation-depth (Z axis of the 3D concept-graph view)
+# --------------------------------------------------------------------------
+
+# Front (layer 0, near the viewer) -> far (last layer). Labels are provisional
+# and describe the *intended* stratification: the aspirational "TOE" apex /
+# synthesis is nearest, basic mathematical structures recede into the distance.
+# A future curated core-data/concept-depth.json supersedes the heuristic that
+# assigns nodes to these bands (see load_concept_depth / provisional_depths).
+DEPTH_BANDS = [
+    "Syntéza (← TOE)",
+    "Pilíře a rámce",
+    "Mosty mezi přístupy",
+    "Mechanismy",
+    "Stavební bloky",
+    "Základní struktury · axiomy",
+]
+N_DEPTH_BANDS = len(DEPTH_BANDS)
+
+
+def _percentile_ranks(values: dict[str, float]) -> dict[str, float]:
+    """Map ``{id: value}`` to ``{id: rank in [0, 1]}`` (0 = lowest value).
+
+    Deterministic on ties (secondary sort by id). Spreads a skewed degree
+    distribution evenly across the axis so strata stay visually legible.
+    """
+    order = sorted(values, key=lambda k: (values[k], k))
+    n = len(order)
+    if n <= 1:
+        return {k: 0.0 for k in values}
+    return {k: i / (n - 1) for i, k in enumerate(order)}
+
+
+def provisional_depths(
+    raw_nodes: list[dict],
+    neighbors: dict[str, set[str]],
+    override: dict | None = None,
+) -> dict[str, float]:
+    """Provisional per-node derivation depth in ``[0, 1]`` (0 front, 1 far).
+
+    Heuristic, honest, and deterministic — a stand-in until depth is curated.
+    A node is pulled *forward* (toward synthesis / the TOE apex) the more it
+    behaves like a unifying hub, and *back* (toward foundational structures)
+    the more peripheral it is:
+
+    * ``degRank``   — percentile of undirected degree (connectivity / centrality);
+    * ``crossRank`` — percentile of the number of distinct pillars reachable in
+      the closed neighbourhood (breadth of unification across approaches).
+
+    ``synthesis = 0.6·degRank + 0.4·crossRank``; ``depth = 1 − synthesis``.
+    Node ``type`` then nudges the result: ``pillar`` frames pull slightly
+    forward, underdeveloped ``stub`` nodes are pushed back. Any id present in
+    ``override`` takes that curated value verbatim (clamped to ``[0, 1]``).
+    """
+    pillars_by_id = {n["id"]: set(n.get("pillars") or []) for n in raw_nodes}
+
+    degree = {n["id"]: len(neighbors.get(n["id"], ())) for n in raw_nodes}
+    cross = {}
+    for n in raw_nodes:
+        nid = n["id"]
+        reach = set(pillars_by_id.get(nid, ()))
+        for m in neighbors.get(nid, ()):
+            reach |= pillars_by_id.get(m, set())
+        cross[nid] = float(len(reach))
+
+    deg_rank = _percentile_ranks(degree)
+    cross_rank = _percentile_ranks(cross)
+
+    out: dict[str, float] = {}
+    for n in raw_nodes:
+        nid = n["id"]
+        if override and nid in override:
+            try:
+                out[nid] = min(1.0, max(0.0, float(override[nid])))
+                continue
+            except (TypeError, ValueError):
+                pass
+        synthesis = 0.6 * deg_rank[nid] + 0.4 * cross_rank[nid]
+        depth = 1.0 - synthesis
+        ntype = n.get("type", "concept")
+        if ntype == "pillar":
+            depth *= 0.78                      # named frameworks sit forward
+        elif ntype == "stub":
+            depth = 0.55 * depth + 0.45        # underdeveloped -> recede
+        out[nid] = min(1.0, max(0.0, depth))
+    return out
+
+
+def _layer_for(depth: float) -> int:
+    """Quantise a continuous depth in ``[0, 1]`` into a band index."""
+    idx = int(round(depth * (N_DEPTH_BANDS - 1)))
+    return min(N_DEPTH_BANDS - 1, max(0, idx))
 
 
 def build_graph_payload(repo_root: str) -> dict:
@@ -318,6 +439,10 @@ def build_graph_payload(repo_root: str) -> dict:
 
     references_map = {slug: ref_index[slug] for slug in used_ref_slugs}
 
+    # Derivation-depth (Z axis): curated override if present, else provisional.
+    depth_override = load_concept_depth(repo_root)
+    depths = provisional_depths(raw_nodes, neighbors, depth_override)
+
     nodes_out: list[dict] = []
     for n in raw_nodes:
         nid = n["id"]
@@ -326,6 +451,7 @@ def build_graph_payload(repo_root: str) -> dict:
         definition = (n.get("definition") or "").strip()
         if len(definition) > 600:
             definition = definition[:597] + "…"
+        depth = round(depths.get(nid, 0.5), 4)
         nodes_out.append({
             "id": nid,
             "name": n.get("name", nid),
@@ -335,6 +461,9 @@ def build_graph_payload(repo_root: str) -> dict:
             "group": primary,
             "color": PILLAR_COLORS.get(primary, DEFAULT_PILLAR_COLOR),
             "definition": definition,
+            # Z-axis position: 0 = front (synthesis / TOE), 1 = far (foundations).
+            "depth": depth,
+            "layer": _layer_for(depth),
             # Up to 12 formulas stem-matched to this concept (longest-stem first).
             "formulaIds": concept_formulas.get(nid, [])[:12],
         })
@@ -380,6 +509,11 @@ def build_graph_payload(repo_root: str) -> dict:
         "edgeCount": sum(1 for e in edges_out if not e["predicted"]),
         "predicted": predicted_meta,
         "legend": legend,
+        # Z-axis (derivation depth) metadata for the 3D view's strata + ruler.
+        "depthSource": "override" if depth_override else "provisional-heuristic",
+        "depthBands": [
+            {"layer": i, "label": label} for i, label in enumerate(DEPTH_BANDS)
+        ],
         "nodes": nodes_out,
         "links": edges_out,
         # Self-contained lookups for the node-click modal: every formula

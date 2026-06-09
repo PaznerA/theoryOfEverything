@@ -1,207 +1,488 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Graf konceptů ({{ node_count }} uzlů, {{ edge_count }} hran)</h1>
-<p class="lead">Interaktivní silově řízený pohled na konceptuální graf
-(<code>core-data/concept-graph.json</code>). Velikost uzlu ~ stupeň, barva podle
-primárního pilíře. Styl hrany podle ratingu <em>explored</em>.
+<h1>Graf konceptů — 3D ({{ node_count }} uzlů, {{ edge_count }} hran)</h1>
+<p class="lead">Prostorový pohled na konceptuální graf
+(<code>core-data/concept-graph.json</code>). <strong>Osa hloubky (Z)</strong> řadí
+uzly podle odvozenosti: vepředu syntéza (teoretický vrchol <em>TOE</em>), směrem
+do dálky se vzdalují jednodušší struktury až k základním stavebním blokům. Barva
+podle pilíře, velikost ~ stupeň, hrany podle ratingu <em>explored</em>
+(<em>barely</em> = lovná zóna, jemně pulzuje).
 {%- if predicted.available %}
-Předpovězené kandidátní hrany (link prediction, AUC ≈ {{ '%.2f'|format(predicted.auc) }},
-{{ predicted.count }} hran) jsou zvýrazněny zvlášť — jsou to <strong>návrhy</strong>,
-ne fakta.
+Predikované hrany (link prediction, AUC ≈ {{ '%.2f'|format(predicted.auc) }},
+{{ predicted.count }}) jsou <strong>návrhy</strong>, ne fakta — zapni je v ovládání.
 {%- endif %}
 </p>
 
-<div class="graph-controls" id="graph-controls">
-  <div class="gc-row">
-    <input type="search" id="graph-search" placeholder="Hledat uzel…"
-           autocomplete="off" aria-label="Hledat uzel">
-    <label class="gc-inline">Pilíř:
-      <select id="graph-pillar"><option value="">— všechny —</option></select>
-    </label>
+<!-- Web fonts (display + instrument mono) for the 3D console; graceful fallback
+     to system fonts when offline / file://. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<!-- Self-contained stage: ALL overlays (console, ruler, tooltip, modal) live
+     inside it so they keep rendering when the stage goes fullscreen. -->
+<div class="g3d-stage" id="g3d-stage">
+  <div id="g3d-canvas" class="g3d-canvas" role="img"
+       aria-label="3D graf konceptů"></div>
+
+  <div class="g3d-loading" id="g3d-loading">Načítám 3D scénu…</div>
+
+  <!-- Top-left instrument console. -->
+  <div class="g3d-console" id="g3d-console">
+    <div class="g3d-console-head">
+      <span class="g3d-title">KONCEPTUÁLNÍ KOSMOS</span>
+      <button class="g3d-collapse" id="g3d-collapse" title="Sbalit / rozbalit"
+              aria-label="Sbalit ovládání">–</button>
+    </div>
+    <div class="g3d-console-body" id="g3d-console-body">
+      <input type="search" id="g3d-search" class="g3d-input"
+             placeholder="Hledat uzel… (Enter = letět k)" autocomplete="off"
+             aria-label="Hledat uzel">
+      <div class="g3d-field">
+        <label for="g3d-pillar">Pilíř</label>
+        <select id="g3d-pillar"><option value="">— všechny —</option></select>
+      </div>
+      <div class="g3d-field">
+        <label for="g3d-depthmode">Hloubka</label>
+        <select id="g3d-depthmode">
+          <option value="layers" selected>Vrstvy (stratifikace)</option>
+          <option value="free">Volné 3D</option>
+          <option value="flat">Ploše (2D)</option>
+        </select>
+      </div>
+      <div class="g3d-toggles" id="g3d-explored-toggles">
+        <span class="g3d-toggles-label">Hrany</span>
+        <label><input type="checkbox" data-explored="well" checked><i class="dot dot-well"></i>well</label>
+        <label><input type="checkbox" data-explored="partially" checked><i class="dot dot-part"></i>partially</label>
+        <label><input type="checkbox" data-explored="barely" checked><i class="dot dot-bare"></i>barely</label>
+        <label><input type="checkbox" data-explored="unrated" checked><i class="dot dot-un"></i>bez ratingu</label>
+        {%- if predicted.available %}
+        <label><input type="checkbox" data-explored="predicted"><i class="dot dot-pred"></i>predikce</label>
+        {%- endif %}
+      </div>
+      <details class="g3d-legend">
+        <summary>Legenda pilířů</summary>
+        <ul id="g3d-pillar-legend"></ul>
+      </details>
+    </div>
   </div>
-  <div class="gc-row gc-toggles" id="graph-explored-toggles">
-    <span class="gc-label">Hrany:</span>
-    <label><input type="checkbox" data-explored="well" checked> <span class="leg solid"></span> well</label>
-    <label><input type="checkbox" data-explored="partially" checked> <span class="leg dashed"></span> partially</label>
-    <label><input type="checkbox" data-explored="barely" checked> <span class="leg dotted"></span> barely</label>
-    <label><input type="checkbox" data-explored="unrated" checked> <span class="leg faint"></span> bez ratingu</label>
-    {%- if predicted.available %}
-    <label><input type="checkbox" data-explored="predicted"> <span class="leg pred"></span> predikované</label>
-    {%- endif %}
+
+  <!-- Top-right tool buttons. -->
+  <div class="g3d-tools" id="g3d-tools">
+    <button id="g3d-spin"  class="g3d-btn" title="Automatická rotace">⟳ rotace</button>
+    <button id="g3d-reset" class="g3d-btn" title="Srovnat kameru">⊹ srovnat</button>
+    <button id="g3d-fs"    class="g3d-btn" title="Celá obrazovka">⛶ fullscreen</button>
+  </div>
+
+  <!-- Depth-axis orientation key (right edge). -->
+  <div class="g3d-axis" id="g3d-axis" aria-hidden="true">
+    <div class="g3d-axis-cap top">vepředu</div>
+    <div class="g3d-axis-bar"><ul id="g3d-axis-bands"></ul></div>
+    <div class="g3d-axis-cap bot">v dáli</div>
+    <div class="g3d-axis-src" id="g3d-axis-src"></div>
+  </div>
+
+  <!-- Node-click modal (inside the stage so it shows in fullscreen). -->
+  <div id="graph-modal" class="graph-modal" hidden>
+    <div class="gm-backdrop" id="gm-backdrop"></div>
+    <div class="gm-card" role="dialog" aria-modal="true" aria-labelledby="gm-name" tabindex="-1">
+      <button class="gm-close" id="gm-close" aria-label="Zavřít">×</button>
+      <h2 id="gm-name">—</h2>
+      <p class="gm-meta"><span id="gm-degree"></span> · <span id="gm-pillars"></span> · <span id="gm-depth"></span></p>
+      <p id="gm-def" class="gm-def"></p>
+      <section class="gm-section">
+        <h3>Nejsilnější vazby</h3>
+        <ul id="gm-links" class="gp-links"></ul>
+      </section>
+      <section class="gm-section" id="gm-formulas-section" hidden>
+        <h3>Vzorce ke konceptu</h3>
+        <div id="gm-formulas" class="gm-formulas"></div>
+      </section>
+    </div>
   </div>
 </div>
 
-<div class="graph-stage">
-  <div id="graph-canvas" class="graph-canvas" role="img"
-       aria-label="Silově řízený graf konceptů"></div>
-</div>
-
-<!-- Centered modal opened on node-click (backdrop + card). -->
-<div id="graph-modal" class="graph-modal" hidden>
-  <div class="gm-backdrop" id="gm-backdrop"></div>
-  <div class="gm-card" role="dialog" aria-modal="true" aria-labelledby="gm-name" tabindex="-1">
-    <button class="gm-close" id="gm-close" aria-label="Zavřít">×</button>
-    <h2 id="gm-name">—</h2>
-    <p class="gm-meta"><span id="gm-degree"></span> · <span id="gm-pillars"></span></p>
-    <p id="gm-def" class="gm-def"></p>
-    <section class="gm-section">
-      <h3>Nejsilnější vazby</h3>
-      <ul id="gm-links" class="gp-links"></ul>
-    </section>
-    <section class="gm-section" id="gm-formulas-section" hidden>
-      <h3>Vzorce ke konceptu</h3>
-      <div id="gm-formulas" class="gm-formulas"></div>
-    </section>
-  </div>
-</div>
-
-<p class="muted">Tip: kolečkem zoom, tažením posun. Klik na uzel otevře modal
-s vazbami a vzorci (proklik na referenci). Zavřít: ×, klik mimo, nebo Esc.
-Stránka je samostatná (CDN <code>force-graph</code> + <code>KaTeX</code>),
-funguje z <code>file://</code> i pod libovolnou pod-cestou.</p>
+<p class="muted">Ovládání: tažením otáčíš, kolečkem zoom, pravým tlačítkem posun.
+Najetím na uzel se zvýrazní sousedé (konec „pixel-huntu"), klik otevře detail
+s vazbami a vzorci (proklik na referenci). Stránka je samostatná
+(CDN <code>3d-force-graph</code> + <code>KaTeX</code>), funguje z <code>file://</code>
+i pod libovolnou pod-cestou.</p>
 
 <noscript><p class="muted">Tento pohled vyžaduje JavaScript.</p></noscript>
 
-<!-- Graph data is loaded via a <script src> (not fetch) so the page works from
-     file:// as well as any subpath; the JSON twin lives at {{ data_href }}. -->
+<!-- Graph data via <script src> (not fetch) so the page works from file://. -->
 <script src="{{ data_js_href }}"></script>
-<!-- force-graph (canvas renderer) from unpkg CDN — same pattern as KaTeX. -->
-<script defer src="https://unpkg.com/force-graph@1.43.4/dist/force-graph.min.js"
+<!-- 3d-force-graph (Three.js, self-contained UMD) from unpkg CDN. -->
+<script defer src="https://unpkg.com/3d-force-graph@1.80.0/dist/3d-force-graph.min.js"
         crossorigin="anonymous"></script>
-<!-- KaTeX for the modal's "Vzorce ke konceptu" section (same CDN as base.html).
-     This page is built with math=False, so KaTeX is loaded here explicitly and
-     scoped to the modal node via renderMathInElement when it opens. -->
+<!-- KaTeX for the modal's "Vzorce ke konceptu" section. -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
 <script>
 (function () {
+  "use strict";
   // Relative data path (JSON twin) recorded for reference / external consumers.
   var DATA_URL = "{{ data_href }}";
-  var EXPLORED_STYLE = {
-    well:      { dash: [],        width: 1.4, color: "rgba(70,153,144,0.55)" },
-    partially: { dash: [4, 3],    width: 1.1, color: "rgba(243,130,49,0.55)" },
-    barely:    { dash: [1, 4],    width: 1.0, color: "rgba(145,30,180,0.55)" },
-    unrated:   { dash: [],        width: 0.5, color: "rgba(120,120,120,0.18)" },
-    predicted: { dash: [6, 4],    width: 1.6, color: "rgba(220,20,60,0.9)" }
+
+  // ---- Z-axis geometry ---------------------------------------------------
+  var Z_SPAN = 860;                       // front(+Z) .. far(-Z) total spread
+  function zForDepth(d) { return (0.5 - (d || 0)) * Z_SPAN; }
+
+  // ---- Edge styling by explored rating (3D-native: color/width/particles) -
+  var BG = [9, 11, 17];                   // scene/nebula sink color (for dimming)
+  var EDGE = {
+    well:      { rgb: [70, 170, 156],  width: 1.3, op: 0.50, part: 0 },
+    partially: { rgb: [243, 146, 55],  width: 1.1, op: 0.46, part: 0 },
+    barely:    { rgb: [188, 102, 220], width: 1.5, op: 0.64, part: 1 },
+    unrated:   { rgb: [120, 124, 140], width: 0.4, op: 0.055, part: 0 },
+    predicted: { rgb: [233, 58, 104],  width: 2.1, op: 0.92, part: 2 }
   };
 
+  function byId(id) { return document.getElementById(id); }
+  function hexToRgb(h) {
+    h = (h || "#9aa0a6").replace("#", "");
+    if (h.length === 3) h = h[0]+h[0]+h[1]+h[1]+h[2]+h[2];
+    var n = parseInt(h, 16);
+    return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+  }
+  function mix(a, b, t) {
+    return [Math.round(a[0]+(b[0]-a[0])*t), Math.round(a[1]+(b[1]-a[1])*t),
+            Math.round(a[2]+(b[2]-a[2])*t)];
+  }
+  function rgba(c, a) { return "rgba(" + c[0] + "," + c[1] + "," + c[2] + "," + a + ")"; }
+
   function whenReady(cb) {
-    if (typeof ForceGraph !== "undefined") return cb();
+    if (typeof ForceGraph3D !== "undefined") return cb();
     var tries = 0;
     var t = setInterval(function () {
-      if (typeof ForceGraph !== "undefined") { clearInterval(t); cb(); }
-      else if (++tries > 100) { clearInterval(t); }
+      if (typeof ForceGraph3D !== "undefined") { clearInterval(t); cb(); }
+      else if (++tries > 160) {                          // ~8 s grace, then fail
+        clearInterval(t);
+        byId("g3d-loading").textContent =
+          "3D knihovnu se nepodařilo načíst (offline?). Zkus online připojení.";
+      }
     }, 50);
   }
 
-  function byId(id) { return document.getElementById(id); }
-
   var data = window.__TOE_GRAPH__;
   if (!data) {
-    byId("graph-canvas").textContent =
-      "Data grafu se nenačetla (" + DATA_URL + ").";
+    byId("g3d-loading").textContent = "Data grafu se nenačetla (" + DATA_URL + ").";
   } else {
-    whenReady(function () { boot(data); });
+    whenReady(function () { try { boot(data); } catch (e) {
+      byId("g3d-loading").textContent = "Chyba při startu 3D scény: " + e;
+    } });
   }
 
   function boot(data) {
-    var el = byId("graph-canvas");
-    var nodes = data.nodes;
-    var links = data.links;
-
-    // Degree extent for node sizing.
-    var maxDeg = 1;
-    nodes.forEach(function (n) { if (n.degree > maxDeg) maxDeg = n.degree; });
-    function radius(n) { return 2 + 5 * Math.sqrt(n.degree / maxDeg); }
-
-    // State.
-    var enabled = { well: true, partially: true, barely: true,
-                    unrated: true, predicted: false };
-    var pillarFilter = "";
-    var searchTerm = "";
-    var selectedId = null;
-
-    function nodeVisible(n) {
-      if (pillarFilter && (n.pillars || []).indexOf(pillarFilter) === -1) {
-        return false;
-      }
-      return true;
-    }
-    function linkVisible(l) {
-      var st = l.explored || "unrated";
-      if (!enabled[st]) return false;
-      var s = typeof l.source === "object" ? l.source : nodeById[l.source];
-      var t = typeof l.target === "object" ? l.target : nodeById[l.target];
-      return s && t && nodeVisible(s) && nodeVisible(t);
-    }
+    var el = byId("g3d-canvas");
+    var nodes = data.nodes || [];
+    var links = data.links || [];
 
     var nodeById = {};
     nodes.forEach(function (n) { nodeById[n.id] = n; });
 
-    // Populate pillar dropdown from the legend.
-    var sel = byId("graph-pillar");
-    (data.legend || []).forEach(function (lg) {
-      var o = document.createElement("option");
-      o.value = lg.pillar; o.textContent = lg.pillar;
-      sel.appendChild(o);
+    // Undirected adjacency: id -> [{node, link}] (for hover-highlight + modal).
+    var adj = {};
+    nodes.forEach(function (n) { adj[n.id] = []; });
+    links.forEach(function (l) {
+      var s = l.from, t = l.to;
+      if (adj[s] && adj[t]) {
+        adj[s].push({ node: nodeById[t], link: l });
+        adj[t].push({ node: nodeById[s], link: l });
+      }
     });
 
-    var Graph = ForceGraph()(el)
+    var maxDeg = 1;
+    nodes.forEach(function (n) { if (n.degree > maxDeg) maxDeg = n.degree; });
+    function baseSize(n) {
+      // Size by degree, with a gentle apex emphasis: front (synthesis, depth->0)
+      // nodes read a touch larger so the eye lands on the TOE end of the tunnel.
+      var s = 1.3 + 4.9 * Math.sqrt((n.degree || 0) / maxDeg);
+      return s * (1 + 0.38 * (1 - (n.depth || 0)));
+    }
+
+    // Pin every node to its depth plane up front (stratified default).
+    nodes.forEach(function (n) { n.fz = zForDepth(n.depth); });
+
+    // ---- State ----------------------------------------------------------
+    var enabled = { well: true, partially: true, barely: true,
+                    unrated: true, predicted: false };
+    var pillarFilter = "";
+    var depthMode = "layers";
+    var selectedId = null;
+    var hoverNode = null;
+    var hiNodes = new Set();
+    var hiLinks = new Set();
+
+    function nodeVisible(n) {
+      return !(pillarFilter && (n.pillars || []).indexOf(pillarFilter) === -1);
+    }
+    function linkVisible(l) {
+      if (!enabled[l.explored || "unrated"]) return false;
+      var s = typeof l.source === "object" ? l.source : nodeById[l.from];
+      var t = typeof l.target === "object" ? l.target : nodeById[l.to];
+      return s && t && nodeVisible(s) && nodeVisible(t);
+    }
+
+    // ---- Accessors (depth-dimmed + hover-aware) -------------------------
+    function nodeColor(n) {
+      var base = hexToRgb(n.color);
+      if (hoverNode) {
+        if (hiNodes.has(n.id)) return rgba(mix(base, [255,255,255], 0.12), 1);
+        return rgba(mix(base, BG, 0.62), 0.28);            // fade the rest
+      }
+      if (n.id === selectedId) return rgba(mix(base, [255,255,255], 0.18), 1);
+      // Far (foundational) nodes recede toward the nebula; front stays vivid.
+      return rgba(mix(base, BG, Math.min(0.66, (n.depth || 0) * 0.66)),
+                  0.92 - 0.18 * (n.depth || 0));
+    }
+    function nodeVal(n) {
+      var s = baseSize(n);
+      if (hiNodes.has(n.id) || n.id === selectedId) s *= 1.7;
+      return s;
+    }
+    function linkColor(l) {
+      var st = EDGE[l.explored || "unrated"] || EDGE.unrated;
+      if (hoverNode) {
+        return hiLinks.has(l) ? rgba(st.rgb, Math.min(1, st.op + 0.4))
+                              : rgba(st.rgb, st.op * 0.18);
+      }
+      return rgba(st.rgb, st.op);
+    }
+    function linkWidth(l) {
+      var st = EDGE[l.explored || "unrated"] || EDGE.unrated;
+      return hiLinks.has(l) ? st.width * 2.2 : st.width;
+    }
+    function linkParticles(l) {
+      var st = EDGE[l.explored || "unrated"] || EDGE.unrated;
+      if (hiLinks.has(l)) return Math.max(st.part, 4);
+      return st.part;
+    }
+
+    // ---- Build graph ----------------------------------------------------
+    var Graph = ForceGraph3D({ controlType: "orbit" })(el)
       .graphData({ nodes: nodes, links: links })
       .nodeId("id")
       .linkSource("from")
       .linkTarget("to")
-      .backgroundColor("#0d0f14")
-      .nodeRelSize(1)
-      .nodeVal(function (n) { return radius(n); })
-      .nodeLabel(function (n) {
-        return n.name + " (deg " + n.degree + ")";
-      })
+      .backgroundColor("rgba(0,0,0,0)")      // transparent -> CSS nebula shows
+      .showNavInfo(false)
+      .nodeRelSize(3)
+      .nodeResolution(12)
+      .nodeOpacity(1)
+      .nodeVal(nodeVal)
+      .nodeColor(nodeColor)
       .nodeVisibility(nodeVisible)
+      .nodeLabel(function (n) {
+        return '<div class="g3d-tip"><b>' + escapeHtml(n.name) + "</b>" +
+          '<span>' + (n.pillars && n.pillars[0] ? escapeHtml(n.pillars[0]) + " · " : "") +
+          "stupeň " + n.degree + " · " + bandLabel(n.layer) + "</span></div>";
+      })
       .linkVisibility(linkVisible)
-      .linkColor(function (l) {
-        return (EXPLORED_STYLE[l.explored || "unrated"] || EXPLORED_STYLE.unrated).color;
-      })
-      .linkWidth(function (l) {
-        return (EXPLORED_STYLE[l.explored || "unrated"] || EXPLORED_STYLE.unrated).width;
-      })
-      .linkLineDash(function (l) {
-        return (EXPLORED_STYLE[l.explored || "unrated"] || EXPLORED_STYLE.unrated).dash;
-      })
-      .nodeCanvasObjectMode(function () { return "replace"; })
-      .nodeCanvasObject(function (n, ctx, scale) {
-        var r = radius(n);
-        ctx.beginPath();
-        ctx.arc(n.x, n.y, r, 0, 2 * Math.PI, false);
-        ctx.fillStyle = n.color || "#9aa0a6";
-        ctx.fill();
-        var hit = searchTerm &&
-          (n.name.toLowerCase().indexOf(searchTerm) !== -1 ||
-           n.id.toLowerCase().indexOf(searchTerm) !== -1);
-        if (n.id === selectedId || hit) {
-          ctx.lineWidth = 2 / scale;
-          ctx.strokeStyle = hit ? "#ffd000" : "#ffffff";
-          ctx.stroke();
-        }
-        if (scale > 2.2 || n.id === selectedId || hit) {
-          ctx.font = (11 / scale) + "px sans-serif";
-          ctx.fillStyle = "#e8eaed";
-          ctx.fillText(n.name, n.x + r + 1, n.y + 3 / scale);
-        }
-      })
-      .onNodeClick(function (n) { openModal(n); })
-      .onBackgroundClick(function () { closeModal(); });
+      .linkColor(linkColor)
+      .linkWidth(linkWidth)
+      .linkOpacity(1)                        // alpha carried inside linkColor
+      .linkCurvature(function (l) { return l.predicted ? 0.18 : 0; })
+      .linkDirectionalParticles(linkParticles)
+      .linkDirectionalParticleWidth(1.5)
+      .linkDirectionalParticleSpeed(function (l) { return l.predicted ? 0.012 : 0.006; })
+      .onNodeHover(onHover)
+      .onLinkHover(onLinkHover)
+      .onNodeClick(function (n) { focusNode(n, true); })
+      .onBackgroundClick(closeModal)
+      .cooldownTime(9000)
+      .warmupTicks(8);
 
+    // Spread the layers apart a touch (looser charge for readable strata).
+    try {
+      var charge = Graph.d3Force("charge");
+      if (charge && charge.strength) charge.strength(-60);
+      var ld = Graph.d3Force("link");
+      if (ld && ld.distance) ld.distance(32);
+    } catch (e) { /* force tuning is best-effort */ }
+
+    byId("g3d-loading").style.display = "none";
+
+    function refresh() {
+      Graph.nodeColor(nodeColor).nodeVal(nodeVal)
+           .linkColor(linkColor).linkWidth(linkWidth)
+           .linkDirectionalParticles(linkParticles);
+    }
+
+    // ---- Hover highlight ------------------------------------------------
+    function onHover(n) {
+      hiNodes.clear(); hiLinks.clear();
+      hoverNode = n || null;
+      if (n) {
+        hiNodes.add(n.id);
+        (adj[n.id] || []).forEach(function (e) {
+          hiNodes.add(e.node.id); hiLinks.add(e.link);
+        });
+      }
+      el.style.cursor = n ? "pointer" : "default";
+      refresh();
+    }
+    function onLinkHover(l) {
+      hiNodes.clear(); hiLinks.clear();
+      hoverNode = l ? (typeof l.source === "object" ? l.source : nodeById[l.from]) : null;
+      if (l) {
+        hiLinks.add(l);
+        var s = typeof l.source === "object" ? l.source.id : l.from;
+        var t = typeof l.target === "object" ? l.target.id : l.to;
+        hiNodes.add(s); hiNodes.add(t);
+      }
+      refresh();
+    }
+
+    // ---- Camera ---------------------------------------------------------
+    var framed = false;
+    function frameCamera() {
+      // Default to a 3/4 vantage (front-right, slightly above) so the depth
+      // strata read as receding bands on load; drag toward the axis for the
+      // head-on "tunnel into depth" view. zoomToFit keeps this direction.
+      Graph.cameraPosition({ x: 430, y: 340, z: 840 }, { x: 0, y: 0, z: 0 }, 0);
+      setTimeout(function () { try { Graph.zoomToFit(800, 110); } catch (e) {} }, 60);
+    }
+    Graph.onEngineStop(function () {
+      if (!framed) { framed = true; frameCamera(); }
+    });
+    setTimeout(function () { if (!framed) { framed = true; frameCamera(); } }, 4000);
+
+    function flyTo(n, ms) {
+      if (n.x === undefined) { return; }
+      var dist = 140;
+      var r = 1 + dist / Math.max(1, Math.hypot(n.x, n.y, n.z || 0));
+      Graph.cameraPosition({ x: n.x * r, y: n.y * r, z: (n.z || 0) * r },
+                           n, ms == null ? 800 : ms);
+    }
+
+    // ---- Sizing + fullscreen -------------------------------------------
     function sizeCanvas() {
-      Graph.width(el.clientWidth).height(el.clientHeight || 560);
+      Graph.width(el.clientWidth || 800).height(el.clientHeight || 560);
     }
     sizeCanvas();
     window.addEventListener("resize", sizeCanvas);
+    if (window.ResizeObserver) {
+      new ResizeObserver(sizeCanvas).observe(byId("g3d-stage"));
+    }
+    document.addEventListener("fullscreenchange", function () {
+      var on = !!document.fullscreenElement;
+      byId("g3d-stage").classList.toggle("is-fs", on);
+      byId("g3d-fs").textContent = on ? "⛶ zavřít" : "⛶ fullscreen";
+      setTimeout(sizeCanvas, 60);
+    });
+    byId("g3d-fs").addEventListener("click", function () {
+      var stage = byId("g3d-stage");
+      if (document.fullscreenElement) { document.exitFullscreen(); }
+      else if (stage.requestFullscreen) { stage.requestFullscreen(); }
+    });
+    byId("g3d-reset").addEventListener("click", frameCamera);
+
+    // ---- Auto-rotate ----------------------------------------------------
+    var spinning = false;
+    byId("g3d-spin").addEventListener("click", function () {
+      spinning = !spinning;
+      try {
+        var c = Graph.controls();
+        c.autoRotate = spinning;
+        c.autoRotateSpeed = 0.9;
+      } catch (e) {}
+      this.classList.toggle("active", spinning);
+    });
+
+    // ---- Depth mode -----------------------------------------------------
+    function applyDepthMode(mode) {
+      depthMode = mode;
+      nodes.forEach(function (n) {
+        if (mode === "layers") n.fz = zForDepth(n.depth);
+        else if (mode === "flat") n.fz = 0;
+        else delete n.fz;                    // free 3D
+      });
+      byId("g3d-axis").style.opacity = (mode === "layers") ? "1" : "0.35";
+      Graph.d3ReheatSimulation();
+    }
+    byId("g3d-depthmode").addEventListener("change", function (e) {
+      applyDepthMode(e.target.value);
+    });
+
+    // ---- Search ---------------------------------------------------------
+    var search = byId("g3d-search");
+    function findNode(term) {
+      term = term.trim().toLowerCase();
+      if (!term) return null;
+      for (var i = 0; i < nodes.length; i++) {
+        if (nodes[i].name.toLowerCase().indexOf(term) !== -1 ||
+            nodes[i].id.toLowerCase().indexOf(term) !== -1) return nodes[i];
+      }
+      return null;
+    }
+    search.addEventListener("input", function (e) {
+      var n = findNode(e.target.value);
+      selectedId = n ? n.id : null;
+      refresh();
+      if (n) flyTo(n, 700);
+    });
+    search.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        var n = findNode(e.target.value);
+        if (n) focusNode(n, true);
+      }
+    });
+
+    // ---- Pillar filter + legend ----------------------------------------
+    var sel = byId("g3d-pillar");
+    var legendUl = byId("g3d-pillar-legend");
+    (data.legend || []).forEach(function (lg) {
+      var o = document.createElement("option");
+      o.value = lg.pillar; o.textContent = lg.pillar;
+      sel.appendChild(o);
+      var li = document.createElement("li");
+      li.innerHTML = '<i style="background:' + lg.color + '"></i>' + escapeHtml(lg.pillar);
+      legendUl.appendChild(li);
+    });
+    sel.addEventListener("change", function (e) {
+      pillarFilter = e.target.value;
+      Graph.nodeVisibility(nodeVisible).linkVisibility(linkVisible);
+    });
+
+    // ---- Explored toggles ----------------------------------------------
+    Array.prototype.forEach.call(
+      document.querySelectorAll("#g3d-explored-toggles input"),
+      function (cb) {
+        cb.addEventListener("change", function () {
+          enabled[cb.getAttribute("data-explored")] = cb.checked;
+          Graph.linkVisibility(linkVisible);
+        });
+      });
+
+    // ---- Console collapse ----------------------------------------------
+    byId("g3d-collapse").addEventListener("click", function () {
+      var body = byId("g3d-console-body");
+      var hidden = body.style.display === "none";
+      body.style.display = hidden ? "" : "none";
+      this.textContent = hidden ? "–" : "+";
+    });
+
+    // ---- Depth-axis ruler ----------------------------------------------
+    var bands = data.depthBands || [];
+    var axisUl = byId("g3d-axis-bands");
+    bands.forEach(function (b) {
+      var li = document.createElement("li");
+      li.textContent = b.label;
+      axisUl.appendChild(li);
+    });
+    byId("g3d-axis-src").textContent =
+      data.depthSource === "override" ? "hloubka: kurátorská" : "hloubka: provizorní heuristika";
+    function bandLabel(layer) {
+      return (bands[layer] && bands[layer].label) || "";
+    }
 
     // ---- Modal ----------------------------------------------------------
     var FORMULAS = data.formulas || {};
     var REFERENCES = data.references || {};
+    var lastFocusEl = null;
 
     function renderKatex(node) {
       if (typeof renderMathInElement === "function") {
@@ -210,8 +491,7 @@ funguje z <code>file://</code> i pod libovolnou pod-cestou.</p>
             delimiters: [
               { left: "$$", right: "$$", display: true },
               { left: "$", right: "$", display: false }
-            ],
-            throwOnError: false
+            ], throwOnError: false
           });
         } catch (e) { /* leave raw LaTeX visible rather than break the modal */ }
       }
@@ -237,7 +517,6 @@ funguje z <code>file://</code> i pod libovolnou pod-cestou.</p>
 
         var math = document.createElement("div");
         math.className = "gm-formula-math";
-        // Display math; KaTeX auto-render picks up the $$...$$ delimiters.
         math.textContent = "$$ " + (f.latex || "") + " $$";
         item.appendChild(math);
 
@@ -245,13 +524,10 @@ funguje z <code>file://</code> i pod libovolnou pod-cestou.</p>
         if (ref && ref.url) {
           var a = document.createElement("a");
           a.className = "gm-formula-ref";
-          a.href = ref.url;
-          a.target = "_blank";
-          a.rel = "noopener noreferrer";
-          var label = (ref.authors || "") +
+          a.href = ref.url; a.target = "_blank"; a.rel = "noopener noreferrer";
+          a.textContent = (ref.authors || "") +
             (ref.year ? " (" + ref.year + ")" : "") +
-            (ref.title ? " — " + ref.title : "");
-          a.textContent = label || f.refSlug;
+            (ref.title ? " — " + ref.title : "") || f.refSlug;
           item.appendChild(a);
         } else if (f.refSlug) {
           var code = document.createElement("code");
@@ -264,39 +540,30 @@ funguje z <code>file://</code> i pod libovolnou pod-cestou.</p>
       renderKatex(host);
     }
 
-    var lastFocusEl = null;
     function openModal(n) {
       selectedId = n.id;
       byId("gm-name").textContent = n.name;
       byId("gm-degree").textContent = "stupeň " + n.degree;
       byId("gm-pillars").textContent =
         (n.pillars && n.pillars.length) ? n.pillars.join(", ") : "(bez pilíře)";
+      byId("gm-depth").textContent = bandLabel(n.layer);
+
       byId("gm-def").textContent = n.definition || "(bez definice)";
 
-      // Top links by neighbor degree (most central neighbors first).
-      var nbrs = [];
-      links.forEach(function (l) {
-        var s = typeof l.source === "object" ? l.source.id : l.from;
-        var t = typeof l.target === "object" ? l.target.id : l.to;
-        var other = null;
-        if (s === n.id) other = t; else if (t === n.id) other = s;
-        if (other && nodeById[other]) {
-          nbrs.push({ node: nodeById[other], predicted: !!l.predicted,
-                      explored: l.explored });
-        }
+      var nbrs = (adj[n.id] || []).map(function (e) {
+        return { node: e.node, predicted: !!e.link.predicted, explored: e.link.explored };
       });
       nbrs.sort(function (a, b) { return b.node.degree - a.node.degree; });
       var ul = byId("gm-links");
       ul.innerHTML = "";
       nbrs.slice(0, 12).forEach(function (x) {
         var li = document.createElement("li");
-        li.textContent = x.node.name +
-          (x.predicted ? "  ⟂ predikce" : "");
+        li.textContent = x.node.name + (x.predicted ? "  ⟂ predikce" : "");
         li.className = "gp-link-" + (x.explored || "unrated");
         li.tabIndex = 0;
-        li.addEventListener("click", function () { focusNode(x.node); });
+        li.addEventListener("click", function () { focusNode(x.node, true); });
         li.addEventListener("keydown", function (e) {
-          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); focusNode(x.node); }
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); focusNode(x.node, true); }
         });
         ul.appendChild(li);
       });
@@ -308,56 +575,32 @@ funguje z <code>file://</code> i pod libovolnou pod-cestou.</p>
       modal.hidden = false;
       var card = modal.querySelector(".gm-card");
       if (card) card.focus();
+      refresh();
     }
     function closeModal() {
       selectedId = null;
       byId("graph-modal").hidden = true;
       if (lastFocusEl && lastFocusEl.focus) { try { lastFocusEl.focus(); } catch (e) {} }
       lastFocusEl = null;
+      refresh();
     }
-    function focusNode(n) {
-      openModal(n);
-      Graph.centerAt(n.x, n.y, 600);
-      Graph.zoom(4, 600);
+    function focusNode(n, withModal) {
+      flyTo(n, 800);
+      if (withModal) openModal(n); else { selectedId = n.id; refresh(); }
     }
     byId("gm-close").addEventListener("click", closeModal);
     byId("gm-backdrop").addEventListener("click", closeModal);
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && !byId("graph-modal").hidden) closeModal();
-    });
-
-    // ---- Controls -------------------------------------------------------
-    byId("graph-search").addEventListener("input", function (e) {
-      searchTerm = e.target.value.trim().toLowerCase();
-      var hit = null;
-      if (searchTerm) {
-        for (var i = 0; i < nodes.length; i++) {
-          if (nodes[i].name.toLowerCase().indexOf(searchTerm) !== -1 ||
-              nodes[i].id.toLowerCase().indexOf(searchTerm) !== -1) {
-            hit = nodes[i]; break;
-          }
-        }
-      }
-      if (hit && hit.x !== undefined) {
-        Graph.centerAt(hit.x, hit.y, 400);
-        Graph.zoom(4, 400);
+      if (e.key === "Escape" && !byId("graph-modal").hidden) {
+        e.stopPropagation(); closeModal();
       }
     });
 
-    sel.addEventListener("change", function (e) {
-      pillarFilter = e.target.value;
-      Graph.nodeVisibility(nodeVisible).linkVisibility(linkVisible);
-    });
-
-    Array.prototype.forEach.call(
-      document.querySelectorAll("#graph-explored-toggles input"),
-      function (cb) {
-        cb.addEventListener("change", function () {
-          enabled[cb.getAttribute("data-explored")] = cb.checked;
-          Graph.linkVisibility(linkVisible);
-        });
-      }
-    );
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"]/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+      });
+    }
   }
 })();
 </script>

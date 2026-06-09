@@ -265,48 +265,126 @@ details.caveats p { margin: .4rem 0 0; font-size: .85rem; }
   .reg-table th { position: static; }
 }
 
-/* ---- Concept-graph (force-directed) view ---- */
-.graph-controls { display: flex; flex-direction: column; gap: .5rem; margin: .8rem 0; }
-.graph-controls .gc-row { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; }
-.graph-controls input[type="search"] {
-  flex: 1 1 240px; min-width: 180px; padding: .4rem .6rem;
-  border: 1px solid var(--border); border-radius: 6px;
-  background: var(--bg-card); color: var(--fg); font-size: .9rem;
+/* ---- Concept-graph: 3D "observatory" view (3d-force-graph / Three.js) ---- */
+.g3d-stage {
+  --g3d-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --g3d-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  position: relative; width: 100%; height: 78vh; min-height: 520px;
+  margin: 1rem 0; border-radius: 14px; overflow: hidden; isolation: isolate;
+  border: 1px solid #1c2230; color: #e7e9f2; font-family: var(--g3d-mono);
+  background:
+    radial-gradient(1200px 720px at 72% 16%, rgba(96,52,160,.22), transparent 60%),
+    radial-gradient(960px 620px at 16% 90%, rgba(22,96,128,.18), transparent 55%),
+    radial-gradient(760px 520px at 50% 50%, rgba(44,50,78,.28), transparent 72%),
+    #06070c;
 }
-.graph-controls select {
-  padding: .35rem .5rem; border: 1px solid var(--border); border-radius: 6px;
-  background: var(--bg-card); color: var(--fg); font-size: .9rem;
+.g3d-stage.is-fs { height: 100vh; min-height: 0; border-radius: 0; border: none; margin: 0; }
+.g3d-canvas { position: absolute; inset: 0; }
+.g3d-loading {
+  position: absolute; inset: 0; z-index: 2; display: flex;
+  align-items: center; justify-content: center;
+  color: #9aa3c0; letter-spacing: .05em; font-size: .85rem;
 }
-.gc-inline { display: inline-flex; align-items: center; gap: .35rem; font-size: .9rem; }
-.gc-toggles { font-size: .85rem; }
-.gc-toggles label { display: inline-flex; align-items: center; gap: .3rem; cursor: pointer; }
-.gc-label { color: var(--fg-muted); font-weight: 600; }
-.leg { display: inline-block; width: 22px; height: 0; border-top-width: 2px; border-top-style: solid; vertical-align: middle; }
-.leg.solid  { border-top-color: #469990; }
-.leg.dashed { border-top-color: #f58231; border-top-style: dashed; }
-.leg.dotted { border-top-color: #911eb4; border-top-style: dotted; }
-.leg.faint  { border-top-color: #9aa0a6; }
-.leg.pred   { border-top-color: crimson; border-top-style: dashed; border-top-width: 2.5px; }
 
-.graph-stage { position: relative; }
-.graph-canvas {
-  width: 100%; height: 560px; border: 1px solid var(--border);
-  border-radius: 8px; background: #0d0f14; overflow: hidden;
+/* Instrument console (top-left). */
+.g3d-console {
+  position: absolute; top: 14px; left: 14px; z-index: 5; width: min(290px, 46%);
+  background: rgba(10,13,22,.74); -webkit-backdrop-filter: blur(9px); backdrop-filter: blur(9px);
+  border: 1px solid rgba(120,140,200,.18); border-radius: 12px;
+  box-shadow: 0 10px 34px rgba(0,0,0,.45);
 }
-.graph-panel {
-  position: absolute; top: 0; right: 0; width: min(320px, 80%); height: 100%;
-  background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: 8px; padding: 1rem 1.1rem; overflow-y: auto;
-  box-shadow: -4px 0 16px rgba(0,0,0,.18); font-size: .9rem;
+.g3d-console-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .5rem .7rem; border-bottom: 1px solid rgba(120,140,200,.14);
 }
-.graph-panel h2 { margin: .2rem 2rem .3rem 0; font-size: 1.05rem; }
-.graph-panel h3 { margin: .9rem 0 .3rem; font-size: .85rem; color: var(--fg-muted); text-transform: uppercase; letter-spacing: .03em; }
-.gp-close {
-  position: absolute; top: .5rem; right: .6rem; border: none; background: none;
-  font-size: 1.4rem; line-height: 1; cursor: pointer; color: var(--fg-muted);
+.g3d-title {
+  font-family: var(--g3d-display); font-weight: 600; font-size: .8rem;
+  letter-spacing: .17em; color: #cdd3ee;
 }
-.gp-meta { color: var(--fg-muted); font-size: .8rem; margin: 0 0 .5rem; }
-.gp-def { margin: .3rem 0 .5rem; }
+.g3d-collapse {
+  background: none; border: none; color: #9aa3c0; font-size: 1.1rem;
+  line-height: 1; padding: 0 .2rem; cursor: pointer;
+}
+.g3d-console-body { padding: .6rem .7rem; display: flex; flex-direction: column; gap: .55rem; }
+.g3d-input, .g3d-field select {
+  width: 100%; padding: .4rem .55rem; font-family: var(--g3d-mono); font-size: .78rem;
+  color: #e7e9f2; background: rgba(255,255,255,.04);
+  border: 1px solid rgba(140,160,220,.22); border-radius: 7px;
+}
+.g3d-input::placeholder { color: #7d86a6; }
+.g3d-input:focus, .g3d-field select:focus { outline: none; border-color: #6f7cff; }
+.g3d-field { display: flex; align-items: center; gap: .5rem; }
+.g3d-field label {
+  flex: 0 0 54px; font-size: .64rem; text-transform: uppercase;
+  letter-spacing: .08em; color: #8a93b6;
+}
+.g3d-field select { flex: 1; }
+.g3d-toggles {
+  display: flex; flex-wrap: wrap; gap: .25rem .55rem; font-size: .7rem;
+  padding-top: .4rem; border-top: 1px solid rgba(120,140,200,.12);
+}
+.g3d-toggles-label {
+  flex-basis: 100%; font-size: .6rem; text-transform: uppercase;
+  letter-spacing: .08em; color: #8a93b6;
+}
+.g3d-toggles label { display: inline-flex; align-items: center; gap: .28rem; cursor: pointer; color: #c4cae6; }
+.g3d-toggles .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.dot-well { background: #46aa9c; } .dot-part { background: #f39237; }
+.dot-bare { background: #b760d6; box-shadow: 0 0 6px #b760d6; }
+.dot-un   { background: #787c8c; } .dot-pred { background: #e93a68; box-shadow: 0 0 6px #e93a68; }
+.g3d-legend summary {
+  cursor: pointer; color: #8a93b6; text-transform: uppercase;
+  letter-spacing: .06em; font-size: .6rem;
+}
+.g3d-legend ul {
+  list-style: none; margin: .4rem 0 0; padding: 0; display: grid; gap: .18rem;
+  max-height: 168px; overflow: auto;
+}
+.g3d-legend li { display: flex; align-items: center; gap: .4rem; color: #c4cae6; font-size: .67rem; }
+.g3d-legend li i { width: 10px; height: 10px; border-radius: 3px; flex: 0 0 auto; }
+
+/* Tool buttons (top-right). */
+.g3d-tools { position: absolute; top: 14px; right: 14px; z-index: 5; display: flex; gap: .4rem; }
+.g3d-btn {
+  font-family: var(--g3d-mono); font-size: .68rem; letter-spacing: .02em;
+  color: #cdd3ee; background: rgba(10,13,22,.74);
+  -webkit-backdrop-filter: blur(9px); backdrop-filter: blur(9px);
+  border: 1px solid rgba(140,160,220,.2); border-radius: 8px;
+  padding: .42rem .6rem; cursor: pointer;
+}
+.g3d-btn:hover { border-color: #6f7cff; color: #fff; }
+.g3d-btn.active { border-color: #6f7cff; background: rgba(111,124,255,.22); color: #fff; }
+
+/* Depth-axis orientation key (right edge). */
+.g3d-axis {
+  position: absolute; top: 66px; right: 14px; bottom: 18px; z-index: 4; width: 158px;
+  display: flex; flex-direction: column; gap: .3rem; pointer-events: none;
+  text-align: right; transition: opacity .3s;
+}
+.g3d-axis-cap { font-size: .58rem; text-transform: uppercase; letter-spacing: .1em; color: #8a93b6; }
+.g3d-axis-bar { flex: 1; position: relative; }
+.g3d-axis-bar::before {
+  content: ""; position: absolute; right: 0; top: 0; bottom: 0; width: 3px; border-radius: 2px;
+  background: linear-gradient(#c9a3ff, #6f7cff 32%, #3aa0b8 64%, #2a3050);
+}
+.g3d-axis-bar ul {
+  list-style: none; margin: 0; padding: 0 12px 0 0; height: 100%;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.g3d-axis-bar li { font-size: .63rem; line-height: 1.15; color: #aeb6d6; }
+.g3d-axis-src { font-size: .56rem; color: #727b9c; }
+
+/* Hover tooltip (the library appends .scene-tooltip to <body>, not the stage). */
+.scene-tooltip, .graph-tooltip {
+  background: rgba(10,13,22,.93) !important; border: 1px solid rgba(140,160,220,.25);
+  border-radius: 8px; padding: .4rem .55rem !important; color: #e7e9f2 !important;
+  max-width: 280px;
+}
+.g3d-tip { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .72rem; line-height: 1.3; }
+.g3d-tip b { color: #fff; display: block; font-size: .78rem; }
+.g3d-tip span { color: #aab2d2; }
+
+/* Modal "strongest links" list (reused inside the 3D node-click modal). */
 .gp-links { list-style: none; margin: 0; padding: 0; }
 .gp-links li { padding: .2rem .3rem; border-radius: 4px; cursor: pointer; border-left: 3px solid transparent; }
 .gp-links li:hover { background: var(--bg-alt); }
@@ -316,8 +394,10 @@ details.caveats p { margin: .4rem 0 0; font-size: .85rem; }
 .gp-link-predicted { border-left-color: crimson; }
 
 @media (max-width: 860px) {
-  .graph-panel { width: 100%; }
-  .graph-canvas { height: 440px; }
+  .g3d-stage { height: 70vh; min-height: 440px; }
+  .g3d-axis { display: none; }
+  .g3d-console { width: min(258px, 74%); }
+  .g3d-tools { flex-wrap: wrap; max-width: 44%; justify-content: flex-end; }
 }
 
 /* ---- Graph node-click modal ---- */
