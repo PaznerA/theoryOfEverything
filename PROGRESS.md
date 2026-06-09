@@ -54,6 +54,13 @@
 
 ## Log
 
+### 2026-06-09 (numerická reprodukční coverage druhého oblouku — protějšek CAS revize)
+
+- **Mezera:** 8 calc adresářů z kol 13–20 (F-029…F-039) bylo mimo `test_reproduction.py` (běžely jen jednou agentem) + 3 agenty-přidané nikdy neověřené pod `FULL_REPRO`.
+- **Výsledek: 10/11 nyní v reprodukci a ověřeno PASS; 1 vyloučen** (ds-amol-convention — čte staged archiv `compute/results-archive/` mimo /tmp sandbox; re-analýza cross-HW ověřených cloud běhů). Nově pokryto: modular-kms-thermal, ncg-kms-unruh, index-charge-discrete, amol-anomaly-ee-coeff, spectral-triple-modular, sj-kerr-b-scan, vn-type-proxy3-seeds.
+- **Nalezené a opravené reprodukční defekty (hodnota pasáže, jako Myrheim-Meyer u CAS):** (1) `TIMING_FIELDS` neznal `elapsed_s`/`wall_clock_*` → falešné fully; odhalilo skrytě rozbitý `lambda-shot-noise`. (2) **`spectral-triple-modular` NEdeterminismus** — Connesova pasáž s wall-clock capem ukládala jen dokončené páry (committed 14, machine-závislé); oprava `t_start=None` (vždy 16) → deterministické. **DŮSLEDEK: committed korelace F-033 = 0,098 byla artefakt timing-truncovaného běhu → reprodukovatelná hodnota 0,319 (R²=0,10); verdikt no-match NEZMĚNĚN.** F-033 + VYPOCET-29 opraveny. (3) `amol-anomaly`: dep na ds-entropy-cap (F-029 c_EE) + location-závislá `/plot` cesta → nový obecný `PATH_FIELDS` ignore.
+- Report: [`reports/2026-06-09-numerical-coverage.md`](reports/2026-06-09-numerical-coverage.md). Plná suite **356 passed, 29 skipped, 1 xfailed**. Commity `d09ee11` / `83d81f2` / `242cfc1`.
+
 ### 2026-06-08 (kolo 20 — CAS revize vzorců: triáž formulas.json + Wolfram validační dráha B1–B4)
 
 - **Triáž registru (247 vzorců):** 34 CAS-checkable (mimo 19 already-validated), 158 definitional, 36 numerical. Přístup konzervativní — naprostá většina vzorců není CAS-ověřitelná (definice/konvence/empirické fity).
