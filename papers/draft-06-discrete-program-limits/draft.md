@@ -1,4 +1,4 @@
-**DRAFT v0.1 — generated 2026-06-09, internal research draft, NOT submitted, requires human review.** (v0.1: first assembly of the three sharp negatives of the second research arc — the 4D entropy-area wall (F-031/F-037/F-038), the surrogate-Dirac structure-not-temperature wall (F-033/F-036), and the geometric-not-anomalous-coefficient wall (F-039) — into a single negative-results note. All statuses verbatim from findings.json; no upgrades. No new arXiv IDs.)
+**DRAFT v0.1 — generated 2026-06-09, internal research draft, NOT submitted, requires human review.** (v0.1: first assembly of the three sharp negatives of the second research arc — the 4D entropy-area wall (F-031/F-037/F-038), the surrogate-Dirac structure-not-temperature wall (F-033/F-036), and the geometric-not-anomalous-coefficient wall (F-039) — into a single negative-results note. All statuses verbatim from findings.json; no upgrades. No new arXiv IDs. 2026-06-09 ref-attribution fixes: the $\kappa$/double-truncation claim now cites its primary Sorkin–Yazdi arXiv:1611.10281, and arXiv:1712.04227 carries its correct attribution Belenchia–Benincasa–Letizia–Liberati, "On the Entanglement Entropy of Quantum Fields in Causal Sets" (§3 not-claimed line + §References). arXiv IDs unchanged.)
 
 ## Abstract
 
@@ -10,7 +10,7 @@ A program that probes quantum gravity by putting the Sorkin–Johnston (SJ) stat
 
 A discrete-spacetime program inevitably produces more dead ends than results, and the dead ends are usually deleted. We report three here because each is *sharp* — it comes with a quantitative mechanism and an explicit pre-registered criterion that was missed by a large, robust margin — and because together they delineate a coherent boundary: the clean 2D causal-set/SSEE results do not naively extend to (a) the physical dimension, (b) the noncommutative-geometry spectral language, or (c) the exact conformal-anomaly content, and the *reasons* they do not are structural, not numerical.
 
-We are explicit, throughout, about what is *not* claimed. We do not claim the crossed-product construction (CLPW, arXiv:2206.10780), the SSEE formula or its double truncation (Sorkin–Yazdi, arXiv:1611.10281; arXiv:1712.04227), the area-law rank (arXiv:2008.07697), the thermal-time hypothesis (Connes–Rovelli, arXiv:gr-qc/9406019), the modular-Hamiltonian-from-correlators method (Casini–Huerta, arXiv:0905.2562), the horizon-molecule counting (Dou–Sorkin, arXiv:gr-qc/0302009), or the spectral-action $a_4$ identity (Chamseddine–Connes, arXiv:hep-th/9606001). Each negative is a statement about *our* discrete probe of these objects, on finite $N$, in a stated geometry.
+We are explicit, throughout, about what is *not* claimed. We do not claim the crossed-product construction (CLPW, arXiv:2206.10780), the SSEE formula or its double truncation (Sorkin–Yazdi, arXiv:1611.10281; cf. Belenchia et al., arXiv:1712.04227), the area-law rank (arXiv:2008.07697), the thermal-time hypothesis (Connes–Rovelli, arXiv:gr-qc/9406019), the modular-Hamiltonian-from-correlators method (Casini–Huerta, arXiv:0905.2562), the horizon-molecule counting (Dou–Sorkin, arXiv:gr-qc/0302009), or the spectral-action $a_4$ identity (Chamseddine–Connes, arXiv:hep-th/9606001). Each negative is a statement about *our* discrete probe of these objects, on finite $N$, in a stated geometry.
 
 ## 2. Method, in one paragraph
 
@@ -73,7 +73,7 @@ Three sharp negatives bound the SJ–SSEE–NCG program beyond its clean 2D base
 ## References (arXiv IDs; to be verified against arXiv by a human before any release)
 
 - CLPW, "An algebra of observables for de Sitter space", arXiv:2206.10780.
-- Sorkin–Yazdi, spacetime entanglement entropy on causal sets, arXiv:1611.10281; double truncation, arXiv:1712.04227.
+- Sorkin–Yazdi, spacetime entanglement entropy on causal sets and the double truncation, arXiv:1611.10281; Belenchia–Benincasa–Letizia–Liberati, "On the Entanglement Entropy of Quantum Fields in Causal Sets", arXiv:1712.04227.
 - Surya et al., area-law rank, arXiv:2008.07697.
 - Connes–Rovelli, "Von Neumann algebra automorphisms and time–thermodynamics relation", arXiv:gr-qc/9406019.
 - Casini–Huerta, modular Hamiltonian from correlators, arXiv:0905.2562.
