@@ -450,11 +450,12 @@ def _render_registries(env, out_dir, pages, route_set, asset_map,
     _write(out_dir, cpage.route,
            env.get_template("connections.html").render(**ctx))
 
-    # --- formulas ---
+    # --- formulas (tree: pillar -> concept -> formula, with ref click-through) ---
     formulas = datamod.load_formulas(REPO_ROOT)
+    formula_tree = datamod.build_formula_tree(REPO_ROOT)
     fopage = _page_by_route(pages, "data/formulas.html")
     ctx = common_ctx(fopage, math=True)
-    ctx.update(formulas=formulas)
+    ctx.update(tree=formula_tree, formula_count=len(formulas))
     _write(out_dir, fopage.route,
            env.get_template("formulas.html").render(**ctx))
 

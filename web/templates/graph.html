@@ -34,19 +34,31 @@ ne fakta.
 <div class="graph-stage">
   <div id="graph-canvas" class="graph-canvas" role="img"
        aria-label="Silově řízený graf konceptů"></div>
-  <aside id="graph-panel" class="graph-panel" hidden>
-    <button class="gp-close" id="gp-close" aria-label="Zavřít">×</button>
-    <h2 id="gp-name">—</h2>
-    <p class="gp-meta"><span id="gp-degree"></span> · <span id="gp-pillars"></span></p>
-    <p id="gp-def" class="gp-def"></p>
-    <h3>Nejsilnější vazby</h3>
-    <ul id="gp-links" class="gp-links"></ul>
-  </aside>
 </div>
 
-<p class="muted">Tip: kolečkem zoom, tažením posun. Klik na uzel otevře panel.
-Stránka je samostatná (CDN <code>force-graph</code>), funguje z <code>file://</code>
-i pod libovolnou pod-cestou.</p>
+<!-- Centered modal opened on node-click (backdrop + card). -->
+<div id="graph-modal" class="graph-modal" hidden>
+  <div class="gm-backdrop" id="gm-backdrop"></div>
+  <div class="gm-card" role="dialog" aria-modal="true" aria-labelledby="gm-name" tabindex="-1">
+    <button class="gm-close" id="gm-close" aria-label="Zavřít">×</button>
+    <h2 id="gm-name">—</h2>
+    <p class="gm-meta"><span id="gm-degree"></span> · <span id="gm-pillars"></span></p>
+    <p id="gm-def" class="gm-def"></p>
+    <section class="gm-section">
+      <h3>Nejsilnější vazby</h3>
+      <ul id="gm-links" class="gp-links"></ul>
+    </section>
+    <section class="gm-section" id="gm-formulas-section" hidden>
+      <h3>Vzorce ke konceptu</h3>
+      <div id="gm-formulas" class="gm-formulas"></div>
+    </section>
+  </div>
+</div>
+
+<p class="muted">Tip: kolečkem zoom, tažením posun. Klik na uzel otevře modal
+s vazbami a vzorci (proklik na referenci). Zavřít: ×, klik mimo, nebo Esc.
+Stránka je samostatná (CDN <code>force-graph</code> + <code>KaTeX</code>),
+funguje z <code>file://</code> i pod libovolnou pod-cestou.</p>
 
 <noscript><p class="muted">Tento pohled vyžaduje JavaScript.</p></noscript>
 
@@ -56,6 +68,12 @@ i pod libovolnou pod-cestou.</p>
 <!-- force-graph (canvas renderer) from unpkg CDN — same pattern as KaTeX. -->
 <script defer src="https://unpkg.com/force-graph@1.43.4/dist/force-graph.min.js"
         crossorigin="anonymous"></script>
+<!-- KaTeX for the modal's "Vzorce ke konceptu" section (same CDN as base.html).
+     This page is built with math=False, so KaTeX is loaded here explicitly and
+     scoped to the modal node via renderMathInElement when it opens. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
 <script>
 (function () {
   // Relative data path (JSON twin) recorded for reference / external consumers.
@@ -172,8 +190,8 @@ i pod libovolnou pod-cestou.</p>
           ctx.fillText(n.name, n.x + r + 1, n.y + 3 / scale);
         }
       })
-      .onNodeClick(function (n) { openPanel(n); })
-      .onBackgroundClick(function () { closePanel(); });
+      .onNodeClick(function (n) { openModal(n); })
+      .onBackgroundClick(function () { closeModal(); });
 
     function sizeCanvas() {
       Graph.width(el.clientWidth).height(el.clientHeight || 560);
@@ -181,14 +199,79 @@ i pod libovolnou pod-cestou.</p>
     sizeCanvas();
     window.addEventListener("resize", sizeCanvas);
 
-    // ---- Side panel -----------------------------------------------------
-    function openPanel(n) {
+    // ---- Modal ----------------------------------------------------------
+    var FORMULAS = data.formulas || {};
+    var REFERENCES = data.references || {};
+
+    function renderKatex(node) {
+      if (typeof renderMathInElement === "function") {
+        try {
+          renderMathInElement(node, {
+            delimiters: [
+              { left: "$$", right: "$$", display: true },
+              { left: "$", right: "$", display: false }
+            ],
+            throwOnError: false
+          });
+        } catch (e) { /* leave raw LaTeX visible rather than break the modal */ }
+      }
+    }
+
+    function buildFormulas(n) {
+      var section = byId("gm-formulas-section");
+      var host = byId("gm-formulas");
+      host.innerHTML = "";
+      var fids = n.formulaIds || [];
+      if (!fids.length) { section.hidden = true; return; }
+      section.hidden = false;
+      fids.forEach(function (fid) {
+        var f = FORMULAS[fid];
+        if (!f) return;
+        var item = document.createElement("div");
+        item.className = "gm-formula";
+
+        var nm = document.createElement("div");
+        nm.className = "gm-formula-name";
+        nm.textContent = f.name || fid;
+        item.appendChild(nm);
+
+        var math = document.createElement("div");
+        math.className = "gm-formula-math";
+        // Display math; KaTeX auto-render picks up the $$...$$ delimiters.
+        math.textContent = "$$ " + (f.latex || "") + " $$";
+        item.appendChild(math);
+
+        var ref = f.refSlug ? REFERENCES[f.refSlug] : null;
+        if (ref && ref.url) {
+          var a = document.createElement("a");
+          a.className = "gm-formula-ref";
+          a.href = ref.url;
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+          var label = (ref.authors || "") +
+            (ref.year ? " (" + ref.year + ")" : "") +
+            (ref.title ? " — " + ref.title : "");
+          a.textContent = label || f.refSlug;
+          item.appendChild(a);
+        } else if (f.refSlug) {
+          var code = document.createElement("code");
+          code.className = "gm-formula-ref-raw";
+          code.textContent = f.refSlug;
+          item.appendChild(code);
+        }
+        host.appendChild(item);
+      });
+      renderKatex(host);
+    }
+
+    var lastFocusEl = null;
+    function openModal(n) {
       selectedId = n.id;
-      byId("gp-name").textContent = n.name;
-      byId("gp-degree").textContent = "stupeň " + n.degree;
-      byId("gp-pillars").textContent =
+      byId("gm-name").textContent = n.name;
+      byId("gm-degree").textContent = "stupeň " + n.degree;
+      byId("gm-pillars").textContent =
         (n.pillars && n.pillars.length) ? n.pillars.join(", ") : "(bez pilíře)";
-      byId("gp-def").textContent = n.definition || "(bez definice)";
+      byId("gm-def").textContent = n.definition || "(bez definice)";
 
       // Top links by neighbor degree (most central neighbors first).
       var nbrs = [];
@@ -203,7 +286,7 @@ i pod libovolnou pod-cestou.</p>
         }
       });
       nbrs.sort(function (a, b) { return b.node.degree - a.node.degree; });
-      var ul = byId("gp-links");
+      var ul = byId("gm-links");
       ul.innerHTML = "";
       nbrs.slice(0, 12).forEach(function (x) {
         var li = document.createElement("li");
@@ -212,20 +295,36 @@ i pod libovolnou pod-cestou.</p>
         li.className = "gp-link-" + (x.explored || "unrated");
         li.tabIndex = 0;
         li.addEventListener("click", function () { focusNode(x.node); });
+        li.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); focusNode(x.node); }
+        });
         ul.appendChild(li);
       });
-      byId("graph-panel").hidden = false;
+
+      buildFormulas(n);
+
+      var modal = byId("graph-modal");
+      if (modal.hidden) lastFocusEl = document.activeElement;
+      modal.hidden = false;
+      var card = modal.querySelector(".gm-card");
+      if (card) card.focus();
     }
-    function closePanel() {
+    function closeModal() {
       selectedId = null;
-      byId("graph-panel").hidden = true;
+      byId("graph-modal").hidden = true;
+      if (lastFocusEl && lastFocusEl.focus) { try { lastFocusEl.focus(); } catch (e) {} }
+      lastFocusEl = null;
     }
     function focusNode(n) {
-      openPanel(n);
+      openModal(n);
       Graph.centerAt(n.x, n.y, 600);
       Graph.zoom(4, 600);
     }
-    byId("gp-close").addEventListener("click", closePanel);
+    byId("gm-close").addEventListener("click", closeModal);
+    byId("gm-backdrop").addEventListener("click", closeModal);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !byId("graph-modal").hidden) closeModal();
+    });
 
     // ---- Controls -------------------------------------------------------
     byId("graph-search").addEventListener("input", function (e) {

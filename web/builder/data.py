@@ -48,6 +48,162 @@ def load_concept_graph(repo_root: str) -> dict:
     return _load(repo_root, CORE, "concept-graph.json")
 
 
+# --------------------------------------------------------------------------
+# Reference resolution + formula<->concept stem-matching
+# --------------------------------------------------------------------------
+
+
+def _ref_url(ref: dict) -> str:
+    """Best available link for a reference.
+
+    Prefer the explicit ``url`` field; fall back to an arXiv abstract URL when
+    only the bare arXiv id is present, then a DOI URL. Empty string if nothing
+    resolves (caller decides how to degrade gracefully).
+    """
+    url = (ref.get("url") or "").strip()
+    if url:
+        return url
+    arxiv = (ref.get("arxiv") or "").strip()
+    if arxiv:
+        return f"https://arxiv.org/abs/{arxiv}"
+    doi = (ref.get("doi") or "").strip()
+    if doi:
+        return f"https://doi.org/{doi}"
+    return ""
+
+
+def _ref_compact(ref: dict) -> dict:
+    """The self-contained subset of a reference the UI needs."""
+    return {
+        "authors": (ref.get("authors") or "").strip(),
+        "title": (ref.get("title") or "").strip(),
+        "year": ref.get("year"),
+        "url": _ref_url(ref),
+    }
+
+
+def build_reference_index(repo_root: str) -> dict:
+    """Resolve a formula ``source`` (a reference slug OR a raw arXiv id) to a ref.
+
+    Returns ``{key -> {authors, title, year, url}}`` keyed BOTH by reference
+    slug and (when present) by arXiv id, so a formula whose ``source`` is a bare
+    arXiv id still resolves. All access is defensive against missing keys.
+    """
+    refs = load_references(repo_root)
+    if isinstance(refs, dict):
+        refs = refs.get("references", [])
+    index: dict[str, dict] = {}
+    for r in refs:
+        if not isinstance(r, dict):
+            continue
+        compact = _ref_compact(r)
+        slug = (r.get("id") or "").strip()
+        if slug:
+            index[slug] = compact
+        arxiv = (r.get("arxiv") or "").strip()
+        if arxiv and arxiv not in index:
+            index[arxiv] = compact
+    return index
+
+
+def _concept_for_formula(formula_id: str, concept_ids: list[str]) -> str | None:
+    """Stem-match a formula id to a concept id.
+
+    A formula ``F`` links to concept ``C`` iff one id is a substring of the
+    other, the shorter id is longer than 4 chars, and the length difference is
+    at most 12. Among all matches the *longest* concept id wins (most specific).
+    """
+    fid = formula_id or ""
+    best: str | None = None
+    best_len = -1
+    for cid in concept_ids:
+        if (cid in fid) or (fid in cid):
+            shorter = min(len(cid), len(fid))
+            if shorter > 4 and abs(len(cid) - len(fid)) <= 12:
+                if len(cid) > best_len:
+                    best, best_len = cid, len(cid)
+    return best
+
+
+def _formula_entry(f: dict, ref_index: dict) -> dict:
+    """One formula, enriched with its resolved reference (or None)."""
+    source = (f.get("source") or "").strip()
+    ref = ref_index.get(source) if source else None
+    return {
+        "id": f.get("id", ""),
+        "name": f.get("name", f.get("id", "")),
+        "latex": f.get("latex", ""),
+        "meaning": f.get("meaning", ""),
+        "pillars": f.get("pillars", []) or [],
+        "source": source,
+        "ref": ref,
+    }
+
+
+def build_formula_tree(repo_root: str) -> list[dict]:
+    """A pillar -> concept -> formula tree for the formulas registry page.
+
+    Returns a list of pillar groups::
+
+        [{pillar, color, concepts: [{concept_id, concept_name, formulas: [...]}],
+          loose: [...]}]
+
+    Formulas are grouped first by their primary pillar, then (within a pillar)
+    by the concept their id stem-matches; formulas with no concept-stem fall
+    into the pillar's ``loose`` bucket. Each formula carries its resolved
+    reference (or ``None``). Defensive against missing keys throughout.
+    """
+    formulas = load_formulas(repo_root)
+    ref_index = build_reference_index(repo_root)
+    g = load_concept_graph(repo_root)
+    concept_nodes = g.get("nodes", [])
+    concept_ids = [n["id"] for n in concept_nodes if n.get("id")]
+    concept_name = {n["id"]: n.get("name", n["id"]) for n in concept_nodes if n.get("id")}
+
+    # pillar -> {"concepts": {concept_id: [entries]}, "loose": [entries]}
+    groups: dict[str, dict] = {}
+    for f in formulas:
+        entry = _formula_entry(f, ref_index)
+        pillars = entry["pillars"]
+        primary = _primary_pillar(pillars)
+        bucket = groups.setdefault(primary, {"concepts": {}, "loose": []})
+        cid = _concept_for_formula(entry["id"], concept_ids)
+        if cid:
+            bucket["concepts"].setdefault(cid, []).append(entry)
+        else:
+            bucket["loose"].append(entry)
+
+    # Materialise into a stable, sorted tree. Pillars ordered by formula count
+    # (desc) then name; concepts and loose by formula name.
+    def _pillar_size(p: str) -> int:
+        b = groups[p]
+        return sum(len(v) for v in b["concepts"].values()) + len(b["loose"])
+
+    tree: list[dict] = []
+    for pillar in sorted(groups, key=lambda p: (-_pillar_size(p), p)):
+        bucket = groups[pillar]
+        concepts_out = []
+        for cid in sorted(bucket["concepts"],
+                          key=lambda c: concept_name.get(c, c).lower()):
+            entries = sorted(bucket["concepts"][cid],
+                             key=lambda e: (e["name"] or e["id"]).lower())
+            concepts_out.append({
+                "concept_id": cid,
+                "concept_name": concept_name.get(cid, cid),
+                "formulas": entries,
+            })
+        loose = sorted(bucket["loose"],
+                       key=lambda e: (e["name"] or e["id"]).lower())
+        tree.append({
+            "pillar": pillar,
+            "color": PILLAR_COLORS.get(pillar, DEFAULT_PILLAR_COLOR),
+            "concepts": concepts_out,
+            "loose": loose,
+            "formula_count": _pillar_size(pillar),
+        })
+    return tree
+
+
 def load_link_predictions(repo_root: str) -> dict | None:
     """Predicted candidate edges, or None if the registry has not been built."""
     path = os.path.join(repo_root, CORE, "link-predictions.json")
@@ -130,6 +286,38 @@ def build_graph_payload(repo_root: str) -> dict:
             "predicted": False,
         })
 
+    # Formula<->concept index (for per-node formulaIds + the modal's compact
+    # formulas/references maps). Built once, shared by all nodes below.
+    formulas = load_formulas(repo_root)
+    ref_index = build_reference_index(repo_root)
+    concept_ids = list(ids)
+    # concept_id -> [formula_id, ...] (longest-stem first so the cap keeps the
+    # most specific matches).
+    concept_formulas: dict[str, list[str]] = {}
+    formulas_map: dict[str, dict] = {}
+    used_ref_slugs: set[str] = set()
+    for f in formulas:
+        fid = (f.get("id") or "").strip()
+        if not fid:
+            continue
+        source = (f.get("source") or "").strip()
+        ref_slug = source if source in ref_index else None
+        if ref_slug:
+            used_ref_slugs.add(ref_slug)
+        formulas_map[fid] = {
+            "name": f.get("name", fid),
+            "latex": f.get("latex", ""),
+            "refSlug": ref_slug,
+        }
+        cid = _concept_for_formula(fid, concept_ids)
+        if cid:
+            concept_formulas.setdefault(cid, []).append(fid)
+    # Longest stem first within each concept bucket.
+    for cid, fids in concept_formulas.items():
+        fids.sort(key=len, reverse=True)
+
+    references_map = {slug: ref_index[slug] for slug in used_ref_slugs}
+
     nodes_out: list[dict] = []
     for n in raw_nodes:
         nid = n["id"]
@@ -147,6 +335,8 @@ def build_graph_payload(repo_root: str) -> dict:
             "group": primary,
             "color": PILLAR_COLORS.get(primary, DEFAULT_PILLAR_COLOR),
             "definition": definition,
+            # Up to 12 formulas stem-matched to this concept (longest-stem first).
+            "formulaIds": concept_formulas.get(nid, [])[:12],
         })
 
     # Predicted candidate edges (top-N), distinctly marked.
@@ -192,6 +382,10 @@ def build_graph_payload(repo_root: str) -> dict:
         "legend": legend,
         "nodes": nodes_out,
         "links": edges_out,
+        # Self-contained lookups for the node-click modal: every formula
+        # referenced by any node's formulaIds, plus the references they cite.
+        "formulas": formulas_map,
+        "references": references_map,
     }
 
 

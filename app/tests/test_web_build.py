@@ -408,6 +408,55 @@ def test_graph_page_in_sidebar(built_site):
     assert "data/graph.html" in sidebar, "graph page missing from sidebar"
 
 
+def test_graph_modal_and_payload_maps(built_site):
+    """The graph page exposes a modal element and the payload carries the
+    self-contained formulas/references maps + per-node formulaIds."""
+    html = _read(os.path.join(built_site, "data", "graph.html"))
+    # The side panel is now a centered modal opened on node-click.
+    assert 'id="graph-modal"' in html, "graph modal element missing"
+    assert "gm-formulas-section" in html, "modal formulas section missing"
+    # KaTeX must be loaded on the (math=False) graph page for the modal render.
+    assert "katex.min.js" in html, "KaTeX not loaded on graph page"
+    # Dismissable via Escape.
+    assert "Escape" in html, "modal Escape handler missing"
+
+    with open(os.path.join(built_site, "assets", "graph-data.json"),
+              encoding="utf-8") as fh:
+        payload = json.load(fh)
+    # Self-contained lookups for the modal.
+    assert isinstance(payload.get("formulas"), dict) and payload["formulas"], \
+        "payload formulas map missing/empty"
+    assert isinstance(payload.get("references"), dict) and payload["references"], \
+        "payload references map missing/empty"
+    # At least one node carries non-empty formulaIds, and each id resolves in
+    # the formulas map; resolved refSlugs resolve in the references map.
+    with_formulas = [n for n in payload["nodes"] if n.get("formulaIds")]
+    assert with_formulas, "no node has a non-empty formulaIds list"
+    sample = with_formulas[0]
+    for fid in sample["formulaIds"]:
+        assert fid in payload["formulas"], f"formula {fid} not in formulas map"
+        slug = payload["formulas"][fid].get("refSlug")
+        if slug is not None:
+            assert slug in payload["references"], \
+                f"refSlug {slug} not in references map"
+
+
+def test_formulas_page_is_a_tree_with_reference_links(built_site):
+    """The formulas registry is rendered as a <details> tree with at least one
+    click-through reference link, and every formula carries a deep-link anchor."""
+    html = _read(os.path.join(built_site, "data", "formulas.html"))
+    # Collapsible tree structure (pillar -> concept) via <details>/<summary>.
+    assert "<details" in html, "formulas page is not a <details> tree"
+    assert 'class="ft-pillar"' in html, "pillar tree group missing"
+    # At least one resolved reference rendered as a click-through link.
+    assert re.search(r'<a href="https?://[^"]+" target="_blank"', html), \
+        "no reference click-through link on formulas page"
+    # Per-formula deep-link anchors for the graph modal / cross-page links.
+    assert 'id="formula-' in html, "per-formula anchor id missing"
+    # KaTeX still renders the math.
+    assert "$$" in html, "display-math delimiters missing on formulas tree"
+
+
 def test_no_absolute_machine_paths_in_artifact(built_site):
     """Minor regression: the dev machine path must not leak into the artifact.
 

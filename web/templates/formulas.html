@@ -1,22 +1,80 @@
 {% extends "base.html" %}
-{% block content %}
-<h1>Vzorce ({{ formulas|length }})</h1>
-<p class="lead">Registr vzorců renderovaný přes KaTeX (<code>core-data/formulas.json</code>).</p>
-
-<div class="formula-list">
-{%- for f in formulas %}
-  <article class="formula-card" id="{{ f.get('id', '') }}">
+{% macro formula_card(f) %}
+  <article class="formula-card" id="formula-{{ f.get('id', '') }}">
     <header>
-      <h2>{{ f.get('name', f.get('id', '')) }}</h2>
+      <h3>{{ f.get('name', f.get('id', '')) }}</h3>
       <code class="fid">{{ f.get('id', '') }}</code>
     </header>
     <div class="formula-math">$$ {{ f.get('latex', '') | mathraw }} $$</div>
     {%- if f.get('meaning') %}<p class="formula-meaning">{{ f.meaning }}</p>{% endif %}
     <footer class="formula-meta">
       {%- for p in f.get('pillars', []) %}<span class="tag">{{ p }}</span>{% endfor %}
-      {%- if f.get('source') %}<span class="src">zdroj: <code>{{ f.source }}</code></span>{% endif %}
+      {%- set ref = f.get('ref') %}
+      {%- if ref and ref.get('url') %}
+      <span class="src">zdroj:
+        <a href="{{ ref.url }}" target="_blank" rel="noopener noreferrer">{{ ref.authors }}{% if ref.year %} ({{ ref.year }}){% endif %}{% if ref.title %} — {{ ref.title }}{% endif %}</a>
+        {%- if f.get('source') %} <code class="ref-slug">{{ f.source }}</code>{% endif %}
+      </span>
+      {%- elif f.get('source') %}
+      <span class="src">zdroj: <code>{{ f.source }}</code></span>
+      {%- endif %}
     </footer>
   </article>
+{% endmacro %}
+{% block content %}
+<h1>Vzorce ({{ formula_count }})</h1>
+<p class="lead">Registr vzorců (<code>core-data/formulas.json</code>) renderovaný přes KaTeX,
+uspořádaný do stromu <strong>pilíř → koncept → vzorec</strong>. Každý vzorec odkazuje
+proklikem na svůj zdroj (reference). Vzorce bez konceptové vazby jsou ve skupině
+„(ostatní vzorce pilíře)".</p>
+
+<div class="formula-tree-controls">
+  <button type="button" id="ft-expand" class="ft-btn">Rozbalit vše</button>
+  <button type="button" id="ft-collapse" class="ft-btn">Sbalit vše</button>
+</div>
+
+<div class="formula-tree">
+{%- for grp in tree %}
+  <details class="ft-pillar" open>
+    <summary>
+      <span class="ft-chip" style="background: {{ grp.color }}"></span>
+      {{ grp.pillar }}
+      <span class="count">({{ grp.formula_count }})</span>
+    </summary>
+    <div class="ft-pillar-body">
+    {%- for c in grp.concepts %}
+      <details class="ft-concept">
+        <summary>{{ c.concept_name }} <span class="count">({{ c.formulas|length }})</span></summary>
+        <div class="formula-list">
+        {%- for f in c.formulas %}{{ formula_card(f) }}{% endfor %}
+        </div>
+      </details>
+    {%- endfor %}
+    {%- if grp.loose %}
+      <details class="ft-concept ft-loose">
+        <summary>(ostatní vzorce pilíře) <span class="count">({{ grp.loose|length }})</span></summary>
+        <div class="formula-list">
+        {%- for f in grp.loose %}{{ formula_card(f) }}{% endfor %}
+        </div>
+      </details>
+    {%- endif %}
+    </div>
+  </details>
 {%- endfor %}
 </div>
+
+<script>
+(function () {
+  function setAll(open) {
+    Array.prototype.forEach.call(
+      document.querySelectorAll(".formula-tree details"),
+      function (d) { d.open = open; }
+    );
+  }
+  var ex = document.getElementById("ft-expand");
+  var co = document.getElementById("ft-collapse");
+  if (ex) ex.addEventListener("click", function () { setAll(true); });
+  if (co) co.addEventListener("click", function () { setAll(false); });
+})();
+</script>
 {% endblock %}
