@@ -281,18 +281,30 @@ def _primary_pillar(pillars: list[str]) -> str:
 
 # Front (layer 0, near the viewer) -> far (last layer). Labels are provisional
 # and describe the *intended* stratification: the aspirational "TOE" apex /
-# synthesis is nearest, basic mathematical structures recede into the distance.
+# synthesis is nearest, then research concepts, then the cloud re-converges
+# through the mathematical foundations down to basic arithmetic (the far point).
+# The last three bands belong to the illustrative FOUNDATION SCAFFOLD (see
+# build_foundation_scaffold) — a teaching aid, not part of the research dataset.
 # A future curated core-data/concept-depth.json supersedes the heuristic that
-# assigns nodes to these bands (see load_concept_depth / provisional_depths).
+# assigns research nodes to the first bands (see load_concept_depth /
+# provisional_depths).
 DEPTH_BANDS = [
     "Syntéza (← TOE)",
     "Pilíře a rámce",
     "Mosty mezi přístupy",
     "Mechanismy",
     "Stavební bloky",
-    "Základní struktury · axiomy",
+    "Pokročilé struktury",
+    "Matematické rámce",          # foundation scaffold
+    "Logika a teorie množin",     # foundation scaffold
+    "Základní aritmetika (Peano)",  # foundation scaffold — the far point
 ]
 N_DEPTH_BANDS = len(DEPTH_BANDS)
+
+# Research concepts occupy the front part of the tunnel; the deep tail is left
+# for the foundation funnel so the side-on cloud tapers at BOTH ends (a rounded
+# "knedlík"/spindle): synthesis point in front, foundations point in the back.
+REAL_DEPTH_MAX = 0.62
 
 
 def _percentile_ranks(values: dict[str, float]) -> dict[str, float]:
@@ -369,6 +381,105 @@ def _layer_for(depth: float) -> int:
     return min(N_DEPTH_BANDS - 1, max(0, idx))
 
 
+# --------------------------------------------------------------------------
+# Illustrative foundation scaffold (the deep, re-converging tail)
+# --------------------------------------------------------------------------
+
+# A small, deliberately generic teaching scaffold rendered ONLY in the 3D view:
+# the mathematics the whole tower rests on, funnelling from broad frameworks
+# through logic/set-theory down to a single "Basic Arithmetic" point at the far
+# end of the depth axis. It is explicitly synthetic (``synthetic: true``), lives
+# nowhere in core-data, carries no arXiv/DOI claims, and is excluded from every
+# research count. Its only job is to make the depth axis tell a complete,
+# pedagogically honest story and give the cloud its tapered "knedlík" shape.
+FOUNDATION_SCAFFOLD_COLOR = "#cdb27a"
+_SCAFFOLD_TAG = " (Illustrative foundational scaffold — not part of the research dataset.)"
+_SCAFFOLD_TIERS = [
+    (0.76, [
+        ("math-differential-geometry", "Differential Geometry & Topology",
+         "Smooth manifolds, curvature and topology — the geometric language most "
+         "quantum-gravity programs are written in."),
+        ("math-operator-algebras", "Operator Algebras & Functional Analysis",
+         "C*- and von Neumann algebras and Hilbert-space analysis underlying the "
+         "algebraic, noncommutative and von-Neumann-type approaches."),
+        ("math-group-representation", "Group & Representation Theory",
+         "Symmetry groups and their representations (gauge structure, spin "
+         "networks, recoupling)."),
+        ("math-probability-measure", "Probability & Measure Theory",
+         "Measure, integration and probability underpinning path integrals, "
+         "random geometries and statistical methods."),
+    ]),
+    (0.89, [
+        ("math-logic", "Mathematical Logic",
+         "Formal languages, proof theory and model theory."),
+        ("math-set-theory", "Set Theory (ZFC)",
+         "Axiomatic set theory as a common foundation for mathematics."),
+    ]),
+    (1.0, [
+        ("math-basic-arithmetic", "Basic Arithmetic (Peano)",
+         "The natural numbers and their arithmetic (Peano axioms) — the "
+         "elementary base the whole tower ultimately rests on."),
+    ]),
+]
+
+
+def build_foundation_scaffold() -> tuple[list[dict], list[dict]]:
+    """The synthetic deep-tail nodes + funnel edges for the 3D view.
+
+    Returns ``(nodes, edges)``. Every node is flagged ``synthetic: true`` and
+    typed ``foundation``; edges carry ``explored: "foundation"``. Nodes funnel
+    tier 0 (broad frameworks) -> tier 1 (logic/set theory) -> tier 2 (the single
+    Basic-Arithmetic point), so the deep end visually re-converges to a point.
+    """
+    nodes: list[dict] = []
+    tier_ids: list[list[str]] = []
+    for tier_idx, (depth, members) in enumerate(_SCAFFOLD_TIERS):
+        ids: list[str] = []
+        for slot, (nid, name, defn) in enumerate(members):
+            nodes.append({
+                "id": nid,
+                "name": name,
+                "type": "foundation",
+                "synthetic": True,
+                "degree": 0,
+                "pillars": [],
+                "group": "_foundation",
+                "color": FOUNDATION_SCAFFOLD_COLOR,
+                "definition": defn + _SCAFFOLD_TAG,
+                "depth": round(depth, 4),
+                "layer": _layer_for(depth),
+                "tier": tier_idx,
+                "slot": slot,
+                "slotCount": len(members),
+                "formulaIds": [],
+            })
+            ids.append(nid)
+        tier_ids.append(ids)
+
+    edges: list[dict] = []
+
+    def _edge(a: str, b: str) -> None:
+        edges.append({
+            "from": a, "to": b, "type": "foundation",
+            "explored": "foundation", "predicted": False, "synthetic": True,
+        })
+
+    for a in tier_ids[0]:            # broad frameworks -> logic/set theory
+        for b in tier_ids[1]:
+            _edge(a, b)
+    for b in tier_ids[1]:            # logic/set theory -> the arithmetic point
+        for c in tier_ids[2]:
+            _edge(b, c)
+
+    deg: dict[str, int] = {}
+    for e in edges:
+        deg[e["from"]] = deg.get(e["from"], 0) + 1
+        deg[e["to"]] = deg.get(e["to"], 0) + 1
+    for n in nodes:
+        n["degree"] = deg.get(n["id"], 0)
+    return nodes, edges
+
+
 def build_graph_payload(repo_root: str) -> dict:
     """Assemble the JSON the force-directed web view consumes.
 
@@ -440,6 +551,8 @@ def build_graph_payload(repo_root: str) -> dict:
     references_map = {slug: ref_index[slug] for slug in used_ref_slugs}
 
     # Derivation-depth (Z axis): curated override if present, else provisional.
+    # Research concepts are compressed into the front REAL_DEPTH_MAX of the
+    # tunnel; the deep tail is reserved for the foundation funnel below.
     depth_override = load_concept_depth(repo_root)
     depths = provisional_depths(raw_nodes, neighbors, depth_override)
 
@@ -451,7 +564,7 @@ def build_graph_payload(repo_root: str) -> dict:
         definition = (n.get("definition") or "").strip()
         if len(definition) > 600:
             definition = definition[:597] + "…"
-        depth = round(depths.get(nid, 0.5), 4)
+        depth = round(depths.get(nid, 0.5) * REAL_DEPTH_MAX, 4)
         nodes_out.append({
             "id": nid,
             "name": n.get("name", nid),
@@ -496,21 +609,32 @@ def build_graph_payload(repo_root: str) -> dict:
             added += 1
         predicted_meta["count"] = added
 
-    # Pillar legend: only pillars actually present as a primary group.
-    present = sorted({n["group"] for n in nodes_out if n["group"] != "_none"})
+    # Pillar legend: only real pillars present as a primary group (the synthetic
+    # foundation group never appears in the pillar legend/filter).
+    present = sorted({n["group"] for n in nodes_out
+                      if n["group"] not in ("_none", "_foundation")})
     legend = [
         {"pillar": p, "color": PILLAR_COLORS.get(p, DEFAULT_PILLAR_COLOR)}
         for p in present
     ]
 
+    # Append the illustrative foundation scaffold (deep, re-converging tail).
+    scaffold_nodes, scaffold_edges = build_foundation_scaffold()
+    nodes_out.extend(scaffold_nodes)
+    edges_out.extend(scaffold_edges)
+
     return {
         "generated": (preds or {}).get("generated"),
-        "nodeCount": len(nodes_out),
-        "edgeCount": sum(1 for e in edges_out if not e["predicted"]),
+        # Counts reflect the RESEARCH graph only (scaffold is excluded).
+        "nodeCount": sum(1 for n in nodes_out if not n.get("synthetic")),
+        "edgeCount": sum(1 for e in edges_out
+                         if not e["predicted"] and not e.get("synthetic")),
+        "scaffoldNodeCount": len(scaffold_nodes),
         "predicted": predicted_meta,
         "legend": legend,
         # Z-axis (derivation depth) metadata for the 3D view's strata + ruler.
         "depthSource": "override" if depth_override else "provisional-heuristic",
+        "depthRealMax": REAL_DEPTH_MAX,
         "depthBands": [
             {"layer": i, "label": label} for i, label in enumerate(DEPTH_BANDS)
         ],

@@ -342,6 +342,8 @@ details.caveats p { margin: .4rem 0 0; font-size: .85rem; }
 }
 .g3d-legend li { display: flex; align-items: center; gap: .4rem; color: #c4cae6; font-size: .67rem; }
 .g3d-legend li i { width: 10px; height: 10px; border-radius: 3px; flex: 0 0 auto; }
+.g3d-legend-foundation { color: #cdb27a; }
+.g3d-legend-foundation em { color: #8a93b6; font-style: italic; }
 
 /* Tool buttons (top-right). */
 .g3d-tools { position: absolute; top: 14px; right: 14px; z-index: 5; display: flex; gap: .4rem; }

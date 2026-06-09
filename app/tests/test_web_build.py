@@ -350,7 +350,11 @@ def test_graph_page_and_data_exist(built_site):
 
 
 def test_graph_data_node_count_matches_concept_graph(built_site):
-    """graph-data.json node count must equal concept-graph.json node count."""
+    """graph-data.json RESEARCH node count must equal concept-graph.json's.
+
+    The payload may additionally carry synthetic foundation-scaffold nodes; the
+    research count (and the non-synthetic nodes) must match the source registry.
+    """
     with open(os.path.join(REPO_ROOT, "core-data", "concept-graph.json"),
               encoding="utf-8") as fh:
         cg = json.load(fh)
@@ -359,8 +363,9 @@ def test_graph_data_node_count_matches_concept_graph(built_site):
     with open(os.path.join(built_site, "assets", "graph-data.json"),
               encoding="utf-8") as fh:
         payload = json.load(fh)
+    real = [n for n in payload["nodes"] if not n.get("synthetic")]
     assert payload["nodeCount"] == n_nodes
-    assert len(payload["nodes"]) == n_nodes
+    assert len(real) == n_nodes
 
 
 def test_graph_data_includes_predicted_edges(built_site):
@@ -464,6 +469,41 @@ def test_graph_payload_has_derivation_depth_axis(built_site):
         layers_seen.add(lay)
     # A meaningful stratification actually uses several distinct bands.
     assert len(layers_seen) >= 3, f"depth collapsed into {len(layers_seen)} band(s)"
+
+
+def test_graph_foundation_scaffold(built_site):
+    """The illustrative foundation funnel: synthetic nodes that re-converge to a
+    single deepest 'Basic Arithmetic' point, all flagged + excluded from counts."""
+    with open(os.path.join(built_site, "assets", "graph-data.json"),
+              encoding="utf-8") as fh:
+        payload = json.load(fh)
+
+    syn = [n for n in payload["nodes"] if n.get("synthetic")]
+    assert syn, "no synthetic foundation-scaffold nodes"
+    assert payload.get("scaffoldNodeCount") == len(syn)
+    # Every scaffold node is typed, never claims a pillar, and carries no formulas.
+    for n in syn:
+        assert n["type"] == "foundation"
+        assert not n.get("pillars")
+        assert not n.get("formulaIds")
+    # The single deepest node is the arithmetic terminus (the convergence point).
+    deepest = max(payload["nodes"], key=lambda n: n["depth"])
+    assert deepest.get("synthetic") and deepest["tier"] == 2
+    assert sum(1 for n in syn if n["tier"] == 2) == 1, "more than one far point"
+    # Scaffold must NOT pollute the research registries / counts.
+    assert all(not e.get("synthetic")
+               for e in payload["links"] if e.get("predicted")), \
+        "a predicted edge was mislabelled synthetic"
+    scaffold_edges = [e for e in payload["links"] if e.get("synthetic")]
+    assert scaffold_edges, "no foundation funnel edges"
+    assert all(e["explored"] == "foundation" for e in scaffold_edges)
+    # And it lives only in the viz layer, never in the source concept graph.
+    with open(os.path.join(REPO_ROOT, "core-data", "concept-graph.json"),
+              encoding="utf-8") as fh:
+        cg = json.load(fh)
+    cg_ids = {n["id"] for n in cg.get("nodes", [])}
+    assert not (cg_ids & {n["id"] for n in syn}), \
+        "foundation scaffold leaked into core-data/concept-graph.json"
 
 
 def test_graph_page_is_3d_with_depth_controls(built_site):
