@@ -721,5 +721,58 @@
    "hep-th/0306138",
    "2003.02688"
   ]
+ },
+ {
+  "id": "F-040",
+  "statement": "Geometrický/gamma_5-gradovaný boostový Dirac (sudý spektrální triple z Killingova boostu xi=x d_t+t d_x, pojmenovaný chybějící prvek F-036) byl postaven na 2D Rindlerově slabu a je WELL-POSED na konečném causetu: {D,Gamma5}=0 strojově nulové (Clifford), D hermitovský, Gamma5^2=I, +-párové chirální spektrum na 2.9e-15 (na rozdíl od F-033 surogátu, který žádnou chiralitu nemá). Geometrický Dirac VYŘEŠÍ log-kompresní obstrukci F-036: zákonný exponent p_E=+1 (0.989, R2=1.000) ne surogatních 0.72, a absolutní koeficient je řádu 2pi ne off 4.8x. ALE absolutní 2pi se NEOBNOVUJE rho-invariantně: (1) klasická Killingova váha w_boost=2pi*rho nese 2pi TAUTOLOGICKY (coeff 6.290, rel_err 0.2% -- xi nese 2pi z definice, konzistence-check ne objev); (2) operátorová diagonála |K_op(x,x)|=0 exaktně (boostová váha není diagonální observabla prvořádového operátoru); (3) NETAUTOLOGICKÁ operátorová spektrální routa median(|eig_k|<rho>_k) z K_op=(1/2){xi,p} postaveného z vlastní finite-difference struktury causetu DRIFTUJE s N (4.747 -> 5.647 -> 7.707 pro N=600/1000/1400, CV=0.205, nekonverguje k 2pi). Side-by-side reprodukuje F-036 surogát (raw |K| coeff 36.62 off 4.8x, exponent 0.714 ~ F-036 0.72). ZÁVĚR: obstrukce absolutní Unruhovy 2pi se PŘESUNULA z eps-log-komprese (F-036/F-033 surogatní jednotky) na konečné-N diskretizaci prvořádového boostového generátoru -- ostřejší, lépe lokalizovaný negativ. Wall 2 nepřechází na pozitivní; most NCG<->semiklasika zůstává most struktury, ne stabilní absolutní teploty. KAVEATY: route1 tautologická (neřídí verdikt, diskriminátor je route3); 2D bezhmotný N<=1500 dense 6-NN stencil = TREND ne N->inf; konvergence by vyžadovala sparse path N>>1500 nebo Dixmierův trace na gradovaném Diraci; netestováno přes k_nn.",
+  "status": "confirmed-mixed-sharper-negative",
+  "evidence": [
+   "core-data/calculations/geometric-boost-dirac/calc.py",
+   "core-data/calculations/geometric-boost-dirac/results.json",
+   "core-data/calculations/geometric-boost-dirac/plots/unruh_geometric_vs_surrogate.png",
+   "knowledge-base/vypocty/VYPOCET-37-geometric-boost-dirac.md",
+   "lib/toe/spectraltriple.py",
+   "app/tests/test_toe_spectraltriple.py"
+  ],
+  "date": "2026-06-09",
+  "relatedHypotheses": [
+   "H6g-1"
+  ],
+  "caveats": "Route1 (klasická Killingova váha) je TAUTOLOGICKÁ -- xi nese 2pi z definice (w_boost=2pi*rho), coeff 6.290 je konzistence-check ne objev; neřídí verdikt wall2_positive=False (diskriminátor je route3). Route3 (operátorová spektrální routa z vlastní finite-difference K_op=(1/2){xi,p}) driftuje monotónně 4.747->5.647->7.707 (N=600/1000/1400), CV=0.205>0.15 práh -- nekonverguje k 2pi. 2D bezhmotný N<=1500 dense 6-NN stencil = TREND ne N->inf. Konvergence by vyžadovala sparse path N>>1500 nebo Dixmierův trace na gradovaném Diraci. Side-by-side F-036 surogát reprodukuje exponent 0.714~0.72. Netestováno přes k_nn.",
+  "implications": "Geometrický Dirac z Killingova xi skutečně VYŘEŠÍ log-kompresní problém F-036 (exponent +1 ne 0.72, koeficient řádu 2pi ne off 4.8x) a postaví první sudý spektrální triple s chirálním gradováním na causetu ({D,Gamma5}=0 na 1e-15). Ale absolutní 2pi je stále nedosažitelná: netautologická operátorová routa driftuje s diskretizací (CV 0.21). Most NCG<->semiklasika je most STRUKTURY (boostová geometrie + well-posed even spectral triple), NE stabilní absolutní Unruhovy teploty. Obstrukce se přesunula z surogatních jednotek na konečné-N diskretizaci prvořádového operátoru -- to je konkrétní, testovatelný další krok (sparse N>>1500 limit operátorového boost-kvanta nebo Dixmier/spektrální akce).",
+  "noveltyStatus": "První sudý spektrální triple s chirálním gradováním z geometrického Killingova boostu na sprinkledém 2D causetu ({D,Gamma5}=0 na 1e-15, spektrum +-párové na 2.9e-15). Vyřešení log-kompresní obstrukce F-036 (exponent +1 vs surogatních 0.72) a přesunutí obstrukce absolutní 2pi z eps-log-komprese na konečné-N diskretizaci prvořádového boostového generátoru jsou project-original. Side-by-side srovnání geometrický Dirac vs. surogatní Dirac (F-036) ze stejného causetu je nový validační datový bod.",
+  "refs": [
+   "gr-qc/9406019",
+   "0905.2562",
+   "1611.10281",
+   "bisognano1976duality",
+   "unruh1976notes"
+  ]
+ },
+ {
+  "id": "F-041",
+  "statement": "Z jednoho D^2-spektra (modul symetrizace 2D Benincasa-Dowkerova d'Alembertiánu, |sym(B)|) na 2D Poissonem sprinklovaném causal diamondu se z téhož Tr e^{-sigma D^2} konzistentně extrahují (i) spektrální dimenze d_s(sigma) a (ii) Seeley-DeWittovy koeficienty a0,a2,a4. d_s plateau konverguje na analytickou 2D BD-sondovou hodnotu 2 (1.998 +/- 0.044 při N=2200, chyba 0.0024 < F-001 tol 0.06; plateau se rozšiřuje 1.83 -> 2.25 dekád), zatímco Pauli-Jordanova sonda dává d_s ~ 0.011 (omezené spektrum, Z -> N) -- F-001/F-002 probe-závislost zkonkretizována. Diskrétní a4/a0 NEreprodukuje kontinuální NCG racionál -18/11 (-1.40 +/- 4.25, per-seed -21.6...+1.3, bez konvergence): na plochém causetu je a4=0 analyticky, takže koeficient je finite-N šum (konzistentní s F-012 alpha-drift), ne Diracův-obsah/křivostní racionál. Status: confirmed smíšený -- pozitiv na d_s kanálu (d_s=2 z téhož spektra), honest negativ na a4 (-18/11 nereprodukováno). Scope/caveats: 2D, finite-N (N<=2200), massless skalár, BD-sonda; na konečném causetu měříme N-trendy, ne typy; -18/11 by vyžadoval zakřivené pozadí + Diracův/spinový obsah, mimo plochý causet.",
+  "status": "confirmed",
+  "evidence": [
+   "core-data/calculations/ncg-spectral-dimension/calc.py",
+   "core-data/calculations/ncg-spectral-dimension/results.json",
+   "core-data/calculations/ncg-spectral-dimension/heatkernel_ds_and_a4.png",
+   "knowledge-base/vypocty/VYPOCET-38-ncg-spectral-dimension.md",
+   "lib/toe/spectral.py"
+  ],
+  "date": "2026-06-09",
+  "relatedHypotheses": [
+   "L3-1",
+   "L1-1"
+  ],
+  "caveats": "2D, finite-N (N<=2200), massless skalár, BD-sonda. Na konečném causetu měříme N-trendy, ne typy. -18/11 by vyžadoval zakřivené pozadí + Diracův/spinový obsah -- mimo plochý causet, kde a4=0 analyticky. a4_residual_vs_minus18_11=0.1425 je RELATIVNÍ reziduum |a4-target|/|target|=14 %; absolutní mezera je 0.233; verdiktové 'NO MATCH' zabraňuje přečtení 14 % jako 'blízko'. Runtime 27 s, N=2200, 3 seeds. Belenchia 1507.00330 nezávisle potvrzuje universal d_s->2 (BD-sonda).",
+  "implications": "Hrana noncommutative-geometry <-> spectral-dimension se posouvá barely -> partially jako type=shared-math: d_s i a_{2k} prokazatelně žijí z TÉHOŽ Tr e^{-sigma D^2} (přesně to, co spektrální dimenze a spektrální akce sdílejí -- týž D^2-spektrum / heat kernel), a d_s=2 je datově ověřeno z téhož spektra do F-001 tolerance. Kvantitativní vztah -18/11 <-> d_s zůstává OTEVŘENÝ (a4 racionál se v plochém diskrétním spektru nereprodukuje). F-001/F-002 probe-závislost zkonkretizována: BD-sonda 1.998±0.044, Pauli-Jordanova sonda 0.011.",
+  "noveltyStatus": "První přímá extrakce d_s i Seeley-DeWittových koeficientů a0,a2,a4 z téhož D^2-spektra (|sym(B)|) na sprinkledém 2D causal diamondu. Konkretizace F-001/F-002 probe-závislosti (BD 1.998 vs PJ 0.011) ze sdíleného heat kernelu a honest negativ na a4 (-18/11 nereprodukováno na plochém causetu) jsou project-original. Refs: 1507.00330, F-001/F-002.",
+  "refs": [
+   "1507.00330",
+   "1001.2725",
+   "1305.2588",
+   "hep-th/9606001"
+  ]
  }
 ]

@@ -75,6 +75,8 @@ SLOW_CALCS = [
     # rounds 14-19 numerical-coverage backfill (lib/toe-based, deterministic seeds)
     "modular-kms-thermal",     # F-034, ~10 s
     "ncg-kms-unruh",           # F-036, ~54 s
+    "geometric-boost-dirac",   # F-040 (geometric/gamma_5-graded boost Dirac), ~21 s
+    "ncg-spectral-dimension",  # F-041 (NCG<->d_s heat kernel, BD probe), ~27 s
     "index-charge-discrete",   # H-E probe, ~56 s
     "amol-anomaly-ee-coeff",   # F-039 (H-B), ~4 min
     "spectral-triple-modular", # F-033, ~5.5 min (Connes pass now deterministic)

@@ -19,6 +19,8 @@ from toe.spectral import (
     spectral_dimension,
     spectral_dimension_flow,
     d_s_uv,
+    heat_kernel_from_spectrum,
+    HeatKernelSpectrum,
     _make_gr,
     _make_stelle,
     _make_as,
@@ -289,3 +291,71 @@ class TestMasterTableValues:
 
     def test_multifrac_ir(self):
         assert d_s_uv(1, 4).value == sp.Rational(4)
+
+
+# ===========================================================================
+# 5.  heat_kernel_from_spectrum  --  d_s AND a_2k from a single D^2 spectrum
+#     (VYPOCET-38, NCG <-> spectral-dimension shared heat kernel)
+# ===========================================================================
+
+class TestHeatKernelFromSpectrum:
+    """The discrete heat-trace extractor must recover the spectral dimension and
+    the leading volume coefficient from a synthetic Weyl-law D^2 spectrum, and
+    expose the probe-dependence of a BOUNDED spectrum (F-001/F-002)."""
+
+    def test_2d_weyl_spectrum_ds_is_2(self):
+        """2D Weyl-law spectrum (constant density A/(4 pi)) -> d_s plateau = 2."""
+        A = 4.0
+        M = 4000
+        lam = (4.0 * np.pi / A) * np.arange(1, M + 1)   # constant 2D density
+        hk = heat_kernel_from_spectrum(lam, D=2)
+        assert isinstance(hk, HeatKernelSpectrum)
+        assert abs(hk.ds_plateau - 2.0) < 0.06, f"d_s={hk.ds_plateau}"
+
+    def test_2d_weyl_a0_matches_volume_coeff(self):
+        """The leading a0 must match the flat-2D Weyl volume coeff A/(4 pi)."""
+        A = 4.0
+        M = 4000
+        lam = (4.0 * np.pi / A) * np.arange(1, M + 1)
+        hk = heat_kernel_from_spectrum(lam, D=2)
+        target = A / (4.0 * np.pi)
+        assert abs(hk.a0 - target) < 0.05, f"a0={hk.a0} vs {target}"
+
+    def test_4d_weyl_spectrum_ds_is_4(self):
+        """4D Weyl-law spectrum (N(E)~E^2 => d2_i ~ i^{1/2}) -> d_s plateau = 4."""
+        M = 20000
+        d2 = (np.arange(1, M + 1)) ** 0.5
+        hk = heat_kernel_from_spectrum(d2, D=4, sigmas=np.logspace(3, -3, 200))
+        assert abs(hk.ds_plateau - 4.0) < 0.1, f"d_s={hk.ds_plateau}"
+
+    def test_bounded_spectrum_has_no_uv_scaling(self):
+        """A spectrum BOUNDED above (e.g. |iDelta|) has Z -> N and d_s -> 0 in the
+        UV: the plateau either collapses to ~0 or is not found (F-001/F-002 probe
+        caveat). The plateau value must NOT spuriously read 2."""
+        rng = np.random.default_rng(0)
+        d2 = rng.uniform(0.0, 1.0, size=2000)   # bounded in [0, 1]
+        hk = heat_kernel_from_spectrum(d2, D=2)
+        # bounded -> no robust d_s=2 plateau
+        if np.isfinite(hk.ds_plateau):
+            assert hk.ds_plateau < 1.5, f"bounded spectrum spuriously gave d_s={hk.ds_plateau}"
+
+    def test_normalisation_invariance(self):
+        """d_s is invariant under an overall rescaling of the count (the 1/N
+        normalisation cancels in the log-derivative)."""
+        M = 4000
+        lam = (4.0 * np.pi / 4.0) * np.arange(1, M + 1)
+        hk_full = heat_kernel_from_spectrum(lam, D=2)
+        # duplicate the spectrum (2N modes, same density shape) -> same d_s plateau
+        hk_dup = heat_kernel_from_spectrum(np.concatenate([lam, lam]), D=2)
+        assert abs(hk_full.ds_plateau - hk_dup.ds_plateau) < 0.05
+
+    def test_flat_a4_not_minus_18_11(self):
+        """A FLAT scalar spectrum has a_4 = 0 analytically, so the discrete a4/a0
+        must NOT lock onto the continuum NCG -18/11 (it is noise about ~0). This
+        guards the honest-negative of the a4 channel."""
+        A = 4.0
+        M = 4000
+        lam = (4.0 * np.pi / A) * np.arange(1, M + 1)   # exactly flat (linear)
+        hk = heat_kernel_from_spectrum(lam, D=2)
+        # not within 5% of -18/11 (= -1.6364)
+        assert abs(hk.a4_over_a0 - (-18.0 / 11.0)) / (18.0 / 11.0) > 0.05

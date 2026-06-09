@@ -55,6 +55,8 @@ __all__ = [
     "KMSFit",
     "unruh_proper_law",
     "UnruhLawFit",
+    "geometric_boost_dirac",
+    "GeometricBoostDirac",
 ]
 
 
@@ -537,3 +539,178 @@ def unruh_proper_law(K, x_proper, *, x_lo, x_hi, n_bins=12, min_count=6):
                        boost_slope=boost_slope, boost_r2=boost_r2,
                        centers=centers.tolist(), prof=prof.tolist(),
                        counts=cnt.tolist(), n_bins=int(n_bins))
+
+
+# ===========================================================================
+# GEOMETRIC / gamma_5-GRADED BOOST DIRAC  (an EVEN spectral triple from the
+# Killing field, NOT the square-root-of-modulus of the modular eps-spectrum)
+# ===========================================================================
+
+# 2D real gamma matrices in the chiral basis (Clifford {gamma^a, gamma^b} = 2 eta):
+#   gamma^0 = sigma_x = [[0,1],[1,0]],  gamma^1 = i sigma_y = [[0,-1],[1,0]].
+# The chiral grading gamma_5 = gamma^0 gamma^1 = diag(-1, +1) anticommutes with
+# each gamma^a (Clifford), so {D, Gamma5} = 0 EXACTLY for the massless Dirac
+# D = -i gamma^a d_a -- the operator is an EVEN spectral triple.
+_GBD_G0 = np.array([[0.0, 1.0], [1.0, 0.0]])
+_GBD_G1 = np.array([[0.0, -1.0], [1.0, 0.0]])
+_GBD_G5 = _GBD_G0 @ _GBD_G1                       # = diag(-1, +1)
+
+
+@dataclass
+class GeometricBoostDirac:
+    """Carrier for the geometric / gamma_5-graded boost Dirac of a 2D Rindler
+    sub-region (the EVEN spectral triple from the Killing field xi = x d_t + t d_x,
+    the named missing ingredient of F-036).
+
+    ``boost_weight`` is the CLASSICAL Killing-field boost weight
+    ``w_boost = two_pi * rho_proper`` (Bisognano-Wichmann ``K = 2*pi K_boost``);
+    ``rho_proper = sqrt(x^2 - t^2)`` is the proper distance to the horizon on the
+    right Rindler wedge. ``op_boost_quantum`` is the OPERATOR-derived spectral
+    boost-quantum ``median(|eig_k| * <rho>_k)`` of the discrete boost generator
+    ``K_op = (1/2){xi^mu, p_mu}`` built from the causet's finite-difference
+    structure (the non-tautological 2*pi route; BW continuum value 2*pi).
+
+    The grading diagnostics certify the EVEN spectral triple: ``anticomm_residual``
+    (``||{D, Gamma5}|| / ||D||``, machine-zero by the Clifford algebra),
+    ``herm_residual``, ``gamma5_sq_residual`` (``||Gamma5^2 - I||``) and
+    ``spectrum_symmetry`` (``||sort(spec D) + reverse(sort(spec D))|| / ||D||``,
+    the +-paired chiral spectrum -- machine-zero when ``{D,Gamma5}=0``).
+
+    HONEST CAVEAT: ``boost_weight`` carries 2*pi BY CONSTRUCTION of xi (a classical
+    Killing-field consistency check, NOT a discovery); the GENUINE operator content
+    is ``op_boost_quantum`` and the grading well-posedness. On an irregular finite
+    sprinkling the discrete first-order ``K_op`` has a VANISHING diagonal
+    (``op_diag_max ~ 0``: the boost weight is not a diagonal observable) and its
+    spectral ``op_boost_quantum`` DRIFTS with the discretisation scale (not
+    rho-invariant at finite N) -- it brackets 2*pi but does not converge to it
+    (F-040 / VYPOCET-37).
+    """
+
+    boost_weight: np.ndarray       # (n,) classical Killing-field weight 2*pi rho
+    rho_proper: np.ndarray         # (n,) proper distance sqrt(x^2 - t^2)
+    op_boost_quantum: float        # operator spectral boost-quantum median|eig|<rho>
+    op_boost_quantum_nmodes: int   # eigenmodes inside the proper-distance window
+    op_diag_max: float             # max |K_op(x,x)| (vanishes: not a diagonal obs)
+    anticomm_residual: float       # ||{D, Gamma5}|| / ||D||  (machine-zero)
+    herm_residual: float           # ||D - D^dagger|| / ||D||
+    gamma5_sq_residual: float      # ||Gamma5^2 - I||
+    spectrum_symmetry: float       # +-paired chiral spectrum residual
+    n: int = 0                     # sub-region size
+
+
+def _gbd_antisym_derivatives(coords, k_nn=6):
+    """Antisymmetric nearest-neighbour first-derivative stencils ``Dt, Dx``
+    (``n x n``, real, ``Dmu^T = -Dmu``) so ``-i Dmu`` is Hermitian. Each point
+    connects to its ``k_nn`` nearest Euclidean neighbours with a first-difference
+    weight ``(coord_j - coord_i) / |dr|^2`` symmetrised to be exactly
+    antisymmetric."""
+    coords = np.asarray(coords, dtype=float)
+    n = coords.shape[0]
+    Dt = np.zeros((n, n)); Dx = np.zeros((n, n))
+    diff = coords[:, None, :] - coords[None, :, :]      # (n,n,2) = (i - j)
+    d2 = diff[:, :, 0] ** 2 + diff[:, :, 1] ** 2
+    np.fill_diagonal(d2, np.inf)
+    kk = int(min(k_nn, max(1, n - 1)))
+    order = np.argsort(d2, axis=1)[:, :kk]
+    for i in range(n):
+        for j in order[i]:
+            dr2 = d2[i, j]
+            if not np.isfinite(dr2) or dr2 <= 0:
+                continue
+            Dt[i, j] += 0.5 * (coords[j, 0] - coords[i, 0]) / dr2
+            Dx[i, j] += 0.5 * (coords[j, 1] - coords[i, 1]) / dr2
+    Dt = 0.5 * (Dt - Dt.T)
+    Dx = 0.5 * (Dx - Dx.T)
+    return Dt, Dx
+
+
+def geometric_boost_dirac(coords, *, two_pi=None, k_nn=6, x_lo=None, x_hi=None):
+    """Geometric / gamma_5-graded boost Dirac of a 2D Rindler sub-region: the EVEN
+    spectral triple built from the Killing boost ``xi = x d_t + t d_x``, the named
+    missing ingredient of F-036 (the NON-surrogate Dirac, NOT ``sgn(K) sqrt(|K|)``
+    of the modular eps-spectrum).
+
+    Builds (i) the massless 2D Dirac ``D = -i(gamma^0 Dt + gamma^1 Dx)`` on the
+    ``2n``-dim spinor bundle over the ``n`` points with the chiral grading
+    ``Gamma5 = I_n (x) gamma_5`` (``{D, Gamma5} = 0`` exactly -- an EVEN spectral
+    triple), certifying its well-posedness; (ii) the CLASSICAL Killing-field boost
+    weight ``w_boost = 2*pi rho_proper`` (Bisognano-Wichmann ``K = 2*pi K_boost``,
+    Unruh local temperature ``1/(2*pi rho)``); and (iii) the OPERATOR-derived
+    spectral boost-quantum ``median(|eig_k| <rho>_k)`` of the discrete boost
+    generator ``K_op = (1/2){xi^mu, p_mu}`` (``p_mu = -i d_mu``), the non-
+    tautological absolute-2*pi route. The proper distance is ``rho_proper =
+    sqrt(x^2 - t^2)`` on the right Rindler wedge (cut ``x > 0``, horizon ``x = 0``).
+
+    Formula: modular-flow-def, bisognano-wichmann boost, spectral-action-formula.
+    Evidence: F-040 (core-data/calculations/geometric-boost-dirac/calc.py),
+    builds on F-036/F-033 surrogate diagnosis.
+    Conventions: 2D Rindler boost Killing field ``xi = x d_t + t d_x``; Bisognano-
+    Wichmann modular flow = boost ``K = 2*pi K_boost``, Unruh local temperature
+    ``1/(2*pi rho)`` (bisognano1976duality, unruh1976notes); chiral grading
+    ``gamma_5 = gamma^0 gamma^1`` (Connes 'Noncommutative Geometry' 1994, even
+    spectral triple); Connes-Rovelli modular-flow-as-thermal-time gr-qc/9406019.
+
+    HONEST: ``boost_weight`` carries 2*pi BY CONSTRUCTION of ``xi`` (a classical
+    consistency check, NOT a discovery); the genuine operator content is
+    ``op_boost_quantum`` (which DRIFTS with the discretisation, not rho-invariant
+    at finite N) and the grading well-posedness. Args ``x_lo, x_hi`` are the
+    GEOMETRY-FIXED proper-distance window for the operator boost-quantum (default
+    ``0.06 * max(rho)`` and ``0.90 * max(rho)``, anti-circular -- NEVER tuned to
+    2*pi).
+
+    Args:
+        coords: (n, 2) point coordinates (columns t, x) of the Rindler sub-region.
+        two_pi: the BW coefficient for ``boost_weight`` (default ``2*pi``).
+        k_nn: nearest-neighbour count for the finite-difference Dirac stencil.
+        x_lo: lower proper-distance window bound for the operator boost-quantum
+            (default ``0.06 * max(rho_proper)``).
+        x_hi: upper proper-distance window bound (default ``0.90 * max(rho_proper)``).
+
+    Returns:
+        :class:`GeometricBoostDirac` with the classical ``boost_weight`` /
+        ``rho_proper``, the operator ``op_boost_quantum`` (+ ``nmodes``,
+        ``op_diag_max``) and the four grading-diagnostic residuals.
+    """
+    coords = np.asarray(coords, dtype=float)
+    n = coords.shape[0]
+    tp = (2.0 * np.pi) if two_pi is None else float(two_pi)
+    t = coords[:, 0]; x = coords[:, 1]
+    rho_proper = np.sqrt(np.maximum(x ** 2 - t ** 2, 0.0))
+    w_boost = tp * rho_proper
+
+    # --- gamma_5-graded geometric Dirac (even spectral triple) -------------
+    Dt, Dx = _gbd_antisym_derivatives(coords, k_nn=k_nn)
+    D = -1j * (np.kron(_GBD_G0, Dt) + np.kron(_GBD_G1, Dx))
+    D = 0.5 * (D + D.conj().T)
+    Gamma5 = np.kron(_GBD_G5, np.eye(n))
+    scaleD = float(np.max(np.abs(D))) + 1e-30
+    anti = D @ Gamma5 + Gamma5 @ D
+    anti_res = float(np.max(np.abs(anti)) / scaleD)
+    herm_res = float(np.max(np.abs(D - D.conj().T)) / scaleD)
+    g5sq = float(np.max(np.abs(Gamma5 @ Gamma5 - np.eye(2 * n))))
+    wD = np.linalg.eigvalsh(0.5 * (D + D.conj().T))
+    sym = (float(np.max(np.abs(np.sort(wD) + np.sort(wD)[::-1]))
+                 / (float(np.max(np.abs(wD))) + 1e-30)) if wD.size else float("nan"))
+
+    # --- operator boost generator K_op = (1/2){xi^mu, p_mu} ----------------
+    Kop = -1j * 0.5 * (np.diag(x) @ Dt + Dt @ np.diag(x)
+                       + np.diag(t) @ Dx + Dx @ np.diag(t))
+    Kop = 0.5 * (Kop + Kop.conj().T)
+    wk, Vk = np.linalg.eigh(Kop)
+    prob = np.abs(Vk) ** 2
+    rhobar = (prob * rho_proper[:, None]).sum(0)
+    if x_lo is None:
+        x_lo = 0.06 * float(np.max(rho_proper)) if rho_proper.size else 0.0
+    if x_hi is None:
+        x_hi = 0.90 * float(np.max(rho_proper)) if rho_proper.size else 1.0
+    m = (np.abs(wk) > 1e-6) & (rhobar > x_lo) & (rhobar < x_hi)
+    op_bq = (float(np.median(np.abs(wk[m]) * rhobar[m])) if m.sum() >= 3
+             else float("nan"))
+    op_diag_max = float(np.max(np.abs(np.real(np.diag(Kop))))) if n else float("nan")
+
+    return GeometricBoostDirac(
+        boost_weight=w_boost, rho_proper=rho_proper,
+        op_boost_quantum=op_bq, op_boost_quantum_nmodes=int(m.sum()),
+        op_diag_max=op_diag_max, anticomm_residual=anti_res,
+        herm_residual=herm_res, gamma5_sq_residual=g5sq,
+        spectrum_symmetry=sym, n=int(n))

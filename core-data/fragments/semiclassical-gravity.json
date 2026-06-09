@@ -1046,6 +1046,13 @@
       "type": "shared-math",
       "explored": "well",
       "description": "The 4D a-theorem (monotonic decrease of the a-charge under RG flow) was PROVEN via entanglement entropy: the spherical entanglement entropy of a CFT equals the a-charge (Casini-Huerta-Myers), and strong subadditivity / entanglement monotonicity of EE yields the a-theorem (Casini-Huerta). This closes the a-theorem island, which previously carried a single edge. Established literature (convention note, no invented arXiv IDs): Casini-Huerta-Myers, Casini-Huerta; original a-theorem proof Komargodski-Schwimmer."
+    },
+    {
+      "from": "semiclassical-gravity",
+      "to": "noncommutative-geometry",
+      "type": "conjecture",
+      "explored": "barely",
+      "description": "Noncommutative spacetime and kappa-Minkowski modify dispersion relations, directly affecting the trans-Planckian problem and the Unruh effect; computations of Unruh/Hawking effects on NC backgrounds exist but lack systematic embedding in the Hadamard/algebraic QFTCS framework. ANNOTATED kolo-22 (F-040/VYPOCET-37): geometric/gamma_5-graded boost Dirac from Killing xi=x d_t+t d_x built and WELL-POSED on finite causet ({D,Gamma5}=0 machine-zero, first even spectral triple with chiral grading). Log-compression obstruction of F-036 RESOLVED (exponent +1 not 0.72, coeff ~2pi not off 4.8x). Absolute 2pi NOT recovered rho-invariantly: classical Killing weight tautological; operator spectral route DRIFTS (CV=0.205). Obstruction shifted from eps-log-compression to finite-N discretization of first-order boost generator. Edge stays barely; sharper, better-localized negative than F-036."
     }
   ]
 }

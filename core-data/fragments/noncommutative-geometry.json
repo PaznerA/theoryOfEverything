@@ -953,8 +953,15 @@
       "from": "noncommutative-geometry",
       "to": "spectral-dimension",
       "type": "shared-math",
+      "explored": "partially",
+      "description": "Spectral dimension and the spectral action live off the same Dirac spectrum: spectral dimension reads the UV/IR scaling exponent of the return probability Tr e^{-sigma D^2}, while the spectral action reads the same Seeley-DeWitt coefficients a_0,a_2,a_4 of the same heat kernel. UPGRADE barely->partially (F-041/VYPOCET-38, kolo-22): from the SAME D^2-spectrum (|sym(B)|, 2D BD d'Alembertian on a causal diamond) Tr e^{-sigma D^2} consistently yields both d_s(sigma) and a0,a2,a4 -- exactly the shared heat-kernel content. d_s plateau = 1.998 +/- 0.044 at N=2200 (error 0.0024 < F-001 tol 0.06), confirming d_s=2 from the same spectrum. Quantitative -18/11<->d_s relation remains OPEN: a4/a0 on flat causet gives -1.40 +/- 4.25 (sign-changing, no convergence), as a4=0 analytically on a flat scalar causet; -18/11 would require curved background + Dirac/spinor content. Scope: 2D, finite-N (N<=2200), massless scalar, BD-probe. ML link-prediction score 0.896 (link-predictions.json), F-001/F-002 probe-dependence concretized."
+    },
+    {
+      "from": "semiclassical-gravity",
+      "to": "noncommutative-geometry",
+      "type": "conjecture",
       "explored": "barely",
-      "description": "Spectral dimension and the spectral action live off the same Dirac spectrum: spectral dimension reads the UV/IR scaling exponent of the return probability Tr e^{-sigma D^2}, while the spectral action reads the same Seeley-DeWitt coefficients a_0,a_2,a_4 of the same heat kernel. The existing heat-kernel-expansion -> spectral-dimension edge puts this bridge one node away; ML link-prediction ranks it the top NCG-touching candidate (link-predictions.json score ~0.896, ~7 shared neighbours). Quantitative -18/11<->d_s relation remains open (d_s is probe-dependent, F-001/F-002). Evidence: link-predictions.json (0.896), F-001/F-002."
+      "description": "Noncommutative spacetime and kappa-Minkowski modify dispersion relations, directly affecting the trans-Planckian problem and the Unruh effect; computations of Unruh/Hawking effects on NC backgrounds exist but lack systematic embedding in the Hadamard/algebraic QFTCS framework. ANNOTATED kolo-22 (F-040/VYPOCET-37): geometric/gamma_5-graded boost Dirac from Killing xi=x d_t+t d_x is the NAMED MISSING PIECE of F-036 and is NOW BUILT and WELL-POSED on a finite causet ({D,Gamma5}=0 machine-zero, spectrum +-paired at 2.9e-15, first even spectral triple with chiral grading on a causet). Geometric Dirac RESOLVES the log-compression obstruction of F-036: exponent p_E=+1 (0.989) not surrogate 0.72, coefficient ~2pi not off 4.8x. BUT absolute 2pi is NOT recovered rho-invariantly: (1) classical Killing weight tautological (w_boost=2pi*rho carries 2pi by definition); (2) operator diagonal |K_op(x,x)|=0 exactly; (3) non-tautological operator spectral route DRIFTS with N (4.747->5.647->7.707 for N=600/1000/1400, CV=0.205). Obstruction has SHIFTED from eps-log-compression (F-036/F-033 surrogate units) to finite-N discretization of the first-order boost generator -- sharper, better-localized negative. Edge stays barely; bridge is of STRUCTURE (boost geometry + well-posed even spectral triple), NOT stable absolute Unruh temperature."
     }
   ]
 }

@@ -7,13 +7,13 @@
   "evaluation": {
     "leaveKOutFraction": 0.1,
     "seeds": 8,
-    "aucMean": 0.9057,
-    "aucStd": 0.0108,
-    "aucMin": 0.8878,
+    "aucMean": 0.9063,
+    "aucStd": 0.0097,
+    "aucMin": 0.8942,
     "aucMax": 0.9242,
     "precisionAt50Mean": 0.9975,
     "componentAucMean": {
-      "spectral": 0.9309,
+      "spectral": 0.9317,
       "resource_allocation": 0.8637,
       "adamic_adar": 0.8637,
       "jaccard": 0.8622,

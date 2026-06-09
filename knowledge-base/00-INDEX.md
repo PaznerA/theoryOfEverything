@@ -1,7 +1,7 @@
 # Index znalostní báze — Theory of Everything
 
 > Anotovaný rejstřík všech souborů ve `knowledge-base/`, `core-data/` a `verification/`.
-> Generováno: 2026-06-05; aktualizováno: 2026-06-09 (kolo 21 konsolidace: CAS revize vzorců — triáž 247, B1–B4 validace, 24 verified + 14 already_validated = 38 vzorců; `myrheim-meyer` RESOLVED (oprava /2, resolved_blocker); 7 WL skriptů aktivních; numerická reprodukční coverage druhého oblouku 10/11 PASS; oprava stale F-033 korelace 0.098→0.319).
+> Generováno: 2026-06-05; aktualizováno: 2026-06-09 (kolo 22: VYPOCET-37/38 přidány; F-040/F-041 přidány do findings.json (41 nálezů); NCG<->spectral-dimension UPGRADE barely->partially; NCG<->semiclassical-gravity anotováno F-040 ostřejším negativem; ncg-spectral-dimension přidáno do SLOW_CALCS; kolo 21 konsolidace: CAS revize vzorců — triáž 247, B1–B4 validace, 24 verified + 14 already_validated = 38 vzorců; `myrheim-meyer` RESOLVED (oprava /2, resolved_blocker); 7 WL skriptů aktivních; numerická reprodukční coverage druhého oblouku 10/11 PASS; oprava stale F-033 korelace 0.098→0.319).
 
 ---
 
@@ -122,6 +122,11 @@
 - [../core-data/open-problems.json](../core-data/open-problems.json) — Registr otevřených problémů: **153 problémů** (+9 fuzzy duplicit k posouzení).
 - [../core-data/connections.json](../core-data/connections.json) — Viz výše.
 
+### Kolo 22 (VYPOCET-37–38)
+
+- [vypocty/VYPOCET-37-geometric-boost-dirac.md](vypocty/VYPOCET-37-geometric-boost-dirac.md) — Geometrický/gamma_5-gradovaný boostový Dirac (H6g-1, F-040): pojmenovaný chybějící prvek F-036 postaven na 2D Rindlerově slabu (3N × 5 seeds, N<=1500). Výsledky: {D,Gamma5}=0 strojově nulové, spektrum +-párové na 2.9e-15 (první sudý spektrální triple s chirálním gradováním na causetu). Geometrický Dirac VYŘEŠÍ log-kompresi F-036: exponent p_E=+1 (0.989, R2=1.000). ALE Route1 tautologická, Route2 diagonála nulová, Route3 driftuje (CV=0.205). Obstrukce přesunuta z eps-log-komprese na konečné-N diskretizaci prvořádového boostového generátoru. Wall 2 nepřechází. Status: confirmed-mixed-sharper-negative. Data: `core-data/calculations/geometric-boost-dirac/`. Knihovna: `lib/toe/spectraltriple.py` (geometric_boost_dirac). Test: `app/tests/test_toe_spectraltriple.py`. (F-040)
+- [vypocty/VYPOCET-38-ncg-spectral-dimension.md](vypocty/VYPOCET-38-ncg-spectral-dimension.md) — NCG<->d_s heat-kernel (L3-1/L1-1, F-041): z téhož D^2-spektra (|sym(B)|, BD d'Alembertián, 2D causal diamond, N=2200, 3 seeds) se konzistentně extrahují d_s(sigma) i Seeley-DeWittovy koeficienty a0,a2,a4. d_s=1.998±0.044 (chyba 0.0024 < F-001 tol 0.06, plateau 1.83->2.25 dekád); Pauli-Jordanova sonda d_s=0.011 (F-001/F-002 probe-závislost zkonkretizována). Diskrétní a4/a0=-1.40±4.25 NEreprodukuje -18/11 (a4=0 analyticky na plochém causetu). Status: confirmed (smíšený). Hrana NCG<->spectral-dimension UPGRADOVÁNA barely->partially. Data: `core-data/calculations/ncg-spectral-dimension/`. Knihovna: `lib/toe/spectral.py`. Test: `app/tests/test_toe_spectral.py`. Runtime 27 s. (F-041)
+
 ### Kolo 19 (VYPOCET-35–36)
 
 - [LOV-18-11-overlaps.md](LOV-18-11-overlaps.md) — **LOV na překryvy -18/11** (2026-06-08): brainstorm LOV dokument + výsledky kola 19. H-B (EE-koeficient vs anomálie): c_EE = 7.562 NEODPOVÍDÁ trace-anomálním racionálům — no-match-geometric, F-039 confirmed. H-E (index-náboj diskrétní): H-E vyvrácena — eta(iDelta)=0 strukturálně (chybí gamma5), eta(D_K)~N^1.02 extenzivní, VYPOCET-36 dokumentuje. +6 hran nakreslenýchrozhodnutím T3. Podmíněná NCG<->EE hrana nepřidána (H-B oslabuje). Data: `core-data/calculations/amol-anomaly-ee-coeff/` + `core-data/calculations/index-charge-discrete/`.
@@ -165,7 +170,7 @@
 
 ### Registr nálezů
 
-- [../core-data/findings.json](../core-data/findings.json) — Registr **39 originálních nálezů** (kola 1–19, aktualizováno 2026-06-08): F-001–F-038 viz předchozí kola; **F-039 (VYPOCET-35, kolo 19)** H-B EE-koeficient vs trace-anomálie — confirmed/negativní; c_EE=7.562 (CV 1.3 %) NEODPOVÍDÁ žádnému pre-registrovanému racionálu; přímý skalár -3 off 152 %, -18/11 off 362 %; c_EE je geometrický, ne anomální; scope 2D/finite-N/massless-scalar; anti-cirkularita ověřena; F-040 NEPŘIDÁN (H-E čistě negativní výsledek, VYPOCET-36 dokumentuje). Každý nález rozlišuje reprodukci literatury od projektového přínosu.
+- [../core-data/findings.json](../core-data/findings.json) — Registr **41 originálních nálezů** (kola 1–22, aktualizováno 2026-06-09): F-001–F-039 viz předchozí kola; **F-040 (VYPOCET-37, kolo 22)** geometrický/gamma_5-gradovaný boostový Dirac — confirmed-mixed-sharper-negative; sudý spektrální triple well-posed, log-komprese F-036 vyřešena, absolutní 2pi nedosažitelná (Route3 driftuje); **F-041 (VYPOCET-38, kolo 22)** NCG<->d_s heat-kernel — confirmed (smíšený); d_s=1.998±0.044 z téhož Tr e^{-sigma D^2} (MATCH F-001 tol), a4/a0 NEreprodukuje -18/11 (honest negativ). Každý nález rozlišuje reprodukci literatury od projektového přínosu.
 
 ### Fragmenty pilířů (`core-data/fragments/`)
 
@@ -181,7 +186,7 @@ Osmnáct strojově zpracovatelných JSON fragmentů (koncepty, vzorce, reference
 
 ## Výpočty (`knowledge-base/vypocty/` + `core-data/calculations/`)
 
-Třicet šest výpočtů dokončeno (VYPOCET-01..36, 35 calc adresářů — 3 adresáře nesou 2 writeupy): čtyři v prvním deep-dive kole, tři v rozhodujícím kole, tři v kolech 3–4, dva v kole 5, dva v kole 6, dva v kole 7, dva v kole 8, dva v kole 9, dva v kole 10, dva v kolech 11–12, dva v kolech 12–13, tři v kole 14, jeden v kole 15, dva v kole 16, tři v kole 18 (VYPOCET-32/33/34), dva v kole 19 (VYPOCET-35/36). Každý má writeup v `knowledge-base/vypocty/` a strojová data (calc.py + results.json + plots) v odpovídajícím podadresáři `core-data/calculations/`.
+Třicet osm výpočtů dokončeno (VYPOCET-01..38, 37 calc adresářů — 3 adresáře nesou 2 writeupy): čtyři v prvním deep-dive kole, tři v rozhodujícím kole, tři v kolech 3–4, dva v kole 5, dva v kole 6, dva v kole 7, dva v kole 8, dva v kole 9, dva v kole 10, dva v kolech 11–12, dva v kolech 12–13, tři v kole 14, jeden v kole 15, dva v kole 16, tři v kole 18 (VYPOCET-32/33/34), dva v kole 19 (VYPOCET-35/36). Každý má writeup v `knowledge-base/vypocty/` a strojová data (calc.py + results.json + plots) v odpovídajícím podadresáři `core-data/calculations/`.
 
 ### Kolo 1 (VYPOCET-01–04)
 

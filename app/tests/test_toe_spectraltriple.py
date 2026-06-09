@@ -32,6 +32,8 @@ from toe.spectraltriple import (
     KMSFit,
     unruh_proper_law,
     UnruhLawFit,
+    geometric_boost_dirac,
+    GeometricBoostDirac,
 )
 
 
@@ -189,3 +191,69 @@ def test_unruh_proper_law_degenerate_window_returns_nan():
     assert np.isnan(fit.law_exponent)
     assert np.isnan(fit.boost_slope)
     assert len(fit.prof) == 12
+
+
+# ---------------------------------------------------------------------------
+# geometric_boost_dirac -- the EVEN spectral triple from the Killing boost
+# (F-040 / VYPOCET-37, the named missing ingredient of F-036)
+# ---------------------------------------------------------------------------
+
+def _rindler_subregion(n, seed):
+    """A 2D Rindler slab sub-region {x > 0} (columns t, x), t_extent << x_extent."""
+    rng = np.random.default_rng(seed)
+    t = rng.random(n) * 0.30
+    x = rng.random(n) * 1.0                          # x > 0 (right wedge)
+    return np.column_stack([t, x])
+
+
+def test_geometric_boost_dirac_is_even_spectral_triple():
+    """The gamma_5-graded geometric Dirac is an EVEN spectral triple: {D,Gamma5}=0
+    to machine precision (Clifford), D Hermitian, Gamma5^2 = I, and the spectrum
+    is +-paired (chiral) to machine precision -- WELL-POSED at finite N."""
+    coords = _rindler_subregion(120, seed=0)
+    gbd = geometric_boost_dirac(coords)
+    assert isinstance(gbd, GeometricBoostDirac)
+    assert gbd.n == 120
+    # {D, Gamma5} = 0 EXACTLY (the even-grading anticommutation)
+    assert gbd.anticomm_residual < 1e-12
+    assert gbd.herm_residual < 1e-12
+    assert gbd.gamma5_sq_residual < 1e-12
+    # +-paired chiral spectrum to machine precision
+    assert gbd.spectrum_symmetry < 1e-9
+
+
+def test_geometric_boost_dirac_classical_weight_carries_2pi():
+    """The CLASSICAL Killing-field boost weight is w_boost = two_pi * rho_proper
+    with rho_proper = sqrt(x^2 - t^2): a through-origin fit recovers the coefficient
+    two_pi EXACTLY (a normalisation consistency check -- 2*pi is put in by xi)."""
+    coords = _rindler_subregion(200, seed=1)
+    tp = 6.283185307179586
+    gbd = geometric_boost_dirac(coords, two_pi=tp)
+    t = coords[:, 0]; x = coords[:, 1]
+    rho = np.sqrt(np.maximum(x ** 2 - t ** 2, 0.0))
+    assert np.max(np.abs(gbd.rho_proper - rho)) < 1e-12
+    # w_boost = two_pi * rho exactly
+    assert np.max(np.abs(gbd.boost_weight - tp * rho)) < 1e-12
+    # through-origin slope of w_boost vs rho is exactly two_pi
+    g = rho > 0
+    c = float(np.dot(rho[g], gbd.boost_weight[g]) / np.dot(rho[g], rho[g]))
+    assert abs(c - tp) / tp < 1e-9
+    # a DIFFERENT two_pi propagates (no hidden hard-coded 2*pi)
+    gbd2 = geometric_boost_dirac(coords, two_pi=3.0)
+    assert np.max(np.abs(gbd2.boost_weight - 3.0 * rho)) < 1e-12
+
+
+def test_geometric_boost_dirac_operator_quantum_is_finite_and_diag_vanishes():
+    """The OPERATOR boost generator K_op = (1/2){xi^mu, p_mu} is Hermitian with a
+    VANISHING diagonal (a first-order operator -i*antisymmetric has zero diagonal:
+    the boost weight is NOT a diagonal observable), and its spectral boost-quantum
+    median(|eig|<rho>) is a finite O(1)-O(10) number (the non-tautological 2*pi
+    route -- not asserted to equal 2*pi, since it drifts with N: F-040)."""
+    coords = _rindler_subregion(160, seed=2)
+    gbd = geometric_boost_dirac(coords)
+    # the operator diagonal vanishes (not a diagonal observable)
+    assert gbd.op_diag_max < 1e-8
+    # the spectral boost-quantum is finite and positive (uses >= 3 modes)
+    assert np.isfinite(gbd.op_boost_quantum)
+    assert gbd.op_boost_quantum > 0.0
+    assert gbd.op_boost_quantum_nmodes >= 3

@@ -95,6 +95,8 @@ from toe.spectral import (
     spectral_dimension,
     spectral_dimension_flow,
     d_s_uv,
+    heat_kernel_from_spectrum,
+    HeatKernelSpectrum,
 )
 
 # ---------------------------------------------------------------------------
@@ -217,6 +219,8 @@ __all__ = [
     "spectral_dimension",
     "spectral_dimension_flow",
     "d_s_uv",
+    "heat_kernel_from_spectrum",
+    "HeatKernelSpectrum",
     # ncg (A4)
     "a4_heat_kernel_bracket",
     "central_charges",
