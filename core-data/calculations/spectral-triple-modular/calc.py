@@ -500,8 +500,13 @@ def main(argv=None):
     # pick the seed with largest n_sub (most modes) as representative
     rep_idx = int(np.argmax([d["n_sub"] for d in per_seed])) if per_seed else 0
     rep_out, rep_payload = payloads[rep_idx]
+    # t_start=None: never wall-clock-truncate the stored pair list — always
+    # compute all n_pairs so the Connes output length is DETERMINISTIC (per-pair
+    # cost is bounded by n_iter/n_random at N<=max_n). The earlier wall-clock cap
+    # made the committed pair count timing-dependent (a reproduction non-determinism
+    # caught by the kolo-21 numerical-coverage backfill).
     connes = connes_pass(rep_payload, n_pairs=n_pairs, seed=2024,
-                         max_n=connes_max_n, t_start=t_start)
+                         max_n=connes_max_n, t_start=None)
 
     # ===================================================================
     # VERDICT (pre-registered criteria)

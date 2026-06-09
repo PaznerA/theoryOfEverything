@@ -31,6 +31,9 @@ REPO = Path(__file__).resolve().parents[2]
 CALC = REPO / "core-data" / "calculations"
 TMP = Path("/tmp/qg-repro-test")
 TIMING_FIELDS = ("runtime_s", "timing_s", "elapsed_s", "wall_clock")
+# Plot-file path fields are run-location-dependent metadata (the committed path
+# is repo-relative, a sandbox re-run writes a /tmp-relative path) — not physics.
+PATH_FIELDS = ("/plot",)
 
 # Sub-second calculations, safe to run on every test invocation.
 FAST_CALCS = [
@@ -73,6 +76,8 @@ SLOW_CALCS = [
     "modular-kms-thermal",     # F-034, ~10 s
     "ncg-kms-unruh",           # F-036, ~54 s
     "index-charge-discrete",   # H-E probe, ~56 s
+    "amol-anomaly-ee-coeff",   # F-039 (H-B), ~4 min
+    "spectral-triple-modular", # F-033, ~5.5 min
 ]
 
 # Fields that amplify ulp-level eigh differences across BLAS implementations
@@ -158,6 +163,7 @@ def _run_and_compare(name: str, timeout: int | None = None):
         d
         for d in RUNNER.compare(orig, new)
         if not any(t in d[0] for t in TIMING_FIELDS)
+        and not any(p in d[0] for p in PATH_FIELDS)
         and not (
             d[1] == "missing-in-new" and any(k in d[0] for k in KNOWN_EXTRA_FIELDS)
         )
@@ -206,6 +212,7 @@ def test_full_reproduction(name):
         "ds-entropy-cap": "ssee-diamond",              # F-006 epsilon (anti-circularity)
         "ds-conformal-4d": "ssee-diamond",             # F-006 epsilon (anti-circularity)
         "ds-molecule-fluctuation": "ssee-diamond",     # F-006 epsilon (anti-circularity)
+        "amol-anomaly-ee-coeff": "ds-entropy-cap",     # F-029 c_EE channel (H-B)
     }
     if name in deps and not (TMP / deps[name] / "results.json").exists():
         _prepare(deps[name])  # committed results.json suffices as input

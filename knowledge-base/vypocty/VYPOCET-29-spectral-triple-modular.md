@@ -35,7 +35,9 @@ Tento výpočet **instancuje** přesně tuto datovou hranu: vezme SJ jednočást
 
 **Poznámka k referenci gr-qc/9406019:** je to Connes-Rovelli *„Von Neumann Algebra Automorphisms and Time-Thermodynamics Relation"* (teze tepelného času, Tomita-Takesaki modulární automorfismus = čas) — motivuje čtení **modulárního toku jako času**, NENÍ to zdroj Connesovy vzdálenostní formule (ta je z knihy 1994). Ověřeno tento běh přes arXiv.
 
-**Parametry:** $N=1200$ ($\le1800$ mez husté `eigh`), 5 seedů; Connesova podmnožina contiguous near-cut patch $\le220$ bodů, 14 párů (mez $\le300$ párů dle receptu).
+**Parametry:** $N=1200$ ($\le1800$ mez husté `eigh`), 5 seedů; Connesova podmnožina contiguous near-cut patch $\le220$ bodů, **16 párů deterministicky** (mez $\le300$ párů dle receptu).
+
+> **Pozn. kolo-21 (numerická coverage):** původní committed běh ukládal jen *dokončené* Connes páry před wall-clock capem (14, závislé na rychlosti stroje → nereprodukovatelné). Oprava `t_start=None` (vždy všech 16 párů) učinila výstup deterministickým; reprodukovatelná korelace je **0,319** (ne committed 0,098), $R^2=0{,}10$ — verdikt **no-match nezměněn** (stále << práh 0,5).
 
 **KAVEAT (poctivý, vynucený receptem):** $D_K$ je **surogát** Diraca (odmocnina-modulu modulárního kernelu), NIKOLI from-first-principles causal-set Dirac známé KO-dimenze / reálné struktury. Testujeme, zda **modulární data sama** nesou metrický (Connes) + lokalitní obsah, ne zda existuje plný axiomatický spektrální triple.
 
@@ -60,13 +62,15 @@ Z konstrukce $\mathrm{spec}(D_K)=\mathrm{sgn}(\lambda_K)\sqrt{|\lambda_K|}$ a $D
 
 ### (3) Connesova vzdálenost vs kauzální vzdálenost — KLÍČOVÝ TEST
 
-Connesova vzdálenost počítána na **contiguous near-cut patch 220 bodů** (z plného $n_{\text{sub}}=614$; mez rozpočtu), 14 párů přes rozsah separací. Optimalizace $d_D=\sup\{|a_i-a_j|:\|[D,a]\|_{\mathrm{op}}\le1\}$ jako scale-invariantní maximum (projektovaný ascent).
+Connesova vzdálenost počítána na **contiguous near-cut patch 220 bodů** (z plného $n_{\text{sub}}=614$; mez rozpočtu), **16 párů deterministicky** přes rozsah separací. Optimalizace $d_D=\sup\{|a_i-a_j|:\|[D,a]\|_{\mathrm{op}}\le1\}$ jako scale-invariantní maximum (projektovaný ascent).
 
-| Pár (kauzální vzdál.) | 0,00 | 0,03 | 0,06 | 0,10 | 0,14 | 0,19 | 0,27 | 0,36 |
+(8 reprezentativních z 16 párů; plných 16 v `results.json` `connes`)
+
+| Pár (kauzální vzdál.) | 0,00 | 0,03 | 0,05 | 0,08 | 0,14 | 0,18 | 0,24 | 0,36 |
 |---|---|---|---|---|---|---|---|---|
-| $d_D$ (Connes) | 2,19 | 2,37 | 2,09 | 1,83 | 2,70 | 2,45 | 2,14 | 2,69 |
+| $d_D$ (Connes) | 2,19 | 2,28 | 2,09 | 2,26 | 2,14 | 2,05 | 1,94 | 2,67 |
 
-**Pearsonova korelace $d_D$ vs kauzální vzdálenost = 0,098; lineární fit $R^2=0{,}0095$; sklon 0,27.** Connesovy vzdálenosti se shlukují kolem 2,0–2,5 **nezávisle** na kauzální/geodetické vzdálenosti (0,0 → 0,36). Distance je **plochá / saturovaná, NEsleduje** geodetickou vzdálenost.
+**Pearsonova korelace $d_D$ vs kauzální vzdálenost = 0,319; lineární fit $R^2=0{,}102$; sklon 0,57** (deterministicky, 16 párů, malý vzorek). Connesovy vzdálenosti se shlukují kolem 2,0–2,4 a se separací (0,0 → 0,36) korelují **jen slabě** ($R^2\approx0{,}10$, hluboko pod tracking prahem). Distance je v podstatě **plochá / saturovaná, NEsleduje** geodetickou vzdálenost.
 
 **Optimalizátor ověřen nezávisle:** na kanonickém 1D Diracově řetězci $D=i(S-S^{\mathsf T})$ dává `connes_distance` sousedním bodům přesně 1 a monotónně roste se separací (test `test_toe_spectraltriple.py`). Plochost $d_D$ na modulárním Diracovi je tedy **fyzikální vlastnost objektu**, ne selhání solveru.
 
@@ -82,9 +86,9 @@ Podle předregistrovaných kritérií:
 | **Diagonální boost lineární** | $R^2>0{,}9$, sklon$>0$ | **0,955**, sklon 27 | **✓ PASS** |
 | Off-diag spad lokální | $R^2>0{,}8$, sklon$<0$ | sklon −0,50 ✓, $R^2$ **0,765** | ✗ (sklon ano, $R^2$ těsně pod) |
 | Weylova dimenze | $\in[1{,}7;2{,}3]$ | **1,54** | ✗ (pod pásmem) |
-| **Connes sleduje kauzální vzdál.** | korelace$>0{,}5$ | **0,098** | **✗ FAIL** |
+| **Connes sleduje kauzální vzdál.** | korelace$>0{,}5$ | **0,319** | **✗ FAIL** |
 
-**Souhrn:** Spektrální triple z modulárního kernelu **reprodukuje boostovou strukturu** (lineární Bisognano-Wichmannova diagonální váha, $R^2\approx0{,}96$, robustní napříč 5 seedy) a **lokalitu** (negativní off-diagonální spad), ale **NEreprodukuje metrický obsah ve smyslu Connesovy vzdálenosti** — $d_D$ je plochá a nekorelovaná s geodetickou vzdáleností (korelace 0,10). Weylova dimenze $\approx1{,}5$ < 2.
+**Souhrn:** Spektrální triple z modulárního kernelu **reprodukuje boostovou strukturu** (lineární Bisognano-Wichmannova diagonální váha, $R^2\approx0{,}96$, robustní napříč 5 seedy) a **lokalitu** (negativní off-diagonální spad), ale **NEreprodukuje metrický obsah ve smyslu Connesovy vzdálenosti** — $d_D$ je v podstatě plochá a jen slabě korelovaná s geodetickou vzdáleností (korelace 0,32, $R^2\approx0{,}10$). Weylova dimenze $\approx1{,}5$ < 2.
 
 To je **čistý parciální/negativní výsledek**: modulární data nesou *boostovou (časovou, modulárně-tokovou)* geometrii, ale modulární Diracova *prostorová* metrika (Connes) nereprodukuje kauzální vzdálenost. Korespondence „SJ modulární Hamiltonián ↔ NCG spektrální triple" v této surogátní instanci **NEplatí na úrovni metriky**.
 
