@@ -1,14 +1,14 @@
 # Index znalostní báze — Theory of Everything
 
 > Anotovaný rejstřík všech souborů ve `knowledge-base/`, `core-data/` a `verification/`.
-> Generováno: 2026-06-05; aktualizováno: 2026-06-09 (kolo 22: VYPOCET-37/38 přidány; F-040/F-041 přidány do findings.json (41 nálezů); NCG<->spectral-dimension UPGRADE barely->partially; NCG<->semiclassical-gravity anotováno F-040 ostřejším negativem; ncg-spectral-dimension přidáno do SLOW_CALCS; kolo 21 konsolidace: CAS revize vzorců — triáž 247, B1–B4 validace, 24 verified + 14 already_validated = 38 vzorců; `myrheim-meyer` RESOLVED (oprava /2, resolved_blocker); 7 WL skriptů aktivních; numerická reprodukční coverage druhého oblouku 10/11 PASS; oprava stale F-033 korelace 0.098→0.319).
+> Generováno: 2026-06-05; aktualizováno: 2026-06-09 (velké review: 5 draftů + 41 findings referee-grade revize; REVIZE-PRO-CLOVEKA.md finalizována jako human handoff; report 2026-06-09-velke-review.md přidán; kolo 22: VYPOCET-37/38 přidány; F-040/F-041 přidány do findings.json; NCG<->spectral-dimension UPGRADE barely->partially; kolo 21 konsolidace: CAS 175/175, numerika 10/11 PASS; `myrheim-meyer` RESOLVED).
 
 ---
 
 ## Klíčové dokumenty
 
 > **VSTUPNÍ BOD PRO LIDSKÉHO AUTORA (drafty → revize → release):**
-> [`../papers/REVIZE-PRO-CLOVEKA.md`](../papers/REVIZE-PRO-CLOVEKA.md) — přehledová tabulka stavu všech 4 draftů; doporučené pořadí revizí; ~80 checkboxů (matematika / citace / čísla / konvence); kritické high-risk položky; absolutní pravidla pro release; příkazy pro re-run všech calc.py. **Sem jít jako první před externím sdílením čehokoli z projektu.**
+> [`../papers/REVIZE-PRO-CLOVEKA.md`](../papers/REVIZE-PRO-CLOVEKA.md) — přehledová tabulka stavu všech **5 draftů** (draft-01..04 + draft-06 negativ-letter); doporučené pořadí revizí; ~80 checkboxů (matematika / citace / čísla / konvence); kritické high-risk položky; absolutní pravidla pro release; příkazy pro re-run všech calc.py. **Sem jít jako první před externím sdílením čehokoli z projektu. Velké review dokončeno 2026-06-09 — viz [`../reports/2026-06-09-velke-review.md`](../reports/2026-06-09-velke-review.md).**
 
 - [SYNTEZA.md](SYNTEZA.md) — Syntetická mapa všech 18 pilířů: kde každý stojí, co sdílí a kde jsou bílá místa; vstupní bod pro hledání skrytých vazeb.
 - [BRAINSTORM-01.md](BRAINSTORM-01.md) — První systematický brainstorming nenalezených souvislostí: 5 analytických čoček nad `core-data/`, 10+ hypotéz s confidence skóre a prioritami pro Fázi 2.
@@ -23,6 +23,8 @@
 ---
 
 ## Denní zprávy a reviewové reporty (`reports/`)
+
+- [../reports/2026-06-09-velke-review.md](../reports/2026-06-09-velke-review.md) — **Velké review (2026-06-09)**: referee-grade revize všech 5 draftů + 41 findings (F-001..F-041). Sada nálezů referee-ready (CAS 175/175, numerika 10/11, cross-HW 0 flipů). Per-draft readiness + blokátory: draft-01 ~15–25 h, draft-02 ~4–8 h, draft-03 ~10–18 h, draft-04 ~16–26 h, draft-06 ~8–14 h. 10 auto-fixů aplikováno. Nejdůležitější lidský první krok: audit 7 chybných arXiv autorských atribucí — absolutní gate pro sdílení. **Vstupní bod pro lidského autora: [`../papers/REVIZE-PRO-CLOVEKA.md`](../papers/REVIZE-PRO-CLOVEKA.md).**
 
 - [../reports/2026-06-06-review.md](../reports/2026-06-06-review.md) — **Velké review část 1** (2026-06-06): verifikace 150 arXiv ID (7 chyb opraveno, tabulka problémových ID); audit 24 nálezů (cesty k evidenci + caveaty, žádný status nezměněn); opravy draftů (a_err rekonstrukce nejistot, CST konvence d_s=8 + D vs D_space); doplnění grafu (5 nových hran, 2 nové uzly, VNA pilíř na 11 hranách); nové statistiky registrů (625 uzlů, 2476 hran, 292 connections, 115 barely, 587 ref.); část 2 (reprodukce): **20/20 calc.py bitově identických** (§f — vč. 2 skrytých závislostí pořadí a opravy latentního print-bugu).
 - [../reports/2026-06-06-day-report.md](../reports/2026-06-06-day-report.md) — Závěrečná denní zpráva (2026-06-06): přehled celého dne výzkumu (kola 3–9), souhrnné statistiky (20 výpočtů, 24 nálezů, 4 drafty), stav všech hypotéz, uzavřené fronty, doporučení a plán pro velké review.

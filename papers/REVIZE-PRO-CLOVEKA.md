@@ -1,14 +1,18 @@
 # REVIZE PRO ČLOVĚKA — vstupní bod pro lidského výzkumníka
 
-**Stav: 2026-06-08 | Generováno AI koordinačním agentem. Všechny níže uvedené checkboxy jsou určeny výhradně pro lidské splnění.**
+**Stav: 2026-06-09 | Generováno AI koordinačním agentem. Všechny níže uvedené checkboxy jsou určeny výhradně pro lidské splnění.**
+
+> **Toto je JEDINÝ kompletní lidský handoff dokument.** Pokrývá všech **5 draftů** (draft-01/02/03/04/06), všech **41 nálezů** (F-001..F-041), **agentní framework** (tří-rolová smyčka), **dvojí verifikaci** (CAS + numerická reprodukce) a odkazuje na vědecký review companion `reports/2026-06-09-velke-review.md` (referee verdikt per draft + prioritizovaný punch-list) a na integritní konsolidaci `reports/2026-06-09-consolidation.md`. Pořadí čtení: nejdřív tento dokument (§1 přehled → §2 per-draft checklist → §3 pořadí → §4 reprodukce/autorství), pak review report pro referee-grade verdikt a odhady času.
 
 > **Aktualizace 2026-06-08 (kola 12–16 + agent-framework):** Tato revize byla doplněna o nálezy z kol 12–16 (F-024..F-035), které vznikly po nasazení tří výzkumných agentů na `main` (exploratory-engine + computational-physicist + adversarial-verifier, commit `6e0f394`). Audit-fixy kola 14–15 od verifiera jsou již aplikovány (commit `e79b75e`: M-1 proxy3 30-seed committed podklad, m-1 F-031 měřený vs predikovaný drift, m-2 F-033 reziduum). Klíčové dopady na drafty: **draft-01 §4.2** dostal spojitý superradiantní exponent $B(a)$ (F-030, nahrazuje starý ohraničený 4.23/3.82), **draft-04 §4.3** dostal poctivé negativy F-029 (2D ano / 4D ne) a F-031 (4D area-law genuinně chybí). Per-draft checklisty níže (§2) byly o tyto položky rozšířeny.
 >
 > **Aktualizace 2026-06-09 (kola 18–21, druhý/třetí oblouk + konsolidace):** Pokrytí rozšířeno z F-024..F-035 na **F-024..F-039**. Draft-06 (negative-results letter, řádek tabulky §1) stojí na čtyřech nálezech druhého/třetího oblouku, které musí lidský revizor ověřit proti `findings.json` (verbatim statusy): **F-036** (KMS/Unruh netautologický test, status `informovany-negativ-tautologie` — most struktury/boostové geometrie, NE teploty; absolutní Unruh $2\pi$ neobnovena, VYPOCET-32); **F-037** (konformní 4D dS area-zákon, status `supported` — $\xi=1/6$ neobnoví area-zákon, R' drift $\rho^{+0.386}$ identický pro $\xi=1/6$ i $\xi=0$; posiluje F-031, VYPOCET-33); **F-038** (molekulová fluktuace, status `refuted-direction` — Var$(N_{mol})\sim\rho^{0.656}$, CI95 vylučuje plochu i objem; druhý nezávislý negativ k F-031, VYPOCET-34); **F-039** (EE-koeficient vs trace-anomálie, status `confirmed`/no-match-geometric — $c_{EE}=7.562$ CV 1.26 %, $-18/11$ míjí o 362 %, VYPOCET-35 / SYNTEZA-03 zeď 3). Poznámka: **F-034** (`partial`, KMS/thermal-time na Rindlerově slabu, VYPOCET-30) je předchůdce **konsolidovaný do F-036** — v draftu-06 (Wall 2) je tato fyzika reprezentována přes F-036, takže absence F-034 v draftu je vědomé superseder, ne opomenutí. Kolo 21 navíc opravilo stale F-033 korelaci 0.098→0.319 (timing-truncace artefakt; verdikt no-match nezměněn) napříč registry + knowledge-base.
+>
+> **Aktualizace 2026-06-09 (kolo 22 + velké review):** Pokrytí rozšířeno na **F-001..F-041**. Dva nové nálezy kola 22 (compute-doporučení SYNTEZY-03 #1/#2): **F-040** (geometrický γ5-gradovaný boost Dirac, status `confirmed-mixed-sharper-negative` — pojmenovaný chybějící prvek F-036 byl postaven a well-posed na konečném causetu, VYŘEŠIL log-kompresní obstrukci, exponent +1 ne 0.72, koeficient O(2π); ALE absolutní Unruh 2π se neobnovuje ρ-invariantně, operátorová routa driftuje s N, CV 0.205 → obstrukce PŘESUNUTA na konečné-N diskretizaci; VYPOCET-36, geometric-boost-dirac); **F-041** (NCG↔spectral-dimension, status `confirmed` — z téhož Tr e^{−σD²} heat-trace plyne d_s=2 i Seeley-DeWittovy a_k, ale diskrétní a_4/a_0 NEreprodukuje −18/11 na plochém causetu; Wall-3 separace potvrzena z NCG strany; ncg-spectral-dimension). Draft-06 Wall 2/§7 + SYNTEZA-03 top-banner dostaly forward-note kola 22 (mezitím aplikováno). **Velké review** (`reports/2026-06-09-velke-review.md`) provedlo referee-grade audit všech 5 draftů + sady nálezů + dvojí verifikace; aplikovalo bezpečné auto-fixy (F-009 statement number-mismatch, kappa-atribuce 1712.04227→1611.10281 ve F-039/F-028/F-006, F-040 `route3_2pi_recovered` flag true→false, draft-01 §3.1/§4.2 clarity, draft-06 Wall 1/Wall 2 forward-notes); zbytek je v lidském punch-listu §2 níže + v review reportu s odhady času. **Nově nalezeno: 7 chybných autorských atribucí přežívajících v draftech** (ID existují, témata sedí, jména autorů jsou špatně — viz per-draft checklisty B níže a §6 review reportu); lidská verifikace arXiv ID proti arxiv.org je nejvyšší priorita.
 
 ---
 
-## 1. Přehledová tabulka čtyř draftů
+## 1. Přehledová tabulka pěti draftů
 
 | Draft | Stav | Vědecká uzavřenost | Hlavní nárok | Největší riziko | Odhad lidské revize |
 |-------|------|-------------------|--------------|-----------------|---------------------|
@@ -29,17 +33,18 @@
 - [ ] **Analytická předpověď nulového přechodu skloněné null-souřadnice na r_erg:** odvodit uzavřenou formu: s₋ = 0 ⟺ g_tt = 0 ⟺ r = r_erg, s přesným vztahem mezi vnitřním null-sklonem a (g_tt, g_tφ, g_φφ).
 - [ ] **Uzavřená forma A_caus(r)** z úhlů otevření kužele (sklon je funkce metriky), potvrdit ~1/r² chvost a monotonní a-závislost nejsou statistické artefakty.
 - [ ] **Mechanismus opačného znaménka (§3.5b):** ověřit, že toy-model derivace v null-souřadnicích u=φ−s₊t, v=φ−s₋t reprodukuje oba znaky a magnitudy (h∝du dv ověřeno symbolicky — potvrdit výpočtem).
+- [ ] **⚠️ BLOCKER (velké review 2026-06-09) — nejsilnější referee útok (sheared diamond):** doplnit explicitní argument/výpočet, že při fixed-r je jediný gauge-invariant **cone-tilt**, + alespoň jednu **observable odlišující dragging od coordinate shear**. Bez toho hostilní referee přerámuje BTZ↔Kerr univerzalitu jako tautologii („oba jsou stejný zkosený 2D Minkowského diamant, kde je černá díra?"). Nejlepší existující obrana §3.5/§3.5b (rotace žije v eigenvektorech 44.6°, ne ve spektru) je solidní, ale draft ji NEpostaví explicitně proti tomuto útoku. Vlastní výpočet + srovnání s Mathur-Surya SJ a se ZNÁMÝM BTZ vakuem je HUMAN+compute. (Viz TODO §1.1.)
 
 #### B) Kontrola citací proti PDF (blokující — Priorita 1 — musí provést člověk)
 - [x] arXiv:1205.1296 (Afshordi–Aslanbeigi–Sorkin, „A distinguished vacuum state for a quantum field in a curved spacetime", JHEP 2012) — ID opraveno z chybného 1208.2422 (2026-06-06)
 - [ ] arXiv:1611.10281 (Sorkin–Yazdi) — potvrdit eq. 9 a footnote 5 (G_R = ½C)
 - [x] arXiv:2602.09796 — **OPRAVENO 2026-06-08:** ID existuje, ale je to **Häfner & Klein, „The Unruh state for bosonic Teukolsky fields on subextreme Kerr spacetimes" (2026-02-10)**, NE „Dafermos–Luk et al.". Atribuce opravena v draft-01 §1.1, §4.2, ref.13. Obsah tvrzení (Unruhův stav existuje a je Hadamardův pro Teukolsky pole na subextremálním Kerru) je podporován; chybné bylo pouze autorství. Nezaměňovat s Dafermos–Rodnianski 2007.07211 (correctly cited).
-- [ ] arXiv:2303.13488 (Balakumar) — potvrdit existenci a obsah
-- [ ] arXiv:2504.12919 (AdS₂ SJ) — potvrdit existenci a obsah
-- [ ] arXiv:2212.10592 — potvrdit
-- [ ] arXiv:2007.07211 — potvrdit
+- [ ] **arXiv:2303.13488 (Balakumar) — ⚠️ OPRAVA (velké review 2026-06-09):** titul v draftu „...on Kerr" je zkomolen; skutečný titul „Superradiance and quantum states on black hole space-times", autoři **Balakumar, Bernar, Winstanley**. Vedoucí autor sedí; opravit titul + doplnit spoluautory.
+- [ ] **arXiv:2504.12919 (AdS₂ SJ) — ⚠️ OPRAVA:** draft cituje bez autorů; skutečný titul „Numerical Evaluation of the Causal Set Propagator in 2D Anti-de Sitter Spacetime", autoři **Kastrati & Hinrichsen**. ID a téma správné; doplnit autory + přesný titul.
+- [ ] **arXiv:2212.10592 — ⚠️ OPRAVA:** draft připisuje „Jubb-Surya, Softened SJ"; skutečnost = **Zhu & Yazdi**, „On the (Non)Hadamard Property of the SJ State in a 1+1D Causal Diamond" (CQG 2024). Téma (softened SJ / Hadamard recovery v 1+1D diamantu) sedí, AUTORSTVÍ špatně. Ověřit, zda Jubb-Surya nemají SAMOSTATNÝ softened-SJ paper (jiné ID); jinak přeřadit všechna „softened SJ" tvrzení na Zhu-Yazdi.
+- [ ] **arXiv:2007.07211 — ⚠️ OPRAVA:** draft připisuje „Dafermos-Rodnianski, Boundedness of the Teukolsky equation on Kerr"; skutečnost = **Shlapentokh-Rothman & Teixeira da Costa**, „Boundedness and decay for the Teukolsky equation on Kerr in the full subextremal range |a|<M". ID ukazuje na reálný Teukolsky-boundedness-on-Kerr paper jiných autorů. Pokud byl míněn klasický Dafermos-Holzegel-Rodnianski výsledek, dohledat správné ID.
 - [ ] BTZ/Kerr metrické reference (gr-qc/0003097, 1707.08133) — potvrdit
-- [ ] arXiv:0909.0944, 1701.07212, 1712.04227 — potvrdit
+- [ ] arXiv:0909.0944, 1701.07212, 1712.04227 — potvrdit (pozn.: 1712.04227 = Belenchia-Benincasa-Letizia-Liberati, „On the Entanglement Entropy of Quantum Fields in Causal Sets" — ověřit, že draft-01 ho cituje jen pro G_R=½C konvence, ne pro autorství výsledku)
 
 #### C) Číselné výsledky vs. results.json (blokující)
 - [ ] Zkontrolovat, že headline čísla v draftu (A_caus ≈ +1 uvnitř ergoregiónu; středová osa 44.6° rotace vlastního vektoru; cos² = 0.507; spektrální shoda 2.0%; superradiantní pásová váha 0.000 → 0.0755) odpovídají výsledkům uloženým v `core-data/calculations/sj-rotating-btz/`, `sj-kerr-equatorial/`, `sj-eigenvector-superradiance/`
@@ -70,7 +75,8 @@
 - [ ] hep-th/9606001 (Chamseddine–Connes 9606) — otevřít PDF, potvrdit eq. 2.24: α₀ = −3f₀/10π², τ₀ = 11f₀/60π²
 - [ ] hep-th/0610241 (CCM) — potvrdit přepis α₀, τ₀
 - [ ] arXiv:1001.2036 (Andrianov–Lizzi) — citovat nejbližší pasáže a ukázat, že se zastaví před poměrovou rovností
-- [ ] arXiv:1106.3263 (Kurkov–Lizzi–Vassilevich) — totéž
+- [ ] **arXiv:1106.3263 — ⚠️ OPRAVA (velké review 2026-06-09):** draft cituje 3–4× jako „Kurkov–Lizzi–Vassilevich"; skuteční autoři = **Andrianov–Kurkov–Lizzi** (Vassilevich NENÍ autor; Andrianov chybí). ID i titul „Spectral action, Weyl anomaly and the Higgs-Dilaton potential" SPRÁVNÉ. Přepsat všechny výskyty (abstract ř.11, §3 ř.110, §4 bod 3 ř.122, Sources ř.139) + zkontrolovat propagaci do VYPOCET-02 a references.bib/json. **Pro draft, jehož novost stojí na „completing the triangle" přesně z těchto prací, je atribuce load-bearing.**
+- [ ] **arXiv:hep-th/9503187 — ⚠️ OPRAVA + obsahová tenze:** draft §4 implicitně přiřazuje Duffovi, TODO ř.77 Anselmimu; skutečnost = **Cho & Kantowski**, „Gauge Independent Trace Anomaly for Gravitons" (1995). Navíc titul „gauge INDEPENDENT" je v TENZI s tvrzením draftu, že gravitonové (a,c) jsou gauge/scheme-dependentní. Ověřit, kterou práci draft skutečně chce (kandidáti **Anselmi hep-th/9709047**, **Duff hep-th/9308075**); opravit atribuci i ID, nebo doplnit přesný výklad Cho-Kantowski.
 
 #### C) Novelty re-check (blokující)
 - [ ] **Prohledat Connes–Marcolli knihu** (*Noncommutative Geometry, Quantum Fields and Motives*) na explicitní zmínku o −18/11 nebo c/(−a) v CC normalizaci
@@ -133,7 +139,8 @@
 
 #### B) Kontrola citací proti PDF (blokující — 15 arXiv ID)
 - [ ] arXiv:1611.10281 (Sorkin–Yazdi) — potvrdit eqs. 6–7, 9
-- [ ] arXiv:1712.04227 (double truncation, 2D local) — potvrdit κ a double aplikaci
+- [ ] **arXiv:1712.04227 — ⚠️ OPRAVA (velké review 2026-06-09):** draft připisuje „Saravani, Aslanbeigi, Sorkin" / „Sorkin–Yazdi (Saravani–Aslanbeigi)"; skutečnost = **Belenchia, Benincasa, Letizia, Liberati**, „On the Entanglement Entropy of Quantum Fields in Causal Sets". Pokud je míněn κ=√N/(4π) double truncation výsledek, citovat **1311.7146 (Saravani–Sorkin–Yazdi)**. Odstranit „Aslanbeigi". Sjednotit ř. 18/90/250. (Stejná chyba ve draft-06 — opravit oba.)
+- [ ] **arXiv:2212.10592 — ⚠️ OPRAVA:** draft připisuje „Yazdi–Mathur–Surya"; skutečnost = **Zhu, Yazdi**, „On the (Non)Hadamard Property of the SJ State in a 1+1D Causal Diamond". Mathur/Surya pravděpodobně kontaminace z 1906.07952. Potvrdit lokalizaci u−v'=±2L (paper je o non-Hadamard na hranici diamantu — sedí).
 - [ ] arXiv:2008.07697 (Surya–Nomaan X–Yazdi, area-law rank) — potvrdit N^{3/4}, α=2, a směr kontinuálního limitu
 - [ ] arXiv:0909.0944 (Johnston) — potvrdit eq. 17, m=0, link matice
 - [ ] arXiv:1701.07212 — potvrdit konvence
@@ -150,6 +157,8 @@
 #### C) Statistika (blokující)
 - [ ] 2D Proxy 3 je nediskrimiující (N^{−0.71±0.78} konzistentní s nulou): verdikt 2D je **2/3**, nikoli 3/3 — potvrdit, že summary toto nezmaten
 - [ ] 4D použilo 5 seeds, 2D 8 seeds: reportovat pro IR-edge ε ≈ 2.7 a pile-up exponent N^{1.27} across-seed spread
+- [ ] **⚠️ §4.4 number-mismatch (velké review 2026-06-09, Major):** §4.4 uvádí „4D slab → AREA law: S∼L^{2.00}, S∼A^{1.00}". To jsou CÍLOVÉ referenční exponenty (`area_law_slope:2.0`), NE naměřené. `ssee-slab-4d/results.json` dává `fit_S_vs_L.slope=1.590` a `fit_S_vs_area_pow.p=0.795`. Přepsat na: „S∼L^{1.59} (R²=0.982), klasifikováno jako AREA dle R²_area>R²_vol (0.984 vs 0.977, **těsná marže**), proti referenčnímu area-law sklonu 2.0". **Opravit i F-016 statement v findings.json** (mění finding — proto NEbylo aplikováno auto). Neuvádět cílový exponent jako naměřený.
+- [ ] **IR edge ε≈2.7 / 39σ exclusion neauditovatelné z results.json:** hodnota „sharp IR modular edge ε≈2.7" (4D slab) a „excluding ρ^{−1/4} at ~39σ" nejsou v results.json přímo uloženy (jen `eps0_threshold=0.5`, `p_minus_half_sigma=2.82`). Hrubé odhady jsou konzistentní; při příštím re-run uložit `IR_edge_eps_number` a `sigma_vs_quarter`, nebo v textu označit jako odvozené ze spektra.
 
 #### D) De Sitter sekce §4.3 (round-10/11 provenance — F-023 `supported` 2D, F-025 `partial` 4D)
 
@@ -177,25 +186,51 @@ Tyto nálezy vznikly po round-10/11 a byly do draftu propsány 2026-06-08. Statu
 
 ---
 
+### 2.5 draft-06 — limity diskrétního programu / „mapa negativů" (negative-results letter)
+
+Draft-06 je negativní letter konsolidující tři „zdi" druhého/třetího oblouku. NEnese žádné nové claimy — jen existující findingy. Po velkém review (2026-06-09) má Wall 2/§7 + abstrakt + Wall 1 už doplněné forward-notes a clarity (AUTO). Zbylé lidské brány (plný checklist v `papers/draft-06-discrete-program-limits/TODO.md`):
+
+#### A) Číselné výsledky vs. findings.json + results.json (blokující)
+- [ ] **Wall 1 (F-031/F-037/F-038) — 4D area-zákon GENUINNĚ CHYBÍ:** ověřit, že draft uvádí (a) opravený codim-2 molekulový počet ρ^{0.49} vs S_full ρ^{0.997} → poměr driftuje ρ^{+0.50} (F-031, `ds-amol-convention`); (b) konformní caveat VYŘEŠEN — ξ=1/6 dává identický drift jako ξ=0, d ln R'/d ln ρ=+0.386±0.053 (F-037, `ds-conformal-4d`); (c) variance Var(N_mol)~ρ^{0.656}, CI95 [0.575,0.745] vylučuje plochu i objem, super-Poisson Fano 3.7→5.3 (F-038, `ds-molecule-fluctuation`).
+- [ ] **Wall 2 (F-033/F-036/F-040) — surogátní Dirac = struktura, ne teplota/metrika:** ověřit boostová diagonála R²≈0.97 ρ-invariantní (F-036, `ncg-kms-unruh`); Connesova vzdálenost nesleduje kauzální (korelace 0.32, R²=0.10, 16 párů; F-033, `spectral-triple-modular`); absolutní Unruh 2π neobnoven (off 52 %). **Forward-note kola 22 (F-040, `geometric-boost-dirac`) je v draftu doplněn** — ověřit, že čte správně: geometrický γ5-gradovaný boost Dirac VYŘEŠIL log-kompresi (exponent +1, koeficient O(2π)), ale absolutní 2π drift s N (CV 0.205) → obstrukce přesunuta na konečné-N.
+- [ ] **Wall 3 (F-039) — koeficient geometrický, ne anomální:** ověřit c_EE=7.562±1.3 % nesedí na žádný anomální racionál (skalár −3 míjí 152 %, −18/11 míjí 362 %), nejbližší geometrické kontroly 8 (5.5 %) a 4 (10 %; F-039, `amol-anomaly-ee-coeff`). **Pozn.: kappa-atribuce κ=√N/(4π) v F-039 byla velkým review opravena 1712.04227→1611.10281** (Sorkin-Yazdi) — ověřit, že draft cituje κ-zdroj správně.
+
+#### B) Kontrola citací proti PDF (blokující)
+- [ ] **arXiv:1712.04227 — ⚠️ OPRAVA (velké review 2026-06-09, Major):** draft cituje „Sorkin–Yazdi ... double truncation, 1712.04227"; skutečnost = **Belenchia–Benincasa–Letizia–Liberati**, „On the Entanglement Entropy of Quantum Fields in Causal Sets". Přesměrovat „double truncation"/„κ=√N/(4π)" na **1611.10281** (a/nebo 2008.07697). F-036 už interně tuto záměnu vlajkuje; AUTO-fix opravil findings.json kappa-atribuci, ale **draft text zůstává na člověku**. (Stejná chyba ve draft-04 — opravit oba.)
+- [ ] **Konvenční ref bez ID** (CHM/Solodukhin/BW/Unruh/Gibbons-Hawking, §References) — doplnit OVĚŘENÁ arXiv ID; flagged v draftu jako „to be cited with verified IDs by a human". Gibbons-Hawking dS primár je ⚠️ neoveřeno (není v repu) — dS aplikace reportována jako bezrozměrný poměr, ne literální 1/4.
+
+#### C) Konzistence a venue (blokující/redakční)
+- [ ] **Konzistence s draft-04 §4.3** (tatáž 4D area-law absence): ověřit, že Wall 1 rozlišuje dS-cap area-zákon (CHYBÍ, F-031) od truncated-SSEE **slab** area-zákona neseného type-II rankem ~√N (PŘÍTOMEN, F-019) — **rozlišení už AUTO-doplněno**, ověřit, že čtenář nečte „4D entropy-area law genuinely absent" jako popření i slab area-zákona.
+- [ ] **Nepřeprodat negativy jako no-go:** ověřit §6 „these are negatives of a specific finite-N construction, not no-go theorems".
+- [ ] **Venue rozhodnutí:** standalone letter vs. appendix k draft-04 (redakční, na člověku).
+
+---
+
 ## 3. Doporučené pořadí revizí s odůvodněním
 
-### Doporučení: draft-02 → draft-04 → draft-01 → draft-03
+### Doporučení: draft-02 → draft-06 → draft-04 → draft-01 → draft-03
+
+(Pořadí dle ROI/uzavřenosti; identické s velkým review reportem `reports/2026-06-09-velke-review.md §1`. **Nejlevnější univerzální brána napříč všemi: lidská verifikace arXiv ID proti arxiv.org** — velké review našlo 7 chybných autorských atribucí, viz §6 review reportu.)
 
 **1. Začněte s draft-02 (identita −18/11)**
 
-*Proč první:* Nejmenší draft. Fyzika je výpočetně uzavřena (VYPOCET-11 + VYPOCET-17 — žádný otevřený fyzikální blokátor). Klíčová aritmetika je exaktní (sympy, racionální čísla), takže re-derivace jsou krátké a buď vyjdou nebo nevyjdou — žádná interpretační šedá zóna. Jediné zbývající bloky jsou framing a lidská verifikace PDF. Odhad: 4–8 hodin práce člověka. Navíc: pokud novelty re-check odhalí, že −18/11 bylo dříve publikováno, ušetříte práci na zbytku.
+*Proč první:* Nejmenší draft. Fyzika je výpočetně uzavřena (VYPOCET-11 + VYPOCET-17 — žádný otevřený fyzikální blokátor). Klíčová aritmetika je exaktní (sympy, racionální čísla, navíc CAS-nezávisle re-odvozená) — re-derivace jsou krátké a buď vyjdou nebo nevyjdou. Zbývající bloky: framing („theorem"→„exact identity"), 2 ref-atribuce (1106.3263, hep-th/9503187), novelty-gap (Connes-Marcolli / van Suijlekom). Odhad: 4–8 hodin. Navíc: pokud novelty re-check odhalí, že −18/11 bylo dříve publikováno, ušetříte práci na zbytku.
 
-**2. Pokračujte s draft-04 (přechod typů)**
+**2. Pokračujte s draft-06 (mapa negativů)**
 
-*Proč druhý:* Fyzika je zajímavá a konzistentní (3/3 proxy ve 4D), ale blokátory jsou konkrétní a mechanické — re-run kódu, opravit chybu placeholder, verifikovat 15 arXiv ID. Nejde o otevřený vědecký spor, ale o technický audit. Odhad: 12–20 hodin. Navíc: jde o syntézu tří publikovaných výsledků; pokud Jones–Yazdi 2602.16782 a CLPW-identifikace jsou potvrzeny, jádro drží.
+*Proč druhý:* Syntéza HOTOVÝCH výsledků (žádné nové claimy, jen existující findingy F-031/033/036/037/038/039 + kolo-22 F-040/F-041). Po velkém review má forward-notes a clarity už doplněné (AUTO). Zbývá: 1 ref-atribuce (1712.04227, sdílená s draft-04), verifikace ~10 konvenčních ref ID, venue rozhodnutí. Nejmenší nová položka. Odhad: 8–14 hodin. Navíc: konzistence s draft-04 §4.3 (tatáž 4D area-law absence) je už ověřena.
 
-**3. Třetí draft-01 (SJ v rotujících prostoročasech)**
+**3. Třetí draft-04 (přechod typů)**
 
-*Proč třetí:* Nejrozsáhlejší a vědecky nejotevřenější (chybí kontinuální studie, BTZ vakuum srovnání, analytická křížová kontrola). Velký N scan a 30+ seeds jsou strojový čas, ale matematické odvození SJ na zkoseném diamantu vyžaduje skutečnou analytickou práci. Výsledky VYPOCET-14 a VYPOCET-15 jsou silné (ΔAIC > 3894 všude), takže jádro stojí — ale šance na odeslání závisí na tom, zda analytická práce proběhne. Odhad: 15–25 hodin.
+*Proč třetí:* Fyzika je zajímavá a konzistentní (3/3 proxy ve 4D + dS §4.3), ale blokátory jsou konkrétní a mechanické — re-run 4+ calc.py, verifikovat ~17 arXiv ID (2 už nalezeny chybné: 1712.04227, 2212.10592), opravit §4.4 number-mismatch (S∼L^{1.59} ne 2.00) + párový F-016. Technický audit, ne otevřený vědecký spor. 7/8 lidských bran TODO §8 nesplněno. Odhad: 16–26 hodin.
 
-**4. Nakonec draft-03 (d_s klasifikátor)**
+**4. Čtvrtý draft-01 (SJ v rotujících prostoročasech)**
 
-*Proč poslední:* Novelty argument je nejkřehčí — vyžaduje rozsáhlý literature search (Calcagni knihy, reviews, follow-upy). Fyzika (engine, limity) je solidní a D-konvence ambiguita je opravitelná, ale obhájit „nový příspěvek" vůči Calcagni programu je nejnáročnější framing task. Doporučuje se odložit, dokud nebudete mít zbytek vyřešen a dokud nesprovedete novelty search. Odhad: 10–18 hodin.
+*Proč čtvrtý:* Nejrozsáhlejší a vědecky nejotevřenější (chybí kontinuální studie, BTZ vakuum srovnání, analytická křížová kontrola; sheared-diamond útok není plně pre-emptován). Velký N scan a 30+ seeds jsou strojový čas, ale analytické odvození SJ na zkoseném diamantu + observable odlišující dragging od shear vyžaduje skutečnou práci. Výsledky VYPOCET-14/15 jsou silné (ΔAIC > 3894 všude), jádro stojí. 3 ref-atribuce nalezeny chybné (2212.10592, 2007.07211, 2303.13488). Odhad: 15–25 hodin.
+
+**5. Nakonec draft-03 (d_s klasifikátor)**
+
+*Proč poslední:* Novelty argument je nejkřehčí — vyžaduje rozsáhlý literature search (Calcagni knihy, reviews, follow-upy k 1708.07445). Fyzika (engine, limity) je solidní, ilustrativní d_s=8 poctivě označen, D-konvence opravitelná (human PDF 0902.3657), ale obhájit „probe jako klasifikační osa" vůči Calcagni programu je nejnáročnější framing task. Odložit, dokud nebude zbytek vyřešen a neprovedena novelty rešerše. Odhad: 10–18 hodin.
 
 ---
 
@@ -203,7 +238,7 @@ Tyto nálezy vznikly po round-10/11 a byly do draftu propsány 2026-06-08. Statu
 
 ### 4.1 Co znamená „AI-asistovaný výzkum" pro autorství
 
-Všechny čtyři drafty byly generovány AI-asistovaným výzkumným pipeline. To konkrétně znamená:
+Všech pět draftů bylo generováno AI-asistovaným výzkumným pipeline. To konkrétně znamená:
 
 - **Výpočty**: calc.py skripty a výsledky (results.json, výpočetní poznámky VYPOCET-*) byly navrženy, spuštěny a interpretovány jazykovým modelem bez lidské supervize každého kroku.
 - **Citace**: proveniencé poznámky říkají „ověřeno verbatim z PDF" nebo „transcribed" — ale toto tvrzení **samo o sobě musí lidský výzkumník ověřit** otevřením každého PDF.
@@ -216,12 +251,13 @@ Všechny čtyři drafty byly generovány AI-asistovaným výzkumným pipeline. T
 
 ### 4.2 Pravidlo nezávislé lidské re-derivace
 
-**Žádný draft nesmí být podán bez nezávislé lidské re-derivace klíčových výsledků.** Toto je absolutní pravidlo pro všechny čtyři drafty:
+**Žádný draft nesmí být podán bez nezávislé lidské re-derivace klíčových výsledků.** Toto je absolutní pravidlo pro všech pět draftů:
 
 - **draft-01**: nikdo dosud nezávisle nespustil VYPOCET-05, VYPOCET-08, VYPOCET-10 ani VYPOCET-14, VYPOCET-15.
 - **draft-02**: nikdo dosud nezávisle neodvodil heat-kernel koeficienty, nespustil sympy, ani nezkontroloval citace na zdrojových PDF.
 - **draft-03**: nikdo dosud nezávisle nespustil engine ani neodvodil oba limity.
 - **draft-04**: nikdo dosud nezávisle nespustil žádný ze čtyř calc.py skriptů.
+- **draft-06**: nikdo dosud nezávisle nespustil žádný z osmi calc.py skriptů (F-031/033/036/037/038/039 + kolo-22 F-040/F-041); jde o syntézu existujících findingů, takže re-derivace = re-run těchto výpočtů (viz §4.3).
 
 ### 4.3 Jak spustit reprodukce (přesné příkazy)
 
@@ -248,6 +284,17 @@ python /Users/pazny/projects/theoryOfEverything/core-data/calculations/ssee-diam
 python /Users/pazny/projects/theoryOfEverything/core-data/calculations/vn-type-slab-4d/calc.py
 python /Users/pazny/projects/theoryOfEverything/core-data/calculations/ssee-slab-4d/calc.py
 python /Users/pazny/projects/theoryOfEverything/core-data/calculations/sj-vn-type/calc.py
+
+# draft-06 — mapa negativů (VŠECH 8 skriptů importuje `toe` → nutné PYTHONPATH=lib)
+# spouštět z kořene repa s: PYTHONPATH=lib python <cesta>/calc.py
+PYTHONPATH=lib python /Users/pazny/projects/theoryOfEverything/core-data/calculations/ds-amol-convention/calc.py        # Wall 1 mean (F-031)
+PYTHONPATH=lib python /Users/pazny/projects/theoryOfEverything/core-data/calculations/ds-conformal-4d/calc.py          # Wall 1 konformní caveat (F-037)
+PYTHONPATH=lib python /Users/pazny/projects/theoryOfEverything/core-data/calculations/ds-molecule-fluctuation/calc.py  # Wall 1 variance (F-038)
+PYTHONPATH=lib python /Users/pazny/projects/theoryOfEverything/core-data/calculations/spectral-triple-modular/calc.py  # Wall 2 metric (F-033)
+PYTHONPATH=lib python /Users/pazny/projects/theoryOfEverything/core-data/calculations/ncg-kms-unruh/calc.py            # Wall 2 temperature (F-036)
+PYTHONPATH=lib python /Users/pazny/projects/theoryOfEverything/core-data/calculations/geometric-boost-dirac/calc.py    # Wall 2 kolo-22 (F-040)
+PYTHONPATH=lib python /Users/pazny/projects/theoryOfEverything/core-data/calculations/amol-anomaly-ee-coeff/calc.py    # Wall 3 (F-039)
+PYTHONPATH=lib python /Users/pazny/projects/theoryOfEverything/core-data/calculations/ncg-spectral-dimension/calc.py   # kolo-22 NCG↔d_s (F-041)
 ```
 
 **Po každém spuštění:** porovnat výstup s headline čísly uvedenými v sekci 2 výše (checkboxy C). Každá neshoda je blokátor.
@@ -280,6 +327,41 @@ flipů, 0 strukturálních rozdílů**; většina výpočtů přesně identická
 artefakty lze vyloučit jako zdroj výsledků; lidská re-derivace tím NENÍ nahrazena.
 Manuální spuštění: workflow „Cross-HW reproduction" na GitHubu (volba `target`).
 
+**✅ Stav 2026-06-09 (druhý/třetí oblouk + kolo 22):** numerická reprodukce druhého oblouku
+je v `app/tests/test_reproduction.py` (`SLOW_CALCS`): **10/11 PASS deterministicky**;
+`ds-amol-convention` vědomě vyloučen (čte staged archiv mimo /tmp sandbox) + dokumentován.
+Kola 22 (`geometric-boost-dirac`/F-040, `ncg-spectral-dimension`/F-041) POKRYTA. Pokrytí
+viz `reports/2026-06-09-numerical-coverage.md`. **⚠️ PYTHONPATH:** všech 8 draft-06 calců
++ draft-03 `ds-classification` importuje `toe` → nutné `PYTHONPATH=lib` (zakotveno v
+`test_reproduction.py`; viz CLAUDE.md § Provozní konvence). Toleranční filozofie cross-HW:
+noise floor 1e-10, core pole <10 %, diagnostická pole <500 %, patologicky nestabilní sekce
+vyloučené přes `DIAGNOSTIC_PAT` — plošná jednotná tolerance falešně „selhává".
+
+### 4.4 Agentní framework a dvojí verifikace (kontext pro revizora)
+
+**Tří-rolová agentní smyčka.** Výpočty druhého/třetího oblouku vznikly přes tři výzkumné
+agenty na `main` (`.claude/agents/`): **exploratory-engine** (návrh hypotéz/výpočtů),
+**computational-physicist** (implementace calc.py + run), **adversarial-verifier** (audit).
+Verifier opakovaně přebil optimismus: chytil tautologii F-034/F-036 (β_KMS=1 je
+Tomita-Takesaki tautologie, ne měření), p-hacking riziko F-039, provenance mezeru kola 14,
+a CAS revize chytila reálný **Myrheim-Meyer factor-2 bug** ve `formulas.json`. Co přežilo
+tímto filtrem, přežilo opakované pokusy o popravu; co padlo, padlo s diagnózou. Agenti
+zapisují podle pevného schématu (atomický/progresivní zápis, pole `status`) a odvozují cesty
+`__file__`-relativně (portability guardy zelené — `app/tests/test_portability_guards.py`).
+
+**Dvojí verifikace (CAS + numerika).** Každý vlajkový výsledek má až dvě nezávislé dráhy:
+1. **CAS dráha** (`verification/cas/`, Wolfram Language): **175/175 symbolických checků** přes
+   7 skriptů; formula-coverage 38 vzorců (24 verified + 14 already_validated); **Myrheim-Meyer
+   RESOLVED**. Nezávisle na sympy re-odvozuje −18/11, konformní-graviton −398/261, Λ-ledger.
+   Spuštění: `python3 verification/cas/run_all.py` (po `brew install --cask wolfram-engine`
+   + `wolframscript -activate`); očekává se `overall_pass = True`. Viz `verification/cas/README.md`.
+2. **Numerická reprodukce** (`app/tests/test_reproduction.py` + cross-HW GitHub Actions; viz
+   §4.3). Deterministická bit-identita na řízeném prostředí + cross-platform robustnost.
+
+**Důležité:** žádná z drah NEnahrazuje lidskou nezávislou re-derivaci (§4.2) — obě běžely na
+prostředí projektu. CAS pokrývá symbolické identity, numerika stochastické výpočty; překryv
+je strukturální, ne plný (žádný second-arc calc není pokryt OBĚMA současně).
+
 ---
 
 ## 5. Co v draftech není — a proč je to dobře
@@ -304,4 +386,4 @@ Zabité programy nejsou ztracená práce — jsou to ohraničení, která říka
 
 ---
 
-*Konec dokumentu. Verze: 2026-06-08 (kola 12–16 + agent-framework doplněna; předchozí 2026-06-06). Generováno AI koordinačním agentem. Všechny checkboxy jsou určeny pro lidské splnění před jakýmkoli externím sdílením nebo odesláním.*
+*Konec dokumentu. Verze: 2026-06-09 (kolo 22 + velké review: 5 draftů, F-001..F-041, agentní framework §4.4, dvojí verifikace §4.4, draft-06 §2.5 + §4.3 příkazy, 7 ref-atribucí k opravě; předchozí 2026-06-08 kola 12–16, 2026-06-06). Vědecký companion: `reports/2026-06-09-velke-review.md` (referee verdikt + odhady času). Integritní companion: `reports/2026-06-09-consolidation.md`. Generováno AI koordinačním agentem. Všechny checkboxy jsou určeny pro lidské splnění před jakýmkoli externím sdílením nebo odesláním.*

@@ -34,7 +34,7 @@
 
 > 🟢 **KOLO 11 DOKONČENO (2026-06-06)** — `lib/toe` povýšena na **v0.2.0**: všech 5 lib_proposals z VYPOCET-22 migrováno (sprinkle_wedge_box4d, bd_smeared_dalembertian_inverse, sj_state rel_floor, entropy.modular_kernel, viz.nl_vs_locus); **draft-04 rozšířen o §4.3 dS static patch** (H5g-6 rozhodnutí: ne samostatný draft-05); abstrakt, reference a REVIZE-PRO-CLOVEKA.md aktualizovány. **Testy zelené: 288 passed, 14 skipped, 1 xfailed** (14 nových validačních testů, bez regrese). Web přebuildován: **103 stránek**. Předchozí milník: kolo 10 — H5g-1 PARCIÁLNÍ, H5g-3 VYVRÁCENA, `lib/toe` v0.1.0.
 >
-> ✅ **VŠECHNY 4 KROKY ROADMAPY MAJÍ PRVNÍ VERZI HOTOVOU** — research ✅, velké review ✅, lib/toe v0.2.0 ✅, minimalistický web ✅.
+> ✅ **ROADMAPA COMPLETE — konsolidace + compute + velké review hotovo** — research ✅, velké review ✅, lib/toe v0.3.1 ✅, minimalistický web ✅, compute drivery ✅, CAS 175/175 ✅, numerická reprodukce 10/11 ✅. Výstup: 5 draftů + 41 findings (F-001..F-041) + REVIZE-PRO-CLOVEKA.md jako human handoff gate. Stav: čeká na lidské blokátory (7 chybných ref-atribucí, 2 number-mismatch, novelty-rešerše).
 
 ## Roadmapa (zadání uživatele, 2026-06-06)
 
@@ -57,6 +57,13 @@
 | 2 | Hledání nenalezených souvislostí (základní research) | ✅ dokončeno | 2026-06-05 | 2026-06-06 |
 
 ## Log
+
+### 2026-06-09 (velké review — housekeeping)
+
+- **velké review — referee-grade revize 5 draftů + 41 findings, REVIZE finalizována jako human handoff**: report [`reports/2026-06-09-velke-review.md`](reports/2026-06-09-velke-review.md); REVIZE-PRO-CLOVEKA.md finalizována (§1 pět draftů, §2.5 draft-06 checklist, §4.3 draft-06 příkazy, §4.4 agentní framework + dvojí verifikace, F-001..F-041).
+- **Per-draft readiness:** draft-01 ~15–25 h (sheared-diamond, 3 ref-atribuce); draft-02 ~4–8 h (theorem-downgrade, 2 ref-atribuce); draft-03 ~10–18 h (Calcagni novelty); draft-04 ~16–26 h (7/8 bran + §4.4 number-mismatch); draft-06 ~8–14 h (1712.04227 Major oprava). Sada F-001..F-041: referee-ready, žádné vědecké blokátory.
+- **Auto-fixy (10):** F-009 statement; kappa-atribuce 1712.04227→1611.10281 (F-039/028/006); F-040 `route3_2pi_recovered` false + doku; draft-01 §3.1/§4.2/abstrakt; draft-06 Wall 1/2 + abstrakt; SYNTEZA-03 kolo-22 banner. Testy **365 passed, 31 skipped, 1 xfailed** (bez regrese). Web: **136 stránek**.
+- **Roadmapa: COMPLETE.** Nejdůležitější lidský první krok: audit VŠECH arXiv ID proti arxiv.org (7 chybných autorských atribucí — absolutní gate pro sdílení).
 
 ### 2026-06-09 (kolo 21 — velká konsolidace po druhém oblouku)
 
