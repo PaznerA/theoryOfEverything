@@ -217,7 +217,7 @@ objekt/observable/diskriminátor/N-proveditelnost — maticové ops strop ~N 250
 
 ### H5g-4 — Spektrální triple ↔ Pauli-Jordan: NCG Diracův operátor rekonstruuje SJ modulární Hamiltonián (lovná zóna)
 
-> **[Kolo 15, VYPOCET-29, F-033] GO-LIMITED / NO-MATCH NA METRICKÉ ÚROVNI.** Surogátní D_K=sgn(K)sqrt(|K|) na 2D slabu (N=1200, 5 seedů) reprodukuje BW boostovou strukturu (lineární diagonála R^2=0.955, robustní) ale jeho Connesova vzdálenost NEsleduje kauzální vzdálenost (korelace 0.10, R^2=0.01). Hrana causal-sets <-> NCG (connections.json idx 61) INSTANCOVÁNA — zůstává barely jako **informovaný negativ**: korespondence SJ modulární Hamiltonián <-> NCG spektrální triple selhává na METRICKÉ úrovni; boostová/tepelně-časová osa (Connes-Rovelli) solidní.
+> **[Kolo 15, VYPOCET-29, F-033] GO-LIMITED / NO-MATCH NA METRICKÉ ÚROVNI.** Surogátní D_K=sgn(K)sqrt(|K|) na 2D slabu (N=1200, 5 seedů) reprodukuje BW boostovou strukturu (lineární diagonála R^2=0.955, robustní) ale jeho Connesova vzdálenost NEsleduje kauzální vzdálenost (korelace 0.319, R^2=0.10, 16 párů; kolo-21 reprodukční oprava committed 0.10 -> 0.319, verdikt no-match nezměněn). Hrana causal-sets <-> NCG (connections.json idx 61) INSTANCOVÁNA — zůstává barely jako **informovaný negativ**: korespondence SJ modulární Hamiltonián <-> NCG spektrální triple selhává na METRICKÉ úrovni; boostová/tepelně-časová osa (Connes-Rovelli) solidní.
 
 **(jádro: nedotčená barely hrana `causal-sets↔noncommutative-geometry`, shared-math; spojí dvě vlajkové linie přes třetí pilíř)**
 **Priorita: medium (vysoká novost, střední proveditelnost).**
@@ -367,8 +367,8 @@ weak points k systematickým.
    "nikdy nevymýšlet arXiv ID". Nejrizikovější, výslovně označené jako neověřené:
    - `arXiv:2602.16782` (Jones–Yazdi) — draft-04 tvrdí verbatim z provenience, **neověřeno**
      (REVIZE ř. 138); podpírá identifikaci ε=ln[μ/(μ−1)].
-   - `arXiv:2501.09669` — nový (2025), draft-04, **potvrdit existenci a obsah** (REVIZE ř. 137).
-   - `arXiv:2602.09796` (Dafermos–Luk, Unruh na Kerr) — draft-01, **potvrdit, že ID existuje a říká,
+   - `arXiv:2501.09669` (Fröb, atribuce z draft-04 v0.2) — nový (2025), draft-04, **potvrdit existenci a obsah** (REVIZE ř. 137).
+   - `arXiv:2602.09796` (Häfner & Klein, Unruh na subextremálním Kerru — oprava 2026-06-08, draft-01 i REVIZE; dřívější atribuce Dafermos–Luk byla chybná) — draft-01, **potvrdit, že ID existuje a říká,
      co se tvrdí** (REVIZE ř. 31).
    - `arXiv:2504.12919`, `arXiv:2303.13488`, `arXiv:2601.07915`, `arXiv:2306.07323` — draft-01/04,
      potvrdit existenci.

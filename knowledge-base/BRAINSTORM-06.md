@@ -6,7 +6,7 @@
 > přes 5× ρ a 3.6× ℓ, ale **silná 1/4 forma vyvrácena** a **4D area-zákon GENUINNĚ NEPŘÍTOMNÝ**, F-031),
 > **H5g-3 VYVRÁCENA** (codim-2 hrana = 4D null-tip znaménko, ne 2D roh), **H5g-4 NO-MATCH NA METRICKÉ
 > ÚROVNI** (D_K reprodukuje BW boost R²=0.96, ale Connesova vzdálenost nesleduje kauzální vzdálenost
-> R²=0.01, F-033), **H5g-5 UZAVŘENA** (B(a) spojitá funkce, B=3 zamítnut na χ²/dof~350, F-030),
+> korelace 0.319/R²=0.10/16 párů, F-033; kolo-21 oprava committed 0.01 -> 0.10), **H5g-5 UZAVŘENA** (B(a) spojitá funkce, B=3 zamítnut na χ²/dof~350, F-030),
 > **H5g-6 STRATEGICKÁ** (draft-05 rozhodnut H5g-1). Pět generací filtru: program je teď definovaný
 > spíš svými **negativy** než nadějemi. Šestá generace **vede otvory, které ty negativy vytvořily** —
 > ne jejich opakováním. Tři nejostřejší otvory: (i) F-033 ukázal, že **správná osa** korespondence
@@ -28,7 +28,7 @@ co každý z F-029…F-033 zavřel a co tím **odemkl**:
 F-033 je nejinformativnější negativ celé generace. Surogátní modulární Dirac $D_K=\mathrm{sgn}(K)\sqrt{|K|}$
 ze SJ modulárního kernelu na 2D slabu (Rindlerova geometrie) **reprodukoval Bisognano-Wichmannovu
 boostovou strukturu** (lineární diagonála $R^2=0.955$, robustní přes 5 seedů), ale jeho **Connesova
-vzdálenost NEsledovala kauzální/geodetickou vzdálenost** (Pearson 0.10, $R^2=0.0095$; $d_D$ shlukuje
+vzdálenost NEsledovala kauzální/geodetickou vzdálenost** (Pearson 0.319, $R^2=0.10$, 16 párů; kolo-21 reprodukční oprava committed 0.098 -> 0.319, verdikt no-match nezměněn; $d_D$ shlukuje
 kolem 2.0–2.5 nezávisle na separaci). Optimalizátor ověřen na kanonickém 1D Diracově řetězci
 (sousední $d_D=1.0$ přesně) — plochost je **fyzikální vlastnost modulárního Diraca**, ne selhání
 solveru.

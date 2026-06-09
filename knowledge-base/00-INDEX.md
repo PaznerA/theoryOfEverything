@@ -1,7 +1,7 @@
 # Index znalostní báze — Theory of Everything
 
 > Anotovaný rejstřík všech souborů ve `knowledge-base/`, `core-data/` a `verification/`.
-> Generováno: 2026-06-05; aktualizováno: 2026-06-08 (kolo 20: CAS revize vzorců — triáž 247, B1–B4 validace, 33 verified, 1 mismatch BLOCKER `myrheim-meyer`; 7 WL skriptů aktivních, formula-coverage.json nový).
+> Generováno: 2026-06-05; aktualizováno: 2026-06-09 (kolo 21 konsolidace: CAS revize vzorců — triáž 247, B1–B4 validace, 24 verified + 14 already_validated = 38 vzorců; `myrheim-meyer` RESOLVED (oprava /2, resolved_blocker); 7 WL skriptů aktivních; numerická reprodukční coverage druhého oblouku 10/11 PASS; oprava stale F-033 korelace 0.098→0.319).
 
 ---
 
@@ -17,6 +17,7 @@
 - [BRAINSTORM-04.md](BRAINSTORM-04.md) — Čtvrté kolo brainstormingu (2026-06-06, kolo 7): 3 hypotézy čtvrté generace — H4g-1 (rohová non-Hadamardovost = selhání boost-flow, medium-high), H4g-4 (III→II na slabu ne na diamantu, medium-high; POTVRZENA VYPOCET-16), H4g-3 (fermionová indukce predikuje Λ přes f₀/a₀, medium). Doporučená fronta: H4g-3 (nejlevnější, sympy, dny) + H4g-1 (nejvyšší konceptuální výnos). Viz PROGRESS.md § Další kroky.
 - [BRAINSTORM-05.md](BRAINSTORM-05.md) — Páté kolo brainstormingu (2026-06-06, závěrečné): 6 hypotéz páté generace (H5g-1–H5g-6) navazujících na výsledky kol 7–9: dS II₁ diskriminátor (F-023), BD 4D modulární tok (F-024), causal-set typ-přechod, rohová non-Hadamardovost. Vstupní fronta pro velké review.
 - [SYNTEZA-02.md](SYNTEZA-02.md) — Druhá syntéza (2026-06-06, kolo 7): přehled 7 kol a 19 nálezů; 5 uzavřených front (γ–Cardy, naivní Λ, plná SM, 4D volume-law jako dimenze-efekt, Model E pro superradianci); vlajková loď NCG a₄ = −18/11 (fermionicky-indukovaná gravitace, draft-02 uzavřen); causal-set triáda (III₁→II 2D/4D, slab area law, SSEE cutoff ρ^{−1/2}); through-line (vlastnosti prostoročasu jako odpovědi na otázky); výhled 10 kol.
+- [BRAINSTORM-06.md](BRAINSTORM-06.md) — Šesté kolo brainstormingu (2026-06-08, kolo 16, šestá generace H6g): otevírací tah po uzavření celé fronty H5g; vede otvory, které negativy páté generace vytvořily (causal-sets↔NCG je tepelně-časová/KMS osa, ne metrická — F-033; konformně-váhový caveat 4D area-zákona — F-031; B(a) spojitá — F-030). Hypotézy H6g-1..H6g-6 (KMS/tepelná osa, Λ shot-noise, molekulová fluktuace, konformní 4D).
 - [SYNTEZA-03.md](SYNTEZA-03.md) — Třetí syntéza (2026-06-08, po kolech 7–20, F-018..F-039): druhý oblouk zostřil 2D causal-set/von-Neumann jádro a −18/11 na publikovatelnou pevnost, ale **narazil na tvrdou zeď ve čtyřech ambiciózních směrech** — 4D area-zákon genuinně NEPŘÍTOMEN (pohřben 3× nezávisle: mean F-031, konformní F-037, variance F-038), −18/11 NEDOSÁHNE do entanglement linie (F-039) ani na absolutní Unruh teplotu (F-036 tautologie), B(a) spojitá ne D−1 (F-030). Dvě nové through-line osy: dimenze je reálný diskriminátor; variance vs. mean rozlišuje co přežije. Λ shot-noise ožil na ose variance (F-035). Výhled 7. gen: konsolidace/dokumentace (draft-06 „mapa negativů"), ne další 4D numerika.
 
 ---
@@ -38,13 +39,14 @@
 - [../verification/cas/heat-kernel-perturbative-gravity-counterterms.wl](../verification/cas/heat-kernel-perturbative-gravity-counterterms.wl) — **Dávka B1** (kolo 20): 8 vzorců heat-kernel / perturbativní gravitace: 'tHooft–Veltman (1/120, 7/20), Goroff–Sagnotti (209/2880), D=(d−2)L+2, 41/(10π), D_c(L)=4+6/L, g*=3/38ε, N=8 spin obsah, Stelle parciální zlomek. Všechny **verified**. Export `heat-kernel-perturbative-gravity-counterterms_result.json`.
 - [../verification/cas/causal-set-combinatorial-operators.wl](../verification/cas/causal-set-combinatorial-operators.wl) — **Dávka B2** (kolo 20): 6 vzorců kauzálně-množinové kombinatoriky: BD akce, diskrétní d'Alembertián, KR počítání n²/4, Poissonův sprinkle, číslo–objem. **5 verified, 1 mismatch** (`myrheim-meyer`: BLOCKER — jmenovatel 4→2). Export `causal-set-combinatorial-operators_result.json`.
 - [../verification/cas/b4-swampland-inflation-scaling.wl](../verification/cas/b4-swampland-inflation-scaling.wl) — **Dávka B4** (kolo 20): 7 vzorců swampland/inflace: slow-roll, WGC KK rate √(3/2), universální pattern 1/(d−2), species scale, w(1+∞) algebra, BCJ Jacobi. Všechny **verified**. Export `b4-swampland-inflation-scaling_result.json`.
-- [../verification/cas/formula-coverage.json](../verification/cas/formula-coverage.json) — **Registr CAS pokrytí** (kolo 20): stav `cas_verification` pro 37 vzorců (verified/already_validated/mismatch). `meta.mismatch_blocker` obsahuje detail `myrheim-meyer`. Zbývající kategorie: definitional 158, numerical 36.
+- [../verification/cas/formula-coverage.json](../verification/cas/formula-coverage.json) — **Registr CAS pokrytí** (kolo 20, resolved kolo 21): stav `cas_verification` pro 38 vzorců (24 verified + 14 already_validated). `myrheim-meyer` RESOLVED (oprava jmenovatele 4→2 ve fragmentu + consolidate; `meta.resolved_blocker` zachycuje detail). Zbývající kategorie: definitional 158, numerical 36.
 
 ---
 
 ## Denní zprávy a reviewové reporty — kolo 20
 
 - [../reports/2026-06-08-cas-formula-revision.md](../reports/2026-06-08-cas-formula-revision.md) — **CAS revize registru vzorců** (kolo 20, 2026-06-08): triáž 247 vzorců (34 CAS-checkable, 158 definitional, 36 numerical, 19 already-validated); validace B1–B4 (33 verified, 1 mismatch = BLOCKER `myrheim-meyer` jmenovatel 4→2); aktualizace run_all.py + formula-coverage.json.
+- [../reports/2026-06-09-numerical-coverage.md](../reports/2026-06-09-numerical-coverage.md) — **Numerická reprodukční coverage druhého oblouku** (kolo 21, 2026-06-09): protějšek CAS revize — dvojí verifikační průchod. 8 calc adresářů kol 13–20 (F-029…F-039) dáno do `test_reproduction.py`: **10/11 PASS, 1 vyloučen** (ds-amol-convention — čte staged archiv mimo /tmp sandbox). Odhalené a opravené reprodukční defekty: `TIMING_FIELDS` (`elapsed_s`/`wall_clock_*`), `spectral-triple-modular` nedeterminismus (Connes wall-clock cap → committed korelace F-033 = 0.098 byl artefakt timing-truncace → reprodukovatelná 0.319, verdikt no-match nezměněn). Křížový odkaz na CAS revizi (Myrheim-Meyer = obdobný typ defektu).
 
 ---
 
@@ -139,7 +141,7 @@
 
 ### Kolo 15 (VYPOCET-29)
 
-- [vypocty/VYPOCET-29-spectral-triple-modular.md](vypocty/VYPOCET-29-spectral-triple-modular.md) — Spektrální triple vs. SJ modulární Hamiltonián (H5g-4, F-033): surogátní D_K=sgn(K)sqrt(|K|), 2D slab T=0.30, N=1200, 5 seedů. Funkcionální kalkul exaktní (scale=1.0, R^2=1.0). BW boostová diagonála lineární (R^2=0.955, PASS). Off-diag spad log-log R^2=0.765 (pod prahem 0.8). Weylova dimenze 1.54 (pod [1.7,2.3]). **KLÍČOVÝ TEST — Connesova vzdálenost:** Pearson korelace s kauzální vzdáleností = 0.098, R^2=0.0095 — plochost fyzikální (optimalizátor ověřen na 1D řetězci). VERDIKT: **no-match na metrické úrovni**, boostová osa solidní (Connes-Rovelli tepelný čas). Hrana causal-sets <-> NCG instancována jako informovaný negativ. Data: `core-data/calculations/spectral-triple-modular/`. Knihovna: `lib/toe/spectraltriple.py`, test `app/tests/test_toe_spectraltriple.py`. Runtime 327.6 s. (F-033)
+- [vypocty/VYPOCET-29-spectral-triple-modular.md](vypocty/VYPOCET-29-spectral-triple-modular.md) — Spektrální triple vs. SJ modulární Hamiltonián (H5g-4, F-033): surogátní D_K=sgn(K)sqrt(|K|), 2D slab T=0.30, N=1200, 5 seedů. Funkcionální kalkul exaktní (scale=1.0, R^2=1.0). BW boostová diagonála lineární (R^2=0.955, PASS). Off-diag spad log-log R^2=0.765 (pod prahem 0.8). Weylova dimenze 1.54 (pod [1.7,2.3]). **KLÍČOVÝ TEST — Connesova vzdálenost:** Pearson korelace s kauzální vzdáleností = 0.319, R^2=0.10 (16 párů, malý vzorek; kolo-21 reprodukční oprava committed 0.098 -> 0.319, verdikt no-match nezměněn) — plochost fyzikální (optimalizátor ověřen na 1D řetězci). VERDIKT: **no-match na metrické úrovni**, boostová osa solidní (Connes-Rovelli tepelný čas). Hrana causal-sets <-> NCG instancována jako informovaný negativ. Data: `core-data/calculations/spectral-triple-modular/`. Knihovna: `lib/toe/spectraltriple.py`, test `app/tests/test_toe_spectraltriple.py`. Runtime 327.6 s. (F-033)
 
 ### Kolo 14 (VYPOCET-26–28)
 
@@ -179,7 +181,7 @@ Osmnáct strojově zpracovatelných JSON fragmentů (koncepty, vzorce, reference
 
 ## Výpočty (`knowledge-base/vypocty/` + `core-data/calculations/`)
 
-Třicet jedna výpočtů dokončeno: čtyři v prvním deep-dive kole, tři v rozhodujícím kole, tři v kolech 3–4, dva v kole 5, dva v kole 6, dva v kole 7, dva v kole 8, dva v kole 9, dva v kole 10, dva v kolech 12–13, tři v kole 14, jeden v kole 15, dva v kole 16. Každý má writeup v `knowledge-base/vypocty/` a strojová data (calc.py + results.json + plots) v odpovídajícím podadresáři `core-data/calculations/`.
+Třicet šest výpočtů dokončeno (VYPOCET-01..36, 35 calc adresářů — 3 adresáře nesou 2 writeupy): čtyři v prvním deep-dive kole, tři v rozhodujícím kole, tři v kolech 3–4, dva v kole 5, dva v kole 6, dva v kole 7, dva v kole 8, dva v kole 9, dva v kole 10, dva v kolech 11–12, dva v kolech 12–13, tři v kole 14, jeden v kole 15, dva v kole 16, tři v kole 18 (VYPOCET-32/33/34), dva v kole 19 (VYPOCET-35/36). Každý má writeup v `knowledge-base/vypocty/` a strojová data (calc.py + results.json + plots) v odpovídajícím podadresáři `core-data/calculations/`.
 
 ### Kolo 1 (VYPOCET-01–04)
 
@@ -237,7 +239,7 @@ Třicet jedna výpočtů dokončeno: čtyři v prvním deep-dive kole, tři v ro
 - [hypotezy/H01-gamma-cardy.md](hypotezy/H01-gamma-cardy.md) — Cardy-LQG fixace γ≈0,274: jádro c=6k je known (Carlip 1410.5763); identifikován fatální blocker — Senova IR-univerzalita (1205.0971) brání UV-fixaci γ z CFT; UZAVŘENO (program dead).
 - [hypotezy/H02-sj-kerr.md](hypotezy/H02-sj-kerr.md) — Sorkin-Johnston vakuum pro Kerr/SdS: genuinely open territory — žádná publikace SJ stav pro rotující ČD nezkonstruovala; Kay-Wald no-go neblokuje; BTZ analog (VYPOCET-05) + Kerr (VYPOCET-08) + mechanismus (VYPOCET-10) hotovy; draft-01 čeká na revizi.
 - [hypotezy/H03-bmv-diskriminator.md](hypotezy/H03-bmv-diskriminator.md) — BMV/QGEM jako diskriminátor přístupů: binary „kvantovost gravitace" test vyřešen; jediný principiálně odlišitelný přístup je Oppenheimova postkvantová teorie (π-fázový posun); AS korekce ~10⁻⁶⁰ neměřitelná.
-- [hypotezy/H04-ssee-entropy-cluster.md](hypotezy/H04-ssee-entropy-cluster.md) — H04 entropie-cluster (reframe): 4D link-matice spektrum ploché → BD d'Alembertián je správný objekt (interpretace b); VYPOCET-09 potvrdil tvar spektra (čistý power law), ale α driftuje s N a p=3/4 chybí; váha na interpretacích (a) a (c).
+- [hypotezy/H04-entropy-cluster-reframe.md](hypotezy/H04-entropy-cluster-reframe.md) — H04 entropie-cluster (reframe): 4D link-matice spektrum ploché → BD d'Alembertián je správný objekt (interpretace b); VYPOCET-09 potvrdil tvar spektra (čistý power law), ale α driftuje s N a p=3/4 chybí; váha na interpretacích (a) a (c).
 
 ---
 
@@ -273,8 +275,8 @@ Třicet jedna výpočtů dokončeno: čtyři v prvním deep-dive kole, tři v ro
 
 - [eseje/ESEJ-01-dimenze-jako-otazka.md](eseje/ESEJ-01-dimenze-jako-otazka.md) — „Dimenze jako otázka": probe/observer-dependence jako generický klasifikační princip (H2g-1) — geometrická veličina je odpověď na (otázka, sonda), ne atribut oblasti; formalizace falzifikací F1/F5.
 - [eseje/ESEJ-02-vesmir-ktery-se-pocita.md](eseje/ESEJ-02-vesmir-ktery-se-pocita.md) — „Vesmír, který se počítá": faktor 140 (Sorkin/EDT) jako možný směnný kurz mezi definicemi atomu prostoročasu (H2g-4); Everpresent Λ a swampland-kompatibilní de Sitter bez kvintesenčního pole (H2g-5).
-- [eseje/ESEJ-03.md](eseje/ESEJ-03.md) — ESEJ-03 (kolo 6): syntetická esej k výsledkům kola 6.
-- [eseje/ESEJ-04.md](eseje/ESEJ-04.md) — ESEJ-04 (kolo 9): syntetická esej k výsledkům kola 9 — dS II₁ diskriminátor a BD 4D modulární tok.
+- [eseje/ESEJ-03-gravitace-jako-stin.md](eseje/ESEJ-03-gravitace-jako-stin.md) — ESEJ-03 (kolo 6): syntetická esej k výsledkům kola 6.
+- [eseje/ESEJ-04-vstup-pozorovatele.md](eseje/ESEJ-04-vstup-pozorovatele.md) — ESEJ-04 (kolo 9): syntetická esej k výsledkům kola 9 — dS II₁ diskriminátor a BD 4D modulární tok.
 
 ---
 

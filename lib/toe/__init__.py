@@ -168,6 +168,10 @@ from toe.spectraltriple import (
     connes_commutator_norm,
     connes_distance,
     ConnesDistance,
+    kms_temperature,
+    KMSFit,
+    unruh_proper_law,
+    UnruhLawFit,
 )
 
 __all__ = [
@@ -256,4 +260,8 @@ __all__ = [
     "connes_commutator_norm",
     "connes_distance",
     "ConnesDistance",
+    "kms_temperature",
+    "KMSFit",
+    "unruh_proper_law",
+    "UnruhLawFit",
 ]

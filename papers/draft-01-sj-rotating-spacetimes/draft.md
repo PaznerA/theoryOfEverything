@@ -197,7 +197,9 @@ If this superradiant program survives to 4D, the SJ state would furnish a canoni
 
 ---
 
-## 5. References
+## 5. References (arXiv IDs; to be verified against arXiv by a human before any release)
+
+> ⚠️ Reference arXiv ID nebyla ověřena proti arxiv.org. Zejména nová 2025–2026 ID (např. 2602.09796, 2504.12919, 2303.13488) musí lidský revizor potvrdit (existence + autoři + obsah) před jakýmkoli vydáním — viz BRAINSTORM-05 §2 a REVIZE-PRO-CLOVEKA.md.
 
 1. R. D. Sorkin and Y. K. Yazdi, *Entanglement Entropy in Causal Set Theory*, arXiv:1611.10281. [$G_R=\tfrac12 C$, $i\Delta$, SJ $W$ as positive part]
 2. N. Afshordi, S. Aslanbeigi and R. D. Sorkin, *A distinguished vacuum state for a quantum field in a curved spacetime*, arXiv:1205.1296. [SJ continuum construction]
